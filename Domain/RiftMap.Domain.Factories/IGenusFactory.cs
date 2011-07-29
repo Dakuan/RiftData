@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RiftData.Domain.Core;
-using DataGenus = RiftData.Infrastructure.Data.Genus;
+﻿using RiftData.Domain.Core;
 
-namespace RiftMap.Domain.Factories
+namespace RiftData.Domain.Factories
 {
     public interface IGenusFactory
     {
-        Genus Build(DataGenus dataGenus);
+        Genus Build(Infrastructure.Data.Genus dataGenus);
     }
 }

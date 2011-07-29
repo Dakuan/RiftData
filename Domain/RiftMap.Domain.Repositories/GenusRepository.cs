@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using RiftData.Domain.Factories;
 using RiftData.Infrastructure.Data;
-using RiftMap.Domain.Factories;
+using RiftMap.Domain.Repositories;
 using Genus = RiftData.Domain.Core.Genus;
 
-namespace RiftMap.Domain.Repositories
+namespace RiftData.Domain.Repositories
 {
     public class GenusRepository : IRepository<Genus>
     {
@@ -26,7 +27,8 @@ namespace RiftMap.Domain.Repositories
             { 
                 var list = new List<Genus>();
 
-                this.dataEntities.Genus.ToList().ForEach(g =>
+                this.dataEntities.Genus.OrderBy(g => g.GenusName).ToList()
+                                                    .ForEach(g =>
                                                              {
                                                                  try
                                                                  {

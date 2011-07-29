@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Linq;
 using RiftData.Infrastructure.Data;
-using RiftMap.Domain.Factories.Exceptions;
-using Species = RiftData.Domain.Core.Species;
+using RiftMap.Domain.Factories;
 using Genus = RiftData.Domain.Core.Genus;
-using DataSpecies = RiftData.Infrastructure.Data.Species;
+using Species = RiftData.Domain.Core.Species;
 
-namespace RiftMap.Domain.Factories
+namespace RiftData.Domain.Factories
 {
     public class SpeciesFactory : ISpeciesFactory
     {
@@ -14,7 +12,7 @@ namespace RiftMap.Domain.Factories
         {
         }
 
-        public Species Build(DataSpecies dataSpecies, Genus genus)
+        public Species Build(Infrastructure.Data.Species dataSpecies, Genus genus)
         {
             var species = new Species(dataSpecies.SpeciesID, dataSpecies.SpeciesName, Convert.ToBoolean(dataSpecies.Described)){ Genus = genus };
 

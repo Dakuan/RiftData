@@ -3,9 +3,8 @@ using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using RiftData.Domain.Core;
 
-namespace RiftMap.Domain.Factories
+namespace RiftData.Domain.Factories
 {
     public class FactoriesInstaller : IWindsorInstaller
     {

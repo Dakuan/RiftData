@@ -1,11 +1,9 @@
 ﻿using RiftData.Domain.Core;
-using Genus = RiftData.Domain.Core.Genus;
-using DataSpecies = RiftData.Infrastructure.Data.Species;
 
-namespace RiftMap.Domain.Factories
+namespace RiftData.Domain.Factories
 {
     public interface ISpeciesFactory
     {
-        Species Build(DataSpecies dataSpecies, Genus genus);
+        Species Build(Infrastructure.Data.Species dataSpecies, Genus genus);
     }
 }

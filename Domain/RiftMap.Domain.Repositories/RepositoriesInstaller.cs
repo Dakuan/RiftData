@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using RiftData.Domain.Core;
+using RiftMap.Domain.Repositories;
 
-namespace RiftMap.Domain.Repositories
+namespace RiftData.Domain.Repositories
 {
     public class RepositoriesInstaller : IWindsorInstaller
     {

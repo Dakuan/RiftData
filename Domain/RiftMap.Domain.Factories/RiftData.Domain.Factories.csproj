@@ -46,7 +46,6 @@
     <Compile Include="Exceptions\EmptySpeciesListException.cs" />
     <Compile Include="Exceptions\NullDataObjectException.cs" />
     <Compile Include="FactoriesInstaller.cs" />
-    <Compile Include="FactoryBase.cs" />
     <Compile Include="GenusFactory.cs" />
     <Compile Include="IGenusFactory.cs" />
     <Compile Include="ISpeciesFactory.cs" />

@@ -8,9 +8,9 @@ using Castle.Windsor;
 using Castle.Windsor.Configuration.Interpreters;
 using Castle.Windsor.Installer;
 using RiftData.Controllers;
+using RiftData.Domain.Factories;
+using RiftData.Domain.Repositories;
 using RiftData.Infrastructure.Data;
-using RiftMap.Domain.Factories;
-using RiftMap.Domain.Repositories;
 
 namespace RiftData
 {
