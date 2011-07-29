@@ -1,8 +1,6 @@
 C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\bin\Debug\RiftData.Domain.Factories.dll
 C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\bin\Debug\RiftData.Domain.Factories.pdb
-C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\bin\Debug\Castle.Core.dll
-C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\bin\Debug\Castle.Windsor.dll
 C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\bin\Debug\RiftData.Domain.Core.dll
 C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\bin\Debug\RiftData.Infrastructure.Data.dll
 C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Factories\bin\Debug\RiftData.Infrastructure.Data.pdb
