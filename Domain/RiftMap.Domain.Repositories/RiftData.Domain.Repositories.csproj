@@ -8,8 +8,8 @@
     <ProjectGuid>{7248D560-3E1F-4A89-9ADC-3BB0D64D9076}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RiftMap.Domain.Repositories</RootNamespace>
-    <AssemblyName>RiftMap.Domain.Repositories</AssemblyName>
+    <RootNamespace>RiftData.Domain.Repositories</RootNamespace>
+    <AssemblyName>RiftData.Domain.Repositories</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -62,7 +62,7 @@
       <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
       <Name>RiftData.Domain.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RiftMap.Domain.Factories\RiftMap.Domain.Factories.csproj">
+    <ProjectReference Include="..\RiftMap.Domain.Factories\RiftData.Domain.Factories.csproj">
       <Project>{9529E0E1-675F-436B-905C-7A9988C04CEA}</Project>
       <Name>RiftMap.Domain.Factories</Name>
     </ProjectReference>

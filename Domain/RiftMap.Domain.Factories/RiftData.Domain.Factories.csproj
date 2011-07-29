@@ -8,8 +8,8 @@
     <ProjectGuid>{9529E0E1-675F-436B-905C-7A9988C04CEA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RiftMap.Domain.Factories</RootNamespace>
-    <AssemblyName>RiftMap.Domain.Factories</AssemblyName>
+    <RootNamespace>RiftData.Domain.Factories</RootNamespace>
+    <AssemblyName>RiftData.Domain.Factories</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,7 +48,6 @@
     <Compile Include="FactoriesInstaller.cs" />
     <Compile Include="FactoryBase.cs" />
     <Compile Include="GenusFactory.cs" />
-    <Compile Include="IFactory.cs" />
     <Compile Include="IGenusFactory.cs" />
     <Compile Include="ISpeciesFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
