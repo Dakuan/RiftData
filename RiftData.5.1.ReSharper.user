@@ -1,0 +1,179 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:EntityBase.cs" caret="165" fromTop="7" />
+      <File id="5B729633-0BA7-4695-AF7A-EBEB48C8BF17/f:WindsorControllerFactoryInstaller.cs" caret="0" fromTop="0" />
+      <File id="5B729633-0BA7-4695-AF7A-EBEB48C8BF17/f:WindsorControllerFactory.cs" caret="213" fromTop="9" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:ControllersInstaller.cs" caret="13" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Home/f:HomeController.cs" caret="330" fromTop="16" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="497" fromTop="15" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:ISpeciesFactory.cs" caret="215" fromTop="10" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoryBase.cs" caret="231" fromTop="10" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:IFactory.cs" caret="194" fromTop="9" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:IGenusFactory.cs" caret="182" fromTop="10" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/d:Exceptions/f:NullDataObjectException.cs" caret="320" fromTop="11" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/d:Exceptions/f:EmptySpeciesListException.cs" caret="38" fromTop="2" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Genus.cs" caret="0" fromTop="0" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="617" fromTop="10" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Species.cs" caret="369" fromTop="13" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="754" fromTop="23" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:ControllersInstaller.cs" caret="335" fromTop="14" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:ControllersInstaller.cs" caret="13" fromTop="0" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:IGenusFactory.cs" caret="182" fromTop="10" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Home/f:HomeController.cs" caret="339" fromTop="16" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="270" fromTop="7" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="562" fromTop="14" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="223" fromTop="7" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="497" fromTop="15" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:ISpeciesFactory.cs" caret="99" fromTop="3" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:ISpeciesFactory.cs" caret="224" fromTop="10" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="0" fromTop="0" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="317" fromTop="8" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoryBase.cs" caret="359" fromTop="11" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoryBase.cs" caret="231" fromTop="10" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="1058" fromTop="19" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/d:Exceptions/f:NullDataObjectException.cs" caret="320" fromTop="11" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="675" fromTop="16" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:IFactory.cs" caret="194" fromTop="9" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="568" fromTop="16" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="947" fromTop="10" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1165" fromTop="14" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="53" fromTop="2" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/d:Exceptions/f:EmptySpeciesListException.cs" caret="38" fromTop="2" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1220" fromTop="22" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Species.cs" caret="540" fromTop="19" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Species.cs" caret="369" fromTop="13" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="203" fromTop="5" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="365" fromTop="11" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="542" fromTop="15" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="1025" fromTop="28" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.9\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="ctor" priority="3" />
+      <Item value="public" priority="5" />
+      <Item value="int" priority="2" />
+      <Item value="IndexOutOfRangeException`0" priority="0" />
+      <Item value="id" priority="0" />
+      <Item value="string" priority="4" />
+      <Item value="virtual" priority="0" />
+      <Item value="override" priority="5" />
+      <Item value="this" priority="17" />
+      <Item value="EntityBase`0" priority="0" />
+      <Item value="private" priority="3" />
+      <Item value="name" priority="1" />
+      <Item value="IList" priority="1" />
+      <Item value="Species`0" priority="5" />
+      <Item value="specieses" priority="0" />
+      <Item value="IServiceProvider`0" priority="0" />
+      <Item value="species" priority="2" />
+      <Item value="bool" priority="1" />
+      <Item value="TimeSpan`0" priority="0" />
+      <Item value="described" priority="0" />
+      <Item value="IGenusFactory`0" priority="0" />
+      <Item value="RiftDataDataEntities`0" priority="2" />
+      <Item value="using" priority="1" />
+      <Item value="RiftData.Infrastructure.Data" priority="0" />
+      <Item value="dataDataEntities" priority="0" />
+      <Item value="dataEntities" priority="1" />
+      <Item value="T`0" priority="0" />
+      <Item value="ISpeciesFactory`0" priority="0" />
+      <Item value="FactoryBase`0" priority="1" />
+      <Item value="var" priority="6" />
+      <Item value="s" priority="4" />
+      <Item value="new" priority="5" />
+      <Item value="dataObject" priority="12" />
+      <Item value="return" priority="2" />
+      <Item value="if" priority="2" />
+      <Item value="Exception`0" priority="0" />
+      <Item value="Genus`0" priority="5" />
+      <Item value="RiftMap.Domain" priority="0" />
+      <Item value="Domain" priority="1" />
+      <Item value="IFactory" priority="3" />
+      <Item value="speciesFactory" priority="0" />
+      <Item value="g" priority="0" />
+      <Item value="NullDataObjectException" priority="0" />
+      <Item value="List" priority="0" />
+      <Item value="speciesList" priority="3" />
+      <Item value="CannotUnloadAppDomainException`0" priority="0" />
+      <Item value="genusFactory" priority="0" />
+      <Item value="genus" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Domain.Core.EntityBase">
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Domain.Core.Species">
+      <Item value="Name" priority="1" />
+      <Item value="Described" priority="0" />
+      <Item value="Genus" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Domain.Core.Genus">
+      <Item value="Name" priority="1" />
+      <Item value="Species" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftMap.Domain.Factories.GenusFactory">
+      <Item value="dataEntities" priority="3" />
+      <Item value="speciesFactory" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftMap.Domain.Factories.FactoryBase">
+      <Item value="dataEntities" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftMap.Domain.Factories.SpeciesFactory">
+      <Item value="dataEntities" priority="0" />
+      <Item value="genusFactory" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.RiftDataDataEntities">
+      <Item value="Species" priority="1" />
+      <Item value="Genus" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.Species">
+      <Item value="SpeciesID" priority="3" />
+      <Item value="SpeciesName" priority="0" />
+      <Item value="Described" priority="0" />
+      <Item value="Genus" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToBoolean`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Objects.ObjectSet`1">
+      <Item value="FirstOrDefault`1" priority="0" />
+      <Item value="ToList`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.Genus">
+      <Item value="GenusID" priority="2" />
+      <Item value="GenusName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="ForEach`0" priority="1" />
+      <Item value="Where`1" priority="0" />
+      <Item value="Add`0" priority="1" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftMap.Domain.Factories.IFactory`1">
+      <Item value="Build`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

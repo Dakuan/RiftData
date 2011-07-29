@@ -1,0 +1,12 @@
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\RiftData.Infrastructure.Data.dll.config
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\RiftData.Infrastructure.Data.dll
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\RiftData.Infrastructure.Data.pdb
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Core.dll
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Windsor.dll
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Core.pdb
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Core.xml
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Windsor.pdb
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Windsor.xml
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\obj\Debug\RiftData.Infrastructure.Data.dll
+C:\Users\Dakuan\git\RiftData\Infrastructure\RiftData.Infrastructure.Data\obj\Debug\RiftData.Infrastructure.Data.pdb

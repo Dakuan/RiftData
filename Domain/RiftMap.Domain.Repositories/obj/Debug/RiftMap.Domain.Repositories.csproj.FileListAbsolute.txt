@@ -1,0 +1,17 @@
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftMap.Domain.Repositories.dll
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftMap.Domain.Repositories.pdb
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\obj\Debug\RiftMap.Domain.Repositories.dll
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\obj\Debug\RiftMap.Domain.Repositories.pdb
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\Castle.Core.dll
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\Castle.Windsor.dll
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftData.Domain.Core.dll
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftData.Infrastructure.Data.dll
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftMap.Domain.Factories.dll
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftData.Infrastructure.Data.pdb
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftData.Domain.Core.pdb
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\RiftMap.Domain.Factories.pdb
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\Castle.Core.pdb
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\Castle.Core.xml
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\Castle.Windsor.pdb
+C:\Users\Dakuan\git\RiftData\Domain\RiftMap.Domain.Repositories\bin\Debug\Castle.Windsor.xml

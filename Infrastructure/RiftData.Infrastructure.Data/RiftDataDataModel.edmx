@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RiftDataDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="RiftDataDataModelStoreContainer">
+          <EntitySet Name="Fish" EntityType="RiftDataDataModel.Store.Fish" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Genus" EntityType="RiftDataDataModel.Store.Genus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Locale" EntityType="RiftDataDataModel.Store.Locale" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Photos" EntityType="RiftDataDataModel.Store.Photos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Species" EntityType="RiftDataDataModel.Store.Species" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Type" EntityType="RiftDataDataModel.Store.Type" store:Type="Tables" store:Schema="dbo" store:Name="Type">
+            <DefiningQuery>SELECT 
+      [Type].[GenusTypeID] AS [GenusTypeID], 
+      [Type].[GenusType] AS [GenusType]
+      FROM [dbo].[Type] AS [Type]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Fish_Genus" Association="RiftDataDataModel.Store.FK_Fish_Genus">
+            <End Role="Genus" EntitySet="Genus" />
+            <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fish_Locale" Association="RiftDataDataModel.Store.FK_Fish_Locale">
+            <End Role="Locale" EntitySet="Locale" />
+            <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fish_Species" Association="RiftDataDataModel.Store.FK_Fish_Species">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Fish">
+          <Key>
+            <PropertyRef Name="FishID" />
+          </Key>
+          <Property Name="FishID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Genus" Type="int" Nullable="false" />
+          <Property Name="Species" Type="int" Nullable="false" />
+          <Property Name="Locale" Type="int" Nullable="false" />
+          <Property Name="Temperament" Type="int" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genus">
+          <Key>
+            <PropertyRef Name="GenusID" />
+          </Key>
+          <Property Name="GenusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GenusName" Type="nchar" Nullable="false" MaxLength="100" />
+          <Property Name="GenusType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Locale">
+          <Key>
+            <PropertyRef Name="LocaleID" />
+          </Key>
+          <Property Name="LocaleID" Type="int" Nullable="false" />
+          <Property Name="Lat" Type="float" Nullable="false" />
+          <Property Name="Long" Type="float" Nullable="false" />
+          <Property Name="LocaleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ZoomLevel" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="FishId" Type="int" />
+          <Property Name="LocaleId" Type="int" />
+          <Property Name="Sponsor" Type="nvarchar" MaxLength="500" />
+          <Property Name="FlickrId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Species">
+          <Key>
+            <PropertyRef Name="SpeciesID" />
+          </Key>
+          <Property Name="SpeciesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SpeciesName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Genus" Type="int" Nullable="false" />
+          <Property Name="Described" Type="bit" />
+          <Property Name="Paper" Type="int" />
+          <Property Name="Distribution" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'db1082.dbo.Type' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="GenusTypeID" />
+            <PropertyRef Name="GenusType" />
+          </Key>
+          <Property Name="GenusTypeID" Type="int" Nullable="false" />
+          <Property Name="GenusType" Type="ntext" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Fish_Genus">
+          <End Role="Genus" Type="RiftDataDataModel.Store.Genus" Multiplicity="1" />
+          <End Role="Fish" Type="RiftDataDataModel.Store.Fish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genus">
+              <PropertyRef Name="GenusID" />
+            </Principal>
+            <Dependent Role="Fish">
+              <PropertyRef Name="Genus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fish_Locale">
+          <End Role="Locale" Type="RiftDataDataModel.Store.Locale" Multiplicity="1" />
+          <End Role="Fish" Type="RiftDataDataModel.Store.Fish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locale">
+              <PropertyRef Name="LocaleID" />
+            </Principal>
+            <Dependent Role="Fish">
+              <PropertyRef Name="Locale" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fish_Species">
+          <End Role="Species" Type="RiftDataDataModel.Store.Species" Multiplicity="1" />
+          <End Role="Fish" Type="RiftDataDataModel.Store.Fish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesID" />
+            </Principal>
+            <Dependent Role="Fish">
+              <PropertyRef Name="Species" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RiftDataDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="RiftDataDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fish" EntityType="RiftDataDataModel.Fish" />
+          <EntitySet Name="Genus" EntityType="RiftDataDataModel.Genus" />
+          <EntitySet Name="Locale" EntityType="RiftDataDataModel.Locale" />
+          <EntitySet Name="Photos" EntityType="RiftDataDataModel.Photos" />
+          <EntitySet Name="Species" EntityType="RiftDataDataModel.Species" />
+          <EntitySet Name="Type" EntityType="RiftDataDataModel.Type" />
+          <AssociationSet Name="FK_Fish_Genus" Association="RiftDataDataModel.FK_Fish_Genus">
+            <End Role="Genus" EntitySet="Genus" />
+            <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fish_Locale" Association="RiftDataDataModel.FK_Fish_Locale">
+            <End Role="Locale" EntitySet="Locale" />
+            <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fish_Species" Association="RiftDataDataModel.FK_Fish_Species">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Fish">
+          <Key>
+            <PropertyRef Name="FishID" />
+          </Key>
+          <Property Name="FishID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Genus" Type="Int32" Nullable="false" />
+          <Property Name="Species" Type="Int32" Nullable="false" />
+          <Property Name="Locale" Type="Int32" Nullable="false" />
+          <Property Name="Temperament" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Genus1" Relationship="RiftDataDataModel.FK_Fish_Genus" FromRole="Fish" ToRole="Genus" />
+          <NavigationProperty Name="Locale1" Relationship="RiftDataDataModel.FK_Fish_Locale" FromRole="Fish" ToRole="Locale" />
+          <NavigationProperty Name="Species1" Relationship="RiftDataDataModel.FK_Fish_Species" FromRole="Fish" ToRole="Species" />
+        </EntityType>
+        <EntityType Name="Genus">
+          <Key>
+            <PropertyRef Name="GenusID" />
+          </Key>
+          <Property Name="GenusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenusName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="GenusType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fish" Relationship="RiftDataDataModel.FK_Fish_Genus" FromRole="Genus" ToRole="Fish" />
+        </EntityType>
+        <EntityType Name="Locale">
+          <Key>
+            <PropertyRef Name="LocaleID" />
+          </Key>
+          <Property Name="LocaleID" Type="Int32" Nullable="false" />
+          <Property Name="Lat" Type="Double" Nullable="false" />
+          <Property Name="Long" Type="Double" Nullable="false" />
+          <Property Name="LocaleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ZoomLevel" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Fish" Relationship="RiftDataDataModel.FK_Fish_Locale" FromRole="Locale" ToRole="Fish" />
+        </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="FishId" Type="Int32" />
+          <Property Name="LocaleId" Type="Int32" />
+          <Property Name="Sponsor" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="FlickrId" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Species">
+          <Key>
+            <PropertyRef Name="SpeciesID" />
+          </Key>
+          <Property Name="SpeciesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SpeciesName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Genus" Type="Int32" Nullable="false" />
+          <Property Name="Described" Type="Boolean" />
+          <Property Name="Paper" Type="Int32" />
+          <Property Name="Distribution" Type="Int32" />
+          <NavigationProperty Name="Fish" Relationship="RiftDataDataModel.FK_Fish_Species" FromRole="Species" ToRole="Fish" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="GenusTypeID" />
+            <PropertyRef Name="GenusType" />
+          </Key>
+          <Property Name="GenusTypeID" Type="Int32" Nullable="false" />
+          <Property Name="GenusType" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Fish_Genus">
+          <End Role="Genus" Type="RiftDataDataModel.Genus" Multiplicity="1" />
+          <End Role="Fish" Type="RiftDataDataModel.Fish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genus">
+              <PropertyRef Name="GenusID" />
+            </Principal>
+            <Dependent Role="Fish">
+              <PropertyRef Name="Genus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fish_Locale">
+          <End Role="Locale" Type="RiftDataDataModel.Locale" Multiplicity="1" />
+          <End Role="Fish" Type="RiftDataDataModel.Fish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locale">
+              <PropertyRef Name="LocaleID" />
+            </Principal>
+            <Dependent Role="Fish">
+              <PropertyRef Name="Locale" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Fish_Species">
+          <End Role="Species" Type="RiftDataDataModel.Species" Multiplicity="1" />
+          <End Role="Fish" Type="RiftDataDataModel.Fish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesID" />
+            </Principal>
+            <Dependent Role="Fish">
+              <PropertyRef Name="Species" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RiftDataDataModelStoreContainer" CdmEntityContainer="RiftDataDataEntities">
+          <EntitySetMapping Name="Fish"><EntityTypeMapping TypeName="RiftDataDataModel.Fish"><MappingFragment StoreEntitySet="Fish">
+            <ScalarProperty Name="FishID" ColumnName="FishID" />
+            <ScalarProperty Name="Genus" ColumnName="Genus" />
+            <ScalarProperty Name="Species" ColumnName="Species" />
+            <ScalarProperty Name="Locale" ColumnName="Locale" />
+            <ScalarProperty Name="Temperament" ColumnName="Temperament" />
+            <ScalarProperty Name="Size" ColumnName="Size" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Genus"><EntityTypeMapping TypeName="RiftDataDataModel.Genus"><MappingFragment StoreEntitySet="Genus">
+            <ScalarProperty Name="GenusID" ColumnName="GenusID" />
+            <ScalarProperty Name="GenusName" ColumnName="GenusName" />
+            <ScalarProperty Name="GenusType" ColumnName="GenusType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Locale"><EntityTypeMapping TypeName="RiftDataDataModel.Locale"><MappingFragment StoreEntitySet="Locale">
+            <ScalarProperty Name="LocaleID" ColumnName="LocaleID" />
+            <ScalarProperty Name="Lat" ColumnName="Lat" />
+            <ScalarProperty Name="Long" ColumnName="Long" />
+            <ScalarProperty Name="LocaleName" ColumnName="LocaleName" />
+            <ScalarProperty Name="ZoomLevel" ColumnName="ZoomLevel" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Photos"><EntityTypeMapping TypeName="RiftDataDataModel.Photos"><MappingFragment StoreEntitySet="Photos">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Url" ColumnName="Url" />
+            <ScalarProperty Name="FishId" ColumnName="FishId" />
+            <ScalarProperty Name="LocaleId" ColumnName="LocaleId" />
+            <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+            <ScalarProperty Name="FlickrId" ColumnName="FlickrId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Species"><EntityTypeMapping TypeName="RiftDataDataModel.Species"><MappingFragment StoreEntitySet="Species">
+            <ScalarProperty Name="SpeciesID" ColumnName="SpeciesID" />
+            <ScalarProperty Name="SpeciesName" ColumnName="SpeciesName" />
+            <ScalarProperty Name="Genus" ColumnName="Genus" />
+            <ScalarProperty Name="Described" ColumnName="Described" />
+            <ScalarProperty Name="Paper" ColumnName="Paper" />
+            <ScalarProperty Name="Distribution" ColumnName="Distribution" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Type"><EntityTypeMapping TypeName="RiftDataDataModel.Type"><MappingFragment StoreEntitySet="Type">
+            <ScalarProperty Name="GenusTypeID" ColumnName="GenusTypeID" />
+            <ScalarProperty Name="GenusType" ColumnName="GenusType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="RiftDataDataModel">
+        <EntityTypeShape EntityType="RiftDataDataModel.Fish" Width="1.5" PointX="3" PointY="1" Height="2.7494921875000005" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiftDataDataModel.Genus" Width="1.5" PointX="0.75" PointY="1.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiftDataDataModel.Locale" Width="1.5" PointX="7.625" PointY="1.25" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiftDataDataModel.Photos" Width="1.5" PointX="2.75" PointY="4.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiftDataDataModel.Species" Width="1.5" PointX="5.75" PointY="2.5" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiftDataDataModel.Type" Width="1.5" PointX="0.875" PointY="4.625" Height="1.4033821614583317" IsExpanded="true" />
+        <AssociationConnector Association="RiftDataDataModel.FK_Fish_Genus" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.3939925130208337" />
+          <ConnectorPoint PointX="3" PointY="2.3939925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiftDataDataModel.FK_Fish_Locale" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.625" PointY="1.84375" />
+          <ConnectorPoint PointX="4.5" PointY="1.84375" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiftDataDataModel.FK_Fish_Species" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.75" PointY="3.1247460937500002" />
+          <ConnectorPoint PointX="4.5" PointY="3.1247460937500002" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

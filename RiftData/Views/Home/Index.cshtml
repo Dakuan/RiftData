@@ -1,0 +1,16 @@
+﻿@using RiftData.Controllers.Home
+@model HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<ul>
+@{
+    foreach (var item in Model.Items){
+        <li>@item</li>
+    }
+}
+</ul>
+
