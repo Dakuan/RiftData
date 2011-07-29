@@ -1,4 +1,6 @@
-﻿using Castle.MicroKernel.Registration;
+﻿using System;
+using Castle.Core;
+using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using RiftData.Domain.Core;
@@ -9,13 +11,16 @@ namespace RiftMap.Domain.Factories
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component
-                .For<IFactory<Species>>()
-                .ImplementedBy<SpeciesFactory>());
+            container.Register(AllTypes.FromThisAssembly()
+                                .Pick()
+                                .If(IsFactory)
+                                .WithService.DefaultInterface()
+                                .Configure(x => x.LifeStyle.Is(LifestyleType.Transient)));
+        }
 
-            container.Register(Component
-                .For<IFactory<Genus>>()
-                .ImplementedBy<GenusFactory>());
+        private static bool IsFactory(Type type)
+        {
+            return type.Name.EndsWith("Factory", StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

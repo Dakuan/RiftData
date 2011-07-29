@@ -7,16 +7,13 @@ using Genus = RiftData.Domain.Core.Genus;
 
 namespace RiftMap.Domain.Factories
 {
-    public class SpeciesFactory : FactoryBase, IFactory<Species>
+    public class SpeciesFactory : FactoryBase, ISpeciesFactory
     {
-        private IFactory<Genus> genusFactory;
-
-        public SpeciesFactory(RiftDataDataEntities dataEntities, IFactory<Genus> genusFactory) : base(dataEntities)
+        public SpeciesFactory(RiftDataDataEntities dataEntities) : base(dataEntities)
         {
-            this.genusFactory = genusFactory;
         }
 
-        public Species Build(int id)
+        public Species Build(int id, Genus genus)
         {
             var dataObject = this.dataEntities.Species.FirstOrDefault(s => s.SpeciesID == id);
 
@@ -25,7 +22,7 @@ namespace RiftMap.Domain.Factories
                 throw new NullDataObjectException();
             }
 
-            var species = new Species(dataObject.SpeciesID, dataObject.SpeciesName, Convert.ToBoolean(dataObject.Described)){Genus = this.genusFactory.Build(dataObject.Genus)};
+            var species = new Species(dataObject.SpeciesID, dataObject.SpeciesName, Convert.ToBoolean(dataObject.Described)){ Genus = genus };
 
             return species;
         }

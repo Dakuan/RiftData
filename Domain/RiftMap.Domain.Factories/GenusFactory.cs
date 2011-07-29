@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.Infrastructure.Data;
 using RiftMap.Domain.Factories.Exceptions;
@@ -8,11 +7,13 @@ using Species = RiftData.Domain.Core.Species;
 
 namespace RiftMap.Domain.Factories
 {
-    public class GenusFactory : FactoryBase, IFactory<Genus>
+    public class GenusFactory : FactoryBase, IGenusFactory
     {
+        private readonly ISpeciesFactory speciesFactory;
 
-        public GenusFactory(RiftDataDataEntities dataEntities) : base(dataEntities)
+        public GenusFactory(RiftDataDataEntities dataEntities, ISpeciesFactory speciesFactory) : base(dataEntities)
         {
+            this.speciesFactory = speciesFactory;
         }
 
         public Genus Build(int id)
@@ -29,12 +30,14 @@ namespace RiftMap.Domain.Factories
             var genus = new Genus(dataObject.GenusID, dataObject.GenusName);
 
             this.dataEntities.Species.ToList().Where(s => s.Genus == dataObject.GenusID).ToList()
-                                                        .ForEach(s => speciesList.Add(new Species(s.SpeciesID, s.SpeciesName, Convert.ToBoolean(s.Described)){ Genus = genus }));
+                                                            .ForEach(s => speciesList.Add(this.speciesFactory.Build(s.SpeciesID, genus)));
 
             if (speciesList.Count < 1)
             {
                 throw new EmptySpeciesListException();
             }
+
+            genus.Species = speciesList.OrderBy(s => s.Name).ToList();
 
             return genus;
         }

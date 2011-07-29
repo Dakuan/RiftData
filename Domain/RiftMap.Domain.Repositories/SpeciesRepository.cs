@@ -10,15 +10,19 @@ namespace RiftMap.Domain.Repositories
 {
     public class SpeciesRepository : IRepository<Species>
     {
-        private IFactory<Species> speciesFactory;
+        private ISpeciesFactory speciesFactory;
+
+        private IGenusFactory genusFactory;
 
         private RiftDataDataEntities dataEntities;
 
-        public SpeciesRepository(IFactory<Species> speciesFactory, RiftDataDataEntities dataEntities)
+        public SpeciesRepository(ISpeciesFactory speciesFactory, IGenusFactory genusFactory, RiftDataDataEntities dataEntities)
         {
             this.dataEntities = dataEntities;
 
             this.speciesFactory = speciesFactory;
+
+            this.genusFactory = genusFactory;
         }
 
         public IQueryable<Species> List
@@ -31,7 +35,9 @@ namespace RiftMap.Domain.Repositories
                 {
                     try
                     {
-                        var species = this.speciesFactory.Build(s.SpeciesID);
+                        var genus = this.genusFactory.Build(s.Genus);
+
+                        var species = this.speciesFactory.Build(s.SpeciesID, genus);
 
                         list.Add(species);
                     }

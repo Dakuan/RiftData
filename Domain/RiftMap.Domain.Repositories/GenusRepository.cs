@@ -9,11 +9,11 @@ namespace RiftMap.Domain.Repositories
 {
     public class GenusRepository : IRepository<Genus>
     {
-        private IFactory<Genus> genusFactory;
+        private IGenusFactory genusFactory;
 
         private RiftDataDataEntities dataEntities;
 
-        public GenusRepository(IFactory<Genus> genusFactory, RiftDataDataEntities riftDataDataEntities)
+        public GenusRepository(IGenusFactory genusFactory, RiftDataDataEntities riftDataDataEntities)
         {
             this.genusFactory = genusFactory;
 

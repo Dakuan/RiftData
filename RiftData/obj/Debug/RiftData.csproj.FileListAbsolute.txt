@@ -10,12 +10,10 @@ C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.dll
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.pdb
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Domain.Core.dll
-C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Infrastructure.CastleWindsor.dll
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Infrastructure.Data.dll
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftMap.Domain.Factories.dll
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftMap.Domain.Repositories.dll
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Domain.Core.pdb
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftMap.Domain.Factories.pdb
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftMap.Domain.Repositories.pdb
-C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Infrastructure.CastleWindsor.pdb
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Infrastructure.Data.pdb
