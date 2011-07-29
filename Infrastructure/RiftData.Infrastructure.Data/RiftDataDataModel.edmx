@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RiftDataDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="RiftDataDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="RiftDataDataModelStoreContainer">
           <EntitySet Name="Fish" EntityType="RiftDataDataModel.Store.Fish" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Genus" EntityType="RiftDataDataModel.Store.Genus" store:Type="Tables" Schema="dbo" />
@@ -28,6 +28,10 @@
           <AssociationSet Name="FK_Fish_Species" Association="RiftDataDataModel.Store.FK_Fish_Species">
             <End Role="Species" EntitySet="Species" />
             <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Species_Genus" Association="RiftDataDataModel.Store.FK_Species_Genus">
+            <End Role="Genus" EntitySet="Genus" />
+            <End Role="Species" EntitySet="Species" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Fish">
@@ -128,8 +132,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+        <Association Name="FK_Species_Genus">
+          <End Role="Genus" Type="RiftDataDataModel.Store.Genus" Multiplicity="1" />
+          <End Role="Species" Type="RiftDataDataModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genus">
+              <PropertyRef Name="GenusID" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="Genus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RiftDataDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -151,6 +166,10 @@
           <AssociationSet Name="FK_Fish_Species" Association="RiftDataDataModel.FK_Fish_Species">
             <End Role="Species" EntitySet="Species" />
             <End Role="Fish" EntitySet="Fish" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Species_Genus" Association="RiftDataDataModel.FK_Species_Genus">
+            <End Role="Genus" EntitySet="Genus" />
+            <End Role="Species" EntitySet="Species" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Fish">
@@ -175,6 +194,7 @@
           <Property Name="GenusName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
           <Property Name="GenusType" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Fish" Relationship="RiftDataDataModel.FK_Fish_Genus" FromRole="Genus" ToRole="Fish" />
+          <NavigationProperty Name="Species" Relationship="RiftDataDataModel.FK_Species_Genus" FromRole="Genus" ToRole="Species" />
         </EntityType>
         <EntityType Name="Locale">
           <Key>
@@ -209,6 +229,7 @@
           <Property Name="Paper" Type="Int32" />
           <Property Name="Distribution" Type="Int32" />
           <NavigationProperty Name="Fish" Relationship="RiftDataDataModel.FK_Fish_Species" FromRole="Species" ToRole="Fish" />
+          <NavigationProperty Name="Genu" Relationship="RiftDataDataModel.FK_Species_Genus" FromRole="Species" ToRole="Genus" />
         </EntityType>
         <EntityType Name="Type">
           <Key>
@@ -251,6 +272,18 @@
             </Principal>
             <Dependent Role="Fish">
               <PropertyRef Name="Species" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Species_Genus">
+          <End Type="RiftDataDataModel.Genus" Role="Genus" Multiplicity="1" />
+          <End Type="RiftDataDataModel.Species" Role="Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genus">
+              <PropertyRef Name="GenusID" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="Genus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -322,14 +355,14 @@
     <Diagrams>
       <Diagram Name="RiftDataDataModel">
         <EntityTypeShape EntityType="RiftDataDataModel.Fish" Width="1.5" PointX="3" PointY="1" Height="2.7494921875000005" IsExpanded="true" />
-        <EntityTypeShape EntityType="RiftDataDataModel.Genus" Width="1.5" PointX="0.75" PointY="1.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiftDataDataModel.Genus" Width="1.5" PointX="0.75" PointY="1.875" Height="1.787985026041667" IsExpanded="true" />
         <EntityTypeShape EntityType="RiftDataDataModel.Locale" Width="1.5" PointX="7.625" PointY="1.25" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="RiftDataDataModel.Photos" Width="1.5" PointX="2.75" PointY="4.75" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="RiftDataDataModel.Species" Width="1.5" PointX="5.75" PointY="2.5" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="RiftDataDataModel.Type" Width="1.5" PointX="0.875" PointY="4.625" Height="1.4033821614583317" IsExpanded="true" />
         <AssociationConnector Association="RiftDataDataModel.FK_Fish_Genus" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.3939925130208337" />
-          <ConnectorPoint PointX="3" PointY="2.3939925130208337" />
+          <ConnectorPoint PointX="2.25" PointY="2.8122460937500002" />
+          <ConnectorPoint PointX="3" PointY="2.8122460937500002" />
         </AssociationConnector>
         <AssociationConnector Association="RiftDataDataModel.FK_Fish_Locale" ManuallyRouted="false">
           <ConnectorPoint PointX="7.625" PointY="1.84375" />
@@ -338,6 +371,10 @@
         <AssociationConnector Association="RiftDataDataModel.FK_Fish_Species" ManuallyRouted="false">
           <ConnectorPoint PointX="5.75" PointY="3.1247460937500002" />
           <ConnectorPoint PointX="4.5" PointY="3.1247460937500002" />
+        </AssociationConnector>
+        <AssociationConnector Association="RiftDataDataModel.FK_Species_Genus" >
+          <ConnectorPoint PointX="2.25" PointY="3.833639322916667" />
+          <ConnectorPoint PointX="5.75" PointY="3.833639322916667" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

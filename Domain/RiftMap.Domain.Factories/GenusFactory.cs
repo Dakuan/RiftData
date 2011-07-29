@@ -3,34 +3,28 @@ using System.Linq;
 using RiftData.Infrastructure.Data;
 using RiftMap.Domain.Factories.Exceptions;
 using Genus = RiftData.Domain.Core.Genus;
+using DataGenus = RiftData.Infrastructure.Data.Genus;
 using Species = RiftData.Domain.Core.Species;
 
 namespace RiftMap.Domain.Factories
 {
-    public class GenusFactory : FactoryBase, IGenusFactory
+    public class GenusFactory : IGenusFactory
     {
         private readonly ISpeciesFactory speciesFactory;
 
-        public GenusFactory(RiftDataDataEntities dataEntities, ISpeciesFactory speciesFactory) : base(dataEntities)
+        public GenusFactory(RiftDataDataEntities dataEntities, ISpeciesFactory speciesFactory)// : base(dataEntities)
         {
             this.speciesFactory = speciesFactory;
         }
 
-        public Genus Build(int id)
+        public Genus Build(DataGenus dataGenus)
         {
-            var dataObject = this.dataEntities.Genus.FirstOrDefault(g => g.GenusID == id);
-
-            if (dataObject == null)
-            {
-                throw new NullDataObjectException();
-            }
-
             var speciesList = new List<Species>();
 
-            var genus = new Genus(dataObject.GenusID, dataObject.GenusName);
+            var genus = new Genus(dataGenus.GenusID, dataGenus.GenusName);
 
-            this.dataEntities.Species.ToList().Where(s => s.Genus == dataObject.GenusID).ToList()
-                                                            .ForEach(s => speciesList.Add(this.speciesFactory.Build(s.SpeciesID, genus)));
+            dataGenus.Species.ToList().Where(s => s.Genus == dataGenus.GenusID).ToList()
+                                                            .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus)));
 
             if (speciesList.Count < 1)
             {

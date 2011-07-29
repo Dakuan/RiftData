@@ -6,7 +6,7 @@ using RiftData.Infrastructure.Data;
 
 namespace RiftMap.Domain.Factories
 {
-    public abstract class FactoryBase
+   /* public abstract class FactoryBase
     {
         protected RiftDataDataEntities dataEntities;
 
@@ -14,5 +14,5 @@ namespace RiftMap.Domain.Factories
         {
             this.dataEntities = dataEntities;
         }
-    }
+    }*/
 }

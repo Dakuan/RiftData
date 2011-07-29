@@ -30,7 +30,7 @@ namespace RiftMap.Domain.Repositories
                                                              {
                                                                  try
                                                                  {
-                                                                     var genus = this.genusFactory.Build(g.GenusID);
+                                                                     var genus = this.genusFactory.Build(g);
 
                                                                      list.Add(genus);
                                                                  }

@@ -35,9 +35,9 @@ namespace RiftMap.Domain.Repositories
                 {
                     try
                     {
-                        var genus = this.genusFactory.Build(s.Genus);
+                        var genus = this.genusFactory.Build(s.Genu);
 
-                        var species = this.speciesFactory.Build(s.SpeciesID, genus);
+                        var species = this.speciesFactory.Build(s, genus);
 
                         list.Add(species);
                     }

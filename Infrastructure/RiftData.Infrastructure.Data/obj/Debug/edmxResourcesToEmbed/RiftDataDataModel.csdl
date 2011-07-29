@@ -19,6 +19,10 @@
       <End Role="Species" EntitySet="Species" />
       <End Role="Fish" EntitySet="Fish" />
     </AssociationSet>
+    <AssociationSet Name="FK_Species_Genus" Association="RiftDataDataModel.FK_Species_Genus">
+      <End Role="Genus" EntitySet="Genus" />
+      <End Role="Species" EntitySet="Species" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Fish">
     <Key>
@@ -42,6 +46,7 @@
     <Property Name="GenusName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="true" />
     <Property Name="GenusType" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Fish" Relationship="RiftDataDataModel.FK_Fish_Genus" FromRole="Genus" ToRole="Fish" />
+    <NavigationProperty Name="Species" Relationship="RiftDataDataModel.FK_Species_Genus" FromRole="Genus" ToRole="Species" />
   </EntityType>
   <EntityType Name="Locale">
     <Key>
@@ -76,6 +81,7 @@
     <Property Name="Paper" Type="Int32" />
     <Property Name="Distribution" Type="Int32" />
     <NavigationProperty Name="Fish" Relationship="RiftDataDataModel.FK_Fish_Species" FromRole="Species" ToRole="Fish" />
+    <NavigationProperty Name="Genu" Relationship="RiftDataDataModel.FK_Species_Genus" FromRole="Species" ToRole="Genus" />
   </EntityType>
   <EntityType Name="Type">
     <Key>
@@ -118,6 +124,18 @@
       </Principal>
       <Dependent Role="Fish">
         <PropertyRef Name="Species" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Species_Genus">
+    <End Type="RiftDataDataModel.Genus" Role="Genus" Multiplicity="1" />
+    <End Type="RiftDataDataModel.Species" Role="Species" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genus">
+        <PropertyRef Name="GenusID" />
+      </Principal>
+      <Dependent Role="Species">
+        <PropertyRef Name="Genus" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

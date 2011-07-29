@@ -21,6 +21,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Fish_Genus", "Genus", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Genus), "Fish", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Fish), true)]
 [assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Fish_Locale", "Locale", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Locale), "Fish", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Fish), true)]
 [assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Fish_Species", "Species", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Species), "Fish", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Fish), true)]
+[assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Species_Genus", "Genus", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Genus), "Species", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Species), true)]
 
 #endregion
 
@@ -657,6 +658,28 @@ namespace RiftData.Infrastructure.Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RiftDataDataModel", "FK_Species_Genus", "Species")]
+        public EntityCollection<Species> Species
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Species>("RiftDataDataModel.FK_Species_Genus", "Species");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Species>("RiftDataDataModel.FK_Species_Genus", "Species", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -1219,6 +1242,44 @@ namespace RiftData.Infrastructure.Data
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Fish>("RiftDataDataModel.FK_Fish_Species", "Fish", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RiftDataDataModel", "FK_Species_Genus", "Genus")]
+        public Genus Genu
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Genus>("RiftDataDataModel.FK_Species_Genus", "Genus").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Genus>("RiftDataDataModel.FK_Species_Genus", "Genus").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Genus> GenuReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Genus>("RiftDataDataModel.FK_Species_Genus", "Genus");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Genus>("RiftDataDataModel.FK_Species_Genus", "Genus", value);
                 }
             }
         }

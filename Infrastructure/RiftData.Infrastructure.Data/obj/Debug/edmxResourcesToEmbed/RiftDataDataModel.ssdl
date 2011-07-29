@@ -24,6 +24,10 @@
       <End Role="Species" EntitySet="Species" />
       <End Role="Fish" EntitySet="Fish" />
     </AssociationSet>
+    <AssociationSet Name="FK_Species_Genus" Association="RiftDataDataModel.Store.FK_Species_Genus">
+      <End Role="Genus" EntitySet="Genus" />
+      <End Role="Species" EntitySet="Species" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Fish">
     <Key>
@@ -120,6 +124,18 @@
       </Principal>
       <Dependent Role="Fish">
         <PropertyRef Name="Species" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Species_Genus">
+    <End Role="Genus" Type="RiftDataDataModel.Store.Genus" Multiplicity="1" />
+    <End Role="Species" Type="RiftDataDataModel.Store.Species" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genus">
+        <PropertyRef Name="GenusID" />
+      </Principal>
+      <Dependent Role="Species">
+        <PropertyRef Name="Genus" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

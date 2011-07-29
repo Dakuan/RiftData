@@ -4,25 +4,19 @@ using RiftData.Infrastructure.Data;
 using RiftMap.Domain.Factories.Exceptions;
 using Species = RiftData.Domain.Core.Species;
 using Genus = RiftData.Domain.Core.Genus;
+using DataSpecies = RiftData.Infrastructure.Data.Species;
 
 namespace RiftMap.Domain.Factories
 {
-    public class SpeciesFactory : FactoryBase, ISpeciesFactory
+    public class SpeciesFactory : ISpeciesFactory
     {
-        public SpeciesFactory(RiftDataDataEntities dataEntities) : base(dataEntities)
+        public SpeciesFactory(RiftDataDataEntities dataEntities)// : base(dataEntities)
         {
         }
 
-        public Species Build(int id, Genus genus)
+        public Species Build(DataSpecies dataSpecies, Genus genus)
         {
-            var dataObject = this.dataEntities.Species.FirstOrDefault(s => s.SpeciesID == id);
-
-            if (dataObject == null)
-            {
-                throw new NullDataObjectException();
-            }
-
-            var species = new Species(dataObject.SpeciesID, dataObject.SpeciesName, Convert.ToBoolean(dataObject.Described)){ Genus = genus };
+            var species = new Species(dataSpecies.SpeciesID, dataSpecies.SpeciesName, Convert.ToBoolean(dataSpecies.Described)){ Genus = genus };
 
             return species;
         }

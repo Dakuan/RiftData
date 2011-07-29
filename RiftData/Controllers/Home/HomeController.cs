@@ -19,7 +19,6 @@ namespace RiftData.Controllers.Home
 
         public ActionResult Index()
         {
-
             var viewModel = new HomeViewModel();
 
             this.speciesRepository.List.ToList().ForEach(s => viewModel.Items.Add(s.GetFullName));
