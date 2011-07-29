@@ -1,5 +1,0 @@
-C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.ApplicationServices.dll
-C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.ApplicationServices.pdb
-C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.dll
-C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.pdb

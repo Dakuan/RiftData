@@ -11,20 +11,13 @@
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:EntityBase.cs" caret="165" fromTop="7" />
       <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="497" fromTop="15" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoryBase.cs" caret="231" fromTop="10" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:IGenusFactory.cs" caret="182" fromTop="10" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/d:Exceptions/f:NullDataObjectException.cs" caret="320" fromTop="11" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/d:Exceptions/f:EmptySpeciesListException.cs" caret="38" fromTop="2" />
-      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:GenusRepository.cs" caret="677" fromTop="10" />
       <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:RepositoriesInstaller.cs" caret="278" fromTop="11" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoriesInstaller.cs" caret="0" fromTop="0" />
       <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:IRepository.cs" caret="145" fromTop="7" />
-      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:SpeciesRepository.cs" caret="160" fromTop="6" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="1539" fromTop="16" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:WindsorControllerFactoryInstaller.cs" caret="136" fromTop="4" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:WindsorControllerFactory.cs" caret="971" fromTop="33" />
-      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:App.Config" caret="57" fromTop="2" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:ControllersInstaller.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="3223" fromTop="9" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Home/f:HomeViewModel.cs" caret="255" fromTop="11" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="54" fromTop="1" />
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Genus.cs" caret="135" fromTop="6" />
@@ -32,29 +25,20 @@
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Home/f:HomeController.cs" caret="698" fromTop="24" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="838" fromTop="19" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:ISpeciesFactory.cs" caret="145" fromTop="5" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1149" fromTop="18" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoriesInstaller.cs" caret="806" fromTop="22" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:IGenusFactory.cs" caret="231" fromTop="10" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:SpeciesRepository.cs" caret="1193" fromTop="21" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:GenusRepository.cs" caret="659" fromTop="8" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:App.Config" caret="57" fromTop="2" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1077" fromTop="11" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="0" fromTop="0" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="384" fromTop="11" />
     </RecentFiles>
     <RecentEdits>
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:WindsorControllerFactory.cs" caret="908" fromTop="9" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:WindsorControllerFactory.cs" caret="971" fromTop="33" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="2411" fromTop="14" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="2044" fromTop="15" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="526" fromTop="8" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Species.cs" caret="231" fromTop="9" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Species.cs" caret="326" fromTop="12" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1178" fromTop="18" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Home/f:HomeViewModel.cs" caret="255" fromTop="11" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1015" fromTop="17" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1523" fromTop="28" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1266" fromTop="20" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="3872" fromTop="18" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="3223" fromTop="9" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="32" fromTop="0" />
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Genus.cs" caret="326" fromTop="15" />
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Genus.cs" caret="160" fromTop="6" />
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Species.cs" caret="482" fromTop="19" />
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Genus.cs" caret="135" fromTop="6" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1384" fromTop="19" />
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/f:Species.cs" caret="879" fromTop="29" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="851" fromTop="27" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Home/f:HomeController.cs" caret="698" fromTop="24" />
@@ -63,8 +47,24 @@
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:SpeciesFactory.cs" caret="838" fromTop="19" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:ISpeciesFactory.cs" caret="72" fromTop="2" />
       <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:ISpeciesFactory.cs" caret="211" fromTop="9" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="577" fromTop="10" />
-      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1149" fromTop="24" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="571" fromTop="10" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1143" fromTop="24" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoriesInstaller.cs" caret="284" fromTop="9" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoriesInstaller.cs" caret="526" fromTop="13" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:FactoriesInstaller.cs" caret="806" fromTop="22" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:GenusRepository.cs" caret="318" fromTop="11" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:IGenusFactory.cs" caret="231" fromTop="10" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:SpeciesRepository.cs" caret="735" fromTop="24" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:SpeciesRepository.cs" caret="411" fromTop="14" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:SpeciesRepository.cs" caret="467" fromTop="17" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:SpeciesRepository.cs" caret="1193" fromTop="21" />
+      <File id="7248D560-3E1F-4A89-9ADC-3BB0D64D9076/f:GenusRepository.cs" caret="434" fromTop="15" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="1422" fromTop="22" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="0" fromTop="0" />
+      <File id="9529E0E1-675F-436B-905C-7A9988C04CEA/f:GenusFactory.cs" caret="378" fromTop="11" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="234" fromTop="8" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="873" fromTop="14" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1077" fromTop="11" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -81,13 +81,13 @@
     <ItemStatistics item="Default">
       <Item value="ctor" priority="7" />
       <Item value="public" priority="8" />
-      <Item value="int" priority="2" />
+      <Item value="int" priority="3" />
       <Item value="IndexOutOfRangeException`0" priority="0" />
       <Item value="id" priority="0" />
       <Item value="string" priority="7" />
       <Item value="virtual" priority="0" />
       <Item value="override" priority="5" />
-      <Item value="this" priority="38" />
+      <Item value="this" priority="40" />
       <Item value="EntityBase`0" priority="0" />
       <Item value="private" priority="7" />
       <Item value="name" priority="1" />
@@ -99,7 +99,7 @@
       <Item value="bool" priority="1" />
       <Item value="TimeSpan`0" priority="0" />
       <Item value="described" priority="0" />
-      <Item value="IGenusFactory`0" priority="0" />
+      <Item value="IGenusFactory`0" priority="1" />
       <Item value="RiftDataDataEntities`0" priority="3" />
       <Item value="using" priority="4" />
       <Item value="RiftData.Infrastructure.Data" priority="0" />
@@ -108,7 +108,7 @@
       <Item value="T`0" priority="0" />
       <Item value="ISpeciesFactory`0" priority="3" />
       <Item value="FactoryBase`0" priority="1" />
-      <Item value="var" priority="9" />
+      <Item value="var" priority="10" />
       <Item value="s" priority="11" />
       <Item value="new" priority="10" />
       <Item value="dataObject" priority="13" />
@@ -123,10 +123,10 @@
       <Item value="g" priority="2" />
       <Item value="NullDataObjectException" priority="0" />
       <Item value="List" priority="2" />
-      <Item value="speciesList" priority="3" />
+      <Item value="speciesList" priority="5" />
       <Item value="CannotUnloadAppDomainException`0" priority="0" />
-      <Item value="genusFactory" priority="2" />
-      <Item value="genus" priority="3" />
+      <Item value="genusFactory" priority="4" />
+      <Item value="genus" priority="5" />
       <Item value="IQueryable" priority="1" />
       <Item value="riftDataDataEntities" priority="1" />
       <Item value="try" priority="0" />
@@ -149,7 +149,7 @@
       <Item value="Id" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Core.Species">
-      <Item value="Name" priority="3" />
+      <Item value="Name" priority="4" />
       <Item value="Described" priority="1" />
       <Item value="Genus" priority="2" />
       <Item value="ToString`0" priority="0" />
@@ -157,7 +157,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Core.Genus">
       <Item value="Name" priority="3" />
-      <Item value="Species" priority="0" />
+      <Item value="Species" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftMap.Domain.Factories.GenusFactory">
       <Item value="dataEntities" priority="3" />
@@ -178,7 +178,7 @@
       <Item value="SpeciesID" priority="6" />
       <Item value="SpeciesName" priority="1" />
       <Item value="Described" priority="1" />
-      <Item value="Genus" priority="2" />
+      <Item value="Genus" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Convert">
       <Item value="ToBoolean`0" priority="0" />
@@ -197,6 +197,7 @@
       <Item value="Add`0" priority="4" />
       <Item value="Count" priority="0" />
       <Item value="AsQueryable`0" priority="1" />
+      <Item value="OrderBy`2" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
       <Item value="ToList`1" priority="0" />
@@ -210,6 +211,8 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftMap.Domain.Repositories.SpeciesRepository">
       <Item value="speciesFactory" priority="0" />
+      <Item value="GetHashCode`0" priority="0" />
+      <Item value="genusFactory" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Castle.Windsor.IWindsorContainer">
       <Item value="Install`0" priority="2" />
@@ -234,6 +237,12 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftMap.Domain.Factories.ISpeciesFactory">
       <Item value="Build`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftMap.Domain.Factories.IGenusFactory">
+      <Item value="Build`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Linq.IOrderedEnumerable`1">
+      <Item value="ToList`1" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

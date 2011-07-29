@@ -1,5 +1,0 @@
-C:\Users\Dakuan\git\RiftData\Domain\RiftData.Domain.Core\bin\Debug\RiftData.Domain.Core.dll
-C:\Users\Dakuan\git\RiftData\Domain\RiftData.Domain.Core\bin\Debug\RiftData.Domain.Core.pdb
-C:\Users\Dakuan\git\RiftData\Domain\RiftData.Domain.Core\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Dakuan\git\RiftData\Domain\RiftData.Domain.Core\obj\Debug\RiftData.Domain.Core.dll
-C:\Users\Dakuan\git\RiftData\Domain\RiftData.Domain.Core\obj\Debug\RiftData.Domain.Core.pdb
