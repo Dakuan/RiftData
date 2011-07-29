@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using RiftMap.Domain.Repositories;
-using Species = RiftData.Domain.Core.Species;
+using RiftData.Domain.Entities;
+using RiftData.Domain.Repositories;
+using Species = RiftData.Domain.Entities.Species;
 
 namespace RiftData.Controllers.Home
 {
     public class HomeController : Controller
     {
-        private IRepository<Species> speciesRepository;
+        private IRepository<Fish> fishRepository;
 
-        public HomeController(IRepository<Species> speciesRepository)
+        public HomeController(IRepository<Fish> fishRepository)
         {
-            this.speciesRepository = speciesRepository;
+            this.fishRepository = fishRepository;
         }
 
         public ActionResult Index()
         {
             var viewModel = new HomeViewModel();
 
-            this.speciesRepository.List.ToList().ForEach(s => viewModel.Items.Add(s.GetFullName));
+            this.fishRepository.List.ToList().ForEach(s => viewModel.Items.Add(s.FullName));
 
             return View(viewModel);
         }

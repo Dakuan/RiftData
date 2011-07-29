@@ -43,14 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\EmptySpeciesListException.cs" />
-    <Compile Include="Exceptions\NullDataObjectException.cs" />
-    <Compile Include="FactoriesInstaller.cs" />
-    <Compile Include="GenusFactory.cs" />
-    <Compile Include="IGenusFactory.cs" />
-    <Compile Include="ISpeciesFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpeciesFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
@@ -62,7 +55,9 @@
       <Name>RiftData.Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -82,17 +82,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\RiftData.Domain.Core\RiftData.Domain.Core.csproj">
+    <ProjectReference Include="..\Domain\RiftData.Domain.Core\RiftData.Domain.csproj">
       <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
-      <Name>RiftData.Domain.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\RiftMap.Domain.Factories\RiftData.Domain.Factories.csproj">
-      <Project>{9529E0E1-675F-436B-905C-7A9988C04CEA}</Project>
-      <Name>RiftData.Domain.Factories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\RiftMap.Domain.Repositories\RiftData.Domain.Repositories.csproj">
-      <Project>{7248D560-3E1F-4A89-9ADC-3BB0D64D9076}</Project>
-      <Name>RiftData.Domain.Repositories</Name>
+      <Name>RiftData.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
       <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>

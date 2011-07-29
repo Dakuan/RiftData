@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.Windsor;
 using Castle.Windsor.Configuration.Interpreters;
 using Castle.Windsor.Installer;
 using RiftData.Controllers;
-using RiftData.Domain.Factories;
-using RiftData.Domain.Repositories;
+using RiftData.Domain.Installers;
 using RiftData.Infrastructure.Data;
 
 namespace RiftData
@@ -54,7 +49,7 @@ namespace RiftData
 
             container.Install(FromAssembly.Containing<FactoriesInstaller>());
 
-            container.Install(FromAssembly.Containing<RepositoriesInstaller>());
+            //container.Install(FromAssembly.Containing<RepositoriesInstaller>());
 
             container.Install(FromAssembly.Containing<WindsorControllerFactory>());
         }
