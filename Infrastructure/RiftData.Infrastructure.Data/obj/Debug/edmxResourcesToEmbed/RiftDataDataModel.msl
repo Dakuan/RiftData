@@ -60,8 +60,8 @@
     <EntitySetMapping Name="Type">
       <EntityTypeMapping TypeName="RiftDataDataModel.Type">
         <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="GenusTypeName" ColumnName="GenusTypeName" />
           <ScalarProperty Name="GenusTypeID" ColumnName="GenusTypeID" />
-          <ScalarProperty Name="GenusType" ColumnName="GenusType" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -6,7 +6,7 @@ using Fish = RiftData.Domain.Entities.Fish;
 
 namespace RiftData.Domain.Repositories
 {
-    public class FishRepository : IRepository<Fish>
+    public class FishRepository : RepositoryBase<Fish>
     {
         private readonly IFishFactory fishFactory;
 
@@ -16,25 +16,21 @@ namespace RiftData.Domain.Repositories
 
         private readonly IGenusFactory genusFactory;
 
-        private RiftDataDataEntities dataEntities;
-
-        public FishRepository(RiftDataDataEntities dataEntites, IFishFactory fishFactory, ILocalesFactory localesFactory, ISpeciesFactory speciesFactory, IGenusFactory genusFactory) 
+        public FishRepository(RiftDataDataEntities dataEntites, IFishFactory fishFactory, ILocalesFactory localesFactory, ISpeciesFactory speciesFactory, IGenusFactory genusFactory) : base(dataEntites)
         {
             this.fishFactory = fishFactory;
             this.localesFactory = localesFactory;
             this.speciesFactory = speciesFactory;
             this.genusFactory = genusFactory;
-
-            this.dataEntities = dataEntites;
         }
 
-        public IQueryable<Fish> List
+        public override IQueryable<Fish> List
         {
             get
             {
                 var list = new List<Fish>();
 
-                this.dataEntities.Fish.OrderBy(f => f.Genus1.GenusName)
+                this.dataEntites.Fish.OrderBy(f => f.Genus1.GenusName)
                     .GroupBy(f => f.Genus1.GenusName).ToList()
                     .ForEach(g => g.OrderBy(s => s.Species1.SpeciesName).ToList()
                                       .ForEach(f =>

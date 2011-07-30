@@ -13,3 +13,9 @@ C:\Users\Dakuan\git\RiftData\RiftData\bin\Castle.Windsor.xml
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.dll
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.pdb
+C:\Users\Dakuan\git\RiftData\RiftData\bin\Telerik.Web.Mvc.dll
+C:\Users\Dakuan\git\RiftData\RiftData\bin\Telerik.Web.Mvc.xml
+C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.ApplicationServices.dll
+C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Shared.ViewModels.dll
+C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.ApplicationServices.pdb
+C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Shared.ViewModels.pdb

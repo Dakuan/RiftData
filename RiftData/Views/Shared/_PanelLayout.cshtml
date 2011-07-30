@@ -1,0 +1,19 @@
+﻿@using Telerik.Web.Mvc.UI
+@using RiftData.Domain.Entities
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div id="LeftPanel" class="panels">
+        @RenderSection("Left")
+    </div>
+    <div id="CenterPanel" class="panels">
+    </div>
+    <div id="RightPanel" class="panels">
+        @RenderSection("Right")
+    </div>
+    <div class="clear"></div>
+    @section Scripts{
+    @RenderSection("Scripts")
+}

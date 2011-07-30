@@ -1,12 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@using Telerik.Web.Mvc.UI
+<!DOCTYPE html>
 <html>
-<head>
-    <title>@ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
-</head>
-
-<body>
-    @RenderBody()
-</body>
+    <head>
+        <title>@ViewBag.Title</title>
+        <link href="@Url.Content("Content/2011.2.712/telerik.vista.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("Content/2011.2.712/telerik.common.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("Content/Site.css")" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="PageContainer">
+            @RenderBody()
+        </div>
+    </body>
+    @RenderSection("Scripts")
 </html>

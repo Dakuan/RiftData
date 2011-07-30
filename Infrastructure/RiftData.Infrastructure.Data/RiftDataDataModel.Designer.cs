@@ -22,6 +22,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Fish_Locale", "Locale", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Locale), "Fish", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Fish), true)]
 [assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Fish_Species", "Species", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Species), "Fish", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Fish), true)]
 [assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Species_Genus", "Genus", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Genus), "Species", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Species), true)]
+[assembly: EdmRelationshipAttribute("RiftDataDataModel", "FK_Genus_Type", "Type", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(RiftData.Infrastructure.Data.Type), "Genus", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(RiftData.Infrastructure.Data.Genus), true)]
 
 #endregion
 
@@ -680,6 +681,44 @@ namespace RiftData.Infrastructure.Data
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RiftDataDataModel", "FK_Genus_Type", "Type")]
+        public Type Type
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Type>("RiftDataDataModel.FK_Genus_Type", "Type").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Type>("RiftDataDataModel.FK_Genus_Type", "Type").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Type> TypeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Type>("RiftDataDataModel.FK_Genus_Type", "Type");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Type>("RiftDataDataModel.FK_Genus_Type", "Type", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -1301,12 +1340,12 @@ namespace RiftData.Infrastructure.Data
         /// Create a new Type object.
         /// </summary>
         /// <param name="genusTypeID">Initial value of the GenusTypeID property.</param>
-        /// <param name="genusType">Initial value of the GenusType property.</param>
-        public static Type CreateType(global::System.Int32 genusTypeID, global::System.String genusType)
+        /// <param name="genusTypeName">Initial value of the GenusTypeName property.</param>
+        public static Type CreateType(global::System.Int32 genusTypeID, global::System.String genusTypeName)
         {
             Type type = new Type();
             type.GenusTypeID = genusTypeID;
-            type.GenusType = genusType;
+            type.GenusTypeName = genusTypeName;
             return type;
         }
 
@@ -1343,32 +1382,54 @@ namespace RiftData.Infrastructure.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String GenusType
+        public global::System.String GenusTypeName
         {
             get
             {
-                return _GenusType;
+                return _GenusTypeName;
             }
             set
             {
-                if (_GenusType != value)
-                {
-                    OnGenusTypeChanging(value);
-                    ReportPropertyChanging("GenusType");
-                    _GenusType = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("GenusType");
-                    OnGenusTypeChanged();
-                }
+                OnGenusTypeNameChanging(value);
+                ReportPropertyChanging("GenusTypeName");
+                _GenusTypeName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("GenusTypeName");
+                OnGenusTypeNameChanged();
             }
         }
-        private global::System.String _GenusType;
-        partial void OnGenusTypeChanging(global::System.String value);
-        partial void OnGenusTypeChanged();
+        private global::System.String _GenusTypeName;
+        partial void OnGenusTypeNameChanging(global::System.String value);
+        partial void OnGenusTypeNameChanged();
 
         #endregion
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("RiftDataDataModel", "FK_Genus_Type", "Genus")]
+        public EntityCollection<Genus> Genus
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Genus>("RiftDataDataModel.FK_Genus_Type", "Genus");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Genus>("RiftDataDataModel.FK_Genus_Type", "Genus", value);
+                }
+            }
+        }
+
+        #endregion
     }
 
     #endregion

@@ -1,0 +1,23 @@
+﻿@using RiftData.Domain.Entities
+@model RiftData.Shared.ViewModels.GenusPanelViewModel
+
+<div id="GenusPanel">
+    @(Html.Telerik().PanelBar()
+            .Name("TreeView_" + Model.GenusType)
+            .BindTo(Model.GenusList, mappings =>
+            {
+                mappings.For<Genus>(binding => binding
+                        .ItemDataBound((item, genus) =>
+                        {
+                            item.Text = genus.Name;
+                        })
+                        .Children(genus => genus.Species));
+
+                mappings.For<Species>(binding => binding
+                        .ItemDataBound((item, species) =>
+                        {
+                            item.Text = species.GetFullName;
+                        }));
+            })
+    )
+</div>

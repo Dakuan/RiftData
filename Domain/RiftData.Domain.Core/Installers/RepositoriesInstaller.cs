@@ -25,6 +25,10 @@ namespace RiftData.Domain.Installers
             container.Register(Component
                                    .For<IRepository<Fish>>()
                                    .ImplementedBy<FishRepository>());
+
+            container.Register(Component
+                                    .For<IRepository<GenusType>>()
+                                    .ImplementedBy<GenusTypeRepository>());
         }
     }
 }

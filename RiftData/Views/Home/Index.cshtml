@@ -1,16 +1,37 @@
-﻿@using RiftData.Controllers.Home
-@model HomeViewModel
+﻿@using Telerik.Web.Mvc.UI
 
+@using RiftData.Domain.Entities
+
+@model RiftData.Shared.ViewModels.HomePageViewModel
+           
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
 }
 
-<h2>Index</h2>
-<ul>
-@{
-    foreach (var item in Model.Items){
-        <li>@item</li>
+@section Left{
+ <div id="TabContainer">
+        @{Html.Telerik().TabStrip().Name("Tabby").BindTo(Model.GenusTypes, (item, genusType) =>
+            {
+                item.Text = genusType.Name;
+                item.ContentUrl = Url.Action("GenusPanel", "Genus", new { id = genusType.Id });
+                if (genusType.Id == 3)
+                {
+                    item.Selected = true;
+                }
+            }).Render();
+        }
+    </div>
     }
-}
-</ul>
 
+@section Right{
+    <div id="LocaleMap"></div>
+}
+
+@section Scripts{
+    @(Html.Telerik().ScriptRegistrar()
+    )
+        <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script> 
+
+    <script src="../../Scripts/PageScripts/home.js" type="text/javascript"></script>
+}

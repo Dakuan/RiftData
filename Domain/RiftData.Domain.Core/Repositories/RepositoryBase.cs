@@ -13,9 +13,6 @@ namespace RiftData.Domain.Repositories
             this.dataEntites = dataEntites;
         }
 
-        public virtual IQueryable<T> List
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public abstract IQueryable<T> List { get; }
     }
 }

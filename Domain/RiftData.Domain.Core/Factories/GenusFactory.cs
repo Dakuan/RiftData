@@ -9,16 +9,20 @@ namespace RiftData.Domain.Factories
     {
         private readonly ISpeciesFactory speciesFactory;
 
-        public GenusFactory(ISpeciesFactory speciesFactory)
+        private IGenusTypeFactory genusTypeFactory;
+
+        public GenusFactory(ISpeciesFactory speciesFactory, IGenusTypeFactory genusTypeFactory)
         {
             this.speciesFactory = speciesFactory;
+
+            this.genusTypeFactory = genusTypeFactory;
         }
 
         public Genus Build(Infrastructure.Data.Genus dataGenus)
         {
             var speciesList = new List<Species>();
 
-            var genus = new Genus(dataGenus.GenusID) { Name = dataGenus.GenusName };
+            var genus = new Genus(dataGenus.GenusID) { Name = dataGenus.GenusName, GenusType = this.genusTypeFactory.Build(dataGenus.Type)};
 
             dataGenus.Species.ToList().Where(s => s.Genus == dataGenus.GenusID).ToList()
                                                             .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus)));

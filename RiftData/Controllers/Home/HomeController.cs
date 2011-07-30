@@ -1,25 +1,20 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Repositories;
-using Species = RiftData.Domain.Entities.Species;
+﻿using System.Web.Mvc;
+using RiftData.ApplicationServices.ViewModelFactories;
 
 namespace RiftData.Controllers.Home
 {
     public class HomeController : Controller
     {
-        private IRepository<Fish> fishRepository;
+        private IHomePageViewModelFactory homePageViewModelFactory;
 
-        public HomeController(IRepository<Fish> fishRepository)
+        public HomeController(IHomePageViewModelFactory homePageViewModelFactory)
         {
-            this.fishRepository = fishRepository;
+            this.homePageViewModelFactory = homePageViewModelFactory;
         }
 
         public ActionResult Index()
         {
-            var viewModel = new HomeViewModel();
-
-            this.fishRepository.List.ToList().ForEach(s => viewModel.Items.Add(s.FullName));
+            var viewModel = this.homePageViewModelFactory.Build();
 
             return View(viewModel);
         }

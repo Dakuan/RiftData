@@ -7,26 +7,22 @@ using Genus = RiftData.Domain.Entities.Genus;
 
 namespace RiftData.Domain.Repositories
 {
-    public class GenusRepository : IRepository<Genus>
+    public class GenusRepository : RepositoryBase<Genus>
     {
         private IGenusFactory genusFactory;
 
-        private RiftDataDataEntities dataEntities;
-
-        public GenusRepository(IGenusFactory genusFactory, RiftDataDataEntities riftDataDataEntities)
+        public GenusRepository(IGenusFactory genusFactory, RiftDataDataEntities dataEntities) : base(dataEntities)
         {
             this.genusFactory = genusFactory;
-
-            this.dataEntities = riftDataDataEntities;
         }
 
-        public IQueryable<Genus> List 
+        public override IQueryable<Genus> List 
         { 
             get 
             { 
                 var list = new List<Genus>();
 
-                this.dataEntities.Genus.OrderBy(g => g.GenusName).ToList()
+                this.dataEntites.Genus.OrderBy(g => g.GenusName).ToList()
                                                     .ForEach(g =>
                                                              {
                                                                  try

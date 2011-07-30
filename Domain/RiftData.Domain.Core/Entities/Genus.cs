@@ -12,6 +12,8 @@ namespace RiftData.Domain.Entities
 
         public IList<Species> Species { get; internal set; }
 
+        public GenusType GenusType { get; internal set; }
+
         public override string ToString()
         {
             return this.Name;

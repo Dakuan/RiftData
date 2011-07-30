@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiftData.Infrastructure.Data", "Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj", "{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{518D1E6D-D80F-47EA-ADDE-1C0F6E30A3F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{03F2C31A-479C-4010-B1BC-157732D339AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiftData.Shared.ViewModels", "Shared\RiftData.Shared.ViewModels\RiftData.Shared.ViewModels.csproj", "{1E84268C-9D18-4844-B170-2A2222C80998}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +45,10 @@ Global
 		{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E84268C-9D18-4844-B170-2A2222C80998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E84268C-9D18-4844-B170-2A2222C80998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E84268C-9D18-4844-B170-2A2222C80998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E84268C-9D18-4844-B170-2A2222C80998}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +58,6 @@ Global
 		{F5F86ED6-13D5-4911-9E86-4DAB2426D900} = {5D969D07-23A8-49D0-A291-162A693E0591}
 		{12F5CC2A-6B13-4EB8-A104-466143F82D90} = {51BBE9A2-9B48-444B-B64A-DDA88550BAB7}
 		{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E} = {F465F618-D2AA-4CF5-8CEF-0AA72728A302}
+		{1E84268C-9D18-4844-B170-2A2222C80998} = {03F2C31A-479C-4010-B1BC-157732D339AE}
 	EndGlobalSection
 EndGlobal
