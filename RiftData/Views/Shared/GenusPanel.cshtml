@@ -3,21 +3,20 @@
 
 <div id="GenusPanel">
     @(Html.Telerik().PanelBar()
-            .Name("TreeView_" + Model.GenusType)
-            .BindTo(Model.GenusList, mappings =>
-            {
-                mappings.For<Genus>(binding => binding
-                        .ItemDataBound((item, genus) =>
-                        {
-                            item.Text = genus.Name;
-                        })
-                        .Children(genus => genus.Species));
-
-                mappings.For<Species>(binding => binding
-                        .ItemDataBound((item, species) =>
-                        {
-                            item.Text = species.GetFullName;
-                        }));
-            })
+            .Name("GenusPanel_" + Model.GenusType)
+            .ClientEvents(evt => evt.OnSelect("OnGenusPanelSelect"))
+            .Items(panelbar => 
+                {
+                    foreach (var genus in Model.GenusList)
+                    {
+                        panelbar.Add().Text(genus.Name).Items(panelBarChild =>
+                            {
+                                foreach (var species in genus.Species)
+                                {
+                                    panelBarChild.Add().Text(species.FullName);
+                                }
+                            });
+                    }
+                })
     )
 </div>

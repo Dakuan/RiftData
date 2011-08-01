@@ -1,6 +1,9 @@
-﻿namespace RiftData.Domain.Entities
+﻿using System;
+using System.Collections.Generic;
+
+namespace RiftData.Domain.Entities
 {
-    public class Species : EntityBase
+    public class Species : EntityBase, IPhotoSubject
     {
         public Species(int id) : base(id)
         {
@@ -14,10 +17,10 @@
 
         public override string ToString()
         {
-            return this.Name;
+            return this.FullName;
         }
 
-        public string GetFullName
+        public string FullName
         {
             get
             {
@@ -26,5 +29,9 @@
                            : string.Format(@"{0} sp""{1}""", this.Genus.Name, this.Name);
             }
         }
+
+        public bool HaveFish { get; internal set; }
+
+        public IList<Photo> Photos { get; internal set; }
     }
 }

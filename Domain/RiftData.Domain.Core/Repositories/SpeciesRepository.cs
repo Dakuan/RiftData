@@ -35,6 +35,8 @@ namespace RiftData.Domain.Repositories
                     {
                         var genus = this.genusFactory.Build(s.Genu);
 
+                        var hasFish = this.dataEntites.Fish.Any(f => f.Species == s.SpeciesID);
+
                         var species = this.speciesFactory.Build(s, genus);
 
                         list.Add(species);

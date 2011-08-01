@@ -50,6 +50,8 @@
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\Fish.cs" />
     <Compile Include="Entities\GenusType.cs" />
+    <Compile Include="Entities\IPhotoSubject.cs" />
+    <Compile Include="Entities\Photo.cs" />
     <Compile Include="Exceptions\EmptySpeciesListException.cs" />
     <Compile Include="Exceptions\NullDataObjectException.cs" />
     <Compile Include="Factories\FishFactory.cs" />

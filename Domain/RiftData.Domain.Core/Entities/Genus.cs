@@ -14,6 +14,8 @@ namespace RiftData.Domain.Entities
 
         public GenusType GenusType { get; internal set; }
 
+        public bool HasFish { get; internal set; }
+
         public override string ToString()
         {
             return this.Name;

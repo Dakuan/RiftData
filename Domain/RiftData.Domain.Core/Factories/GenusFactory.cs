@@ -25,12 +25,14 @@ namespace RiftData.Domain.Factories
             var genus = new Genus(dataGenus.GenusID) { Name = dataGenus.GenusName, GenusType = this.genusTypeFactory.Build(dataGenus.Type)};
 
             dataGenus.Species.ToList().Where(s => s.Genus == dataGenus.GenusID).ToList()
-                                                            .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus)));
+                                                    .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus)));
 
             if (speciesList.Count < 1)
             {
                 throw new EmptySpeciesListException();
             }
+
+            genus.HasFish = dataGenus.Fish.Count > 0;
 
             genus.Species = speciesList.OrderBy(s => s.Name).ToList();
 

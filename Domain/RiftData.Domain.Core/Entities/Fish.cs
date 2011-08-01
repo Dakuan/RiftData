@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RiftData.Domain.Entities
 {
-    public class Fish : EntityBase
+    public class Fish : EntityBase, IPhotoSubject
     {
         public Fish(int id) : base(id)
         {
@@ -23,5 +24,7 @@ namespace RiftData.Domain.Entities
                            : string.Format(@"{0} sp ""{1}"" '{2}'", this.Genus.Name, this.Species.Name, this.Locale.Name);
             }
         }
+
+        public IList<Photo> Photos{ get; internal set; }
     }
 }

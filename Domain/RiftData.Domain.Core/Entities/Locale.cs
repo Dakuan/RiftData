@@ -1,6 +1,8 @@
-﻿namespace RiftData.Domain.Entities
+﻿using System.Collections.Generic;
+
+namespace RiftData.Domain.Entities
 {
-    public class Locale : EntityBase
+    public class Locale : EntityBase, IPhotoSubject
     {
         public Locale(int id) : base(id)
         {
@@ -11,5 +13,7 @@
         public double Longitude { get; internal set; }
 
         public string Name { get; internal set; }
+
+        public IList<Photo> Photos { get; internal set; }
     }
 }

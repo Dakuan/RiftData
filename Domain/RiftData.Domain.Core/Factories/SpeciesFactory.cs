@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using RiftData.Domain.Entities;
 
 namespace RiftData.Domain.Factories
@@ -7,11 +8,14 @@ namespace RiftData.Domain.Factories
     {
         public Species Build(Infrastructure.Data.Species dataSpecies, Genus genus)
         {
+            var hasFish = dataSpecies.Fish.Count > 0;
+
             var species = new Species(dataSpecies.SpeciesID)
                               {
                                   Genus = genus,
                                   Described = Convert.ToBoolean(dataSpecies.Described),
-                                  Name = dataSpecies.SpeciesName
+                                  Name = dataSpecies.SpeciesName,
+                                  HaveFish = hasFish
                               };
 
             return species;

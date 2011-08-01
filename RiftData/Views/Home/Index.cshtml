@@ -22,16 +22,14 @@
             }).Render();
         }
     </div>
-    }
+}
 
 @section Right{
     <div id="LocaleMap"></div>
 }
 
 @section Scripts{
-    @(Html.Telerik().ScriptRegistrar()
-    )
-        <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script> 
-
+    @Html.Telerik().ScriptRegistrar()
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script> 
     <script src="../../Scripts/PageScripts/home.js" type="text/javascript"></script>
 }

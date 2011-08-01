@@ -19,7 +19,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build (int genusTypeId)
         {
-            var genusList = this.genusRepository.List.Where(g => g.GenusType.Id == genusTypeId).ToList();
+            var genusList = this.genusRepository.List.Where(g => g.GenusType.Id == genusTypeId && g.HasFish).ToList();
 
             var genusType = genusList[0].GenusType;
 
