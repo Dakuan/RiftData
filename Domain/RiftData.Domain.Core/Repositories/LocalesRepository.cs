@@ -29,8 +29,12 @@ namespace RiftData.Domain.Repositories
             {
                 var list = new List<Locale>();
 
-                this.dataEntites.Locale.OrderBy(l => l.LocaleName).ToList().ForEach(l => list.Add(this.localesFactory.Build(l)));
-
+                this.dataEntites.Locale.OrderBy(l => l.LocaleName).ToList()
+                                                .ForEach(l =>
+                                                        {
+                                                            var localeHasPhotos = this.dataEntites.Photos.Where(p => p.LocaleId == l.LocaleID).Count() > 0;
+                                                            list.Add(this.localesFactory.Build(l, localeHasPhotos));
+                                                        });
                 return list.AsQueryable();
             }
         }

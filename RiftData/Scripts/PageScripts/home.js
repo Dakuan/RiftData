@@ -5,7 +5,6 @@ $(document).ready(function () {
     CreateMap();
 });
 
-
 function CreateMap() {
 
     var zoomLevel = 7;
@@ -43,6 +42,16 @@ function getTabStrip(){
             return tabStrip;
         }
 
- function OnGenusPanelSelect(e) {
+function OnGenusPanelSelect(e) {
 
+     var item = $(e.item);
+
+     var itemInfo = item.find('> .t-link').attr('id').split('_');
+
+     alert('item type =' + itemInfo[0] + 'item id =' + itemInfo[1]);
+
+     if (itemInfo[0] == 'species') {
+
+         var url = $('#GetLocalesBySpeciesUrl').attr('value') + '/' + itemInfo[1];
+     }
 }

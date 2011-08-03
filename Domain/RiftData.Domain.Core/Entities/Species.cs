@@ -33,5 +33,7 @@ namespace RiftData.Domain.Entities
         public bool HaveFish { get; internal set; }
 
         public IList<Photo> Photos { get; internal set; }
+
+        public bool HasPhotos { get; internal set; }
     }
 }

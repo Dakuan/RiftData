@@ -4,6 +4,6 @@ namespace RiftData.Domain.Factories
 {
     public interface ILocalesFactory
     {
-        Locale Build(RiftData.Infrastructure.Data.Locale dataLocale);
+        Locale Build(RiftData.Infrastructure.Data.Locale dataLocale, bool hasPhoto);
     }
 }

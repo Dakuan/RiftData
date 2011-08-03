@@ -9,11 +9,11 @@
                 {
                     foreach (var genus in Model.GenusList)
                     {
-                        panelbar.Add().Text(genus.Name).Items(panelBarChild =>
+                        panelbar.Add().Text(genus.Name).LinkHtmlAttributes(new { id = "genus_" + genus.Id }).Items(panelBarChild =>
                             {
                                 foreach (var species in genus.Species)
                                 {
-                                    panelBarChild.Add().Text(species.FullName);
+                                    panelBarChild.Add().Text(species.FullName).LinkHtmlAttributes(new { id = "species_" + species.Id });
                                 }
                             });
                     }

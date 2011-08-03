@@ -35,16 +35,18 @@ namespace RiftData.Domain.Repositories
                     .ForEach(g => g.OrderBy(s => s.Species1.SpeciesName).ToList()
                                       .ForEach(f =>
                                                    {
-                                                       if (f.Locale1 != null && f.Genus1 != null && f.Species1 != null)
+                                                       if (f.Locale1 == null || f.Genus1 == null || f.Species1 == null)
                                                        {
-                                                           var genus = this.genusFactory.Build(f.Genus1);
-                                                           var species = this.speciesFactory.Build(f.Species1, genus);
-                                                           var locale = this.localesFactory.Build(f.Locale1);
-                                                           list.Add(this.fishFactory.Build(f.FishID, species, locale));
+                                                           //todo: log bad data
                                                        }
                                                        else
                                                        {
-                                                           //todo: log bad data
+                                                           var genus = this.genusFactory.Build(f.Genus1);
+                                                           var species = this.speciesFactory.Build(f.Species1, genus);
+                                                           var localeHasPhotos = this.dataEntites.Photos.Where(p => p.LocaleId == f.Locale).Count() > 0;
+                                                           var fishHasPhotos = this.dataEntites.Photos.Where(p => p.FishId == f.FishID).Count() > 0;
+                                                           var locale = this.localesFactory.Build(f.Locale1, localeHasPhotos);
+                                                           list.Add(this.fishFactory.Build(f.FishID, species, locale, fishHasPhotos));
                                                        }
                                                    }));
 

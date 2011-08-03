@@ -71,6 +71,7 @@
     <Compile Include="Controllers\ControllersInstaller.cs" />
     <Compile Include="Controllers\Shared\GenusController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\Shared\LocaleController.cs" />
     <Compile Include="Controllers\Shared\SpeciesController.cs" />
     <Compile Include="Controllers\WindsorControllerFactory.cs" />
     <Compile Include="Controllers\WindsorControllerFactoryInstaller.cs" />

@@ -37,6 +37,9 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\RiftMap.Domain.Factories\bin\Debug\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="FlickrNet">
+      <HintPath>..\..\Referenced Assemblies\FlickrNet.3.1.4000\lib\FlickrNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -59,6 +62,8 @@
     <Compile Include="Factories\IFishFactory.cs" />
     <Compile Include="Factories\IGenusTypeFactory.cs" />
     <Compile Include="Factories\ILocalesFactory.cs" />
+    <Compile Include="Factories\IPhotoFactory.cs" />
+    <Compile Include="Factories\PhotoFactory.cs" />
     <Compile Include="Factories\LocalesFactory.cs" />
     <Compile Include="Installers\FactoriesInstaller.cs" />
     <Compile Include="Factories\GenusFactory.cs" />
@@ -71,9 +76,12 @@
     <Compile Include="Repositories\FishRepository.cs" />
     <Compile Include="Repositories\GenusRepository.cs" />
     <Compile Include="Repositories\GenusTypeRepository.cs" />
+    <Compile Include="Repositories\IPhotoRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Installers\RepositoriesInstaller.cs" />
     <Compile Include="Repositories\LocalesRepository.cs" />
+    <Compile Include="Repositories\PhotoRepository.cs" />
+    <Compile Include="Repositories\PhotosRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\SpeciesRepository.cs" />
     <Compile Include="Entities\Species.cs" />

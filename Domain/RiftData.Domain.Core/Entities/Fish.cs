@@ -26,5 +26,7 @@ namespace RiftData.Domain.Entities
         }
 
         public IList<Photo> Photos{ get; internal set; }
+
+        public bool HasPhotos { get; internal set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RiftData.Domain.Entities
 {
@@ -15,5 +16,7 @@ namespace RiftData.Domain.Entities
         public string Name { get; internal set; }
 
         public IList<Photo> Photos { get; internal set; }
+
+        public bool HasPhotos { get; internal set; }
     }
 }
