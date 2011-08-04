@@ -1,9 +1,10 @@
-using RiftData.Domain.Entities;
+using FlickrNet;
+using Photo = RiftData.Domain.Entities.Photo;
 
 namespace RiftData.Domain.Factories
 {
     public interface IPhotoFactory
     {
-        Photo Build(RiftData.Infrastructure.Data.Photos dataPhoto);
+        Photo Build(PhotoInfo dataPhoto, int photoId, string caption);
     }
 }

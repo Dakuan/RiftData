@@ -35,6 +35,7 @@
     <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\..\Domain\RiftData.Domain.Core\RiftData.Domain.csproj">
       <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
       <Name>RiftData.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
+      <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>
+      <Name>RiftData.Infrastructure.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Shared\RiftData.Shared.ViewModels\RiftData.Shared.ViewModels.csproj">
       <Project>{1E84268C-9D18-4844-B170-2A2222C80998}</Project>

@@ -13,24 +13,17 @@ namespace RiftData.Domain.Factories
 
         public PhotoFactory(FlickrNet.Flickr flickrApp)
         {
-            this.flickrApp = flickrApp;
 
-            flickrApp.ApiKey = "ee83fcb598d60f1081c08dac83f9882d";
-
-            flickrApp.ApiSecret = "1ef6f20185274ebe";
-
-            flickrApp.AuthToken = "72157626863345193-fac9def5c6ed227d";
         }
 
-        public Photo Build(RiftData.Infrastructure.Data.Photos dataPhoto)
+        public Photo Build(PhotoInfo photoInfo, int photoId, string caption)
         {
-            var flickrPhoto = this.flickrApp.PhotosGetInfo(dataPhoto.FlickrId);
-
-            var photo = new Photo(dataPhoto.ID)
+            var photo = new Photo(photoId)
                             {
-                                FlickrId = dataPhoto.FlickrId,
-                                MediumUrl = flickrPhoto.MediumUrl,
-                                ThumbNailUrl = flickrPhoto.ThumbnailUrl
+                                FlickrId = photoInfo.PhotoId,
+                                MediumUrl = photoInfo.MediumUrl,
+                                ThumbNailUrl = photoInfo.ThumbnailUrl,
+                                Caption = caption
                             };
 
             return photo;

@@ -43,7 +43,7 @@ p, ul
 h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
-    color: #000;
+    color: #FFF;
 }
 
 h1
@@ -350,16 +350,16 @@ div#title
     width: 1024px;
     margin-left: auto;
     margin-right: auto;
-    background-color:White;
+    background-color:Black;
 }
 #TabContainer
 {
-    width: 240px;
+    width: 220px;
 }
 
 #GenusPanel
 {
-    width: 230px;
+    width: 210px;
     margin-left: -12px;
     margin-top: -3px;
     margin-bottom: -3px;
@@ -374,8 +374,7 @@ div#title
 }
 #LeftPanel
 {
-    width:280px;
-    
+    width:280px;    
 }
 #CenterPanel
 {
@@ -394,15 +393,16 @@ div#title
     position:absolute;
     height:auto;
 }
-
 .t-panelbar
 {
     max-height:666px;
     overflow:auto;
 }
-/*
-.t-panelbar .t-group
+#pg-container
 {
-    max-height:200px;
-    overflow:auto;
-}*/
+    width:360px;
+}
+#pg
+{
+    margin-left:-60px;
+}

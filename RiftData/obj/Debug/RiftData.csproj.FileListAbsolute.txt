@@ -1,4 +1,3 @@
-C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.dll
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.pdb
 C:\Users\Dakuan\git\RiftData\RiftData\bin\Castle.Core.dll
@@ -18,5 +17,6 @@ C:\Users\Dakuan\git\RiftData\RiftData\bin\Castle.Core.xml
 C:\Users\Dakuan\git\RiftData\RiftData\bin\Castle.Windsor.pdb
 C:\Users\Dakuan\git\RiftData\RiftData\bin\Castle.Windsor.xml
 C:\Users\Dakuan\git\RiftData\RiftData\bin\Telerik.Web.Mvc.xml
+C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.dll
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.pdb

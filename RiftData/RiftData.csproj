@@ -275,6 +275,9 @@
     <Content Include="Content\2011.2.712\Windows7\slider-v.gif" />
     <Content Include="Content\2011.2.712\Windows7\sprite-vertical.png" />
     <Content Include="Content\2011.2.712\Windows7\sprite.png" />
+    <Content Include="Content\PhotoGrid\jphotogrid.css" />
+    <Content Include="Content\PhotoGrid\jphotogrid.ie.css" />
+    <Content Include="Content\PhotoGrid\style.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\2011.2.712\jquery-1.5.1.min.js" />
@@ -307,6 +310,9 @@
     <Content Include="Scripts\2011.2.712\telerik.upload.min.js" />
     <Content Include="Scripts\2011.2.712\telerik.window.min.js" />
     <Content Include="Scripts\PageScripts\home.js" />
+    <Content Include="Scripts\PageScripts\Species.js" />
+    <Content Include="Scripts\PhotoGrid\jphotogrid.min.js" />
+    <Content Include="Scripts\PhotoGrid\setup.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

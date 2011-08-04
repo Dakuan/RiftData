@@ -11,5 +11,7 @@
         public string ThumbNailUrl { get; set; }
 
         public string MediumUrl { get; set; }
+
+        public string Caption { get; set; }
     }
 }

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RiftData.Domain.Entities;
+using FlickrNet;
 using RiftData.Domain.Factories;
 using RiftData.Infrastructure.Data;
+using Photo = RiftData.Domain.Entities.Photo;
 
 namespace RiftData.Domain.Repositories
 {
@@ -12,8 +13,18 @@ namespace RiftData.Domain.Repositories
     {
         private IPhotoFactory photoFactory;
 
-        public PhotosRepository(RiftDataDataEntities dataEntites, IPhotoFactory photoFactory) : base(dataEntites)
+        private Flickr flickrApp;
+
+        public PhotosRepository(RiftDataDataEntities dataEntites, IPhotoFactory photoFactory, Flickr flickrApp) : base(dataEntites)
         {
+            this.flickrApp = flickrApp;
+
+            flickrApp.ApiKey = "ee83fcb598d60f1081c08dac83f9882d";
+
+            flickrApp.ApiSecret = "1ef6f20185274ebe";
+
+            flickrApp.AuthToken = "72157626863345193-fac9def5c6ed227d";
+
             this.photoFactory = photoFactory;
         }
 
@@ -28,18 +39,29 @@ namespace RiftData.Domain.Repositories
 
             this.dataEntities.Fish.Where(
                 f => f.Species == speciesId && dataEntities.Photos.Any(p => p.FishId == f.FishID)).ToList().ForEach(
-                    f => this.dataEntities.Photos.Where(p => p.FishId == f.FishID).ToList().ForEach(list.Add));
+                    f => this.dataEntities.Photos.Where(p => p.FishId == f.FishID && p.FlickrId != null).ToList().ForEach(list.Add));
 
 
-            var tasks = new List<Task<Photo>>();
+            var tasks = new Dictionary<int, Task<PhotoInfo>>();
 
-            list.ForEach(t => tasks.Add(new Task<Photo>(() => this.photoFactory.Build(t))));
+            list.ForEach(t => tasks.Add(t.ID, new Task<PhotoInfo>(() => this.flickrApp.PhotosGetInfo(t.FlickrId))));
+
+            tasks.ToList().ForEach(t => t.Value.Start());
 
             Task.WaitAll();
 
             var photoList = new List<Photo>();
 
-            tasks.ToList().ForEach(t => photoList.Add(t.Result));
+            tasks.ToList().ForEach(t =>
+                                       {
+                                           var dataPhoto = this.dataEntities.Photos.Where(p => p.ID == t.Key).First();
+
+                                           var fish = this.dataEntities.Fish.Where(f => f.FishID == dataPhoto.FishId).First();
+
+                                           var caption = RiftData.Domain.Entities.Fish.GetFullName(fish.Genus1.GenusName, fish.Species1.SpeciesName, fish.Locale1.LocaleName, Convert.ToBoolean(fish.Species1.Described));
+
+                                           photoList.Add(this.photoFactory.Build(t.Value.Result, t.Key, caption));
+                                       });
 
             return photoList;
         }

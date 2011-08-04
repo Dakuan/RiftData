@@ -1,9 +1,12 @@
 ﻿@model  RiftData.Shared.ViewModels.PhotoGalleryViewModel
 
-<div id="@(Model.Name + "imageFlow")" class="imageflow">
-    @(foreach (var photo in Model.Photos)
-    { @<text>
-	    <img src="@photo.ThumbNailUrl" longdesc="@photo.MediumUrl" alt="@Model.Name" />
+<ul id="pg">
+    @{foreach (var photo in Model.Photos)
+    {<text>
+        <li>
+	        <img src="@photo.MediumUrl" alt="@Model.Name" />
+            <p>@photo.Caption</p>
+        </li>
     </text>
-    })
-</div>
+    }}
+</ul>

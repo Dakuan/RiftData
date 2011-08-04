@@ -29,5 +29,7 @@
 </div>
 <div class="clear"></div>
 @section Scripts{
-    @RenderSection("Scripts")
+    @Html.Telerik().ScriptRegistrar()
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script> 
+    @RenderSection("Scripts", false)
 }
