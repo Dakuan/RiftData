@@ -6,7 +6,13 @@ namespace RiftData.Domain.Factories
     {
         public Locale Build(Infrastructure.Data.Locale dataLocale, bool hasPhoto)
         {
-            return new Locale(dataLocale.LocaleID) { Latitude = dataLocale.Lat, Longitude = dataLocale.Long, Name = dataLocale.LocaleName, HasPhotos = hasPhoto };
+            return new Locale(dataLocale.LocaleID) 
+            { 
+                Latitude = dataLocale.Lat, 
+                Longitude = dataLocale.Long, 
+                Name = dataLocale.LocaleName.Trim(), 
+                HasPhotos = hasPhoto 
+            };
         }
     }
 }

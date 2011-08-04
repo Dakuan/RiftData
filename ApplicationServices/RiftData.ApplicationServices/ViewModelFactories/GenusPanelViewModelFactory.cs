@@ -10,16 +10,16 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 {
     public class GenusPanelViewModelFactory : IGenusPanelViewModelFactory
     {
-        private IRepository<Genus> genusRepository;
+        private IGenusRepository genusRepository;
 
-        public GenusPanelViewModelFactory(IRepository<Genus> genusRepository)
+        public GenusPanelViewModelFactory(IGenusRepository genusRepository)
         {
             this.genusRepository = genusRepository;
         }
 
         public GenusPanelViewModel Build (int genusTypeId)
         {
-            var genusList = this.genusRepository.List.Where(g => g.GenusType.Id == genusTypeId && g.HasFish).ToList();
+            var genusList = this.genusRepository.GetGenusOfIdWithFish(genusTypeId);
 
             var genusType = genusList[0].GenusType;
 

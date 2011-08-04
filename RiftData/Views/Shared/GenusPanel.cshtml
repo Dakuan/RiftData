@@ -13,7 +13,7 @@
                             {
                                 foreach (var species in genus.Species)
                                 {
-                                    panelBarChild.Add().Text(species.FullName).LinkHtmlAttributes(new { id = "species_" + species.Id });
+                                    panelBarChild.Add().Text(species.FullName).LinkHtmlAttributes(new { id = "species_" + species.Id }).Url(Url.Action("Index", "Species", new { speciesFullName = species.FullName }));
                                 }
                             });
                     }

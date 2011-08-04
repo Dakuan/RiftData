@@ -22,7 +22,7 @@ namespace RiftData.ApplicationServices.Installers
 
         private static bool IsFactory(Type type)
         {
-            return type.Name.EndsWith("ViewModelFactory", StringComparison.InvariantCultureIgnoreCase);
+            return type.Name.EndsWith("Factory", StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

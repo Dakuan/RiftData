@@ -14,7 +14,7 @@ namespace RiftData.Domain.Factories
                               {
                                   Genus = genus,
                                   Described = Convert.ToBoolean(dataSpecies.Described),
-                                  Name = dataSpecies.SpeciesName,
+                                  Name = dataSpecies.SpeciesName.Trim(),
                                   HaveFish = hasFish
                               };
 

@@ -10,9 +10,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 {
     public class HomePageViewModelFactory : IHomePageViewModelFactory
     {
-        private IRepository<GenusType> genusTypeRepository;
+        private IGenusTypeRepository genusTypeRepository;
 
-        public HomePageViewModelFactory(IRepository<GenusType> genusTypeRepository)
+        public HomePageViewModelFactory(IGenusTypeRepository genusTypeRepository)
         {
             this.genusTypeRepository = genusTypeRepository;
         }

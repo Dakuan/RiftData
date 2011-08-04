@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Factories;
 using RiftData.Infrastructure.Data;
@@ -7,36 +6,41 @@ using Locale = RiftData.Domain.Entities.Locale;
 
 namespace RiftData.Domain.Repositories
 {
-    public class LocalesRepository : RepositoryBase<Locale>
+    public class LocalesRepository : RepositoryBase<Locale,RiftData.Infrastructure.Data.Locale>, ILocalesRepository
     {
-        private IGenusFactory genusFactory;
+        private readonly ILocalesFactory localesFactory;
 
-        private ISpeciesFactory speciesFactory;
+        private readonly RiftDataDataEntities dataEntities;
 
-        private ILocalesFactory localesFactory;
-        public LocalesRepository(IGenusFactory genusFactory, ISpeciesFactory speciesFactory, ILocalesFactory localesFactory, RiftDataDataEntities dataEntities) : base(dataEntities)
+        public LocalesRepository(ILocalesFactory localesFactory, RiftDataDataEntities dataEntities) : base(dataEntities)
         {
-            this.genusFactory = genusFactory;
-
-            this.speciesFactory = speciesFactory;
-
             this.localesFactory = localesFactory;
         }
 
-        public override IQueryable<Locale> List
+        public IQueryable<Locale> List
         {
             get 
             {
                 var list = new List<Locale>();
 
-                this.dataEntites.Locale.OrderBy(l => l.LocaleName).ToList()
-                                                .ForEach(l =>
-                                                        {
-                                                            var localeHasPhotos = this.dataEntites.Photos.Where(p => p.LocaleId == l.LocaleID).Count() > 0;
-                                                            list.Add(this.localesFactory.Build(l, localeHasPhotos));
-                                                        });
-                return list.AsQueryable();
+                this.dataEntities.Locale.ToList().ForEach(l => list.Add(this.BuildUp(l)));
+
+                return this.Sort(list).AsQueryable();
             }
+        }
+
+        protected override IEnumerable<Locale> Sort(IEnumerable<Locale> unsortedList)
+        {
+           var sortedList =  unsortedList.OrderBy(l => l.Name);
+
+            return sortedList;
+        }
+
+        protected override Locale BuildUp (RiftData.Infrastructure.Data.Locale dataLocale)
+        {
+            var localeHasPhotos = this.dataEntities.Photos.Where(p => p.LocaleId == dataLocale.LocaleID).Count() > 0;
+
+            return this.localesFactory.Build(dataLocale, localeHasPhotos);
         }
     }
 }

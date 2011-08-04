@@ -25,6 +25,12 @@ namespace RiftData
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Species", 
+                "Species/{speciesFullName}",
+                new { controller = "Species", action = "Index" }
+                );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
@@ -51,6 +57,8 @@ namespace RiftData
             container.Install(FromAssembly.Containing<FactoriesInstaller>());
 
             //container.Install(FromAssembly.Containing<RepositoriesInstaller>());
+
+            //container.Install(FromAssembly.Containing<QueriesInstaller>());
 
             container.Install(FromAssembly.Containing<ViewModelFactoryInstaller>());
 

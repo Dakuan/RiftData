@@ -1,18 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using RiftData.Infrastructure.Data;
 
 namespace RiftData.Domain.Repositories
 {
-    public abstract class RepositoryBase<T> : IRepository<T>
+    public abstract class RepositoryBase<TDomain, TData>
     {
-        protected RiftDataDataEntities dataEntites;
+        protected readonly RiftDataDataEntities dataEntities;
 
-        protected RepositoryBase(RiftDataDataEntities dataEntites)
+        protected RepositoryBase(RiftDataDataEntities dataEntities)
         {
-            this.dataEntites = dataEntites;
+            this.dataEntities = dataEntities;
         }
 
-        public abstract IQueryable<T> List { get; }
+        protected abstract IEnumerable<TDomain> Sort(IEnumerable<TDomain> unsortedList);
+
+        protected abstract TDomain BuildUp(TData dataObject);
     }
 }

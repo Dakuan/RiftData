@@ -3,25 +3,23 @@ using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Repositories;
 
-namespace RiftData.Domain.Installers
+namespace RiftData.ApplicationServices.Installers
 {
-    public class RepositoriesInstaller : IWindsorInstaller
+    public class QueriesInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(AllTypes.FromThisAssembly()
                                 .Pick()
-                                .If(IsRepository)
+                                .If(IsQuery)
                                 .WithService.DefaultInterface()
                                 .Configure(x => x.LifeStyle.Is(LifestyleType.Transient)));
         }
 
-        private static bool IsRepository(Type type)
+        private static bool IsQuery(Type type)
         {
-            return type.Name.EndsWith("Repository", StringComparison.InvariantCultureIgnoreCase);
+            return type.Name.EndsWith("Query", StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

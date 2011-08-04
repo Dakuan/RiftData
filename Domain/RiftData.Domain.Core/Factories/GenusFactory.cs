@@ -22,7 +22,7 @@ namespace RiftData.Domain.Factories
         {
             var speciesList = new List<Species>();
 
-            var genus = new Genus(dataGenus.GenusID) { Name = dataGenus.GenusName, GenusType = this.genusTypeFactory.Build(dataGenus.Type)};
+            var genus = new Genus(dataGenus.GenusID) { Name = dataGenus.GenusName.Trim(), GenusType = this.genusTypeFactory.Build(dataGenus.Type)};
 
             dataGenus.Species.ToList().Where(s => s.Genus == dataGenus.GenusID).ToList()
                                                     .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus)));

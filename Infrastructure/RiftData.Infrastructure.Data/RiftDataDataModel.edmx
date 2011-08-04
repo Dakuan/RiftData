@@ -383,7 +383,7 @@
     <Diagrams>
       <Diagram Name="RiftDataDataModel">
         <EntityTypeShape EntityType="RiftDataDataModel.Fish" Width="1.5" PointX="3" PointY="1" Height="2.7494921875000005" IsExpanded="true" />
-        <EntityTypeShape EntityType="RiftDataDataModel.Genus" Width="1.5" PointX="0.75" PointY="1.25" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RiftDataDataModel.Genus" Width="1.5" PointX="0.75" PointY="1.25" Height="2.172587890625" IsExpanded="true" />
         <EntityTypeShape EntityType="RiftDataDataModel.Locale" Width="1.5" PointX="7.625" PointY="1.25" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="RiftDataDataModel.Photos" Width="1.5" PointX="2.75" PointY="4.75" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="RiftDataDataModel.Species" Width="1.5" PointX="5.75" PointY="2.5" Height="2.3648893229166674" IsExpanded="true" />
@@ -400,16 +400,16 @@
           <ConnectorPoint PointX="4.5" PointY="3.1247460937500002" />
         </AssociationConnector>
         <AssociationConnector Association="RiftDataDataModel.FK_Species_Genus" >
-          <ConnectorPoint PointX="1.5" PointY="3.422587890625" />
-          <ConnectorPoint PointX="1.5" PointY="4.24974609375" />
-          <ConnectorPoint PointX="1.8541666666666667" PointY="4.2497460937499989" />
-          <ConnectorPoint PointX="2.0208333333333335" PointY="4.24974609375" />
+          <ConnectorPoint PointX="1.261715546875" PointY="3.422587890625" />
+          <ConnectorPoint PointX="1.261715546875" PointY="4.24974609375" />
+          <ConnectorPoint PointX="1.7350244401041668" PointY="4.2497460937499989" />
+          <ConnectorPoint PointX="1.9016911067708333" PointY="4.24974609375" />
           <ConnectorPoint PointX="5.75" PointY="4.24974609375" />
         </AssociationConnector>
         <EntityTypeShape EntityType="RiftDataDataModel.Type" Width="1.5" PointX="0.75" PointY="8.5" Height="1.5956835937499996" />
         <AssociationConnector Association="RiftDataDataModel.FK_Genus_Type" >
-          <ConnectorPoint PointX="1.9375" PointY="8.5" />
-          <ConnectorPoint PointX="1.9375" PointY="3.422587890625" />
+          <ConnectorPoint PointX="1.8183577734375" PointY="8.5" />
+          <ConnectorPoint PointX="1.8183577734375" PointY="3.422587890625" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

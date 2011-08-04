@@ -7,7 +7,7 @@ using Genus = RiftData.Domain.Entities.Genus;
 
 namespace RiftData.Domain.Repositories
 {
-    public class GenusRepository : RepositoryBase<Genus>
+    public class GenusRepository : RepositoryBase<Genus, RiftData.Infrastructure.Data.Genus>, IGenusRepository
     {
         private IGenusFactory genusFactory;
 
@@ -16,13 +16,13 @@ namespace RiftData.Domain.Repositories
             this.genusFactory = genusFactory;
         }
 
-        public override IQueryable<Genus> List 
+        public IQueryable<Genus> List 
         { 
             get 
             { 
                 var list = new List<Genus>();
 
-                this.dataEntites.Genus.OrderBy(g => g.GenusName).ToList()
+                this.dataEntities.Genus.OrderBy(g => g.GenusName).ToList()
                                                     .ForEach(g =>
                                                              {
                                                                  try
@@ -39,6 +39,25 @@ namespace RiftData.Domain.Repositories
 
                 return list.AsQueryable();
             }
+        }
+
+        public IList<Genus> GetGenusOfIdWithFish(int genusTypeId)
+        {
+            var list = new List<Genus>();
+
+            this.dataEntities.Genus.Where(g => g.GenusType == genusTypeId && g.Species.Count > 0).ToList().ForEach(g => list.Add(this.genusFactory.Build(g)));
+
+            return list;
+        }
+
+        protected override IEnumerable<Genus> Sort(IEnumerable<Genus> unsortedList)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override Genus BuildUp(Infrastructure.Data.Genus dataObject)
+        {
+            throw new NotImplementedException();
         }
     }
 }
