@@ -76,6 +76,7 @@
     <Compile Include="Repositories\FishRepository.cs" />
     <Compile Include="Repositories\GenusRepository.cs" />
     <Compile Include="Repositories\GenusTypeRepository.cs" />
+    <Compile Include="Repositories\IFishRepository.cs" />
     <Compile Include="Repositories\IPhotoRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Installers\RepositoriesInstaller.cs" />

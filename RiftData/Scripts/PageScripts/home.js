@@ -1,8 +1,10 @@
 ﻿/// <reference path="../2011.2.712/jquery-1.5.1.min.js" />
+var map;
 
-$(document).ready(function () {
+$(window).load(function () {
 
     CreateMap();
+
 });
 
 function CreateMap() {
@@ -20,7 +22,7 @@ function CreateMap() {
                                 zoom: zoomLevel
                             });
 }
-
+    
 //helper, converts from data zoom levels to map zoom levels
 function DataZoomToMapZoom(data) {
 
@@ -48,10 +50,22 @@ function OnGenusPanelSelect(e) {
 
      var itemInfo = item.find('> .t-link').attr('id').split('_');
 
-     alert('item type =' + itemInfo[0] + 'item id =' + itemInfo[1]);
-
      if (itemInfo[0] == 'species') {
 
          var url = $('#GetLocalesBySpeciesUrl').attr('value') + '/' + itemInfo[1];
+
+         $.get(url, function (data) {
+
+             //clear current pins
+             map.entities.clear();
+
+             //add the new ones
+             $(data).each(function () {
+
+                var location = new Microsoft.Maps.Location(this.Latitude, this.Longitude);
+
+                 map.entities.push(new Microsoft.Maps.Pushpin(location));
+             });
+         });
      }
 }

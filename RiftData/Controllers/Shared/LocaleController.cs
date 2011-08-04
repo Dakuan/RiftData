@@ -10,9 +10,9 @@ namespace RiftData.Controllers.Shared
 {
     public class LocaleController : Controller
     {
-        private readonly IRepository<Fish> _fishRepository;
+        private readonly IFishRepository _fishRepository;
 
-        public LocaleController(IRepository<Fish> fishRepository)
+        public LocaleController(IFishRepository fishRepository)
         {
             _fishRepository = fishRepository;
         }
@@ -21,7 +21,7 @@ namespace RiftData.Controllers.Shared
         {
             var localeList = new List<Locale>();
 
-            _fishRepository.List.Where(f => f.Species.Id == id).ToList().ForEach(f => localeList.Add(f.Locale));
+            _fishRepository.GetFishBySpecies(id).ToList().ForEach(f => localeList.Add(f.Locale));
 
             return new JsonResult
                        {

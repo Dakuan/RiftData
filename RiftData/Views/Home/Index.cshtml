@@ -11,7 +11,7 @@
 
 @section Left{
  <div id="TabContainer">
-        @{Html.Telerik().TabStrip().Name("Tabby").BindTo(Model.GenusTypes, (item, genusType) =>
+        @{Html.Telerik().TabStrip().HtmlAttributes(new { style= "height:700px" }).Name("Tabby").BindTo(Model.GenusTypes, (item, genusType) =>
             {
                 item.Text = genusType.Name;
                 item.ContentUrl = Url.Action("GenusPanel", "Genus", new { id = genusType.Id });
@@ -26,7 +26,7 @@
 
 @section Right{
     <div id="LocaleMap"></div>
-    @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locales"))
+    @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locale"))
 }
 
 @section Scripts{

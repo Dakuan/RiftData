@@ -23,7 +23,7 @@ namespace RiftData.Domain.Installers
                                    .ImplementedBy < LocalesRepository>());
 
             container.Register(Component
-                                   .For<IRepository<Fish>>()
+                                   .For<IFishRepository>()
                                    .ImplementedBy<FishRepository>());
 
             container.Register(Component
