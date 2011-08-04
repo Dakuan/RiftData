@@ -3,8 +3,7 @@ using RiftData.Domain.Entities;
 
 namespace RiftData.Shared.ViewModels
 {
-    public class HomePageViewModel
+    public class HomePageViewModel : PanelViewModelBase
     {
-        public IList<GenusType> GenusTypes;
     }
 }

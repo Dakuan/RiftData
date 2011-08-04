@@ -5,6 +5,7 @@
     @(Html.Telerik().PanelBar()
             .Name("GenusPanel_" + Model.GenusType)
             .ClientEvents(evt => evt.OnSelect("OnGenusPanelSelect"))
+            .ExpandMode(PanelBarExpandMode.Single)
             .Items(panelbar => 
                 {
                     foreach (var genus in Model.GenusList)
@@ -13,7 +14,7 @@
                             {
                                 foreach (var species in genus.Species)
                                 {
-                                    panelBarChild.Add().Text(species.FullName).LinkHtmlAttributes(new { id = "species_" + species.Id }).Url(Url.Action("Index", "Species", new { speciesFullName = species.FullName }));
+                                    panelBarChild.Add().Text(species.FullName).LinkHtmlAttributes(new { id = "species_" + species.Id }).Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
                                 }
                             });
                     }

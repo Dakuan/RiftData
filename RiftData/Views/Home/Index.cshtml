@@ -9,26 +9,6 @@
     Layout = "~/Views/Shared/_PanelLayout.cshtml";
 }
 
-@section Left{
- <div id="TabContainer">
-        @{Html.Telerik().TabStrip().HtmlAttributes(new { style= "height:700px" }).Name("Tabby").BindTo(Model.GenusTypes, (item, genusType) =>
-            {
-                item.Text = genusType.Name;
-                item.ContentUrl = Url.Action("GenusPanel", "Genus", new { id = genusType.Id });
-                if (genusType.Id == 3)
-                {
-                    item.Selected = true;
-                }
-            }).Render();
-        }
-    </div>
-}
-
-@section Right{
-    <div id="LocaleMap"></div>
-    @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locale"))
-}
-
 @section Scripts{
     @Html.Telerik().ScriptRegistrar()
     <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script> 

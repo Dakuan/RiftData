@@ -51,6 +51,8 @@
     <Compile Include="ViewModelFactories\IDtoFactory.cs" />
     <Compile Include="ViewModelFactories\IGenusPanelViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IHomePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\ISpeciesPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\SpeciesPageViewModelFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\RiftData.Domain.Core\RiftData.Domain.csproj">

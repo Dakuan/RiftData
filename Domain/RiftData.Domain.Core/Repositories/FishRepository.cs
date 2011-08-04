@@ -4,6 +4,7 @@ using System.Linq;
 using RiftData.Domain.Factories;
 using RiftData.Infrastructure.Data;
 using Fish = RiftData.Domain.Entities.Fish;
+using Genus = RiftData.Domain.Entities.Genus;
 
 namespace RiftData.Domain.Repositories
 {

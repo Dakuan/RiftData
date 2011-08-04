@@ -394,3 +394,15 @@ div#title
     position:absolute;
     height:auto;
 }
+
+.t-panelbar
+{
+    max-height:666px;
+    overflow:auto;
+}
+/*
+.t-panelbar .t-group
+{
+    max-height:200px;
+    overflow:auto;
+}*/

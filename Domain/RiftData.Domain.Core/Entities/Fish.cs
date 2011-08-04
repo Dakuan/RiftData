@@ -15,7 +15,7 @@ namespace RiftData.Domain.Entities
 
         public Locale Locale { get; internal set; }
 
-        public String FullName
+        public String Name
         {
             get
             {
@@ -23,6 +23,11 @@ namespace RiftData.Domain.Entities
                            ? string.Format("{0} {1} '{2}'", this.Genus.Name, this.Species.Name, this.Locale.Name)
                            : string.Format(@"{0} sp ""{1}"" '{2}'", this.Genus.Name, this.Species.Name, this.Locale.Name);
             }
+        }
+
+        public String UrlName
+        {
+            get { return string.Format("{0}_{1}_{2}", this.Genus.Name, this.Species.Name, this.Locale.Name); }
         }
 
         public IList<Photo> Photos{ get; internal set; }

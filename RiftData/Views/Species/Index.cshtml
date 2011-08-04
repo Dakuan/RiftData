@@ -1,0 +1,11 @@
+﻿@model RiftData.Shared.ViewModels.SpeciesPageViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+@section CenterPanel{
+<h2>@Model.SpeciesName</h2>
+    @Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel);
+}

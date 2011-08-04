@@ -1,17 +1,31 @@
 ﻿@using Telerik.Web.Mvc.UI
 @using RiftData.Domain.Entities
+@model RiftData.Shared.ViewModels.PanelViewModelBase
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div id="LeftPanel" class="panels">
-    @RenderSection("Left")
+    <div id="TabContainer">
+        @{Html.Telerik().TabStrip().HtmlAttributes(new { style= "height:700px" }).Name("Tabby").BindTo(Model.GenusTypes, (item, genusType) =>
+            {
+                item.Text = genusType.Name;
+                item.ContentUrl = Url.Action("GenusPanel", "Genus", new { id = genusType.Id });
+                if (genusType.Id == 3)
+                {
+                    item.Selected = true;
+                }
+            }).Render();
+        }
+    </div>
 </div>
 <div id="CenterPanel" class="panels">
+    @RenderSection("CenterPanel", false)
 </div>
 <div id="RightPanel" class="panels">
-    @RenderSection("Right")
+    <div id="LocaleMap"></div>
+    @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locale"))
 </div>
 <div class="clear"></div>
 @section Scripts{

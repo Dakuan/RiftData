@@ -35,5 +35,15 @@ namespace RiftData.Domain.Entities
         public IList<Photo> Photos { get; internal set; }
 
         public bool HasPhotos { get; internal set; }
+
+        public string UrlName
+        {
+            get
+            {
+                return this.Described
+                           ? string.Format("{0}_{1}", this.Genus.Name, this.Name)
+                           : string.Format("{0}_sp_{1}", this.Genus.Name, this.Name);
+            }
+        }
     }
 }

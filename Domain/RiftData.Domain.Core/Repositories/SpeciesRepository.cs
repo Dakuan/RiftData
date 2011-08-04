@@ -40,11 +40,11 @@ namespace RiftData.Domain.Repositories
 
         public int FindSpeciesIdFromFullName(string speciesFullName)
         {
-            var components = speciesFullName.Split(' ');
+            var components = speciesFullName.Split('_');
 
-            var genusName = components[0];
+            var genusName = components[0].Trim();
 
-            var speciesName = string.Empty;
+            string speciesName;
 
             var described = !string.Equals(components[1], "sp");
 
@@ -54,22 +54,15 @@ namespace RiftData.Domain.Repositories
             }
             else
             {
-                if (components.Count() > 3)
-                {
-                    for(var i = 2; i < components.Count(); i++)
-                    {
-                        speciesName += (" " + components[i]);
-                    }
-                }
-                else
-                {
-                    speciesName = components[2].Trim('"');
-                }
-
-                speciesName = speciesName.Trim().Trim('"');
+                speciesName = components[2].Trim();        
             }
 
             return this.dataEntities.Fish.Where(s => string.Equals(s.Species1.SpeciesName.Trim(), speciesName) && string.Equals(s.Genus1.GenusName.Trim(), genusName)).First().Species;
+        }
+
+        public Species GetSpeciesFromId(int speciesId)
+        {
+            return this.BuildUp(this.dataEntities.Species.First(s => s.SpeciesID == speciesId));
         }
 
         protected override Species BuildUp (RiftData.Infrastructure.Data.Species dataSpecies)

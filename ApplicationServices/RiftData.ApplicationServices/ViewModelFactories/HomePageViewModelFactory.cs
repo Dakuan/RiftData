@@ -19,7 +19,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public HomePageViewModel Build()
         {
-            var genusTypes = this.genusTypeRepository.List.Where(t => t.GenusCount > 0).ToList();
+            var genusTypes = this.genusTypeRepository.GetGenusTypesContainingGenus();
 
             return new HomePageViewModel { GenusTypes = genusTypes };
         }

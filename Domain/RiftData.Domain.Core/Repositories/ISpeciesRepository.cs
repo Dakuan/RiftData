@@ -9,5 +9,7 @@ namespace RiftData.Domain.Repositories
         IQueryable<Species> List { get; }
 
         int FindSpeciesIdFromFullName(string speciesFullName);
+
+        Species GetSpeciesFromId(int speciesId);
     }
 }

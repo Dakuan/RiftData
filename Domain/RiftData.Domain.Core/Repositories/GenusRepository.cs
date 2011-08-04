@@ -45,18 +45,19 @@ namespace RiftData.Domain.Repositories
         {
             var list = new List<Genus>();
 
-            this.dataEntities.Genus.Where(g => g.GenusType == genusTypeId && g.Species.Count > 0).ToList().ForEach(g => list.Add(this.genusFactory.Build(g)));
+            this.dataEntities.Genus.Where(g => g.GenusType == genusTypeId && dataEntities.Fish.Any(f => f.Genus == g.GenusID)).ToList().ForEach(g => list.Add(this.genusFactory.Build(g)));
 
-            return list;
+            return this.Sort(list).ToList();
         }
 
         protected override IEnumerable<Genus> Sort(IEnumerable<Genus> unsortedList)
         {
-            throw new NotImplementedException();
+            return unsortedList.OrderBy(g => g.Name);
         }
 
         protected override Genus BuildUp(Infrastructure.Data.Genus dataObject)
         {
+            //genus factory requires no other components, this fuction is redundant.
             throw new NotImplementedException();
         }
     }

@@ -10,7 +10,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             return new FishDto
                        {
                            Id = fish.Id,
-                           Name = fish.FullName,
+                           Name = fish.Name,
                            LocaleName = fish.Locale.Name,
                            Latitude = fish.Locale.Latitude,
                            Longitude = fish.Locale.Longitude

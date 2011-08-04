@@ -72,6 +72,7 @@
     <Compile Include="Factories\SpeciesFactory.cs" />
     <Compile Include="Entities\Genus.cs" />
     <Compile Include="Entities\Locale.cs" />
+    <Compile Include="Installers\FlickrInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\FishRepository.cs" />
     <Compile Include="Repositories\GenusRepository.cs" />
@@ -80,12 +81,10 @@
     <Compile Include="Repositories\IGenusRepository.cs" />
     <Compile Include="Repositories\IGenusTypeRepository.cs" />
     <Compile Include="Repositories\ILocalesRepository.cs" />
-    <Compile Include="Repositories\IPhotoRepository.cs" />
     <Compile Include="Installers\RepositoriesInstaller.cs" />
     <Compile Include="Repositories\IPhotosRepository.cs" />
     <Compile Include="Repositories\ISpeciesRepository.cs" />
     <Compile Include="Repositories\LocalesRepository.cs" />
-    <Compile Include="Repositories\PhotoRepository.cs" />
     <Compile Include="Repositories\PhotosRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\SpeciesRepository.cs" />
