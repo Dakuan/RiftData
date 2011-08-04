@@ -10,8 +10,6 @@ namespace RiftData.Domain.Repositories
     {
         private readonly ILocalesFactory localesFactory;
 
-        private readonly RiftDataDataEntities dataEntities;
-
         public LocalesRepository(ILocalesFactory localesFactory, RiftDataDataEntities dataEntities) : base(dataEntities)
         {
             this.localesFactory = localesFactory;

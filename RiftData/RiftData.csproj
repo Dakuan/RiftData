@@ -312,7 +312,6 @@
     <Content Include="Scripts\PageScripts\home.js" />
     <Content Include="Scripts\PageScripts\Species.js" />
     <Content Include="Scripts\PhotoGrid\jphotogrid.min.js" />
-    <Content Include="Scripts\PhotoGrid\setup.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
