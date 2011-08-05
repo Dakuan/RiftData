@@ -16,12 +16,24 @@
                                                     {
                                                         foreach (var species in genus.Species)
                                                         {
-                                                            panelBarChild.Add().Text(species.FullName)
-                                                                .Selected(species.Id == Model.SelectedSpecies)
-                                                                .LinkHtmlAttributes(new { id = "species_" + species.Id })
-                                                                .ImageUrl(species.HasPhotos ? Url.Content("../Content/camera.png") : "../nope.jpg")
-                                                                .ImageHtmlAttributes(new { @class = "panelBarItemImage" })
-                                                                .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                                                            if (species.HasPhotos)
+                                                            {
+                                                                panelBarChild.Add().Text(species.FullName)
+                                                                    .Selected(species.Id == Model.SelectedSpecies)
+                                                                    .LinkHtmlAttributes(new { id = "species_" + species.Id })
+                                                                    .ImageUrl(Url.Content("../Content/camera.png"))
+                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage" })
+                                                                    .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                                                            }
+                                                            else
+                                                            {
+                                                                panelBarChild.Add().Text(species.FullName)
+                                                                    .Selected(species.Id == Model.SelectedSpecies)
+                                                                    .LinkHtmlAttributes(new { id = "species_" + species.Id })
+                                                                    .ImageUrl(Url.Content("../Content/camera.png"))
+                                                                    .ImageHtmlAttributes( new { @class = "panelBarItemImage", style = "display:none" })
+                                                                    .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                                                            }
                                                         }
                                                     });
                     }

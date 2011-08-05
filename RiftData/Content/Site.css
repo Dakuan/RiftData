@@ -351,7 +351,7 @@ div#title
     height:702px;
     margin-left: auto;
     margin-right: auto;
-    background-color:Black;
+    background-color:white;
 }
 #TabContainer
 {
@@ -379,6 +379,7 @@ div#title
     padding:10px;
     background-image:url('../../Content/gradient-bg.jpg');
     background-repeat:repeat-x;
+    margin-top:-1px;
 }
 #RightPanel
 {
