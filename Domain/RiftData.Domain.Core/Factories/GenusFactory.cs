@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using RiftData.Domain.Entities;
 using RiftData.Domain.Exceptions;
+using RiftData.Domain.Services;
+using RiftData.Infrastructure.Data;
+using Genus = RiftData.Domain.Entities.Genus;
+using Species = RiftData.Domain.Entities.Species;
 
 namespace RiftData.Domain.Factories
 {
@@ -11,11 +14,14 @@ namespace RiftData.Domain.Factories
 
         private IGenusTypeFactory genusTypeFactory;
 
-        public GenusFactory(ISpeciesFactory speciesFactory, IGenusTypeFactory genusTypeFactory)
+        private readonly RiftDataDataEntities _dataEntities;
+
+        public GenusFactory(ISpeciesFactory speciesFactory, IGenusTypeFactory genusTypeFactory, RiftDataDataEntities dataEntities)
         {
             this.speciesFactory = speciesFactory;
 
             this.genusTypeFactory = genusTypeFactory;
+            _dataEntities = dataEntities;
         }
 
         public Genus Build(Infrastructure.Data.Genus dataGenus)
@@ -23,9 +29,9 @@ namespace RiftData.Domain.Factories
             var speciesList = new List<Species>();
 
             var genus = new Genus(dataGenus.GenusID) { Name = dataGenus.GenusName.Trim(), GenusType = this.genusTypeFactory.Build(dataGenus.Type)};
-
+            
             dataGenus.Species.ToList().Where(s => s.Genus == dataGenus.GenusID).ToList()
-                                                    .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus)));
+                                                    .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus, SpeciesService.SpeciesHasPhoto(this._dataEntities, s.SpeciesID))));
 
             if (speciesList.Count < 1)
             {

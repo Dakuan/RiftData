@@ -1,12 +1,14 @@
 ﻿@model  RiftData.Shared.ViewModels.PhotoGalleryViewModel
 
-<ul id="pg">
+<div id="PhotoCellContainer">
     @{foreach (var photo in Model.Photos)
     {<text>
-        <li>
-	        <img src="@photo.MediumUrl" alt="@Model.Name" />
-            <p>@photo.Caption</p>
-        </li>
+        <div class="photoCell">
+            <a href="@photo.MediumUrl" class="pirobox" title="@photo.Caption">
+	            <img src="@photo.SquareThumbnail" alt="@photo.Caption" />
+            </a>
+        </div>
     </text>
     }}
-</ul>
+    <div class="clear"></div>
+</div>

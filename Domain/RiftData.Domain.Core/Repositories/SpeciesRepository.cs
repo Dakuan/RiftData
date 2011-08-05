@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Factories;
+using RiftData.Domain.Services;
 using RiftData.Infrastructure.Data;
 using Species = RiftData.Domain.Entities.Species;
 
@@ -73,7 +74,9 @@ namespace RiftData.Domain.Repositories
 
                 var hasFish = this.dataEntities.Fish.Any(f => f.Species == dataSpecies.SpeciesID);
 
-                var species = this.speciesFactory.Build(dataSpecies, genus);
+                var hasPhotos = SpeciesService.SpeciesHasPhoto(this.dataEntities, dataSpecies.SpeciesID);
+
+                var species = this.speciesFactory.Build(dataSpecies, genus, hasPhotos);
 
                 return species;
             }

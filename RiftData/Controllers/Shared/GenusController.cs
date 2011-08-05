@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Web.Mvc;
 using RiftData.ApplicationServices.ViewModelFactories;
 
@@ -13,9 +14,9 @@ namespace RiftData.Controllers.Shared
             this.genusPanelViewModelFactory = genusPanelViewModelFactory;
         }
 
-        public ActionResult GenusPanel(int id)
+        public ActionResult GenusPanel(int id, int? selectedGenusId, int? selectedSpeciesId)
         {
-            var viewModel = this.genusPanelViewModelFactory.Build(id);
+            var viewModel = this.genusPanelViewModelFactory.Build(id, Convert.ToInt16(selectedGenusId), Convert.ToInt16(selectedSpeciesId));
            
             return PartialView("GenusPanel", viewModel);
         }

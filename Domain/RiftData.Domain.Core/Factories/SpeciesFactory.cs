@@ -6,7 +6,7 @@ namespace RiftData.Domain.Factories
 {
     public class SpeciesFactory : ISpeciesFactory
     {
-        public Species Build(Infrastructure.Data.Species dataSpecies, Genus genus)
+        public Species Build(Infrastructure.Data.Species dataSpecies, Genus genus, bool hasPhotos)
         {
             var hasFish = dataSpecies.Fish.Count > 0;
 
@@ -15,7 +15,8 @@ namespace RiftData.Domain.Factories
                                   Genus = genus,
                                   Described = Convert.ToBoolean(dataSpecies.Described),
                                   Name = dataSpecies.SpeciesName.Trim(),
-                                  HaveFish = hasFish
+                                  HaveFish = hasFish,
+                                  HasPhotos = hasPhotos
                               };
 
             return species;

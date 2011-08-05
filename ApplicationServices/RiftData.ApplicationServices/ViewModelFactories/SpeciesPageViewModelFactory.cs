@@ -35,6 +35,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                                 {
                                     SpeciesName = species.FullName,
                                     GenusTypes = this._genusTypeRepository.GetGenusTypesContainingGenus(),
+                                    SelectedGenusId = species.Genus.Id,
+                                    SelectedSpeciesId = species.Id,
+                                    SelectedGenusTypeId = species.Genus.GenusType.Id,
                                     PhotoGalleryViewModel = new PhotoGalleryViewModel
                                                                 {
                                                                     Name = species.FullName,

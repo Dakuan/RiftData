@@ -1,4 +1,6 @@
-﻿namespace RiftData.Shared.ViewModels
+﻿using System;
+
+namespace RiftData.Shared.ViewModels
 {
     public class SpeciesPageViewModel : PanelViewModelBase
     {

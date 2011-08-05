@@ -11,11 +11,8 @@
         @{Html.Telerik().TabStrip().HtmlAttributes(new { style= "height:700px" }).Name("Tabby").BindTo(Model.GenusTypes, (item, genusType) =>
             {
                 item.Text = genusType.Name;
-                item.ContentUrl = Url.Action("GenusPanel", "Genus", new { id = genusType.Id });
-                if (genusType.Id == 3)
-                {
-                    item.Selected = true;
-                }
+                item.ContentUrl = Url.Action("GenusPanel", "Genus", new { id = genusType.Id, selectedGenusId = Model.SelectedGenusId, selectedSpeciesId = Model.SelectedSpeciesId });
+                item.Selected = genusType.Id == Model.SelectedGenusTypeId;
             }).Render();
         }
     </div>

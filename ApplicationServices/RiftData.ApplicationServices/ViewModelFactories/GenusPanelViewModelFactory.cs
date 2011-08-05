@@ -25,5 +25,16 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
             return new GenusPanelViewModel { GenusList = genusList, GenusType = genusType };
         }
+
+        public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)
+        {
+            var viewModel = this.Build(genusTypeId);
+
+            viewModel.ExpandedGenus = selectedGenusId;
+
+            viewModel.SelectedSpecies = selectedSpecies;
+
+            return viewModel;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Factories;
+using RiftData.Domain.Services;
 using RiftData.Infrastructure.Data;
 using Fish = RiftData.Domain.Entities.Fish;
 using Genus = RiftData.Domain.Entities.Genus;
@@ -71,7 +72,7 @@ namespace RiftData.Domain.Repositories
             else
             {
                 var genus = this.genusFactory.Build(dataFish.Genus1);
-                var species = this.speciesFactory.Build(dataFish.Species1, genus);
+                var species = this.speciesFactory.Build(dataFish.Species1, genus,SpeciesService.SpeciesHasPhoto(this.dataEntities, dataFish.Species));
                 var localeHasPhotos = this.dataEntities.Photos.Where(p => p.LocaleId == dataFish.Locale).Count() > 0;
                 var fishHasPhotos = this.dataEntities.Photos.Where(p => p.FishId == dataFish.FishID).Count() > 0;
                 var locale = this.localesFactory.Build(dataFish.Locale1, localeHasPhotos);

@@ -3,20 +3,27 @@
 
 <div id="GenusPanel">
     @(Html.Telerik().PanelBar()
-            .Name("GenusPanel_" + Model.GenusType)
-            .ClientEvents(evt => evt.OnSelect("OnGenusPanelSelect"))
+            .Name("GenusPanel_" + Model.GenusType.Id)
             .ExpandMode(PanelBarExpandMode.Single)
             .Items(panelbar => 
                 {
                     foreach (var genus in Model.GenusList)
                     {
-                        panelbar.Add().Text(genus.Name).LinkHtmlAttributes(new { id = "genus_" + genus.Id }).Items(panelBarChild =>
-                            {
-                                foreach (var species in genus.Species)
-                                {
-                                    panelBarChild.Add().Text(species.FullName).LinkHtmlAttributes(new { id = "species_" + species.Id }).Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
-                                }
-                            });
+                        panelbar.Add().Text(genus.Name)
+                                                .Expanded(genus.Id == Model.ExpandedGenus ? true : false)
+                                                .LinkHtmlAttributes(new { id = "genus_" + genus.Id })
+                                                .Items(panelBarChild =>
+                                                    {
+                                                        foreach (var species in genus.Species)
+                                                        {
+                                                            panelBarChild.Add().Text(species.FullName)
+                                                                .Selected(species.Id == Model.SelectedSpecies)
+                                                                .LinkHtmlAttributes(new { id = "species_" + species.Id })
+                                                                .ImageUrl(species.HasPhotos ? Url.Content("../Content/camera.png") : "../nope.jpg")
+                                                                .ImageHtmlAttributes(new { @class = "panelBarItemImage" })
+                                                                .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                                                        }
+                                                    });
                     }
                 })
     )

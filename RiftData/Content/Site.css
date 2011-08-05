@@ -12,7 +12,7 @@ body
     padding: 0;
     color: #696969;
 }
-
+/*
 a:link
 {
     color: #034af3;
@@ -31,7 +31,7 @@ a:active
 {
     color: #12eb87;
 }
-
+*/
 p, ul
 {
     margin-bottom: 20px;
@@ -214,7 +214,7 @@ input[type="password"]
 
 /* TABLE
 ----------------------------------------------------------*/
-
+/*
 table 
 {
   border: solid 1px #e8eef4;
@@ -348,25 +348,21 @@ div#title
 #PageContainer
 {
     width: 1024px;
+    height:702px;
     margin-left: auto;
     margin-right: auto;
     background-color:Black;
 }
 #TabContainer
 {
-    width: 220px;
+    width: 240px;
 }
-
 #GenusPanel
 {
-    width: 210px;
+    width: 230px;
     margin-left: -12px;
     margin-top: -3px;
     margin-bottom: -3px;
-}
-.clear
-{
-    clear:both;
 }
 .panels
 {
@@ -374,21 +370,26 @@ div#title
 }
 #LeftPanel
 {
-    width:280px;    
+    width:240px;    
 }
 #CenterPanel
 {
+    width:450px;
+    height:702px;
+    padding:10px;
+    background-image:url('../../Content/gradient-bg.jpg');
+    background-repeat:repeat-x;
 }
 #RightPanel
 {
-    width:350px;
+    width:314px;
     min-height:600px;
     float:right;
 }
 #LocaleMap
 {
     min-height:700px;
-    width:350px;
+    width:314px;
     float:right;
     position:absolute;
     height:auto;
@@ -398,11 +399,15 @@ div#title
     max-height:666px;
     overflow:auto;
 }
-#pg-container
+.photoCell
 {
-    width:360px;
+    float:left;
 }
-#pg
+.t-link .panelBarItemImage
 {
-    margin-left:-60px;
+    width:50px;
+    height:25px;
+    float:none;
+    margin-left: -15px;
+    margin-right: -10px;
 }

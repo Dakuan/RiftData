@@ -6,12 +6,14 @@
         {
         }
 
-        public string FlickrId { get; set; }
+        public string FlickrId { get; internal set; }
 
-        public string ThumbNailUrl { get; set; }
+        public string SquareThumbnail { get; internal set; }
 
-        public string MediumUrl { get; set; }
+        public string ThumbNailUrl { get; internal set; }
 
-        public string Caption { get; set; }
+        public string MediumUrl { get; internal set; }
+
+        public string Caption { get; internal set; }
     }
 }

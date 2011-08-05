@@ -7,14 +7,11 @@
 }
 
 @section CenterPanel{
-<h2>@Model.SpeciesName</h2>
-<div id="pg-container">
+    <h2>@Model.SpeciesName</h2>
     @Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel)
-</div>
 }
 @section Scripts{
-    
-    <script src="../../Scripts/PhotoGrid/jphotogrid.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/PiroBox/pirobox.js" type="text/javascript"></script>
     <script src="../../Scripts/PageScripts/Species.js" type="text/javascript"></script>
     <script src="../../Scripts/PageScripts/home.js" type="text/javascript"></script>
 }
