@@ -71,7 +71,7 @@ namespace RiftData.Domain.Repositories
             }
             else
             {
-                var genus = this.genusFactory.Build(dataFish.Genus1);
+                var genus = this.genusFactory.Build(dataFish.Genus1, this.dataEntities);
                 var species = this.speciesFactory.Build(dataFish.Species1, genus,SpeciesService.SpeciesHasPhoto(this.dataEntities, dataFish.Species));
                 var localeHasPhotos = this.dataEntities.Photos.Where(p => p.LocaleId == dataFish.Locale).Count() > 0;
                 var fishHasPhotos = this.dataEntities.Photos.Where(p => p.FishId == dataFish.FishID).Count() > 0;

@@ -14,24 +14,21 @@ namespace RiftData.Domain.Factories
 
         private IGenusTypeFactory genusTypeFactory;
 
-        private readonly RiftDataDataEntities _dataEntities;
-
-        public GenusFactory(ISpeciesFactory speciesFactory, IGenusTypeFactory genusTypeFactory, RiftDataDataEntities dataEntities)
+        public GenusFactory(ISpeciesFactory speciesFactory, IGenusTypeFactory genusTypeFactory)
         {
             this.speciesFactory = speciesFactory;
 
             this.genusTypeFactory = genusTypeFactory;
-            _dataEntities = dataEntities;
         }
 
-        public Genus Build(Infrastructure.Data.Genus dataGenus)
+        public Genus Build(Infrastructure.Data.Genus dataGenus, RiftDataDataEntities dataEntities)
         {
             var speciesList = new List<Species>();
 
             var genus = new Genus(dataGenus.GenusID) { Name = dataGenus.GenusName.Trim(), GenusType = this.genusTypeFactory.Build(dataGenus.Type)};
             
             dataGenus.Species.ToList().Where(s => s.Genus == dataGenus.GenusID).ToList()
-                                                    .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus, SpeciesService.SpeciesHasPhoto(this._dataEntities, s.SpeciesID))));
+                                                    .ForEach(s => speciesList.Add(this.speciesFactory.Build(s, genus, SpeciesService.SpeciesHasPhoto(dataEntities, s.SpeciesID))));
 
             if (speciesList.Count < 1)
             {

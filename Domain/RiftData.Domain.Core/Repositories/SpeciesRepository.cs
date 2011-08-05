@@ -70,7 +70,7 @@ namespace RiftData.Domain.Repositories
         {
             try
             {
-                var genus = this.genusFactory.Build(dataSpecies.Genu);
+                var genus = this.genusFactory.Build(dataSpecies.Genu, this.dataEntities);
 
                 var hasFish = this.dataEntities.Fish.Any(f => f.Species == dataSpecies.SpeciesID);
 

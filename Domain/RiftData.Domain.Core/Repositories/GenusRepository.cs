@@ -27,7 +27,7 @@ namespace RiftData.Domain.Repositories
                                                              {
                                                                  try
                                                                  {
-                                                                     var genus = this.genusFactory.Build(g);
+                                                                     var genus = this.genusFactory.Build(g, this.dataEntities);
 
                                                                      list.Add(genus);
                                                                  }
@@ -45,7 +45,7 @@ namespace RiftData.Domain.Repositories
         {
             var list = new List<Genus>();
 
-            this.dataEntities.Genus.Where(g => g.GenusType == genusTypeId && dataEntities.Fish.Any(f => f.Genus == g.GenusID)).ToList().ForEach(g => list.Add(this.genusFactory.Build(g)));
+            this.dataEntities.Genus.Where(g => g.GenusType == genusTypeId && dataEntities.Fish.Any(f => f.Genus == g.GenusID)).ToList().ForEach(g => list.Add(this.genusFactory.Build(g, this.dataEntities)));
 
             return this.Sort(list).ToList();
         }
