@@ -1,37 +1,14 @@
 ﻿$(window).load(function () {
 
-   
+    CreateMap();
 
-    //ExpandPanelBar();
+    //get species id
+    var speciesId = $('#SpeciesId').attr('value');
+
+    AddPinsForSpecies(speciesId);
 
     SetUpPiroBox();
-
-
 });
-
-function SelectCorrectTab() {
-
-    //get tabstrip
-}
-
-function GenusPanelLoad(e) {
-
-    var panel = this.data("tPanelBar");
-
-    var item = $("li:first", panel)[0];
-
-    panel.expand(item);
-}
-
-function ExpandPanelBar() {
-
-    //get panel bar
-    var panel = $("#GenusPanel_3").data("tPanelBar");
-
-    var item = $("li:first", $("#GenusPanel_3").data("tPanelBar").element)[0]; //DOM element
-
-    $("#GenusPanel_3").data("tPanelBar").expand($("li:first", $("#GenusPanel_3").data("tPanelBar").element)[0]);
-}
 
 function SetUpPiroBox() {
     $().piroBox({
@@ -41,4 +18,24 @@ function SetUpPiroBox() {
         slideSpeed: 3 //slideshow 
         //close_all: '.piro_close' // add class .piro_overlay(with comma)if you want overlay click close piroBox
     });
+}
+
+function onPushpinClick(e) {
+
+    //get the locale id,
+
+    //get the html for the infobox
+
+    //create infoBox options
+    var infoboxOptions = { 
+            visible:true,
+    };
+
+    //move infoBox
+    var loc = new Microsoft.Maps.Location(e.target._location.latitude, e.target._location.longitude);
+
+    infoBox.setLocation(loc);
+
+    //fire up the infobox
+    infoBox.setOptions(infoboxOptions);
 }

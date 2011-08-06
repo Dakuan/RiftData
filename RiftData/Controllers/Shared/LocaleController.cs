@@ -17,6 +17,11 @@ namespace RiftData.Controllers.Shared
             _fishRepository = fishRepository;
         }
 
+        public ActionResult Index(string localeName)
+        {
+            return null;
+        }
+
         public ActionResult GetLocalesBySpecies(int id)
         {
             var localeList = new List<Locale>();

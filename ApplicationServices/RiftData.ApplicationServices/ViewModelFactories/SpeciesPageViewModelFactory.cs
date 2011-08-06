@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
 using RiftData.Shared.ViewModels;
 
@@ -12,12 +13,14 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         private readonly ISpeciesRepository _speciesRepository;
         private readonly IPhotosRepository _photosRepository;
         private readonly IGenusTypeRepository _genusTypeRepository;
+        private readonly IFishRepository _fishRepository;
 
-        public SpeciesPageViewModelFactory(ISpeciesRepository speciesRepository, IPhotosRepository photosRepository, IGenusTypeRepository genusTypeRepository)
+        public SpeciesPageViewModelFactory(ISpeciesRepository speciesRepository, IPhotosRepository photosRepository, IGenusTypeRepository genusTypeRepository, IFishRepository fishRepository)
         {
             _speciesRepository = speciesRepository;
             _photosRepository = photosRepository;
             _genusTypeRepository = genusTypeRepository;
+            _fishRepository = fishRepository;
         }
 
         public SpeciesPageViewModel Build(string fullName)
@@ -31,6 +34,14 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         {
             var species = this._speciesRepository.GetSpeciesFromId(speciesId);
 
+            var locales = new List<Locale>();
+                
+            this._fishRepository.GetFishBySpecies(speciesId).ToList().ForEach(f =>
+                                                                                  {
+                                                                                      if (!locales.Any(l => l.Id == f.Locale.Id))
+                                                                                          locales.Add(f.Locale);
+                                                                                  });
+
             var viewModel = new SpeciesPageViewModel
                                 {
                                     SpeciesName = species.FullName,
@@ -38,6 +49,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                                     SelectedGenusId = species.Genus.Id,
                                     SelectedSpeciesId = species.Id,
                                     SelectedGenusTypeId = species.Genus.GenusType.Id,
+                                    Locales = locales,
                                     PhotoGalleryViewModel = new PhotoGalleryViewModel
                                                                 {
                                                                     Name = species.FullName,

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using RiftData.Domain.Entities;
 
 namespace RiftData.Shared.ViewModels
 {
@@ -7,5 +9,7 @@ namespace RiftData.Shared.ViewModels
         public string SpeciesName { get; set; }
 
         public PhotoGalleryViewModel PhotoGalleryViewModel { get; set; }
+
+        public IList<Locale> Locales { get; set; }
     }
 }

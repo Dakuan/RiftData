@@ -5,9 +5,9 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 body
 {
-    background-color: #5c87b2;
+    background-color: white;
     font-size: 75%;
-    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    font-family: "Lobster", Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
     color: #696969;
@@ -43,7 +43,7 @@ p, ul
 h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
-    color: #FFF;
+    color: #323232;
 }
 
 h1
@@ -344,7 +344,12 @@ div#title
     width: 6em;
 }
 
-
+#background
+{
+    width:1200px;
+    background-image:url('../../Content/page-bg.jpg');
+    background-repeat:repeat-y;
+}
 #PageContainer
 {
     width: 1024px;
@@ -370,15 +375,16 @@ div#title
 }
 #LeftPanel
 {
-    width:240px;    
+    width:240px;
+    margin-left: -1px;    
 }
 #CenterPanel
 {
     width:450px;
     height:702px;
     padding:10px;
-    background-image:url('../../Content/gradient-bg.jpg');
-    background-repeat:repeat-x;
+    background-image:url('../../Content/centrepanel-bg.jpg');
+    background-repeat:no-repeat;
     margin-top:-1px;
 }
 #RightPanel
@@ -411,4 +417,39 @@ div#title
     float:none;
     margin-left: -15px;
     margin-right: -10px;
+}
+.horiztonalList li
+{
+    float:left;
+    list-style:none;
+}
+#InfoContainer
+{
+    margin-bottom:10px;
+}
+.infoBlock
+{
+    height:150px;
+    min-width:225px;
+
+    float:left;
+}
+.infoBlock ul
+{
+    overflow:auto;
+}
+.horiztonalList li h3
+{
+    margin-top:0px;
+    margin-right:5px;
+}
+#LocalesList
+{
+    height:125px;
+    overflow:auto;
+}
+
+#PhotoCellContainer
+{
+    margin-top:40px;
 }

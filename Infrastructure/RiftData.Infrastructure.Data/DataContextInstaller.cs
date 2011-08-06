@@ -13,7 +13,7 @@ namespace RiftData.Infrastructure.Data
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<RiftDataDataEntities>().LifeStyle.Is(LifestyleType.Singleton));
+            container.Register(Component.For<RiftDataDataEntities>().LifeStyle.Is(LifestyleType.Thread));
         }
     }
 }
