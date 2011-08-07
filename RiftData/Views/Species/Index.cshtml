@@ -7,48 +7,57 @@
 }
 
 @section CenterPanel{
-    <h2>@Model.SpeciesName</h2>
-    <h3>Description:</h3>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <div id="InfoContainer">
-        <div class="infoBlock">
-            <h3>Found at:</h3>
-            @{ if (Model.Locales.Count() > 0)
-               {
-                <div id="LocalesList">
-                    <ul>
-                        @foreach (var locale in Model.Locales)
-                        {
-                            <li><a href="@Url.Action("Locale", "Locale", new { localeName = locale.Name })">@locale.Name</a></li>
-                        }
-                    </ul>
-                </div>
+    <div id="contentHolder">
+        <h2>@Model.SpeciesName</h2>
+        <h3>Description:</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div id="InfoContainer">
+            <div class="infoBlock">
+                <h3>Found at:</h3>
+                @{ if (Model.Locales.Count() > 0)
+                   {
+                    <div id="LocalesList">
+                        <ul>
+                            @foreach (var locale in Model.Locales)
+                            {
+                                <li>
+                                    @{if(locale.HasPhotos)
+                                        {
+                                            <img alt="@locale.Name" src="@Url.Content("../Content/camera-tight-small.png")" /> 
+                                        }
+                                    }
+                                    <a href="@Url.Action("Index", "Locale", new { localeName = locale.Name })">@locale.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    }
+                    else
+                    {
+                        <p>No locale information available, sorry!</p>   
+                    }
                 }
-                else
-                {
-                    <p>No locale information available, sorry!</p>   
-                }
-            }
-        </div>
-        <div class="infoBlock">
-            <ul class="horiztonalList">
-                <li><h3>Size:</h3></li>
-                <li>6-10cm</li>
-            </ul>
-            <div class="clear"></div>
-            <ul class="horiztonalList">
-                <li><h3>Temperament:</h3></li>
-                <li>Moderate</li>
-            </ul>
+            </div>
+            <div class="infoBlock">
+                <ul class="horiztonalList">
+                    <li><h3>Size:</h3></li>
+                    <li>6-10cm</li>
+                </ul>
+                <div class="clear"></div>
+                <ul class="horiztonalList">
+                    <li><h3>Temperament:</h3></li>
+                    <li>Moderate</li>
+                </ul>
+                <div class="clear"></div>
+            </div>
             <div class="clear"></div>
         </div>
-        <div class="clear"></div>
-    </div>
-    @Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel)
+        @Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel)
+    </div>  
     @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locale"))
-    @Html.Hidden("SpeciesId", Model.SelectedSpeciesId)
+    @Html.Hidden("SpeciesId", Model.SpeciesId)
     @Html.Hidden("LocaleInfoBoxUrl", Url.Action("GetInfoBox", "Locale"))
 }
 @section Scripts{

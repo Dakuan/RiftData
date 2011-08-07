@@ -1,5 +1,5 @@
 ﻿using RiftData.Domain.Entities;
-using RiftData.Shared.ViewModels.Dto;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
@@ -10,5 +10,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         LocaleDto Build(Locale locale);
 
         SpeciesDto Build(Species species);
+
+        GenusDto Build(Genus genus);
     }
 }

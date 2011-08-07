@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
-namespace RiftData.Shared.ViewModels
+namespace RiftData.Presentation.ViewModels
 {
     public class PanelViewModelBase
     {
-        public IList<GenusType> GenusTypes;
+        public IList<GenusTypeDto> GenusTypes;
+
+        public GenusPanelViewModel GenusPanelViewModel { get; set; }
 
         public int? SelectedGenusTypeId { get; set; }
-
-        public int? SelectedGenusId { get; set; }
-
-        public int? SelectedSpeciesId { get; set; }
     }
 }

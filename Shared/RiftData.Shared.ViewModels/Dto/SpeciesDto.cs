@@ -1,4 +1,4 @@
-﻿namespace RiftData.Shared.ViewModels.Dto
+﻿namespace RiftData.Presentation.ViewModels.Dto
 {
     public class SpeciesDto
     {

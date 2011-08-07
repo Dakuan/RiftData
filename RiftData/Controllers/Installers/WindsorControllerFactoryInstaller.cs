@@ -2,8 +2,9 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using RiftData.Controllers.Factory;
 
-namespace RiftData.Controllers
+namespace RiftData.Controllers.Installers
 {
     public class WindosrControllerFactoryInstaller : IWindsorInstaller
     {

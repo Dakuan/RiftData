@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel;
 
-namespace RiftData.Controllers
+namespace RiftData.Controllers.Factory
 {
     public class WindsorControllerFactory : DefaultControllerFactory
     {

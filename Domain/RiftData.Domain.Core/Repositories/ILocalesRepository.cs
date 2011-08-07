@@ -9,5 +9,7 @@ namespace RiftData.Domain.Repositories
         IQueryable<Locale> List { get; }
 
         Locale GetById(int id);
+
+        IList<Locale> GetLocalesWithSpecies(int speciesId);
     }
 }

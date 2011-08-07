@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using RiftData.ApplicationServices.ViewModelFactories;
-using RiftData.Domain.Repositories;
-using RiftData.Shared.ViewModels.Dto;
 
-namespace RiftData.Controllers.Shared
+namespace RiftData.Controllers
 {
     public class SpeciesController : Controller
     {

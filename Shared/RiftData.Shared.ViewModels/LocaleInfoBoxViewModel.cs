@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RiftData.Shared.ViewModels.Dto;
+﻿using System.Collections.Generic;
+using RiftData.Presentation.ViewModels.Dto;
 
-namespace RiftData.Shared.ViewModels
+namespace RiftData.Presentation.ViewModels
 {
     public class LocaleInfoBoxViewModel
     {

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Repositories;
-using RiftData.Shared.ViewModels;
+﻿using RiftData.Domain.Repositories;
+using RiftData.Presentation.ViewModels;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {

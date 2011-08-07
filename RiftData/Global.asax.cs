@@ -4,7 +4,7 @@ using Castle.Windsor;
 using Castle.Windsor.Configuration.Interpreters;
 using Castle.Windsor.Installer;
 using RiftData.ApplicationServices.Installers;
-using RiftData.Controllers;
+using RiftData.Controllers.Factory;
 using RiftData.Domain.Installers;
 using RiftData.Infrastructure.Data;
 
@@ -64,7 +64,7 @@ namespace RiftData
 
             //container.Install(FromAssembly.Containing<RepositoriesInstaller>());
 
-            //container.Install(FromAssembly.Containing<QueriesInstaller>());
+            container.Install(FromAssembly.Containing<ServicesInstaller>());
 
             container.Install(FromAssembly.Containing<ViewModelFactoryInstaller>());
 

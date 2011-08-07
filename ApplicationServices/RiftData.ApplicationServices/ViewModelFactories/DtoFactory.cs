@@ -1,6 +1,7 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using RiftData.Domain.Entities;
-using RiftData.Shared.ViewModels.Dto;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
@@ -36,6 +37,20 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            Id = species.Id,
                            Name = species.FullName,
                            UrlName = species.UrlName
+                       };
+        }
+
+        public GenusDto Build(Genus genus)
+        {
+            var speciesList = new List<SpeciesDto>();
+
+            genus.Species.ToList().ForEach(s => speciesList.Add(this.Build(s)));
+
+            return new GenusDto
+                       {
+                           Id = genus.Id,
+                           Name = genus.Name,
+                           Species = speciesList
                        };
         }
     }

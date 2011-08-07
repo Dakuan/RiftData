@@ -6,20 +6,20 @@ using Castle.Windsor;
 
 namespace RiftData.ApplicationServices.Installers
 {
-    public class QueriesInstaller : IWindsorInstaller
+    public class ServicesInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(AllTypes.FromThisAssembly()
                                 .Pick()
-                                .If(IsQuery)
+                                .If(IsService)
                                 .WithService.DefaultInterface()
                                 .Configure(x => x.LifeStyle.Is(LifestyleType.Transient)));
         }
 
-        private static bool IsQuery(Type type)
+        private static bool IsService(Type type)
         {
-            return type.Name.EndsWith("Query", StringComparison.InvariantCultureIgnoreCase);
+            return type.Name.EndsWith("Service", StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

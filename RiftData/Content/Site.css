@@ -12,11 +12,10 @@ body
     padding: 0;
     color: #696969;
 }
-/*
+
 a:link
 {
-    color: #034af3;
-    text-decoration: underline;
+    color: #00b899;
 }
 a:visited
 {
@@ -421,9 +420,13 @@ div#title
 .infoBlock
 {
     height:150px;
-    width:200px;
-
+    max-width:200px;
     float:left;
+}
+.infoBlock h3
+{
+    margin-top:0px;
+    margin-bottom:0px;
 }
 .infoBlock ul
 {
@@ -442,11 +445,11 @@ div#title
 {
     height:125px;
     overflow:auto;
+    font-size:0.95em;
 }
 
 #PhotoCellContainer
 {
-    margin-top:40px;
     margin-left: 17px;
 }
 #CenterPanelTop
@@ -461,7 +464,11 @@ div#title
     padding-left:20px;
     padding-right:20px;
 }
-#CenterPanelContent h3
+#CenterPanelContent p
+{
+    margin-bottom:0px;
+}
+#CenterPanelContent h2
 {
     margin-top:0px;
 }
@@ -469,4 +476,14 @@ div#title
 {
     height:36px;
     background-image:url('../../Content/CenterPanel/bottom-bg.png');
+}
+#LocalesList ul
+{
+    list-style:none;
+    margin-left:-40px;
+}
+#contentHolder
+{
+    max-height: 620px;
+    overflow: auto;
 }

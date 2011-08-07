@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using RiftData.Domain.Entities;
 
-namespace RiftData.Shared.ViewModels
+namespace RiftData.Presentation.ViewModels
 {
     public class PhotoGalleryViewModel
     {
         public string Name { get; set; }
 
-        public IList<Photo> Photos { get; set; }
+        public IList<PhotoDto> Photos { get; set; }
     }
 }

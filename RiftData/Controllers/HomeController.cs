@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using RiftData.ApplicationServices.ViewModelFactories;
 
-namespace RiftData.Controllers.Home
+namespace RiftData.Controllers
 {
     public class HomeController : Controller
     {

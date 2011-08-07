@@ -11,7 +11,7 @@
                     {
                         panelbar.Add().Text(genus.Name)
                                                 .Expanded(genus.Id == Model.ExpandedGenus ? true : false)
-                                                .LinkHtmlAttributes(new { id = "genus_" + genus.Id })
+                                                .HtmlAttributes(new { @class="genusPanel" })
                                                 .Items(panelBarChild =>
                                                     {
                                                         foreach (var species in genus.Species)

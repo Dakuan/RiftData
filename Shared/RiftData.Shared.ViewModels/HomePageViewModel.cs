@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using RiftData.Domain.Entities;
-
-namespace RiftData.Shared.ViewModels
+﻿namespace RiftData.Presentation.ViewModels
 {
     public class HomePageViewModel : PanelViewModelBase
     {

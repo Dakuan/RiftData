@@ -37,6 +37,18 @@ namespace RiftData.Domain.Repositories
             return this.BuildUp(dataLocale);
         }
 
+        public IList<Locale> GetLocalesWithSpecies(int speciesId)
+        {
+            var list = new List<Locale>();
+
+            dataEntities.Species.First(s => s.SpeciesID == speciesId).Fish.ToList().ForEach(f =>
+                                                                                                {
+                                                                                                    if (f.Locale1 != null) list.Add(this.BuildUp(f.Locale1));
+                                                                                                });
+
+            return this.Sort(list).ToList();
+        }
+
         protected override IEnumerable<Locale> Sort(IEnumerable<Locale> unsortedList)
         {
            var sortedList =  unsortedList.OrderBy(l => l.Name);

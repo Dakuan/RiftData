@@ -1,4 +1,4 @@
-﻿using RiftData.Shared.ViewModels;
+﻿using RiftData.Presentation.ViewModels;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
