@@ -6,5 +6,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories
     public interface IDtoFactory
     {
         FishDto Build(Fish fish);
+
+        LocaleDto Build(Locale locale);
+
+        SpeciesDto Build(Species species);
     }
 }

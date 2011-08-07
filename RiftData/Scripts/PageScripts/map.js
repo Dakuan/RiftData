@@ -39,7 +39,7 @@ function DataZoomToMapZoom(data) {
 
 function AddPinsForSpecies(speciesId) {
 
-    infoBox = new Microsoft.Maps.Infobox(mapCenter, { title: 'My Pushpin', visible: false });
+    infoBox = new Microsoft.Maps.Infobox(mapCenter, { visible: false });
 
     var url = $('#GetLocalesBySpeciesUrl').attr('value') + '/' + speciesId;
 
@@ -74,8 +74,4 @@ function AddPinsForSpecies(speciesId) {
 
         map.entities.push(infoBox);
     });
-}
-
-function onPushpinClick(e) {
-    // do nothing, expect this to be handled by a page script, function included to avoid js error if pushpin click is not required.
 }

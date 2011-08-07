@@ -11,5 +11,7 @@ namespace RiftData.Domain.Repositories
         int FindSpeciesIdFromFullName(string speciesFullName);
 
         Species GetSpeciesFromId(int speciesId);
+
+        IList<Species> GetSpeciesAtLocale(int id);
     }
 }

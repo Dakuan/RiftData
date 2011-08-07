@@ -36,11 +36,11 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
             var locales = new List<Locale>();
                 
-            this._fishRepository.GetFishBySpecies(speciesId).ToList().ForEach(f =>
-                                                                                  {
-                                                                                      if (!locales.Any(l => l.Id == f.Locale.Id))
-                                                                                          locales.Add(f.Locale);
-                                                                                  });
+            //this._fishRepository.GetFishBySpecies(speciesId).ToList().ForEach(f =>
+            //                                                                      {
+            //                                                                          if (!locales.Any(l => l.Id == f.Locale.Id))
+            //                                                                              locales.Add(f.Locale);
+            //                                                                      });
 
             var viewModel = new SpeciesPageViewModel
                                 {

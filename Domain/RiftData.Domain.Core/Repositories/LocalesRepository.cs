@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Factories;
 using RiftData.Infrastructure.Data;
@@ -25,6 +26,15 @@ namespace RiftData.Domain.Repositories
 
                 return this.Sort(list).AsQueryable();
             }
+        }
+
+        public Locale GetById(int id)
+        {
+            var dataLocale = this.dataEntities.Locale.First(l => l.LocaleID == id);
+
+            if (dataLocale == null) return null;
+
+            return this.BuildUp(dataLocale);
         }
 
         protected override IEnumerable<Locale> Sort(IEnumerable<Locale> unsortedList)

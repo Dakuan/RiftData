@@ -279,6 +279,7 @@
     <Content Include="Content\centrepanel-bg.jpg" />
     <Content Include="Content\gradient-bg.jpg" />
     <Content Include="Content\fishPin.png" />
+    <Content Include="Content\LocaleInfoBox.css" />
     <Content Include="Content\page-bg.jpg" />
     <Content Include="Content\PiroBox\ajax-loader.gif" />
     <Content Include="Content\PiroBox\b_c.png" />
@@ -381,6 +382,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Views\Species\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Locale\LocaleInfoBox.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -49,6 +49,7 @@
     @Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel)
     @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locale"))
     @Html.Hidden("SpeciesId", Model.SelectedSpeciesId)
+    @Html.Hidden("LocaleInfoBoxUrl", Url.Action("GetInfoBox", "Locale"))
 }
 @section Scripts{
     <script src="../../Scripts/PiroBox/pirobox.js" type="text/javascript"></script>

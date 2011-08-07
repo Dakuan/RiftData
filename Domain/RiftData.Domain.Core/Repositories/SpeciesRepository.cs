@@ -66,6 +66,20 @@ namespace RiftData.Domain.Repositories
             return this.BuildUp(this.dataEntities.Species.First(s => s.SpeciesID == speciesId));
         }
 
+        public IList<Species> GetSpeciesAtLocale(int id)
+        {
+            var species = new List<Species>();
+
+            this.dataEntities.Species.Where(s => s.Fish.Any(f => f.Locale == id)).ToList().ForEach(s =>
+                                                                    {
+                                                                        var genus = this.genusFactory.Build(s.Genu, this.dataEntities);
+                                                                        var hasPhotos = SpeciesService.SpeciesHasPhoto(this.dataEntities,s.SpeciesID);
+                                                                        species.Add(this.speciesFactory.Build(s, genus, hasPhotos));
+                                                                    });
+
+            return species;
+        }
+
         protected override Species BuildUp (RiftData.Infrastructure.Data.Species dataSpecies)
         {
             try

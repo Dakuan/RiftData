@@ -1,0 +1,20 @@
+﻿@model RiftData.Shared.ViewModels.LocaleInfoBoxViewModel
+<div id="LocaleInfoBoxTop"></div>
+<div id="LocaleInfoBox">
+    <img src="@Model.PhotoUrl" alt="@Model.Name" width="50px" height="50px" />
+    <h3>@Model.Name</h3>
+    <div class="clear"></div>
+    @{if (Model.Species.Count > 0)
+      {
+        <div id="SpeciesListContainer">
+            <ul>
+                @foreach (var species in Model.Species)
+                {
+                    <li class="speciesListItem"><a href="@Url.Action("Index", "Species", new { speciesFullName = species.UrlName })">@species.Name</a></li>
+                }
+            </ul>
+        </div>
+        }
+    }
+</div>
+<div id="LocaleInfoBoxBottom"></div>

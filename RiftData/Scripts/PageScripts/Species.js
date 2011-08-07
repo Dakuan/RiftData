@@ -1,4 +1,7 @@
-﻿$(window).load(function () {
+﻿
+/// <reference path="../2011.2.712/jquery-1.5.1.min.js" />
+
+$(window).load(function () {
 
     CreateMap();
 
@@ -22,20 +25,18 @@ function SetUpPiroBox() {
 
 function onPushpinClick(e) {
 
-    //get the locale id,
+    var id = e.target.Id;
 
-    //get the html for the infobox
+    var url = $('#LocaleInfoBoxUrl').attr('value') + '/' + id;
 
-    //create infoBox options
-    var infoboxOptions = { 
-            visible:true,
-    };
+    $.get(url, function (data) {
 
-    //move infoBox
-    var loc = new Microsoft.Maps.Location(e.target._location.latitude, e.target._location.longitude);
+        var loc = new Microsoft.Maps.Location(e.target._location.latitude, e.target._location.longitude);
 
-    infoBox.setLocation(loc);
+        infoBox.setLocation(loc);
 
-    //fire up the infobox
-    infoBox.setOptions(infoboxOptions);
+        infoBox.setOptions({ visible: true, offset: new Microsoft.Maps.Point(-110, 0), htmlContent: data.toString() });
+
+        map.setView({ center: loc });
+    });
 }

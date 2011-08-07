@@ -1,0 +1,48 @@
+﻿#LocaleInfoBox
+{
+    width:200px;
+    background-image:url('../../Content/LocaleInfoBox/body-bg.png');
+    background-repeat:repeat-y;
+    padding-left:10px;
+    padding-right:10px;
+    text-align:center;
+}
+#LocaleInfoBoxTop
+{
+    width:220px;
+    height:50px;
+    background-image:url('../../Content/LocaleInfoBox/top-bg.png');
+}
+#LocaleInfoBoxBottom
+{
+    width:220px;
+    height:20px;
+    background-image:url('../../Content/LocaleInfoBox/bottom-bg.png');
+}
+#LocaleInfoBox img
+{
+    float: left;
+    margin-right: 10px;
+}
+#LocaleInfoBox h3
+{
+    color:White;
+    margin-top:0px;
+}
+#LocaleInfoBox ul
+{
+    list-style: none;
+    margin-left: -40px;
+    font-size: 0.8em;
+    color:White;
+}
+#SpeciesListContainer
+{
+    max-height:200px;
+    overflow:auto;
+    margin-top: 10px;
+}
+.speciesListItem a
+{
+    color:White;
+}

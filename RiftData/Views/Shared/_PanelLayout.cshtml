@@ -18,7 +18,11 @@
     </div>
 </div>
 <div id="CenterPanel" class="panels">
-    @RenderSection("CenterPanel", false)
+    <div id="CenterPanelTop"></div>
+    <div id="CenterPanelContent">
+        @RenderSection("CenterPanel", false)
+    </div>
+    <div id="CenterPanelBottom"></div>
 </div>
 <div id="RightPanel" class="panels">
     <div id="LocaleMap"></div>

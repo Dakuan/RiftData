@@ -1,4 +1,5 @@
-﻿using RiftData.Domain.Entities;
+﻿using System;
+using RiftData.Domain.Entities;
 using RiftData.Shared.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
@@ -14,6 +15,27 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            LocaleName = fish.Locale.Name,
                            Latitude = fish.Locale.Latitude,
                            Longitude = fish.Locale.Longitude
+                       };
+        }
+
+        public LocaleDto Build(Locale locale)
+        {
+            return new LocaleDto
+                       {
+                           Id = locale.Id,
+                           Name = locale.Name,
+                           Latitude = locale.Latitude,
+                           Longitude = locale.Longitude
+                       };
+        }
+
+        public SpeciesDto Build(Species species)
+        {
+            return new SpeciesDto
+                       {
+                           Id = species.Id,
+                           Name = species.FullName,
+                           UrlName = species.UrlName
                        };
         }
     }

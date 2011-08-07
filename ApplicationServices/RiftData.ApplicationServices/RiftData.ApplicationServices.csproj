@@ -52,7 +52,9 @@
     <Compile Include="ViewModelFactories\IDtoFactory.cs" />
     <Compile Include="ViewModelFactories\IGenusPanelViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IHomePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\ILocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\ISpeciesPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\LocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\SpeciesPageViewModelFactory.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -41,11 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\FishDto.cs" />
+    <Compile Include="Dto\LocaleDto.cs" />
     <Compile Include="GenusPanelViewModel.cs" />
     <Compile Include="HomePageViewModel.cs" />
+    <Compile Include="LocaleInfoBoxViewModel.cs" />
     <Compile Include="PanelViewModelBase.cs" />
     <Compile Include="PhotoGalleryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dto\SpeciesDto.cs" />
     <Compile Include="SpeciesPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
