@@ -288,6 +288,7 @@
     <Content Include="Content\LocaleInfoBox\LocaleInfoBox.css" />
     <Content Include="Content\LocaleInfoBox\body-bg.jpg" />
     <Content Include="Content\LocaleInfoBox\bottom-bg.png" />
+    <Content Include="Content\LocaleInfoBox\top-bg.png" />
     <Content Include="Content\page-bg.jpg" />
     <Content Include="Content\PiroBox\ajax-loader.gif" />
     <Content Include="Content\PiroBox\b_c.png" />
