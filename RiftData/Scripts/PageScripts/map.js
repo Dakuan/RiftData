@@ -18,7 +18,12 @@ function CreateMap() {
         credentials: "AsZr5U9t2cAH1YZh8fMdisYJ3479SF2aw4MqdnC8-cK8bnHS_qpyNeAvXdXg8WID",
         center: mapCenter,
         mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-        zoom: zoomLevel
+        zoom: zoomLevel,
+        showScalebar: false,
+        enableSearchLogo: false,
+        enableClickableLogo: false,
+        showMapTypeSelector: false,
+        labelOverlay: Microsoft.Maps.LabelOverlay.hidden
     });
 }
 

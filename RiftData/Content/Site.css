@@ -415,18 +415,13 @@ div#title
 }
 #InfoContainer
 {
-    margin-bottom:10px;
+    margin-bottom:30px;
 }
 .infoBlock
 {
     height:150px;
     max-width:200px;
     float:left;
-}
-.infoBlock h3
-{
-    margin-top:0px;
-    margin-bottom:0px;
 }
 .infoBlock ul
 {
@@ -444,6 +439,7 @@ div#title
 #LocalesList
 {
     height:125px;
+    width:165px;
     overflow:auto;
     font-size:0.95em;
 }
@@ -482,8 +478,23 @@ div#title
     list-style:none;
     margin-left:-40px;
 }
+#LocalesList ul li
+{
+    margin-bottom:5px;
+}
 #contentHolder
 {
     max-height: 620px;
     overflow: auto;
+}
+.cameraPicBlank
+{
+    width: 25px;
+    height: 16px;
+    float: left;
+    margin-right: 5px;
+}
+.localeListImage
+{
+    margin-bottom: -4px;
 }
