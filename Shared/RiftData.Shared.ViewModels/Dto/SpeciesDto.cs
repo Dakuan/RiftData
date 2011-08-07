@@ -7,5 +7,7 @@
         public string Name { get; set; }
 
         public string UrlName { get; set; }
+
+        public bool HasPhotos { get; set; }
     }
 }

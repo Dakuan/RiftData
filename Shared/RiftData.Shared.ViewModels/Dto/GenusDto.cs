@@ -9,5 +9,7 @@ namespace RiftData.Presentation.ViewModels.Dto
         public string Name { get; set; }
 
         public IList<SpeciesDto> Species { get; set; }
+
+        public int GenusTypeId { get; set; }
     }
 }

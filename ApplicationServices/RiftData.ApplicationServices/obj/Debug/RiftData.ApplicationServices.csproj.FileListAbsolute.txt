@@ -2,11 +2,11 @@ C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bi
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.ApplicationServices.pdb
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Domain.dll
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Infrastructure.Data.dll
-C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Shared.ViewModels.dll
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\FlickrNet.dll
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Domain.pdb
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Infrastructure.Data.pdb
-C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Shared.ViewModels.pdb
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.dll
 C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.pdb
+C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Presentation.ViewModels.dll
+C:\Users\Dakuan\git\RiftData\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Presentation.ViewModels.pdb

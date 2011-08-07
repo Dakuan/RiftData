@@ -356,6 +356,10 @@
       <Project>{12F5CC2A-6B13-4EB8-A104-466143F82D90}</Project>
       <Name>RiftData.ApplicationServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain\RiftData.Domain.Core\RiftData.Domain.csproj">
+      <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
+      <Name>RiftData.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
       <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>
       <Name>RiftData.Infrastructure.Data</Name>

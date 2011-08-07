@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Domain.Entities;
 using RiftData.Presentation.ViewModels.Dto;
 
@@ -26,7 +27,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            Id = locale.Id,
                            Name = locale.Name,
                            Latitude = locale.Latitude,
-                           Longitude = locale.Longitude
+                           Longitude = locale.Longitude,
+                           HasPhotos = locale.HasPhotos
                        };
         }
 
@@ -36,7 +38,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                        {
                            Id = species.Id,
                            Name = species.FullName,
-                           UrlName = species.UrlName
+                           UrlName = species.UrlName,
+                           HasPhotos = species.HasPhotos
                        };
         }
 
@@ -52,6 +55,23 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            Name = genus.Name,
                            Species = speciesList
                        };
+        }
+
+        public PhotoDto Build(Photo photo)
+        {
+            return new PhotoDto
+                       {
+                           Caption = photo.Caption,
+                           Id = photo.Id,
+                           MediumUrl = photo.MediumUrl,
+                           ThumbNailUrl = photo.ThumbNailUrl,
+                           SquareThumbnail = photo.SquareThumbnail
+                       };
+        }
+
+        public GenusTypeDto Build(GenusType genusType)
+        {
+            return new GenusTypeDto { Id = genusType.Id, Name = genusType.Name };
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using RiftData.Presentation.ViewModels.Dto;
 
-namespace RiftData.ApplicationServices.DtoServices
+namespace RiftData.ApplicationServices.DtoServices.Contracts
 {
     public interface ILocaleDtoService
     {

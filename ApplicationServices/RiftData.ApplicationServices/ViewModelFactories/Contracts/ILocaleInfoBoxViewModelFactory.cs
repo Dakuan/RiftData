@@ -1,6 +1,6 @@
 ﻿using RiftData.Presentation.ViewModels;
 
-namespace RiftData.ApplicationServices.ViewModelFactories
+namespace RiftData.ApplicationServices.ViewModelFactories.Contracts
 {
     public interface ILocaleInfoBoxViewModelFactory
     {

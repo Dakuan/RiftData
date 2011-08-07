@@ -1,21 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using RiftData.ApplicationServices.ViewModelFactories;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.ViewModels.Dto;
+﻿using System.Web.Mvc;
+using RiftData.ApplicationServices.DtoServices.Contracts;
+using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 
 namespace RiftData.Controllers
 {
     public class LocaleController : Controller
     {
         private readonly ILocaleInfoBoxViewModelFactory _localeInfoBoxViewModelFactory;
+        private readonly ILocaleDtoService _localeDtoService;
 
-        public LocaleController(IDtoFactory dtoFactory, ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILo)
+        public LocaleController(IDtoFactory dtoFactory, ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocaleDtoService localeDtoService)
         {
-            _fishRepository = fishRepository;
-            _dtoFactory = dtoFactory;
             _localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
+            _localeDtoService = localeDtoService;
         }
 
         public ActionResult Index(string localeName)
@@ -32,12 +29,10 @@ namespace RiftData.Controllers
 
         public ActionResult GetLocalesBySpecies(int id)
         {
-
-
             return new JsonResult
                        {
                            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-                           Data = localeList
+                           Data = this._localeDtoService.GetLocaleDtosFromSpecies(id)
                        };
         }
     }

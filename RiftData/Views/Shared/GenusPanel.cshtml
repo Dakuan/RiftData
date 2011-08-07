@@ -1,9 +1,9 @@
 ﻿@using RiftData.Domain.Entities
-@model RiftData.Shared.ViewModels.GenusPanelViewModel
+@model RiftData.Presentation.ViewModels.GenusPanelViewModel
 
 <div id="GenusPanel">
     @(Html.Telerik().PanelBar()
-            .Name("GenusPanel_" + Model.GenusType.Id)
+            .Name("GenusPanel")
             .ExpandMode(PanelBarExpandMode.Single)
             .Items(panelbar => 
                 {
@@ -11,14 +11,14 @@
                     {
                         panelbar.Add().Text(genus.Name)
                                                 .Expanded(genus.Id == Model.ExpandedGenus ? true : false)
-                                                .HtmlAttributes(new { @class="genusPanel" })
+                                                .HtmlAttributes(new { @class="genusPanelbar" })
                                                 .Items(panelBarChild =>
                                                     {
                                                         foreach (var species in genus.Species)
                                                         {
                                                             if (species.HasPhotos)
                                                             {
-                                                                panelBarChild.Add().Text(species.FullName)
+                                                                panelBarChild.Add().Text(species.Name)
                                                                     .Selected(species.Id == Model.SelectedSpecies)
                                                                     .LinkHtmlAttributes(new { id = "species_" + species.Id })
                                                                     .ImageUrl(Url.Content("../Content/camera.png"))
@@ -27,11 +27,11 @@
                                                             }
                                                             else
                                                             {
-                                                                panelBarChild.Add().Text(species.FullName)
+                                                                panelBarChild.Add().Text(species.Name)
                                                                     .Selected(species.Id == Model.SelectedSpecies)
                                                                     .LinkHtmlAttributes(new { id = "species_" + species.Id })
                                                                     .ImageUrl(Url.Content("../Content/camera.png"))
-                                                                    .ImageHtmlAttributes( new { @class = "panelBarItemImage", style = "display:none" })
+                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage", style = "display:none" })
                                                                     .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
                                                             }
                                                         }

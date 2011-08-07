@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels
 {
