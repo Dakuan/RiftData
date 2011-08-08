@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.ApplicationServices.ViewModelFactories.Contracts;
@@ -25,6 +26,11 @@ namespace RiftData.ApplicationServices.DtoServices
             this._genusTypeRepository.GetGenusTypesContainingGenus().ToList().ForEach(t => list.Add(this._dtoFactory.Build(t)));
 
             return list;
+        }
+
+        public GenusTypeDto GetGenusTypeByName(string genusTypeName)
+        {
+            return this._dtoFactory.Build(this._genusTypeRepository.GetGenusTypeByName(genusTypeName));
         }
     }
 }

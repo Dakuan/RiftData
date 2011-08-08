@@ -23,3 +23,14 @@ C:\Git\RiftData\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Windsor.pdb
 C:\Git\RiftData\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Windsor.xml
 C:\Git\RiftData\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.dll
 C:\Git\RiftData\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\RiftData.Domain.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\RiftData.Domain.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\RiftData.Infrastructure.Data.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\RiftData.Infrastructure.Data.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Core.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Core.xml
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Windsor.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Windsor.xml

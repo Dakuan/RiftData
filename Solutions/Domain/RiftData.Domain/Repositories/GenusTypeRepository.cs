@@ -38,6 +38,11 @@ namespace RiftData.Domain.Repositories
             return list;
         }
 
+        public GenusType GetGenusTypeByName(string genusTypeName)
+        {
+            return this.genusTypeFactory.Build(this.dataEntities.Type.Where(t => string.Equals(genusTypeName, t.GenusTypeName)).First());
+        }
+
         protected override IEnumerable<GenusType> Sort(IEnumerable<GenusType> unsortedList)
         {
             //kinda redundant too really........

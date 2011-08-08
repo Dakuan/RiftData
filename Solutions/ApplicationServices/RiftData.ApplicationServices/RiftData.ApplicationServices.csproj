@@ -47,6 +47,7 @@
     <Compile Include="DtoServices\Contracts\IGenusTypeService.cs" />
     <Compile Include="DtoServices\LocaleDtoService.cs" />
     <Compile Include="DtoServices\Contracts\ILocaleDtoService.cs" />
+    <Compile Include="DtoServices\PhotoDtoService.cs" />
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Installers\ViewModelFactoryInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

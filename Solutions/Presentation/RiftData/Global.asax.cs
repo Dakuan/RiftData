@@ -25,6 +25,12 @@ namespace RiftData
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Home", // Route name
+                "{genusTypeName}", // URL with parameters
+                new { controller = "Home", action = "Index", genusTypeName = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
                 "Species", 
                 "Species/{speciesFullName}",
                 new { controller = "Species", action = "Index" }

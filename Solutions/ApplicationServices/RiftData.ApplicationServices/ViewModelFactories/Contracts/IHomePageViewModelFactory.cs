@@ -4,6 +4,6 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Contracts
 {
     public interface IHomePageViewModelFactory
     {
-        HomePageViewModel Build();
+        HomePageViewModel Build(string genusTypeName);
     }
 }

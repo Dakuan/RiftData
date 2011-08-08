@@ -12,9 +12,14 @@ namespace RiftData.Controllers
             this.homePageViewModelFactory = homePageViewModelFactory;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string genusTypeName)
         {
-            var viewModel = this.homePageViewModelFactory.Build();
+            if (genusTypeName == null)
+            {
+                genusTypeName = "Mbuna";
+            }
+
+            var viewModel = this.homePageViewModelFactory.Build(genusTypeName);
 
             return View(viewModel);
         }

@@ -19,3 +19,8 @@ C:\Git\RiftData\Solutions\Presentation\RiftData.Presentation.ViewModels\obj\Debu
 C:\Git\RiftData\Solutions\Presentation\RiftData.Presentation.ViewModels\bin\Debug\RiftData.Presentation.ViewModels.dll
 C:\Git\RiftData\Solutions\Presentation\RiftData.Presentation.ViewModels\bin\Debug\RiftData.Presentation.ViewModels.pdb
 C:\Git\RiftData\Solutions\Presentation\RiftData.Presentation.ViewModels\obj\Debug\RiftData.Presentation.ViewModels.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData.Presentation.ViewModels\bin\Debug\RiftData.Presentation.ViewModels.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData.Presentation.ViewModels\bin\Debug\RiftData.Presentation.ViewModels.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData.Presentation.ViewModels\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData.Presentation.ViewModels\obj\Debug\RiftData.Presentation.ViewModels.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData.Presentation.ViewModels\obj\Debug\RiftData.Presentation.ViewModels.pdb

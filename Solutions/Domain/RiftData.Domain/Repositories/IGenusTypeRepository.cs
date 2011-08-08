@@ -9,5 +9,7 @@ namespace RiftData.Domain.Repositories
         IQueryable<GenusType> List { get; }
 
         IList<GenusType> GetGenusTypesContainingGenus();
+
+        GenusType GetGenusTypeByName(string genusTypeName);
     }
 }
