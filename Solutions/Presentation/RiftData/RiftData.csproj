@@ -67,7 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Telerik.Web.Mvc, Version=2010.2.825.235, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Referenced Assemblies\Telerik\Binaries\Mvc3\Telerik.Web.Mvc.dll</HintPath>
+      <HintPath>..\..\..\Referenced Assemblies\Telerik\Binaries\Mvc3\Telerik.Web.Mvc.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
