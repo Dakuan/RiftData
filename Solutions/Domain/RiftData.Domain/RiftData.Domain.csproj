@@ -39,8 +39,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Referenced Assemblies\CastleWindsor\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="FlickrNet">
-      <HintPath>..\..\Referenced Assemblies\FlickrNet.3.1.4000\lib\FlickrNet.dll</HintPath>
+    <Reference Include="FlickrNet, Version=3.1.4000.0, Culture=neutral, PublicKeyToken=2491df59efa5d132, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Referenced Assemblies\FlickrNet.3.1.4000\lib\FlickrNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
