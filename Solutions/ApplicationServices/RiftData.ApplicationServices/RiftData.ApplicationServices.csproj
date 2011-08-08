@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12F5CC2A-6B13-4EB8-A104-466143F82D90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RiftData.ApplicationServices</RootNamespace>
+    <AssemblyName>RiftData.ApplicationServices</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
+    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DtoServices\GenusTypeService.cs" />
+    <Compile Include="DtoServices\Contracts\IGenusTypeService.cs" />
+    <Compile Include="DtoServices\LocaleDtoService.cs" />
+    <Compile Include="DtoServices\Contracts\ILocaleDtoService.cs" />
+    <Compile Include="Installers\ServicesInstaller.cs" />
+    <Compile Include="Installers\ViewModelFactoryInstaller.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelFactories\DtoFactory.cs" />
+    <Compile Include="ViewModelFactories\GenusPanelViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\HomePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Contracts\IDtoFactory.cs" />
+    <Compile Include="ViewModelFactories\Contracts\IGenusPanelViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Contracts\IHomePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Contracts\ILocaleInfoBoxViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Contracts\ISpeciesPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Contracts\IPhotoGalleryViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\LocaleInfoBoxViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\PhotoGalleryViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\SpeciesPageViewModelFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\RiftData.Domain\RiftData.Domain.csproj">
+      <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
+      <Name>RiftData.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
+      <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>
+      <Name>RiftData.Infrastructure.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Presentation\RiftData.Presentation.ViewModels\RiftData.Presentation.ViewModels.csproj">
+      <Project>{1E84268C-9D18-4844-B170-2A2222C80998}</Project>
+      <Name>RiftData.Presentation.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
