@@ -9,43 +9,66 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="76" fromTop="1" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:LocaleInfoBoxViewModelFactory.cs" caret="176" fromTop="4" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:SpeciesPageViewModelFactory.cs" caret="76" fromTop="1" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:DtoFactory.cs" caret="0" fromTop="0" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Installers/f:ServicesInstaller.cs" caret="231" fromTop="8" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:GenusPanelViewModelFactory.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Species/f:Index.cshtml" caret="1099" fromTop="21" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:GenusPanelViewModel.cs" caret="366" fromTop="14" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IDtoFactory.cs" caret="457" fromTop="19" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:PhotoGalleryViewModelFactory.cs" caret="1310" fromTop="29" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="2063" fromTop="62" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IPhotoGalleryViewModelFactory.cs" caret="33" fromTop="1" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="424" fromTop="12" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:IGenusTypeRepository.cs" caret="288" fromTop="11" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IHomePageViewModelFactory.cs" caret="234" fromTop="8" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="608" fromTop="20" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1447" fromTop="13" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="1488" fromTop="26" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="923" fromTop="6" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PanelViewModelBase.cs" caret="0" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="351" fromTop="14" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Species/f:Index.cshtml" caret="426" fromTop="13" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PhotoGalleryViewModel.cs" caret="0" fromTop="0" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="0" fromTop="0" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/d:Contracts/f:IGenusTypeService.cs" caret="305" fromTop="9" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="1222" fromTop="16" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1281" fromTop="18" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="261" fromTop="9" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Installers/f:ServicesInstaller.cs" caret="423" fromTop="12" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:FactoriesInstaller.cs" caret="668" fromTop="17" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Installers/f:WindsorControllerFactoryInstaller.cs" caret="528" fromTop="13" />
     </RecentFiles>
     <RecentEdits>
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:SpeciesPageViewModelFactory.cs" caret="76" fromTop="1" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:GenusPanelViewModelFactory.cs" caret="526" fromTop="10" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:GenusPanelViewModelFactory.cs" caret="948" fromTop="21" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:GenusPanelViewModelFactory.cs" caret="943" fromTop="21" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:DtoFactory.cs" caret="235" fromTop="6" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:DtoFactory.cs" caret="1737" fromTop="24" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:DtoFactory.cs" caret="1781" fromTop="27" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:DtoFactory.cs" caret="0" fromTop="0" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Installers/f:ServicesInstaller.cs" caret="791" fromTop="21" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Installers/f:ServicesInstaller.cs" caret="231" fromTop="8" />
-      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:GenusPanelViewModel.cs" caret="35" fromTop="1" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IPhotoGalleryViewModelFactory.cs" caret="250" fromTop="8" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IDtoFactory.cs" caret="305" fromTop="12" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IDtoFactory.cs" caret="31" fromTop="0" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:PhotoGalleryViewModelFactory.cs" caret="412" fromTop="11" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:PhotoGalleryViewModelFactory.cs" caret="1310" fromTop="29" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IPhotoGalleryViewModelFactory.cs" caret="33" fromTop="1" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="239" fromTop="6" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="2063" fromTop="24" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="2333" fromTop="24" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="609" fromTop="16" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="380" fromTop="12" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="424" fromTop="12" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="475" fromTop="10" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:IGenusTypeRepository.cs" caret="288" fromTop="11" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="734" fromTop="13" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="306" fromTop="10" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1458" fromTop="17" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="608" fromTop="20" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1447" fromTop="13" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="1538" fromTop="23" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="1488" fromTop="26" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="923" fromTop="6" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="1281" fromTop="15" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="788" fromTop="15" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="196" fromTop="7" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="283" fromTop="9" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="0" fromTop="0" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1576" fromTop="25" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/d:Contracts/f:IGenusTypeService.cs" caret="305" fromTop="9" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="383" fromTop="10" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="1162" fromTop="16" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1098" fromTop="14" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1558" fromTop="25" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1290" fromTop="18" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="622" fromTop="19" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="237" fromTop="12" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -60,19 +83,19 @@
   </UnitTestRunnerNUnit>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="ctor" priority="26" />
-      <Item value="public" priority="74" />
-      <Item value="int" priority="21" />
+      <Item value="ctor" priority="27" />
+      <Item value="public" priority="76" />
+      <Item value="int" priority="22" />
       <Item value="IndexOutOfRangeException`0" priority="1" />
       <Item value="id" priority="0" />
-      <Item value="string" priority="48" />
+      <Item value="string" priority="49" />
       <Item value="virtual" priority="1" />
       <Item value="override" priority="9" />
-      <Item value="this" priority="180" />
+      <Item value="this" priority="187" />
       <Item value="EntityBase`0" priority="4" />
       <Item value="private" priority="18" />
       <Item value="name" priority="1" />
-      <Item value="IList" priority="15" />
+      <Item value="IList" priority="16" />
       <Item value="Species`0" priority="21" />
       <Item value="specieses" priority="0" />
       <Item value="IServiceProvider`0" priority="0" />
@@ -89,12 +112,12 @@
       <Item value="T`0" priority="0" />
       <Item value="ISpeciesFactory`0" priority="5" />
       <Item value="FactoryBase`0" priority="1" />
-      <Item value="var" priority="77" />
+      <Item value="var" priority="81" />
       <Item value="s" priority="33" />
       <Item value="new" priority="53" />
       <Item value="dataObject" priority="13" />
-      <Item value="return" priority="62" />
-      <Item value="if" priority="11" />
+      <Item value="return" priority="64" />
+      <Item value="if" priority="12" />
       <Item value="Exception`0" priority="0" />
       <Item value="Genus`0" priority="20" />
       <Item value="RiftMap.Domain" priority="2" />
@@ -103,7 +126,7 @@
       <Item value="speciesFactory" priority="6" />
       <Item value="g" priority="9" />
       <Item value="NullDataObjectException" priority="0" />
-      <Item value="List" priority="24" />
+      <Item value="List" priority="25" />
       <Item value="speciesList" priority="8" />
       <Item value="CannotUnloadAppDomainException`0" priority="0" />
       <Item value="genusFactory" priority="6" />
@@ -111,7 +134,7 @@
       <Item value="IQueryable" priority="4" />
       <Item value="riftDataDataEntities" priority="2" />
       <Item value="try" priority="1" />
-      <Item value="list" priority="28" />
+      <Item value="list" priority="29" />
       <Item value="IRepository" priority="9" />
       <Item value="SpeciesRepository`0" priority="0" />
       <Item value="container" priority="6" />
@@ -165,32 +188,32 @@
       <Item value="fishRepository" priority="3" />
       <Item value="null" priority="5" />
       <Item value="else" priority="4" />
-      <Item value="genusRepository" priority="2" />
+      <Item value="genusRepository" priority="3" />
       <Item value="ActionResult`0" priority="5" />
       <Item value="PartialView`0" priority="3" />
       <Item value="Type" priority="0" />
       <Item value="IGenusTypeFactory`0" priority="1" />
-      <Item value="GenusType" priority="3" />
+      <Item value="GenusType" priority="4" />
       <Item value="dataGenusType" priority="2" />
       <Item value="RepositoryBase" priority="7" />
-      <Item value="GenusType`0" priority="5" />
+      <Item value="GenusType`0" priority="6" />
       <Item value="GenusRepository`0" priority="0" />
       <Item value="genusTypeFactory" priority="1" />
-      <Item value="genusTypeRepository" priority="2" />
+      <Item value="genusTypeRepository" priority="3" />
       <Item value="Entities" priority="0" />
       <Item value="GenusPanelViewModel`0" priority="0" />
-      <Item value="GenusPanelViewModel" priority="2" />
+      <Item value="GenusPanelViewModel" priority="3" />
       <Item value="genusTypeId" priority="3" />
       <Item value="GenusList" priority="0" />
       <Item value="genusList" priority="3" />
-      <Item value="genusType" priority="0" />
-      <Item value="genusPanelViewModelFactory" priority="4" />
+      <Item value="genusType" priority="3" />
+      <Item value="genusPanelViewModelFactory" priority="5" />
       <Item value="HomePageViewModel" priority="0" />
       <Item value="GenusTypes" priority="2" />
       <Item value="homePageViewModelFactory" priority="2" />
       <Item value="t" priority="13" />
       <Item value="GenusCount" priority="0" />
-      <Item value="genusTypes" priority="0" />
+      <Item value="genusTypes" priority="1" />
       <Item value="hasFish" priority="2" />
       <Item value="true" priority="0" />
       <Item value="HaveFish" priority="0" />
@@ -245,7 +268,7 @@
       <Item value="components" priority="13" />
       <Item value="genusName" priority="1" />
       <Item value="OrdinalIgnoreCase" priority="0" />
-      <Item value="InvariantCultureIgnoreCase" priority="0" />
+      <Item value="InvariantCultureIgnoreCase" priority="1" />
       <Item value="speciesName" priority="4" />
       <Item value="Count`1" priority="1" />
       <Item value="foreach" priority="0" />
@@ -263,7 +286,7 @@
       <Item value="UrlParameter`0" priority="0" />
       <Item value="PanelViewModel`0" priority="0" />
       <Item value="PanelViewModelBase`0" priority="1" />
-      <Item value="PhotoGalleryViewModel`0" priority="0" />
+      <Item value="PhotoGalleryViewModel`0" priority="1" />
       <Item value="SpeciesPageViewModel`0" priority="1" />
       <Item value="SpeciesName" priority="0" />
       <Item value="ThreadStaticAttribute`0" priority="0" />
@@ -272,11 +295,11 @@
       <Item value="Task`0" priority="0" />
       <Item value="photoList" priority="1" />
       <Item value="IPhotosRepository`0" priority="0" />
-      <Item value="photosRepository" priority="0" />
+      <Item value="photosRepository" priority="1" />
       <Item value="PhotoGalleryViewModel" priority="1" />
       <Item value="Photos" priority="0" />
-      <Item value="IGenusPanelViewModelFactory`0" priority="1" />
-      <Item value="IGenusTypeRepository`0" priority="0" />
+      <Item value="IGenusPanelViewModelFactory`0" priority="2" />
+      <Item value="IGenusTypeRepository`0" priority="1" />
       <Item value="ISpeciesPageViewModelFactory`0" priority="0" />
       <Item value="speciesPageViewModelFactory" priority="0" />
       <Item value="View`0" priority="0" />
@@ -306,6 +329,14 @@
       <Item value="SpeciesId" priority="0" />
       <Item value="genusDtoList" priority="0" />
       <Item value="GenusDto" priority="0" />
+      <Item value="genusTypeName" priority="5" />
+      <Item value="IGenusRepository`0" priority="0" />
+      <Item value="SelectedGenusTypeId" priority="0" />
+      <Item value="genusPanelViewModel" priority="0" />
+      <Item value="PhotoDto`0" priority="1" />
+      <Item value="GenusTypeDto`0" priority="1" />
+      <Item value="HashSet" priority="0" />
+      <Item value="NewsStyleUriParser`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Core.EntityBase">
       <Item value="Id" priority="0" />
@@ -337,7 +368,7 @@
       <Item value="Genus" priority="2" />
       <Item value="Locale" priority="1" />
       <Item value="Fish" priority="7" />
-      <Item value="Type" priority="1" />
+      <Item value="Type" priority="2" />
       <Item value="Photos" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.Species">
@@ -358,7 +389,7 @@
       <Item value="OrderBy`0" priority="1" />
       <Item value="GroupBy`0" priority="0" />
       <Item value="Any`1" priority="2" />
-      <Item value="Where`0" priority="11" />
+      <Item value="Where`0" priority="12" />
       <Item value="First`1" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.Genus">
@@ -417,7 +448,7 @@
     <ItemStatistics item="Qualified:System.Linq.IQueryable`1">
       <Item value="ToList`1" priority="18" />
       <Item value="Where`1" priority="5" />
-      <Item value="First`1" priority="3" />
+      <Item value="First`1" priority="4" />
       <Item value="Count`1" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Controllers.Home.HomeViewModel">
@@ -425,7 +456,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
       <Item value="Format`0" priority="10" />
-      <Item value="Equals`0" priority="5" />
+      <Item value="Equals`0" priority="6" />
       <Item value="Empty" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftMap.Domain.Factories.ISpeciesFactory">
@@ -510,16 +541,16 @@
     <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.Type">
       <Item value="GenusTypeID" priority="0" />
       <Item value="GenusType" priority="0" />
-      <Item value="GenusTypeName" priority="0" />
+      <Item value="GenusTypeName" priority="1" />
       <Item value="Genus" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Repositories.GenusTypeRepository">
       <Item value="dataEntites" priority="0" />
-      <Item value="genusTypeFactory" priority="1" />
-      <Item value="dataEntities" priority="0" />
+      <Item value="genusTypeFactory" priority="2" />
+      <Item value="dataEntities" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Factories.IGenusTypeFactory">
-      <Item value="Build`0" priority="2" />
+      <Item value="Build`0" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Factories.GenusFactory">
       <Item value="genusTypeFactory" priority="1" />
@@ -532,7 +563,7 @@
       <Item value="Id" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Entities.GenusType">
-      <Item value="Id" priority="2" />
+      <Item value="Id" priority="4" />
       <Item value="GenusCount" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.ApplicationServices.ViewModelFactories.GenusPanelViewModelFactory">
@@ -548,6 +579,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.ApplicationServices.ViewModelFactories.HomePageViewModelFactory">
       <Item value="genusTypeRepository" priority="1" />
+      <Item value="_genusTypeService" priority="1" />
+      <Item value="_genusTypeRepository" priority="0" />
+      <Item value="_genusPanelViewModelFactory" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.ApplicationServices.ViewModelFactories.IHomePageViewModelFactory">
       <Item value="Build`0" priority="1" />
@@ -737,6 +771,18 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.ApplicationServices.ViewModelFactories.DtoFactory">
       <Item value="Build`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.ApplicationServices.ViewModelFactories.Contracts.IGenusPanelViewModelFactory">
+      <Item value="Build`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.ApplicationServices.DtoServices.GenusTypeService">
+      <Item value="_dtoFactory" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.ApplicationServices.ViewModelFactories.Contracts.IDtoFactory">
+      <Item value="Build`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.ApplicationServices.DtoServices.Contracts.IGenusTypeService">
+      <Item value="GetGenusTypeByName`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

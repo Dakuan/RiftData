@@ -22,10 +22,10 @@ C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\D
 C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Presentation.ViewModels.pdb
 C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.dll
 C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.pdb
-C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.ApplicationServices.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.ApplicationServices.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Core.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Windsor.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Domain.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Infrastructure.Data.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Presentation.ViewModels.dll
@@ -33,4 +33,10 @@ C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.Application
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Domain.pdb
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Infrastructure.Data.pdb
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\RiftData.Presentation.ViewModels.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Core.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Core.xml
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Windsor.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Windsor.xml
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.pdb
