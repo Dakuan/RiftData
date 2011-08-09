@@ -18,13 +18,15 @@ namespace RiftData.Domain.Repositories
         private readonly ISpeciesFactory speciesFactory;
 
         private readonly IGenusFactory genusFactory;
+        private readonly IHasPhotoService _hasPhotoService;
 
-        public FishRepository(RiftDataDataEntities dataEntites, IFishFactory fishFactory, ILocalesFactory localesFactory, ISpeciesFactory speciesFactory, IGenusFactory genusFactory) : base(dataEntites)
+        public FishRepository(RiftDataDataEntities dataEntites, IFishFactory fishFactory, ILocalesFactory localesFactory, ISpeciesFactory speciesFactory, IGenusFactory genusFactory, IHasPhotoService hasPhotoService) : base(dataEntites)
         {
             this.fishFactory = fishFactory;
             this.localesFactory = localesFactory;
             this.speciesFactory = speciesFactory;
             this.genusFactory = genusFactory;
+            _hasPhotoService = hasPhotoService;
         }
 
         public  IQueryable<Fish> List
@@ -72,7 +74,7 @@ namespace RiftData.Domain.Repositories
             else
             {
                 var genus = this.genusFactory.Build(dataFish.Genus1, this.dataEntities);
-                var species = this.speciesFactory.Build(dataFish.Species1, genus,SpeciesService.SpeciesHasPhoto(this.dataEntities, dataFish.Species));
+                var species = this.speciesFactory.Build(dataFish.Species1, genus,_hasPhotoService.SpeciesHasPhoto(dataFish.Species));
                 var localeHasPhotos = this.dataEntities.Photos.Where(p => p.LocaleId == dataFish.Locale).Count() > 0;
                 var fishHasPhotos = this.dataEntities.Photos.Where(p => p.FishId == dataFish.FishID).Count() > 0;
                 var locale = this.localesFactory.Build(dataFish.Locale1, localeHasPhotos);

@@ -59,3 +59,5 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Telerik.Web.Mv
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\RiftData.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\RiftData.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.pdb

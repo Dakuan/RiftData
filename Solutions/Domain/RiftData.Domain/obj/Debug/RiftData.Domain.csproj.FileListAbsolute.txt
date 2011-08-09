@@ -36,3 +36,4 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\FlickrNet.dll

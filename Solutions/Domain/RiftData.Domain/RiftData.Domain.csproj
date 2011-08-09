@@ -92,7 +92,8 @@
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\SpeciesRepository.cs" />
     <Compile Include="Entities\Species.cs" />
-    <Compile Include="Services\SpeciesService.cs" />
+    <Compile Include="Services\HasPhotoService.cs" />
+    <Compile Include="Services\IHasPhotoService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

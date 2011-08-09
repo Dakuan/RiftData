@@ -13,12 +13,14 @@ namespace RiftData.Domain.Repositories
         private ISpeciesFactory speciesFactory;
 
         private IGenusFactory genusFactory;
+        private readonly IHasPhotoService _hasPhotoService;
 
-        public SpeciesRepository(ISpeciesFactory speciesFactory, IGenusFactory genusFactory, RiftDataDataEntities dataEntities) : base(dataEntities)
+        public SpeciesRepository(ISpeciesFactory speciesFactory, IGenusFactory genusFactory, RiftDataDataEntities dataEntities, IHasPhotoService hasPhotoService) : base(dataEntities)
         {
             this.speciesFactory = speciesFactory;
 
             this.genusFactory = genusFactory;
+            _hasPhotoService = hasPhotoService;
         }
 
         public IQueryable<Species> List
@@ -73,7 +75,7 @@ namespace RiftData.Domain.Repositories
             this.dataEntities.Species.Where(s => s.Fish.Any(f => f.Locale == id)).ToList().ForEach(s =>
                                                                     {
                                                                         var genus = this.genusFactory.Build(s.Genu, this.dataEntities);
-                                                                        var hasPhotos = SpeciesService.SpeciesHasPhoto(this.dataEntities,s.SpeciesID);
+                                                                        var hasPhotos = _hasPhotoService.SpeciesHasPhoto(s.SpeciesID);
                                                                         species.Add(this.speciesFactory.Build(s, genus, hasPhotos));
                                                                     });
 
@@ -88,7 +90,7 @@ namespace RiftData.Domain.Repositories
 
                 var hasFish = this.dataEntities.Fish.Any(f => f.Species == dataSpecies.SpeciesID);
 
-                var hasPhotos = SpeciesService.SpeciesHasPhoto(this.dataEntities, dataSpecies.SpeciesID);
+                var hasPhotos = _hasPhotoService.SpeciesHasPhoto(dataSpecies.SpeciesID);
 
                 var species = this.speciesFactory.Build(dataSpecies, genus, hasPhotos);
 
