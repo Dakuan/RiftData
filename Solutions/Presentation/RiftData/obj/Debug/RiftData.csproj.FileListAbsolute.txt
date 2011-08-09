@@ -61,3 +61,6 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\RiftData
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\RiftData.pdb
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.pdb
+C:\Git\RiftData\Solutions\Presentation\RiftData\bin\Castle.Core.dll
+C:\Git\RiftData\Solutions\Presentation\RiftData\bin\Castle.Windsor.dll
+C:\Git\RiftData\Solutions\Presentation\RiftData\bin\Telerik.Web.Mvc.dll

@@ -40,3 +40,9 @@ C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.Application
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\ApplicationServices\RiftData.ApplicationServices\obj\Debug\RiftData.ApplicationServices.pdb
+C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Core.dll
+C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Windsor.dll
+C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Core.pdb
+C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Core.xml
+C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Windsor.pdb
+C:\Git\RiftData\Solutions\ApplicationServices\RiftData.ApplicationServices\bin\Debug\Castle.Windsor.xml

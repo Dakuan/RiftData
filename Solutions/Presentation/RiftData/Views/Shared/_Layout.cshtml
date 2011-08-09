@@ -3,13 +3,14 @@
 <html>
     <head>
         <title>@ViewBag.Title</title>
-        <link href="../../Content/2011.2.712/telerik.transparent.min.css" rel="stylesheet"type="text/css" />
+        <link href="@Url.Content("../Content/2011.2.712/telerik.transparent.min.css")" rel="stylesheet"type="text/css" />
         <link href="@Url.Content("../Content/2011.2.712/telerik.common.min.css")" rel="stylesheet" type="text/css" />
-        <link href="../../Content/LocaleInfoBox/LocaleInfoBox.css" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("../Content/LocaleInfoBox/LocaleInfoBox.css")" rel="stylesheet" type="text/css" />
         <link href="@Url.Content("../Content/Site.css")" rel="stylesheet" type="text/css" />
         <link href="@Url.Content("../Content/PiroBox/style.css")" rel="stylesheet" type="text/css" />
         <meta name="keywords" content="@ViewBag.Keywords" />
         <meta name="descripton" content="@ViewBag.Description" />
+        @Html.Partial("GoogleAnalytics")
     </head>
     <body>
         <div id="background">
