@@ -391,7 +391,9 @@
   <ItemGroup>
     <Content Include="Views\Species\PhotoGallery.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Species\Index.cshtml" />
   </ItemGroup>
