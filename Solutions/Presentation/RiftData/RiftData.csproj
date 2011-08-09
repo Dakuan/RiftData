@@ -72,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Installers\ControllersInstaller.cs" />
-    <Compile Include="Controllers\GenusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocaleController.cs" />
     <Compile Include="Controllers\SpeciesController.cs" />

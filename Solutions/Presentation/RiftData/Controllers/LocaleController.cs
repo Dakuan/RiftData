@@ -4,6 +4,7 @@ using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 
 namespace RiftData.Controllers
 {
+    [OutputCache(CacheProfile = "Daily")]
     public class LocaleController : Controller
     {
         private readonly ILocaleInfoBoxViewModelFactory _localeInfoBoxViewModelFactory;

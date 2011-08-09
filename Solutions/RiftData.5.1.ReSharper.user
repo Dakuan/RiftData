@@ -9,66 +9,32 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:LocaleInfoBoxViewModelFactory.cs" caret="176" fromTop="4" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:SpeciesPageViewModelFactory.cs" caret="76" fromTop="1" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:DtoFactory.cs" caret="0" fromTop="0" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:GenusPanelViewModelFactory.cs" caret="0" fromTop="0" />
-      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:GenusPanelViewModel.cs" caret="366" fromTop="14" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IDtoFactory.cs" caret="457" fromTop="19" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:PhotoGalleryViewModelFactory.cs" caret="1310" fromTop="29" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IPhotoGalleryViewModelFactory.cs" caret="33" fromTop="1" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:IGenusTypeRepository.cs" caret="288" fromTop="11" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IHomePageViewModelFactory.cs" caret="234" fromTop="8" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="608" fromTop="20" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1447" fromTop="13" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="1488" fromTop="26" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="923" fromTop="6" />
-      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PanelViewModelBase.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="351" fromTop="14" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Species/f:Index.cshtml" caret="426" fromTop="13" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PhotoGalleryViewModel.cs" caret="0" fromTop="0" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="0" fromTop="0" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/d:Contracts/f:IGenusTypeService.cs" caret="305" fromTop="9" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="1222" fromTop="16" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1281" fromTop="18" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="261" fromTop="9" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Installers/f:ServicesInstaller.cs" caret="423" fromTop="12" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:FactoriesInstaller.cs" caret="668" fromTop="17" />
-      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Installers/f:WindsorControllerFactoryInstaller.cs" caret="528" fromTop="13" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:GenusPanelViewModel.cs" caret="366" fromTop="14" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:FishRepository.cs" caret="1853" fromTop="9" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:GoogleAnalytics.cshtml" caret="509" fromTop="12" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="990" fromTop="20" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:RepositoriesInstaller.cs" caret="330" fromTop="12" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="2517" fromTop="24" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="260" fromTop="9" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1319" fromTop="41" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1201" fromTop="27" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PanelViewModelBase.cs" caret="0" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:SpeciesController.cs" caret="542" fromTop="13" />
     </RecentFiles>
     <RecentEdits>
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="239" fromTop="6" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="2333" fromTop="24" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="609" fromTop="16" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="380" fromTop="12" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="424" fromTop="12" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="475" fromTop="10" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:IGenusTypeRepository.cs" caret="288" fromTop="11" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="734" fromTop="13" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="306" fromTop="10" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1458" fromTop="17" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="608" fromTop="20" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1447" fromTop="13" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="1538" fromTop="23" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_PanelLayout.cshtml" caret="1488" fromTop="26" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="923" fromTop="6" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="1281" fromTop="15" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="788" fromTop="15" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Home/f:Index.cshtml" caret="196" fromTop="7" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="283" fromTop="9" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="0" fromTop="0" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1576" fromTop="25" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/d:Contracts/f:IGenusTypeService.cs" caret="305" fromTop="9" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="383" fromTop="10" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="1162" fromTop="16" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1098" fromTop="14" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1558" fromTop="25" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1290" fromTop="18" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="622" fromTop="19" />
-      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="237" fromTop="12" />
-      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="786" fromTop="11" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:GoogleAnalytics.cshtml" caret="509" fromTop="12" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="828" fromTop="12" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="424" fromTop="7" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="1033" fromTop="20" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="784" fromTop="21" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="216" fromTop="8" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1201" fromTop="27" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:SpeciesController.cs" caret="186" fromTop="6" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

@@ -3,6 +3,7 @@ using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 
 namespace RiftData.Controllers
 {
+    [OutputCache(CacheProfile = "Daily")]
     public class HomeController : Controller
     {
         private IHomePageViewModelFactory homePageViewModelFactory;

@@ -4,6 +4,7 @@ using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 
 namespace RiftData.Controllers
 {
+    [OutputCache(CacheProfile = "Daily")]
     public class SpeciesController : Controller
     {
         private readonly ISpeciesPageViewModelFactory _speciesPageViewModelFactory;
