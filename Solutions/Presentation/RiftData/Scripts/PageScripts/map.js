@@ -5,6 +5,7 @@ var infoBox;
 var mapCenter;
 
 Microsoft.Maps.Pushpin.prototype.Id = null;
+Microsoft.Maps.Pushpin.prototype.IsLabel = null;
 
 function CreateMap() {
 
@@ -25,6 +26,8 @@ function CreateMap() {
         showMapTypeSelector: false,
         labelOverlay: Microsoft.Maps.LabelOverlay.hidden
     });
+
+    Microsoft.Maps.Events.addHandler(map, 'viewchangeend', AddLabelsForZoomLevel);
 }
 
 //helper, converts from data zoom levels to map zoom levels
@@ -79,4 +82,12 @@ function AddPinsForSpecies(speciesId) {
 
         map.entities.push(infoBox);
     });
+}
+
+function AddLabelsForZoomLevel(mapZoomLevel) {
+
+    //clear current labels
+    
+    //get the locales
+    var rah = mapZoomLevel;
 }

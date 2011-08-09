@@ -18,10 +18,17 @@
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:RepositoriesInstaller.cs" caret="330" fromTop="12" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="2517" fromTop="24" />
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="260" fromTop="9" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1319" fromTop="41" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1201" fromTop="27" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PanelViewModelBase.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:SpeciesController.cs" caret="542" fromTop="13" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1333" fromTop="18" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:SpeciesPageViewModelFactory.cs" caret="1674" fromTop="18" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Entities/f:Fish.cs" caret="396" fromTop="17" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:SpeciesController.cs" caret="182" fromTop="6" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="782" fromTop="25" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:LocaleController.cs" caret="274" fromTop="7" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Installers/f:ControllersInstaller.cs" caret="0" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Factory/f:WindsorControllerFactory.cs" caret="0" fromTop="0" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Installers/f:WindsorControllerFactoryInstaller.cs" caret="0" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="283" fromTop="9" />
@@ -35,6 +42,8 @@
       <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="216" fromTop="8" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1201" fromTop="27" />
       <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:SpeciesController.cs" caret="186" fromTop="6" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="130" fromTop="5" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:LocaleController.cs" caret="189" fromTop="6" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
