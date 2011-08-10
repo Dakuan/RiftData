@@ -44,8 +44,9 @@ namespace RiftData.ApplicationServices.Repositories
         {
             var list = new List<Genus>();
 
-            this.dataEntities.Genus.Where(
-                g => g.GenusType.Id == genusTypeId && dataEntities.Fish.Any(f => f.Genus.Id == g.Id)).ToList().ForEach(list.Add);
+            var genus = this.dataEntities.Genus.ToList();
+
+            list.AddRange(genus.Where(g => g.GenusType.Id == genusTypeId && dataEntities.Fish.Any(f => f.Genus.Id == g.Id)));
 
             return Sort(list).ToList();
         }

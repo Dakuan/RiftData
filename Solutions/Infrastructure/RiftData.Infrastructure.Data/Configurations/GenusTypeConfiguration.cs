@@ -16,7 +16,7 @@ namespace RiftData.Infrastructure.Data.Configurations
             Property(p => p.Id).HasColumnName("GenusTypeID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
             Property(p => p.Name).HasColumnName("GenusTypeName").IsRequired();
             Ignore(p => p.GenusCount);
-            HasMany(x => x.Genus).WithRequired(x => x.GenusType);
+            HasMany(p => p.Genus).WithRequired(x => x.GenusType);
             ToTable("Type");
         }
     }
