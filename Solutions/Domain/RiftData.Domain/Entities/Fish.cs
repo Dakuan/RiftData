@@ -3,17 +3,15 @@ using System.Collections.Generic;
 
 namespace RiftData.Domain.Entities
 {
-    public class Fish : EntityBase, IPhotoSubject
+    public class Fish
     {
-        public Fish(int id) : base(id)
-        {
-        }
+        public int Id { get; set; }
 
-        public Genus Genus { get; internal set; }
+        public Genus Genus { get; set; }
 
-        public Species Species { get; internal set; }
+        public Species Species { get; set; }
 
-        public Locale Locale { get; internal set; }
+        public Locale Locale { get; set; }
 
         public String Name
         {
@@ -30,9 +28,9 @@ namespace RiftData.Domain.Entities
             get { return string.Format("{0}_{1}_{2}", this.Genus.Name, this.Species.Name, this.Locale.Name); }
         }
 
-        public IList<Photo> Photos{ get; internal set; }
+        public virtual ICollection<Photo> Photos { get; set; }
 
-        public bool HasPhotos { get; internal set; }
+        public bool HasPhotos { get; set; }
 
         public static string GetFullName(string genusName, string speciesName, string localeName, bool described)
         {

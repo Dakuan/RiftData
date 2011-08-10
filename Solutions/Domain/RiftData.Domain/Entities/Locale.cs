@@ -3,20 +3,18 @@ using System.Collections.Generic;
 
 namespace RiftData.Domain.Entities
 {
-    public class Locale : EntityBase, IPhotoSubject
+    public class Locale 
     {
-        public Locale(int id) : base(id)
-        {
-        }
+        public int Id { get; set; }
 
-        public double Latitude { get; internal set;  }
+        public double Latitude { get;  set;  }
 
-        public double Longitude { get; internal set; }
+        public double Longitude { get;  set; }
 
-        public string Name { get; internal set; }
+        public string Name { get;  set; }
 
-        public IList<Photo> Photos { get; internal set; }
+        public virtual ICollection<Photo> Photos { get;  set; }
 
-        public bool HasPhotos { get; internal set; }
+        public bool HasPhotos { get;  set; }
     }
 }

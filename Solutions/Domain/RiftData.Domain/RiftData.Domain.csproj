@@ -53,56 +53,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\Fish.cs" />
     <Compile Include="Entities\GenusType.cs" />
-    <Compile Include="Entities\IPhotoSubject.cs" />
     <Compile Include="Entities\Photo.cs" />
     <Compile Include="Exceptions\EmptySpeciesListException.cs" />
     <Compile Include="Exceptions\NullDataObjectException.cs" />
-    <Compile Include="Factories\Contracts\IFishFactory.cs" />
-    <Compile Include="Factories\Contracts\IGenusFactory.cs" />
-    <Compile Include="Factories\Contracts\IGenusTypeFactory.cs" />
-    <Compile Include="Factories\Contracts\ILocalesFactory.cs" />
-    <Compile Include="Factories\Contracts\IPhotoFactory.cs" />
-    <Compile Include="Factories\Contracts\ISpeciesFactory.cs" />
-    <Compile Include="Factories\FishFactory.cs" />
-    <Compile Include="Factories\GenusTypeFactory.cs" />
-    <Compile Include="Factories\PhotoFactory.cs" />
-    <Compile Include="Factories\LocalesFactory.cs" />
     <Compile Include="Installers\FactoriesInstaller.cs" />
-    <Compile Include="Factories\GenusFactory.cs" />
-    <Compile Include="Factories\SpeciesFactory.cs" />
     <Compile Include="Entities\Genus.cs" />
     <Compile Include="Entities\Locale.cs" />
     <Compile Include="Installers\FlickrInstaller.cs" />
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\FishRepository.cs" />
-    <Compile Include="Repositories\GenusRepository.cs" />
-    <Compile Include="Repositories\GenusTypeRepository.cs" />
-    <Compile Include="Repositories\IFishRepository.cs" />
-    <Compile Include="Repositories\IGenusRepository.cs" />
-    <Compile Include="Repositories\IGenusTypeRepository.cs" />
-    <Compile Include="Repositories\ILocalesRepository.cs" />
-    <Compile Include="Installers\RepositoriesInstaller.cs" />
-    <Compile Include="Repositories\IPhotosRepository.cs" />
-    <Compile Include="Repositories\ISpeciesRepository.cs" />
-    <Compile Include="Repositories\LocalesRepository.cs" />
-    <Compile Include="Repositories\PhotosRepository.cs" />
-    <Compile Include="Repositories\RepositoryBase.cs" />
-    <Compile Include="Repositories\SpeciesRepository.cs" />
     <Compile Include="Entities\Species.cs" />
-    <Compile Include="Services\HasPhotoService.cs" />
-    <Compile Include="Services\IHasPhotoService.cs" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
-      <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>
-      <Name>RiftData.Infrastructure.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

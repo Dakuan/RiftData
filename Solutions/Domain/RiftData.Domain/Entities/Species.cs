@@ -3,17 +3,15 @@ using System.Collections.Generic;
 
 namespace RiftData.Domain.Entities
 {
-    public class Species : EntityBase, IPhotoSubject
+    public class Species 
     {
-        public Species(int id) : base(id)
-        {
-        }
+        public int Id { get; set; }
 
-        public string Name { get; internal set; }
+        public string Name { get;  set; }
 
-        public bool Described { get; internal set; }
+        public bool Described { get;  set; }
 
-        public Genus Genus { get; internal set; }
+        public Genus Genus { get;  set; }
 
         public override string ToString()
         {
@@ -30,11 +28,11 @@ namespace RiftData.Domain.Entities
             }
         }
 
-        public bool HaveFish { get; internal set; }
+        public bool HaveFish { get;  set; }
 
-        public IList<Photo> Photos { get; internal set; }
+        public virtual ICollection<Photo> Photos { get;  set; }
 
-        public bool HasPhotos { get; internal set; }
+        public bool HasPhotos { get;  set; }
 
         public string UrlName
         {

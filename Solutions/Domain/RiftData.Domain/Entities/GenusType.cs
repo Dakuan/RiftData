@@ -5,14 +5,14 @@ using System.Text;
 
 namespace RiftData.Domain.Entities
 {
-    public class GenusType : EntityBase
+    public class GenusType
     {
-        public GenusType(int id) : base(id)
-        {
-        }
+        public int Id { get; set; }
 
-        public string Name { get; internal set; }
+        public string Name { get;  set; }
 
-        public int GenusCount { get; internal set; }
+        public int GenusCount { get;  set; }
+
+        public virtual ICollection<Genus> Genus { get; set; }
     }
 }

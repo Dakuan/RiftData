@@ -3,6 +3,7 @@ using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.ViewModels;
+using ISpeciesRepository = RiftData.ApplicationServices.Repositories.ISpeciesRepository;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {

@@ -4,6 +4,8 @@ using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.ViewModels;
 using RiftData.Presentation.ViewModels.Dto;
+using ILocalesRepository = RiftData.ApplicationServices.Repositories.ILocalesRepository;
+using ISpeciesRepository = RiftData.ApplicationServices.Repositories.ISpeciesRepository;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {

@@ -9,41 +9,36 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:DtoFactory.cs" caret="0" fromTop="0" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:GenusPanelViewModelFactory.cs" caret="0" fromTop="0" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:GenusPanelViewModel.cs" caret="366" fromTop="14" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IDtoFactory.cs" caret="457" fromTop="19" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:PhotoGalleryViewModelFactory.cs" caret="1310" fromTop="29" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IPhotoGalleryViewModelFactory.cs" caret="33" fromTop="1" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/d:Contracts/f:IHomePageViewModelFactory.cs" caret="234" fromTop="8" />
+      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PanelViewModelBase.cs" caret="0" fromTop="0" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PhotoGalleryViewModel.cs" caret="0" fromTop="0" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="0" fromTop="0" />
-      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:GenusPanelViewModel.cs" caret="366" fromTop="14" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:FishRepository.cs" caret="1853" fromTop="9" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:GoogleAnalytics.cshtml" caret="509" fromTop="12" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="990" fromTop="20" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:RepositoriesInstaller.cs" caret="330" fromTop="12" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Global.asax.cs" caret="2517" fromTop="24" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="260" fromTop="9" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1201" fromTop="27" />
-      <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:PanelViewModelBase.cs" caret="0" fromTop="0" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Repositories/f:GenusTypeRepository.cs" caret="1333" fromTop="18" />
-      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:SpeciesPageViewModelFactory.cs" caret="1674" fromTop="18" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Entities/f:Fish.cs" caret="396" fromTop="17" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:SpeciesController.cs" caret="182" fromTop="6" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="782" fromTop="25" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:LocaleController.cs" caret="274" fromTop="7" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Installers/f:ControllersInstaller.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Factory/f:WindsorControllerFactory.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/d:Installers/f:WindsorControllerFactoryInstaller.cs" caret="0" fromTop="0" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/d:Contracts/f:IGenusTypeService.cs" caret="305" fromTop="9" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="1222" fromTop="16" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1281" fromTop="18" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Installers/f:ServicesInstaller.cs" caret="423" fromTop="12" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="331" fromTop="11" />
     </RecentFiles>
     <RecentEdits>
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="283" fromTop="9" />
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="0" fromTop="0" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="786" fromTop="11" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:GoogleAnalytics.cshtml" caret="509" fromTop="12" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="828" fromTop="12" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="424" fromTop="7" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Views/d:Shared/f:_Layout.cshtml" caret="1033" fromTop="20" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="784" fromTop="21" />
-      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Installers/f:ServicesInstaller.cs" caret="216" fromTop="8" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="1201" fromTop="27" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:SpeciesController.cs" caret="186" fromTop="6" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:HomeController.cs" caret="130" fromTop="5" />
-      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/d:Controllers/f:LocaleController.cs" caret="189" fromTop="6" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1576" fromTop="25" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/d:Contracts/f:IGenusTypeService.cs" caret="305" fromTop="9" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="383" fromTop="10" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:GenusTypeService.cs" caret="1162" fromTop="16" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1098" fromTop="14" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1558" fromTop="25" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:ViewModelFactories/f:HomePageViewModelFactory.cs" caret="1290" fromTop="18" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="622" fromTop="19" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="237" fromTop="12" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -58,7 +53,7 @@
   </UnitTestRunnerNUnit>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="ctor" priority="27" />
+      <Item value="ctor" priority="28" />
       <Item value="public" priority="76" />
       <Item value="int" priority="22" />
       <Item value="IndexOutOfRangeException`0" priority="1" />
@@ -79,11 +74,11 @@
       <Item value="TimeSpan`0" priority="0" />
       <Item value="described" priority="2" />
       <Item value="IGenusFactory`0" priority="2" />
-      <Item value="RiftDataDataEntities`0" priority="7" />
+      <Item value="RiftDataDataEntities`0" priority="8" />
       <Item value="using" priority="15" />
       <Item value="RiftData.Infrastructure.Data" priority="0" />
       <Item value="dataDataEntities" priority="0" />
-      <Item value="dataEntities" priority="18" />
+      <Item value="dataEntities" priority="19" />
       <Item value="T`0" priority="0" />
       <Item value="ISpeciesFactory`0" priority="5" />
       <Item value="FactoryBase`0" priority="1" />
@@ -312,6 +307,8 @@
       <Item value="GenusTypeDto`0" priority="1" />
       <Item value="HashSet" priority="0" />
       <Item value="NewsStyleUriParser`0" priority="0" />
+      <Item value="IHasPhotoService`0" priority="2" />
+      <Item value="hasPhotoService" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Core.EntityBase">
       <Item value="Id" priority="0" />

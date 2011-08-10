@@ -34,3 +34,6 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Infrastructure\RiftData.Infrastructure.D
 C:\Users\Dakuan\git\RiftData2\Solutions\Infrastructure\RiftData.Infrastructure.Data\obj\Debug\RiftData.Infrastructure.Data.pdb
 C:\Git\RiftData\Solutions\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Core.dll
 C:\Git\RiftData\Solutions\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\Castle.Windsor.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\RiftData.Domain.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\FlickrNet.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Infrastructure\RiftData.Infrastructure.Data\bin\Debug\RiftData.Domain.pdb

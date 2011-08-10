@@ -1,19 +1,17 @@
 ﻿namespace RiftData.Domain.Entities
 {
-    public class Photo : EntityBase
+    public class Photo
     {
-        public Photo(int id) : base(id)
-        {
-        }
+        public int Id { get; set; }
 
-        public string FlickrId { get; internal set; }
+        public string FlickrId { get;  set; }
 
-        public string SquareThumbnail { get; internal set; }
+        public string SquareThumbnail { get;  set; }
 
-        public string ThumbNailUrl { get; internal set; }
+        public string ThumbNailUrl { get;  set; }
 
-        public string MediumUrl { get; internal set; }
+        public string MediumUrl { get;  set; }
 
-        public string Caption { get; internal set; }
+        public string Caption { get;  set; }
     }
 }

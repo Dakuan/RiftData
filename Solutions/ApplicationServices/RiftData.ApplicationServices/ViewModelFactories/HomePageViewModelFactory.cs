@@ -2,6 +2,7 @@
 using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.ViewModels;
+using IGenusTypeRepository = RiftData.ApplicationServices.Repositories.IGenusTypeRepository;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {

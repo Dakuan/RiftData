@@ -64,3 +64,5 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.pdb
 C:\Git\RiftData\Solutions\Presentation\RiftData\bin\Castle.Core.dll
 C:\Git\RiftData\Solutions\Presentation\RiftData\bin\Castle.Windsor.dll
 C:\Git\RiftData\Solutions\Presentation\RiftData\bin\Telerik.Web.Mvc.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\EntityFramework.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\EntityFramework.xml

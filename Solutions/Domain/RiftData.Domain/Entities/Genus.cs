@@ -2,19 +2,17 @@
 
 namespace RiftData.Domain.Entities
 {
-    public class Genus : EntityBase
+    public class Genus 
     {
-        public Genus(int id) : base(id)
-        {
-        }
+        public int Id { get; set; }
 
-        public string Name { get; internal set; }
+        public string Name { get; set; }
 
-        public IList<Species> Species { get; internal set; }
+        public virtual ICollection<Species> Species { get; set; }
 
-        public GenusType GenusType { get; internal set; }
+        public GenusType GenusType { get; set; }
 
-        public bool HasFish { get; internal set; }
+        public bool HasFish { get; set; }
 
         public override string ToString()
         {

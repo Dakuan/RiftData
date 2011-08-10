@@ -5,6 +5,7 @@ using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.ViewModels.Dto;
+using IGenusTypeRepository = RiftData.ApplicationServices.Repositories.IGenusTypeRepository;
 
 namespace RiftData.ApplicationServices.DtoServices
 {
