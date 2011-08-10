@@ -25,6 +25,12 @@
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Installers/f:ServicesInstaller.cs" caret="423" fromTop="12" />
       <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="331" fromTop="11" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Entities/f:Genus.cs" caret="0" fromTop="0" />
+      <File id="F5F86ED6-13D5-4911-9E86-4DAB2426D900/d:Entities/f:GenusType.cs" caret="203" fromTop="10" />
+      <File id="FFAC8363-3B13-4327-A21D-04D22EEDCF4E/f:Web.config" caret="779" fromTop="13" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/d:Configurations/f:GenusConfiguration.cs" caret="504" fromTop="12" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/d:Configurations/f:GenusTypeConfiguration.cs" caret="766" fromTop="18" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Repositories/f:GenusRepository.cs" caret="1649" fromTop="16" />
     </RecentFiles>
     <RecentEdits>
       <File id="1E84268C-9D18-4844-B170-2A2222C80998/f:HomePageViewModel.cs" caret="283" fromTop="9" />
@@ -39,6 +45,10 @@
       <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:DtoServices/f:PhotoDtoService.cs" caret="622" fromTop="19" />
       <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="237" fromTop="12" />
       <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/f:DataContextInstaller.cs" caret="0" fromTop="0" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/d:Configurations/f:GenusConfiguration.cs" caret="705" fromTop="15" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/d:Configurations/f:GenusConfiguration.cs" caret="339" fromTop="10" />
+      <File id="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E/d:Configurations/f:GenusTypeConfiguration.cs" caret="766" fromTop="18" />
+      <File id="12F5CC2A-6B13-4EB8-A104-466143F82D90/d:Repositories/f:GenusRepository.cs" caret="1898" fromTop="23" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -61,7 +71,7 @@
       <Item value="string" priority="49" />
       <Item value="virtual" priority="1" />
       <Item value="override" priority="9" />
-      <Item value="this" priority="187" />
+      <Item value="this" priority="188" />
       <Item value="EntityBase`0" priority="4" />
       <Item value="private" priority="18" />
       <Item value="name" priority="1" />
@@ -82,7 +92,7 @@
       <Item value="T`0" priority="0" />
       <Item value="ISpeciesFactory`0" priority="5" />
       <Item value="FactoryBase`0" priority="1" />
-      <Item value="var" priority="81" />
+      <Item value="var" priority="82" />
       <Item value="s" priority="33" />
       <Item value="new" priority="53" />
       <Item value="dataObject" priority="13" />
@@ -104,7 +114,7 @@
       <Item value="IQueryable" priority="4" />
       <Item value="riftDataDataEntities" priority="2" />
       <Item value="try" priority="1" />
-      <Item value="list" priority="29" />
+      <Item value="list" priority="30" />
       <Item value="IRepository" priority="9" />
       <Item value="SpeciesRepository`0" priority="0" />
       <Item value="container" priority="6" />
@@ -204,7 +214,7 @@
       <Item value="photoSubject" priority="0" />
       <Item value="HasPhotos" priority="2" />
       <Item value="hasPhoto" priority="1" />
-      <Item value="p" priority="5" />
+      <Item value="p" priority="7" />
       <Item value="localeHasPhotos" priority="2" />
       <Item value="fishHasPhotos" priority="0" />
       <Item value="LocaleController`0" priority="0" />
@@ -309,6 +319,10 @@
       <Item value="NewsStyleUriParser`0" priority="0" />
       <Item value="IHasPhotoService`0" priority="2" />
       <Item value="hasPhotoService" priority="2" />
+      <Item value="HasRequired`1" priority="1" />
+      <Item value="Property`0" priority="0" />
+      <Item value="HasMany`1" priority="0" />
+      <Item value="m" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Core.EntityBase">
       <Item value="Id" priority="0" />
@@ -381,6 +395,7 @@
       <Item value="OrderBy`2" priority="2" />
       <Item value="ToList`1" priority="1" />
       <Item value="GroupBy`4" priority="0" />
+      <Item value="AddRange`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
       <Item value="ToList`1" priority="5" />
@@ -528,7 +543,7 @@
       <Item value="genusTypeFactory" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.Domain.Entities.Genus">
-      <Item value="GenusType" priority="3" />
+      <Item value="GenusType" priority="6" />
       <Item value="HasFish" priority="1" />
       <Item value="Name" priority="6" />
       <Item value="Species" priority="1" />
@@ -537,6 +552,7 @@
     <ItemStatistics item="Qualified:RiftData.Domain.Entities.GenusType">
       <Item value="Id" priority="4" />
       <Item value="GenusCount" priority="0" />
+      <Item value="Genus" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.ApplicationServices.ViewModelFactories.GenusPanelViewModelFactory">
       <Item value="genusRepository" priority="0" />
@@ -755,6 +771,28 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:RiftData.ApplicationServices.DtoServices.Contracts.IGenusTypeService">
       <Item value="GetGenusTypeByName`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Entity.ModelConfiguration.Configuration.DependentNavigationPropertyConfiguration`1">
+      <Item value="HasForeignKey`1" priority="1" />
+      <Item value="Map`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.Configurations.GenusConfiguration">
+      <Item value="Map`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Entity.ModelConfiguration.Configuration.ManyNavigationPropertyConfiguration`2">
+      <Item value="WithRequired`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Entity.ModelConfiguration.Configuration.ForeignKeyAssociationMappingConfiguration">
+      <Item value="MapKey`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.ApplicationServices.Repositories.GenusRepository">
+      <Item value="dataEntities" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:RiftData.Infrastructure.Data.RiftDataDataContext">
+      <Item value="Genus" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Entity.DbSet`1">
+      <Item value="ToList`1" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>
