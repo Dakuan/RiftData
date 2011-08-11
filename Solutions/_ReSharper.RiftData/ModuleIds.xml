@@ -1,9 +1,0 @@
-<Modules>
-  <Module PersistentId="F5F86ED6-13D5-4911-9E86-4DAB2426D900" ModuleId="RiftData.Domain.Core" />
-  <Module PersistentId="12F5CC2A-6B13-4EB8-A104-466143F82D90" ModuleId="RiftData.ApplicationServices" />
-  <Module PersistentId="FFAC8363-3B13-4327-A21D-04D22EEDCF4E" ModuleId="RiftData" />
-  <Module PersistentId="7248D560-3E1F-4A89-9ADC-3BB0D64D9076" ModuleId="RiftMap.Domain.Repositories" />
-  <Module PersistentId="9529E0E1-675F-436B-905C-7A9988C04CEA" ModuleId="RiftMap.Domain.Factories" />
-  <Module PersistentId="04BB9AC8-E597-45BC-AAFA-771F17FD1F4E" ModuleId="RiftData.Infrastructure.Data" />
-  <Module PersistentId="1E84268C-9D18-4844-B170-2A2222C80998" ModuleId="RiftData.Shared.ViewModels" />
-</Modules>
