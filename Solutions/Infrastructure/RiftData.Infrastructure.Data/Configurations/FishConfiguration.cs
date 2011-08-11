@@ -18,7 +18,7 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             HasRequired(x => x.Genus).WithMany().Map(m => m.MapKey("Genus"));
 
-            Ignore(x => x.Species);
+            HasRequired(x => x.Species).WithMany().Map(m => m.MapKey("Species"));
 
             HasRequired(x => x.Locale).WithMany().Map(m => m.MapKey("Locale"));
 

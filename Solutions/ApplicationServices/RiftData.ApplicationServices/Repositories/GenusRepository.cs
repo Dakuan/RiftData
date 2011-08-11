@@ -42,6 +42,10 @@ namespace RiftData.ApplicationServices.Repositories
 
         public IList<Genus> GetGenusOfIdWithFish(int genusTypeId)
         {
+
+            var fishList = this.dataEntities.Fish.ToList();
+
+          
             var list = new List<Genus>();
 
             var genus = this.dataEntities.Genus.ToList();
