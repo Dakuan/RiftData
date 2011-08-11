@@ -16,9 +16,9 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.Id).HasColumnName("LocaleID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
 
-            Property(p => p.Latitude).HasColumnName("Lat").IsRequired();
+            Property(p => p.Latitude).HasColumnName("LocaleLatitude").IsRequired();
 
-            Property(p => p.Longitude).HasColumnName("Long").IsRequired();
+            Property(p => p.Longitude).HasColumnName("LocaleLongitude").IsRequired();
 
             Property(p => p.Name).HasColumnName("LocaleName").IsRequired();
 
@@ -26,7 +26,7 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Ignore(p => p.Photos);
 
-            ToTable("Locale");
+            ToTable("Locales");
         }
     }
 }

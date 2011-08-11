@@ -16,11 +16,11 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.Id).HasColumnName("FishID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
 
-            HasRequired(x => x.Genus).WithMany().Map(m => m.MapKey("Genus"));
+            HasRequired(x => x.Genus).WithMany().Map(m => m.MapKey("FishGenusID"));
 
-            HasRequired(x => x.Species).WithMany().Map(m => m.MapKey("Species"));
+            HasRequired(x => x.Species).WithMany().Map(m => m.MapKey("FishSpeciesID"));
 
-            HasRequired(x => x.Locale).WithMany().Map(m => m.MapKey("Locale"));
+            HasRequired(x => x.Locale).WithMany().Map(m => m.MapKey("FishLocaleID"));
 
             Ignore(x => x.HasPhotos);
 

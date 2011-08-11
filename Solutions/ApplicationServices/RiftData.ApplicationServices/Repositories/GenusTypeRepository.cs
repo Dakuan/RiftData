@@ -22,6 +22,10 @@ namespace RiftData.ApplicationServices.Repositories
 
         public GenusType GetGenusTypeByName(string genusTypeName)
         {
+            var species = this.dataEntities.Species.ToList()[0].Genus;
+
+            var id = species.Id;
+
             return this.dataEntities.GenusTypes.Where(t => string.Equals(genusTypeName, t.Name)).First();
         }
     }

@@ -18,9 +18,9 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.Name).IsRequired().HasColumnName("SpeciesName");
 
-            Property(p => p.Described).HasColumnName("Described").IsRequired();
+            Property(p => p.Described).HasColumnName("SpeciesDescribed").IsRequired();
 
-            HasRequired(g => g.Genus).WithMany(x => x.Species).Map(m => m.MapKey("Genus"));
+            HasRequired(g => g.Genus).WithMany(x => x.Species);
 
             Ignore(p => p.HasPhotos);
 
