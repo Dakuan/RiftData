@@ -20,8 +20,7 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Ignore(x => x.Species);
 
-            Ignore(x => x.Locale);
-            //HasRequired(x => x.Locale).WithMany().Map(m => m.MapKey("Locale"));
+            HasRequired(x => x.Locale).WithMany().Map(m => m.MapKey("Locale"));
 
             Ignore(x => x.HasPhotos);
 
