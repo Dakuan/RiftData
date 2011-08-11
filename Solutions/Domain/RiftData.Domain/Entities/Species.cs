@@ -13,11 +13,6 @@ namespace RiftData.Domain.Entities
 
         public Genus Genus { get;  set; }
 
-        public override string ToString()
-        {
-            return this.FullName;
-        }
-
         public string FullName
         {
             get
@@ -29,8 +24,6 @@ namespace RiftData.Domain.Entities
         }
 
         public bool HaveFish { get;  set; }
-
-        public virtual ICollection<Photo> Photos { get;  set; }
 
         public bool HasPhotos { get;  set; }
 

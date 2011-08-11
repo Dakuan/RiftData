@@ -16,6 +16,7 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\RiftDat
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\RiftData.Domain.pdb
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Core.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Windsor.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\FlickrNet.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Core.pdb
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Core.xml
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.Windsor.pdb
@@ -23,4 +24,3 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\Castle.
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\obj\Debug\RiftData.Domain.pdb
-C:\Users\Dakuan\git\RiftData2\Solutions\Domain\RiftData.Domain\bin\Debug\FlickrNet.dll

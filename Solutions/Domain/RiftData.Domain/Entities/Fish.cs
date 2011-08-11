@@ -28,8 +28,6 @@ namespace RiftData.Domain.Entities
             get { return string.Format("{0}_{1}_{2}", this.Genus.Name, this.Species.Name, this.Locale.Name); }
         }
 
-        public virtual ICollection<Photo> Photos { get; set; }
-
         public bool HasPhotos { get; set; }
 
         public static string GetFullName(string genusName, string speciesName, string localeName, bool described)

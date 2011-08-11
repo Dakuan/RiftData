@@ -20,8 +20,11 @@ C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.dll
 C:\Users\Dakuan\git\RiftData\RiftData\obj\Debug\RiftData.pdb
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Presentation.ViewModels.dll
 C:\Users\Dakuan\git\RiftData\RiftData\bin\RiftData.Presentation.ViewModels.pdb
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.pdb
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Castle.Core.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Castle.Windsor.dll
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\EntityFramework.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.ApplicationServices.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.Domain.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.Infrastructure.Data.dll
@@ -36,11 +39,8 @@ C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Castle.Core.pd
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Castle.Core.xml
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Castle.Windsor.pdb
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Castle.Windsor.xml
+C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\EntityFramework.xml
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\Telerik.Web.Mvc.xml
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\RiftData.dll
 C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\obj\Debug\RiftData.pdb
-C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.dll
-C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\RiftData.pdb
-C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\EntityFramework.dll
-C:\Users\Dakuan\git\RiftData2\Solutions\Presentation\RiftData\bin\EntityFramework.xml

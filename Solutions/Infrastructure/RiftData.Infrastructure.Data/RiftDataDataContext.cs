@@ -32,8 +32,13 @@ namespace RiftData.Infrastructure.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+
+            modelBuilder.Configurations.Add(new FishConfiguration());
+            modelBuilder.Configurations.Add(new LocaleConfiguration());
             modelBuilder.Configurations.Add(new GenusTypeConfiguration());
             modelBuilder.Configurations.Add(new GenusConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }

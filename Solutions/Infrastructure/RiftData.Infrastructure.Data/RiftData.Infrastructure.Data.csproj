@@ -54,8 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\FishConfiguration.cs" />
     <Compile Include="Configurations\GenusConfiguration.cs" />
     <Compile Include="Configurations\GenusTypeConfiguration.cs" />
+    <Compile Include="Configurations\LocaleConfiguration.cs" />
+    <Compile Include="Configurations\SpeciesConfiguration.cs" />
     <Compile Include="DataContextInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RiftDataDataContext.cs" />
