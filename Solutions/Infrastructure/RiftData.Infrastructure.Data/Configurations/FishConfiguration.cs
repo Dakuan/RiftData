@@ -16,7 +16,7 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.Id).HasColumnName("FishID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
 
-            HasRequired(x => x.Genus).WithMany().Map(x => x.MapKey("Genus")));
+            HasRequired(x => x.Genus).WithMany().Map(m => m.MapKey("Genus"));
 
             Ignore(x => x.Species);
 
