@@ -12,7 +12,7 @@ namespace RiftData.Infrastructure.Data.Configurations
             Property(p => p.Id).HasColumnName("GenusID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Name).HasColumnName("GenusName");
             Ignore(p => p.HasFish);
-            Ignore(p => p.Species);
+            HasMany(x => x.Species).WithRequired().Map(m => m.MapKey("Species"));
             HasRequired(x => x.GenusType).WithMany(x => x.Genus).Map(m => m.MapKey("GenusType"));
             ToTable("Genus");
         }
