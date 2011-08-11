@@ -27,11 +27,7 @@ namespace RiftData.ApplicationServices.Repositories
         {
             var list = new List<Locale>();
             
-            /*
-            dataEntities.Species.First(s => s.Id == speciesId).Fish.ToList().ForEach(f =>
-                                                                                                {
-                                                                                                    if (f.Locale1 != null) list.Add(this.BuildUp(f.Locale1));
-                                                                                                });*/
+            dataEntities.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => list.Add(f.Locale));
 
             return this.Sort(list).ToList();
         }

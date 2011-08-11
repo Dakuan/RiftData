@@ -45,15 +45,9 @@ namespace RiftData.ApplicationServices.Repositories
         {
             var species = new List<Species>();
 
-            /*
-            this.dataEntities.Species.Where(s => s.Fish.Any(f => f.Locale == id)).ToList().ForEach(s =>
-                                                                    {
-                                                                        var genus = this.genusFactory.Build(s.Genu, this.dataEntities);
-                                                                        var hasPhotos = _hasPhotoService.SpeciesHasPhoto(s.SpeciesID);
-                                                                        species.Add(this.speciesFactory.Build(s, genus, hasPhotos));
-                                                                    });
-            */
-            return species;
+            this.dataEntities.Fish.Where(f => f.Locale.Id == id).ToList().ForEach(f => species.Add(f.Species));
+
+            return this.Sort(species).ToList();
         }
 
         private IEnumerable<Species> Sort (IEnumerable<Species> unsortedList)
