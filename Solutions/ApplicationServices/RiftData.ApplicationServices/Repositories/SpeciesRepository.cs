@@ -5,6 +5,8 @@ using RiftData.Infrastructure.Data;
 
 namespace RiftData.ApplicationServices.Repositories
 {
+    using System.Data.Entity;
+
     public class SpeciesRepository : ISpeciesRepository
     {
         private readonly RiftDataDataContext dataEntities;
@@ -33,7 +35,11 @@ namespace RiftData.ApplicationServices.Repositories
                 speciesName = components[2].Trim();        
             }
 
-            return this.dataEntities.Fish.Where(s => string.Equals(s.Species.Name.Trim(), speciesName) && string.Equals(s.Genus.Name.Trim(), genusName)).First().Species.Id;
+            var fish = this.dataEntities.Fish;
+            var matchingFish = fish.Where(s => string.Equals(s.Species.Name.Trim(), speciesName) && string.Equals(s.Genus.Name.Trim(), genusName));
+            var firstMatch = matchingFish.First();
+            
+            return firstMatch.Species.Id;
         }
 
         public Species GetSpeciesFromId(int speciesId)
