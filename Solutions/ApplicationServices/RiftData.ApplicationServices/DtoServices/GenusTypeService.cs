@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.ApplicationServices.ViewModelFactories.Contracts;
-using RiftData.Domain.Repositories;
 using RiftData.Presentation.ViewModels.Dto;
-using IGenusTypeRepository = RiftData.ApplicationServices.Repositories.IGenusTypeRepository;
+using IGenusTypeRepository = RiftData.Domain.Repositories.IGenusTypeRepository;
 
 namespace RiftData.ApplicationServices.DtoServices
 {

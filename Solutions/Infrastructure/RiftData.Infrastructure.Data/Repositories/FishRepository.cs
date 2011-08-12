@@ -2,9 +2,8 @@
 using System.Linq;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
-using RiftData.Infrastructure.Data;
 
-namespace RiftData.ApplicationServices.Repositories
+namespace RiftData.Infrastructure.Data.Repositories
 {
     public class FishRepository :  IFishRepository
     {

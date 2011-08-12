@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using RiftData.Domain.Entities;
 
-namespace RiftData.ApplicationServices.Repositories
+namespace RiftData.Domain.Repositories
 {
     public interface ISpeciesRepository
     {

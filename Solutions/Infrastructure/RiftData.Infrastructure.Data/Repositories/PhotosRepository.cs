@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FlickrNet;
 using RiftData.Domain.Repositories;
-using RiftData.Infrastructure.Data;
 using Photo = RiftData.Domain.Entities.Photo;
 
-namespace RiftData.ApplicationServices.Repositories
+namespace RiftData.Infrastructure.Data.Repositories
 {
     public class PhotosRepository : IPhotosRepository
     {

@@ -1,9 +1,7 @@
-﻿using RiftData.ApplicationServices.DtoServices;
-using RiftData.ApplicationServices.DtoServices.Contracts;
+﻿using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.ApplicationServices.ViewModelFactories.Contracts;
-using RiftData.Domain.Repositories;
 using RiftData.Presentation.ViewModels;
-using ISpeciesRepository = RiftData.ApplicationServices.Repositories.ISpeciesRepository;
+using ISpeciesRepository = RiftData.Domain.Repositories.ISpeciesRepository;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {

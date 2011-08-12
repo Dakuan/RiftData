@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
-using RiftData.Infrastructure.Data;
+using RiftData.Domain.Repositories;
 
-namespace RiftData.ApplicationServices.Repositories
+namespace RiftData.Infrastructure.Data.Repositories
 {
     public class LocalesRepository :  ILocalesRepository
     {
