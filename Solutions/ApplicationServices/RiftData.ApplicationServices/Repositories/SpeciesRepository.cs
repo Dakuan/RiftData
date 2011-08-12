@@ -60,7 +60,7 @@ namespace RiftData.ApplicationServices.Repositories
         {
             var sortedList = new List<Species>();
 
-            sortedList.OrderBy(y => y.Genus.Name)
+            unsortedList.OrderBy(y => y.Genus.Name)
                 .GroupBy(z => z.Genus.Name).ToList()
                 .ForEach(subG => subG.OrderBy(x => x.Name).ToList()
                 .ForEach(sortedList.Add));
