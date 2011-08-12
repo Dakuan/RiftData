@@ -7,13 +7,13 @@ namespace RiftData.Domain.Entities
     {
         public int Id { get; set; }
 
-        public Genus Genus { get; set; }
+        public virtual Genus Genus { get; set; }
 
-        public Species Species { get; set; }
+        public virtual Species Species { get; set; }
 
-        public Locale Locale { get; set; }
+        public virtual Locale Locale { get; set; }
 
-        public String Name
+        public string Name
         {
             get
             {
@@ -23,7 +23,7 @@ namespace RiftData.Domain.Entities
             }
         }
 
-        public String UrlName
+        public string UrlName
         {
             get { return string.Format("{0}_{1}_{2}", this.Genus.Name, this.Species.Name, this.Locale.Name); }
         }

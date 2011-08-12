@@ -10,7 +10,7 @@ namespace RiftData.Domain.Entities
 
         public virtual ICollection<Species> Species { get; set; }
 
-        public GenusType GenusType { get; set; }
+        public virtual GenusType GenusType { get; set; }
 
         public bool HasFish { get; set; }
 
