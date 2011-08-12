@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
+using RiftData.Domain.Extensions;
 using RiftData.Domain.Repositories;
 
 namespace RiftData.Infrastructure.Data.Repositories
@@ -30,19 +30,12 @@ namespace RiftData.Infrastructure.Data.Repositories
             
             dataEntities.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => list.Add(f.Locale));
 
-            return this.Sort(list).ToList();
+            return list.SortLocales().ToList();
         }
 
         public Locale GetByFullName(string fullName)
         {
             return this.dataEntities.Locales.First(f => f.Name == fullName);
-        }
-
-        private IEnumerable<Locale> Sort(IEnumerable<Locale> unsortedList)
-        {
-           var sortedList =  unsortedList.OrderBy(l => l.Name);
-
-            return sortedList;
         }
     }
 }

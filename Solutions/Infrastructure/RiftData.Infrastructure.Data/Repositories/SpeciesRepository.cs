@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
+using RiftData.Domain.Extensions;
 using RiftData.Domain.Repositories;
-using RiftData.Infrastructure.Data;
 
-namespace RiftData.ApplicationServices.Repositories
+namespace RiftData.Infrastructure.Data.Repositories
 {
-    using System.Data.Entity;
-
     public class SpeciesRepository : ISpeciesRepository
     {
         private readonly RiftDataDataContext dataEntities;
@@ -54,19 +52,7 @@ namespace RiftData.ApplicationServices.Repositories
 
             this.dataEntities.Fish.Where(f => f.Locale.Id == id).ToList().ForEach(f => species.Add(f.Species));
 
-            return this.Sort(species).ToList();
-        }
-
-        private IEnumerable<Species> Sort (IEnumerable<Species> unsortedList)
-        {
-            var sortedList = new List<Species>();
-
-            unsortedList.OrderBy(y => y.Genus.Name)
-                .GroupBy(z => z.Genus.Name).ToList()
-                .ForEach(subG => subG.OrderBy(x => x.Name).ToList()
-                .ForEach(sortedList.Add));
-
-            return sortedList;
+            return species.SortSpecies().ToList();
         }
     }
 }

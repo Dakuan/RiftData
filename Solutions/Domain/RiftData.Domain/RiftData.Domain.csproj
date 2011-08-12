@@ -56,8 +56,10 @@
     <Compile Include="Entities\Fish.cs" />
     <Compile Include="Entities\GenusType.cs" />
     <Compile Include="Entities\Photo.cs" />
-    <Compile Include="Exceptions\EmptySpeciesListException.cs" />
-    <Compile Include="Exceptions\NullDataObjectException.cs" />
+    <Compile Include="Extensions\FishExtensionMethods.cs" />
+    <Compile Include="Extensions\GenusExtensionMethods.cs" />
+    <Compile Include="Extensions\LocaleExtensionMethods.cs" />
+    <Compile Include="Extensions\SpeciesExtensionMethods.cs" />
     <Compile Include="Installers\FactoriesInstaller.cs" />
     <Compile Include="Entities\Genus.cs" />
     <Compile Include="Entities\Locale.cs" />

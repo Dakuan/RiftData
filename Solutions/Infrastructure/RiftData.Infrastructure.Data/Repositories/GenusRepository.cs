@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
+using RiftData.Domain.Extensions;
 using RiftData.Domain.Repositories;
 
 namespace RiftData.Infrastructure.Data.Repositories
 {
     public class GenusRepository : IGenusRepository
     {
-
         private readonly RiftDataDataContext dataEntities;
 
         public GenusRepository(RiftDataDataContext dataEntities)
@@ -40,23 +40,10 @@ namespace RiftData.Infrastructure.Data.Repositories
         }
 
         public IList<Genus> GetGenusOfIdWithFish(int genusTypeId)
-        {
+        {          
+            var list = dataEntities.Genus.Where(g => g.GenusType.Id == genusTypeId && dataEntities.Fish.Any(f => f.Genus.Id == g.Id));
 
-            var fishList = this.dataEntities.Fish.ToList();
-
-          
-            var list = new List<Genus>();
-
-            var genus = this.dataEntities.Genus.ToList();
-
-            list.AddRange(genus.Where(g => g.GenusType.Id == genusTypeId && dataEntities.Fish.Any(f => f.Genus.Id == g.Id)));
-
-            return Sort(list).ToList();
-        }
-
-        private static IEnumerable<Genus> Sort(IEnumerable<Genus> unsortedList)
-        {
-            return unsortedList.OrderBy(g => g.Name);
+            return list.SortGenus().ToList();
         }
     }
 }
