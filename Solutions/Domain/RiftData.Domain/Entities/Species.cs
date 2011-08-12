@@ -11,7 +11,7 @@ namespace RiftData.Domain.Entities
 
         public bool Described { get;  set; }
 
-        public Genus Genus { get;  set; }
+        public virtual Genus Genus { get; set; }
 
         public string FullName
         {
