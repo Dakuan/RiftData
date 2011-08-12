@@ -47,6 +47,7 @@
     <Compile Include="Dto\GenusTypeDto.cs" />
     <Compile Include="HomePageViewModel.cs" />
     <Compile Include="LocaleInfoBoxViewModel.cs" />
+    <Compile Include="LocalePageViewModel.cs" />
     <Compile Include="PanelViewModelBase.cs" />
     <Compile Include="Dto\PhotoDto.cs" />
     <Compile Include="PhotoGalleryViewModel.cs" />

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Presentation.ViewModels;
@@ -36,6 +37,15 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             viewModel.SelectedSpecies = selectedSpecies;
 
             return viewModel;
+        }
+
+        public GenusPanelViewModel Build()
+        {
+            var genusDtoList = new List<GenusDto>();
+
+            this.genusRepository.List.ToList().ForEach(g => genusDtoList.Add(this._dtoFactory.Build(g)));
+
+            return new GenusPanelViewModel { GenusList = genusDtoList };
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
@@ -30,6 +31,11 @@ namespace RiftData.Infrastructure.Data.Repositories
             dataEntities.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => list.Add(f.Locale));
 
             return this.Sort(list).ToList();
+        }
+
+        public Locale GetByFullName(string fullName)
+        {
+            return this.dataEntities.Locales.First(f => f.Name == fullName);
         }
 
         private IEnumerable<Locale> Sort(IEnumerable<Locale> unsortedList)

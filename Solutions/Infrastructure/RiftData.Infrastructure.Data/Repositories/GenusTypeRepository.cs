@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
@@ -22,6 +23,11 @@ namespace RiftData.Infrastructure.Data.Repositories
         public GenusType GetGenusTypeByName(string genusTypeName)
         {
             return this.dataEntities.GenusTypes.Where(t => string.Equals(genusTypeName, t.Name)).First();
+        }
+
+        public IList<GenusType> GetAll()
+        {
+            return this.dataEntities.GenusTypes.ToList();
         }
     }
 }

@@ -8,5 +8,7 @@ namespace RiftData.Domain.Repositories
         Locale GetById(int id);
 
         IList<Locale> GetLocalesWithSpecies(int speciesId);
+
+        Locale GetByFullName(string fullName);
     }
 }

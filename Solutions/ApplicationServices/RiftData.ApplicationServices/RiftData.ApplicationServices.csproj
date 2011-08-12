@@ -70,7 +70,9 @@
     <Compile Include="ViewModelFactories\Contracts\ILocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Contracts\ISpeciesPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Contracts\IPhotoGalleryViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Contracts\ILocalePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocaleInfoBoxViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\LocalePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\PhotoGalleryViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\SpeciesPageViewModelFactory.cs" />
   </ItemGroup>

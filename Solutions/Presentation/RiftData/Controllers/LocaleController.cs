@@ -9,16 +9,20 @@ namespace RiftData.Controllers
     {
         private readonly ILocaleInfoBoxViewModelFactory _localeInfoBoxViewModelFactory;
         private readonly ILocaleDtoService _localeDtoService;
+        private readonly ILocalePageViewModelFactory _localePageViewModelFactory;
 
-        public LocaleController(IDtoFactory dtoFactory, ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocaleDtoService localeDtoService)
+        public LocaleController(IDtoFactory dtoFactory, ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocaleDtoService localeDtoService, ILocalePageViewModelFactory localePageViewModelFactory)
         {
             _localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
             _localeDtoService = localeDtoService;
+            _localePageViewModelFactory = localePageViewModelFactory;
         }
 
         public ActionResult Index(string localeName)
         {
-            return null;
+            var viewModel = this._localePageViewModelFactory.Build(localeName);
+
+            return View(viewModel);
         }
 
         public ActionResult GetInfoBox(int id)

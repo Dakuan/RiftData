@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
@@ -34,6 +35,11 @@ namespace RiftData.Infrastructure.Data.Repositories
             });
 
             return Sort(list).AsQueryable();
+        }
+
+        public IList<Fish> GetFishByLocale(int localeId)
+        {
+            return this.dataEntities.Fish.Where(f => f.Locale.Id == localeId).ToList();
         }
 
         protected IEnumerable<Fish> Sort(IEnumerable<Fish> unsortedList)
