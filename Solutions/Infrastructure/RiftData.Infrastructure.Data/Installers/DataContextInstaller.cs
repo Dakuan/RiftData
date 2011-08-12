@@ -3,7 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
-namespace RiftData.Infrastructure.Data
+namespace RiftData.Infrastructure.Data.Installers
 {
     public class DataContextInstaller : IWindsorInstaller
     {

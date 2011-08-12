@@ -62,7 +62,8 @@
     <Compile Include="Configurations\GenusTypeConfiguration.cs" />
     <Compile Include="Configurations\LocaleConfiguration.cs" />
     <Compile Include="Configurations\SpeciesConfiguration.cs" />
-    <Compile Include="DataContextInstaller.cs" />
+    <Compile Include="Installers\DataContextInstaller.cs" />
+    <Compile Include="Installers\RepositoriesInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\FishRepository.cs" />
     <Compile Include="Repositories\GenusRepository.cs" />

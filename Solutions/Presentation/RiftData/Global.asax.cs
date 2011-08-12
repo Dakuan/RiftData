@@ -8,6 +8,7 @@ using RiftData.ApplicationServices.Installers;
 using RiftData.Controllers.Factory;
 using RiftData.Domain.Installers;
 using RiftData.Infrastructure.Data;
+using RiftData.Infrastructure.Data.Installers;
 
 namespace RiftData
 {

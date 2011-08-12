@@ -4,7 +4,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
-namespace RiftData.Domain.Installers
+namespace RiftData.Infrastructure.Data.Installers
 {
     public class RepositoriesInstaller : IWindsorInstaller
     {
