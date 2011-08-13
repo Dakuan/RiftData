@@ -112,6 +112,8 @@ function ShowInfoBoxForLocale(localeId) {
 
             infoBox.setOptions({ visible: true, offset: new Microsoft.Maps.Point(-110, 0), htmlContent: data.toString() });
 
+            map.entities.push(infoBox);
+
             map.setView({ center: loc });
         });
     });
