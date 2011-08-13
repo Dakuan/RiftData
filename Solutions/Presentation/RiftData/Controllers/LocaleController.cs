@@ -40,5 +40,14 @@ namespace RiftData.Controllers
                            Data = this._localeDtoService.GetLocaleDtosFromSpecies(id)
                        };
         }
+
+        public ActionResult GetLocaleData(int id)
+        {
+            return new JsonResult
+                       {
+                           JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                           Data = this._localeDtoService.GetLocaleDto(id)
+                       };
+        }
     }
 }

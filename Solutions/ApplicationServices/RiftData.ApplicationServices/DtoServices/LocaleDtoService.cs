@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Domain.Repositories;
@@ -11,11 +12,13 @@ namespace RiftData.ApplicationServices.DtoServices
     {
         private readonly IFishRepository _fishRepository;
         private readonly IDtoFactory _dtoFactory;
+        private readonly ILocalesRepository _localesRepository;
 
-        public LocaleDtoService(IFishRepository fishRepository, IDtoFactory dtoFactory)
+        public LocaleDtoService(IFishRepository fishRepository, IDtoFactory dtoFactory, ILocalesRepository localesRepository)
         {
             _fishRepository = fishRepository;
             _dtoFactory = dtoFactory;
+            _localesRepository = localesRepository;
         }
 
         public IList<LocaleDto> GetLocaleDtosFromSpecies(int speciesId)
@@ -25,6 +28,11 @@ namespace RiftData.ApplicationServices.DtoServices
             _fishRepository.GetFishBySpecies(speciesId).ToList().ForEach(f => list.Add(this._dtoFactory.Build(f.Locale)));
 
             return list;
+        }
+
+        public LocaleDto GetLocaleDto(int localeId)
+        {
+            return this._dtoFactory.Build(this._localesRepository.GetById(localeId));
         }
     }
 }

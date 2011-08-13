@@ -351,7 +351,9 @@
     <Content Include="Scripts\2011.2.712\telerik.upload.min.js" />
     <Content Include="Scripts\2011.2.712\telerik.window.min.js" />
     <Content Include="Scripts\PageScripts\home.js" />
+    <Content Include="Scripts\PageScripts\locale.js" />
     <Content Include="Scripts\PageScripts\map.js" />
+    <Content Include="Scripts\PageScripts\piroBox.js" />
     <Content Include="Scripts\PageScripts\Species.js" />
     <Content Include="Scripts\PiroBox\pirobox.js" />
     <Content Include="Scripts\PiroBox\pirobox.min.js" />

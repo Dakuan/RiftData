@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
 using RiftData.Domain.Entities;
 
 namespace RiftData.Infrastructure.Data.Configurations
@@ -22,9 +18,9 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             HasRequired(g => g.Genus).WithMany(x => x.Species);
 
-            Ignore(p => p.HasPhotos);
+            Property(p => p.HasPhotos).HasColumnName("SpeciesHasPhotos").IsRequired();
 
-            Ignore(p => p.HaveFish);
+            Property(p => p.HasFish).HasColumnName("SpeciesHasFish").IsRequired();
 
             Ignore(p => p.UrlName);
 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RiftData.Domain.Entities
+﻿namespace RiftData.Domain.Entities
 {
     public class Species 
     {
@@ -23,7 +20,7 @@ namespace RiftData.Domain.Entities
             }
         }
 
-        public bool HaveFish { get;  set; }
+        public bool HasFish { get;  set; }
 
         public bool HasPhotos { get;  set; }
 

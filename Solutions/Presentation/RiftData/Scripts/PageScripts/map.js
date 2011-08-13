@@ -28,6 +28,10 @@ function CreateMap() {
     });
 
     Microsoft.Maps.Events.addHandler(map, 'viewchangeend', AddLabelsForZoomLevel);
+
+    infoBox = new Microsoft.Maps.Infobox(mapCenter, { visible: false });
+
+    map.entities.push(infoBox);
 }
 
 //helper, converts from data zoom levels to map zoom levels
@@ -46,8 +50,6 @@ function DataZoomToMapZoom(data) {
 }
 
 function AddPinsForSpecies(speciesId) {
-
-    infoBox = new Microsoft.Maps.Infobox(mapCenter, { visible: false });
 
     var url = $('#GetLocalesBySpeciesUrl').attr('value') + '/' + speciesId;
 
@@ -80,7 +82,7 @@ function AddPinsForSpecies(speciesId) {
 
         map.setView({ bounds: locationRect });
 
-        map.entities.push(infoBox);
+
     });
 }
 
@@ -96,14 +98,21 @@ function ShowInfoBoxForLocale(localeId) {
 
     var url = $('#LocaleInfoBoxUrl').attr('value') + '/' + localeId;
 
-    $.get(url, function (data) {
+    var dataUrl = $('#GetLocaleDataUrl').attr('value') + '/' + localeId;
 
-        var loc = new Microsoft.Maps.Location(e.target._location.latitude, e.target._location.longitude);
+    var loc;
 
-        infoBox.setLocation(loc);
+    $.get(dataUrl, function (localeData) {
 
-        infoBox.setOptions({ visible: true, offset: new Microsoft.Maps.Point(-110, 0), htmlContent: data.toString() });
+        loc = new Microsoft.Maps.Location(localeData.Latitude, localeData.Longitude);
 
-        map.setView({ center: loc });
+        $.get(url, function (data) {
+
+            infoBox.setLocation(loc);
+
+            infoBox.setOptions({ visible: true, offset: new Microsoft.Maps.Point(-110, 0), htmlContent: data.toString() });
+
+            map.setView({ center: loc });
+        });
     });
 }
