@@ -1,7 +1,6 @@
 ﻿namespace RiftData.Infrastructure.Data
 {
     using System.Data.Entity;
-    using System.Data.Entity.ModelConfiguration.Conventions;
     using Configurations;
     using Domain.Entities;
 
@@ -26,8 +25,6 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
             AddConfigurations(modelBuilder);
 
             base.OnModelCreating(modelBuilder);

@@ -64,13 +64,6 @@
     <Compile Include="ViewModelFactories\DtoFactory.cs" />
     <Compile Include="ViewModelFactories\GenusPanelViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\HomePageViewModelFactory.cs" />
-    <Compile Include="ViewModelFactories\Contracts\IDtoFactory.cs" />
-    <Compile Include="ViewModelFactories\Contracts\IGenusPanelViewModelFactory.cs" />
-    <Compile Include="ViewModelFactories\Contracts\IHomePageViewModelFactory.cs" />
-    <Compile Include="ViewModelFactories\Contracts\ILocaleInfoBoxViewModelFactory.cs" />
-    <Compile Include="ViewModelFactories\Contracts\ISpeciesPageViewModelFactory.cs" />
-    <Compile Include="ViewModelFactories\Contracts\IPhotoGalleryViewModelFactory.cs" />
-    <Compile Include="ViewModelFactories\Contracts\ILocalePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocalePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\PhotoGalleryViewModelFactory.cs" />
@@ -84,6 +77,10 @@
     <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
       <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>
       <Name>RiftData.Infrastructure.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Presentation\RiftData.Presentation.Contracts\RiftData.Presentation.Contracts.csproj">
+      <Project>{E32B17CA-EE88-4F92-A6EE-25C3EE640139}</Project>
+      <Name>RiftData.Presentation.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Presentation\RiftData.Presentation.ViewModels\RiftData.Presentation.ViewModels.csproj">
       <Project>{1E84268C-9D18-4844-B170-2A2222C80998}</Project>

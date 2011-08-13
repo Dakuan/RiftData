@@ -1,5 +1,5 @@
 ﻿using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.ApplicationServices.ViewModelFactories.Contracts;
+using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels;
 using ISpeciesRepository = RiftData.Domain.Repositories.ISpeciesRepository;
 

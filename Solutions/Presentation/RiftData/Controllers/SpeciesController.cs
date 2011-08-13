@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
-using RiftData.ApplicationServices.ViewModelFactories;
-using RiftData.ApplicationServices.ViewModelFactories.Contracts;
+using RiftData.Presentation.Contracts;
 
 namespace RiftData.Controllers
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Domain.Entities;
+using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.ViewModelFactories

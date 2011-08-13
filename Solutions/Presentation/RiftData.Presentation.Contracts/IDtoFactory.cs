@@ -1,7 +1,7 @@
 ﻿using RiftData.Domain.Entities;
 using RiftData.Presentation.ViewModels.Dto;
 
-namespace RiftData.ApplicationServices.ViewModelFactories.Contracts
+namespace RiftData.Presentation.Contracts
 {
     public interface IDtoFactory
     {

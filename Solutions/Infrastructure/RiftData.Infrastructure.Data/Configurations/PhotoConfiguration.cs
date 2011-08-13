@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.ModelConfiguration;
-using RiftData.Domain.Entities;
-
-namespace RiftData.Infrastructure.Data.Configurations
+﻿namespace RiftData.Infrastructure.Data.Configurations
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity.ModelConfiguration;
+    using Domain.Entities;
+
     public class PhotoConfiguration : EntityTypeConfiguration<Photo>
     {
         public PhotoConfiguration()

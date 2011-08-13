@@ -371,6 +371,10 @@
       <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>
       <Name>RiftData.Infrastructure.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RiftData.Presentation.Contracts\RiftData.Presentation.Contracts.csproj">
+      <Project>{E32B17CA-EE88-4F92-A6EE-25C3EE640139}</Project>
+      <Name>RiftData.Presentation.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RiftData.Presentation.ViewModels\RiftData.Presentation.ViewModels.csproj">
       <Project>{1E84268C-9D18-4844-B170-2A2222C80998}</Project>
       <Name>RiftData.Presentation.ViewModels</Name>

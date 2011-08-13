@@ -1,6 +1,6 @@
 using RiftData.Presentation.ViewModels;
 
-namespace RiftData.ApplicationServices.ViewModelFactories.Contracts
+namespace RiftData.Presentation.Contracts
 {
     public interface ISpeciesPageViewModelFactory
     {

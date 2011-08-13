@@ -1,6 +1,6 @@
 ﻿using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.ApplicationServices.ViewModelFactories.Contracts;
 using RiftData.Domain.Repositories;
+using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
