@@ -1,35 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Domain.Entities;
-using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels;
-using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
     public class PhotoGalleryViewModelFactory : IPhotoGalleryViewModelFactory
     {
-        private readonly IPhotosRepository _photosRepository;
-        private readonly IDtoFactory _dtoFactory;
+        private readonly IPhotoDtoService _photoDtoService;
 
-        public PhotoGalleryViewModelFactory(IPhotosRepository photosRepository, IDtoFactory dtoFactory)
+        public PhotoGalleryViewModelFactory(IPhotoDtoService photoDtoService)
         {
-            _photosRepository = photosRepository;
-            _dtoFactory = dtoFactory;
+            _photoDtoService = photoDtoService;
         }
 
         public PhotoGalleryViewModel Build(Species species)
         {
-            var photos = new List<PhotoDto>();
-
-            this._photosRepository.GetPhotosForSpecies(species.Id).ToList().ForEach(p => photos.Add(this._dtoFactory.Build(p)));
-
             var viewModel = new PhotoGalleryViewModel
                                 {
                                     Name = species.Name,
-                                    Photos = photos
+                                    Photos = this._photoDtoService.GetPhotosForSpecies(species.Id)
+                                };
+
+            return viewModel;
+        }
+
+        public PhotoGalleryViewModel Build(Locale locale)
+        {
+            var viewModel = new PhotoGalleryViewModel
+                                {
+                                    Name = locale.Name,
+                                    Photos = this._photoDtoService.GetPhotosForLocale(locale.Id)
                                 };
 
             return viewModel;

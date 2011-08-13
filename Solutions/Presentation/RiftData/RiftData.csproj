@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\FishController.cs" />
     <Compile Include="Controllers\Installers\ControllersInstaller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocaleController.cs" />
@@ -396,7 +397,7 @@
     <Content Include="Views\Shared\_PanelLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Species\PhotoGallery.cshtml" />
+    <Content Include="Views\Shared\PhotoGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
@@ -406,9 +407,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Locale\LocaleInfoBox.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Locale\Index.cshtml" />

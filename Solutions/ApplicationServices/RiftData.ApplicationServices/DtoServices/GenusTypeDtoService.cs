@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
+using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.DtoServices
 {
-    public class GenusTypeService : IGenusTypeService
+    public class GenusTypeDtoService : IGenusTypeDtoService
     {
         private readonly IDtoFactory _dtoFactory;
         private readonly IGenusTypeRepository _genusTypeRepository;
 
-        public GenusTypeService(IDtoFactory dtoFactory, IGenusTypeRepository genusTypeRepository)
+        public GenusTypeDtoService(IDtoFactory dtoFactory, IGenusTypeRepository genusTypeRepository)
         {
             _dtoFactory = dtoFactory;
             _genusTypeRepository = genusTypeRepository;
@@ -20,16 +21,26 @@ namespace RiftData.ApplicationServices.DtoServices
 
         public IList<GenusTypeDto> GetGenusTypesThatContainGenus()
         {
-            var list = new List<GenusTypeDto>();
-
-            this._genusTypeRepository.GetGenusTypesContainingGenus().ToList().ForEach(t => list.Add(this._dtoFactory.Build(t)));
-
-            return list;
+            return this.BuildList(this._genusTypeRepository.GetGenusTypesContainingGenus());
         }
 
         public GenusTypeDto GetGenusTypeByName(string genusTypeName)
         {
             return this._dtoFactory.Build(this._genusTypeRepository.GetGenusTypeByName(genusTypeName));
+        }
+
+        public IList<GenusTypeDto> GetAllGenusTypes()
+        {
+            return this.BuildList(this._genusTypeRepository.GetAll());
+        }
+
+        private IList<GenusTypeDto> BuildList(IEnumerable<GenusType> list)
+        {
+            var newList = new List<GenusTypeDto>();
+
+            list.ToList().ForEach(g => newList.Add(this._dtoFactory.Build(g)));
+
+            return newList;
         }
     }
 }

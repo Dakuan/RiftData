@@ -91,3 +91,19 @@ function AddLabelsForZoomLevel(mapZoomLevel) {
     //get the locales
     var rah = mapZoomLevel;
 }
+
+function ShowInfoBoxForLocale(localeId) {
+
+    var url = $('#LocaleInfoBoxUrl').attr('value') + '/' + localeId;
+
+    $.get(url, function (data) {
+
+        var loc = new Microsoft.Maps.Location(e.target._location.latitude, e.target._location.longitude);
+
+        infoBox.setLocation(loc);
+
+        infoBox.setOptions({ visible: true, offset: new Microsoft.Maps.Point(-110, 0), htmlContent: data.toString() });
+
+        map.setView({ center: loc });
+    });
+}

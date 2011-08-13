@@ -1,31 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
     public class GenusPanelViewModelFactory : IGenusPanelViewModelFactory
     {
-        private IGenusRepository genusRepository;
-        private readonly IDtoFactory _dtoFactory;
+        private readonly IGenusDtoService _genusDtoService;
 
-        public GenusPanelViewModelFactory(IGenusRepository genusRepository, IDtoFactory dtoFactory)
+        public GenusPanelViewModelFactory(IGenusDtoService genusDtoService)
         {
-            this.genusRepository = genusRepository;
-            _dtoFactory = dtoFactory;
+            _genusDtoService = genusDtoService;
         }
 
         public GenusPanelViewModel Build (int genusTypeId)
-        {
-            var genusDtoList = new List<GenusDto>();
-
-            genusRepository.GetGenusOfIdWithFish(genusTypeId).ToList().ForEach(g => genusDtoList.Add(this._dtoFactory.Build(g)));
-
-            return new GenusPanelViewModel { GenusList = genusDtoList };
+        {         
+            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusTypeDtos(genusTypeId) };
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)
@@ -41,11 +31,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build()
         {
-            var genusDtoList = new List<GenusDto>();
-
-            this.genusRepository.List.ToList().ForEach(g => genusDtoList.Add(this._dtoFactory.Build(g)));
-
-            return new GenusPanelViewModel { GenusList = genusDtoList };
+            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusTypeDtos() };
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace RiftData.Presentation.ViewModels.Dto
+﻿using System.Collections.Generic;
+
+namespace RiftData.Presentation.ViewModels.Dto
 {
     public class FishDto
     {
@@ -13,5 +15,7 @@
         public double Longitude { get; set; }
 
         public bool HasPhotos { get; set; }
+
+        public IList<PhotoDto> Photos { get; set; }
     }
 }

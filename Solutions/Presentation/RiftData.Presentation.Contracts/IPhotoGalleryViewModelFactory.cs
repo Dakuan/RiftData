@@ -6,5 +6,7 @@ namespace RiftData.Presentation.Contracts
     public interface IPhotoGalleryViewModelFactory
     {
         PhotoGalleryViewModel Build(Species species);
+
+        PhotoGalleryViewModel Build(Locale locale);
     }
 }

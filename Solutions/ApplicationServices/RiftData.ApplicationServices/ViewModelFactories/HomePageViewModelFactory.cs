@@ -1,5 +1,4 @@
 ﻿using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels;
 
@@ -7,20 +6,20 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 {
     public class HomePageViewModelFactory : IHomePageViewModelFactory
     {
-        private readonly IGenusTypeService _genusTypeService;
+        private readonly IGenusTypeDtoService _genusTypeDtoService;
         private readonly IGenusPanelViewModelFactory _genusPanelViewModelFactory;
 
-        public HomePageViewModelFactory(IGenusTypeService genusTypeService, IGenusPanelViewModelFactory genusPanelViewModelFactory)
+        public HomePageViewModelFactory(IGenusTypeDtoService genusTypeDtoService, IGenusPanelViewModelFactory genusPanelViewModelFactory)
         {
-            _genusTypeService = genusTypeService;
+            _genusTypeDtoService = genusTypeDtoService;
             _genusPanelViewModelFactory = genusPanelViewModelFactory;
         }
 
         public HomePageViewModel Build(string genusTypeName)
         {
-            var genusType = this._genusTypeService.GetGenusTypeByName(genusTypeName);
+            var genusType = this._genusTypeDtoService.GetGenusTypeByName(genusTypeName);
 
-            var genusTypes = this._genusTypeService.GetGenusTypesThatContainGenus();
+            var genusTypes = this._genusTypeDtoService.GetGenusTypesThatContainGenus();
 
             var genusPanelViewModel = this._genusPanelViewModelFactory.Build(genusType.Id);
 

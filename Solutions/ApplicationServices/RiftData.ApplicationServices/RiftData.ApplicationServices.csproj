@@ -53,11 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DtoServices\GenusTypeService.cs" />
-    <Compile Include="DtoServices\Contracts\IGenusTypeService.cs" />
+    <Compile Include="DtoServices\FishDtoService.cs" />
+    <Compile Include="DtoServices\GenusDtoService.cs" />
+    <Compile Include="DtoServices\GenusTypeDtoService.cs" />
+    <Compile Include="DtoServices\Contracts\IGenusTypeDtoService.cs" />
+    <Compile Include="DtoServices\Contracts\IGenusDtoService.cs" />
+    <Compile Include="DtoServices\Contracts\ISpeciesDtoService.cs" />
+    <Compile Include="DtoServices\Contracts\IFishDtoService.cs" />
+    <Compile Include="DtoServices\Contracts\IPhotoDtoService.cs" />
     <Compile Include="DtoServices\LocaleDtoService.cs" />
     <Compile Include="DtoServices\Contracts\ILocaleDtoService.cs" />
     <Compile Include="DtoServices\PhotoDtoService.cs" />
+    <Compile Include="DtoServices\SpeciesDtoService.cs" />
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Installers\ViewModelFactoryInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -43,6 +43,7 @@
     <Compile Include="Dto\FishDto.cs" />
     <Compile Include="Dto\LocaleDto.cs" />
     <Compile Include="Dto\GenusDto.cs" />
+    <Compile Include="FishPageViewModel.cs" />
     <Compile Include="GenusPanelViewModel.cs" />
     <Compile Include="Dto\GenusTypeDto.cs" />
     <Compile Include="HomePageViewModel.cs" />

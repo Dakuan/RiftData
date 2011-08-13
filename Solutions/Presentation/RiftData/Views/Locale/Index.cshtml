@@ -37,7 +37,7 @@
             }
         }
             <div class="clear"></div>
-        @*@Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel)*@
+        @Html.Partial("PhotoGallery", Model.PhotoGallery)
     </div>  
     @Html.Hidden("LocaleInfoBoxUrl", Url.Action("GetInfoBox", "Locale"))
 }
