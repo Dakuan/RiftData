@@ -61,6 +61,7 @@
     <Compile Include="Configurations\GenusConfiguration.cs" />
     <Compile Include="Configurations\GenusTypeConfiguration.cs" />
     <Compile Include="Configurations\LocaleConfiguration.cs" />
+    <Compile Include="Configurations\PhotoConfiguration.cs" />
     <Compile Include="Configurations\SpeciesConfiguration.cs" />
     <Compile Include="Installers\DataContextInstaller.cs" />
     <Compile Include="Installers\RepositoriesInstaller.cs" />

@@ -26,7 +26,7 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             AddConfigurations(modelBuilder);
 
@@ -35,6 +35,7 @@
 
         private static void AddConfigurations(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new PhotoConfiguration());
             modelBuilder.Configurations.Add(new SpeciesConfiguration());
             modelBuilder.Configurations.Add(new FishConfiguration());
             modelBuilder.Configurations.Add(new LocaleConfiguration());

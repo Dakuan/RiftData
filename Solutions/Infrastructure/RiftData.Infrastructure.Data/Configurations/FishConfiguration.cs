@@ -22,6 +22,12 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             HasRequired(x => x.Locale).WithMany().Map(m => m.MapKey("FishLocaleID"));
 
+            HasMany(x => x.Photos).WithMany().Map(m =>
+                                                      {
+                                                          m.MapRightKey("PhotoID");
+                                                          m.MapLeftKey("FishID");
+                                                          m.ToTable("FishPhotos");
+                                                      });
             Ignore(x => x.HasPhotos);
 
             Ignore(x => x.UrlName);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using FlickrNet;
 using RiftData.Domain.Repositories;
 using Photo = RiftData.Domain.Entities.Photo;
@@ -34,33 +35,8 @@ namespace RiftData.Infrastructure.Data.Repositories
         {
             var list = new List<Photo>();
 
-            /*
-            this.dataEntities.Fish.Where(
-                f => f.Species.Id == speciesId && dataEntities.Photos.Any(p => p.FishId == f.FishID)).ToList().ForEach(
-                    f => this.dataEntities.Photos.Where(p => p.FishId == f.FishID && p.FlickrId != null).ToList().ForEach(list.Add));
+            this.dataEntities.Fish.Where(f => f.Species.Id ==speciesId).ToList().ForEach(f => f.Photos.ToList().ForEach(list.Add));
 
-
-            var tasks = new Dictionary<int, Task<PhotoInfo>>();
-
-            list.ForEach(t => tasks.Add(t.ID, new Task<PhotoInfo>(() => this.flickrApp.PhotosGetInfo(t.FlickrId))));
-
-            tasks.ToList().ForEach(t => t.Value.Start());
-
-            Task.WaitAll();
-
-            var photoList = new List<Photo>();
-
-            tasks.ToList().ForEach(t =>
-                                       {
-                                           var dataPhoto = this.dataEntities.Photos.Where(p => p.ID == t.Key).First();
-
-                                           var fish = this.dataEntities.Fish.Where(f => f.FishID == dataPhoto.FishId).First();
-
-                                           var caption = RiftData.Domain.Entities.Fish.GetFullName(fish.Genus1.GenusName, fish.Species1.SpeciesName, fish.Locale1.LocaleName, Convert.ToBoolean(fish.Species1.Described));
-
-                                           photoList.Add(this.photoFactory.Build(t.Value.Result, t.Key, caption));
-                                       });
-            */
             return list;
         }
     }

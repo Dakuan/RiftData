@@ -13,6 +13,8 @@ namespace RiftData.Domain.Entities
 
         public virtual Locale Locale { get; set; }
 
+        public virtual ICollection<Photo> Photos { get; set; }
+
         public string Name
         {
             get
@@ -28,7 +30,7 @@ namespace RiftData.Domain.Entities
             get { return string.Format("{0}_{1}_{2}", this.Genus.Name, this.Species.Name, this.Locale.Name); }
         }
 
-        public bool HasPhotos { get; set; }
+        public bool HasPhotos { get { return this.Photos.Count > 0; }}
 
         public static string GetFullName(string genusName, string speciesName, string localeName, bool described)
         {
