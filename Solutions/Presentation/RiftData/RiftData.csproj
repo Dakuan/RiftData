@@ -357,6 +357,7 @@
     <Content Include="Scripts\PageScripts\Species.js" />
     <Content Include="Scripts\PiroBox\pirobox.js" />
     <Content Include="Scripts\PiroBox\pirobox.min.js" />
+    <Content Include="Scripts\RiftDataMap\CustomInfoBox.js" />
     <Content Include="Scripts\RiftDataMap\RiftDataMap.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
