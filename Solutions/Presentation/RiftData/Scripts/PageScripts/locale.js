@@ -1,8 +1,8 @@
 ﻿$(window).load(function () {
 
-    CreateMap();
+    var map = new RiftDataMap();
 
     var localeId = $('#LocaleId').attr('value');
 
-    ShowInfoBoxForLocale(localeId);
+    map.showInfoBoxForLocale(localeId);
 });
