@@ -22,6 +22,8 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.Name).HasColumnName("LocaleName").IsRequired();
 
+            Property(p => p.ZoomLevel).HasColumnName("LocaleZoomLevel").IsRequired();
+
             Ignore(p => p.HasPhotos);
 
             Ignore(p => p.Photos);

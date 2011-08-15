@@ -11,6 +11,8 @@ body
     margin: 0;
     padding: 0;
     color: #696969;
+    background-image:url('../../Content/gradient-bg.jpg');
+    background-repeat:repeat-x;
 }
 
 a:link
@@ -373,23 +375,20 @@ div#title
 #CenterPanel
 {
     width:450px;
-    height:702px;
     padding:10px;
     margin-top:-1px;
 }
 #RightPanel
 {
     width:314px;
-    min-height:600px;
+    height:100%;
     float:right;
 }
 #LocaleMap
 {
-    min-height:700px;
     width:314px;
-    float:right;
     position:absolute;
-    height:auto;
+    height:702px;
 }
 .t-panelbar
 {
@@ -497,4 +496,9 @@ div#title
 .localeListImage
 {
     margin-bottom: -4px;
+}
+#Header
+{
+    height:60px;
+    background-image:url('../../Content/RiftDataBanner.jpg');
 }

@@ -65,8 +65,10 @@
     <Compile Include="DtoServices\Contracts\ILocaleDtoService.cs" />
     <Compile Include="DtoServices\PhotoDtoService.cs" />
     <Compile Include="DtoServices\SpeciesDtoService.cs" />
+    <Compile Include="IMapService.cs" />
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Installers\ViewModelFactoryInstaller.cs" />
+    <Compile Include="MapService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelFactories\DtoFactory.cs" />
     <Compile Include="ViewModelFactories\GenusPanelViewModelFactory.cs" />

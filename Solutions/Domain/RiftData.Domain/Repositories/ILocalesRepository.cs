@@ -10,5 +10,7 @@ namespace RiftData.Domain.Repositories
         IList<Locale> GetLocalesWithSpecies(int speciesId);
 
         Locale GetByFullName(string fullName);
+
+        IList<Locale> GetLocalesForZoomLevel(int zoomLevel);
     }
 }

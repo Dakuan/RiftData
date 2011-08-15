@@ -13,12 +13,14 @@ namespace RiftData.ApplicationServices.DtoServices
         private readonly IFishRepository _fishRepository;
         private readonly IDtoFactory _dtoFactory;
         private readonly ILocalesRepository _localesRepository;
+        private readonly IMapService _mapService;
 
-        public LocaleDtoService(IFishRepository fishRepository, IDtoFactory dtoFactory, ILocalesRepository localesRepository)
+        public LocaleDtoService(IFishRepository fishRepository, IDtoFactory dtoFactory, ILocalesRepository localesRepository, IMapService mapService)
         {
             _fishRepository = fishRepository;
             _dtoFactory = dtoFactory;
             _localesRepository = localesRepository;
+            _mapService = mapService;
         }
 
         public IList<LocaleDto> GetLocaleDtosFromSpecies(int speciesId)
@@ -33,6 +35,15 @@ namespace RiftData.ApplicationServices.DtoServices
         public LocaleDto GetLocaleDto(int localeId)
         {
             return this._dtoFactory.Build(this._localesRepository.GetById(localeId));
+        }
+
+        public IList<LocaleDto> GetLocalesForZoomLevel(int zoomLevel)
+        {
+            var list = new List<LocaleDto>();
+
+            this._localesRepository.GetLocalesForZoomLevel(this._mapService.GetDataZoomFromMapZoom(zoomLevel)).ToList().ForEach(l => list.Add(this._dtoFactory.Build(l)));
+
+            return list;
         }
     }
 }

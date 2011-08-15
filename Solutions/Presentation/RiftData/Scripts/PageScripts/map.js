@@ -5,7 +5,7 @@ var infoBox;
 var mapCenter;
 
 Microsoft.Maps.Pushpin.prototype.Id = null;
-Microsoft.Maps.Pushpin.prototype.IsLabel = null;
+Microsoft.Maps.Pushpin.prototype.IsLabel = false;
 
 function CreateMap() {
 
@@ -27,11 +27,23 @@ function CreateMap() {
         labelOverlay: Microsoft.Maps.LabelOverlay.hidden
     });
 
-    Microsoft.Maps.Events.addHandler(map, 'viewchangeend', AddLabelsForZoomLevel);
+    SetLabelTileLayer();
+
+    //Microsoft.Maps.Events.addHandler(map, 'viewchangeend', AddLabelsForZoomLevel);
+
+    //Microsoft.Maps.Events.addHandler(map, 'viewchangestart', ClearLabels);
 
     infoBox = new Microsoft.Maps.Infobox(mapCenter, { visible: false });
 
     map.entities.push(infoBox);
+}
+
+function SetLabelTileLayer() {
+
+    var options = { uriConstructor: 'http://localhost:31975/tile/{quadkey}', width: 256, height: 256 };
+    var tileSource = new Microsoft.Maps.TileSource(options);
+    var tilelayer = new Microsoft.Maps.TileLayer({ mercator: tileSource });
+    map.entities.push(tilelayer);  
 }
 
 //helper, converts from data zoom levels to map zoom levels
@@ -56,7 +68,7 @@ function AddPinsForSpecies(speciesId) {
     $.get(url, function (data) {
 
         //clear current pins
-        map.entities.clear();
+        //map.entities.clear();
 
         var locations = new Array();
 
@@ -81,17 +93,68 @@ function AddPinsForSpecies(speciesId) {
         var locationRect = Microsoft.Maps.LocationRect.fromLocations(locations);
 
         map.setView({ bounds: locationRect });
-
-
     });
 }
 
 function AddLabelsForZoomLevel(mapZoomLevel) {
 
-    //clear current labels
-    
-    //get the locales
-    var rah = mapZoomLevel;
+    //.get new set of labels
+    var url = $('#GetLocalesForZoomLevel').attr('value') + '/' + map.getZoom();
+
+    $.get(url, function (data) {
+        //add each of them
+        $.each(data, function () {
+
+            var labelLocation = new Microsoft.Maps.Location(this.Latitude, this.Longitude);
+
+            AddLabel(labelLocation, this.Name);
+        });
+    });
+
+    //move the pins to front of draw order
+    MovePinsToFront();
+}
+
+function ClearLabels() {
+
+    var entitiesToRemove = new Array();
+
+    var i = 0;
+
+    for(i = 0; i < map.entities.getLength(); i++){
+
+        var label = map.entities.get(i);
+
+        if (label.IsLabel) {
+            entitiesToRemove.push(label);
+        }
+    }
+
+    $.each(entitiesToRemove, function(){
+        
+        map.entities.pop(this);
+    });
+}
+
+function MovePinsToFront() {
+
+    for (i = 0; i < map.entities.getLength(); i++) {
+
+        var label = map.entities.get(i);
+
+        if (!label.IsLabel) {
+            map.entities.push(map.entities.pop(label));
+        }
+    }
+}
+
+function AddLabel(location, labelText) {
+
+    var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(location.latitude, location.longitude), { text: labelText, icon: '', width: 200, height: 50 });
+
+    pin.IsLabel = true;
+
+    map.entities.push(pin);
 }
 
 function ShowInfoBoxForLocale(localeId) {

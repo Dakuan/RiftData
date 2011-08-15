@@ -319,6 +319,7 @@
     <Content Include="Content\PiroBox\t_c.png" />
     <Content Include="Content\PiroBox\t_l.png" />
     <Content Include="Content\PiroBox\t_r.png" />
+    <Content Include="Content\RiftDataBanner.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\2011.2.712\jquery-1.5.1.min.js" />

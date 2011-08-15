@@ -15,6 +15,8 @@ namespace RiftData.Domain.Entities
 
         public virtual ICollection<Photo> Photos { get;  set; }
 
+        public int ZoomLevel { get; set; }
+
         public bool HasPhotos { get;  set; }
     }
 }

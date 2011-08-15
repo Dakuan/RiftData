@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Presentation.Contracts;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Controllers
 {
@@ -47,6 +49,15 @@ namespace RiftData.Controllers
                        {
                            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
                            Data = this._localeDtoService.GetLocaleDto(id)
+                       };
+        }
+
+        public ActionResult GetLocalesForZoomLevel(int id)
+        {
+            return new JsonResult
+                       {
+                           JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                           Data = this._localeDtoService.GetLocalesForZoomLevel(id)
                        };
         }
     }
