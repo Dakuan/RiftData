@@ -60,5 +60,12 @@ namespace RiftData.Controllers
                            Data = this._localeDtoService.GetLocalesForZoomLevel(id)
                        };
         }
+
+        public ActionResult GetLocaleLabel(int id)
+        {
+            var locale = this._localeDtoService.GetLocaleDto(id);
+
+            return PartialView("LocaleLabel", locale);
+        }
     }
 }

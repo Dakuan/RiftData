@@ -27,13 +27,13 @@ function CreateMap() {
         labelOverlay: Microsoft.Maps.LabelOverlay.hidden
     });
 
-    SetLabelTileLayer();
+    //SetLabelTileLayer();
 
-    //Microsoft.Maps.Events.addHandler(map, 'viewchangeend', AddLabelsForZoomLevel);
+    Microsoft.Maps.Events.addHandler(map, 'viewchangeend', AddLabelsForZoomLevel);
 
-    //Microsoft.Maps.Events.addHandler(map, 'viewchangestart', ClearLabels);
+    Microsoft.Maps.Events.addHandler(map, 'viewchangestart', ClearLabels);
 
-    infoBox = new Microsoft.Maps.Infobox(mapCenter, { visible: false });
+    infoBox = new Microsoft.Maps.Infobox(mapCenter, { visible: false, zIndex: 999 });
 
     map.entities.push(infoBox);
 }
@@ -79,7 +79,7 @@ function AddPinsForSpecies(speciesId) {
 
             locations.push(location);
 
-            var pushpinOptions = { icon: '../../Content/fishPin.png', width: 50, height: 50 };
+            var pushpinOptions = { icon: '../../Content/fishPin.png', width: 50, height: 50, zIndex: 999 };
 
             var pin = new Microsoft.Maps.Pushpin(location, pushpinOptions);
 
@@ -103,16 +103,34 @@ function AddLabelsForZoomLevel(mapZoomLevel) {
 
     $.get(url, function (data) {
         //add each of them
+        //        $.each(data, function () {
+
+        //            var labelLocation = new Microsoft.Maps.Location(this.Latitude, this.Longitude);
+
+        //            AddLabel(labelLocation, this.Name);
+        //        });
         $.each(data, function () {
+            var url = $('#GetLocaleLabel').attr('value') + '/' + this.Id;
 
-            var labelLocation = new Microsoft.Maps.Location(this.Latitude, this.Longitude);
+            var lat = this.Latitude;
+            var long = this.Longitude;
+            $.get(url, function (markup) {
 
-            AddLabel(labelLocation, this.Name);
+                var label = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(lat, long), { offset: new Microsoft.Maps.Point(0, 0), htmlContent: markup.toString() });
+
+                map.entities.push(label);
+            });
         });
     });
+}
 
-    //move the pins to front of draw order
-    MovePinsToFront();
+function AddLabel(location, labelText) {
+
+    var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(location.latitude, location.longitude), { text: labelText, icon: '', width: 200, height: 50, zIndex: 500 });
+
+    pin.IsLabel = true;
+
+    map.entities.push(pin);
 }
 
 function ClearLabels() {
@@ -134,27 +152,6 @@ function ClearLabels() {
         
         map.entities.pop(this);
     });
-}
-
-function MovePinsToFront() {
-
-    for (i = 0; i < map.entities.getLength(); i++) {
-
-        var label = map.entities.get(i);
-
-        if (!label.IsLabel) {
-            map.entities.push(map.entities.pop(label));
-        }
-    }
-}
-
-function AddLabel(location, labelText) {
-
-    var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(location.latitude, location.longitude), { text: labelText, icon: '', width: 200, height: 50 });
-
-    pin.IsLabel = true;
-
-    map.entities.push(pin);
 }
 
 function ShowInfoBoxForLocale(localeId) {

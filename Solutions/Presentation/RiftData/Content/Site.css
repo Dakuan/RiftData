@@ -502,3 +502,14 @@ div#title
     height:60px;
     background-image:url('../../Content/RiftDataBanner.jpg');
 }
+#LocaleInfoBoxContainer
+{
+    z-index:1000;
+    position: absolute;
+}
+.localeLabel
+{
+    color: White;
+    font-size:smaller;
+    text-align:center;
+}
