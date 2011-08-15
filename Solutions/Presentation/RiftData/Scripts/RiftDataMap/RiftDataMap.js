@@ -79,21 +79,19 @@
             //iterate returned DTO's
             $.each(data, function () {
 
-                //stash the lat,long
-                var lat = this.Latitude;
-                var long = this.Longitude;
                 var text = this.Name;
 
-                //get html for label
-                var url = $('#GetLocaleLabel').attr('value') + '/' + this.Id;
+                var location = new Microsoft.Maps.Location(this.Latitude, this.Longitude);
 
-                $.get(url, function (markup) {
+                //if the locale is visible on the map
+                if (map.getBounds().contains(location)) {
 
-                    var location = new Microsoft.Maps.Location(lat, long);
-
+                    //show pushpin label
                     _addLabel(location, text);
-                    //CreateInfoBoxLabel(location, markup);
-                });
+
+                    //show infoxboxlabel
+                    //_addInfoBoxLabel(location, this.Id);
+                }
             });
         });
     }
@@ -109,11 +107,16 @@
     }
 
     //adds an infobox label, seems a bit slow
-    function _addInfoBoxLabel(location, content) {
+    function _addInfoBoxLabel(location, localeId) {
 
-        var label = new Microsoft.Maps.Infobox(location, { htmlContent: content });
-        label.IsLabel = true;
-        map.entities.push(label);
+        //get html for label
+        var url = $('#GetLocaleLabel').attr('value') + '/' + localeId;
+
+        $.get(url, function (markup) {
+            var label = new Microsoft.Maps.Infobox(location, { htmlContent: markup });
+            label.IsLabel = true;
+            map.entities.push(label);
+        });
     }
 
     //removes all labels from the map
