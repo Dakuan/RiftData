@@ -12,6 +12,8 @@
 
         public string UrlName { get; set; }
 
+        public SpeciesDto Species { get; set; }
+
         public LocaleDto Locale { get; set; }
 
         public IList<PhotoDto> Photos { get; set; }

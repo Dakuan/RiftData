@@ -10,6 +10,8 @@
 
         public double Longitude { get; set; }
 
+        public int ZoomLevel { get; set; }
+
         public bool HasPhotos { get; set; }
     }
 }

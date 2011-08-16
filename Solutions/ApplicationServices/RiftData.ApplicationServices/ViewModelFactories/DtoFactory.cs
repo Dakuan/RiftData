@@ -16,6 +16,7 @@
                            Name = fish.Name,
                            Locale = this.Build(fish.Locale),
                            UrlName = fish.UrlName,
+                           Species = this.Build(fish.Species)
                        };
         }
 
@@ -27,7 +28,8 @@
                            Name = locale.Name,
                            Latitude = locale.Latitude,
                            Longitude = locale.Longitude,
-                           HasPhotos = locale.HasPhotos
+                           HasPhotos = locale.HasPhotos,
+                           ZoomLevel = locale.ZoomLevel
                        };
         }
 

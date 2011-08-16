@@ -7,5 +7,9 @@ $(window).load(function () {
     //get species id
     var localeId = $('#LocaleId').attr('value');
 
+    var speciesId = $('#SpeciesId').attr('value');
+
     map.showInfoBoxForLocale(localeId);
+
+    map.addFishPinAtLocale(localeId, speciesId);
 });

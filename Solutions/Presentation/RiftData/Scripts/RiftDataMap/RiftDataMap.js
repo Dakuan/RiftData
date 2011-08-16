@@ -1,4 +1,6 @@
-﻿var RiftDataMap = function () {
+﻿/// <reference path="RiftDataMapService.js" />
+
+var RiftDataMap = function () {
 
     //extensions
     Microsoft.Maps.Pushpin.prototype.Id = null;
@@ -10,6 +12,8 @@
     var map;
 
     var infoBox;
+
+    var service = new RiftDataMapService();
 
     ///////////////////////////////////////////////////////////
     //Private Methods
@@ -72,9 +76,7 @@
     //adds labels for the current zoom level
     function _addLabelsForZoomLevel() {
 
-        //get the locale DTO's
-        var url = $('#GetLocalesForZoomLevel').attr('value') + '/' + map.getZoom();
-        $.get(url, function (data) {
+        var callback = function (data) {
 
             //iterate returned DTO's
             $.each(data, function () {
@@ -85,15 +87,15 @@
 
                 //if the locale is visible on the map
                 if (map.getBounds().contains(location)) {
-
                     //show pushpin label
                     _addLabel(location, text);
-
                     //show infoxboxlabel
                     //_addInfoBoxLabel(location, this.Id);
                 }
             });
-        });
+        };
+
+        service.getLocalesForZoomLevel(map.getZoom(), callback);
     }
 
     //adds a pushpin label, bit slow, looks shit to boot.
@@ -143,25 +145,43 @@
     //shows the infobox for given localeID
     function _showInfoBoxForLocale(localeId) {
 
-        var url = $('#LocaleInfoBoxUrl').attr('value') + '/' + localeId;
-
-        var dataUrl = $('#GetLocaleDataUrl').attr('value') + '/' + localeId;
-
         var loc;
 
-        $.get(dataUrl, function (localeData) {
+        var callback = function (localeData) {
 
             loc = new Microsoft.Maps.Location(localeData.Latitude, localeData.Longitude);
 
-            $.get(url, function (data) {
+            zoom = _dataZoomLevelToMapZoomLevel(localeData.ZoomLevel);
+
+            var localeInfoBoxCallBack = function (data) {
 
                 infoBox.setLocation(loc);
 
                 infoBox.setOptions({ visible: true, offset: new Microsoft.Maps.Point(-110, 0), htmlContent: data.toString() });
 
-                map.setView({ center: loc });
-            });
-        });
+                map.setView({ center: loc, zoom: zoom });
+            };
+
+            service.getLocaleInfoBoxContent(localeId, localeInfoBoxCallBack);
+        };
+
+        service.getLocaleDto(localeId, callback);
+    }
+
+    function _dataZoomLevelToMapZoomLevel(localeZoomLevel) {
+
+        switch (localeZoomLevel) {
+            case 1:
+                return 8;
+            case 2:
+                return 9;
+            case 3:
+                return 11;
+            case 4:
+                return 12;
+            default:
+                return 8;
+        }
     }
 
     //adds a species pin to the map
@@ -207,9 +227,7 @@
     //adds fish pics for a species
     this.addPinsForSpecies = function (speciesId) {
 
-        var url = $('#GetLocalesBySpeciesUrl').attr('value') + '/' + speciesId;
-
-        $.get(url, function (data) {
+        callback = function (data) {
 
             var locations = new Array();
 
@@ -226,13 +244,28 @@
             var locationRect = Microsoft.Maps.LocationRect.fromLocations(locations);
 
             map.setView({ bounds: locationRect });
-        });
+        };
+
+        service.getLocalesBySpecies(speciesId, callback);
     }
 
     //exposes show 
     this.showInfoBoxForLocale = function (localeId) {
         _showInfoBoxForLocale(localeId);
     }
+
+    this.addFishPinAtLocale = function (localeId, speciesId) {
+
+        var callback = function (localeDto) {
+
+            var location = new Microsoft.Maps.Location(localeDto.Latitude, localeDto.Longitude);
+
+            _addSpeciesPin(location, speciesId);
+        };
+
+        service.getLocaleDto(localeId, callback);
+    }
+
     //////////////////////////////////////////////////////
 
     //call initialiser
