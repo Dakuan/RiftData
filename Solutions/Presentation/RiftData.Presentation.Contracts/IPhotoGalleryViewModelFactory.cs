@@ -8,5 +8,7 @@ namespace RiftData.Presentation.Contracts
         PhotoGalleryViewModel Build(Species species);
 
         PhotoGalleryViewModel Build(Locale locale);
+
+        PhotoGalleryViewModel Build(Fish fish);
     }
 }

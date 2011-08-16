@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDtoFactory.cs" />
+    <Compile Include="IFishPageViewModelFactory.cs" />
     <Compile Include="IGenusPanelViewModelFactory.cs" />
     <Compile Include="IHomePageViewModelFactory.cs" />
     <Compile Include="ILocaleInfoBoxViewModelFactory.cs" />

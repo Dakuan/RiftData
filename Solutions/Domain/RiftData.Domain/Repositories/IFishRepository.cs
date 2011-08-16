@@ -11,5 +11,7 @@ namespace RiftData.Domain.Repositories
         IQueryable<Fish> GetFishBySpecies(int speciesId);
 
         IList<Fish> GetFishByLocale(int localeId);
+
+        Fish GetFishFromName(string fishName);
     }
 }

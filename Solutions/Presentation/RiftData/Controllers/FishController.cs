@@ -1,12 +1,22 @@
 ﻿using System.Web.Mvc;
+using RiftData.Presentation.Contracts;
 
 namespace RiftData.Controllers
 {
     public class FishController : Controller
     {
+        private readonly IFishPageViewModelFactory fishPageViewModelFactory;
+
+        public FishController(IFishPageViewModelFactory fishPageViewModelFactory)
+        {
+            this.fishPageViewModelFactory = fishPageViewModelFactory;
+        }
+
         public ActionResult Index(string fishName)
         {
-            return View();
+            var viewModel = this.fishPageViewModelFactory.Build(fishName);
+
+            return View(viewModel);
         }
     }
 }

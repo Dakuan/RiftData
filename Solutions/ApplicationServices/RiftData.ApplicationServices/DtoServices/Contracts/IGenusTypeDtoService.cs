@@ -10,5 +10,7 @@ namespace RiftData.ApplicationServices.DtoServices.Contracts
         GenusTypeDto GetGenusTypeByName(string genusTypeName);
 
         IList<GenusTypeDto> GetAllGenusTypes();
+
+        GenusTypeDto GetGenusTypeDto(int genusTypeId);
     }
 }

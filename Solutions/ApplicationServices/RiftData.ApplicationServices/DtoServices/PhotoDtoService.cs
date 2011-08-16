@@ -1,34 +1,34 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.ApplicationServices.DtoServices
+﻿namespace RiftData.ApplicationServices.DtoServices
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Contracts;
+    using Domain.Entities;
+    using Domain.Repositories;
+    using Presentation.Contracts;
+    using Presentation.ViewModels.Dto;
+
     public class PhotoDtoService : IPhotoDtoService
     {
-        private readonly IPhotosRepository _photosRepository;
-        private readonly IDtoFactory _dtoFactory;
-        private readonly IFishRepository _fishRepository;
+        private readonly IPhotosRepository photosRepository;
+        private readonly IDtoFactory dtoFactory;
+        private readonly IFishRepository fishRepository;
 
         public PhotoDtoService(IPhotosRepository photosRepository, IDtoFactory dtoFactory, IFishRepository fishRepository)
         {
-            _photosRepository = photosRepository;
-            _dtoFactory = dtoFactory;
-            _fishRepository = fishRepository;
+            this.photosRepository = photosRepository;
+            this.dtoFactory = dtoFactory;
+            this.fishRepository = fishRepository;
         }
 
         public IList<PhotoDto> GetPhotosForSpecies(int speciesId)
         {
-            return this.BuildList(this._photosRepository.GetPhotosForSpecies(speciesId));
+            return this.BuildList(this.photosRepository.GetPhotosForSpecies(speciesId));
         }
 
         public IList<PhotoDto> GetPhotosForLocale(int localeId)
         {
-            var fish = this._fishRepository.GetFishByLocale(localeId);
+            var fish = this.fishRepository.GetFishByLocale(localeId);
 
             var list = new List<Photo>();
 
@@ -43,11 +43,16 @@ namespace RiftData.ApplicationServices.DtoServices
             return this.BuildList(list);
         }
 
+        public IList<PhotoDto> GetPhotosForFish(Fish fish)
+        {
+            return this.BuildList(fish.Photos);
+        }
+
         private IList<PhotoDto> BuildList(IEnumerable<Photo> photos)
         {
             var list = new List<PhotoDto>();
 
-            photos.ToList().ForEach(p => list.Add(this._dtoFactory.Build(p)));
+            photos.ToList().ForEach(p => list.Add(this.dtoFactory.Build(p)));
             
             return list;
         }

@@ -26,7 +26,7 @@
                                 <div class="cameraPicBlank"></div>
                             }
                             }
-                            <a href="@Url.Action("Index", "Locale", new { localeName = fish.Name })">@fish.Name</a>
+                            <a href="@Url.Action("Index", "Fish", new { fishName = fish.UrlName })">@fish.Name</a>
                                 <div class="clear"></div>
                         </li>
                             }
@@ -39,7 +39,6 @@
             <div class="clear"></div>
         @Html.Partial("PhotoGallery", Model.PhotoGallery)
     </div>  
-    @Html.Hidden("LocaleInfoBoxUrl", Url.Action("GetInfoBox", "Locale"))
     @Html.Hidden("LocaleId", Model.Locale.Id)
 }
 @section Scripts{

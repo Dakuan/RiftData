@@ -1,20 +1,18 @@
-﻿using System.Collections.Generic;
-
-namespace RiftData.Presentation.ViewModels.Dto
+﻿namespace RiftData.Presentation.ViewModels.Dto
 {
+    using System.Collections.Generic;
+
     public class FishDto
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public string LocaleName { get; set; }
-
-        public double Latitude { get; set; }
-
-        public double Longitude { get; set; }
-
         public bool HasPhotos { get; set; }
+
+        public string UrlName { get; set; }
+
+        public LocaleDto Locale { get; set; }
 
         public IList<PhotoDto> Photos { get; set; }
     }

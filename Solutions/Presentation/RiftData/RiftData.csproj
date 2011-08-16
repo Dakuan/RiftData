@@ -351,6 +351,7 @@
     <Content Include="Scripts\2011.2.712\telerik.treeview.min.js" />
     <Content Include="Scripts\2011.2.712\telerik.upload.min.js" />
     <Content Include="Scripts\2011.2.712\telerik.window.min.js" />
+    <Content Include="Scripts\PageScripts\fish.js" />
     <Content Include="Scripts\PageScripts\home.js" />
     <Content Include="Scripts\PageScripts\locale.js" />
     <Content Include="Scripts\PageScripts\piroBox.js" />
@@ -417,6 +418,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Locale\LocaleLabel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Fish\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

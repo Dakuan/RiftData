@@ -8,14 +8,19 @@ namespace RiftData.ApplicationServices.ViewModelFactories
     {
         private readonly IGenusDtoService _genusDtoService;
 
-        public GenusPanelViewModelFactory(IGenusDtoService genusDtoService)
+        private readonly IGenusTypeDtoService genusTypeDtoService;
+
+        public GenusPanelViewModelFactory(IGenusDtoService genusDtoService, IGenusTypeDtoService genusTypeDtoService)
         {
             _genusDtoService = genusDtoService;
+            this.genusTypeDtoService = genusTypeDtoService;
         }
 
         public GenusPanelViewModel Build (int genusTypeId)
-        {         
-            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusTypeDtos(genusTypeId) };
+        {
+            var genusTypeDto = this.genusTypeDtoService.GetGenusTypeDto(genusTypeId);
+
+            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusDtos(genusTypeId), GenusType = genusTypeDto };
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)
@@ -31,7 +36,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build()
         {
-            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusTypeDtos() };
+            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusDtos() };
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RiftData.Domain.Entities;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.ApplicationServices.ViewModelFactories
+﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Domain.Entities;
+    using Presentation.Contracts;
+    using Presentation.ViewModels.Dto;
+
     public class DtoFactory : IDtoFactory
     {
         public FishDto Build(Fish fish)
@@ -14,9 +14,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                        {
                            Id = fish.Id,
                            Name = fish.Name,
-                           LocaleName = fish.Locale.Name,
-                           Latitude = fish.Locale.Latitude,
-                           Longitude = fish.Locale.Longitude
+                           Locale = this.Build(fish.Locale),
+                           UrlName = fish.UrlName,
                        };
         }
 

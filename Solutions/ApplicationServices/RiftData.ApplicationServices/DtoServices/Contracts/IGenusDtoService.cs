@@ -5,8 +5,8 @@ namespace RiftData.ApplicationServices.DtoServices.Contracts
 {
     public interface IGenusDtoService
     {
-        IList<GenusDto> GetGenusTypeDtos(int genusTypeId);
+        IList<GenusDto> GetGenusDtos(int genusTypeId);
 
-        IList<GenusDto> GetGenusTypeDtos();
+        IList<GenusDto> GetGenusDtos();
     }
 }

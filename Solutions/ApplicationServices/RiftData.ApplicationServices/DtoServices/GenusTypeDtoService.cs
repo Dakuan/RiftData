@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Domain.Entities;
@@ -32,6 +33,11 @@ namespace RiftData.ApplicationServices.DtoServices
         public IList<GenusTypeDto> GetAllGenusTypes()
         {
             return this.BuildList(this._genusTypeRepository.GetAll());
+        }
+
+        public GenusTypeDto GetGenusTypeDto(int genusTypeId)
+        {
+            return this._dtoFactory.Build(this._genusTypeRepository.GetGenusType(genusTypeId));
         }
 
         private IList<GenusTypeDto> BuildList(IEnumerable<GenusType> list)

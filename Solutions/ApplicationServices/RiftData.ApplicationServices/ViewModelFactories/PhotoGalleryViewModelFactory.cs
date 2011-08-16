@@ -36,5 +36,16 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
             return viewModel;
         }
+
+        public PhotoGalleryViewModel Build(Fish fish)
+        {
+            var viewModel = new PhotoGalleryViewModel
+                                {
+                                    Name = fish.Name,
+                                    Photos = this._photoDtoService.GetPhotosForFish(fish)
+                                };
+
+            return viewModel;
+        }
     }
 }

@@ -58,9 +58,7 @@
         </div>
         @Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel)
     </div>  
-    @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locale"))
     @Html.Hidden("SpeciesId", Model.SpeciesId)
-    @Html.Hidden("LocaleInfoBoxUrl", Url.Action("GetInfoBox", "Locale"))
 }
 @section Scripts{
 
