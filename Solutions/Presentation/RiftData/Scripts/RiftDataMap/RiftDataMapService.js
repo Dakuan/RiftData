@@ -27,4 +27,11 @@
 
         $.get(url, callback);
     }
+
+    this.getLocaleLabel = function (localeId, callback) {
+
+        var url = $('#GetLocaleLabel').attr('value') + '/' + localeId;
+
+        $.get(url, callback);
+    }
 };

@@ -101,7 +101,7 @@ var RiftDataMap = function () {
     //adds a pushpin label, bit slow, looks shit to boot.
     function _addLabel(location, labelText) {
 
-        var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(location.latitude, location.longitude), { text: labelText, icon: '', width: 200, height: 50, zIndex: 500 });
+        var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(location.latitude, location.longitude), { text: labelText, icon: '', width: 200, height: 50, zIndex: 500, textOffset: new Microsoft.Maps.Point(0,35) });
 
         pin.IsLabel = true;
 
@@ -111,14 +111,13 @@ var RiftDataMap = function () {
     //adds an infobox label, seems a bit slow
     function _addInfoBoxLabel(location, localeId) {
 
-        //get html for label
-        var url = $('#GetLocaleLabel').attr('value') + '/' + localeId;
-
-        $.get(url, function (markup) {
+        var callback = function (markup) {
             var label = new Microsoft.Maps.Infobox(location, { htmlContent: markup });
             label.IsLabel = true;
             map.entities.push(label);
-        });
+        };
+
+        service.getLocaleLabel(localeId, callback);
     }
 
     //removes all labels from the map
@@ -249,11 +248,12 @@ var RiftDataMap = function () {
         service.getLocalesBySpecies(speciesId, callback);
     }
 
-    //exposes show 
+    //exposes show infobox
     this.showInfoBoxForLocale = function (localeId) {
         _showInfoBoxForLocale(localeId);
     }
-
+    
+    //allows manual creation of a fishpin
     this.addFishPinAtLocale = function (localeId, speciesId) {
 
         var callback = function (localeDto) {
