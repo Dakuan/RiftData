@@ -229,6 +229,10 @@
         });
     }
 
+    //exposes show 
+    this.showInfoBoxForLocale = function (localeId) {
+        _showInfoBoxForLocale(localeId);
+    }
     //////////////////////////////////////////////////////
 
     //call initialiser
