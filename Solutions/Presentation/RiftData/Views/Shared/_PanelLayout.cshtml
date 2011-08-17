@@ -7,7 +7,7 @@
 }
 <div id="LeftPanel" class="panels">
     <div id="TabContainer">
-        <div class="t-widget t-tabstrip t-header">
+        <div class="t-widget t-tabstrip t-header" style="height: 640px;">
             <ul class="t-reset t-tabstrip-items">
                 @{foreach (var genusType in Model.GenusTypes) {
                       var cssClass = Model.SelectedGenusTypeId == genusType.Id ? "t-item t-state-default t-state-active" : "t-item t-state-default";

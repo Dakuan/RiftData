@@ -101,7 +101,7 @@ var RiftDataMap = function () {
     //adds a pushpin label, bit slow, looks shit to boot.
     function _addLabel(location, labelText) {
 
-        var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(location.latitude, location.longitude), { text: labelText, icon: '', width: 200, height: 50, zIndex: 500, textOffset: new Microsoft.Maps.Point(0,35) });
+        var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(location.latitude, location.longitude), { text: labelText, icon: '', width: 200, height: 50, zIndex: 500, textOffset: new Microsoft.Maps.Point(0, 35) });
 
         pin.IsLabel = true;
 
@@ -239,7 +239,9 @@ var RiftDataMap = function () {
 
                 _addSpeciesPin(location, this.Id);
             });
-
+            if (locations.length == 1) {
+                _showInfoBoxForLocale(data[0].Id);
+            }
             var locationRect = Microsoft.Maps.LocationRect.fromLocations(locations);
 
             map.setView({ bounds: locationRect });
@@ -252,7 +254,7 @@ var RiftDataMap = function () {
     this.showInfoBoxForLocale = function (localeId) {
         _showInfoBoxForLocale(localeId);
     }
-    
+
     //allows manual creation of a fishpin
     this.addFishPinAtLocale = function (localeId, speciesId) {
 

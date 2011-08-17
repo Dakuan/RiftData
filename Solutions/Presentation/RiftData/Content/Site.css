@@ -388,7 +388,7 @@ div#title
 {
     width:314px;
     position:absolute;
-    height:702px;
+    height:642px;
 }
 #LocaleMap.div.div.div.div.div
 {
@@ -396,7 +396,7 @@ div#title
 }
 .t-panelbar
 {
-    max-height:666px;
+    max-height:615px;
     overflow:auto;
 }
 .photoCell
