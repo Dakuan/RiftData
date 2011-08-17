@@ -390,6 +390,10 @@ div#title
     position:absolute;
     height:702px;
 }
+#LocaleMap.div.div.div.div.div
+{
+    font-size:smaller;
+}
 .t-panelbar
 {
     max-height:666px;
