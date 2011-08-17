@@ -36,7 +36,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build()
         {
-            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusDtos() };
+            return this.Build(1);
         }
     }
 }

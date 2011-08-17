@@ -7,14 +7,13 @@ body
 {
     background-color: white;
     font-size: 75%;
-    font-family: "Lobster", Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    font-family: 'Arimo', sans-serif;
     margin: 0;
     padding: 0;
     color: #696969;
-    background-image:url('../../Content/gradient-bg.jpg');
-    background-repeat:repeat-x;
+    background-image:url('../../Content/header-bg.png');
 }
-
+/*
 a:link
 {
     color: #00b899;
@@ -35,6 +34,7 @@ a:active
 */
 p
 {
+    
     margin-bottom: 20px;
     line-height: 1.6em;
 }
@@ -43,6 +43,9 @@ p
 ----------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6
 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-style:italic;
     font-size: 1.5em;
     color: #323232;
 }
@@ -55,14 +58,17 @@ h1
 }
 h2
 {
+    font-weight:bold;
     padding: 0 0 10px 0;
 }
 h3
 {
+    font-weight:bold;
     font-size: 1.2em;
 }
 h4
 {
+    font-weight:bold;
     font-size: 1.1em;
 }
 h5, h6
@@ -351,6 +357,15 @@ div#title
     margin-left: auto;
     margin-right: auto;
     background-image:url('../../Content/page-bg.jpg');
+    
+    background-color:#ffffff;
+    border-width:2px;
+    border-color:#feffde;
+    -moz-box-shadow:0px 0px 20px #fffbe0;
+    -webkit-box-shadow:0px 0px 20px #fffbe0;
+    box-shadow:0px 0px 20px #fffbe0;
+/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+
 }
 #TabContainer
 {
@@ -504,7 +519,24 @@ div#title
 #Header
 {
     height:60px;
-    background-image:url('../../Content/RiftDataBanner.jpg');
+    background-color:White;
+    background-image:url('../../Content/header-bg.jpg');
+}
+
+#Header h1
+{
+    margin: 0px;
+    margin-top: 3px;
+    font-size: 34pt;
+    color: #046;
+    text-shadow: 0px 2px 3px #14B1FF;
+    float: left;
+}
+
+#Logo
+{
+    float:left;
+    height:60px;
 }
 #LocaleInfoBoxContainer
 {

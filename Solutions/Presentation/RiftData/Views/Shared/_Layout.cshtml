@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>@ViewBag.Title</title>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:300italic|Arimo' rel='stylesheet' type='text/css'/>
         <link href="@Url.Content("../Content/2011.2.712/telerik.transparent.min.css")" rel="stylesheet"type="text/css" />
         <link href="@Url.Content("../Content/2011.2.712/telerik.common.min.css")" rel="stylesheet" type="text/css" />
         <link href="@Url.Content("../Content/LocaleInfoBox/LocaleInfoBox.css")" rel="stylesheet" type="text/css" />
@@ -15,6 +16,11 @@
     <body>
         <div id="PageContainer">
             <div id="Header">
+                <div id="Logo">
+                    <img src="../../Content/logo.png" />
+                </div>
+                <h1>RiftData</h1>
+                <div class="clear"></div>
             </div>
             @RenderBody()
         </div>
