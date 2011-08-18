@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    var hoverAnimationTime = 100;
+    var hoverAnimationTime = 70;
     $('.headerButton').hover(function () {
         $(this).switchClass('headerButton', 'headerButtonHover', hoverAnimationTime);
     });
