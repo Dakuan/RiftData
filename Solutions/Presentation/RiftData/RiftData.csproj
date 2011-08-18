@@ -291,6 +291,7 @@
     <Content Include="Content\centrepanel-bg.jpg" />
     <Content Include="Content\gradient-bg.jpg" />
     <Content Include="Content\fishPin.png" />
+    <Content Include="Content\header-bg.jpg" />
     <Content Include="Content\header-bg.png" />
     <Content Include="Content\LocaleInfoBox\body-bg.png" />
     <Content Include="Content\LocaleInfoBox\LocaleInfoBox.css" />
