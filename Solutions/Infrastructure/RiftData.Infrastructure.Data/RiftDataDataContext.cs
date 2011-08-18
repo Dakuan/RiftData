@@ -23,6 +23,8 @@
 
         public DbSet<Photo> Photos { get; set; }
 
+        public DbSet<Lake> Lakes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             AddConfigurations(modelBuilder);
@@ -38,6 +40,7 @@
             modelBuilder.Configurations.Add(new LocaleConfiguration());
             modelBuilder.Configurations.Add(new GenusTypeConfiguration());
             modelBuilder.Configurations.Add(new GenusConfiguration());
+            modelBuilder.Configurations.Add(new LakeConfiguration());
         }
     }
 }

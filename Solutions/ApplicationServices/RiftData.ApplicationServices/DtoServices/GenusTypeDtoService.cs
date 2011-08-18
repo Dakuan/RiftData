@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Domain.Entities;
+using RiftData.Domain.Extensions;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels.Dto;
@@ -38,6 +39,18 @@ namespace RiftData.ApplicationServices.DtoServices
         public GenusTypeDto GetGenusTypeDto(int genusTypeId)
         {
             return this._dtoFactory.Build(this._genusTypeRepository.GetGenusType(genusTypeId));
+        }
+
+        public IList<GenusTypeDto> GetGenusTypesFromLocale(Locale locale)
+        {
+            var list = new List<GenusTypeDto>();
+
+            return this.BuildList(locale.Lake.GenusTypes);
+        }
+
+        public IList<GenusTypeDto> GetGenusTypesFromLake(Lake lake)
+        {
+            return this.BuildList(lake.GenusTypes.SortGenusTypes());
         }
 
         private IList<GenusTypeDto> BuildList(IEnumerable<GenusType> list)

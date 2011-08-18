@@ -12,5 +12,7 @@ namespace RiftData.Domain.Repositories
         IList<GenusType> GetAll();
 
         GenusType GetGenusType(int genusTypeId);
+
+        GenusType GetFromSpecies(int speciesId);
     }
 }

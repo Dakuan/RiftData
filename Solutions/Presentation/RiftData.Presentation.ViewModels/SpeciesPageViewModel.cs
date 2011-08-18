@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels
 {
-    public class SpeciesPageViewModel : PanelViewModelBase
+    public class SpeciesPageViewModel : ViewModelBase, IPanelViewModel
     {
         public string SpeciesName { get; set; }
 
@@ -12,5 +13,7 @@ namespace RiftData.Presentation.ViewModels
         public PhotoGalleryViewModel PhotoGalleryViewModel { get; set; }
 
         public IList<LocaleDto> Locales { get; set; }
+
+        public GenusPanelViewModel GenusPanelViewModel { get; set; }
     }
 }

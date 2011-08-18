@@ -61,6 +61,8 @@
     <Compile Include="DtoServices\Contracts\ISpeciesDtoService.cs" />
     <Compile Include="DtoServices\Contracts\IFishDtoService.cs" />
     <Compile Include="DtoServices\Contracts\IPhotoDtoService.cs" />
+    <Compile Include="DtoServices\Contracts\ILakeDtoService.cs" />
+    <Compile Include="DtoServices\LakeDtoService.cs" />
     <Compile Include="DtoServices\LocaleDtoService.cs" />
     <Compile Include="DtoServices\Contracts\ILocaleDtoService.cs" />
     <Compile Include="DtoServices\PhotoDtoService.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="ViewModelFactories\DtoFactory.cs" />
     <Compile Include="ViewModelFactories\FishPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\GenusPanelViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\HeaderViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\HomePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocalePageViewModelFactory.cs" />

@@ -14,5 +14,7 @@ namespace RiftData.Domain.Entities
         public int GenusCount { get;  set; }
 
         public virtual ICollection<Genus> Genus { get; set; }
+
+        public virtual Lake Lake { get; set; }
     }
 }

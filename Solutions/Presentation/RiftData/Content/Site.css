@@ -13,25 +13,7 @@ body
     color: #696969;
     background-image:url('../../Content/header-bg.png');
 }
-/*
-a:link
-{
-    color: #00b899;
-}
-a:visited
-{
-    color: #505abc;
-}
-a:hover
-{
-    color: #1d60ff;
-    text-decoration: none;
-}
-a:active
-{
-    color: #12eb87;
-}
-*/
+
 p
 {
     
@@ -382,7 +364,8 @@ div#title
 #LeftPanel
 {
     width:240px;
-    margin-left: -1px;    
+    margin-left: -1px;
+    margin-right: -4px;    
 }
 #CenterPanel
 {
@@ -498,7 +481,7 @@ div#title
 }
 #contentHolder
 {
-    max-height: 620px;
+    max-height: 535px;
     overflow: auto;
 }
 .cameraPicBlank
@@ -579,7 +562,7 @@ color: white;
 float: left;
     /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
 }
-#HeaderButtonsContainer a
+#HeaderMenu a
 {
     text-decoration:none;
 }

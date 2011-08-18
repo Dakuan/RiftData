@@ -16,5 +16,7 @@ namespace RiftData.Presentation.Contracts
         PhotoDto Build(Photo photo);
 
         GenusTypeDto Build(GenusType genusType);
+
+        LakeDto Build(Lake lake);
     }
 }

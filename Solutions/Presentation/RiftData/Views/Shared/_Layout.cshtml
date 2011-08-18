@@ -1,4 +1,6 @@
 ﻿@using Telerik.Web.Mvc.UI
+@using RiftData.Domain.Entities
+@model RiftData.Presentation.ViewModels.ViewModelBase
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,37 +26,56 @@
                 </div>
                 <div class="clear"></div>
                 <div id="HeaderTabs">
-                    <div class="headerTabSelected">
-                        Malawi
-                    </div>
-                    <div class="headerTab">
-                        Tanganyika
-                    </div>
-                    <div class="headerTab">
-                        Victoria
-                    </div>
+                    @foreach (var lake in Model.HeaderViewModel.Lakes){
+                        if (lake.Id == Model.HeaderViewModel.SelectedLakeId)
+                        {
+                            <div class="headerTabSelected">
+                                @lake.Name
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="headerTab">
+                                    @lake.Name
+                            </div>
+                        }
+
+                    } 
                     <div class="clear"></div>
                 </div>
                 <div class="divider"></div>
                 <div id="HeaderMenu">
-                    <div class="headerButton">
-                        Mbuna
-                    </div>
-                    <div class="headerButton">
-                        Haps
-                    </div>
-                    <div class="headerButton">
-                        Peacocks
-                    </div>
+                    @foreach (var genusType in Model.HeaderViewModel.GenusTypes)
+                    {
+                        <a href="@Url.Action("Index", "Home", new { genusTypeName = genusType.Name })" title="@genusType.Name">
+
+                            @if (genusType.Id == Model.HeaderViewModel.SelectedGenusTypeId)
+                            {
+                            <div class="headerButtonHover">
+                                @genusType.Name
+                            </div>
+                            }
+                            else
+                            {
+                            <div class="headerButton">
+                                @genusType.Name
+                            </div>
+                            }
+
+                        </a>
+                    }
                     <div id="HeaderButtonsContainer">
-                    <div class="headerButton">
-                        Help us
-                    </div>
-                    <a href="#" >
                         <div class="headerButton">
-                            About
+                            Thanks!
                         </div>
-                    </a>
+                        <div class="headerButton">
+                            Help us
+                        </div>
+                        <a href="#" >
+                            <div class="headerButton">
+                                About
+                            </div>
+                        </a>
                 </div>
                 </div>
                 <div class="clear"></div>

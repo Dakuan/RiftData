@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RiftData.Domain.Entities;
 using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.DtoServices.Contracts
@@ -12,5 +13,8 @@ namespace RiftData.ApplicationServices.DtoServices.Contracts
         IList<GenusTypeDto> GetAllGenusTypes();
 
         GenusTypeDto GetGenusTypeDto(int genusTypeId);
+
+        IList<GenusTypeDto> GetGenusTypesFromLocale(Locale locale);
+        IList<GenusTypeDto> GetGenusTypesFromLake(Lake lake);
     }
 }

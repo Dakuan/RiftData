@@ -18,5 +18,7 @@ namespace RiftData.Domain.Entities
         public int ZoomLevel { get; set; }
 
         public bool HasPhotos { get;  set; }
+
+        public virtual Lake Lake { get; set; }
     }
 }

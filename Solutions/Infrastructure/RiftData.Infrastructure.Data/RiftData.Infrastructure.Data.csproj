@@ -60,6 +60,7 @@
     <Compile Include="Configurations\FishConfiguration.cs" />
     <Compile Include="Configurations\GenusConfiguration.cs" />
     <Compile Include="Configurations\GenusTypeConfiguration.cs" />
+    <Compile Include="Configurations\LakeConfiguration.cs" />
     <Compile Include="Configurations\LocaleConfiguration.cs" />
     <Compile Include="Configurations\PhotoConfiguration.cs" />
     <Compile Include="Configurations\SpeciesConfiguration.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Repositories\FishRepository.cs" />
     <Compile Include="Repositories\GenusRepository.cs" />
     <Compile Include="Repositories\GenusTypeRepository.cs" />
+    <Compile Include="Repositories\LakeRepository.cs" />
     <Compile Include="Repositories\LocalesRepository.cs" />
     <Compile Include="Repositories\PhotosRepository.cs" />
     <Compile Include="Repositories\SpeciesRepository.cs" />

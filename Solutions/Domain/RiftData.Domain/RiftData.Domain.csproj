@@ -55,9 +55,12 @@
   <ItemGroup>
     <Compile Include="Entities\Fish.cs" />
     <Compile Include="Entities\GenusType.cs" />
+    <Compile Include="Entities\Lake.cs" />
     <Compile Include="Entities\Photo.cs" />
     <Compile Include="Extensions\FishExtensionMethods.cs" />
     <Compile Include="Extensions\GenusExtensionMethods.cs" />
+    <Compile Include="Extensions\GenusTypeExtensionMethods.cs" />
+    <Compile Include="Extensions\LakeExtensionMethods.cs" />
     <Compile Include="Extensions\LocaleExtensionMethods.cs" />
     <Compile Include="Extensions\SpeciesExtensionMethods.cs" />
     <Compile Include="Installers\FactoriesInstaller.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="Repositories\IFishRepository.cs" />
     <Compile Include="Repositories\IGenusRepository.cs" />
     <Compile Include="Repositories\IGenusTypeRepository.cs" />
+    <Compile Include="Repositories\ILakeRepository.cs" />
     <Compile Include="Repositories\ILocalesRepository.cs" />
     <Compile Include="Repositories\IPhotosRepository.cs" />
     <Compile Include="Repositories\ISpeciesRepository.cs" />

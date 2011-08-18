@@ -8,19 +8,15 @@ namespace RiftData.ApplicationServices.ViewModelFactories
     {
         private readonly IGenusDtoService _genusDtoService;
 
-        private readonly IGenusTypeDtoService genusTypeDtoService;
 
-        public GenusPanelViewModelFactory(IGenusDtoService genusDtoService, IGenusTypeDtoService genusTypeDtoService)
+        public GenusPanelViewModelFactory(IGenusDtoService genusDtoService)
         {
             _genusDtoService = genusDtoService;
-            this.genusTypeDtoService = genusTypeDtoService;
         }
 
         public GenusPanelViewModel Build (int genusTypeId)
         {
-            var genusTypeDto = this.genusTypeDtoService.GetGenusTypeDto(genusTypeId);
-
-            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusDtos(genusTypeId), GenusType = genusTypeDto };
+            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusDtos(genusTypeId)};
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)

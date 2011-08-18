@@ -24,6 +24,8 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.ZoomLevel).HasColumnName("LocaleZoomLevel").IsRequired();
 
+            HasRequired(x => x.Lake).WithMany().Map(m => m.MapKey("LocaleLakeID"));
+
             Ignore(p => p.HasPhotos);
 
             Ignore(p => p.Photos);

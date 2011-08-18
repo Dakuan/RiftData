@@ -34,5 +34,10 @@ namespace RiftData.Infrastructure.Data.Repositories
         {
             return this.dataEntities.GenusTypes.First(g => g.Id == genusTypeId);
         }
+
+        public GenusType GetFromSpecies(int speciesId)
+        {
+            return this.dataEntities.GenusTypes.First(t => t.Genus.Any(g => g.Species.Any(s => s.Id == speciesId)));
+        }
     }
 }

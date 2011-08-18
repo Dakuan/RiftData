@@ -3,12 +3,14 @@ using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels
 {
-    public class PanelViewModelBase
+    public class HeaderViewModel
     {
-        public IList<GenusTypeDto> GenusTypes;
+        public IList<LakeDto> Lakes { get; set; }
 
-        public GenusPanelViewModel GenusPanelViewModel { get; set; }
+        public IList<GenusTypeDto> GenusTypes { get; set; }
 
         public int? SelectedGenusTypeId { get; set; }
+
+        public int? SelectedLakeId { get; set; }
     }
 }

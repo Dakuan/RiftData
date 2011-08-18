@@ -74,5 +74,20 @@
         {
             return new GenusTypeDto { Id = genusType.Id, Name = genusType.Name };
         }
+
+        public LakeDto Build(Lake lake)
+        {
+
+            var genustypes = new List<GenusTypeDto>();
+
+            lake.GenusTypes.ToList().ForEach(g => genustypes.Add(this.Build(g)));
+
+            return new LakeDto
+                       {
+                           Id = lake.Id,
+                           Name = lake.Name,
+                           GenusTypes = genustypes
+                       };
+        }
     }
 }

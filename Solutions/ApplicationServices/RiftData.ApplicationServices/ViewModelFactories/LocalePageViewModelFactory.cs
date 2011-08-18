@@ -7,19 +7,19 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 {
     public class LocalePageViewModelFactory : ILocalePageViewModelFactory
     {
-        private readonly IGenusTypeDtoService _genusTypeDtoService;
+        private readonly IGenusPanelViewModelFactory _genusPanelViewModelFactory;
         private readonly ILocalesRepository _localesRepository;
         private readonly IDtoFactory _dtoFactory;
-        private readonly IGenusPanelViewModelFactory _genusPanelViewModelFactory;
+        private readonly IHeaderViewModelFactory _headerViewModelFactory;
         private readonly IFishDtoService _fishDtoService;
         private readonly IPhotoGalleryViewModelFactory _photoGalleryViewModelFactory;
 
-        public LocalePageViewModelFactory(IGenusTypeDtoService genusTypeDtoService, ILocalesRepository localesRepository, IDtoFactory dtoFactory, IGenusPanelViewModelFactory genusPanelViewModelFactory, IFishDtoService fishDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory)
+        public LocalePageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, ILocalesRepository localesRepository, IDtoFactory dtoFactory,IHeaderViewModelFactory headerViewModelFactory, IFishDtoService fishDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory)
         {
-            _genusTypeDtoService = genusTypeDtoService;
+            _genusPanelViewModelFactory = genusPanelViewModelFactory;
             _localesRepository = localesRepository;
             _dtoFactory = dtoFactory;
-            _genusPanelViewModelFactory = genusPanelViewModelFactory;
+            _headerViewModelFactory = headerViewModelFactory;
             _fishDtoService = fishDtoService;
             _photoGalleryViewModelFactory = photoGalleryViewModelFactory;
         }
@@ -28,16 +28,15 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         {
             var locale = this._localesRepository.GetByFullName(fullName);
 
-            var genusPanelViewModel = this._genusPanelViewModelFactory.Build();
+            var headerViewModel = this._headerViewModelFactory.Build(locale);
 
             var viewModel = new LocalePageViewModel
                                 {
                                     Locale = this._dtoFactory.Build(locale),
                                     Fish = this._fishDtoService.GetFishAtLocale(locale.Id),
-                                    GenusPanelViewModel = genusPanelViewModel,
-                                    GenusTypes = this._genusTypeDtoService.GetAllGenusTypes(),
-                                    SelectedGenusTypeId = 1,
-                                    PhotoGallery = this._photoGalleryViewModelFactory.Build(locale)
+                                    HeaderViewModel = headerViewModel,
+                                    PhotoGallery = this._photoGalleryViewModelFactory.Build(locale),
+                                    GenusPanelViewModel = this._genusPanelViewModelFactory.Build(1)
                                 };
 
             return viewModel;
