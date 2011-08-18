@@ -361,9 +361,9 @@ div#title
     background-color:#ffffff;
     border-width:2px;
     border-color:#feffde;
-    -moz-box-shadow:0px 0px 20px #fffbe0;
-    -webkit-box-shadow:0px 0px 20px #fffbe0;
-    box-shadow:0px 0px 20px #fffbe0;
+    -moz-box-shadow:0px 0px 40px #000;
+    -webkit-box-shadow:0px 0px 40px #000;
+    box-shadow:0px 0px 40px #000;
 /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
 
 }
@@ -521,6 +521,12 @@ div#title
     height:60px;
     background-color:White;
     background-image:url('../../Content/header-bg.jpg');
+    border-bottom-width: 2px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-color: #007EBD;
 }
 
 #Header h1
@@ -529,7 +535,7 @@ div#title
     margin-top: 3px;
     font-size: 34pt;
     color: #046;
-    text-shadow: 0px 2px 3px #14B1FF;
+    text-shadow: 0px 1px 3px #3BF;
     float: left;
 }
 
@@ -548,4 +554,54 @@ div#title
     color: White;
     font-size:smaller;
     text-align:center;
+}
+#Footer
+{
+    height:15px;
+    background-image:url('../../Content/header-bg.jpg');
+}
+
+#HeaderButtonsContainer
+{
+    float:right;
+    height:60px;
+
+}
+.headerButton
+{
+background-color: #046;
+-moz-box-shadow: 0px 1px 3px #3BF;
+-webkit-box-shadow: 0px 1px 3px #3BF;
+box-shadow: 0px 1px 3px #3BF;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+padding: 10px;
+margin-bottom: 100%;
+margin-top: 13px;
+margin-right: 13px;
+color: white;
+float:left;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+}
+#HeaderButtonsContainer a
+{
+        text-decoration:none;
+}
+
+.headerButtonHover
+{
+    background-color: #3BF;
+    -moz-box-shadow: 1px 1px 3px #046;
+    -webkit-box-shadow: 1px 1px 3px #046;
+    box-shadow: 0px 1px 2px #046;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 100%;
+    margin-top: 13px;
+    margin-right: 13px;
+    color: white;
+    float:left;
 }
