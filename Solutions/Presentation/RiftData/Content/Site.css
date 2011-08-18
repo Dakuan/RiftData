@@ -564,24 +564,24 @@ div#title
 #HeaderButtonsContainer
 {
     float:right;
-    height:60px;
+    height: 20px;
 
 }
 .headerButton
 {
-    background-color: #046;
-    -moz-box-shadow: 0px 1px 3px #3BF;
-    -webkit-box-shadow: 0px 1px 3px #3BF;
-    box-shadow: 0px 1px 3px #3BF;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 100%;
-    margin-top: 13px;
-    margin-right: 13px;
-    color: white;
-    float:left;
+background-color: #046;
+-moz-box-shadow: 0px 1px 3px #3BF;
+-webkit-box-shadow: 0px 1px 3px #3BF;
+box-shadow: 0px 1px 3px #3BF;
+-moz-border-radius: 10px;
+-webkit-border-radius: 8px;
+border-radius: 10px;
+padding: 8px;
+margin-bottom: 100%;
+margin-top: 3px;
+margin-right: 1px;
+color: white;
+float: left;
     /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
 }
 #HeaderButtonsContainer a
@@ -609,6 +609,8 @@ div#title
 #HeaderTabs
 {
     margin-left:5px;
+    height: 30px;
+    margin-top: -27px;
 }
 .headerTab
 {
@@ -623,6 +625,7 @@ div#title
     margin-right: 2px;
     color: white;
     float: left;
+    
 }
 
 .headerTabSelected
@@ -643,8 +646,33 @@ div#title
 #HeaderMenu
 {
     height:20px;
+    margin-left:5px;
 }
 .headerMenuItem
 {
-    float:left;
+background-color: #046;
+-moz-box-shadow: 0px 1px 3px #3BF;
+-webkit-box-shadow: 0px 1px 3px #3BF;
+box-shadow: 0px 1px 3px #3BF;
+-moz-border-radius: 10px;
+-webkit-border-radius: 8px;
+border-radius: 10px;
+padding: 8px;
+margin-top: 3px;
+margin-right: 1px;
+color: white;
+float: left;
+}
+.divider
+{
+    border-style:solid;
+    border-color:#046;
+    border-bottom-width:1px;
+    border-top-width:0px;
+    
+}
+#LogoContainer
+{
+    float:right;
+    margin-right:30px;
 }
