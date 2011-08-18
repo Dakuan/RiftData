@@ -374,9 +374,6 @@ div#title
 #GenusPanel
 {
     width: 230px;
-    margin-left: -12px;
-    margin-top: -3px;
-    margin-bottom: -3px;
 }
 .panels
 {
@@ -403,7 +400,7 @@ div#title
 {
     width:314px;
     position:absolute;
-    height:642px;
+    height: 600px;
 }
 #LocaleMap.div.div.div.div.div
 {
@@ -411,7 +408,7 @@ div#title
 }
 .t-panelbar
 {
-    max-height:615px;
+    max-height:598px;
     overflow:auto;
 }
 .photoCell
@@ -466,17 +463,21 @@ div#title
 {
     margin-left: 17px;
 }
-#CenterPanelTop
-{
-    height:34px;
-    background-image:url('../../Content/CenterPanel/top-bg.png');
-}
 #CenterPanelContent
 {
-    background-image:url('../../Content/CenterPanel/body-bg.png');
-    background-repeat:repeat-y;
-    padding-left:20px;
-    padding-right:20px;
+    background-image:url('../Content/CenterPanel/centerPanel-bg.png');
+    background-repeat:repeat-x;
+    background-position:center;
+    border-width: 2px;
+    border-color: white;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 20px #000000;
+    border-style: solid;
+    padding: 20px;
 }
 #CenterPanelContent p
 {
@@ -485,11 +486,6 @@ div#title
 #CenterPanelContent h2
 {
     margin-top:0px;
-}
-#CenterPanelBottom
-{
-    height:36px;
-    background-image:url('../../Content/CenterPanel/bottom-bg.png');
 }
 #LocalesList ul
 {
@@ -577,9 +573,8 @@ box-shadow: 0px 1px 3px #3BF;
 -webkit-border-radius: 8px;
 border-radius: 10px;
 padding: 8px;
-margin-bottom: 100%;
 margin-top: 3px;
-margin-right: 1px;
+margin-right: 4px;
 color: white;
 float: left;
     /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
@@ -595,13 +590,12 @@ float: left;
     -moz-box-shadow: 1px 1px 3px #046;
     -webkit-box-shadow: 1px 1px 3px #046;
     box-shadow: 0px 1px 2px #046;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 100%;
-    margin-top: 13px;
-    margin-right: 13px;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+border-radius: 8px;
+padding: 8px;
+margin-top: 3px;
+margin-right: 4px;
     color: white;
     float:left;
     background-image:url('../../Content/header-bg.jpg');
@@ -647,21 +641,6 @@ float: left;
 {
     height:20px;
     margin-left:5px;
-}
-.headerMenuItem
-{
-background-color: #046;
--moz-box-shadow: 0px 1px 3px #3BF;
--webkit-box-shadow: 0px 1px 3px #3BF;
-box-shadow: 0px 1px 3px #3BF;
--moz-border-radius: 10px;
--webkit-border-radius: 8px;
-border-radius: 10px;
-padding: 8px;
-margin-top: 3px;
-margin-right: 1px;
-color: white;
-float: left;
 }
 .divider
 {
