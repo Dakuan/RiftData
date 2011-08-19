@@ -28,6 +28,8 @@ namespace RiftData.Infrastructure.Data.Configurations
                                                           m.MapLeftKey("FishID");
                                                           m.ToTable("FishPhotos");
                                                       });
+            Property(p => p.Description).HasColumnName("FishDescription");
+
             Ignore(x => x.HasPhotos);
 
             Ignore(x => x.UrlName);

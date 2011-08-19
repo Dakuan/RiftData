@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RiftData.Domain.Entities
 {
-    public class Fish
+    public class Fish : IDescribable
     {
         public int Id { get; set; }
 
@@ -30,6 +31,13 @@ namespace RiftData.Domain.Entities
         }
 
         public bool HasPhotos { get { return this.Photos.Count > 0; }}
+
+        public string Description { get; set; }
+
+        public bool HasDescription
+        {
+            get { return !string.IsNullOrEmpty(this.Description); }
+        }
 
         public static string GetFullName(string genusName, string speciesName, string localeName, bool described)
         {

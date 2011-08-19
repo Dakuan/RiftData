@@ -16,7 +16,9 @@
                            Name = fish.Name,
                            Locale = this.Build(fish.Locale),
                            UrlName = fish.UrlName,
-                           Species = this.Build(fish.Species)
+                           Species = this.Build(fish.Species),
+                           Description = fish.Description,
+                           HasDescription = fish.HasDescription
                        };
         }
 
