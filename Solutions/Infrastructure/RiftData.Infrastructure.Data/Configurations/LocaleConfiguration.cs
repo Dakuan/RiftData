@@ -26,6 +26,8 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             HasRequired(x => x.Lake).WithMany().Map(m => m.MapKey("LocaleLakeID"));
 
+            Property(p => p.Description).HasColumnName("LocaleDescription");
+
             Ignore(p => p.HasPhotos);
 
             Ignore(p => p.Photos);

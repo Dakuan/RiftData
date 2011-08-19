@@ -10,31 +10,40 @@
 @section CenterPanel{
     <div id="contentHolder">
         <h2>@Model.Locale.Name</h2>
-        <h3>Description:</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        @{
+            if(Model.Locale.HasDescription){
+                <h3>Description:</h3>
+                <p>
+                  @Model.Locale.Description
+                </p>
+            }
+        }
         <h3>Fish:</h3>
-        @{ if (Model.Fish.Count() > 0){
+        @{ if (Model.Fish.Count() > 0)
+           {
                 <ul>
-                    @foreach (var fish in Model.Fish){
+                    @foreach (var fish in Model.Fish)
+                    {
                         <li>
-                            @{if(fish.HasPhotos) {
+                            @{if (fish.HasPhotos)
+                              {
                                 <img alt="@fish.Name" src="@Url.Content("../Content/camera-tight-small.png")" class="localeListImage" /> 
-                            }
-                            else{
+                              }
+                              else
+                              {
                                 <div class="cameraPicBlank"></div>
-                            }
+                              }
                             }
                             <a href="@Url.Action("Index", "Fish", new { fishName = fish.UrlName })">@fish.Name</a>
                                 <div class="clear"></div>
                         </li>
-                            }
+                    }
                         </ul>
-             }
-             else{
+           }
+           else
+           {
                 <p>No locale information available, sorry!</p>   
-            }
+           }
         }
             <div class="clear"></div>
         @Html.Partial("PhotoGallery", Model.PhotoGallery)

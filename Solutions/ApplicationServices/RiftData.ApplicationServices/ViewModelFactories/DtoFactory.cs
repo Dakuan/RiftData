@@ -29,7 +29,9 @@
                            Latitude = locale.Latitude,
                            Longitude = locale.Longitude,
                            HasPhotos = locale.HasPhotos,
-                           ZoomLevel = locale.ZoomLevel
+                           ZoomLevel = locale.ZoomLevel,
+                           Description = locale.Description,
+                           HasDescription = locale.HasDescription
                        };
         }
 

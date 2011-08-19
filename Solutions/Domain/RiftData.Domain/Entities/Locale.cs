@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RiftData.Domain.Entities
+﻿namespace RiftData.Domain.Entities
 {
-    public class Locale 
+    using System.Collections.Generic;
+
+    public class Locale : IDescribable
     {
         public int Id { get; set; }
 
@@ -20,5 +19,12 @@ namespace RiftData.Domain.Entities
         public bool HasPhotos { get;  set; }
 
         public virtual Lake Lake { get; set; }
+
+        public string Description { get; set; }
+
+        public bool HasDescription
+        {
+            get { return !string.IsNullOrEmpty(this.Description); }
+        }
     }
 }

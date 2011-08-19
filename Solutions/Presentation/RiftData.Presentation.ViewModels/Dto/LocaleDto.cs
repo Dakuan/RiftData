@@ -13,5 +13,9 @@
         public int ZoomLevel { get; set; }
 
         public bool HasPhotos { get; set; }
+
+        public string Description { get; set; }
+
+        public bool HasDescription { get; set; }
     }
 }
