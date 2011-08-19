@@ -1,11 +1,11 @@
-using System.Collections.Generic;
-using RiftData.Domain.Entities;
-
 namespace RiftData.Domain.Repositories
 {
+    using System.Collections.Generic;
+    using RiftData.Domain.Entities;
+
     public interface ISpeciesRepository
     {
-        int FindSpeciesIdFromFullName(string speciesFullName);
+        Species GetSpeciesFromFullName(string speciesFullName);
 
         Species GetSpeciesFromId(int speciesId);
 

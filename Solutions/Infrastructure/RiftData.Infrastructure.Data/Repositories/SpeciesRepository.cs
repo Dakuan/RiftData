@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Extensions;
-using RiftData.Domain.Repositories;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Domain.Entities;
+    using Domain.Extensions;
+    using Domain.Repositories;
+
     public class SpeciesRepository : ISpeciesRepository
     {
         private readonly RiftDataDataContext dataEntities;
@@ -15,7 +15,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             this.dataEntities = dataEntities;
         }
 
-        public int FindSpeciesIdFromFullName(string speciesFullName)
+        public Species GetSpeciesFromFullName(string speciesFullName)
         {
             var components = speciesFullName.Split('_');
 
@@ -38,7 +38,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             var matchingFish = fish.Where(s => string.Equals(s.Species.Name.Trim(), speciesName) && string.Equals(s.Genus.Name.Trim(), genusName));
             var firstMatch = matchingFish.First();
             
-            return firstMatch.Species.Id;
+            return firstMatch.Species;
         }
 
         public Species GetSpeciesFromId(int speciesId)

@@ -1,19 +1,22 @@
-using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels;
-
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts;
+    using RiftData.Presentation.ViewModels;
+
     public class FishPageViewModelFactory : IFishPageViewModelFactory
     {
         private readonly IGenusPanelViewModelFactory _genusPanelViewModelFactory;
-        private readonly IFishRepository fishRepository;
-        private readonly IPhotoGalleryViewModelFactory photoGalleryViewModelFactory;
-        private readonly IDtoFactory dtoFactory;
+
         private readonly IHeaderViewModelFactory _headerViewModelFactory;
 
-        public FishPageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, IFishRepository fishRepository, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IDtoFactory dtoFactory,  IHeaderViewModelFactory headerViewModelFactory)
+        private readonly IDtoFactory dtoFactory;
+
+        private readonly IFishRepository fishRepository;
+
+        private readonly IPhotoGalleryViewModelFactory photoGalleryViewModelFactory;
+
+        public FishPageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, IFishRepository fishRepository, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IDtoFactory dtoFactory, IHeaderViewModelFactory headerViewModelFactory)
         {
             _genusPanelViewModelFactory = genusPanelViewModelFactory;
             this.fishRepository = fishRepository;
@@ -24,14 +27,14 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public FishPageViewModel Build(string fishName)
         {
-            var fish = this.fishRepository.GetFishFromName(fishName);
+            var fish = fishRepository.GetFishFromName(fishName);
 
             var viewModel = new FishPageViewModel
                                 {
-                                    Fish = this.dtoFactory.Build(fish),
-                                    PhotoGalleryViewModel = this.photoGalleryViewModelFactory.Build(fish),
-                                    HeaderViewModel = this._headerViewModelFactory.Build(fish),
-                                    GenusPanelViewModel = this._genusPanelViewModelFactory.Build(fish.Genus.GenusType.Id)
+                                    Fish = dtoFactory.Build(fish), 
+                                    PhotoGalleryViewModel = photoGalleryViewModelFactory.Build(fish), 
+                                    HeaderViewModel = _headerViewModelFactory.Build(fish), 
+                                    GenusPanelViewModel = _genusPanelViewModelFactory.Build(fish.Genus.GenusType.Id)
                                 };
 
             return viewModel;

@@ -1,51 +1,51 @@
-﻿using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels;
-using ISpeciesRepository = RiftData.Domain.Repositories.ISpeciesRepository;
+﻿using RiftData.Domain.Entities;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using Domain.Repositories;
+    using DtoServices.Contracts;
+    using Presentation.Contracts;
+    using Presentation.ViewModels;
+
+
     public class SpeciesPageViewModelFactory : ISpeciesPageViewModelFactory
     {
-        private readonly ISpeciesRepository _speciesRepository;
-        private readonly IGenusPanelViewModelFactory _genusPanelViewModelFactory;
-        private readonly ILocaleDtoService _localeDtoService;
-        private readonly IPhotoGalleryViewModelFactory _photoGalleryViewModelFactory;
-        private readonly IHeaderViewModelFactory _headerViewModelFactory;
+        private readonly ISpeciesRepository speciesRepository;
+        private readonly IGenusPanelViewModelFactory genusPanelViewModelFactory;
+        private readonly ILocaleDtoService localeDtoService;
+        private readonly IPhotoGalleryViewModelFactory photoGalleryViewModelFactory;
+        private readonly IHeaderViewModelFactory headerViewModelFactory;
 
         public SpeciesPageViewModelFactory(ISpeciesRepository speciesRepository, IGenusPanelViewModelFactory genusPanelViewModelFactory,
-              ILocaleDtoService localeDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IHeaderViewModelFactory headerViewModelFactory)
+                                           ILocaleDtoService localeDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IHeaderViewModelFactory headerViewModelFactory)
         {
-            _speciesRepository = speciesRepository;
-            _genusPanelViewModelFactory = genusPanelViewModelFactory;
-            _localeDtoService = localeDtoService;
-            _photoGalleryViewModelFactory = photoGalleryViewModelFactory;
-            _headerViewModelFactory = headerViewModelFactory;
+            this.speciesRepository = speciesRepository;
+            this.genusPanelViewModelFactory = genusPanelViewModelFactory;
+            this.localeDtoService = localeDtoService;
+            this.photoGalleryViewModelFactory = photoGalleryViewModelFactory;
+            this.headerViewModelFactory = headerViewModelFactory;
         }
 
         public SpeciesPageViewModel Build(string fullName)
         {
-            var speciesId = this._speciesRepository.FindSpeciesIdFromFullName(fullName);
+            var species = this.speciesRepository.GetSpeciesFromFullName(fullName);
 
-            return this.Build(speciesId);
+            return this.Build(species);
         }
 
-        public SpeciesPageViewModel Build(int speciesId)
+        public SpeciesPageViewModel Build(Species species)
         {
-            var species = this._speciesRepository.GetSpeciesFromId(speciesId);
+            var headerViewModel = this.headerViewModelFactory.BuildFromSpecies(species.Id);
 
-            var headerViewModel = this._headerViewModelFactory.BuildFromSpecies(species.Id);
-
-            var genusPanel = this._genusPanelViewModelFactory.Build(species.Genus.GenusType.Id);
+            var genusPanel = this.genusPanelViewModelFactory.Build(species.Genus.GenusType.Id);
      
             var viewModel = new SpeciesPageViewModel
                                 {
                                     SpeciesName = species.FullName,
                                     SpeciesId = species.Id,
                                     HeaderViewModel = headerViewModel,
-                                    Locales = this._localeDtoService.GetLocaleDtosFromSpecies(speciesId),
-                                    PhotoGalleryViewModel = this._photoGalleryViewModelFactory.Build(species),
+                                    Locales = this.localeDtoService.GetLocaleDtosFromSpecies(species.Id),
+                                    PhotoGalleryViewModel = this.photoGalleryViewModelFactory.Build(species),
                                     GenusPanelViewModel = genusPanel
                                 };
 
