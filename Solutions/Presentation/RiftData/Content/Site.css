@@ -448,9 +448,9 @@ div#title
 }
 #CenterPanelContent
 {
-    background-image:url('../Content/CenterPanel/centerPanel-bg.png');
-    background-repeat:repeat-x;
-    background-position:center;
+    background-image: url('../Content/CenterPanel/centerPanel-bg.png');
+    background-repeat: repeat-x;
+    background-position: center;
     border-width: 2px;
     border-color: white;
     -moz-border-radius: 20px;
@@ -461,6 +461,9 @@ div#title
     box-shadow: 0px 0px 20px #000000;
     border-style: solid;
     padding: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 #CenterPanelContent p
 {
