@@ -33,5 +33,12 @@
                            : string.Format("{0}_sp_{1}", this.Genus.Name, this.Name);
             }
         }
+
+        public string Description { get; set; }
+
+        public bool HasDescription
+        {
+            get { return !string.IsNullOrEmpty(this.Description); }
+        }
     }
 }

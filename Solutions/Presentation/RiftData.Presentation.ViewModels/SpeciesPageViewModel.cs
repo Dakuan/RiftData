@@ -6,9 +6,7 @@ namespace RiftData.Presentation.ViewModels
 {
     public class SpeciesPageViewModel : ViewModelBase, IPanelViewModel
     {
-        public string SpeciesName { get; set; }
-
-        public int SpeciesId { get; set; }
+        public SpeciesDto Species { get; set; }
 
         public PhotoGalleryViewModel PhotoGalleryViewModel { get; set; }
 

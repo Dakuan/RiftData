@@ -40,7 +40,9 @@
                            Id = species.Id,
                            Name = species.FullName,
                            UrlName = species.UrlName,
-                           HasPhotos = species.HasPhotos
+                           HasPhotos = species.HasPhotos,
+                           Description = species.Description,
+                           HasDescription = species.HasDescription
                        };
         }
 

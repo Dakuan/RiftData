@@ -22,6 +22,8 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.HasFish).HasColumnName("SpeciesHasFish").IsRequired();
 
+            Property(p => p.Description).HasColumnName("SpeciesDescription");
+
             Ignore(p => p.UrlName);
 
             ToTable("Species");

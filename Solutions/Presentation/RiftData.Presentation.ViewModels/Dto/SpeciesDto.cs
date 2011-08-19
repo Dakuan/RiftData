@@ -9,5 +9,9 @@
         public string UrlName { get; set; }
 
         public bool HasPhotos { get; set; }
+
+        public bool HasDescription { get; set; }
+
+        public string Description { get; set; }
     }
 }
