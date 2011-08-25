@@ -19,9 +19,9 @@ namespace RiftData.Controllers
         {
             var results = this.genusDtoService.GetGenusDtos();
 
-            results.ToList().ForEach(g => g.Species = null);
+            results.ToList().ForEach(g => g.Species.Clear());
 
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.genusDtoService.GetGenusDtos() };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = results };
         }
     }
 }
