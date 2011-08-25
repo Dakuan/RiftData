@@ -79,6 +79,7 @@
     <Compile Include="Controllers\Installers\ControllersInstaller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocaleController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SpeciesController.cs" />
     <Compile Include="Controllers\Factory\WindsorControllerFactory.cs" />
     <Compile Include="Controllers\Installers\WindsorControllerFactoryInstaller.cs" />
