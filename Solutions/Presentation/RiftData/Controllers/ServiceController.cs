@@ -11,11 +11,14 @@ namespace RiftData.Controllers
         private readonly IGenusDtoService genusDtoService;
 
         private readonly ISpeciesDtoService speciesDtoService;
+		
+		private readonly ILocaleDtoService localeDtoService;
 
-        public ServiceController(IGenusDtoService genusDtoService, ISpeciesDtoService speciesDtoService)
+        public ServiceController(IGenusDtoService genusDtoService, ISpeciesDtoService speciesDtoService, ILocaleDtoService localeDtoService)
         {
             this.genusDtoService = genusDtoService;
             this.speciesDtoService = speciesDtoService;
+			this.localeDtoService = localeDtoService;
         }
 
         public ActionResult GetAllGenera()
@@ -35,5 +38,13 @@ namespace RiftData.Controllers
                     Data = this.speciesDtoService.GetSpeciesWithGenus(id)
                 };
         }
+		
+		public ActionResult GetLocalesForZoomLevel(int id)
+		{
+			return new JsonResult{
+				JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+				Data = this.localeDtoService.GetLocalesForZoomLevel(id)
+			};
+		}
     }
 }
