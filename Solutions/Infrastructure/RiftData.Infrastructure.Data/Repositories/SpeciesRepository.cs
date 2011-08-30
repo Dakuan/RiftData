@@ -54,5 +54,10 @@
 
             return species.SortSpecies().ToList();
         }
+
+        public IList<Species> GetSpeciesWithGenus(int id)
+        {
+            return this.dataEntities.Species.Where(s => s.Genus.Id == id).ToList().SortSpecies().ToList();
+        }
     }
 }
