@@ -10,5 +10,7 @@ namespace RiftData.Domain.Repositories
         Species GetSpeciesFromId(int speciesId);
 
         IList<Species> GetSpeciesAtLocale(int id);
+
+        IList<Species> GetSpeciesWithGenus(int id);
     }
 }
