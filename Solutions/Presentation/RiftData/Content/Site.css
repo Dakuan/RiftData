@@ -347,6 +347,9 @@ div#title
     -webkit-box-shadow:0px 0px 40px #000;
     box-shadow:0px 0px 40px #000;
 /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 0px 0px 10px 10px;
 
 }
 #TabContainer
