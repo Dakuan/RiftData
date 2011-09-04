@@ -6,5 +6,7 @@ namespace RiftData.Domain.Repositories
     public interface IPhotosRepository
     {
         IList<Photo> GetPhotosForSpecies(int speciesId);
+
+        IEnumerable<Photo> GetPhotosForLocale(int localeId);
     }
 }

@@ -28,19 +28,7 @@
 
         public IList<PhotoDto> GetPhotosForLocale(int localeId)
         {
-            var fish = this.fishRepository.GetFishByLocale(localeId);
-
-            var list = new List<Photo>();
-
-            fish.ToList().ForEach(f => 
-            { 
-                if (f.HasPhotos)
-                {
-                    f.Photos.ToList().ForEach(list.Add);
-                }
-            });
-
-            return this.BuildList(list);
+            return this.BuildList(this.photosRepository.GetPhotosForLocale(localeId));
         }
 
         public IList<PhotoDto> GetPhotosForFish(Fish fish)

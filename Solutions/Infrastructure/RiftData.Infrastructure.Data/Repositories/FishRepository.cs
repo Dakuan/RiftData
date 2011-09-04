@@ -31,7 +31,7 @@
 
         public IList<Fish> GetFishByLocale(int localeId)
         {
-            return this.dataEntities.Fish.Where(f => f.Locale.Id == localeId).ToList();
+            return this.dataEntities.Fish.Where(f => f.Locale.Id == localeId).SortFish().ToList();
         }
 
         public Fish GetFishFromName(string fishName)

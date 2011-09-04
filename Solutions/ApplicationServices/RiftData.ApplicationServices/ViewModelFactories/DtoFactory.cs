@@ -78,7 +78,7 @@
 
         public GenusTypeDto Build(GenusType genusType)
         {
-            return new GenusTypeDto { Id = genusType.Id, Name = genusType.Name };
+            return new GenusTypeDto { Id = genusType.Id, Name = genusType.Name, Description = genusType.Description};
         }
 
         public LakeDto Build(Lake lake)

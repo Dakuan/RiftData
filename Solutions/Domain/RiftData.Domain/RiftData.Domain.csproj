@@ -56,6 +56,7 @@
     <Compile Include="Entities\Fish.cs" />
     <Compile Include="Entities\GenusType.cs" />
     <Compile Include="Entities\IDescribable.cs" />
+    <Compile Include="Entities\IPhotoSubject.cs" />
     <Compile Include="Entities\Lake.cs" />
     <Compile Include="Entities\Photo.cs" />
     <Compile Include="Extensions\FishExtensionMethods.cs" />
