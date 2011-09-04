@@ -697,3 +697,8 @@ margin-right: 4px;
     border-radius: 7px 7px 0px 0px!Important;
     color:#3BF;
 }
+
+.infoContainer
+{
+    margin: 30px!Important;
+}

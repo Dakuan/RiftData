@@ -31,8 +31,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             var viewModel = new HeaderViewModel
                                 {
                                     Lakes = _lakeDtoService.GetAllLakes(),
-                                    SelectedLakeId = 1,
-                                    SelectedGenusTypeId = 1
+                                    GenusTypes = new List<GenusTypeDto>()
                                 };
 
             return viewModel;
