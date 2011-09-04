@@ -10,5 +10,7 @@ namespace RiftData.Domain.Repositories
         IList<Lake> GetAll();
 
         Lake GetLakeFromGenusType(int id);
+
+        Lake GetLakeFromName(string lakeName);
     }
 }

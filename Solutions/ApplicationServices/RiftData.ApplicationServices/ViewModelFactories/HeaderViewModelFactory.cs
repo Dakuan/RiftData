@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts;
@@ -95,6 +93,17 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                                     GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(genusType.Lake),
                                     Lakes = this._lakeDtoService.GetAllLakes()
                                 };
+
+            return viewModel;
+        }
+
+        public HeaderViewModel Build(LakeDto lake)
+        {
+            var viewModel = this.Build();
+
+            viewModel.SelectedLakeId = lake.Id;
+
+            viewModel.GenusTypes = lake.GenusTypes;
 
             return viewModel;
         }

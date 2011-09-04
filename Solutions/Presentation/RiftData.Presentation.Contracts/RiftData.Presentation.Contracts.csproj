@@ -46,6 +46,7 @@
     <Compile Include="IHeaderViewModelFactory.cs" />
     <Compile Include="IHomePageViewModelFactory.cs" />
     <Compile Include="IInfoPageViewModelFactory.cs" />
+    <Compile Include="ILakeViewModelFactory.cs" />
     <Compile Include="ILocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ILocalePageViewModelFactory.cs" />
     <Compile Include="IPhotoGalleryViewModelFactory.cs" />

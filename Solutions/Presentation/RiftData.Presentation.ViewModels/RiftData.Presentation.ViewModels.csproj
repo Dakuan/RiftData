@@ -51,6 +51,7 @@
     <Compile Include="HomePageViewModel.cs" />
     <Compile Include="InfoPageViewModel.cs" />
     <Compile Include="IPanelViewModel.cs" />
+    <Compile Include="LakeViewModel.cs" />
     <Compile Include="LocaleInfoBoxViewModel.cs" />
     <Compile Include="LocalePageViewModel.cs" />
     <Compile Include="ViewModelBase.cs" />

@@ -27,6 +27,7 @@ namespace RiftData
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("favicon.ico");
 
+
             routes.MapRoute(
                 "Home", // Route name
                 "{genusTypeName}", // URL with parameters
@@ -49,6 +50,12 @@ namespace RiftData
                 "Fish",
                 "Fish/{fishName}",
                 new { controller = "Fish", action="Index" }
+                );
+
+            routes.MapRoute(
+                "Lake",
+                "Lake/{lakeName}",
+                new { controller = "Lake", action = "Index" }
                 );
 
             routes.MapRoute(

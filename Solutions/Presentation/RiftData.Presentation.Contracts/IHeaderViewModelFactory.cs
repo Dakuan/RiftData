@@ -17,5 +17,7 @@ namespace RiftData.Presentation.Contracts
         HeaderViewModel Build(Fish fish);
 
         HeaderViewModel Build(GenusType genusType);
+
+        HeaderViewModel Build(LakeDto genusType);
     }
 }

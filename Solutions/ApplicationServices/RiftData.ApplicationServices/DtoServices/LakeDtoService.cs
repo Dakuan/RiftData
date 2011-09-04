@@ -28,5 +28,10 @@ namespace RiftData.ApplicationServices.DtoServices
 
             return list;
         }
+
+        public LakeDto GetLakeFromName(string lakeName)
+        {
+            return this._dtoFactory.Build(this._lakeRepository.GetLakeFromName(lakeName));
+        }
     }
 }

@@ -78,6 +78,7 @@
     <Compile Include="ViewModelFactories\HeaderViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\HomePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\InfoPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\LakeViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocalePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\PhotoGalleryViewModelFactory.cs" />

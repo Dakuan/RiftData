@@ -553,18 +553,18 @@ div#title
 }
 .headerButton
 {
-background-color: #046;
--moz-box-shadow: 0px 1px 3px #3BF;
--webkit-box-shadow: 0px 1px 3px #3BF;
-box-shadow: 0px 1px 3px #3BF;
--moz-border-radius: 10px;
--webkit-border-radius: 8px;
-border-radius: 10px;
-padding: 8px;
-margin-top: 3px;
-margin-right: 4px;
-color: white;
-float: left;
+    background-color: #046;
+    -moz-box-shadow: 0px 1px 3px #3BF;
+    -webkit-box-shadow: 0px 1px 3px #3BF;
+    box-shadow: 0px 1px 3px #3BF;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 8px;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 3px;
+    margin-right: 4px;
+    color: white;
+    float: left;
     /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
 }
 #HeaderMenu a
@@ -593,6 +593,10 @@ margin-right: 4px;
     height: 30px;
     margin-top: -27px;
 }
+#HeaderTabs a
+{
+        text-decoration:none;
+}
 .headerTab
 {
     background-color: #046;
@@ -606,7 +610,6 @@ margin-right: 4px;
     margin-right: 2px;
     color: white;
     float: left;
-    
 }
 
 .headerTabSelected

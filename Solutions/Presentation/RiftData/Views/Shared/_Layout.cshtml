@@ -27,19 +27,20 @@
                 <div class="clear"></div>
                 <div id="HeaderTabs">
                     @foreach (var lake in Model.HeaderViewModel.Lakes){
-                        if (lake.Id == Model.HeaderViewModel.SelectedLakeId)
-                        {
-                            <div class="headerTabSelected">
-                                @lake.Name
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="headerTab">
+                        <a href="@Url.Action("Index", "Lake", new { lakeName = lake.Name })">
+                            @if (lake.Id == Model.HeaderViewModel.SelectedLakeId)
+                            {
+                                <div class="headerTabSelected">
                                     @lake.Name
-                            </div>
-                        }
-
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="headerTab">
+                                        @lake.Name
+                                </div>
+                            }
+                        </a>
                     } 
                     <div class="clear"></div>
                 </div>

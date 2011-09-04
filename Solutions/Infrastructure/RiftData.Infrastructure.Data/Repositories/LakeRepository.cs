@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Extensions;
@@ -29,6 +28,11 @@ namespace RiftData.Infrastructure.Data.Repositories
         public Lake GetLakeFromGenusType(int id)
         {
             return this._dataContext.Lakes.First(l => l.GenusTypes.Any(g => g.Id == id));
+        }
+
+        public Lake GetLakeFromName(string lakeName)
+        {
+            return this._dataContext.Lakes.First(l => string.Equals(lakeName, l.Name));
         }
     }
 }
