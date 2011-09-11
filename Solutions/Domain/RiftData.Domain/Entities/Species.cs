@@ -10,6 +10,12 @@
 
         public virtual Genus Genus { get; set; }
 
+        public virtual Temperament Temperament { get; set; }
+
+        public int MaxSize { get; set; }
+
+        public int MinSize { get; set; }
+
         public string FullName
         {
             get

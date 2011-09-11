@@ -64,6 +64,7 @@
     <Compile Include="Configurations\LocaleConfiguration.cs" />
     <Compile Include="Configurations\PhotoConfiguration.cs" />
     <Compile Include="Configurations\SpeciesConfiguration.cs" />
+    <Compile Include="Configurations\TemperamentConfiguration.cs" />
     <Compile Include="Installers\DataContextInstaller.cs" />
     <Compile Include="Installers\RepositoriesInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

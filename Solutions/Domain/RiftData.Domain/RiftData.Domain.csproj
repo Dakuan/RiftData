@@ -59,6 +59,7 @@
     <Compile Include="Entities\IPhotoSubject.cs" />
     <Compile Include="Entities\Lake.cs" />
     <Compile Include="Entities\Photo.cs" />
+    <Compile Include="Entities\Temperament.cs" />
     <Compile Include="Extensions\FishExtensionMethods.cs" />
     <Compile Include="Extensions\GenusExtensionMethods.cs" />
     <Compile Include="Extensions\GenusTypeExtensionMethods.cs" />

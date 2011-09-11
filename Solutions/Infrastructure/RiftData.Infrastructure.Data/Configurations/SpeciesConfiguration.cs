@@ -18,11 +18,17 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             HasRequired(g => g.Genus).WithMany(x => x.Species);
 
+            HasRequired(t => t.Temperament).WithMany().Map(m => m.MapKey("SpeciesTemperamentID"));
+
             Property(p => p.HasPhotos).HasColumnName("SpeciesHasPhotos").IsRequired();
 
             Property(p => p.HasFish).HasColumnName("SpeciesHasFish").IsRequired();
 
             Property(p => p.Description).HasColumnName("SpeciesDescription");
+
+            Property(p => p.MinSize).HasColumnName("SpeciesMinSize");
+
+            Property(p => p.MaxSize).HasColumnName("SpeciesMaxSize");
 
             Ignore(p => p.UrlName);
 

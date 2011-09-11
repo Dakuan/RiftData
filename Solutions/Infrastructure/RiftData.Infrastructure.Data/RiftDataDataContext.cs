@@ -34,6 +34,7 @@
 
         private static void AddConfigurations(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new TemperamentConfiguration());
             modelBuilder.Configurations.Add(new PhotoConfiguration());
             modelBuilder.Configurations.Add(new SpeciesConfiguration());
             modelBuilder.Configurations.Add(new FishConfiguration());

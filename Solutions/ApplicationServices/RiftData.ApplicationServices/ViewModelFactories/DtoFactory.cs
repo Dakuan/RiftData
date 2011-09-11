@@ -48,7 +48,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            UrlName = species.UrlName,
                            HasPhotos = species.HasPhotos,
                            Description = species.Description,
-                           HasDescription = species.HasDescription
+                           HasDescription = species.HasDescription,
+                           Temperament = species.Temperament.Name,
+                           SizeString = species.MaxSize == 0 || species.MinSize == 0 ? "Unknown" : string.Format("{0} - {1}cm", species.MinSize, species.MaxSize)
                        };
         }
 

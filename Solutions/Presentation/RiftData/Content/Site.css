@@ -423,7 +423,7 @@ div#title
 .infoBlock
 {
     height:150px;
-    max-width:200px;
+    max-width:195px;
     float:left;
 }
 .infoBlock ul
@@ -581,12 +581,12 @@ div#title
     -moz-box-shadow: 1px 1px 3px #046;
     -webkit-box-shadow: 1px 1px 3px #046;
     box-shadow: 0px 1px 2px #046;
--moz-border-radius: 8px;
--webkit-border-radius: 8px;
-border-radius: 8px;
-padding: 8px;
-margin-top: 3px;
-margin-right: 4px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 3px;
+    margin-right: 4px;
     color: white;
     float:left;
 }
