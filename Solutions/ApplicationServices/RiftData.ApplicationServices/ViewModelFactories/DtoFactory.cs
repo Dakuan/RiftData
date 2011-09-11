@@ -1,4 +1,6 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories
+﻿using System.Web;
+
+namespace RiftData.ApplicationServices.ViewModelFactories
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -17,7 +19,7 @@
                            Locale = this.Build(fish.Locale),
                            UrlName = fish.UrlName,
                            Species = this.Build(fish.Species),
-                           Description = fish.Description,
+                           Description = HttpUtility.HtmlDecode(fish.Description),
                            HasDescription = fish.HasDescription
                        };
         }

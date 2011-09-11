@@ -34,11 +34,11 @@
                 speciesName = components[2].Trim();        
             }
 
-            var fish = this.dataEntities.Fish;
-            var matchingFish = fish.Where(s => string.Equals(s.Species.Name.Trim(), speciesName) && string.Equals(s.Genus.Name.Trim(), genusName));
-            var firstMatch = matchingFish.First();
+            var species = this.dataEntities.Species;
+            var matchingSpecies = species.Where(s => string.Equals(s.Name.Trim(), speciesName) && string.Equals(s.Genus.Name.Trim(), genusName));
+            var firstMatch = matchingSpecies.First();
             
-            return firstMatch.Species;
+            return firstMatch;
         }
 
         public Species GetSpeciesFromId(int speciesId)
