@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-3.0" enableLocalization="true">
+  <mvcSiteMapNode title="Home" controller="Home" action="Index" changeFrequency="Always" updatePriority="Normal" >
+    <mvcSiteMapNode title="Home" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.HomeControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
+    <mvcSiteMapNode title="Species" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.SpeciesControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
+    <mvcSiteMapNode title="Fish" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.FishControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
+    <mvcSiteMapNode title="Locale" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.LocaleControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
+    <mvcSiteMapNode title="Lake" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.LakeControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
+  </mvcSiteMapNode>
+</mvcSiteMap>

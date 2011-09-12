@@ -4,6 +4,7 @@ using System.Web.Routing;
 using Castle.Windsor;
 using Castle.Windsor.Configuration.Interpreters;
 using Castle.Windsor.Installer;
+using MvcSiteMapProvider.Web;
 using RiftData.ApplicationServices.Installers;
 using RiftData.Controllers.Factory;
 using RiftData.Domain.Installers;
@@ -71,6 +72,8 @@ namespace RiftData
             InitializeServiceLocator();
 
             AreaRegistration.RegisterAllAreas();
+
+            XmlSiteMapController.RegisterRoutes(RouteTable.Routes);
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
