@@ -342,6 +342,7 @@
     <Content Include="Global.asax" />
     <None Include="Mvc.Sitemap">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="Scripts\2011.2.712\jquery-1.5.1.min.js" />
     <Content Include="Scripts\2011.2.712\jquery.validate.min.js" />
