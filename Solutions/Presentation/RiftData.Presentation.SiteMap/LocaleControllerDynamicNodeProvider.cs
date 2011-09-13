@@ -9,24 +9,25 @@ namespace RiftData.Presentation.SiteMap
     {
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection()
         {
-            var _dataContext = new RiftDataDataContext();
-
-            var nodes = new List<DynamicNode>();
-
-            _dataContext.Locales.ToList().ForEach(t =>
+            using (var dataContext = new RiftDataDataContext())
             {
-                var node = new DynamicNode
-                {
-                    Controller = "Locale",
-                    Title = t.Name,
-                    Action = "Index"
-                };
+                var nodes = new List<DynamicNode>();
 
-                node.RouteValues.Add("localeName", t.Name);
+                dataContext.Locales.ToList().ForEach(t =>
+                                                          {
+                                                              var node = new DynamicNode
+                                                                             {
+                                                                                 Controller = "Locale",
+                                                                                 Title = t.Name,
+                                                                                 Action = "Index"
+                                                                             };
 
-                nodes.Add(node);
-            });
-            return nodes;
+                                                              node.RouteValues.Add("localeName", t.Name);
+
+                                                              nodes.Add(node);
+                                                          });
+                return nodes;
+            }
         }
     }
 }

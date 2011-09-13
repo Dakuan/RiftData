@@ -8,34 +8,28 @@ namespace RiftData.Presentation.SiteMap
 {
     public class HomeControllerDynamicNodeProvider : DynamicNodeProviderBase
     {
-        private  RiftDataDataContext _dataContext;
-
-        //public HomeControllerDynamicNodeProvider(RiftDataDataContext dataContext)
-        //{
-        //    _dataContext = dataContext;
-        //}
-
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection()
         {
-            _dataContext = new RiftDataDataContext();
+            using (var dataContext = new RiftDataDataContext())
+            {
+                var nodes = new List<DynamicNode>();
 
-            var nodes = new List<DynamicNode>();
+                dataContext.GenusTypes.ToList().ForEach(t =>
+                                                                  {
+                                                                      var node = new DynamicNode
+                                                                                     {
+                                                                                         Controller = "Home",
+                                                                                         Title = t.Name,
+                                                                                         Action = "Index"
+                                                                                     };
 
-            this._dataContext.GenusTypes.ToList().ForEach(t =>
-                                                              {
-                                                                  var node = new DynamicNode
-                                                                                 {
-                                                                                     Controller = "Home",
-                                                                                     Title = t.Name,
-                                                                                     Action = "Index"
-                                                                                 };
+                                                                      node.RouteValues.Add("genusTypeName", t.Name);
 
-                                                                  node.RouteValues.Add("genusTypeName", t.Name);
+                                                                      nodes.Add(node);
+                                                                  });
 
-                                                                  nodes.Add(node);
-                                                              });
-
-            return nodes;
+                return nodes;
+            }
         }
 
         public override CacheDescription GetCacheDescription()
