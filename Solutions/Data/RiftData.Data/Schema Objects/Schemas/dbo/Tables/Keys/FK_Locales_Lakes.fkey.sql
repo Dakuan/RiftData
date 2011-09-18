@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Locales]
+    ADD CONSTRAINT [FK_Locales_Lakes] FOREIGN KEY ([LocaleLakeID]) REFERENCES [dbo].[Lakes] ([LakeID]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+

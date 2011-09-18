@@ -1,0 +1,3 @@
+﻿ALTER DATABASE [$(DatabaseName)]
+    ADD FILE (NAME = [db3854], FILENAME = '$(DefaultDataPath)$(DatabaseName).mdf', MAXSIZE = 10485760 KB, FILEGROWTH = 1024 KB) TO FILEGROUP [PRIMARY];
+

@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[FishPhotos]
+    ADD CONSTRAINT [FK_FishPhotos_Fish] FOREIGN KEY ([FishID]) REFERENCES [dbo].[Fish] ([FishID]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
