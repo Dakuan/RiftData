@@ -1,4 +1,5 @@
-﻿using RiftData.ApplicationServices.DtoServices.Contracts;
+﻿using System.Linq;
+using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels;
 
@@ -16,7 +17,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build (int genusTypeId)
         {
-            return new GenusPanelViewModel { GenusEnumerable = this._genusDtoService.GetGenusDtos(genusTypeId)};
+            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusDtos(genusTypeId).ToList()};
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)
