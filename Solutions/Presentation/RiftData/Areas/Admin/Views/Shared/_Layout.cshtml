@@ -1,0 +1,37 @@
+﻿@using Telerik.Web.Mvc.UI
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        <link href="@Url.Content("~/Content/Admin/CSS/custom.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Admin/CSS/jquery.lightbox-0.5.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Admin/CSS/ie7.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Admin/CSS/ie8.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Admin/2011.1.315/telerik.common.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Admin/2011.1.315/telerik.windows7.min.css")" rel="stylesheet" type="text/css" />
+        @RenderSection("Css", false)
+    </head>
+    <body id="page">
+        <div id="header">
+            <div class="pad">
+                <h1 id="title">
+                    <a><img src="@Url.Content("~/Content/Admin/Images/azure-title.png")" /></a>
+                </h1>
+                <div id="info">
+                    <div id="infoText">
+                    </div>
+                    <div class="underlay"></div>
+                </div>
+            </div>
+        </div>
+            @RenderSection("Navigation", true)
+            @RenderBody()
+        <div id="footer">
+            <p>Mostly Harmless Design 2011</p>
+        </div>
+        <div id="FooterScripts">
+            @Html.Telerik().ScriptRegistrar()
+            @RenderSection("Scripts", false)           
+        </div>
+    </body>
+</html>

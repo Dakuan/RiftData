@@ -25,6 +25,8 @@
 
         public DbSet<Lake> Lakes { get; set; }
 
+        public DbSet<Temperament> Temperaments { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             AddConfigurations(modelBuilder);

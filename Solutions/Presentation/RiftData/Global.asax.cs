@@ -10,6 +10,7 @@ using RiftData.Controllers.Factory;
 using RiftData.Domain.Installers;
 using RiftData.Infrastructure.Data;
 using RiftData.Infrastructure.Data.Installers;
+using RiftData.Infrastructure.Flickr;
 
 namespace RiftData
 {
@@ -32,37 +33,43 @@ namespace RiftData
             routes.MapRoute(
                 "Home", // Route name
                 "{genusTypeName}", // URL with parameters
-                new { controller = "Home", action = "Index", genusTypeName = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Index", genusTypeName = UrlParameter.Optional }, // Parameter defaults
+                new[]{"RiftData.Controllers"}
             );
 
             routes.MapRoute(
                 "Species", 
                 "Species/{speciesFullName}",
-                new { controller = "Species", action = "Index" }
+                new { controller = "Species", action = "Index" },
+                new[] { "RiftData.Controllers" }
                 );
 
             routes.MapRoute(
                 "Locale",
                 "Locale/{localeName}",
-                new { controller = "Locale", action = "Index" }
+                new { controller = "Locale", action = "Index" },
+                new[] { "RiftData.Controllers" }
                 );
 
             routes.MapRoute(
                 "Fish",
                 "Fish/{fishName}",
-                new { controller = "Fish", action="Index" }
+                new { controller = "Fish", action="Index" },
+                new[] { "RiftData.Controllers" }
                 );
 
             routes.MapRoute(
                 "Lake",
                 "Lake/{lakeName}",
-                new { controller = "Lake", action = "Index" }
+                new { controller = "Lake", action = "Index" },
+                new[] { "RiftData.Controllers" }
                 );
 
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
+                new[] { "RiftData.Controllers" }
             );
 
         }
@@ -84,6 +91,8 @@ namespace RiftData
             IWindsorContainer container = new WindsorContainer(new XmlInterpreter());
 
             container.Install(FromAssembly.Containing<DataContextInstaller>());
+
+            container.Install(FromAssembly.Containing<FlickrInstaller>());
 
             container.Install(FromAssembly.Containing<FactoriesInstaller>());
 

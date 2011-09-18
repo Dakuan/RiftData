@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +76,7 @@
     <Compile Include="Repositories\LocalesRepository.cs" />
     <Compile Include="Repositories\PhotosRepository.cs" />
     <Compile Include="Repositories\SpeciesRepository.cs" />
+    <Compile Include="Repositories\TemperamentRepository.cs" />
     <Compile Include="RiftDataDataContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +86,10 @@
     <ProjectReference Include="..\..\Domain\RiftData.Domain\RiftData.Domain.csproj">
       <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
       <Name>RiftData.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RiftData.Infrastructure.Flickr\RiftData.Infrastructure.Flickr.csproj">
+      <Project>{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D}</Project>
+      <Name>RiftData.Infrastructure.Flickr</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

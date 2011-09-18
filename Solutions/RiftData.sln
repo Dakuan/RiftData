@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiftData.Presentation.Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiftData.Presentation.SiteMap", "Presentation\RiftData.Presentation.SiteMap\RiftData.Presentation.SiteMap.csproj", "{A501189B-626F-4ABF-A036-1F87CB1C9159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiftData.Infrastructure.Flickr", "Infrastructure\RiftData.Infrastructure.Flickr\RiftData.Infrastructure.Flickr.csproj", "{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{9A9E05BB-6979-497A-92FF-E2D584433D77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{A501189B-626F-4ABF-A036-1F87CB1C9159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A501189B-626F-4ABF-A036-1F87CB1C9159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A501189B-626F-4ABF-A036-1F87CB1C9159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +79,6 @@ Global
 		{F5F86ED6-13D5-4911-9E86-4DAB2426D900} = {5D969D07-23A8-49D0-A291-162A693E0591}
 		{12F5CC2A-6B13-4EB8-A104-466143F82D90} = {51BBE9A2-9B48-444B-B64A-DDA88550BAB7}
 		{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E} = {F465F618-D2AA-4CF5-8CEF-0AA72728A302}
+		{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D} = {F465F618-D2AA-4CF5-8CEF-0AA72728A302}
 	EndGlobalSection
 EndGlobal

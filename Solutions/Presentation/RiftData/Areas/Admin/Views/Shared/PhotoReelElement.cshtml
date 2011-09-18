@@ -1,0 +1,9 @@
+﻿@model RiftData.Presentation.ViewModels.Admin.PhotoReelElementViewModel
+<li>
+    <img src="@Model.PhotoUrl" />
+    <a href="@Url.Action("DeletePhoto", new { fishId = Model.PhotoId, photoId = FishId })">
+        <button>
+            <span>Delete Photo</span>
+        </button>
+    </a>
+</li>

@@ -1,0 +1,54 @@
+﻿@model RiftData.Presentation.ViewModels.Admin.GenusUpdatePageViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "../Shared/_Layout.cshtml";
+}
+@section Navigation
+{
+    @Html.Partial("NavigationPartial", Model.SelectedView)
+}
+<div id="body">
+    <div class="portlet">
+        <div class="portlet-header">
+            <ul id ="PageHeaderList">
+                <li class="left">
+                    <h4>@Model.Mode @Model.Name</h4>
+                </li>
+                <li class="right headerButton">
+                    <a href="@Url.Action("Index")">
+                        <button class="btn-sec">
+                            <span>Back to list</span>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-content">
+            @using (Html.BeginForm(@Model.Mode, "Genus",FormMethod.Post, new { @class = "form label-inline" }))
+            {
+                <div class="field">
+                    <label>Name</label>
+                    @Html.TextBoxFor(m => m.Name, new { @class="validate[required]"})
+                </div>
+                <div class="buttonrow">
+                    <button type="submit">
+                        <span>Save</span>
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<input type="hidden" value="@Url.Action("UpdateSuccess", "AjaxMessaging", new { subject = "Genus", okAction = "Index", okController = "Genus" })" id="SuccessUrl" />
+<input type="hidden" value="@Url.Action("UpdateFailure", "AjaxMessaging", new { subject = "Genus", okAction = "Index", okController = "Genus" })" id="FailureUrl" />
+@Html.Partial("MessageBox")
+@section Css
+{
+    <link href="../../Content/CSS/validationEngine.jquery.css" rel="stylesheet" type="text/css" />
+}
+@section Scripts
+{
+    <script src="../../Scripts/jquery.validationEngine-en.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.validationEngine.js" type="text/javascript"></script>
+    <script src="../../Scripts/GenusUpdate.js" type="text/javascript"></script>
+}

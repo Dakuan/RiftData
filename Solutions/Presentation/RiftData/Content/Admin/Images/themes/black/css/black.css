@@ -1,0 +1,37 @@
+#header { background-image: url(../images/header-bg.png) !important; }
+
+	#header h1#title a { color: #FFF !important; }
+	
+#info { color: #FFF; border: 1px solid #111; }
+
+	#info a { color: #FFF; }
+	
+	.underlay
+	{
+		filter:alpha(opacity=10);
+		-moz-opacity:0.10;
+		-khtml-opacity: 0.10;
+		opacity: 0.10;
+	}	
+	
+#nav { background-image: url(../images/nav-bg.png) !important; }
+#nav li a { color: #FFF; }
+#nav li.hasSubNav a { background-color: #222; color: #FFF; }	
+#nav li .current,
+#nav li.hasSubNav.hover a,
+#nav li.hover a:hover,
+#nav li .current:hover { color: #222 !important; }		
+#nav li.hover  .sub_nav li a { 	color: #222 !important; }	
+.sub_nav { border-bottom: 4px solid #222; }	
+
+.portlet-header { background: url(../images/portlet-header-black.png) repeat-x top center; color: #fff; }
+.portlet-tab-nav .portlet-tab-nav-active  a { color: #222; text-decoration: none; }	
+			
+#body h1#pageTitle { color: #222; }
+	
+#sidebar .portlet-header { color: #FFF; }
+	
+#pg a.current { color: #FFF; border: 1px solid #111; background-color: #222; }
+
+button,
+button span { background: transparent url(../images/button_sprite.png) no-repeat; }

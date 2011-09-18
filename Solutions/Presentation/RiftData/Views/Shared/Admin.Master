@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Telerik.Web.Mvc.UI" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="<%: Url.Content("/Content/Admin/2010.3.1110/telerik.common.min.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%: Url.Content("/Content/Admin/2010.3.1110/telerik.black.min.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%: Url.Content("/Content/Admin/AzureCss/jquery.lightbox-0.5.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%: Url.Content("/Content/Admin/CSS/custom.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%: Url.Content("/Content/Admin/CSS/ie7.css") %>"  rel="stylesheet" type="text/css" />
+    <link href="<%: Url.Content("/Content/Admin/CSS/ie8.css") %>" rel="stylesheet" type="text/css" />
+</head>
+<body class="layout-fixed">
+    <div id="page">
+        <div id="header">
+            <div class="pad">
+                <h1 id="title">
+                    <a>
+                        <img src="<%: Url.Content("~/Content/Admin/images/Azure/azure-title.png") %>" />
+                    </a>
+                </h1>
+                <div id="info">
+                    <div id="infoText">
+                        <% Html.RenderPartial("LogOnUserControl"); %>
+                        </div>
+                    <div class="underlay"></div>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="Navigation" runat="server" />
+        <div id ="body">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div id="footer">
+            <p>MostlyHarmlessDesign 2010</p>
+        </div>
+</div>
+    <%= Html.Telerik().ScriptRegistrar() %>
+    <script src="../../Scripts/Azure/azure/azure.js" type="text/javascript"></script>
+    <script src="../../Scripts/Azure/azure/azure.styleswitch.js" type="text/javascript"></script>
+    <script src="../../Scripts/Azure/azure/azure.message.js" type="text/javascript"></script>
+    <script src="../../Scripts/Azure/azure/azure.nav.js" type="text/javascript"></script>
+    <script src="../../Scripts/Azure/azure/azure.portlet.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="FooterScripts" runat="server" />
+</body>
+</html>

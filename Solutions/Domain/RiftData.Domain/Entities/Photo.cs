@@ -12,6 +12,10 @@
 
         public string MediumUrl { get;  set; }
 
+        public string LargeUrl { get; set; }
+
+        public string SmallUrl { get; set; }
+
         public string Caption { get;  set; }
     }
 }

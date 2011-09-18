@@ -16,7 +16,10 @@ namespace RiftData.Controllers.Installers
         {
             var types = Assembly.GetAssembly(typeof(HomeController)).GetExportedTypes().Where(IsController);
 
-            types.ForEach(t => container.Register(Component.For(t).ImplementedBy(t).Named(t.Name.ToLower()).LifeStyle.Is(LifestyleType.Transient)));
+            types.ForEach(t => container.Register(Component.For(t)
+                .ImplementedBy(t)
+                //.Named(t.Name.ToLower())
+                .LifeStyle.Is(LifestyleType.Transient)));
 
             container.Register(
                 Component.For<XmlSiteMapController>().ImplementedBy<XmlSiteMapController>().LifeStyle.Is(

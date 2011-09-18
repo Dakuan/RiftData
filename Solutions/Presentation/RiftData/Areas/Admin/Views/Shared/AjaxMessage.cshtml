@@ -1,0 +1,15 @@
+﻿@model RiftData.Presentation.ViewModels.Admin.MessageBoxViewModel
+<div>
+    <p>
+        @Model.Message
+    </p>
+    <div class="buttonrow">
+        <a href="@Url.Action(Model.OkAction, Model.OkController)">
+            <button>
+                <span>
+                    Ok
+                </span>
+            </button>
+        </a>
+    </div>
+</div>

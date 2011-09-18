@@ -32,7 +32,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +45,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AccountModels.cs" />
+    <Compile Include="Admin\FishEditFormViewModel.cs" />
+    <Compile Include="Admin\FishEditPageViewModel.cs" />
+    <Compile Include="Admin\FishIndexPageViewModel.cs" />
+    <Compile Include="Admin\GenusIndexPageViewModel.cs" />
+    <Compile Include="Admin\GenusTypeCreateFormViewModel.cs" />
+    <Compile Include="Admin\GenusTypeCreatePageViewModel.cs" />
+    <Compile Include="Admin\GenusTypeIndexPageViewModel.cs" />
+    <Compile Include="Admin\GenusTypeUpdateFormViewModel.cs" />
+    <Compile Include="Admin\GenusTypeUpdatePageViewModel.cs" />
+    <Compile Include="Admin\GenusUpdateFormViewModel.cs" />
+    <Compile Include="Admin\GenusUpdatePageViewModel.cs" />
+    <Compile Include="Admin\HomePageViewModel.cs" />
+    <Compile Include="Admin\LocalePageViewModel.cs" />
+    <Compile Include="Admin\LocaleUpdateFormViewModel.cs" />
+    <Compile Include="Admin\LocaleUpdatePageViewModel.cs" />
+    <Compile Include="Admin\MessageBoxViewModel.cs" />
+    <Compile Include="Admin\NavigationPartialViewModel.cs" />
+    <Compile Include="Admin\PhotoReelElementViewModel.cs" />
+    <Compile Include="Admin\PhotosCreatePageViewModel.cs" />
+    <Compile Include="Admin\PhotosPageViewModel.cs" />
+    <Compile Include="Admin\SelectedView.cs" />
+    <Compile Include="Admin\SpeciesEditFormViewModel.cs" />
+    <Compile Include="Admin\SpeciesEditPageViewModel.cs" />
+    <Compile Include="Admin\SpeciesPageViewModel.cs" />
+    <Compile Include="Admin\ViewModelBase.cs" />
     <Compile Include="Dto\FishDto.cs" />
     <Compile Include="Dto\LakeDto.cs" />
     <Compile Include="Dto\LocaleDto.cs" />
@@ -61,7 +92,12 @@
     <Compile Include="Dto\SpeciesDto.cs" />
     <Compile Include="SpeciesPageViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\RiftData.Domain\RiftData.Domain.csproj">
+      <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
+      <Name>RiftData.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

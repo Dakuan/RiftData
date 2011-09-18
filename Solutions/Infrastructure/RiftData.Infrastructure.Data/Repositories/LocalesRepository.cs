@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RiftData.Domain.Entities;
+using RiftData.Domain.Enums;
 using RiftData.Domain.Extensions;
 using RiftData.Domain.Repositories;
 
@@ -9,16 +10,16 @@ namespace RiftData.Infrastructure.Data.Repositories
 {
     public class LocalesRepository :  ILocalesRepository
     {
-        private readonly RiftDataDataContext dataEntities;
+        private readonly RiftDataDataContext dataContext;
 
-        public LocalesRepository(RiftDataDataContext dataEntities)
+        public LocalesRepository(RiftDataDataContext dataContext)
         {
-            this.dataEntities = dataEntities;
+            this.dataContext = dataContext;
         }
 
         public Locale GetById(int id)
         {
-            var dataLocale = this.dataEntities.Locales.First(l => l.Id == id);
+            var dataLocale = this.dataContext.Locales.First(l => l.Id == id);
 
             if (dataLocale == null) return null;
 
@@ -29,19 +30,89 @@ namespace RiftData.Infrastructure.Data.Repositories
         {
             var list = new List<Locale>();
             
-            dataEntities.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => list.Add(f.Locale));
+            dataContext.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => list.Add(f.Locale));
 
             return list.SortLocales().ToList();
         }
 
         public Locale GetByFullName(string fullName)
         {
-            return this.dataEntities.Locales.First(f => f.Name == fullName);
+            return this.dataContext.Locales.First(f => f.Name == fullName);
         }
 
         public IList<Locale> GetLocalesForZoomLevel(int zoomLevel)
         {
-            return this.dataEntities.Locales.Where(l => l.ZoomLevel <= zoomLevel).SortLocales().ToList();
+            return this.dataContext.Locales.Where(l => l.ZoomLevel <= zoomLevel).SortLocales().ToList();
+        }
+
+        public IList<Locale> GetAllLocales()
+        {
+            return this.dataContext.Locales.SortLocales().ToList();
+        }
+
+        public AddResult Create(string name, double latitude, double longitude)
+        {
+            var locale = new Locale { Name = name, Latitude = latitude, Longitude = longitude };
+
+            this.dataContext.Locales.Add(locale);
+
+            try
+            {
+                dataContext.SaveChanges();
+
+                return AddResult.Success;
+            }
+            catch (Exception)
+            {
+                return AddResult.Failure;
+            }
+        }
+
+        public UpdateResult Update(int localeId, string name, double latitude, double longitude)
+        {
+            var locale = dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
+
+            if (locale == null)
+            {
+                return UpdateResult.DoesNotExist;
+            }
+
+            locale.Name = name;
+
+            locale.Latitude = latitude;
+
+            locale.Longitude = longitude;
+
+            try
+            {
+                dataContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return UpdateResult.Failure;
+            }
+
+            return UpdateResult.Success;
+        }
+
+        public DeleteResult Delete(int localeId)
+        {
+            var locale = this.dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
+
+            if (locale == null) return DeleteResult.DoesNotExist;
+
+            this.dataContext.Locales.Remove(locale);
+
+            try
+            {
+                dataContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return DeleteResult.Failure;
+            }
+
+            return DeleteResult.Success;
         }
     }
 }

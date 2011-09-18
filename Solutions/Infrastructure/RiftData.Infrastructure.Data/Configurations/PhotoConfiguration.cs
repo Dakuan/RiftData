@@ -16,7 +16,11 @@
 
             Property(x => x.Caption).HasColumnName("PhotoCaption");
 
+            Property(x => x.LargeUrl).HasColumnName("PhotoLargeUrl");
+
             Property(x => x.MediumUrl).HasColumnName("PhotoMediumUrl");
+
+            Property(x => x.SmallUrl).HasColumnName("PhotoSmallUrl");
 
             Property(x => x.ThumbNailUrl).HasColumnName("PhotoThumbnailUrl");
 

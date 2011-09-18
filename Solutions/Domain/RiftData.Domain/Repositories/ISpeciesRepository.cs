@@ -1,3 +1,5 @@
+using RiftData.Domain.Enums;
+
 namespace RiftData.Domain.Repositories
 {
     using System.Collections.Generic;
@@ -12,5 +14,10 @@ namespace RiftData.Domain.Repositories
         IList<Species> GetSpeciesAtLocale(int id);
 
         IList<Species> GetSpeciesWithGenus(int id);
+
+        IList<Species> GetAllSpecies();
+        AddResult AddSpecies(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId);
+        UpdateResult Update(int speciesId, string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId);
+        DeleteResult DeleteSpecies(int speciesId);
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,12 +61,17 @@
     <Compile Include="Entities\Lake.cs" />
     <Compile Include="Entities\Photo.cs" />
     <Compile Include="Entities\Temperament.cs" />
+    <Compile Include="Enums\AddResult.cs" />
+    <Compile Include="Enums\DeleteResult.cs" />
+    <Compile Include="Enums\UpdateResult.cs" />
     <Compile Include="Extensions\FishExtensionMethods.cs" />
     <Compile Include="Extensions\GenusExtensionMethods.cs" />
     <Compile Include="Extensions\GenusTypeExtensionMethods.cs" />
     <Compile Include="Extensions\LakeExtensionMethods.cs" />
     <Compile Include="Extensions\LocaleExtensionMethods.cs" />
     <Compile Include="Extensions\SpeciesExtensionMethods.cs" />
+    <Compile Include="Factories\IPhotoFactory.cs" />
+    <Compile Include="Factories\PhotoFactory.cs" />
     <Compile Include="Installers\FactoriesInstaller.cs" />
     <Compile Include="Entities\Genus.cs" />
     <Compile Include="Entities\Locale.cs" />
@@ -80,6 +86,7 @@
     <Compile Include="Repositories\ILocalesRepository.cs" />
     <Compile Include="Repositories\IPhotosRepository.cs" />
     <Compile Include="Repositories\ISpeciesRepository.cs" />
+    <Compile Include="Repositories\ITemperamentRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

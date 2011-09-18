@@ -1,0 +1,70 @@
+﻿@model RiftData.Presentation.ViewModels.Admin.GenusTypeIndexPageViewModel
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Genus Types";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@section Navigation
+{
+    @Html.Partial("NavigationPartial", Model.SelectedView)
+}
+@section Scripts
+{
+    <script src="../../Scripts/GenusTypeIndex.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.fastconfirm.js" type="text/javascript"></script>
+}
+@section Css
+{
+    <link href="../../Content/CSS/jquery.fastconfirm.css" rel="stylesheet" type="text/css" />
+}
+<div id="body"> 
+    <div class="portlet">
+        <div class="portlet-header">
+            <ul id ="PageHeaderList">
+                <li class="left headerButton">                    
+                    <a href="@Url.Action("Create")">
+                        <button>
+                            <span>Add Genus Type</span>
+                        </button>
+                    </a>
+                </li>
+                <li class="clear"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="portlet-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Genus type</th>
+                    <th>Lake</th>
+                    <th>Number of genera</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.GenusTypes)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Lake.Name</td>
+                    <td>@item.NumberOfGenera</td>
+                    <td>
+                        <a href="@Url.Action("Update", new { id = item.Id })" class="linkButton">
+                            <button>
+                                <span>Edit</span>
+                            </button>
+                        </a>
+                        <a href="@Url.Action("Delete", new { id = item.Id })" class="linkButton confirm">
+                            <button>
+                                <span>Delete</span>
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
