@@ -1,16 +1,4 @@
-﻿/*
-Post-Deployment Script Template							
---------------------------------------------------------------------------------------
- This file contains SQL statements that will be appended to the build script.		
- Use SQLCMD syntax to include a file in the post-deployment script.			
- Example:      :r .\myfile.sql								
- Use SQLCMD syntax to reference a variable in the post-deployment script.		
- Example:      :setvar TableName MyTable							
-               SELECT * FROM [$(TableName)]					
---------------------------------------------------------------------------------------
-*/
-
-SET NUMERIC_ROUNDABORT OFF
+﻿SET NUMERIC_ROUNDABORT OFF
 GO
 SET XACT_ABORT, ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDENTIFIER, ANSI_NULLS, NOCOUNT ON
 GO
@@ -42,6 +30,21 @@ ALTER TABLE [dbo].[FishPhotos] DROP CONSTRAINT [FK_FishPhotos_Photos]
 ALTER TABLE [dbo].[Fish] DROP CONSTRAINT [FK_Fish_Genus]
 ALTER TABLE [dbo].[Fish] DROP CONSTRAINT [FK_Fish_Locales]
 ALTER TABLE [dbo].[Fish] DROP CONSTRAINT [FK_Fish_Species]
+
+-- Drop constraints from [dbo].[aspnet_Users]
+ALTER TABLE [dbo].[aspnet_Users] DROP CONSTRAINT [FK__aspnet_Us__Appli__65370702]
+
+-- Drop constraints from [dbo].[aspnet_Membership]
+ALTER TABLE [dbo].[aspnet_Membership] DROP CONSTRAINT [FK__aspnet_Me__Appli__793DFFAF]
+ALTER TABLE [dbo].[aspnet_Membership] DROP CONSTRAINT [FK__aspnet_Me__UserI__7A3223E8]
+
+-- Add 6 rows to [dbo].[aspnet_SchemaVersions]
+INSERT INTO [dbo].[aspnet_SchemaVersions] ([Feature], [CompatibleSchemaVersion], [IsCurrentVersion]) VALUES (N'common', N'1', 1)
+INSERT INTO [dbo].[aspnet_SchemaVersions] ([Feature], [CompatibleSchemaVersion], [IsCurrentVersion]) VALUES (N'health monitoring', N'1', 1)
+INSERT INTO [dbo].[aspnet_SchemaVersions] ([Feature], [CompatibleSchemaVersion], [IsCurrentVersion]) VALUES (N'membership', N'1', 1)
+INSERT INTO [dbo].[aspnet_SchemaVersions] ([Feature], [CompatibleSchemaVersion], [IsCurrentVersion]) VALUES (N'personalization', N'1', 1)
+INSERT INTO [dbo].[aspnet_SchemaVersions] ([Feature], [CompatibleSchemaVersion], [IsCurrentVersion]) VALUES (N'profile', N'1', 1)
+INSERT INTO [dbo].[aspnet_SchemaVersions] ([Feature], [CompatibleSchemaVersion], [IsCurrentVersion]) VALUES (N'role manager', N'1', 1)
 
 -- Add 3 rows to [dbo].[Lakes]
 SET IDENTITY_INSERT [dbo].[Lakes] ON
@@ -226,6 +229,19 @@ INSERT INTO [dbo].[Temperaments] ([TemperamentID], [TemperamentName], [Temperame
 INSERT INTO [dbo].[Temperaments] ([TemperamentID], [TemperamentName], [TemperamentSeverity]) VALUES (4, N'Agressive', 3)
 INSERT INTO [dbo].[Temperaments] ([TemperamentID], [TemperamentName], [TemperamentSeverity]) VALUES (5, N'Very Agressive', 4)
 SET IDENTITY_INSERT [dbo].[Temperaments] OFF
+
+-- Add 1 row to [dbo].[aspnet_Applications]
+INSERT INTO [dbo].[aspnet_Applications] ([ApplicationId], [ApplicationName], [LoweredApplicationName], [Description]) VALUES ('9d1f468f-0cb2-4d65-bb1d-7834fddfc3ac', N'/', N'/', NULL)
+
+-- Add 3 rows to [dbo].[aspnet_Membership]
+INSERT INTO [dbo].[aspnet_Membership] ([UserId], [ApplicationId], [Password], [PasswordFormat], [PasswordSalt], [MobilePIN], [Email], [LoweredEmail], [PasswordQuestion], [PasswordAnswer], [IsApproved], [IsLockedOut], [CreateDate], [LastLoginDate], [LastPasswordChangedDate], [LastLockoutDate], [FailedPasswordAttemptCount], [FailedPasswordAttemptWindowStart], [FailedPasswordAnswerAttemptCount], [FailedPasswordAnswerAttemptWindowStart], [Comment]) VALUES ('443db369-3957-4eb3-bfeb-23f9822c0f16', '9d1f468f-0cb2-4d65-bb1d-7834fddfc3ac', N'nWa2H+pvaS4//lFQ1FGEhGyaHgw=', 1, N'BbOB2QWIk1I6hrezNsPygg==', NULL, N'harvey_b_27@hotmail.co.uk', N'harvey_b_27@hotmail.co.uk', NULL, NULL, 1, 0, '2011-07-20 13:19:55.000', '2011-09-13 16:36:07.533', '2011-07-20 13:19:55.000', '1754-01-01 00:00:00.000', 0, '1754-01-01 00:00:00.000', 0, '1754-01-01 00:00:00.000', NULL)
+INSERT INTO [dbo].[aspnet_Membership] ([UserId], [ApplicationId], [Password], [PasswordFormat], [PasswordSalt], [MobilePIN], [Email], [LoweredEmail], [PasswordQuestion], [PasswordAnswer], [IsApproved], [IsLockedOut], [CreateDate], [LastLoginDate], [LastPasswordChangedDate], [LastLockoutDate], [FailedPasswordAttemptCount], [FailedPasswordAttemptWindowStart], [FailedPasswordAnswerAttemptCount], [FailedPasswordAnswerAttemptWindowStart], [Comment]) VALUES ('87d59d15-0390-42d5-b35d-81508a3a1ab9', '9d1f468f-0cb2-4d65-bb1d-7834fddfc3ac', N'toGEqLuTJnIDNeaFXYPIdpqPF7g=', 1, N'Z7V3+y0e0KuEdWZMCp9i2w==', NULL, N'dom.barker808@gmail.com', N'dom.barker808@gmail.com', NULL, NULL, 1, 0, '2011-07-27 16:00:51.000', '2011-07-31 13:59:24.770', '2011-07-27 16:00:51.000', '1754-01-01 00:00:00.000', 0, '1754-01-01 00:00:00.000', 0, '1754-01-01 00:00:00.000', NULL)
+INSERT INTO [dbo].[aspnet_Membership] ([UserId], [ApplicationId], [Password], [PasswordFormat], [PasswordSalt], [MobilePIN], [Email], [LoweredEmail], [PasswordQuestion], [PasswordAnswer], [IsApproved], [IsLockedOut], [CreateDate], [LastLoginDate], [LastPasswordChangedDate], [LastLockoutDate], [FailedPasswordAttemptCount], [FailedPasswordAttemptWindowStart], [FailedPasswordAnswerAttemptCount], [FailedPasswordAnswerAttemptWindowStart], [Comment]) VALUES ('e1148fa3-638a-4393-84dc-a00c6f554cff', '9d1f468f-0cb2-4d65-bb1d-7834fddfc3ac', N'klTD2QWRB+0gWVB/K8uIjBPgth8=', 1, N'ssHSFhTxaadqFUkoSs19Fw==', NULL, N'dom.barker808@gmail.com', N'dom.barker808@gmail.com', NULL, NULL, 1, 0, '2011-07-20 13:15:10.000', '2011-09-17 16:34:50.953', '2011-07-20 13:15:10.000', '1754-01-01 00:00:00.000', 0, '1754-01-01 00:00:00.000', 0, '1754-01-01 00:00:00.000', NULL)
+
+-- Add 3 rows to [dbo].[aspnet_Users]
+INSERT INTO [dbo].[aspnet_Users] ([UserId], [ApplicationId], [UserName], [LoweredUserName], [MobileAlias], [IsAnonymous], [LastActivityDate]) VALUES ('443db369-3957-4eb3-bfeb-23f9822c0f16', '9d1f468f-0cb2-4d65-bb1d-7834fddfc3ac', N'harvey', N'harvey', NULL, 0, '2011-09-13 16:36:07.533')
+INSERT INTO [dbo].[aspnet_Users] ([UserId], [ApplicationId], [UserName], [LoweredUserName], [MobileAlias], [IsAnonymous], [LastActivityDate]) VALUES ('87d59d15-0390-42d5-b35d-81508a3a1ab9', '9d1f468f-0cb2-4d65-bb1d-7834fddfc3ac', N'dawei', N'dawei', NULL, 0, '2011-07-31 13:59:24.770')
+INSERT INTO [dbo].[aspnet_Users] ([UserId], [ApplicationId], [UserName], [LoweredUserName], [MobileAlias], [IsAnonymous], [LastActivityDate]) VALUES ('e1148fa3-638a-4393-84dc-a00c6f554cff', '9d1f468f-0cb2-4d65-bb1d-7834fddfc3ac', N'dom', N'dom', NULL, 0, '2011-09-17 16:34:50.953')
 
 -- Add 424 rows to [dbo].[Fish]
 SET IDENTITY_INSERT [dbo].[Fish] ON
@@ -1487,6 +1503,13 @@ ALTER TABLE [dbo].[FishPhotos] ADD CONSTRAINT [FK_FishPhotos_Photos] FOREIGN KEY
 ALTER TABLE [dbo].[Fish] ADD CONSTRAINT [FK_Fish_Genus] FOREIGN KEY ([FishGenusID]) REFERENCES [dbo].[Genus] ([GenusID])
 ALTER TABLE [dbo].[Fish] ADD CONSTRAINT [FK_Fish_Locales] FOREIGN KEY ([FishLocaleID]) REFERENCES [dbo].[Locales] ([LocaleID])
 ALTER TABLE [dbo].[Fish] ADD CONSTRAINT [FK_Fish_Species] FOREIGN KEY ([FishSpeciesID]) REFERENCES [dbo].[Species] ([SpeciesID])
+
+-- Add constraints to [dbo].[aspnet_Users]
+ALTER TABLE [dbo].[aspnet_Users] ADD CONSTRAINT [FK__aspnet_Us__Appli__65370702] FOREIGN KEY ([ApplicationId]) REFERENCES [dbo].[aspnet_Applications] ([ApplicationId])
+
+-- Add constraints to [dbo].[aspnet_Membership]
+ALTER TABLE [dbo].[aspnet_Membership] ADD CONSTRAINT [FK__aspnet_Me__Appli__793DFFAF] FOREIGN KEY ([ApplicationId]) REFERENCES [dbo].[aspnet_Applications] ([ApplicationId])
+ALTER TABLE [dbo].[aspnet_Membership] ADD CONSTRAINT [FK__aspnet_Me__UserI__7A3223E8] FOREIGN KEY ([UserId]) REFERENCES [dbo].[aspnet_Users] ([UserId])
 
 COMMIT TRANSACTION
 GO

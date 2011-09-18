@@ -1,9 +1,0 @@
-18/09/2011 09:35:55	This log contains information about the import schema operation into project 'RiftData.Data' on computer 'DAKUAN-PC' by user 'Dakuan'.
-18/09/2011 09:35:58	Import of database schema has started.
-18/09/2011 09:36:14	An error was received from SQL Server while attempting to reverse engineer elements of type Microsoft.Data.Schema.Sql.SchemaModel.ISql100DatabaseEncryptionKey: The user does not have permission to perform this action.
-18/09/2011 09:36:14	Adding all files to the project...
-18/09/2011 09:36:16	Finished adding all files to the project.
-18/09/2011 09:36:21	Done
-18/09/2011 09:36:21	Import of database schema is complete.
-18/09/2011 09:36:21	A summary of the import operation was saved to the log file C:\git\RiftMap2\Solutions\RiftData.Data\Import Schema Logs\RiftData.Data_20110918083555.log.
-18/09/2011 09:36:21	Click Finish to continue...
