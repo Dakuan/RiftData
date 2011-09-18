@@ -25,12 +25,12 @@ namespace RiftData.Infrastructure.Data.Repositories
             return this._dataContext.Lakes.SortLakes().ToList();
         }
 
-        public Lake GetLakeFromGenusType(int id)
+        public Lake GetFromGenusType(int genusTypeId)
         {
-            return this._dataContext.Lakes.First(l => l.GenusTypes.Any(g => g.Id == id));
+            return this._dataContext.Lakes.First(l => l.GenusTypes.Any(g => g.Id == genusTypeId));
         }
 
-        public Lake GetLakeFromName(string lakeName)
+        public Lake GetFromName(string lakeName)
         {
             return this._dataContext.Lakes.First(l => string.Equals(lakeName, l.Name));
         }

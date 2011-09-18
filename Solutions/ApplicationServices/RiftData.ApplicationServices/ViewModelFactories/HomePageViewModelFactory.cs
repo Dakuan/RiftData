@@ -22,7 +22,7 @@
 
         public HomePageViewModel Build(string genusTypeName)
         {
-            var genusType = this.genusTypeRepository.GetGenusTypeByName(genusTypeName);
+            var genusType = this.genusTypeRepository.GetByName(genusTypeName);
 
             var genusPanelViewModel = this.genusPanelViewModelFactory.Build(genusType.Id);
 

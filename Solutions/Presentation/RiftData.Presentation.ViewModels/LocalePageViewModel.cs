@@ -8,7 +8,7 @@ namespace RiftData.Presentation.ViewModels
     {
         public LocaleDto Locale { get; set; }
 
-        public IList<FishDto> Fish { get; set; }
+        public IEnumerable<FishDto> Fish { get; set; }
 
         public PhotoGalleryViewModel PhotoGallery { get; set; }
 

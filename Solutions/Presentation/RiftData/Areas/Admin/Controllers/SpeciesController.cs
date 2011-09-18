@@ -35,7 +35,7 @@ namespace RiftData.Areas.Admin.Controllers
         {
             //TryUpdateModel(vm);
 
-            var addResult = this._speciesRepository.AddSpecies(vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
+            var addResult = this._speciesRepository.Add(vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
 
             return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
@@ -57,7 +57,7 @@ namespace RiftData.Areas.Admin.Controllers
 
         public ActionResult Delete(int id)
         {
-            this._speciesRepository.DeleteSpecies(id);
+            this._speciesRepository.Delete(id);
 
             return RedirectToAction("Index");
         }

@@ -29,6 +29,6 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         public string MessageBoxContentSource { get; set; }
 
-        public IList<Photo> Photos { get; set; }
+        public IEnumerable<Photo> Photos { get; set; }
     }
 }

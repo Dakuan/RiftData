@@ -16,7 +16,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build (int genusTypeId)
         {
-            return new GenusPanelViewModel { GenusList = this._genusDtoService.GetGenusDtos(genusTypeId)};
+            return new GenusPanelViewModel { GenusEnumerable = this._genusDtoService.GetGenusDtos(genusTypeId)};
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)

@@ -23,25 +23,25 @@ namespace RiftData.ApplicationServices.DtoServices
             _mapService = mapService;
         }
 
-        public IList<LocaleDto> GetLocaleDtosFromSpecies(int speciesId)
+        public IEnumerable<LocaleDto> GetLocaleDtosFromSpecies(int speciesId)
         {
             var list = new List<LocaleDto>();
 
-            _fishRepository.GetFishBySpecies(speciesId).ToList().ForEach(f => list.Add(this._dtoFactory.Build(f.Locale)));
+            _fishRepository.GetBySpecies(speciesId).ToList().ForEach(f => list.Add(this._dtoFactory.Build(f.Locale)));
 
             return list;
         }
 
         public LocaleDto GetLocaleDto(int localeId)
         {
-            return this._dtoFactory.Build(this._localesRepository.GetById(localeId));
+            return this._dtoFactory.Build(this._localesRepository.Get(localeId));
         }
 
-        public IList<LocaleDto> GetLocalesForZoomLevel(int zoomLevel)
+        public IEnumerable<LocaleDto> GetLocalesForZoomLevel(int zoomLevel)
         {
             var list = new List<LocaleDto>();
 
-            this._localesRepository.GetLocalesForZoomLevel(this._mapService.GetDataZoomFromMapZoom(zoomLevel)).ToList().ForEach(l => list.Add(this._dtoFactory.Build(l)));
+            this._localesRepository.GetForZoomLevel(this._mapService.GetDataZoomFromMapZoom(zoomLevel)).ToList().ForEach(l => list.Add(this._dtoFactory.Build(l)));
 
             return list;
         }

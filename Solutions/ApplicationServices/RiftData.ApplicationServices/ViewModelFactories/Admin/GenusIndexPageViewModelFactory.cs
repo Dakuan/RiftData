@@ -18,7 +18,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             var viewModel = new GenusIndexPageViewModel
                                 {
-                                    Genus = this._genusRepository.GetAllGenus().ToList()
+                                    Genus = this._genusRepository.GetAll().ToList()
                                 };
 
             return viewModel;

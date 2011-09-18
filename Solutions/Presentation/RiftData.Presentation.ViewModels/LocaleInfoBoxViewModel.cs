@@ -9,6 +9,6 @@ namespace RiftData.Presentation.ViewModels
 
         public string PhotoUrl { get; set; }
 
-        public IList<SpeciesDto> Species { get; set; }
+        public IEnumerable<SpeciesDto> Species { get; set; }
     }
 }

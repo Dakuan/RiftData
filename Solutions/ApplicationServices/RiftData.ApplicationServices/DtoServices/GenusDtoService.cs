@@ -19,14 +19,14 @@ namespace RiftData.ApplicationServices.DtoServices
             _dtoFactory = dtoFactory;
         }
 
-        public IList<GenusDto> GetGenusDtos(int genusTypeId)
+        public IEnumerable<GenusDto> GetGenusDtos(int genusTypeId)
         {
-            return this.BuildList(this._genusRepository.GetGenusOfIdWithFish(genusTypeId));
+            return this.BuildList(this._genusRepository.GetOfIdWithFish(genusTypeId));
         }
 
         public IList<GenusDto> GetGenusDtos()
         {
-            return this.BuildList(this._genusRepository.List.ToList());
+            return this.BuildList(this._genusRepository.GetAll());
         }
 
         private IList<GenusDto> BuildList(IEnumerable<Genus> list)

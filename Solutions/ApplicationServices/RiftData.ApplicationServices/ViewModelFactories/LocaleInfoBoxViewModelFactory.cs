@@ -18,7 +18,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public LocaleInfoBoxViewModel Build(int localeId)
         {
-            var locale = this._localesRepository.GetById(localeId);
+            var locale = this._localesRepository.Get(localeId);
 
             var viewModel = new LocaleInfoBoxViewModel
                                 {

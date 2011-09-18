@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Enums;
 
@@ -7,15 +6,13 @@ namespace RiftData.Domain.Repositories
 {
     public interface IGenusRepository
     {
-        IQueryable<Genus> List { get; }
-
-        IList<Genus> GetGenusOfIdWithFish(int genusTypeId);
+        IList<Genus> GetOfIdWithFish(int genusTypeId);
         
-        IList<Genus> GetAllGenus();
+        IList<Genus> GetAll();
 
-        IList<Genus> GetGenusOfType(int genusTypeId);
+        IList<Genus> GetOfType(int genusTypeId);
         
-        Genus GetGenus(int genusId);
+        Genus Get(int genusId);
 
         AddResult Add(string name);
 

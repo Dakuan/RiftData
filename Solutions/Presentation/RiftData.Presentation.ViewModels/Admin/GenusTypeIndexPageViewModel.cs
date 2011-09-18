@@ -10,6 +10,6 @@ namespace RiftData.Presentation.ViewModels.Admin
             this.SelectedView = SelectedView.GenusTypes;
         }
 
-        public IList<GenusType> GenusTypes;
+        public IEnumerable<GenusType> GenusTypes;
     }
 }

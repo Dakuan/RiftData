@@ -10,7 +10,7 @@ namespace RiftData.Presentation.ViewModels
 
         public PhotoGalleryViewModel PhotoGalleryViewModel { get; set; }
 
-        public IList<LocaleDto> Locales { get; set; }
+        public IEnumerable<LocaleDto> Locales { get; set; }
 
         public GenusPanelViewModel GenusPanelViewModel { get; set; }
     }

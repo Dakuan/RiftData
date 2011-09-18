@@ -17,16 +17,16 @@ namespace RiftData.Infrastructure.Data.Repositories
             this.dataContext = dataContext;
         }
 
-        public Locale GetById(int id)
+        public Locale Get(int localeId)
         {
-            var dataLocale = this.dataContext.Locales.First(l => l.Id == id);
+            var dataLocale = this.dataContext.Locales.First(l => l.Id == localeId);
 
             if (dataLocale == null) return null;
 
             return dataLocale;
         }
 
-        public IList<Locale> GetLocalesWithSpecies(int speciesId)
+        public IList<Locale> GetWithSpecies(int speciesId)
         {
             var list = new List<Locale>();
             
@@ -40,17 +40,17 @@ namespace RiftData.Infrastructure.Data.Repositories
             return this.dataContext.Locales.First(f => f.Name == fullName);
         }
 
-        public IList<Locale> GetLocalesForZoomLevel(int zoomLevel)
+        public IList<Locale> GetForZoomLevel(int zoomLevel)
         {
             return this.dataContext.Locales.Where(l => l.ZoomLevel <= zoomLevel).SortLocales().ToList();
         }
 
-        public IList<Locale> GetAllLocales()
+        public IList<Locale> GetAll()
         {
             return this.dataContext.Locales.SortLocales().ToList();
         }
 
-        public AddResult Create(string name, double latitude, double longitude)
+        public AddResult Add(string name, double latitude, double longitude)
         {
             var locale = new Locale { Name = name, Latitude = latitude, Longitude = longitude };
 

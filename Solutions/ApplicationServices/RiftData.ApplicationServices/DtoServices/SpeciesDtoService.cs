@@ -20,21 +20,21 @@ namespace RiftData.ApplicationServices.DtoServices
             _dtoFactory = dtoFactory;
         }
 
-        public IList<SpeciesDto> GetSpeciesAtLocale(int localeId)
+        public IEnumerable<SpeciesDto> GetSpeciesAtLocale(int localeId)
         {
             var species = this._speciesRepository.GetSpeciesAtLocale(localeId);
 
             return this.BuildDtoList(species);
         }
 
-        public IList<SpeciesDto> GetSpeciesWithGenus(int id)
+        public IEnumerable<SpeciesDto> GetSpeciesWithGenus(int id)
         {
             var species = this._speciesRepository.GetSpeciesWithGenus(id);
 
             return this.BuildDtoList(species);
         }
 
-        private IList<SpeciesDto>BuildDtoList(IEnumerable<Species> species)
+        private IEnumerable<SpeciesDto>BuildDtoList(IEnumerable<Species> species)
         {
             var speciesDtoList = new List<SpeciesDto>();
 

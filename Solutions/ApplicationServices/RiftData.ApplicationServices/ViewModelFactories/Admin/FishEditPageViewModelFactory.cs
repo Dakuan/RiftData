@@ -27,11 +27,11 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             if (fishId == 0)
             {
-                var genuslist = this._genusRepository.GetAllGenus();
+                var genuslist = this._genusRepository.GetAll();
                 var speciesList = this._speciesRepository.GetSpeciesWithGenus(genuslist[0].Id);
                 return new FishEditPageViewModel(fishId)
                 {
-                    Locales = new SelectList(this._localesRepository.GetAllLocales(), "Id", "Name"),
+                    Locales = new SelectList(this._localesRepository.GetAll(), "Id", "Name"),
                     Genus = new SelectList(genuslist, "Id", "Name"),
                     Species = new SelectList(speciesList, "Id", "Name"),
                     //Description = HttpUtility.HtmlDecode(fish.Description),
@@ -44,8 +44,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
             var viewModel = new FishEditPageViewModel(fishId)
             {
-                Locales = new SelectList(this._localesRepository.GetAllLocales(), "Id", "Name", fish.Locale.Id),
-                Genus = new SelectList(this._genusRepository.GetAllGenus(), "Id", "Name", fish.Genus.Id),
+                Locales = new SelectList(this._localesRepository.GetAll(), "Id", "Name", fish.Locale.Id),
+                Genus = new SelectList(this._genusRepository.GetAll(), "Id", "Name", fish.Genus.Id),
                 Species = new SelectList(this._speciesRepository.GetSpeciesWithGenus(fish.Genus.Id), "Id", "Name", fish.Species.Id),
                 Name = fish.Name,
                 Photos = fish.Photos.ToList(),

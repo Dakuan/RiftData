@@ -31,7 +31,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
                                     MaxSize = species.MaxSize,
                                     MinSize = species.MinSize,
                                     Temperament = new SelectList(this._temperamentRepository.GetAll(), "Id", "Name", species.Temperament.Id),
-                                    Genus = new SelectList(this._genusRepository.GetGenusOfType(species.Genus.GenusType.Id), "Id", "Name", species.Genus.Id)
+                                    Genus = new SelectList(this._genusRepository.GetOfType(species.Genus.GenusType.Id), "Id", "Name", species.Genus.Id)
                                 };
 
             return viewModel;
@@ -42,7 +42,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
             return new SpeciesEditPageViewModel
                        {
                            Temperament = new SelectList(this._temperamentRepository.GetAll(), "Id", "Name"),
-                           Genus = new SelectList(this._genusRepository.GetAllGenus(), "Id", "Name"), 
+                           Genus = new SelectList(this._genusRepository.GetAll(), "Id", "Name"), 
                            Mode = "Create"
                        };
         }

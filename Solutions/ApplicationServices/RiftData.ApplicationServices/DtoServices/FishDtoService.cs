@@ -18,11 +18,11 @@ namespace RiftData.ApplicationServices.DtoServices
             _dtoFactory = dtoFactory;
         }
 
-        public IList<FishDto> GetFishAtLocale(int localeId)
+        public IEnumerable<FishDto> GetFishAtLocale(int localeId)
         {
             var fish = new List<FishDto>();
 
-            this._fishRepository.GetFishByLocale(localeId).ToList().ForEach(f => fish.Add(this._dtoFactory.Build(f)));
+            this._fishRepository.GetByLocale(localeId).ToList().ForEach(f => fish.Add(this._dtoFactory.Build(f)));
 
             return fish;
         }

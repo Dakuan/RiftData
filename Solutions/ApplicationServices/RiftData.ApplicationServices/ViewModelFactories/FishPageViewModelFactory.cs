@@ -27,7 +27,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public FishPageViewModel Build(string fishName)
         {
-            var fish = fishRepository.GetFishFromName(fishName);
+            var fish = fishRepository.GetFromName(fishName);
 
             var viewModel = new FishPageViewModel
                                 {

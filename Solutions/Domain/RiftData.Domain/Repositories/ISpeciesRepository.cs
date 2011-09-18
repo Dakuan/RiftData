@@ -15,9 +15,9 @@ namespace RiftData.Domain.Repositories
 
         IList<Species> GetSpeciesWithGenus(int id);
 
-        IList<Species> GetAllSpecies();
-        AddResult AddSpecies(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId);
+        IList<Species> GetAll();
+        AddResult Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId);
         UpdateResult Update(int speciesId, string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId);
-        DeleteResult DeleteSpecies(int speciesId);
+        DeleteResult Delete(int speciesId);
     }
 }

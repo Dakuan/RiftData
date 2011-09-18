@@ -10,6 +10,6 @@ namespace RiftData.Presentation.ViewModels.Admin
             SelectedView = SelectedView.Photos;
         }
 
-        public IList<Photo> Photos { get; set; }
+        public IEnumerable<Photo> Photos { get; set; }
     }
 }

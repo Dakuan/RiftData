@@ -13,10 +13,10 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         public SelectList GenusList { get; set; }
 
-        public IList<Fish> Fish { get; set; }
+        public IEnumerable<Fish> Fish { get; set; }
 
         public GenusType Type { get; set; }
 
-        public IList<GenusType> GenusTypes { get; set; }
+        public IEnumerable<GenusType> GenusTypes { get; set; }
     }
 }

@@ -6,10 +6,10 @@
 
     public interface IPhotoDtoService
     {
-        IList<PhotoDto> GetPhotosForSpecies(int speciesId);
+        IEnumerable<PhotoDto> GetPhotosForSpecies(int speciesId);
 
-        IList<PhotoDto> GetPhotosForLocale(int localeId);
+        IEnumerable<PhotoDto> GetPhotosForLocale(int localeId);
 
-        IList<PhotoDto> GetPhotosForFish(Fish fish);
+        IEnumerable<PhotoDto> GetPhotosForFish(Fish fish);
     }
 }

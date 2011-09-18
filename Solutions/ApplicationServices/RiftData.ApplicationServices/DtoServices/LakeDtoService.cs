@@ -20,7 +20,7 @@ namespace RiftData.ApplicationServices.DtoServices
             _lakeRepository = lakeRepository;
         }
 
-        public IList<LakeDto>GetAllLakes()
+        public IEnumerable<LakeDto>GetAllLakes()
         {
             var list = new List<LakeDto>();
 
@@ -31,7 +31,7 @@ namespace RiftData.ApplicationServices.DtoServices
 
         public LakeDto GetLakeFromName(string lakeName)
         {
-            return this._dtoFactory.Build(this._lakeRepository.GetLakeFromName(lakeName));
+            return this._dtoFactory.Build(this._lakeRepository.GetFromName(lakeName));
         }
     }
 }

@@ -21,22 +21,22 @@
             this.fishRepository = fishRepository;
         }
 
-        public IList<PhotoDto> GetPhotosForSpecies(int speciesId)
+        public IEnumerable<PhotoDto> GetPhotosForSpecies(int speciesId)
         {
-            return this.BuildList(this.photosRepository.GetPhotosForSpecies(speciesId));
+            return this.BuildList(this.photosRepository.GetForSpecies(speciesId));
         }
 
-        public IList<PhotoDto> GetPhotosForLocale(int localeId)
+        public IEnumerable<PhotoDto> GetPhotosForLocale(int localeId)
         {
-            return this.BuildList(this.photosRepository.GetPhotosForLocale(localeId));
+            return this.BuildList(this.photosRepository.GetForLocale(localeId));
         }
 
-        public IList<PhotoDto> GetPhotosForFish(Fish fish)
+        public IEnumerable<PhotoDto> GetPhotosForFish(Fish fish)
         {
             return this.BuildList(fish.Photos);
         }
 
-        private IList<PhotoDto> BuildList(IEnumerable<Photo> photos)
+        private IEnumerable<PhotoDto> BuildList(IEnumerable<Photo> photos)
         {
             var list = new List<PhotoDto>();
 

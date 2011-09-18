@@ -21,15 +21,15 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
         public FishIndexPageViewModel Build(int id)
         {
-            var genusList = this._genusRepository.GetGenusOfType(id);
+            var genusList = this._genusRepository.GetOfType(id);
 
             genusList.Insert(0, new Genus{ Name = "Filter by Genus" });
 
             var viewModel = new FishIndexPageViewModel
                                 {
                                     SelectedView = SelectedView.Fish, 
-                                    Fish = this._fishRepository.GetFishOfType(id),
-                                    Type = this._genusTypeRepository.GetGenusType(id),
+                                    Fish = this._fishRepository.GetOfType(id),
+                                    Type = this._genusTypeRepository.Get(id),
                                     GenusList = new SelectList(genusList, "Id", "Name"),
                                     GenusTypes = this._genusTypeRepository.GetAll()
                                     

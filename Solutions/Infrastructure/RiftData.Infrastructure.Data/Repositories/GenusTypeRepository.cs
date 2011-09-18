@@ -17,12 +17,7 @@ namespace RiftData.Infrastructure.Data.Repositories
            this.dataContext = dataContext;
         }
 
-        public IList<GenusType> GetGenusTypesContainingGenus()
-        {
-            return this.dataContext.GenusTypes.Where(t => t.Genus.Count > 0).ToList();
-        }
-
-        public GenusType GetGenusTypeByName(string genusTypeName)
+        public GenusType GetByName(string genusTypeName)
         {
             return this.dataContext.GenusTypes.Where(t => string.Equals(genusTypeName, t.Name)).First();
         }
@@ -32,7 +27,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             return this.dataContext.GenusTypes.ToList();
         }
 
-        public GenusType GetGenusType(int genusTypeId)
+        public GenusType Get(int genusTypeId)
         {
             return this.dataContext.GenusTypes.First(g => g.Id == genusTypeId);
         }
@@ -46,7 +41,7 @@ namespace RiftData.Infrastructure.Data.Repositories
         {
             try
             {
-                var genusType = this.GetGenusType(genusTypeId);
+                var genusType = this.Get(genusTypeId);
 
                 var lake = this.dataContext.Lakes.First(l => l.Id == lakeId);
 
@@ -69,7 +64,7 @@ namespace RiftData.Infrastructure.Data.Repositories
         {
             try
             {
-                var genusType = this.GetGenusType(genusTypeId);
+                var genusType = this.Get(genusTypeId);
 
                 if (genusType == null) return DeleteResult.DoesNotExist;
 

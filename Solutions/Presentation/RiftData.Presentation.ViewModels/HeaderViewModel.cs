@@ -5,9 +5,9 @@ namespace RiftData.Presentation.ViewModels
 {
     public class HeaderViewModel
     {
-        public IList<LakeDto> Lakes { get; set; }
+        public IEnumerable<LakeDto> Lakes { get; set; }
 
-        public IList<GenusTypeDto> GenusTypes { get; set; }
+        public IEnumerable<GenusTypeDto> GenusTypes { get; set; }
 
         public int? SelectedGenusTypeId { get; set; }
 

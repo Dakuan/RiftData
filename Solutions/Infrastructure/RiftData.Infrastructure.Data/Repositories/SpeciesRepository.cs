@@ -63,12 +63,12 @@ namespace RiftData.Infrastructure.Data.Repositories
             return this.dataContext.Species.Where(s => s.Genus.Id == id).ToList().SortSpecies().ToList();
         }
 
-        public IList<Species> GetAllSpecies()
+        public IList<Species> GetAll()
         {
             return this.dataContext.Species.SortSpecies().ToList();
         }
 
-        public AddResult AddSpecies(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId)
+        public AddResult Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId)
         {
             var genus = this.dataContext.Genus.First(g => g.Id == genusId);
 
@@ -133,7 +133,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             }
         }
 
-        public DeleteResult DeleteSpecies(int speciesId)
+        public DeleteResult Delete(int speciesId)
         {
             var species = this.dataContext.Species.First(s => s.Id == speciesId);
 

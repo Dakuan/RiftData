@@ -7,7 +7,7 @@ namespace RiftData.Presentation.ViewModels.Dto
 {
     public class LakeDto
     {
-        public IList<GenusTypeDto> GenusTypes;
+        public IEnumerable<GenusTypeDto> GenusTypes;
 
         public int Id { get; set; }
 

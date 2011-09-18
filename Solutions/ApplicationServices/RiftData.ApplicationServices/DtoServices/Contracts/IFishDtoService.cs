@@ -5,6 +5,6 @@ namespace RiftData.ApplicationServices.DtoServices.Contracts
 {
     public interface IFishDtoService
     {
-        IList<FishDto> GetFishAtLocale(int localeId);
+        IEnumerable<FishDto> GetFishAtLocale(int localeId);
     }
 }

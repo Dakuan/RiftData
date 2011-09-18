@@ -39,7 +39,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         {
             var viewModel = this.Build();
 
-            var lake = this._lakeRepository.GetLakeFromGenusType(genusTypeId);
+            var lake = this._lakeRepository.GetFromGenusType(genusTypeId);
 
             viewModel.GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(lake);
 

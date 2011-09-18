@@ -18,26 +18,21 @@ namespace RiftData.Infrastructure.Data.Repositories
             this.dataContext = dataContext;
         }
 
-        public IQueryable<Fish> List
-        {
-            get { return this.dataContext.Fish.SortFish().AsQueryable(); }
-        }
-
-        public IQueryable<Fish> GetFishBySpecies(int speciesId)
+        public IList<Fish> GetBySpecies(int speciesId)
         {
             var list = new List<Fish>();
 
             this.dataContext.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(list.Add);
 
-            return list.SortFish().AsQueryable();
+            return list.SortFish().ToList();
         }
 
-        public IList<Fish> GetFishByLocale(int localeId)
+        public IList<Fish> GetByLocale(int localeId)
         {
             return this.dataContext.Fish.Where(f => f.Locale.Id == localeId).SortFish().ToList();
         }
 
-        public Fish GetFishFromName(string fishName)
+        public Fish GetFromName(string fishName)
         {
             var components = fishName.Split('_');
 
@@ -55,7 +50,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             return this.dataContext.Fish.First(f => f.Id == fishId);
         }
 
-        public IList<Fish> GetFishOfType(int genusTypeId)
+        public IList<Fish> GetOfType(int genusTypeId)
         {
             return this.dataContext.Fish.Where(f => f.Genus.GenusType.Id == genusTypeId).ToList();
         }

@@ -35,7 +35,7 @@ namespace RiftData.Areas.Admin.Controllers
          {
              TryUpdateModel(viewModel);
 
-             var result = this._localesRepository.Create(viewModel.Name, viewModel.Latitude, viewModel.Longitude);
+             var result = this._localesRepository.Add(viewModel.Name, viewModel.Latitude, viewModel.Longitude);
 
              return new JsonResult { Data = result };
          }

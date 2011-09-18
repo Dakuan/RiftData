@@ -17,7 +17,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             var viewModel = new SpeciesPageViewModel
                                 {
-                                    Species = this._speciesRepository.GetAllSpecies(),
+                                    Species = this._speciesRepository.GetAll(),
                                 };
 
             return viewModel;

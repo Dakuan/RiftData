@@ -6,13 +6,11 @@ namespace RiftData.Domain.Repositories
 {
     public interface IGenusTypeRepository
     {
-        IList<GenusType> GetGenusTypesContainingGenus();
-
-        GenusType GetGenusTypeByName(string genusTypeName);
+        GenusType GetByName(string genusTypeName);
 
         IList<GenusType> GetAll();
 
-        GenusType GetGenusType(int genusTypeId);
+        GenusType Get(int genusTypeId);
 
         GenusType GetFromSpecies(int speciesId);
         UpdateResult Update(int genusTypeId, string name, int lakeId);

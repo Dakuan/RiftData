@@ -6,15 +6,13 @@ namespace RiftData.ApplicationServices.DtoServices.Contracts
 {
     public interface IGenusTypeDtoService
     {
-        IList<GenusTypeDto> GetGenusTypesThatContainGenus();
-
         GenusTypeDto GetGenusTypeByName(string genusTypeName);
 
-        IList<GenusTypeDto> GetAllGenusTypes();
+        IEnumerable<GenusTypeDto> GetAllGenusTypes();
 
         GenusTypeDto GetGenusTypeDto(int genusTypeId);
 
-        IList<GenusTypeDto> GetGenusTypesFromLocale(Locale locale);
-        IList<GenusTypeDto> GetGenusTypesFromLake(Lake lake);
+        IEnumerable<GenusTypeDto> GetGenusTypesFromLocale(Locale locale);
+        IEnumerable<GenusTypeDto> GetGenusTypesFromLake(Lake lake);
     }
 }

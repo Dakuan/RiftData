@@ -15,7 +15,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
         public LocaleUpdatePageViewModel Build(int localeId)
         {
-            var locale = this._localesRepository.GetById(localeId);
+            var locale = this._localesRepository.Get(localeId);
 
             var viewModel = new LocaleUpdatePageViewModel
                                 {

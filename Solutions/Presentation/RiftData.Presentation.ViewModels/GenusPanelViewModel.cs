@@ -5,7 +5,7 @@ namespace RiftData.Presentation.ViewModels
 {
     public class GenusPanelViewModel
     {
-        public IList<GenusDto> GenusList;
+        public IEnumerable<GenusDto> GenusEnumerable;
 
         public int ExpandedGenus { get; set; }
 

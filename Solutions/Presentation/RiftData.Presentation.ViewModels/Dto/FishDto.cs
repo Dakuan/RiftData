@@ -20,6 +20,6 @@
 
         public LocaleDto Locale { get; set; }
 
-        public IList<PhotoDto> Photos { get; set; }
+        public IEnumerable<PhotoDto> Photos { get; set; }
     }
 }

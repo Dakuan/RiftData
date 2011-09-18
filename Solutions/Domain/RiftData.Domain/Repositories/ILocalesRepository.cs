@@ -7,16 +7,16 @@ namespace RiftData.Domain.Repositories
 {
     public interface ILocalesRepository
     {
-        Locale GetById(int id);
+        Locale Get(int localeId);
 
-        IList<Locale> GetLocalesWithSpecies(int speciesId);
+        IList<Locale> GetWithSpecies(int speciesId);
 
         Locale GetByFullName(string fullName);
 
-        IList<Locale> GetLocalesForZoomLevel(int zoomLevel);
+        IList<Locale> GetForZoomLevel(int zoomLevel);
 
-        IList<Locale> GetAllLocales();
-        AddResult Create(string name, double latitude, double longitude);
+        IList<Locale> GetAll();
+        AddResult Add(string name, double latitude, double longitude);
         UpdateResult Update(int localeId, string name, double latitude, double longitude);
         DeleteResult Delete(int localeId);
     }

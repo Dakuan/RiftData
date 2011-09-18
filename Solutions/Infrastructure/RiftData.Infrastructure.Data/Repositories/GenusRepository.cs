@@ -17,47 +17,24 @@ namespace RiftData.Infrastructure.Data.Repositories
             this.dataContext = dataContext;
         }
 
-        public IQueryable<Genus> List 
-        { 
-            get 
-            { 
-                var list = new List<Genus>();
-
-                this.dataContext.Genus.OrderBy(g => g.Name).ToList()
-                                                    .ForEach(g =>
-                                                             {
-                                                                 try
-                                                                 {
-                                                                     list.Add(g);
-                                                                 }
-                                                                 catch (Exception)
-                                                                 {
-                                                                     //todo, log bad data
-                                                                 }
-                                                             });
-
-                return list.AsQueryable();
-            }
-        }
-
-        public IList<Genus> GetGenusOfIdWithFish(int genusTypeId)
+        public IList<Genus> GetOfIdWithFish(int genusTypeId)
         {          
             var list = dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId && dataContext.Fish.Any(f => f.Genus.Id == g.Id));
 
             return list.SortGenus().ToList();
         }
 
-        public IList<Genus> GetAllGenus()
+        public IList<Genus> GetAll()
         {
             return dataContext.Genus.SortGenus().ToList();
         }
 
-        public IList<Genus> GetGenusOfType(int genusTypeId)
+        public IList<Genus> GetOfType(int genusTypeId)
         {
             return this.dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId).ToList();
         }
 
-        public Genus GetGenus(int genusId)
+        public Genus Get(int genusId)
         {
             return dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
         }

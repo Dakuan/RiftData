@@ -10,6 +10,6 @@ namespace RiftData.Presentation.ViewModels.Admin
             this.SelectedView = SelectedView.Species;
         }
 
-        public IList<Species> Species { get; set; }
+        public IEnumerable<Species> Species { get; set; }
     }
 }

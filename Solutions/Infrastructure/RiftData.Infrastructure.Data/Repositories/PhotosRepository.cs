@@ -23,7 +23,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             _photoFactory = photoFactory;
         }
 
-        public IList<Photo>GetPhotosForSpecies(int speciesId)
+        public IList<Photo>GetForSpecies(int speciesId)
         {
             var dictonary = new Dictionary<Photo, IPhotoSubject>();
 
@@ -32,13 +32,13 @@ namespace RiftData.Infrastructure.Data.Repositories
             return AddCaptionsForPhotos(dictonary).ToList();
         }
 
-        public IEnumerable<Photo> GetPhotosForLocale(int localeId)
+        public IList<Photo> GetForLocale(int localeId)
         {
             var dictionary = new Dictionary<Photo, IPhotoSubject>();
 
             this.dataContext.Fish.Where(f => f.Locale.Id == localeId).ToList().ForEach(f => f.Photos.ToList().ForEach(p => dictionary.Add(p, f)));
 
-            return AddCaptionsForPhotos(dictionary);
+            return AddCaptionsForPhotos(dictionary).ToList();
         }
 
         public DeleteResult Delete(int photoId)
