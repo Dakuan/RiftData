@@ -17,5 +17,7 @@
         public string Description { get; set; }
 
         public bool HasDescription { get; set; }
+
+        public LakeDto Lake { get; set; }
     }
 }

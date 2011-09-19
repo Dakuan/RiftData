@@ -1,12 +1,10 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using RiftData.ApplicationServices.DtoServices.Extensions;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     public class LocaleIndexPageViewModelFactory : ILocaleIndexPageViewModelFactory
     {
         private readonly ILocalesRepository _localesRepository;
@@ -22,8 +20,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
             var viewModel = new LocalePageViewModel
                                 {
-                                    Locales = locales.ToList().ToDtoList(),
-                                    LocalesSelectList = new SelectList(locales, "Id", "Name")
+                                    Locales = locales.ToDtoList(),
+                                    LocalesSelectList = locales.ToSelectList("select a locale")
                                 };
 
             return viewModel;

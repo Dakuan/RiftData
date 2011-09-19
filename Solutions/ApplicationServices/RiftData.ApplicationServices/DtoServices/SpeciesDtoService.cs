@@ -1,46 +1,29 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.ApplicationServices.DtoServices
+﻿namespace RiftData.ApplicationServices.DtoServices
 {
-    using RiftData.Domain.Entities;
+    using System.Collections.Generic;
+
+    using RiftData.ApplicationServices.DtoServices.Contracts;
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.ViewModels.Dto;
 
     public class SpeciesDtoService : ISpeciesDtoService
     {
         private readonly ISpeciesRepository _speciesRepository;
-        private readonly IDtoFactory _dtoFactory;
 
-        public SpeciesDtoService(ISpeciesRepository speciesRepository, IDtoFactory dtoFactory)
+        public SpeciesDtoService(ISpeciesRepository speciesRepository)
         {
             _speciesRepository = speciesRepository;
-            _dtoFactory = dtoFactory;
         }
 
         public IEnumerable<SpeciesDto> GetSpeciesAtLocale(int localeId)
         {
-            var species = this._speciesRepository.GetSpeciesAtLocale(localeId);
-
-            return this.BuildDtoList(species);
+            return this._speciesRepository.GetSpeciesAtLocale(localeId).ToDtoList();
         }
 
         public IEnumerable<SpeciesDto> GetSpeciesWithGenus(int id)
         {
-            var species = this._speciesRepository.GetSpeciesWithGenus(id);
-
-            return this.BuildDtoList(species);
-        }
-
-        private IEnumerable<SpeciesDto>BuildDtoList(IEnumerable<Species> species)
-        {
-            var speciesDtoList = new List<SpeciesDto>();
-
-            species.ToList().ForEach(s => speciesDtoList.Add(this._dtoFactory.Build(s)));
-
-            return speciesDtoList;
+            return this._speciesRepository.GetSpeciesWithGenus(id).ToDtoList();
         }
     }
 }

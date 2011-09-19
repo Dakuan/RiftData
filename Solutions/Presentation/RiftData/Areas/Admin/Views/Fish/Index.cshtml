@@ -61,13 +61,13 @@
                             <td>@item.Species.Name</td>
                             <td>@item.Locale.Name</td>
                             @{
-                                   if (item.Photos.Count < 1)
+                                   if (item.Photos.Count() < 1)
                                    {
-                                              <text><td style="color:Red">@item.Photos.Count</td></text>
+                                              <text><td style="color:Red">@item.Photos.Count()</td></text>
                                    }
                                    else
                                    {
-                                              <text><td>@item.Photos.Count</td></text>
+                                              <text><td>@item.Photos.Count()</td></text>
                                    }
                             }
                             <td>

@@ -7,8 +7,14 @@ namespace RiftData.Presentation.ViewModels
     {
         public string Name { get; set; }
 
-        public IEnumerable<PhotoDto> Photos { get; set; }
+        public IList<PhotoDto> Photos { get; set; }
 
-        public bool HasPhotos { get; set; }
+        public bool HasPhotos
+        {
+            get
+            {
+                return this.Photos.Count > 0;
+            }
+        }
     }
 }

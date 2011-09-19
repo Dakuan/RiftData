@@ -1,13 +1,12 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using RiftData.ApplicationServices.DtoServices.Extensions;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
+    using System.Linq;
+
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     public class FishPageViewModelFactory : IFishPageViewModelFactory
     {
         private readonly IFishRepository _fishRepository;
@@ -25,14 +24,12 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             var genusList = this._genusRepository.GetOfType(id);
 
-            genusList.Insert(0, new Genus{ Name = "Filter by Genus" });
-
             var viewModel = new FishIndexPageViewModel
                                 {
                                     SelectedView = SelectedView.Fish, 
                                     Fish = this._fishRepository.GetOfType(id).ToList().ToDtoList(),
                                     Type = DtoFactory.Build(this._genusTypeRepository.Get(id)),
-                                    GenusList = new SelectList(genusList, "Id", "Name"),
+                                    GenusList = genusList.ToSelectList("select a genus"),
                                     GenusTypes = this._genusTypeRepository.GetAll().ToList().ToDtoList()
                                 };
 

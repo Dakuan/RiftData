@@ -17,5 +17,7 @@
         public string Temperament { get; set; }
 
         public string SizeString { get; set; }
+
+        public string GenusName { get; set; }
     }
 }

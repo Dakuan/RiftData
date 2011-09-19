@@ -1,10 +1,10 @@
-﻿using System.Web.Mvc;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     public class GenusTypesUpdatePageViewModelFactory : IGenusTypesUpdatePageViewModelFactory
     {
         private readonly ILakeRepository _lakeRepository;
@@ -22,7 +22,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
             var viewModel = new GenusTypeUpdatePageViewModel
                                 {
-                                    Lakes = new SelectList(this._lakeRepository.GetAll(), "Id", "Name", genusType.Lake.Id),
+                                    Lakes = this._lakeRepository.GetAll().ToSelectList(genusType.Lake.Id),
                                     GenusType = DtoFactory.Build(genusType)
                                 };
 

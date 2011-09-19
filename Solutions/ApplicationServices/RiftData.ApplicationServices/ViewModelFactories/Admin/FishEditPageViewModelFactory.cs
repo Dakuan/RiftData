@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using RiftData.ApplicationServices.DtoServices.Extensions;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
+    using System;
+    using System.Linq;
+    using System.Web;
+
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     public class FishEditPageViewModelFactory : IFishEditPageViewModelFactory
     {
         private readonly IFishRepository _fishRepository;
@@ -32,10 +32,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
                 var speciesList = this._speciesRepository.GetSpeciesWithGenus(genuslist[0].Id);
                 return new FishEditPageViewModel(fishId)
                 {
-                    Locales = new SelectList(this._localesRepository.GetAll(), "Id", "Name"),
-                    Genus = new SelectList(genuslist, "Id", "Name"),
-                    Species = new SelectList(speciesList, "Id", "Name"),
-                    //Description = HttpUtility.HtmlDecode(fish.Description),
+                    Locales = this._localesRepository.GetAll().ToList().ToSelectList("select a locale"),
+                    Genus = genuslist.ToSelectList("select a genus"),
+                    Species = speciesList.ToSelectList("select a species"),
                     MessageBoxVisible = showSuccessMessage != null ? true : false,
                     MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial"
                 };
@@ -45,9 +44,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
             var viewModel = new FishEditPageViewModel(fishId)
             {
-                Locales = new SelectList(this._localesRepository.GetAll(), "Id", "Name", fish.Locale.Id),
-                Genus = new SelectList(this._genusRepository.GetAll(), "Id", "Name", fish.Genus.Id),
-                Species = new SelectList(this._speciesRepository.GetSpeciesWithGenus(fish.Genus.Id), "Id", "Name", fish.Species.Id),
+                Locales = this._localesRepository.GetAll().ToSelectList(fish.Locale.Id),
+                Genus = this._genusRepository.GetAll().ToSelectList(fish.Genus.Id),
+                Species = this._speciesRepository.GetSpeciesWithGenus(fish.Genus.Id).ToSelectList(fish.Species.Id),
                 Name = fish.Name,
                 Photos = fish.Photos.ToList().ToDtoList(),
                 Description = HttpUtility.HtmlDecode(fish.Description),

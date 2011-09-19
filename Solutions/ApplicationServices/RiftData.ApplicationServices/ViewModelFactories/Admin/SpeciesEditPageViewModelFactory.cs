@@ -1,10 +1,10 @@
-﻿using System.Web.Mvc;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     public class SpeciesEditPageViewModelFactory : ISpeciesEditPageViewModelFactory
     {
         private readonly ISpeciesRepository _speciesRepository;
@@ -30,8 +30,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
                                     Name = species.Name,
                                     MaxSize = species.MaxSize,
                                     MinSize = species.MinSize,
-                                    Temperament = new SelectList(this._temperamentRepository.GetAll(), "Id", "Name", species.Temperament.Id),
-                                    Genus = new SelectList(this._genusRepository.GetOfType(species.Genus.GenusType.Id), "Id", "Name", species.Genus.Id)
+                                    Temperament = this._temperamentRepository.GetAll().ToSelectList(species.Temperament.Id),
+                                    Genus = this._genusRepository.GetOfType(species.Genus.GenusType.Id).ToSelectList(species.Genus.Id)
                                 };
 
             return viewModel;
@@ -41,8 +41,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             return new SpeciesEditPageViewModel
                        {
-                           Temperament = new SelectList(this._temperamentRepository.GetAll(), "Id", "Name"),
-                           Genus = new SelectList(this._genusRepository.GetAll(), "Id", "Name"), 
+                           Temperament = this._temperamentRepository.GetAll().ToSelectList("select a temperament"),
+                           Genus = this._genusRepository.GetAll().ToSelectList("select a genus"),
                            Mode = "Create"
                        };
         }

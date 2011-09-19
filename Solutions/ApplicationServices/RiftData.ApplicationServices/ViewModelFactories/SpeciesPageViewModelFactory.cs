@@ -16,17 +16,14 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         private readonly IPhotoGalleryViewModelFactory photoGalleryViewModelFactory;
         private readonly IHeaderViewModelFactory headerViewModelFactory;
 
-        private readonly IDtoFactory dtoFactory;
-
         public SpeciesPageViewModelFactory(ISpeciesRepository speciesRepository, IGenusPanelViewModelFactory genusPanelViewModelFactory,
-                                           ILocaleDtoService localeDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IHeaderViewModelFactory headerViewModelFactory, IDtoFactory dtoFactory)
+                                           ILocaleDtoService localeDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IHeaderViewModelFactory headerViewModelFactory)
         {
             this.speciesRepository = speciesRepository;
             this.genusPanelViewModelFactory = genusPanelViewModelFactory;
             this.localeDtoService = localeDtoService;
             this.photoGalleryViewModelFactory = photoGalleryViewModelFactory;
             this.headerViewModelFactory = headerViewModelFactory;
-            this.dtoFactory = dtoFactory;
         }
 
         public SpeciesPageViewModel Build(string fullName)
@@ -44,7 +41,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
      
             var viewModel = new SpeciesPageViewModel
                                 {
-                                    Species = this.dtoFactory.Build(species),
+                                    Species = DtoFactory.Build(species),
                                     HeaderViewModel = headerViewModel,
                                     Locales = this.localeDtoService.GetLocaleDtosFromSpecies(species.Id),
                                     PhotoGalleryViewModel = this.photoGalleryViewModelFactory.Build(species),

@@ -10,18 +10,15 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         private readonly IHeaderViewModelFactory _headerViewModelFactory;
 
-        private readonly IDtoFactory dtoFactory;
-
         private readonly IFishRepository fishRepository;
 
         private readonly IPhotoGalleryViewModelFactory photoGalleryViewModelFactory;
 
-        public FishPageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, IFishRepository fishRepository, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IDtoFactory dtoFactory, IHeaderViewModelFactory headerViewModelFactory)
+        public FishPageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, IFishRepository fishRepository, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IHeaderViewModelFactory headerViewModelFactory)
         {
             _genusPanelViewModelFactory = genusPanelViewModelFactory;
             this.fishRepository = fishRepository;
             this.photoGalleryViewModelFactory = photoGalleryViewModelFactory;
-            this.dtoFactory = dtoFactory;
             _headerViewModelFactory = headerViewModelFactory;
         }
 
@@ -31,7 +28,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
             var viewModel = new FishPageViewModel
                                 {
-                                    Fish = dtoFactory.Build(fish), 
+                                    Fish = DtoFactory.Build(fish), 
                                     PhotoGalleryViewModel = photoGalleryViewModelFactory.Build(fish), 
                                     HeaderViewModel = _headerViewModelFactory.Build(fish), 
                                     GenusPanelViewModel = _genusPanelViewModelFactory.Build(fish.Genus.GenusType.Id)

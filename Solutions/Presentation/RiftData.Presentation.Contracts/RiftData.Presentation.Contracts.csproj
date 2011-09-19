@@ -55,7 +55,6 @@
     <Compile Include="Admin\IPhotosService.cs" />
     <Compile Include="Admin\ISpeciesEditPageViewModelFactory.cs" />
     <Compile Include="Admin\ISpeciesPageViewModelFactory.cs" />
-    <Compile Include="IDtoFactory.cs" />
     <Compile Include="IFishPageViewModelFactory.cs" />
     <Compile Include="IGenusPanelViewModelFactory.cs" />
     <Compile Include="IHeaderViewModelFactory.cs" />

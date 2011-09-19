@@ -9,16 +9,14 @@ namespace RiftData.ApplicationServices.ViewModelFactories
     {
         private readonly IGenusPanelViewModelFactory _genusPanelViewModelFactory;
         private readonly ILocalesRepository _localesRepository;
-        private readonly IDtoFactory _dtoFactory;
         private readonly IHeaderViewModelFactory _headerViewModelFactory;
         private readonly IFishDtoService _fishDtoService;
         private readonly IPhotoGalleryViewModelFactory _photoGalleryViewModelFactory;
 
-        public LocalePageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, ILocalesRepository localesRepository, IDtoFactory dtoFactory,IHeaderViewModelFactory headerViewModelFactory, IFishDtoService fishDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory)
+        public LocalePageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, ILocalesRepository localesRepository, IHeaderViewModelFactory headerViewModelFactory, IFishDtoService fishDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory)
         {
             _genusPanelViewModelFactory = genusPanelViewModelFactory;
             _localesRepository = localesRepository;
-            _dtoFactory = dtoFactory;
             _headerViewModelFactory = headerViewModelFactory;
             _fishDtoService = fishDtoService;
             _photoGalleryViewModelFactory = photoGalleryViewModelFactory;
@@ -32,7 +30,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
             var viewModel = new LocalePageViewModel
                                 {
-                                    Locale = this._dtoFactory.Build(locale),
+                                    Locale = DtoFactory.Build(locale),
                                     Fish = this._fishDtoService.GetFishAtLocale(locale.Id),
                                     HeaderViewModel = headerViewModel,
                                     PhotoGallery = this._photoGalleryViewModelFactory.Build(locale),

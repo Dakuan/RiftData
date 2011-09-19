@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace RiftData.Presentation.ViewModels.Dto
+﻿namespace RiftData.Presentation.ViewModels.Dto
 {
+    using System.Collections.Generic;
+
     public class GenusDto
     {
         public int Id { get; set; }

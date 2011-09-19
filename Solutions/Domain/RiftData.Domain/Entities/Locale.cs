@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class Locale : IDescribable
+    public class Locale : IDescribable, IEntity
     {
         public int Id { get; set; }
 

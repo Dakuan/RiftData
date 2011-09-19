@@ -6,6 +6,8 @@ using RiftData.Presentation.ViewModels;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using System.Linq;
+
     public class PhotoGalleryViewModelFactory : IPhotoGalleryViewModelFactory
     {
         private readonly IPhotoDtoService _photoDtoService;
@@ -20,7 +22,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             var viewModel = new PhotoGalleryViewModel
                                 {
                                     Name = species.Name,
-                                    Photos = this._photoDtoService.GetPhotosForSpecies(species.Id)
+                                    Photos = this._photoDtoService.GetPhotosForSpecies(species.Id).ToList()
                                 };
 
             return viewModel;
@@ -31,7 +33,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             var viewModel = new PhotoGalleryViewModel
                                 {
                                     Name = locale.Name,
-                                    Photos = this._photoDtoService.GetPhotosForLocale(locale.Id)
+                                    Photos = this._photoDtoService.GetPhotosForLocale(locale.Id).ToList()
                                 };
 
             return viewModel;
@@ -42,7 +44,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             var viewModel = new PhotoGalleryViewModel
                                 {
                                     Name = fish.Name,
-                                    Photos = this._photoDtoService.GetPhotosForFish(fish)
+                                    Photos = this._photoDtoService.GetPhotosForFish(fish).ToList()
                                 };
 
             return viewModel;

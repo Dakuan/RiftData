@@ -1,12 +1,12 @@
-﻿using System.Web;
-
-namespace RiftData.ApplicationServices.ViewModelFactories
+﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Domain.Entities;
-    using Presentation.Contracts;
-    using Presentation.ViewModels.Dto;
+    using System.Web;
+
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Entities;
+    using RiftData.Presentation.ViewModels.Dto;
 
     public static class DtoFactory
     {
@@ -18,11 +18,14 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            Name = fish.Name,
                            Locale = Build(fish.Locale),
                            UrlName = fish.UrlName,
+                           Genus = Build(fish.Genus),
                            Species = Build(fish.Species),
                            Description = HttpUtility.HtmlDecode(fish.Description),
+                           Photos = fish.Photos.ToDtoList(),
                            HasDescription = fish.HasDescription
                        };
         }
+
         public static LocaleDto Build(Locale locale)
         {
             return new LocaleDto
@@ -34,9 +37,11 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            HasPhotos = locale.HasPhotos,
                            ZoomLevel = locale.ZoomLevel,
                            Description = locale.Description,
-                           HasDescription = locale.HasDescription
+                           HasDescription = locale.HasDescription,
+                           Lake = Build(locale.Lake)
                        };
         }
+
         public static SpeciesDto Build(Species species)
         {
             return new SpeciesDto
@@ -48,9 +53,11 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            Description = species.Description,
                            HasDescription = species.HasDescription,
                            Temperament = species.Temperament.Name,
-                           SizeString = species.MaxSize == 0 || species.MinSize == 0 ? "Unknown" : string.Format("{0} - {1}cm", species.MinSize, species.MaxSize)
+                           SizeString = species.MaxSize == 0 || species.MinSize == 0 ? "Unknown" : string.Format("{0} - {1}cm", species.MinSize, species.MaxSize),
+                           GenusName = species.Genus.Name
                        };
         }
+
         public static GenusDto Build(Genus genus)
         {
             var speciesList = new List<SpeciesDto>();
@@ -64,6 +71,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            Species = speciesList
                        };
         }
+
         public static PhotoDto Build(Photo photo)
         {
             return new PhotoDto
@@ -75,22 +83,26 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            SquareThumbnail = photo.SquareThumbnail
                        };
         }
+
         public static GenusTypeDto Build(GenusType genusType)
         {
-            return new GenusTypeDto { Id = genusType.Id, Name = genusType.Name, Description = genusType.Description};
+            return new GenusTypeDto 
+            { 
+                Id = genusType.Id, 
+                Name = genusType.Name, 
+                Description = genusType.Description,
+                NumberOfGenera = genusType.Genus.Count,
+                Lake = new LakeDto{ Id = genusType.Lake.Id, Name = genusType.Lake.Name }
+            };
         }
+
         public static LakeDto Build(Lake lake)
         {
-
-            var genustypes = new List<GenusTypeDto>();
-
-            lake.GenusTypes.ToList().ForEach(g => genustypes.Add(Build(g)));
-
             return new LakeDto
                        {
                            Id = lake.Id,
                            Name = lake.Name,
-                           GenusTypes = genustypes
+                           GenusTypes = lake.GenusTypes.ToDtoList()
                        };
         }
     }

@@ -16,6 +16,8 @@
 
         public bool HasDescription { get; set; }
 
+        public GenusDto Genus { get; set; }
+
         public SpeciesDto Species { get; set; }
 
         public LocaleDto Locale { get; set; }

@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.ApplicationServices.DtoServices.Contracts;
+    using RiftData.Presentation.Contracts;
+
     //[OutputCache(CacheProfile = "Daily")]
     public class LocaleController : Controller
     {
@@ -13,7 +12,7 @@ namespace RiftData.Controllers
         private readonly ILocaleDtoService _localeDtoService;
         private readonly ILocalePageViewModelFactory _localePageViewModelFactory;
 
-        public LocaleController(IDtoFactory dtoFactory, ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocaleDtoService localeDtoService, ILocalePageViewModelFactory localePageViewModelFactory)
+        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocaleDtoService localeDtoService, ILocalePageViewModelFactory localePageViewModelFactory)
         {
             _localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
             _localeDtoService = localeDtoService;

@@ -9,5 +9,9 @@
         public string Description { get; set; }
 
         public bool HasDescription { get { return !string.IsNullOrEmpty(this.Description); } }
+
+        public LakeDto Lake { get; set; }
+
+        public int NumberOfGenera { get; set; }
     }
 }

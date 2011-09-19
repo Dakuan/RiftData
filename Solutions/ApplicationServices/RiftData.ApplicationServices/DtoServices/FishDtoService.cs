@@ -3,7 +3,6 @@ using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.ApplicationServices.DtoServices.Extensions;
 using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.DtoServices
@@ -11,21 +10,15 @@ namespace RiftData.ApplicationServices.DtoServices
     public class FishDtoService : IFishDtoService
     {
         private readonly IFishRepository _fishRepository;
-        private readonly IDtoFactory _dtoFactory;
 
-        public FishDtoService(IFishRepository fishRepository, IDtoFactory dtoFactory)
+        public FishDtoService(IFishRepository fishRepository)
         {
             _fishRepository = fishRepository;
-            _dtoFactory = dtoFactory;
         }
 
         public IEnumerable<FishDto> GetFishAtLocale(int localeId)
         {
-            var fish = new List<FishDto>();
-
-            this._fishRepository.GetByLocale(localeId).ToList().ToDtoList();
-
-            return fish;
+            return this._fishRepository.GetByLocale(localeId).ToList().ToDtoList();
         }
     }
 }

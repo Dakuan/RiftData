@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Extensions;
 using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.ApplicationServices.DtoServices
 {
+    using RiftData.ApplicationServices.ViewModelFactories;
+
     public class GenusTypeDtoService : IGenusTypeDtoService
     {
-        private readonly IDtoFactory _dtoFactory;
         private readonly IGenusTypeRepository _genusTypeRepository;
 
-        public GenusTypeDtoService(IDtoFactory dtoFactory, IGenusTypeRepository genusTypeRepository)
+        public GenusTypeDtoService(IGenusTypeRepository genusTypeRepository)
         {
-            _dtoFactory = dtoFactory;
             _genusTypeRepository = genusTypeRepository;
         }
 
         public GenusTypeDto GetGenusTypeByName(string genusTypeName)
         {
-            return this._dtoFactory.Build(this._genusTypeRepository.GetByName(genusTypeName));
+            return DtoFactory.Build(this._genusTypeRepository.GetByName(genusTypeName));
         }
 
         public IEnumerable<GenusTypeDto> GetAllGenusTypes()
@@ -33,7 +31,7 @@ namespace RiftData.ApplicationServices.DtoServices
 
         public GenusTypeDto GetGenusTypeDto(int genusTypeId)
         {
-            return this._dtoFactory.Build(this._genusTypeRepository.Get(genusTypeId));
+            return DtoFactory.Build(this._genusTypeRepository.Get(genusTypeId));
         }
 
         public IEnumerable<GenusTypeDto> GetGenusTypesFromLocale(Locale locale)
@@ -52,7 +50,7 @@ namespace RiftData.ApplicationServices.DtoServices
         {
             var newList = new List<GenusTypeDto>();
 
-            list.ToList().ForEach(g => newList.Add(this._dtoFactory.Build(g)));
+            list.ToList().ForEach(g => newList.Add(DtoFactory.Build(g)));
 
             return newList;
         }
