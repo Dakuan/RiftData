@@ -21,14 +21,7 @@ namespace RiftData.ApplicationServices.DtoServices.Extensions
         {
             domainList.ToList().Insert(0, new SelectListComment { Id = 0, Name = comment });
 
-            return ToSelectList(domainList);
-        }
-
-        public static SelectList ToSelectList(this IEnumerable<IEntity> domainList, int selectedEntityId, string comment)
-        {
-            domainList.ToList().Insert(0, new SelectListComment { Id = 0, Name = comment });
-
-            return ToSelectList(domainList, selectedEntityId);
+            return ToSelectList(domainList, 0);
         }
     }
 
