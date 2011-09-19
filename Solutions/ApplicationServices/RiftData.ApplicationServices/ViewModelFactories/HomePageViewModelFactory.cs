@@ -1,5 +1,7 @@
 ﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using System.Linq;
+
     using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts;
@@ -39,7 +41,9 @@
                 {
                     GenusPanelViewModel = genusPanelViewModel, 
                     GenusType = this.genusTypeDtoService.GetGenusTypeDto(genusType.Id), 
-                    HeaderViewModel = headerViewModel
+                    HeaderViewModel = headerViewModel,
+                    Keywords = "Lake " + genusType.Lake.Name + ", " + genusType.Name + ", " + string.Join(@", ", genusType.Genus.Select(x => x.Name)),
+                    Description = string.Format("Information about Lake Malawi's {0} cichlids", genusType.Name)
                 };
         }
     }

@@ -1,5 +1,7 @@
 ﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using System.Linq;
+
     using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Presentation.Contracts;
     using RiftData.Presentation.ViewModels;
@@ -22,7 +24,9 @@
 
             var viewModel = new LakeViewModel
                 {
-                   Lake = lake, HeaderViewModel = this._headerViewModelFactory.Build(lake) 
+                   Lake = lake, HeaderViewModel = this._headerViewModelFactory.Build(lake),
+                   Description = string.Format("Information and map for Lake {0}", lake.Name),
+                   Keywords = string.Format("Lake {0}, {1}", lake.Name, string.Join(", ", lake.GenusTypes.Select(x => x.Name)))
                 };
 
             return viewModel;

@@ -1,5 +1,7 @@
 ﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using System.Linq;
+
     using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts;
@@ -7,15 +9,15 @@
 
     public class LocalePageViewModelFactory : ILocalePageViewModelFactory
     {
-        private readonly IFishDtoService _fishDtoService;
+        private readonly IFishDtoService fishDtoService;
 
-        private readonly IGenusPanelViewModelFactory _genusPanelViewModelFactory;
+        private readonly IGenusPanelViewModelFactory genusPanelViewModelFactory;
 
-        private readonly IHeaderViewModelFactory _headerViewModelFactory;
+        private readonly IHeaderViewModelFactory headerViewModelFactory;
 
-        private readonly ILocalesRepository _localesRepository;
+        private readonly ILocalesRepository localesRepository;
 
-        private readonly IPhotoGalleryViewModelFactory _photoGalleryViewModelFactory;
+        private readonly IPhotoGalleryViewModelFactory photoGalleryViewModelFactory;
 
         public LocalePageViewModelFactory(
             IGenusPanelViewModelFactory genusPanelViewModelFactory, 
@@ -24,26 +26,30 @@
             IFishDtoService fishDtoService, 
             IPhotoGalleryViewModelFactory photoGalleryViewModelFactory)
         {
-            this._genusPanelViewModelFactory = genusPanelViewModelFactory;
-            this._localesRepository = localesRepository;
-            this._headerViewModelFactory = headerViewModelFactory;
-            this._fishDtoService = fishDtoService;
-            this._photoGalleryViewModelFactory = photoGalleryViewModelFactory;
+            this.genusPanelViewModelFactory = genusPanelViewModelFactory;
+            this.localesRepository = localesRepository;
+            this.headerViewModelFactory = headerViewModelFactory;
+            this.fishDtoService = fishDtoService;
+            this.photoGalleryViewModelFactory = photoGalleryViewModelFactory;
         }
 
         public LocalePageViewModel Build(string fullName)
         {
-            var locale = this._localesRepository.GetByFullName(fullName);
+            var locale = this.localesRepository.GetByFullName(fullName);
 
-            var headerViewModel = this._headerViewModelFactory.Build(locale);
+            var headerViewModel = this.headerViewModelFactory.Build(locale);
+
+            var fish = this.fishDtoService.GetFishAtLocale(locale.Id);
 
             var viewModel = new LocalePageViewModel
                 {
                     Locale = DtoFactory.Build(locale), 
-                    Fish = this._fishDtoService.GetFishAtLocale(locale.Id), 
+                    Fish = fish, 
                     HeaderViewModel = headerViewModel, 
-                    PhotoGallery = this._photoGalleryViewModelFactory.Build(locale), 
-                    GenusPanelViewModel = this._genusPanelViewModelFactory.Build(1)
+                    PhotoGallery = this.photoGalleryViewModelFactory.Build(locale), 
+                    GenusPanelViewModel = this.genusPanelViewModelFactory.Build(1),
+                    Description = string.Format("Information and map for {0}, Lake {1}", locale.Name, locale.Lake.Name),
+                    Keywords = string.Format("Lake {0}, {1}", locale.Lake.Name,  string.Join(", ", fish.Select(x => x.Name)))
                 };
 
             return viewModel;

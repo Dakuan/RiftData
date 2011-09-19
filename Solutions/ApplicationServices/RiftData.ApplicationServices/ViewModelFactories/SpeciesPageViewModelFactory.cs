@@ -1,5 +1,7 @@
 ﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using System.Linq;
+
     using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Domain.Entities;
     using RiftData.Domain.Repositories;
@@ -51,7 +53,9 @@
                     HeaderViewModel = headerViewModel, 
                     Locales = this.localeDtoService.GetLocaleDtosFromSpecies(species.Id), 
                     PhotoGalleryViewModel = this.photoGalleryViewModelFactory.Build(species), 
-                    GenusPanelViewModel = genusPanel
+                    GenusPanelViewModel = genusPanel,
+                    Description = string.Format("Profile, photos and map for {0}", species.FullName),
+                    Keywords = "Lake " + species.Genus.GenusType.Lake.Name + ", " + species.Genus.Name + ", " + string.Join(", ", species.Genus.Species.Select(x => x.Name))
                 };
 
             return viewModel;
