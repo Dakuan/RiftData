@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using RiftData.ApplicationServices.DtoServices.Extensions;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts.Admin;
 using RiftData.Presentation.ViewModels.Admin;
@@ -21,7 +22,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
             var viewModel = new LocalePageViewModel
                                 {
-                                    Locales = locales.ToList(),
+                                    Locales = locales.ToList().ToDtoList(),
                                     LocalesSelectList = new SelectList(locales, "Id", "Name")
                                 };
 

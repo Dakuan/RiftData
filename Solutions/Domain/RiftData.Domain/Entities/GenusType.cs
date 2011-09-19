@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RiftData.Domain.Entities
 {
-    public class GenusType
+    public class GenusType : IEntity
     {
         public int Id { get; set; }
 

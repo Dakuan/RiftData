@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels.Admin
 {
@@ -10,7 +10,7 @@ namespace RiftData.Presentation.ViewModels.Admin
             this.SelectedView = SelectedView.GenusTypes;
         }
 
-        public GenusType GenusType { get; set; }
+        public GenusTypeDto GenusType { get; set; }
 
         public SelectList Lakes { get; set; }
     }

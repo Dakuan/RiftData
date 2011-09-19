@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DtoServices\Extensions\ToDtoListExtensions.cs" />
+    <Compile Include="DtoServices\Extensions\ToSelectListExtensions.cs" />
     <Compile Include="DtoServices\FishDtoService.cs" />
     <Compile Include="DtoServices\GenusDtoService.cs" />
     <Compile Include="DtoServices\GenusTypeDtoService.cs" />

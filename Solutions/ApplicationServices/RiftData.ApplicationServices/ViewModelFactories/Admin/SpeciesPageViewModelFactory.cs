@@ -1,4 +1,6 @@
-﻿using RiftData.Domain.Repositories;
+﻿using System.Linq;
+using RiftData.ApplicationServices.DtoServices.Extensions;
+using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts.Admin;
 using RiftData.Presentation.ViewModels.Admin;
 
@@ -17,7 +19,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             var viewModel = new SpeciesPageViewModel
                                 {
-                                    Species = this._speciesRepository.GetAll(),
+                                    Species = this._speciesRepository.GetAll().ToList().ToDtoList(),
                                 };
 
             return viewModel;

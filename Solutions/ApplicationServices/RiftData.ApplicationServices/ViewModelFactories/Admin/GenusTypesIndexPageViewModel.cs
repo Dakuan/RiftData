@@ -1,4 +1,6 @@
-﻿using RiftData.Domain.Repositories;
+﻿using System.Linq;
+using RiftData.ApplicationServices.DtoServices.Extensions;
+using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts.Admin;
 using RiftData.Presentation.ViewModels.Admin;
 
@@ -17,7 +19,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             var viewModel = new GenusTypeIndexPageViewModel
                                 {
-                                    GenusTypes = this._genusTypeRepository.GetAll()
+                                    GenusTypes = this._genusTypeRepository.GetAll().ToList().ToDtoList()
                                 };
 
             return viewModel;

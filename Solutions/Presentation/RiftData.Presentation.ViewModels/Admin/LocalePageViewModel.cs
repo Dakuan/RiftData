@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels.Admin
 {
@@ -11,7 +11,7 @@ namespace RiftData.Presentation.ViewModels.Admin
             SelectedView = SelectedView.Locales;
         }
 
-        public List<Locale> Locales { get; set; }
+        public IList<LocaleDto> Locales { get; set; }
 
         public SelectList LocalesSelectList { get; set; }
     }

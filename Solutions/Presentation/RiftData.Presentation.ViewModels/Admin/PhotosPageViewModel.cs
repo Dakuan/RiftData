@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels.Admin
 {
@@ -10,6 +10,6 @@ namespace RiftData.Presentation.ViewModels.Admin
             SelectedView = SelectedView.Photos;
         }
 
-        public IEnumerable<Photo> Photos { get; set; }
+        public IEnumerable<PhotoDto> Photos { get; set; }
     }
 }

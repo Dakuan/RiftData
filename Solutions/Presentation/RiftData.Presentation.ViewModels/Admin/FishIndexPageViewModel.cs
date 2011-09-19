@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels.Admin
 {
@@ -13,10 +13,10 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         public SelectList GenusList { get; set; }
 
-        public IEnumerable<Fish> Fish { get; set; }
+        public IEnumerable<FishDto> Fish { get; set; }
 
-        public GenusType Type { get; set; }
+        public GenusTypeDto Type { get; set; }
 
-        public IEnumerable<GenusType> GenusTypes { get; set; }
+        public IEnumerable<GenusTypeDto> GenusTypes { get; set; }
     }
 }

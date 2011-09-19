@@ -2,7 +2,7 @@
 
 namespace RiftData.Domain.Entities
 {
-    public class Genus 
+    public class Genus : IEntity
     {
         public int Id { get; set; }
 

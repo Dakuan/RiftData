@@ -1,6 +1,6 @@
 ﻿namespace RiftData.Domain.Entities
 {
-    public class Temperament
+    public class Temperament : IEntity
     {
         public int Id { get; set; }
 

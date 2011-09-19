@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RiftData.Domain.Entities
 {
-    public class Lake
+    public class Lake : IEntity
     {
         public int Id { get; set; }
 

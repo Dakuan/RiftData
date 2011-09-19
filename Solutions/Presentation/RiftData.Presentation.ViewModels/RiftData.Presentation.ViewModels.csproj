@@ -92,12 +92,6 @@
     <Compile Include="Dto\SpeciesDto.cs" />
     <Compile Include="SpeciesPageViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Domain\RiftData.Domain\RiftData.Domain.csproj">
-      <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
-      <Name>RiftData.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

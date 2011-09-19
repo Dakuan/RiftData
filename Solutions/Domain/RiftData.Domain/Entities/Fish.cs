@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RiftData.Domain.Entities
 {
-    public class Fish : IDescribable, IPhotoSubject
+    public class Fish : IEntity
     {
         public int Id { get; set; }
 

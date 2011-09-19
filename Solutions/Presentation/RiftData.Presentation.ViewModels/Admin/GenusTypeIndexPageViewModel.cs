@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels.Admin
 {
@@ -10,6 +10,6 @@ namespace RiftData.Presentation.ViewModels.Admin
             this.SelectedView = SelectedView.GenusTypes;
         }
 
-        public IEnumerable<GenusType> GenusTypes;
+        public IEnumerable<GenusTypeDto> GenusTypes;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using RiftData.Domain.Entities;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels.Admin
 {
@@ -29,6 +29,6 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         public string MessageBoxContentSource { get; set; }
 
-        public IEnumerable<Photo> Photos { get; set; }
+        public IEnumerable<PhotoDto> Photos { get; set; }
     }
 }

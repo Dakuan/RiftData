@@ -23,7 +23,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
             var viewModel = new GenusTypeUpdatePageViewModel
                                 {
                                     Lakes = new SelectList(this._lakeRepository.GetAll(), "Id", "Name", genusType.Lake.Id),
-                                    GenusType =genusType
+                                    GenusType = DtoFactory.Build(genusType)
                                 };
 
             return viewModel;

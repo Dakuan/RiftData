@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.DtoServices.Contracts;
+using RiftData.ApplicationServices.DtoServices.Extensions;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts;
 using RiftData.Presentation.ViewModels.Dto;
@@ -22,7 +23,7 @@ namespace RiftData.ApplicationServices.DtoServices
         {
             var fish = new List<FishDto>();
 
-            this._fishRepository.GetByLocale(localeId).ToList().ForEach(f => fish.Add(this._dtoFactory.Build(f)));
+            this._fishRepository.GetByLocale(localeId).ToList().ToDtoList();
 
             return fish;
         }

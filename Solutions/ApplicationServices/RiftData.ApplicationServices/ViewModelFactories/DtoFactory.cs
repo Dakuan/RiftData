@@ -8,23 +8,22 @@ namespace RiftData.ApplicationServices.ViewModelFactories
     using Presentation.Contracts;
     using Presentation.ViewModels.Dto;
 
-    public class DtoFactory : IDtoFactory
+    public static class DtoFactory
     {
-        public FishDto Build(Fish fish)
+        public static FishDto Build(Fish fish)
         {
             return new FishDto
                        {
                            Id = fish.Id,
                            Name = fish.Name,
-                           Locale = this.Build(fish.Locale),
+                           Locale = Build(fish.Locale),
                            UrlName = fish.UrlName,
-                           Species = this.Build(fish.Species),
+                           Species = Build(fish.Species),
                            Description = HttpUtility.HtmlDecode(fish.Description),
                            HasDescription = fish.HasDescription
                        };
         }
-
-        public LocaleDto Build(Locale locale)
+        public static LocaleDto Build(Locale locale)
         {
             return new LocaleDto
                        {
@@ -38,8 +37,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            HasDescription = locale.HasDescription
                        };
         }
-
-        public SpeciesDto Build(Species species)
+        public static SpeciesDto Build(Species species)
         {
             return new SpeciesDto
                        {
@@ -53,12 +51,11 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            SizeString = species.MaxSize == 0 || species.MinSize == 0 ? "Unknown" : string.Format("{0} - {1}cm", species.MinSize, species.MaxSize)
                        };
         }
-
-        public GenusDto Build(Genus genus)
+        public static GenusDto Build(Genus genus)
         {
             var speciesList = new List<SpeciesDto>();
 
-            genus.Species.ToList().ForEach(s => speciesList.Add(this.Build(s)));
+            genus.Species.ToList().ForEach(s => speciesList.Add(Build(s)));
 
             return new GenusDto
                        {
@@ -67,8 +64,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            Species = speciesList
                        };
         }
-
-        public PhotoDto Build(Photo photo)
+        public static PhotoDto Build(Photo photo)
         {
             return new PhotoDto
                        {
@@ -79,18 +75,16 @@ namespace RiftData.ApplicationServices.ViewModelFactories
                            SquareThumbnail = photo.SquareThumbnail
                        };
         }
-
-        public GenusTypeDto Build(GenusType genusType)
+        public static GenusTypeDto Build(GenusType genusType)
         {
             return new GenusTypeDto { Id = genusType.Id, Name = genusType.Name, Description = genusType.Description};
         }
-
-        public LakeDto Build(Lake lake)
+        public static LakeDto Build(Lake lake)
         {
 
             var genustypes = new List<GenusTypeDto>();
 
-            lake.GenusTypes.ToList().ForEach(g => genustypes.Add(this.Build(g)));
+            lake.GenusTypes.ToList().ForEach(g => genustypes.Add(Build(g)));
 
             return new LakeDto
                        {

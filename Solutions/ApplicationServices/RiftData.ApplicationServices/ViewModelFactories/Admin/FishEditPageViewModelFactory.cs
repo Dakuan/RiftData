@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RiftData.ApplicationServices.DtoServices.Extensions;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts.Admin;
 using RiftData.Presentation.ViewModels.Admin;
@@ -48,7 +49,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
                 Genus = new SelectList(this._genusRepository.GetAll(), "Id", "Name", fish.Genus.Id),
                 Species = new SelectList(this._speciesRepository.GetSpeciesWithGenus(fish.Genus.Id), "Id", "Name", fish.Species.Id),
                 Name = fish.Name,
-                Photos = fish.Photos.ToList(),
+                Photos = fish.Photos.ToList().ToDtoList(),
                 Description = HttpUtility.HtmlDecode(fish.Description),
                 MessageBoxVisible = showSuccessMessage != null ? true : false,
                 MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial"

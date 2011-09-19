@@ -1,6 +1,6 @@
 ﻿namespace RiftData.Domain.Entities
 {
-    public class Photo
+    public class Photo 
     {
         public int Id { get; set; }
 

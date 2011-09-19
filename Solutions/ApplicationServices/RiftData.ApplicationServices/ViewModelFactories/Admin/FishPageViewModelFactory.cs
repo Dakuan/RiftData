@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
+using RiftData.ApplicationServices.DtoServices.Extensions;
 using RiftData.Domain.Entities;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts.Admin;
@@ -28,11 +30,10 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
             var viewModel = new FishIndexPageViewModel
                                 {
                                     SelectedView = SelectedView.Fish, 
-                                    Fish = this._fishRepository.GetOfType(id),
-                                    Type = this._genusTypeRepository.Get(id),
+                                    Fish = this._fishRepository.GetOfType(id).ToList().ToDtoList(),
+                                    Type = DtoFactory.Build(this._genusTypeRepository.Get(id)),
                                     GenusList = new SelectList(genusList, "Id", "Name"),
-                                    GenusTypes = this._genusTypeRepository.GetAll()
-                                    
+                                    GenusTypes = this._genusTypeRepository.GetAll().ToList().ToDtoList()
                                 };
 
             return viewModel;
