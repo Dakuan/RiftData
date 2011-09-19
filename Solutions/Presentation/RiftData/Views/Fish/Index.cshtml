@@ -7,6 +7,7 @@
 @section CenterPanel{
 <div id="contentHolder">
     <h2>@Model.Fish.Name</h2>
+    <h3><a href="@Url.Action("Index", "Species", new { speciesFullName = Model.Fish.Species.UrlName })" title="view @Model.Fish.Species.Name">view species page</a></h3>
     @{if (Model.Fish.HasDescription)
         {
             <h3>Description:</h3>
