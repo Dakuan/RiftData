@@ -22,7 +22,7 @@
                                                                     .Selected(species.Id == Model.SelectedSpecies)
                                                                     .LinkHtmlAttributes(new { id = "species_" + species.Id })
                                                                     .ImageUrl(Url.Content("../Content/camera.png"))
-                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage" })
+                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage", alt =species.UrlName })
                                                                     .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
                                                             }
                                                             else
@@ -31,7 +31,7 @@
                                                                     .Selected(species.Id == Model.SelectedSpecies)
                                                                     .LinkHtmlAttributes(new { id = "species_" + species.Id })
                                                                     .ImageUrl(Url.Content("../Content/camera.png"))
-                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage", style = "display:none" })
+                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage", style = "display:none", alt = species.UrlName })
                                                                     .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
                                                             }
                                                         }
