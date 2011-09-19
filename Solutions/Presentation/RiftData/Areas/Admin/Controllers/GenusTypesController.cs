@@ -1,73 +1,75 @@
-﻿using System.Web.Mvc;
-using RiftData.Domain.Enums;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.Areas.Admin.Controllers
+﻿namespace RiftData.Areas.Admin.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Domain.Enums;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     [Authorize]
     public class GenusTypesController : Controller
     {
-        private readonly IGenusTypeIndexPageViewModelFactory _genusTypeIndexPageViewModelFactory;
-        private readonly IGenusTypesUpdatePageViewModelFactory _genusTypesUpdatePageViewModelFactory;
-        private readonly IGenusTypeRepository _genusTypeRepository;
-        private readonly IGenusTypeCreatePageViewModelFactory _genusTypeCreatePageViewModelFactory;
+        private readonly IGenusTypeCreatePageViewModelFactory genusTypeCreatePageViewModelFactory;
 
-        public GenusTypesController(IGenusTypeIndexPageViewModelFactory genusTypeIndexPageViewModelFactory, IGenusTypesUpdatePageViewModelFactory genusTypesUpdatePageViewModelFactory, IGenusTypeRepository genusTypeRepository, IGenusTypeCreatePageViewModelFactory genusTypeCreatePageViewModelFactory)
-        {
-            _genusTypeIndexPageViewModelFactory = genusTypeIndexPageViewModelFactory;
-            _genusTypesUpdatePageViewModelFactory = genusTypesUpdatePageViewModelFactory;
-            _genusTypeRepository = genusTypeRepository;
-            _genusTypeCreatePageViewModelFactory = genusTypeCreatePageViewModelFactory;
-        }
+        private readonly IGenusTypeIndexPageViewModelFactory genusTypeIndexPageViewModelFactory;
 
-        public ActionResult Index()
+        private readonly IGenusTypeRepository genusTypeRepository;
+
+        private readonly IGenusTypesUpdatePageViewModelFactory genusTypesUpdatePageViewModelFactory;
+
+        public GenusTypesController(
+            IGenusTypeIndexPageViewModelFactory genusTypeIndexPageViewModelFactory, 
+            IGenusTypesUpdatePageViewModelFactory genusTypesUpdatePageViewModelFactory, 
+            IGenusTypeRepository genusTypeRepository, 
+            IGenusTypeCreatePageViewModelFactory genusTypeCreatePageViewModelFactory)
         {
-            return View(this._genusTypeIndexPageViewModelFactory.Build());
+            this.genusTypeIndexPageViewModelFactory = genusTypeIndexPageViewModelFactory;
+            this.genusTypesUpdatePageViewModelFactory = genusTypesUpdatePageViewModelFactory;
+            this.genusTypeRepository = genusTypeRepository;
+            this.genusTypeCreatePageViewModelFactory = genusTypeCreatePageViewModelFactory;
         }
 
         public ActionResult Create()
         {
-            return View(this._genusTypeCreatePageViewModelFactory.Build());
+            return this.View(this.genusTypeCreatePageViewModelFactory.Build());
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(GenusTypeCreateFormViewModel viewModel)
         {
-            TryUpdateModel(viewModel);
+            this.TryUpdateModel(viewModel);
 
-            var result = this._genusTypeRepository.Add(viewModel.Name, viewModel.Lake);
+            var result = this.genusTypeRepository.Add(viewModel.Name, viewModel.Lake);
 
-            return new JsonResult
-                {
-                    Data = result == AddResult.Success ? true : false
-                };
+            return new JsonResult { Data = result == AddResult.Success };
+        }
+
+        public ActionResult Delete(int id)
+        {
+            this.genusTypeRepository.Delete(id);
+
+            return this.RedirectToAction("Index");
+        }
+
+        public ActionResult Index()
+        {
+            return this.View(this.genusTypeIndexPageViewModelFactory.Build());
         }
 
         public ActionResult Update(int id)
         {
-            return View(this._genusTypesUpdatePageViewModelFactory.Build(id));
+            return this.View(this.genusTypesUpdatePageViewModelFactory.Build(id));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Update(GenusTypeUpdateFormViewModel viewModel)
         {
-            TryUpdateModel(viewModel);
+            this.TryUpdateModel(viewModel);
 
-            var result = this._genusTypeRepository.Update(viewModel.Id, viewModel.Name, viewModel.Lake);
+            var result = this.genusTypeRepository.Update(viewModel.Id, viewModel.Name, viewModel.Lake);
 
-            return new JsonResult
-                       {
-                           Data = result == UpdateResult.Success ? true : false
-                       };
-        }
-
-        public ActionResult Delete(int id)
-        {
-            this._genusTypeRepository.Delete(id);
-
-            return RedirectToAction("Index");
+            return new JsonResult { Data = result == UpdateResult.Success };
         }
     }
 }

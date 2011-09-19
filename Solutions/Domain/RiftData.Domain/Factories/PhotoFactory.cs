@@ -1,7 +1,9 @@
-﻿using FlickrNet;
-using Photo = RiftData.Domain.Entities.Photo;
-namespace RiftData.Domain.Factories
+﻿namespace RiftData.Domain.Factories
 {
+    using FlickrNet;
+
+    using Photo = RiftData.Domain.Entities.Photo;
+
     public class PhotoFactory : IPhotoFactory
     {
         public Photo CreatePhoto(int id)
@@ -14,14 +16,14 @@ namespace RiftData.Domain.Factories
         public Photo CreatePhoto(PhotoInfo photoInfo)
         {
             return new Photo
-            {
-                FlickrId = photoInfo.PhotoId,
-                MediumUrl = photoInfo.MediumUrl,
-                SquareThumbnail = photoInfo.SquareThumbnailUrl,
-                ThumbNailUrl = photoInfo.ThumbnailUrl,
-                LargeUrl = photoInfo.LargeUrl,
-                SmallUrl = photoInfo.SmallUrl
-            };
+                {
+                    FlickrId = photoInfo.PhotoId, 
+                    MediumUrl = photoInfo.MediumUrl, 
+                    SquareThumbnail = photoInfo.SquareThumbnailUrl, 
+                    ThumbNailUrl = photoInfo.ThumbnailUrl, 
+                    LargeUrl = photoInfo.LargeUrl, 
+                    SmallUrl = photoInfo.SmallUrl
+                };
         }
     }
 }

@@ -1,23 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Extensions;
-using RiftData.Domain.Repositories;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Extensions;
+    using RiftData.Domain.Repositories;
+
     public class LakeRepository : ILakeRepository
     {
         private readonly RiftDataDataContext _dataContext;
 
         public LakeRepository(RiftDataDataContext dataContext)
         {
-            _dataContext = dataContext;
-        }
-
-        public Lake GetLakeFromSpeciesId(int speciesId)
-        {
-            return this._dataContext.Lakes.First(l => l.GenusTypes.Any(t => t.Genus.Any(g => g.Species.Any(s => s.Id == speciesId))));
+            this._dataContext = dataContext;
         }
 
         public IList<Lake> GetAll()
@@ -33,6 +29,13 @@ namespace RiftData.Infrastructure.Data.Repositories
         public Lake GetFromName(string lakeName)
         {
             return this._dataContext.Lakes.First(l => string.Equals(lakeName, l.Name));
+        }
+
+        public Lake GetLakeFromSpeciesId(int speciesId)
+        {
+            return
+                this._dataContext.Lakes.First(
+                    l => l.GenusTypes.Any(t => t.Genus.Any(g => g.Species.Any(s => s.Id == speciesId))));
         }
     }
 }

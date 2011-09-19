@@ -1,12 +1,13 @@
-﻿using System.Web.Mvc;
-using RiftData.Presentation.Contracts;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
-    //[OutputCache(CacheProfile = "Daily")]
+    using System.Web.Mvc;
+
+    using RiftData.Presentation.Contracts;
+
+    // [OutputCache(CacheProfile = "Daily")]
     public class HomeController : Controller
     {
-        private IHomePageViewModelFactory homePageViewModelFactory;
+        private readonly IHomePageViewModelFactory homePageViewModelFactory;
 
         public HomeController(IHomePageViewModelFactory homePageViewModelFactory)
         {

@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Enums;
-using RiftData.Domain.Extensions;
-using RiftData.Domain.Repositories;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Enums;
+    using RiftData.Domain.Extensions;
+    using RiftData.Domain.Repositories;
+
     public class GenusRepository : IGenusRepository
     {
         private readonly RiftDataDataContext dataContext;
@@ -17,32 +18,9 @@ namespace RiftData.Infrastructure.Data.Repositories
             this.dataContext = dataContext;
         }
 
-        public IList<Genus> GetOfIdWithFish(int genusTypeId)
-        {          
-            var list = dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId && dataContext.Fish.Any(f => f.Genus.Id == g.Id));
-
-            return list.SortGenus().ToList();
-        }
-
-        public IList<Genus> GetAll()
-        {
-            return dataContext.Genus.SortGenus().ToList();
-        }
-
-        public IList<Genus> GetOfType(int genusTypeId)
-        {
-            return this.dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId).ToList();
-        }
-
-        public Genus Get(int genusId)
-        {
-            return dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
-        }
-
         public AddResult Add(string name)
         {
-            //todo add genus typeId to genus forms
-
+            // todo add genus typeId to genus forms
             return this.Add(name, 1);
         }
 
@@ -50,9 +28,12 @@ namespace RiftData.Infrastructure.Data.Repositories
         {
             var genusType = this.dataContext.GenusTypes.First(t => t.Id == genusTypeId);
 
-            if (this.dataContext.Genus.Any(g => g.Name == name)) return AddResult.AlreadyExists;
+            if (this.dataContext.Genus.Any(g => g.Name == name))
+            {
+                return AddResult.AlreadyExists;
+            }
 
-            this.dataContext.Genus.Add(new Genus { Name = name, GenusType = genusType});
+            this.dataContext.Genus.Add(new Genus { Name = name, GenusType = genusType });
 
             try
             {
@@ -63,24 +44,6 @@ namespace RiftData.Infrastructure.Data.Repositories
             catch (Exception ex)
             {
                 return AddResult.Failure;
-            }
-        }
-
-        public UpdateResult Update(int genusId, string name)
-        {
-            var genus = dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
-
-            genus.Name = name;
-
-            try
-            {
-                dataContext.SaveChanges();
-
-                return UpdateResult.Success;
-            }
-            catch (Exception)
-            {
-                return UpdateResult.Failure;
             }
         }
 
@@ -100,6 +63,48 @@ namespace RiftData.Infrastructure.Data.Repositories
             }
 
             return DeleteResult.Success;
+        }
+
+        public Genus Get(int genusId)
+        {
+            return this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
+        }
+
+        public IList<Genus> GetAll()
+        {
+            return this.dataContext.Genus.SortGenus().ToList();
+        }
+
+        public IList<Genus> GetOfIdWithFish(int genusTypeId)
+        {
+            var list =
+                this.dataContext.Genus.Where(
+                    g => g.GenusType.Id == genusTypeId && this.dataContext.Fish.Any(f => f.Genus.Id == g.Id));
+
+            return list.SortGenus().ToList();
+        }
+
+        public IList<Genus> GetOfType(int genusTypeId)
+        {
+            return this.dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId).ToList();
+        }
+
+        public UpdateResult Update(int genusId, string name)
+        {
+            var genus = this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
+
+            genus.Name = name;
+
+            try
+            {
+                this.dataContext.SaveChanges();
+
+                return UpdateResult.Success;
+            }
+            catch (Exception)
+            {
+                return UpdateResult.Failure;
+            }
         }
     }
 }

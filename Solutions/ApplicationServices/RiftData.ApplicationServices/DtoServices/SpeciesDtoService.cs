@@ -13,7 +13,7 @@
 
         public SpeciesDtoService(ISpeciesRepository speciesRepository)
         {
-            _speciesRepository = speciesRepository;
+            this._speciesRepository = speciesRepository;
         }
 
         public IEnumerable<SpeciesDto> GetSpeciesAtLocale(int localeId)

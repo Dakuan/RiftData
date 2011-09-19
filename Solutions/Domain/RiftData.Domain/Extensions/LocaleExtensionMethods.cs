@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RiftData.Domain.Entities;
-
-namespace RiftData.Domain.Extensions
+﻿namespace RiftData.Domain.Extensions
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using RiftData.Domain.Entities;
+
     public static class LocaleExtensionMethods
     {
         public static IEnumerable<Locale> SortLocales(this IEnumerable<Locale> unsortedList)

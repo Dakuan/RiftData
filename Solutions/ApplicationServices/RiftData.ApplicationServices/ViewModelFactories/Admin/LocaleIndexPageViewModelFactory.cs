@@ -11,7 +11,7 @@
 
         public LocaleIndexPageViewModelFactory(ILocalesRepository localesRepository)
         {
-            _localesRepository = localesRepository;
+            this._localesRepository = localesRepository;
         }
 
         public LocalePageViewModel Build()
@@ -19,10 +19,9 @@
             var locales = this._localesRepository.GetAll();
 
             var viewModel = new LocalePageViewModel
-                                {
-                                    Locales = locales.ToDtoList(),
-                                    LocalesSelectList = locales.ToSelectList("select a locale")
-                                };
+                {
+                   Locales = locales.ToDtoList(), LocalesSelectList = locales.ToSelectList("select a locale") 
+                };
 
             return viewModel;
         }

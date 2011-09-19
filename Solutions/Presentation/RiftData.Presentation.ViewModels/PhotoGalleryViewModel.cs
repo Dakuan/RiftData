@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.Presentation.ViewModels
+﻿namespace RiftData.Presentation.ViewModels
 {
+    using System.Collections.Generic;
+
+    using RiftData.Presentation.ViewModels.Dto;
+
     public class PhotoGalleryViewModel
     {
-        public string Name { get; set; }
-
-        public IList<PhotoDto> Photos { get; set; }
-
         public bool HasPhotos
         {
             get
@@ -16,5 +13,9 @@ namespace RiftData.Presentation.ViewModels
                 return this.Photos.Count > 0;
             }
         }
+
+        public string Name { get; set; }
+
+        public IList<PhotoDto> Photos { get; set; }
     }
 }

@@ -1,12 +1,11 @@
-﻿using System;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.Presentation.ViewModels
+﻿namespace RiftData.Presentation.ViewModels
 {
+    using RiftData.Presentation.ViewModels.Dto;
+
     public class LakeViewModel : ViewModelBase, IPanelViewModel
     {
-        public LakeDto Lake { get; set; }
-
         public GenusPanelViewModel GenusPanelViewModel { get; set; }
+
+        public LakeDto Lake { get; set; }
     }
 }

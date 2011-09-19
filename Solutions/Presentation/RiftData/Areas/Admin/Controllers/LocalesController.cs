@@ -1,65 +1,71 @@
-﻿using System.Web.Mvc;
-using RiftData.Domain.Enums;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.Areas.Admin.Controllers
+﻿namespace RiftData.Areas.Admin.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Domain.Enums;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     [Authorize]
     public class LocalesController : Controller
     {
-         private readonly ILocaleIndexPageViewModelFactory _localeIndexPageViewModelFactory;
-         private readonly ILocalesRepository _localesRepository;
-         private readonly ILocaleUpdatePageViewModelFactory _localeUpdatePageViewModelFactory;
+        private readonly ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory;
 
-         public LocalesController(ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory, ILocalesRepository localesRepository, ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory)
+        private readonly ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory;
+
+        private readonly ILocalesRepository localesRepository;
+
+        public LocalesController(
+            ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory, 
+            ILocalesRepository localesRepository, 
+            ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory)
         {
-            _localeIndexPageViewModelFactory = localeIndexPageViewModelFactory;
-            _localesRepository = localesRepository;
-            _localeUpdatePageViewModelFactory = localeUpdatePageViewModelFactory;
+            this.localeIndexPageViewModelFactory = localeIndexPageViewModelFactory;
+            this.localesRepository = localesRepository;
+            this.localeUpdatePageViewModelFactory = localeUpdatePageViewModelFactory;
         }
 
-         public ActionResult Index()
+        public ActionResult Create()
         {
-            return View(this._localeIndexPageViewModelFactory.Build());
+            return this.View(new NavigationPartialViewModel { SelectedView = SelectedView.Locales });
         }
 
-         public ActionResult Create()
-         {
-             return View(new NavigationPartialViewModel { SelectedView = SelectedView.Locales });
-         }
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Create(LocaleUpdateFormViewModel viewModel)
+        {
+            this.TryUpdateModel(viewModel);
 
-         [AcceptVerbs(HttpVerbs.Post)]
-         public ActionResult Create(LocaleUpdateFormViewModel viewModel)
-         {
-             TryUpdateModel(viewModel);
+            var result = this.localesRepository.Add(viewModel.Name, viewModel.Latitude, viewModel.Longitude);
 
-             var result = this._localesRepository.Add(viewModel.Name, viewModel.Latitude, viewModel.Longitude);
+            return new JsonResult { Data = result };
+        }
 
-             return new JsonResult { Data = result };
-         }
+        public ActionResult Delete(int id)
+        {
+            this.localesRepository.Delete(id);
+
+            return this.RedirectToAction("Index");
+        }
+
+        public ActionResult Index()
+        {
+            return this.View(this.localeIndexPageViewModelFactory.Build());
+        }
 
         public ActionResult Update(int id)
         {
-            return View(this._localeUpdatePageViewModelFactory.Build(id));
+            return this.View(this.localeUpdatePageViewModelFactory.Build(id));
         }
 
-         [AcceptVerbs(HttpVerbs.Post)]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Update(LocaleUpdateFormViewModel vm)
         {
-            TryUpdateModel(vm);
+            this.TryUpdateModel(vm);
 
-             var result = this._localesRepository.Update(vm.Id, vm.Name, vm.Latitude, vm.Longitude);
+            var result = this.localesRepository.Update(vm.Id, vm.Name, vm.Latitude, vm.Longitude);
 
-             return result == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
+            return result == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
-
-         public ActionResult Delete(int id)
-         {
-             this._localesRepository.Delete(id);
-
-             return RedirectToAction("Index");
-         }
     }
 }

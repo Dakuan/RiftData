@@ -4,12 +4,12 @@
 
     public class GenusDto
     {
+        public int GenusTypeId { get; set; }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
 
         public IList<SpeciesDto> Species { get; set; }
-
-        public int GenusTypeId { get; set; }
     }
 }

@@ -1,65 +1,73 @@
-﻿using System.Web.Mvc;
-using RiftData.Domain.Enums;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.Areas.Admin.Controllers
+﻿namespace RiftData.Areas.Admin.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Domain.Enums;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     [Authorize]
     public class SpeciesController : Controller
     {
-         private readonly ISpeciesPageViewModelFactory _speciesPageViewModelFactory;
-         private readonly ISpeciesEditPageViewModelFactory _speciesEditPageViewModelFactory;
-         private readonly ISpeciesRepository _speciesRepository;
+        private readonly ISpeciesEditPageViewModelFactory speciesEditPageViewModelFactory;
 
-         public SpeciesController(ISpeciesPageViewModelFactory speciesPageViewModelFactory, ISpeciesEditPageViewModelFactory speciesEditPageViewModelFactory, ISpeciesRepository speciesRepository)
-        {
-            _speciesPageViewModelFactory = speciesPageViewModelFactory;
-            _speciesEditPageViewModelFactory = speciesEditPageViewModelFactory;
-             _speciesRepository = speciesRepository;
-        }
+        private readonly ISpeciesPageViewModelFactory speciesPageViewModelFactory;
 
-         public ActionResult Index()
+        private readonly ISpeciesRepository speciesRepository;
+
+        public SpeciesController(
+            ISpeciesPageViewModelFactory speciesPageViewModelFactory, 
+            ISpeciesEditPageViewModelFactory speciesEditPageViewModelFactory, 
+            ISpeciesRepository speciesRepository)
         {
-            return View(this._speciesPageViewModelFactory.Build());
+            this.speciesPageViewModelFactory = speciesPageViewModelFactory;
+            this.speciesEditPageViewModelFactory = speciesEditPageViewModelFactory;
+            this.speciesRepository = speciesRepository;
         }
 
         public ActionResult Create()
         {
-            return View("Update", this._speciesEditPageViewModelFactory.Build());
+            return this.View("Update", this.speciesEditPageViewModelFactory.Build());
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(SpeciesEditFormViewModel vm)
         {
-            //TryUpdateModel(vm);
-
-            var addResult = this._speciesRepository.Add(vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
+            // TryUpdateModel(vm);
+            var addResult = this.speciesRepository.Add(
+                vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
 
             return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
 
+        public ActionResult Delete(int id)
+        {
+            this.speciesRepository.Delete(id);
+
+            return this.RedirectToAction("Index");
+        }
+
+        public ActionResult Index()
+        {
+            return this.View(this.speciesPageViewModelFactory.Build());
+        }
+
         public ActionResult Update(int id)
         {
-            return View(this._speciesEditPageViewModelFactory.Build(id));
+            return this.View(this.speciesEditPageViewModelFactory.Build(id));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Update(SpeciesEditFormViewModel vm)
         {
-            //TryUpdateModel(vm);
+            // TryUpdateModel(vm);
+            var updateResult = this.speciesRepository.Update(
+                vm.Id, vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
 
-            var updateResult = this._speciesRepository.Update(vm.Id, vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
-
-            return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
-        }
-
-        public ActionResult Delete(int id)
-        {
-            this._speciesRepository.Delete(id);
-
-            return RedirectToAction("Index");
+            return updateResult == UpdateResult.Success
+                       ? new JsonResult { Data = true }
+                       : new JsonResult { Data = false };
         }
     }
 }

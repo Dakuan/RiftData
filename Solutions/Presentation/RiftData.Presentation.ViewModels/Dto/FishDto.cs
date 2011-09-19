@@ -4,24 +4,24 @@
 
     public class FishDto
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public bool HasPhotos { get; set; }
-
-        public string UrlName { get; set; }
-
         public string Description { get; set; }
-
-        public bool HasDescription { get; set; }
 
         public GenusDto Genus { get; set; }
 
-        public SpeciesDto Species { get; set; }
+        public bool HasDescription { get; set; }
+
+        public bool HasPhotos { get; set; }
+
+        public int Id { get; set; }
 
         public LocaleDto Locale { get; set; }
 
+        public string Name { get; set; }
+
         public IEnumerable<PhotoDto> Photos { get; set; }
+
+        public SpeciesDto Species { get; set; }
+
+        public string UrlName { get; set; }
     }
 }

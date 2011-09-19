@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using FlickrNet;
-
-namespace RiftData.Infrastructure.Flickr
+﻿namespace RiftData.Infrastructure.Flickr
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Web;
+
+    using FlickrNet;
+
     public class FlickrInfrastructure : IFlickrInfrastructure
     {
-        private FlickrNet.Flickr flickrApp;
+        private readonly Flickr flickrApp;
 
-        public FlickrInfrastructure(FlickrNet.Flickr flickrApp)
+        public FlickrInfrastructure(Flickr flickrApp)
         {
             this.flickrApp = flickrApp;
 
@@ -19,6 +20,11 @@ namespace RiftData.Infrastructure.Flickr
             flickrApp.ApiSecret = "1ef6f20185274ebe";
 
             flickrApp.AuthToken = "72157626863345193-fac9def5c6ed227d";
+        }
+
+        public void DeletePhoto(string id)
+        {
+            this.flickrApp.PhotosDelete(id);
         }
 
         public PhotoInfo GetPhoto(string photoId)
@@ -32,18 +38,19 @@ namespace RiftData.Infrastructure.Flickr
             return task.Result;
         }
 
-        public Dictionary<int, PhotoInfo>GetPhotos(Dictionary<int, string> items)
+        public Dictionary<int, PhotoInfo> GetPhotos(Dictionary<int, string> items)
         {
             var tasks = new Dictionary<int, Task<PhotoInfo>>();
 
-            items.ToList().ForEach(i =>
-                                       {
-                                           var task = new Task<PhotoInfo>(() => this.flickrApp.PhotosGetInfo(i.Value));
+            items.ToList().ForEach(
+                i =>
+                    {
+                        var task = new Task<PhotoInfo>(() => this.flickrApp.PhotosGetInfo(i.Value));
 
-                                           tasks.Add(i.Key, task);
+                        tasks.Add(i.Key, task);
 
-                                           task.Start();
-                                       });
+                        task.Start();
+                    });
 
             Task.WaitAll();
 
@@ -56,14 +63,20 @@ namespace RiftData.Infrastructure.Flickr
 
         public string UploadPhoto(HttpPostedFileBase file, string name)
         {
-            var id = this.flickrApp.UploadPicture(file.InputStream, file.FileName, file.FileName, string.Empty, string.Empty, true, true, false, ContentType.Photo, SafetyLevel.Safe, HiddenFromSearch.Visible);
+            var id = this.flickrApp.UploadPicture(
+                file.InputStream, 
+                file.FileName, 
+                file.FileName, 
+                string.Empty, 
+                string.Empty, 
+                true, 
+                true, 
+                false, 
+                ContentType.Photo, 
+                SafetyLevel.Safe, 
+                HiddenFromSearch.Visible);
 
             return id;
-        }
-
-        public void DeletePhoto(string id)
-        {
-            this.flickrApp.PhotosDelete(id);
         }
     }
 }

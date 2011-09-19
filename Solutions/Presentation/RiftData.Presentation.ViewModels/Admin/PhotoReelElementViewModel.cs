@@ -2,9 +2,9 @@
 {
     public class PhotoReelElementViewModel
     {
-        public int PhotoId { get; set; }
-
         public int FishId { get; set; }
+
+        public int PhotoId { get; set; }
 
         public string PhotoUrl { get; set; }
     }

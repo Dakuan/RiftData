@@ -1,16 +1,17 @@
-﻿using System.Web.Mvc;
-using RiftData.Presentation.Contracts;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
-    //[OutputCache(CacheProfile = "Daily")]
+    using System.Web.Mvc;
+
+    using RiftData.Presentation.Contracts;
+
+    // [OutputCache(CacheProfile = "Daily")]
     public class SpeciesController : Controller
     {
         private readonly ISpeciesPageViewModelFactory _speciesPageViewModelFactory;
 
         public SpeciesController(ISpeciesPageViewModelFactory speciesPageViewModelFactory)
         {
-            _speciesPageViewModelFactory = speciesPageViewModelFactory;
+            this._speciesPageViewModelFactory = speciesPageViewModelFactory;
         }
 
         public ActionResult Index(string speciesFullName)

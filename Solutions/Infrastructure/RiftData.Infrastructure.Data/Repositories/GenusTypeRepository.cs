@@ -1,25 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Enums;
-using RiftData.Domain.Repositories;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Enums;
+    using RiftData.Domain.Repositories;
+
     public class GenusTypeRepository : IGenusTypeRepository
     {
         private readonly RiftDataDataContext dataContext;
 
         public GenusTypeRepository(RiftDataDataContext dataContext)
         {
-           this.dataContext = dataContext;
+            this.dataContext = dataContext;
         }
 
-        public GenusType GetByName(string genusTypeName)
+        public AddResult Add(string name, int lakeId)
         {
-            return this.dataContext.GenusTypes.Where(t => string.Equals(genusTypeName, t.Name)).First();
+            if (this.dataContext.GenusTypes.Any(g => g.Name == name))
+            {
+                return AddResult.AlreadyExists;
+            }
+
+            var lake = this.dataContext.Lakes.First(l => l.Id == lakeId);
+
+            var genusType = new GenusType { Name = name, Lake = lake };
+            try
+            {
+                this.dataContext.GenusTypes.Add(genusType);
+
+                this.dataContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return AddResult.Failure;
+            }
+
+            return AddResult.Success;
+        }
+
+        public DeleteResult Delete(int genusTypeId)
+        {
+            try
+            {
+                var genusType = this.Get(genusTypeId);
+
+                if (genusType == null)
+                {
+                    return DeleteResult.DoesNotExist;
+                }
+
+                this.dataContext.GenusTypes.Remove(genusType);
+
+                this.dataContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return DeleteResult.Failure;
+            }
+
+            return DeleteResult.Success;
+        }
+
+        public GenusType Get(int genusTypeId)
+        {
+            return this.dataContext.GenusTypes.First(g => g.Id == genusTypeId);
         }
 
         public IList<GenusType> GetAll()
@@ -27,9 +74,9 @@ namespace RiftData.Infrastructure.Data.Repositories
             return this.dataContext.GenusTypes.ToList();
         }
 
-        public GenusType Get(int genusTypeId)
+        public GenusType GetByName(string genusTypeName)
         {
-            return this.dataContext.GenusTypes.First(g => g.Id == genusTypeId);
+            return this.dataContext.GenusTypes.Where(t => string.Equals(genusTypeName, t.Name)).First();
         }
 
         public GenusType GetFromSpecies(int speciesId)
@@ -49,60 +96,14 @@ namespace RiftData.Infrastructure.Data.Repositories
 
                 genusType.Lake = lake;
 
-                dataContext.SaveChanges();
+                this.dataContext.SaveChanges();
             }
-
             catch (Exception)
             {
                 return UpdateResult.Failure;
             }
 
             return UpdateResult.Success;
-        }
-
-        public DeleteResult Delete(int genusTypeId)
-        {
-            try
-            {
-                var genusType = this.Get(genusTypeId);
-
-                if (genusType == null) return DeleteResult.DoesNotExist;
-
-                this.dataContext.GenusTypes.Remove(genusType);
-
-                this.dataContext.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return DeleteResult.Failure;
-            }
-
-            return DeleteResult.Success;
-        }
-
-        public AddResult Add(string name, int lakeId)
-        {
-            if (this.dataContext.GenusTypes.Any(g => g.Name == name)) return AddResult.AlreadyExists;
-
-            var lake = this.dataContext.Lakes.First(l => l.Id == lakeId);
-
-            var genusType = new GenusType
-            {
-                Name = name,
-                Lake = lake
-            };
-            try
-            {
-                this.dataContext.GenusTypes.Add(genusType);
-
-                this.dataContext.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return AddResult.Failure;
-            }
-
-            return AddResult.Success;
         }
     }
 }

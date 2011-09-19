@@ -1,20 +1,19 @@
-﻿using System;
-using Castle.Core;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-
-namespace RiftData.Infrastructure.Data.Installers
+﻿namespace RiftData.Infrastructure.Data.Installers
 {
+    using System;
+
+    using Castle.Core;
+    using Castle.MicroKernel.Registration;
+    using Castle.MicroKernel.SubSystems.Configuration;
+    using Castle.Windsor;
+
     public class RepositoriesInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(AllTypes.FromThisAssembly()
-                                .Pick()
-                                .If(IsRepository)
-                                .WithService.DefaultInterface()
-                                .Configure(x => x.LifeStyle.Is(LifestyleType.Transient)));
+            container.Register(
+                AllTypes.FromThisAssembly().Pick().If(IsRepository).WithService.DefaultInterface().Configure(
+                    x => x.LifeStyle.Is(LifestyleType.Transient)));
         }
 
         private static bool IsRepository(Type type)

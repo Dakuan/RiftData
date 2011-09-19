@@ -2,8 +2,8 @@
 {
     public class GenusTypeCreateFormViewModel
     {
-        public string Name { get; set; }
-
         public int Lake { get; set; }
+
+        public string Name { get; set; }
     }
 }

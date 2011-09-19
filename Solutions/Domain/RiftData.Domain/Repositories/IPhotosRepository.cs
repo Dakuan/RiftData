@@ -1,20 +1,21 @@
-﻿using System.Collections.Generic;
-using System.Web;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Enums;
-
-namespace RiftData.Domain.Repositories
+﻿namespace RiftData.Domain.Repositories
 {
+    using System.Collections.Generic;
+    using System.Web;
+
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Enums;
+
     public interface IPhotosRepository
     {
-        IList<Photo> GetForSpecies(int speciesId);
-
-        IList<Photo> GetForLocale(int localeId);
+        Photo Add(HttpPostedFileBase file, int id);
 
         DeleteResult Delete(int photoId);
 
-        Photo Add(HttpPostedFileBase file, int id);
-
         DeleteResult Delete(string flickrId);
+
+        IList<Photo> GetForLocale(int localeId);
+
+        IList<Photo> GetForSpecies(int speciesId);
     }
 }

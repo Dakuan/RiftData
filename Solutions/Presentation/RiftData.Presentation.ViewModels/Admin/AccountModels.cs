@@ -1,20 +1,21 @@
-﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Web.Security;
-
-namespace RiftData.Presentation.ViewModels.Admin
+﻿namespace RiftData.Presentation.ViewModels.Admin
 {
+    using System;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Globalization;
+    using System.Web.Security;
 
     #region Models
-    [PropertiesMustMatch("NewPassword", "ConfirmPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+
+    [PropertiesMustMatch("NewPassword", "ConfirmPassword", 
+        ErrorMessage = "The new password and confirmation password do not match.")]
     public class ChangePasswordModel
     {
         [Required]
         [DataType(DataType.Password)]
-        [DisplayName("Current password")]
-        public string OldPassword { get; set; }
+        [DisplayName("Confirm new password")]
+        public string ConfirmPassword { get; set; }
 
         [Required]
         [ValidatePasswordLength]
@@ -24,16 +25,12 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         [Required]
         [DataType(DataType.Password)]
-        [DisplayName("Confirm new password")]
-        public string ConfirmPassword { get; set; }
+        [DisplayName("Current password")]
+        public string OldPassword { get; set; }
     }
 
     public class LogOnModel
     {
-        [Required]
-        [DisplayName("User name")]
-        public string UserName { get; set; }
-
         [Required]
         [DataType(DataType.Password)]
         [DisplayName("Password")]
@@ -41,14 +38,20 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         [DisplayName("Remember me?")]
         public bool RememberMe { get; set; }
-    }
 
-    [PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
-    public class RegisterModel
-    {
         [Required]
         [DisplayName("User name")]
         public string UserName { get; set; }
+    }
+
+    [PropertiesMustMatch("Password", "ConfirmPassword", 
+        ErrorMessage = "The password and confirmation password do not match.")]
+    public class RegisterModel
+    {
+        [Required]
+        [DataType(DataType.Password)]
+        [DisplayName("Confirm password")]
+        public string ConfirmPassword { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
@@ -62,13 +65,14 @@ namespace RiftData.Presentation.ViewModels.Admin
         public string Password { get; set; }
 
         [Required]
-        [DataType(DataType.Password)]
-        [DisplayName("Confirm password")]
-        public string ConfirmPassword { get; set; }
+        [DisplayName("User name")]
+        public string UserName { get; set; }
     }
+
     #endregion
 
     #region Services
+
     // The FormsAuthentication type is sealed and contains static members, so it is difficult to
     // unit test code that calls its members. The interface and helper class below demonstrate
     // how to create an abstract wrapper around such a type in order to make the AccountController
@@ -78,9 +82,10 @@ namespace RiftData.Presentation.ViewModels.Admin
     {
         int MinPasswordLength { get; }
 
-        bool ValidateUser(string userName, string password);
-        MembershipCreateStatus CreateUser(string userName, string password, string email);
         bool ChangePassword(string userName, string oldPassword, string newPassword);
+
+        MembershipCreateStatus CreateUser(string userName, string password, string email);
+        bool ValidateUser(string userName, string password);
     }
 
     public class AccountMembershipService : IMembershipService
@@ -94,47 +99,39 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         public AccountMembershipService(MembershipProvider provider)
         {
-            _provider = provider ?? Membership.Provider;
+            this._provider = provider ?? Membership.Provider;
         }
 
         public int MinPasswordLength
         {
             get
             {
-                return _provider.MinRequiredPasswordLength;
+                return this._provider.MinRequiredPasswordLength;
             }
-        }
-
-        public bool ValidateUser(string userName, string password)
-        {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
-            if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
-
-            return _provider.ValidateUser(userName, password);
-        }
-
-        public MembershipCreateStatus CreateUser(string userName, string password, string email)
-        {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
-            if (String.IsNullOrEmpty(password)) throw new ArgumentException("Value cannot be null or empty.", "password");
-            if (String.IsNullOrEmpty(email)) throw new ArgumentException("Value cannot be null or empty.", "email");
-
-            MembershipCreateStatus status;
-            _provider.CreateUser(userName, password, email, null, null, true, null, out status);
-            return status;
         }
 
         public bool ChangePassword(string userName, string oldPassword, string newPassword)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
-            if (String.IsNullOrEmpty(oldPassword)) throw new ArgumentException("Value cannot be null or empty.", "oldPassword");
-            if (String.IsNullOrEmpty(newPassword)) throw new ArgumentException("Value cannot be null or empty.", "newPassword");
+            if (string.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "userName");
+            }
+
+            if (string.IsNullOrEmpty(oldPassword))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "oldPassword");
+            }
+
+            if (string.IsNullOrEmpty(newPassword))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "newPassword");
+            }
 
             // The underlying ChangePassword() will throw an exception rather
             // than return false in certain failure scenarios.
             try
             {
-                MembershipUser currentUser = _provider.GetUser(userName, true /* userIsOnline */);
+                MembershipUser currentUser = this._provider.GetUser(userName, true /* userIsOnline */);
                 return currentUser.ChangePassword(oldPassword, newPassword);
             }
             catch (ArgumentException)
@@ -146,11 +143,49 @@ namespace RiftData.Presentation.ViewModels.Admin
                 return false;
             }
         }
+
+        public MembershipCreateStatus CreateUser(string userName, string password, string email)
+        {
+            if (string.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "userName");
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "password");
+            }
+
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "email");
+            }
+
+            MembershipCreateStatus status;
+            this._provider.CreateUser(userName, password, email, null, null, true, null, out status);
+            return status;
+        }
+
+        public bool ValidateUser(string userName, string password)
+        {
+            if (string.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "userName");
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "password");
+            }
+
+            return this._provider.ValidateUser(userName, password);
+        }
     }
 
     public interface IFormsAuthenticationService
     {
         void SignIn(string userName, bool createPersistentCookie);
+
         void SignOut();
     }
 
@@ -158,7 +193,10 @@ namespace RiftData.Presentation.ViewModels.Admin
     {
         public void SignIn(string userName, bool createPersistentCookie)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentException("Value cannot be null or empty.", "userName");
+            if (string.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", "userName");
+            }
 
             FormsAuthentication.SetAuthCookie(userName, createPersistentCookie);
         }
@@ -168,9 +206,11 @@ namespace RiftData.Presentation.ViewModels.Admin
             FormsAuthentication.SignOut();
         }
     }
+
     #endregion
 
     #region Validation
+
     public static class AccountValidation
     {
         public static string ErrorCodeToString(MembershipCreateStatus createStatus)
@@ -201,13 +241,16 @@ namespace RiftData.Presentation.ViewModels.Admin
                     return "The user name provided is invalid. Please check the value and try again.";
 
                 case MembershipCreateStatus.ProviderError:
-                    return "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+                    return
+                        "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
 
                 case MembershipCreateStatus.UserRejected:
-                    return "The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+                    return
+                        "The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
 
                 default:
-                    return "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
+                    return
+                        "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
             }
         }
     }
@@ -216,38 +259,40 @@ namespace RiftData.Presentation.ViewModels.Admin
     public sealed class PropertiesMustMatchAttribute : ValidationAttribute
     {
         private const string _defaultErrorMessage = "'{0}' and '{1}' do not match.";
+
         private readonly object _typeId = new object();
 
         public PropertiesMustMatchAttribute(string originalProperty, string confirmProperty)
             : base(_defaultErrorMessage)
         {
-            OriginalProperty = originalProperty;
-            ConfirmProperty = confirmProperty;
+            this.OriginalProperty = originalProperty;
+            this.ConfirmProperty = confirmProperty;
         }
 
         public string ConfirmProperty { get; private set; }
+
         public string OriginalProperty { get; private set; }
 
         public override object TypeId
         {
             get
             {
-                return _typeId;
+                return this._typeId;
             }
         }
 
         public override string FormatErrorMessage(string name)
         {
-            return String.Format(CultureInfo.CurrentUICulture, ErrorMessageString,
-                OriginalProperty, ConfirmProperty);
+            return string.Format(
+                CultureInfo.CurrentUICulture, this.ErrorMessageString, this.OriginalProperty, this.ConfirmProperty);
         }
 
         public override bool IsValid(object value)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(value);
-            object originalValue = properties.Find(OriginalProperty, true /* ignoreCase */).GetValue(value);
-            object confirmValue = properties.Find(ConfirmProperty, true /* ignoreCase */).GetValue(value);
-            return Object.Equals(originalValue, confirmValue);
+            object originalValue = properties.Find(this.OriginalProperty, true /* ignoreCase */).GetValue(value);
+            object confirmValue = properties.Find(this.ConfirmProperty, true /* ignoreCase */).GetValue(value);
+            return Equals(originalValue, confirmValue);
         }
     }
 
@@ -255,6 +300,7 @@ namespace RiftData.Presentation.ViewModels.Admin
     public sealed class ValidatePasswordLengthAttribute : ValidationAttribute
     {
         private const string _defaultErrorMessage = "'{0}' must be at least {1} characters long.";
+
         private readonly int _minCharacters = Membership.Provider.MinRequiredPasswordLength;
 
         public ValidatePasswordLengthAttribute()
@@ -264,16 +310,15 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         public override string FormatErrorMessage(string name)
         {
-            return String.Format(CultureInfo.CurrentUICulture, ErrorMessageString,
-                name, _minCharacters);
+            return string.Format(CultureInfo.CurrentUICulture, this.ErrorMessageString, name, this._minCharacters);
         }
 
         public override bool IsValid(object value)
         {
-            string valueAsString = value as string;
-            return (valueAsString != null && valueAsString.Length >= _minCharacters);
+            var valueAsString = value as string;
+            return valueAsString != null && valueAsString.Length >= this._minCharacters;
         }
     }
-    #endregion
 
+    #endregion
 }

@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using RiftData.Presentation.Contracts;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Presentation.Contracts;
+
     public class InfoController : Controller
     {
-        private readonly IInfoPageViewModelFactory _infoPageViewModelFactory;
+        private readonly IInfoPageViewModelFactory infoPageViewModelFactory;
 
         public InfoController(IInfoPageViewModelFactory infoPageViewModelFactory)
         {
-            _infoPageViewModelFactory = infoPageViewModelFactory;
-        }
-
-        public ActionResult HelpUs()
-        {
-            var viewModel = this._infoPageViewModelFactory.Build();
-
-            return View(viewModel);
+            this.infoPageViewModelFactory = infoPageViewModelFactory;
         }
 
         public ActionResult About()
         {
-            var viewModel = this._infoPageViewModelFactory.Build();
+            var viewModel = this.infoPageViewModelFactory.Build();
+
+            return View(viewModel);
+        }
+
+        public ActionResult HelpUs()
+        {
+            var viewModel = this.infoPageViewModelFactory.Build();
 
             return View(viewModel);
         }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace RiftData.Presentation.ViewModels.Dto
+﻿namespace RiftData.Presentation.ViewModels.Dto
 {
+    using System.Collections.Generic;
+
     public class LakeDto
     {
         public IEnumerable<GenusTypeDto> GenusTypes;

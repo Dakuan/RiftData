@@ -2,6 +2,10 @@
 {
     public enum DeleteResult
     {
-        Success, DoesNotExist, Failure
+        Success, 
+
+        DoesNotExist, 
+
+        Failure
     }
 }

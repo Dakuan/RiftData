@@ -1,9 +1,9 @@
-﻿using System.Web.Mvc;
-
-namespace RiftData.Presentation.ViewModels.Admin
+﻿namespace RiftData.Presentation.ViewModels.Admin
 {
+    using System.Web.Mvc;
+
     public class GenusTypeCreatePageViewModel : ViewModelBase
-    {        
+    {
         public GenusTypeCreatePageViewModel()
         {
             this.SelectedView = SelectedView.GenusTypes;

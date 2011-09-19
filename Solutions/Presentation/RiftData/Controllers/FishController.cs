@@ -1,8 +1,9 @@
-﻿using System.Web.Mvc;
-using RiftData.Presentation.Contracts;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Presentation.Contracts;
+
     public class FishController : Controller
     {
         private readonly IFishPageViewModelFactory fishPageViewModelFactory;

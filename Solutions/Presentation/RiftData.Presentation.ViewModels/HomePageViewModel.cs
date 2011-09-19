@@ -1,12 +1,12 @@
-﻿using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.Presentation.ViewModels
+﻿namespace RiftData.Presentation.ViewModels
 {
+    using RiftData.Presentation.ViewModels.Dto;
+
     public class HomePageViewModel : ViewModelBase, IPanelViewModel
     {
-        public GenusTypeDto GenusType { get; set; }
-
         public GenusPanelViewModel GenusPanelViewModel { get; set; }
+
+        public GenusTypeDto GenusType { get; set; }
 
         public PhotoGalleryViewModel PhotoGalleryViewModel { get; set; }
     }

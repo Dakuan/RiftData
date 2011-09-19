@@ -2,6 +2,10 @@
 {
     public enum AddResult
     {
-        Success, Failure, AlreadyExists
+        Success, 
+
+        Failure, 
+
+        AlreadyExists
     }
 }

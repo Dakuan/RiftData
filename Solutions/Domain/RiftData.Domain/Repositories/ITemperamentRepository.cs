@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using RiftData.Domain.Entities;
-
-namespace RiftData.Domain.Repositories
+﻿namespace RiftData.Domain.Repositories
 {
+    using System.Collections.Generic;
+
+    using RiftData.Domain.Entities;
+
     public interface ITemperamentRepository
     {
-        IList<Temperament> GetAll();
-
         Temperament Get(int temperamentId);
+
+        IList<Temperament> GetAll();
     }
 }

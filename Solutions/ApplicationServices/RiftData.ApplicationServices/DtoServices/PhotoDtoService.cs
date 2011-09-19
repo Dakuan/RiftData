@@ -2,13 +2,11 @@
 {
     using System.Collections.Generic;
 
-    using Contracts;
-    using Domain.Entities;
-    using Domain.Repositories;
-
-    using Presentation.ViewModels.Dto;
-
+    using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.ViewModels.Dto;
 
     public class PhotoDtoService : IPhotoDtoService
     {
@@ -19,9 +17,9 @@
             this.photosRepository = photosRepository;
         }
 
-        public IEnumerable<PhotoDto> GetPhotosForSpecies(int speciesId)
+        public IEnumerable<PhotoDto> GetPhotosForFish(Fish fish)
         {
-            return this.photosRepository.GetForSpecies(speciesId).ToDtoList();
+            return fish.Photos.ToDtoList();
         }
 
         public IEnumerable<PhotoDto> GetPhotosForLocale(int localeId)
@@ -29,9 +27,9 @@
             return this.photosRepository.GetForLocale(localeId).ToDtoList();
         }
 
-        public IEnumerable<PhotoDto> GetPhotosForFish(Fish fish)
+        public IEnumerable<PhotoDto> GetPhotosForSpecies(int speciesId)
         {
-            return fish.Photos.ToDtoList();
+            return this.photosRepository.GetForSpecies(speciesId).ToDtoList();
         }
     }
 }

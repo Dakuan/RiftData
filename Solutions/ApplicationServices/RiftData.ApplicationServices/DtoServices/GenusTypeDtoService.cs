@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Extensions;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.ApplicationServices.DtoServices
+﻿namespace RiftData.ApplicationServices.DtoServices
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.ApplicationServices.ViewModelFactories;
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.ViewModels.Dto;
 
     public class GenusTypeDtoService : IGenusTypeDtoService
     {
@@ -16,12 +16,7 @@ namespace RiftData.ApplicationServices.DtoServices
 
         public GenusTypeDtoService(IGenusTypeRepository genusTypeRepository)
         {
-            _genusTypeRepository = genusTypeRepository;
-        }
-
-        public GenusTypeDto GetGenusTypeByName(string genusTypeName)
-        {
-            return DtoFactory.Build(this._genusTypeRepository.GetByName(genusTypeName));
+            this._genusTypeRepository = genusTypeRepository;
         }
 
         public IEnumerable<GenusTypeDto> GetAllGenusTypes()
@@ -29,9 +24,19 @@ namespace RiftData.ApplicationServices.DtoServices
             return this.BuildList(this._genusTypeRepository.GetAll());
         }
 
+        public GenusTypeDto GetGenusTypeByName(string genusTypeName)
+        {
+            return DtoFactory.Build(this._genusTypeRepository.GetByName(genusTypeName));
+        }
+
         public GenusTypeDto GetGenusTypeDto(int genusTypeId)
         {
             return DtoFactory.Build(this._genusTypeRepository.Get(genusTypeId));
+        }
+
+        public IEnumerable<GenusTypeDto> GetGenusTypesFromLake(Lake lake)
+        {
+            return this.BuildList(lake.GenusTypes.SortGenusTypes());
         }
 
         public IEnumerable<GenusTypeDto> GetGenusTypesFromLocale(Locale locale)
@@ -39,11 +44,6 @@ namespace RiftData.ApplicationServices.DtoServices
             var list = new List<GenusTypeDto>();
 
             return this.BuildList(locale.Lake.GenusTypes);
-        }
-
-        public IEnumerable<GenusTypeDto> GetGenusTypesFromLake(Lake lake)
-        {
-            return this.BuildList(lake.GenusTypes.SortGenusTypes());
         }
 
         private IEnumerable<GenusTypeDto> BuildList(IEnumerable<GenusType> list)

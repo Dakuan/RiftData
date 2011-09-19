@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.Presentation.ViewModels
+﻿namespace RiftData.Presentation.ViewModels
 {
+    using System.Collections.Generic;
+
+    using RiftData.Presentation.ViewModels.Dto;
+
     public class SpeciesPageViewModel : ViewModelBase, IPanelViewModel
     {
-        public SpeciesDto Species { get; set; }
-
-        public PhotoGalleryViewModel PhotoGalleryViewModel { get; set; }
+        public GenusPanelViewModel GenusPanelViewModel { get; set; }
 
         public IEnumerable<LocaleDto> Locales { get; set; }
 
-        public GenusPanelViewModel GenusPanelViewModel { get; set; }
+        public PhotoGalleryViewModel PhotoGalleryViewModel { get; set; }
+
+        public SpeciesDto Species { get; set; }
     }
 }

@@ -1,14 +1,15 @@
-﻿using System.Web;
-using RiftData.Domain.Entities;
-
-namespace RiftData.Presentation.Contracts.Admin
+﻿namespace RiftData.Presentation.Contracts.Admin
 {
+    using System.Web;
+
+    using RiftData.Domain.Entities;
+
     public interface IPhotosService
     {
+        void DeletePhoto(string id);
+
         Fish GetFish(int id);
 
         Photo SavePhoto(HttpPostedFileBase attachments, int fishId);
-
-        void DeletePhoto(string id);
     }
 }

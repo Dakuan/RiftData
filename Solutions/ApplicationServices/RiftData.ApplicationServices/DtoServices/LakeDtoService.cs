@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-
-using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.ApplicationServices.DtoServices
+﻿namespace RiftData.ApplicationServices.DtoServices
 {
+    using System.Collections.Generic;
+
+    using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.ApplicationServices.ViewModelFactories;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.ViewModels.Dto;
 
     public class LakeDtoService : ILakeDtoService
     {
@@ -15,10 +14,10 @@ namespace RiftData.ApplicationServices.DtoServices
 
         public LakeDtoService(ILakeRepository lakeRepository)
         {
-            _lakeRepository = lakeRepository;
+            this._lakeRepository = lakeRepository;
         }
 
-        public IEnumerable<LakeDto>GetAllLakes()
+        public IEnumerable<LakeDto> GetAllLakes()
         {
             return this._lakeRepository.GetAll().ToDtoList();
         }

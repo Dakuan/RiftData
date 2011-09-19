@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Enums;
-using RiftData.Domain.Extensions;
-using RiftData.Domain.Repositories;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
-    public class LocalesRepository :  ILocalesRepository
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Enums;
+    using RiftData.Domain.Extensions;
+    using RiftData.Domain.Repositories;
+
+    public class LocalesRepository : ILocalesRepository
     {
         private readonly RiftDataDataContext dataContext;
 
@@ -17,22 +18,62 @@ namespace RiftData.Infrastructure.Data.Repositories
             this.dataContext = dataContext;
         }
 
+        public AddResult Add(string name, double latitude, double longitude)
+        {
+            var locale = new Locale { Name = name, Latitude = latitude, Longitude = longitude };
+
+            this.dataContext.Locales.Add(locale);
+
+            try
+            {
+                this.dataContext.SaveChanges();
+
+                return AddResult.Success;
+            }
+            catch (Exception)
+            {
+                return AddResult.Failure;
+            }
+        }
+
+        public DeleteResult Delete(int localeId)
+        {
+            var locale = this.dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
+
+            if (locale == null)
+            {
+                return DeleteResult.DoesNotExist;
+            }
+
+            this.dataContext.Locales.Remove(locale);
+
+            try
+            {
+                this.dataContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return DeleteResult.Failure;
+            }
+
+            return DeleteResult.Success;
+        }
+
         public Locale Get(int localeId)
         {
             var dataLocale = this.dataContext.Locales.First(l => l.Id == localeId);
 
-            if (dataLocale == null) return null;
+            if (dataLocale == null)
+            {
+                return null;
+            }
 
             return dataLocale;
         }
 
-        public IList<Locale> GetWithSpecies(int speciesId)
+        public IList<Locale> GetAll()
         {
-            var list = new List<Locale>();
-            
-            dataContext.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => list.Add(f.Locale));
-
-            return list.SortLocales().ToList();
+            return this.dataContext.Locales.SortLocales().ToList();
         }
 
         public Locale GetByFullName(string fullName)
@@ -45,32 +86,18 @@ namespace RiftData.Infrastructure.Data.Repositories
             return this.dataContext.Locales.Where(l => l.ZoomLevel <= zoomLevel).SortLocales().ToList();
         }
 
-        public IList<Locale> GetAll()
+        public IList<Locale> GetWithSpecies(int speciesId)
         {
-            return this.dataContext.Locales.SortLocales().ToList();
-        }
+            var list = new List<Locale>();
 
-        public AddResult Add(string name, double latitude, double longitude)
-        {
-            var locale = new Locale { Name = name, Latitude = latitude, Longitude = longitude };
+            this.dataContext.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => list.Add(f.Locale));
 
-            this.dataContext.Locales.Add(locale);
-
-            try
-            {
-                dataContext.SaveChanges();
-
-                return AddResult.Success;
-            }
-            catch (Exception)
-            {
-                return AddResult.Failure;
-            }
+            return list.SortLocales().ToList();
         }
 
         public UpdateResult Update(int localeId, string name, double latitude, double longitude)
         {
-            var locale = dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
+            var locale = this.dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
 
             if (locale == null)
             {
@@ -85,7 +112,7 @@ namespace RiftData.Infrastructure.Data.Repositories
 
             try
             {
-                dataContext.SaveChanges();
+                this.dataContext.SaveChanges();
             }
             catch (Exception)
             {
@@ -93,26 +120,6 @@ namespace RiftData.Infrastructure.Data.Repositories
             }
 
             return UpdateResult.Success;
-        }
-
-        public DeleteResult Delete(int localeId)
-        {
-            var locale = this.dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
-
-            if (locale == null) return DeleteResult.DoesNotExist;
-
-            this.dataContext.Locales.Remove(locale);
-
-            try
-            {
-                dataContext.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return DeleteResult.Failure;
-            }
-
-            return DeleteResult.Success;
         }
     }
 }

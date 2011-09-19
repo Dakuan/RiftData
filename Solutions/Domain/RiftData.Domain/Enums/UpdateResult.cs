@@ -2,7 +2,10 @@
 {
     public enum UpdateResult
     {
-        Success, Failure,
+        Success, 
+
+        Failure, 
+
         DoesNotExist
     }
 }

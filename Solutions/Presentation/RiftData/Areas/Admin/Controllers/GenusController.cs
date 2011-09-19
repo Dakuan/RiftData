@@ -1,34 +1,35 @@
-﻿using System.Web.Mvc;
-using RiftData.Domain.Enums;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.Areas.Admin.Controllers
+﻿namespace RiftData.Areas.Admin.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Domain.Enums;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     [Authorize]
     public class GenusController : Controller
     {
-        private readonly IGenusIndexPageViewModelFactory _genusIndexPageViewModelFactory;
-        private readonly IGenusRepository _genusRepository;
-        private readonly IGenusUpdatePageViewModelFactory _genusUpdatePageViewModelFactory;
+        private readonly IGenusIndexPageViewModelFactory genusIndexPageViewModelFactory;
 
-        public GenusController(IGenusIndexPageViewModelFactory genusIndexPageViewModelFactory, IGenusRepository genusRepository, IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory)
-        {
-            _genusIndexPageViewModelFactory = genusIndexPageViewModelFactory;
-            _genusRepository = genusRepository;
-            _genusUpdatePageViewModelFactory = genusUpdatePageViewModelFactory;
-        }
+        private readonly IGenusRepository genusRepository;
 
-        public ActionResult Index()
+        private readonly IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory;
+
+        public GenusController(
+            IGenusIndexPageViewModelFactory genusIndexPageViewModelFactory, 
+            IGenusRepository genusRepository, 
+            IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory)
         {
-            return View(this._genusIndexPageViewModelFactory.Builld());
+            this.genusIndexPageViewModelFactory = genusIndexPageViewModelFactory;
+            this.genusRepository = genusRepository;
+            this.genusUpdatePageViewModelFactory = genusUpdatePageViewModelFactory;
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Create()
         {
-            var viewModel = new GenusUpdatePageViewModel { Id = 0, Mode = "Create"};
+            var viewModel = new GenusUpdatePageViewModel { Id = 0, Mode = "Create" };
 
             return View("Update", viewModel);
         }
@@ -36,34 +37,41 @@ namespace RiftData.Areas.Admin.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(GenusUpdateFormViewModel viewModel)
         {
-            TryUpdateModel(viewModel);
+            this.TryUpdateModel(viewModel);
 
-            var addResult = this._genusRepository.Add(viewModel.Name);
+            var addResult = this.genusRepository.Add(viewModel.Name);
 
             return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
-        
+
+        public ActionResult Delete(int id)
+        {
+            this.genusRepository.Delete(id);
+
+            return this.RedirectToAction("Index");
+        }
+
+        public ActionResult Index()
+        {
+            return this.View(this.genusIndexPageViewModelFactory.Builld());
+        }
+
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Update(int id)
         {
-            return View(this._genusUpdatePageViewModelFactory.Build(id));
+            return this.View(this.genusUpdatePageViewModelFactory.Build(id));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Update(GenusUpdateFormViewModel viewModel)
         {
-            TryUpdateModel(viewModel);
+            this.TryUpdateModel(viewModel);
 
-            var updateResult = this._genusRepository.Update(viewModel.Id, viewModel.Name);
+            var updateResult = this.genusRepository.Update(viewModel.Id, viewModel.Name);
 
-            return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
-        }
-
-        public ActionResult Delete(int id)
-        {
-            this._genusRepository.Delete(id);
-
-            return RedirectToAction("Index");
+            return updateResult == UpdateResult.Success
+                       ? new JsonResult { Data = true }
+                       : new JsonResult { Data = false };
         }
     }
 }

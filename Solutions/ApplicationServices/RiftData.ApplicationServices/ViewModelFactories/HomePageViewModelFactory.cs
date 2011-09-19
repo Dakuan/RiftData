@@ -1,18 +1,25 @@
 ﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
-    using Domain.Repositories;
-    using DtoServices.Contracts;
-    using Presentation.Contracts;
-    using Presentation.ViewModels;
+    using RiftData.ApplicationServices.DtoServices.Contracts;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts;
+    using RiftData.Presentation.ViewModels;
 
     public class HomePageViewModelFactory : IHomePageViewModelFactory
     {
-        private readonly IGenusTypeDtoService genusTypeDtoService;
         private readonly IGenusPanelViewModelFactory genusPanelViewModelFactory;
-        private readonly IHeaderViewModelFactory headerViewModelFactory;
+
+        private readonly IGenusTypeDtoService genusTypeDtoService;
+
         private readonly IGenusTypeRepository genusTypeRepository;
 
-        public HomePageViewModelFactory(IGenusTypeDtoService genusTypeDtoService, IGenusPanelViewModelFactory genusPanelViewModelFactory, IHeaderViewModelFactory headerViewModelFactory, IGenusTypeRepository genusTypeRepository)
+        private readonly IHeaderViewModelFactory headerViewModelFactory;
+
+        public HomePageViewModelFactory(
+            IGenusTypeDtoService genusTypeDtoService, 
+            IGenusPanelViewModelFactory genusPanelViewModelFactory, 
+            IHeaderViewModelFactory headerViewModelFactory, 
+            IGenusTypeRepository genusTypeRepository)
         {
             this.genusTypeDtoService = genusTypeDtoService;
             this.genusPanelViewModelFactory = genusPanelViewModelFactory;
@@ -28,10 +35,10 @@
 
             var headerViewModel = this.headerViewModelFactory.Build(genusType);
 
-            return new HomePageViewModel 
-                { 
-                    GenusPanelViewModel = genusPanelViewModel,
-                    GenusType = this.genusTypeDtoService.GetGenusTypeDto(genusType.Id),
+            return new HomePageViewModel
+                {
+                    GenusPanelViewModel = genusPanelViewModel, 
+                    GenusType = this.genusTypeDtoService.GetGenusTypeDto(genusType.Id), 
                     HeaderViewModel = headerViewModel
                 };
         }

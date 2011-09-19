@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using RiftData.ApplicationServices.ViewModelFactories;
-using RiftData.Domain.Entities;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.ApplicationServices.DtoServices.Extensions
+﻿namespace RiftData.ApplicationServices.DtoServices.Extensions
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using RiftData.ApplicationServices.ViewModelFactories;
+    using RiftData.Domain.Entities;
+    using RiftData.Presentation.ViewModels.Dto;
+
     public static class ToDtoListExtensions
     {
-        public static IList<FishDto>ToDtoList(this IEnumerable<Fish> domainList)
+        public static IList<FishDto> ToDtoList(this IEnumerable<Fish> domainList)
         {
             var dtoList = new List<FishDto>();
 

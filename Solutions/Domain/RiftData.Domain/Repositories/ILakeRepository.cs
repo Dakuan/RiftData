@@ -1,16 +1,17 @@
-using System.Collections.Generic;
-using RiftData.Domain.Entities;
-
 namespace RiftData.Domain.Repositories
 {
+    using System.Collections.Generic;
+
+    using RiftData.Domain.Entities;
+
     public interface ILakeRepository
     {
-        Lake GetLakeFromSpeciesId(int speciesId);
-
         IList<Lake> GetAll();
 
         Lake GetFromGenusType(int genusTypeId);
 
         Lake GetFromName(string lakeName);
+
+        Lake GetLakeFromSpeciesId(int speciesId);
     }
 }

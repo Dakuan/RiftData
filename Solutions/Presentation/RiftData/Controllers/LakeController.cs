@@ -1,20 +1,21 @@
-﻿using System.Web.Mvc;
-using RiftData.Presentation.Contracts;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Presentation.Contracts;
+
     public class LakeController : Controller
     {
-        private readonly ILakeViewModelFactory _lakeViewModelFactory;
+        private readonly ILakeViewModelFactory lakeViewModelFactory;
 
         public LakeController(ILakeViewModelFactory lakeViewModelFactory)
         {
-            _lakeViewModelFactory = lakeViewModelFactory;
+            this.lakeViewModelFactory = lakeViewModelFactory;
         }
 
         public ActionResult Index(string lakeName)
         {
-            return View(this._lakeViewModelFactory.Build(lakeName));
+            return this.View(this.lakeViewModelFactory.Build(lakeName));
         }
     }
 }

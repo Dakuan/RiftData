@@ -1,24 +1,26 @@
-using System.Collections.Generic;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Enums;
-
 namespace RiftData.Domain.Repositories
 {
+    using System.Collections.Generic;
+
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Enums;
+
     public interface IFishRepository
     {
-        IList<Fish> GetBySpecies(int speciesId);
+        AddResult Add(int genusId, int speciesId, int localeId, string description);
+
+        DeleteResult Delete(int fishId);
 
         IList<Fish> GetByLocale(int localeId);
 
-        Fish GetFromName(string fishName);
+        IList<Fish> GetBySpecies(int speciesId);
 
         Fish GetFish(int fishId);
 
+        Fish GetFromName(string fishName);
+
         IList<Fish> GetOfType(int genusTypeId);
 
-        AddResult Add(int genusId, int speciesId, int localeId, string description);
-
         UpdateResult Update(int fishId, int genusId, int speciesId, int localeId, string description);
-        DeleteResult Delete(int fishId);
     }
 }

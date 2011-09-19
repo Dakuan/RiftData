@@ -1,16 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.ModelConfiguration;
-using RiftData.Domain.Entities;
-
-namespace RiftData.Infrastructure.Data.Configurations
+﻿namespace RiftData.Infrastructure.Data.Configurations
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity.ModelConfiguration;
+
+    using RiftData.Domain.Entities;
+
     public class LocaleConfiguration : EntityTypeConfiguration<Locale>
     {
         public LocaleConfiguration()
         {
-            HasKey(p => p.Id);
+            this.HasKey(p => p.Id);
 
-            Property(p => p.Id).HasColumnName("LocaleID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
+            Property(p => p.Id).HasColumnName("LocaleID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).
+                IsRequired();
 
             Property(p => p.Latitude).HasColumnName("LocaleLatitude").IsRequired();
 
@@ -20,15 +22,15 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.ZoomLevel).HasColumnName("LocaleZoomLevel").IsRequired();
 
-            HasRequired(x => x.Lake).WithMany().Map(m => m.MapKey("LocaleLakeID"));
+            this.HasRequired(x => x.Lake).WithMany().Map(m => m.MapKey("LocaleLakeID"));
 
             Property(p => p.Description).HasColumnName("LocaleDescription");
 
-            Ignore(p => p.HasPhotos);
+            this.Ignore(p => p.HasPhotos);
 
-            Ignore(p => p.Photos);
+            this.Ignore(p => p.Photos);
 
-            ToTable("Locales");
+            this.ToTable("Locales");
         }
     }
 }

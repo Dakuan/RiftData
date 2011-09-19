@@ -1,36 +1,42 @@
-﻿using System.Collections.Generic;
-using RiftData.Domain.Entities;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.ApplicationServices.ViewModelFactories
+﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
-    using DtoServices.Contracts;
-    using Presentation.ViewModels;
+    using System.Collections.Generic;
+
+    using RiftData.ApplicationServices.DtoServices.Contracts;
+    using RiftData.Domain.Entities;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts;
+    using RiftData.Presentation.ViewModels;
+    using RiftData.Presentation.ViewModels.Dto;
 
     public class HeaderViewModelFactory : IHeaderViewModelFactory
     {
-        private readonly ILakeDtoService _lakeDtoService;
-        private readonly ILakeRepository _lakeRepository;
-        private readonly IGenusTypeRepository _genusTypeRepository;
         private readonly IGenusTypeDtoService _genusTypeDtoService;
 
-        public HeaderViewModelFactory(ILakeDtoService lakeDtoService, ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository, IGenusTypeDtoService genusTypeDtoService)
+        private readonly IGenusTypeRepository _genusTypeRepository;
+
+        private readonly ILakeDtoService _lakeDtoService;
+
+        private readonly ILakeRepository _lakeRepository;
+
+        public HeaderViewModelFactory(
+            ILakeDtoService lakeDtoService, 
+            ILakeRepository lakeRepository, 
+            IGenusTypeRepository genusTypeRepository, 
+            IGenusTypeDtoService genusTypeDtoService)
         {
-            _lakeDtoService = lakeDtoService;
-            _lakeRepository = lakeRepository;
-            _genusTypeRepository = genusTypeRepository;
-            _genusTypeDtoService = genusTypeDtoService;
+            this._lakeDtoService = lakeDtoService;
+            this._lakeRepository = lakeRepository;
+            this._genusTypeRepository = genusTypeRepository;
+            this._genusTypeDtoService = genusTypeDtoService;
         }
 
         public HeaderViewModel Build()
         {
             var viewModel = new HeaderViewModel
-                                {
-                                    Lakes = _lakeDtoService.GetAllLakes(),
-                                    GenusTypes = new List<GenusTypeDto>()
-                                };
+                {
+                   Lakes = this._lakeDtoService.GetAllLakes(), GenusTypes = new List<GenusTypeDto>() 
+                };
 
             return viewModel;
         }
@@ -50,23 +56,14 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             return viewModel;
         }
 
-        public HeaderViewModel BuildFromSpecies(int speciesId)
-        {
-            var lake = this._lakeRepository.GetLakeFromSpeciesId(speciesId);
-
-            var genusType = this._genusTypeRepository.GetFromSpecies(speciesId);
-
-            return this.Build(lake.Id, genusType.Id);
-        }
-
         public HeaderViewModel Build(Locale locale)
         {
             var viewModel = new HeaderViewModel
-                                {
-                                    Lakes = this._lakeDtoService.GetAllLakes(),
-                                    SelectedLakeId = locale.Lake.Id,
-                                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(locale)
-                                };
+                {
+                    Lakes = this._lakeDtoService.GetAllLakes(), 
+                    SelectedLakeId = locale.Lake.Id, 
+                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(locale)
+                };
 
             return viewModel;
         }
@@ -74,12 +71,12 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         public HeaderViewModel Build(Fish fish)
         {
             var viewModel = new HeaderViewModel
-                                {
-                                    Lakes = this._lakeDtoService.GetAllLakes(),
-                                    SelectedGenusTypeId = fish.Genus.GenusType.Id,
-                                    SelectedLakeId = fish.Locale.Lake.Id,
-                                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(fish.Locale)
-                                };
+                {
+                    Lakes = this._lakeDtoService.GetAllLakes(), 
+                    SelectedGenusTypeId = fish.Genus.GenusType.Id, 
+                    SelectedLakeId = fish.Locale.Lake.Id, 
+                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(fish.Locale)
+                };
 
             return viewModel;
         }
@@ -87,12 +84,12 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         public HeaderViewModel Build(GenusType genusType)
         {
             var viewModel = new HeaderViewModel
-                                {
-                                    SelectedGenusTypeId = genusType.Id,
-                                    SelectedLakeId = genusType.Lake.Id,
-                                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(genusType.Lake),
-                                    Lakes = this._lakeDtoService.GetAllLakes()
-                                };
+                {
+                    SelectedGenusTypeId = genusType.Id, 
+                    SelectedLakeId = genusType.Lake.Id, 
+                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(genusType.Lake), 
+                    Lakes = this._lakeDtoService.GetAllLakes()
+                };
 
             return viewModel;
         }
@@ -106,6 +103,15 @@ namespace RiftData.ApplicationServices.ViewModelFactories
             viewModel.GenusTypes = lake.GenusTypes;
 
             return viewModel;
+        }
+
+        public HeaderViewModel BuildFromSpecies(int speciesId)
+        {
+            var lake = this._lakeRepository.GetLakeFromSpeciesId(speciesId);
+
+            var genusType = this._genusTypeRepository.GetFromSpecies(speciesId);
+
+            return this.Build(lake.Id, genusType.Id);
         }
     }
 }

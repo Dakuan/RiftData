@@ -1,12 +1,11 @@
-﻿using System;
-using RiftData.ApplicationServices.DtoServices.Contracts;
-using RiftData.Domain.Entities;
-using RiftData.Presentation.Contracts;
-using RiftData.Presentation.ViewModels;
-
-namespace RiftData.ApplicationServices.ViewModelFactories
+﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
     using System.Linq;
+
+    using RiftData.ApplicationServices.DtoServices.Contracts;
+    using RiftData.Domain.Entities;
+    using RiftData.Presentation.Contracts;
+    using RiftData.Presentation.ViewModels;
 
     public class PhotoGalleryViewModelFactory : IPhotoGalleryViewModelFactory
     {
@@ -14,16 +13,15 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public PhotoGalleryViewModelFactory(IPhotoDtoService photoDtoService)
         {
-            _photoDtoService = photoDtoService;
+            this._photoDtoService = photoDtoService;
         }
 
         public PhotoGalleryViewModel Build(Species species)
         {
             var viewModel = new PhotoGalleryViewModel
-                                {
-                                    Name = species.Name,
-                                    Photos = this._photoDtoService.GetPhotosForSpecies(species.Id).ToList()
-                                };
+                {
+                   Name = species.Name, Photos = this._photoDtoService.GetPhotosForSpecies(species.Id).ToList() 
+                };
 
             return viewModel;
         }
@@ -31,10 +29,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         public PhotoGalleryViewModel Build(Locale locale)
         {
             var viewModel = new PhotoGalleryViewModel
-                                {
-                                    Name = locale.Name,
-                                    Photos = this._photoDtoService.GetPhotosForLocale(locale.Id).ToList()
-                                };
+                {
+                   Name = locale.Name, Photos = this._photoDtoService.GetPhotosForLocale(locale.Id).ToList() 
+                };
 
             return viewModel;
         }
@@ -42,10 +39,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         public PhotoGalleryViewModel Build(Fish fish)
         {
             var viewModel = new PhotoGalleryViewModel
-                                {
-                                    Name = fish.Name,
-                                    Photos = this._photoDtoService.GetPhotosForFish(fish).ToList()
-                                };
+                {
+                   Name = fish.Name, Photos = this._photoDtoService.GetPhotosForFish(fish).ToList() 
+                };
 
             return viewModel;
         }

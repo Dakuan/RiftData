@@ -4,7 +4,7 @@ namespace RiftData.Presentation.ViewModels.Admin
     {
         public HomePageViewModel()
         {
-            SelectedView = SelectedView.Home;
+            this.SelectedView = SelectedView.Home;
         }
     }
 }

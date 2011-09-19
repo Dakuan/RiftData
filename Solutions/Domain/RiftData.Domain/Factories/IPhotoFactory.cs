@@ -1,11 +1,13 @@
-﻿using FlickrNet;
-
-namespace RiftData.Domain.Factories
+﻿namespace RiftData.Domain.Factories
 {
+    using FlickrNet;
+
+    using Photo = RiftData.Domain.Entities.Photo;
+
     public interface IPhotoFactory
     {
-        Domain.Entities.Photo CreatePhoto(int id);
+        Photo CreatePhoto(int id);
 
-        Domain.Entities.Photo CreatePhoto(PhotoInfo photoInfo);
+        Photo CreatePhoto(PhotoInfo photoInfo);
     }
 }

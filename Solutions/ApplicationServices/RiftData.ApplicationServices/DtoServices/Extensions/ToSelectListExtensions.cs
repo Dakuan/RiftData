@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using RiftData.Domain.Entities;
-
-namespace RiftData.ApplicationServices.DtoServices.Extensions
+﻿namespace RiftData.ApplicationServices.DtoServices.Extensions
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
+
+    using RiftData.Domain.Entities;
+
     public static class ToSelectListExtensions
     {
         public static SelectList ToSelectList(this IEnumerable<IEntity> domainList)
@@ -27,7 +28,7 @@ namespace RiftData.ApplicationServices.DtoServices.Extensions
         }
     }
 
-    public class SelectListComment: IEntity
+    public class SelectListComment : IEntity
     {
         public int Id { get; set; }
 

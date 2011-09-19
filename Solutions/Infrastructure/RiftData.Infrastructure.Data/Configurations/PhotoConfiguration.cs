@@ -2,15 +2,17 @@
 {
     using System.ComponentModel.DataAnnotations;
     using System.Data.Entity.ModelConfiguration;
-    using Domain.Entities;
+
+    using RiftData.Domain.Entities;
 
     public class PhotoConfiguration : EntityTypeConfiguration<Photo>
     {
         public PhotoConfiguration()
         {
-            HasKey(x => x.Id);
+            this.HasKey(x => x.Id);
 
-            Property(x => x.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnName("PhotoID");
+            Property(x => x.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnName(
+                "PhotoID");
 
             Property(x => x.FlickrId).HasColumnName("PhotoFlickrId").IsRequired();
 
@@ -26,7 +28,7 @@
 
             Property(x => x.SquareThumbnail).HasColumnName("PhotoSquareThumbnailUrl");
 
-            ToTable("Photos");
+            this.ToTable("Photos");
         }
     }
 }

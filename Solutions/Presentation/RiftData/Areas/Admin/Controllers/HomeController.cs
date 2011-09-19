@@ -1,14 +1,15 @@
-﻿using System.Web.Mvc;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.Areas.Admin.Controllers
+﻿namespace RiftData.Areas.Admin.Controllers
 {
+    using System.Web.Mvc;
+
+    using RiftData.Presentation.ViewModels.Admin;
+
     [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View(new HomePageViewModel());
+            return this.View(new HomePageViewModel());
         }
     }
 }

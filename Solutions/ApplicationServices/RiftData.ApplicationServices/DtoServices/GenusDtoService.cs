@@ -1,10 +1,9 @@
 ﻿namespace RiftData.ApplicationServices.DtoServices
 {
-    using RiftData.ApplicationServices.DtoServices.Extensions;
-
     using System.Collections.Generic;
 
     using RiftData.ApplicationServices.DtoServices.Contracts;
+    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.ViewModels.Dto;
 
@@ -14,7 +13,7 @@
 
         public GenusDtoService(IGenusRepository genusRepository)
         {
-            _genusRepository = genusRepository;
+            this._genusRepository = genusRepository;
         }
 
         public IEnumerable<GenusDto> GetGenusDtos(int genusTypeId)

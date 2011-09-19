@@ -1,10 +1,10 @@
-﻿using Castle.Core;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-
-namespace RiftData.Infrastructure.Data.Installers
+﻿namespace RiftData.Infrastructure.Data.Installers
 {
+    using Castle.Core;
+    using Castle.MicroKernel.Registration;
+    using Castle.MicroKernel.SubSystems.Configuration;
+    using Castle.Windsor;
+
     public class DataContextInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)

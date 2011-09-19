@@ -1,7 +1,7 @@
-﻿using RiftData.Presentation.ViewModels;
-
-namespace RiftData.Presentation.Contracts
+﻿namespace RiftData.Presentation.Contracts
 {
+    using RiftData.Presentation.ViewModels;
+
     public interface IHomePageViewModelFactory
     {
         HomePageViewModel Build(string genusTypeName);

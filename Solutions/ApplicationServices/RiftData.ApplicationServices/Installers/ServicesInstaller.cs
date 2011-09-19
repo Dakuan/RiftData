@@ -1,20 +1,19 @@
-﻿using System;
-using Castle.Core;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-
-namespace RiftData.ApplicationServices.Installers
+﻿namespace RiftData.ApplicationServices.Installers
 {
+    using System;
+
+    using Castle.Core;
+    using Castle.MicroKernel.Registration;
+    using Castle.MicroKernel.SubSystems.Configuration;
+    using Castle.Windsor;
+
     public class ServicesInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(AllTypes.FromThisAssembly()
-                                .Pick()
-                                .If(IsService)
-                                .WithService.DefaultInterface()
-                                .Configure(x => x.LifeStyle.Is(LifestyleType.Transient)));
+            container.Register(
+                AllTypes.FromThisAssembly().Pick().If(IsService).WithService.DefaultInterface().Configure(
+                    x => x.LifeStyle.Is(LifestyleType.Transient)));
         }
 
         private static bool IsService(Type type)

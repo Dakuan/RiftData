@@ -1,8 +1,9 @@
 ﻿namespace RiftData.Infrastructure.Data
 {
     using System.Data.Entity;
-    using Configurations;
-    using Domain.Entities;
+
+    using RiftData.Domain.Entities;
+    using RiftData.Infrastructure.Data.Configurations;
 
     public class RiftDataDataContext : DbContext
     {
@@ -11,19 +12,19 @@
             Database.SetInitializer<RiftDataDataContext>(null);
         }
 
-        public DbSet<Genus> Genus { get; set; }
-
-        public DbSet<Species> Species { get; set; }
-
-        public DbSet<Locale> Locales { get; set; }
-
         public DbSet<Fish> Fish { get; set; }
+
+        public DbSet<Genus> Genus { get; set; }
 
         public DbSet<GenusType> GenusTypes { get; set; }
 
+        public DbSet<Lake> Lakes { get; set; }
+
+        public DbSet<Locale> Locales { get; set; }
+
         public DbSet<Photo> Photos { get; set; }
 
-        public DbSet<Lake> Lakes { get; set; }
+        public DbSet<Species> Species { get; set; }
 
         public DbSet<Temperament> Temperaments { get; set; }
 
