@@ -9,18 +9,18 @@
 
     public class SpeciesPageViewModelFactory : ISpeciesPageViewModelFactory
     {
-        private readonly ISpeciesRepository _speciesRepository;
+        private readonly ISpeciesRepository speciesRepository;
 
         public SpeciesPageViewModelFactory(ISpeciesRepository speciesRepository)
         {
-            this._speciesRepository = speciesRepository;
+            this.speciesRepository = speciesRepository;
         }
 
         public SpeciesPageViewModel Build()
         {
             var viewModel = new SpeciesPageViewModel
                 {
-                   Species = this._speciesRepository.GetAll().ToList().ToDtoList(), 
+                   Species = this.speciesRepository.GetAll().ToList().ToDtoList(), 
                 };
 
             return viewModel;

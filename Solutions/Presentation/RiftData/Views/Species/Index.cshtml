@@ -19,17 +19,17 @@
                 @{ if (Model.Locales.Count() > 0){
                     <div id="LocalesList">
                         <ul>
-                            @foreach (var locale in Model.Locales)
+                            @foreach (var fish in Model.Fish)
                             {
                                 <li>
-                                    @{if(locale.HasPhotos){
-                                            <img alt="@locale.Name" src="@Url.Content("../Content/camera-tight-small.png")" class="localeListImage" /> 
+                                    @{if(fish.Locale.HasPhotos){
+                                            <img alt="@fish.Locale.Name" src="@Url.Content("../Content/camera-tight-small.png")" class="localeListImage" /> 
                                         }
                                         else{
                                             <div class="cameraPicBlank"></div>
                                       }
                                     }
-                                    <a href="@Url.Action("Index", "Locale", new { localeName = locale.Name })">@locale.Name</a>
+                                    <a href="@Url.Action("Index", "Locale", new { localeName = fish.Locale.Name })" title="view @fish.Locale.Name, Lake @fish.Locale.Lake.Name">@fish.Locale.Name</a> | <a href="@Url.Action("Index", "Fish", new { fishName = fish.UrlName})" title="view @fish.Name">view fish</a>
                                     <div class="clear"></div>
                                 </li>
                             }

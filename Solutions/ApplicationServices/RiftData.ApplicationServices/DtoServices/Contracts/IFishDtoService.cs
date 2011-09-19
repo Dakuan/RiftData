@@ -7,5 +7,7 @@
     public interface IFishDtoService
     {
         IEnumerable<FishDto> GetFishAtLocale(int localeId);
+
+        IList<FishDto> GetFishForSpecies(int speciesId);
     }
 }

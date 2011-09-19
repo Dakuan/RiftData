@@ -20,14 +20,18 @@
 
         private readonly ISpeciesRepository speciesRepository;
 
+        private readonly IFishDtoService fishDtoService;
+
         public SpeciesPageViewModelFactory(
-            ISpeciesRepository speciesRepository, 
+            ISpeciesRepository speciesRepository,
+            IFishDtoService fishDtoService,
             IGenusPanelViewModelFactory genusPanelViewModelFactory, 
             ILocaleDtoService localeDtoService, 
             IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, 
             IHeaderViewModelFactory headerViewModelFactory)
         {
             this.speciesRepository = speciesRepository;
+            this.fishDtoService = fishDtoService;
             this.genusPanelViewModelFactory = genusPanelViewModelFactory;
             this.localeDtoService = localeDtoService;
             this.photoGalleryViewModelFactory = photoGalleryViewModelFactory;
@@ -49,7 +53,8 @@
 
             var viewModel = new SpeciesPageViewModel
                 {
-                    Species = DtoFactory.Build(species), 
+                    Species = DtoFactory.Build(species),
+                    Fish = this.fishDtoService.GetFishForSpecies(species.Id),
                     HeaderViewModel = headerViewModel, 
                     Locales = this.localeDtoService.GetLocaleDtosFromSpecies(species.Id), 
                     PhotoGalleryViewModel = this.photoGalleryViewModelFactory.Build(species), 
