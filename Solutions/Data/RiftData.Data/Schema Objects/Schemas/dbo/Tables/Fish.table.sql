@@ -3,6 +3,6 @@
     [FishGenusID]     INT             NOT NULL,
     [FishSpeciesID]   INT             NOT NULL,
     [FishLocaleID]    INT             NOT NULL,
-    [FishDescription] NVARCHAR (1000) NULL
+    [FishDescription] NVARCHAR (4000) NULL
 );
 

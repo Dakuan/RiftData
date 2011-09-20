@@ -11,7 +11,7 @@
         <h2>@Model.Species.Name</h2>
         @{if(Model.Species.HasDescription){
         <h3>Description:</h3>
-        @Model.Species.Description
+        @Html.Raw(Model.Species.Description)
         }}
         <div id="InfoContainer">
             <div class="infoBlock">

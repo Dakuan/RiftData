@@ -5,7 +5,7 @@
     [SpeciesDescribed]     BIT             NOT NULL,
     [SpeciesHasPhotos]     AS              ([dbo].[SpeciesHasPhoto]([SpeciesID])),
     [SpeciesHasFish]       AS              ([dbo].[SpeciesHasFish]([SpeciesID])),
-    [SpeciesDescription]   NVARCHAR (1000) NULL,
+    [SpeciesDescription]   NVARCHAR (4000) NULL,
     [SpeciesMinSize]       INT             NOT NULL,
     [SpeciesMaxSize]       INT             NOT NULL,
     [SpeciesTemperamentID] INT             NOT NULL

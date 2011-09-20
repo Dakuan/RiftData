@@ -5,6 +5,6 @@
     [LocaleName]        NVARCHAR (255)  NOT NULL,
     [LocaleZoomLevel]   INT             NOT NULL,
     [LocaleLakeID]      INT             NOT NULL,
-    [LocaleDescription] NVARCHAR (1000) NULL
+    [LocaleDescription] NVARCHAR (4000) NULL
 );
 
