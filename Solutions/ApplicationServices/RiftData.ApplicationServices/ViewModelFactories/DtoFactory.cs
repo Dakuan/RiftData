@@ -20,13 +20,8 @@
                     UrlName = fish.UrlName, 
                     Genus = Build(fish.Genus), 
                     Species = Build(fish.Species),
-                    Description =
-                        string.IsNullOrEmpty(fish.Description)
-                            ? HttpUtility.HtmlDecode(fish.Species.Description)
-                            : HttpUtility.HtmlDecode(fish.Description),
-                     
-                    Photos = fish.Photos.ToDtoList(), 
-                    HasDescription = fish.HasDescription
+                    Description = string.IsNullOrEmpty(fish.Description) ? fish.Species.Description : fish.Description,
+                    Photos = fish.Photos.ToDtoList()
                 };
         }
 
@@ -40,7 +35,7 @@
                     Longitude = locale.Longitude, 
                     HasPhotos = locale.HasPhotos, 
                     ZoomLevel = locale.ZoomLevel, 
-                    Description = HttpUtility.HtmlDecode(locale.Description), 
+                    Description = locale.Description, 
                     HasDescription = locale.HasDescription, 
                     Lake = Build(locale.Lake)
                 };
@@ -54,7 +49,7 @@
                     Name = species.FullName, 
                     UrlName = species.UrlName, 
                     HasPhotos = species.HasPhotos, 
-                    Description = HttpUtility.HtmlDecode(species.Description), 
+                    Description = species.Description, 
                     HasDescription = species.HasDescription, 
                     Temperament = species.Temperament.Name, 
                     SizeString =

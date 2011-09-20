@@ -1,5 +1,7 @@
 ﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
+    using System.Web;
+
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.Admin;
@@ -30,7 +32,7 @@
             var viewModel = new SpeciesEditPageViewModel
                 {
                     Described = species.Described, 
-                    Description = species.Description, 
+                    Description = HttpUtility.HtmlDecode(species.Description), 
                     Mode = "Update", 
                     Name = species.Name, 
                     MaxSize = species.MaxSize, 

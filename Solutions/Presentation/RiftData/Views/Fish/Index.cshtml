@@ -11,7 +11,7 @@
     @{if (Model.Fish.HasDescription)
         {
             <h3>Description:</h3>
-            @Html.Raw(Model.Fish.Description)
+            @Html.Raw(HttpUtility.HtmlDecode(Model.Fish.Description))
         }
       else
       {
