@@ -36,7 +36,7 @@
                     Longitude = locale.Longitude, 
                     HasPhotos = locale.HasPhotos, 
                     ZoomLevel = locale.ZoomLevel, 
-                    Description = locale.Description, 
+                    Description = HttpUtility.HtmlDecode(locale.Description), 
                     HasDescription = locale.HasDescription, 
                     Lake = Build(locale.Lake)
                 };
@@ -50,7 +50,7 @@
                     Name = species.FullName, 
                     UrlName = species.UrlName, 
                     HasPhotos = species.HasPhotos, 
-                    Description = species.Description, 
+                    Description = HttpUtility.HtmlDecode(species.Description), 
                     HasDescription = species.HasDescription, 
                     Temperament = species.Temperament.Name, 
                     SizeString =
