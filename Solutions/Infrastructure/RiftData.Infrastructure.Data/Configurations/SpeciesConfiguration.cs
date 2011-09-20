@@ -22,9 +22,9 @@
 
             this.HasRequired(t => t.Temperament).WithMany().Map(m => m.MapKey("SpeciesTemperamentID"));
 
-            Property(p => p.HasPhotos).HasColumnName("SpeciesHasPhotos").IsRequired();
+            Property(p => p.HasPhotos).HasColumnName("SpeciesHasPhotos").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
-            Property(p => p.HasFish).HasColumnName("SpeciesHasFish").IsRequired();
+            Property(p => p.HasFish).HasColumnName("SpeciesHasFish").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
             Property(p => p.Description).HasColumnName("SpeciesDescription");
 
