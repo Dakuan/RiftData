@@ -1,4 +1,6 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories
+﻿using RiftData.Domain.Logs;
+
+namespace RiftData.ApplicationServices.ViewModelFactories
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -9,6 +11,15 @@
 
     public static class DtoFactory
     {
+        public static UserLogDto Build(UserLog log)
+        {
+            return new UserLogDto
+                       {
+                           Date = log.Date.ToShortDateString(),
+                           Message = log.Message
+                       };
+        }
+
         public static FishDto Build(Fish fish)
         {
             return new FishDto

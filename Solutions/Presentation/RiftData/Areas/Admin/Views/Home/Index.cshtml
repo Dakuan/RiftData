@@ -13,4 +13,27 @@
 
 <div id ="body">
     <h1 id="pageTitle">Home</h1>
+    <div class="portlet">
+        <div class="portlet-header">
+            User Logs
+        </div>
+        <div class="portlet-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Log</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.UserLogs)
+                    {
+                        <tr>
+                            <td>@item.Message</td>
+                            <td>@item.Date</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+    </div>
 </div>

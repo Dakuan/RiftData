@@ -39,5 +39,10 @@ namespace RiftData.Infrastructure.Data.Repositories
 
             return AddResult.Success;
         }
+
+        public IList<UserLog> GetAll()
+        {
+            return this.dataContext.UserLogs.OrderByDescending(l => l.Date).ToList();
+        }
     }
 }

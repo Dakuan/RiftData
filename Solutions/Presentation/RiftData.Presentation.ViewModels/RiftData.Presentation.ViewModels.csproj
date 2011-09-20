@@ -75,6 +75,7 @@
     <Compile Include="Dto\LakeDto.cs" />
     <Compile Include="Dto\LocaleDto.cs" />
     <Compile Include="Dto\GenusDto.cs" />
+    <Compile Include="Dto\UserLogDto.cs" />
     <Compile Include="FishPageViewModel.cs" />
     <Compile Include="GenusPanelViewModel.cs" />
     <Compile Include="Dto\GenusTypeDto.cs" />

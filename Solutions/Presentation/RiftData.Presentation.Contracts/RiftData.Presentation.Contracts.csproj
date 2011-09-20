@@ -49,6 +49,7 @@
     <Compile Include="Admin\GenusTypePages\IGenusTypeIndexPageViewModelFactory.cs" />
     <Compile Include="Admin\GenusTypePages\IGenusTypesUpdatePageViewModelFactory.cs" />
     <Compile Include="Admin\GenusPages\IGenusUpdatePageViewModelFactory.cs" />
+    <Compile Include="Admin\IHomePageViewModelFactory.cs" />
     <Compile Include="Admin\LocalePages\ILocaleIndexPageViewModelFactory.cs" />
     <Compile Include="Admin\LocalePages\ILocaleUpdatePageViewModelFactory.cs" />
     <Compile Include="Admin\IPhotosService.cs" />

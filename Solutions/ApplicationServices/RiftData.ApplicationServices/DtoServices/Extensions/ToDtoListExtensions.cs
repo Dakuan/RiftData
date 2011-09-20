@@ -1,4 +1,6 @@
-﻿namespace RiftData.ApplicationServices.DtoServices.Extensions
+﻿using RiftData.Domain.Logs;
+
+namespace RiftData.ApplicationServices.DtoServices.Extensions
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -66,6 +68,15 @@
         public static IList<PhotoDto> ToDtoList(this IEnumerable<Photo> domainList)
         {
             var dtoList = new List<PhotoDto>();
+
+            domainList.ToList().ForEach(x => dtoList.Add(DtoFactory.Build(x)));
+
+            return dtoList;
+        }
+
+        public static IList<UserLogDto> ToDtoList(this IEnumerable<UserLog> domainList)
+        {
+            var dtoList = new List<UserLogDto>();
 
             domainList.ToList().ForEach(x => dtoList.Add(DtoFactory.Build(x)));
 
