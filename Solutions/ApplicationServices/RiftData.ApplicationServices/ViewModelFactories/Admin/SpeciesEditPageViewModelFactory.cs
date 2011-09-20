@@ -4,30 +4,30 @@
 
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.Contracts.Admin.SpeciesPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class SpeciesEditPageViewModelFactory : ISpeciesEditPageViewModelFactory
     {
-        private readonly IGenusRepository _genusRepository;
+        private readonly IGenusRepository genusRepository;
 
-        private readonly ISpeciesRepository _speciesRepository;
+        private readonly ISpeciesRepository speciesRepository;
 
-        private readonly ITemperamentRepository _temperamentRepository;
+        private readonly ITemperamentRepository temperamentRepository;
 
         public SpeciesEditPageViewModelFactory(
             ISpeciesRepository speciesRepository, 
             IGenusRepository genusRepository, 
             ITemperamentRepository temperamentRepository)
         {
-            this._speciesRepository = speciesRepository;
-            this._genusRepository = genusRepository;
-            this._temperamentRepository = temperamentRepository;
+            this.speciesRepository = speciesRepository;
+            this.genusRepository = genusRepository;
+            this.temperamentRepository = temperamentRepository;
         }
 
         public SpeciesEditPageViewModel Build(int speciesId)
         {
-            var species = this._speciesRepository.GetSpeciesFromId(speciesId);
+            var species = this.speciesRepository.GetSpeciesFromId(speciesId);
 
             var viewModel = new SpeciesEditPageViewModel
                 {
@@ -37,8 +37,8 @@
                     Name = species.Name, 
                     MaxSize = species.MaxSize, 
                     MinSize = species.MinSize, 
-                    Temperament = this._temperamentRepository.GetAll().ToSelectList(species.Temperament.Id), 
-                    Genus = this._genusRepository.GetOfType(species.Genus.GenusType.Id).ToSelectList(species.Genus.Id)
+                    Temperament = this.temperamentRepository.GetAll().ToSelectList(species.Temperament.Id), 
+                    Genus = this.genusRepository.GetOfType(species.Genus.GenusType.Id).ToSelectList(species.Genus.Id)
                 };
 
             return viewModel;
@@ -48,8 +48,8 @@
         {
             return new SpeciesEditPageViewModel
                 {
-                    Temperament = this._temperamentRepository.GetAll().ToSelectList("select a temperament"), 
-                    Genus = this._genusRepository.GetAll().ToSelectList("select a genus"), 
+                    Temperament = this.temperamentRepository.GetAll().ToSelectList("select a temperament"), 
+                    Genus = this.genusRepository.GetAll().ToSelectList("select a genus"), 
                     Mode = "Create"
                 };
         }

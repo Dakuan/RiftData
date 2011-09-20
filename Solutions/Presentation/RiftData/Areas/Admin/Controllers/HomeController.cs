@@ -9,7 +9,9 @@
     {
         public ActionResult Index()
         {
-            return this.View(new HomePageViewModel());
+            var viewModel = new HomePageViewModel();
+
+            return this.View(viewModel);
         }
     }
 }

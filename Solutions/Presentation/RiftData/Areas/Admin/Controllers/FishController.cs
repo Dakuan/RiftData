@@ -3,9 +3,10 @@
     using System;
     using System.Web.Mvc;
 
+    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     [Authorize]
@@ -70,7 +71,7 @@
 
         public ActionResult GetSpecies(int id)
         {
-            var speciesList = new SelectList(this.speciesRepository.GetSpeciesWithGenus(id), "Id", "Name");
+            var speciesList = this.speciesRepository.GetSpeciesWithGenus(id).ToSelectList();
 
             return new JsonResult { Data = speciesList, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }

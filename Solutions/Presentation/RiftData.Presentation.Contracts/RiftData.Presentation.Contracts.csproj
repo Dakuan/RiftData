@@ -42,19 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\IFishEditPageViewModelFactory.cs" />
-    <Compile Include="Admin\IFishPageViewModelFactory.cs" />
-    <Compile Include="Admin\IGenusIndexPageViewModelFactory.cs" />
-    <Compile Include="Admin\IGenusTypeCreatePageViewModelFactory.cs" />
-    <Compile Include="Admin\IGenusTypeIndexPageViewModelFactory.cs" />
-    <Compile Include="Admin\IGenusTypesUpdatePageViewModelFactory.cs" />
-    <Compile Include="Admin\IGenusUpdatePageViewModelFactory.cs" />
-    <Compile Include="Admin\ILocaleIndexPageViewModelFactory.cs" />
-    <Compile Include="Admin\ILocaleService.cs" />
-    <Compile Include="Admin\ILocaleUpdatePageViewModelFactory.cs" />
+    <Compile Include="Admin\FishPages\IFishEditPageViewModelFactory.cs" />
+    <Compile Include="Admin\FishPages\IFishPageViewModelFactory.cs" />
+    <Compile Include="Admin\GenusPages\IGenusIndexPageViewModelFactory.cs" />
+    <Compile Include="Admin\GenusTypePages\IGenusTypeCreatePageViewModelFactory.cs" />
+    <Compile Include="Admin\GenusTypePages\IGenusTypeIndexPageViewModelFactory.cs" />
+    <Compile Include="Admin\GenusTypePages\IGenusTypesUpdatePageViewModelFactory.cs" />
+    <Compile Include="Admin\GenusPages\IGenusUpdatePageViewModelFactory.cs" />
+    <Compile Include="Admin\LocalePages\ILocaleIndexPageViewModelFactory.cs" />
+    <Compile Include="Admin\LocalePages\ILocaleUpdatePageViewModelFactory.cs" />
     <Compile Include="Admin\IPhotosService.cs" />
-    <Compile Include="Admin\ISpeciesEditPageViewModelFactory.cs" />
-    <Compile Include="Admin\ISpeciesPageViewModelFactory.cs" />
+    <Compile Include="Admin\SpeciesPages\ISpeciesEditPageViewModelFactory.cs" />
+    <Compile Include="Admin\SpeciesPages\ISpeciesPageViewModelFactory.cs" />
     <Compile Include="IFishPageViewModelFactory.cs" />
     <Compile Include="IGenusPanelViewModelFactory.cs" />
     <Compile Include="IHeaderViewModelFactory.cs" />
@@ -77,6 +76,7 @@
       <Name>RiftData.Presentation.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

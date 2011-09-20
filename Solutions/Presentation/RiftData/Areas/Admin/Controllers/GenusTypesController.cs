@@ -5,6 +5,7 @@
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.Contracts.Admin.GenusTypePages;
     using RiftData.Presentation.ViewModels.Admin;
 
     [Authorize]

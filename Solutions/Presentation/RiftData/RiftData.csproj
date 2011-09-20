@@ -94,6 +94,7 @@
     <Compile Include="Areas\Admin\Controllers\LocalesController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhotosController.cs" />
     <Compile Include="Areas\Admin\Controllers\SpeciesController.cs" />
+    <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
     <Compile Include="Controllers\FishController.cs" />
     <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Controllers\Installers\ControllersInstaller.cs" />
@@ -117,7 +118,7 @@
     <Content Include="Areas\Admin\Views\Shared\ChangePasswordSuccess.aspx" />
     <Content Include="Views\Shared\LogOn.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
-    <Content Include="Areas\Admin\Views\Shared\Register.aspx" />
+    <Content Include="Views\Shared\Register.aspx" />
     <Content Include="Content\2011.2.712\Black\editor.png" />
     <Content Include="Content\2011.2.712\Black\imagebrowser.png" />
     <Content Include="Content\2011.2.712\Black\loading.gif" />
@@ -1135,6 +1136,8 @@
     <Content Include="Views\Fish\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Mobile\Controllers\" />
+    <Folder Include="Areas\Mobile\Views\Shared\" />
     <Folder Include="Scripts\tiny_mce\plugins\example_dependency\" />
   </ItemGroup>
   <ItemGroup>
@@ -1183,6 +1186,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Web.config" />
     <None Include="Content\Admin\Images\lightbox\Thumbs.db" />
     <None Include="Content\Admin\Images\nav\Thumbs.db" />
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />

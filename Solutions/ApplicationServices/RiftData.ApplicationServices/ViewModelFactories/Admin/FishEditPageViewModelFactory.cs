@@ -6,18 +6,18 @@
 
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class FishEditPageViewModelFactory : IFishEditPageViewModelFactory
     {
-        private readonly IFishRepository _fishRepository;
+        private readonly IFishRepository fishRepository;
 
-        private readonly IGenusRepository _genusRepository;
+        private readonly IGenusRepository genusRepository;
 
-        private readonly ILocalesRepository _localesRepository;
+        private readonly ILocalesRepository localesRepository;
 
-        private readonly ISpeciesRepository _speciesRepository;
+        private readonly ISpeciesRepository speciesRepository;
 
         public FishEditPageViewModelFactory(
             IFishRepository fishRepository, 
@@ -25,21 +25,21 @@
             IGenusRepository genusRepository, 
             ISpeciesRepository speciesRepository)
         {
-            this._fishRepository = fishRepository;
-            this._localesRepository = localesRepository;
-            this._genusRepository = genusRepository;
-            this._speciesRepository = speciesRepository;
+            this.fishRepository = fishRepository;
+            this.localesRepository = localesRepository;
+            this.genusRepository = genusRepository;
+            this.speciesRepository = speciesRepository;
         }
 
         public FishEditPageViewModel Build(int fishId, bool? showSuccessMessage)
         {
             if (fishId == 0)
             {
-                var genuslist = this._genusRepository.GetAll();
-                var speciesList = this._speciesRepository.GetSpeciesWithGenus(genuslist[0].Id);
+                var genuslist = this.genusRepository.GetAll();
+                var speciesList = this.speciesRepository.GetSpeciesWithGenus(genuslist[0].Id);
                 return new FishEditPageViewModel(fishId)
                     {
-                        Locales = this._localesRepository.GetAll().ToList().ToSelectList("select a locale"), 
+                        Locales = this.localesRepository.GetAll().ToList().ToSelectList("select a locale"), 
                         Genus = genuslist.ToSelectList("select a genus"), 
                         Species = speciesList.ToSelectList("select a species"), 
                         MessageBoxVisible = showSuccessMessage != null ? true : false, 
@@ -48,13 +48,13 @@
                     };
             }
 
-            var fish = this._fishRepository.GetFish(fishId);
+            var fish = this.fishRepository.GetFish(fishId);
 
             var viewModel = new FishEditPageViewModel(fishId)
                 {
-                    Locales = this._localesRepository.GetAll().ToSelectList(fish.Locale.Id), 
-                    Genus = this._genusRepository.GetAll().ToSelectList(fish.Genus.Id), 
-                    Species = this._speciesRepository.GetSpeciesWithGenus(fish.Genus.Id).ToSelectList(fish.Species.Id), 
+                    Locales = this.localesRepository.GetAll().ToSelectList(fish.Locale.Id), 
+                    Genus = this.genusRepository.GetAll().ToSelectList(fish.Genus.Id), 
+                    Species = this.speciesRepository.GetSpeciesWithGenus(fish.Genus.Id).ToSelectList(fish.Species.Id), 
                     Name = fish.Name, 
                     Photos = fish.Photos.ToList().ToDtoList(), 
                     Description = HttpUtility.HtmlDecode(fish.Description), 

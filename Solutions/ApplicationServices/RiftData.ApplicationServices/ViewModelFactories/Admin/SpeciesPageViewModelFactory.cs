@@ -4,7 +4,7 @@
 
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.Contracts.Admin.SpeciesPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class SpeciesPageViewModelFactory : ISpeciesPageViewModelFactory

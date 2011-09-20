@@ -2,21 +2,21 @@
 {
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.Contracts.Admin.LocalePages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class LocaleIndexPageViewModelFactory : ILocaleIndexPageViewModelFactory
     {
-        private readonly ILocalesRepository _localesRepository;
+        private readonly ILocalesRepository localesRepository;
 
         public LocaleIndexPageViewModelFactory(ILocalesRepository localesRepository)
         {
-            this._localesRepository = localesRepository;
+            this.localesRepository = localesRepository;
         }
 
         public LocalePageViewModel Build()
         {
-            var locales = this._localesRepository.GetAll();
+            var locales = this.localesRepository.GetAll();
 
             var viewModel = new LocalePageViewModel
                 {

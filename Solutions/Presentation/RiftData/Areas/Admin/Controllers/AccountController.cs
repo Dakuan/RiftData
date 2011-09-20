@@ -65,6 +65,7 @@
             return this.View();
         }
 
+
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
@@ -92,6 +93,7 @@
             return View(model);
         }
 
+
         // **************************************
         // URL: /Account/LogOff
         // **************************************
@@ -99,6 +101,7 @@
         // **************************************
         // URL: /Account/Register
         // **************************************
+        [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
             this.ViewData["PasswordLength"] = this.MembershipService.MinPasswordLength;
@@ -106,6 +109,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Register(RegisterModel model)
         {
             if (this.ModelState.IsValid)

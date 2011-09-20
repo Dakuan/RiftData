@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04CFA3C8-D30A-43D7-A418-F85E9223199B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RiftData.UnitTests</RootNamespace>
+    <AssemblyName>RiftData.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\packages\Machine.Specifications.0.4.24.0\lib\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.AutoMocking">
+      <HintPath>..\..\packages\Machine.Specifications.AutoMocking.0.1.4.0\lib\Machine.Specifications.AutoMocking.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Mvc">
+      <HintPath>..\..\packages\Machine.Specifications.Mvc.1.0.2.0\lib\Machine.Specifications.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\packages\RhinoMocks.3.6\lib\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminControllers\FishControllerSpecs.cs" />
+    <Compile Include="AdminControllers\HomeControllerSpecs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApplicationServices\" />
+    <Folder Include="Domain\" />
+    <Folder Include="MainControllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApplicationServices\RiftData.ApplicationServices\RiftData.ApplicationServices.csproj">
+      <Project>{12F5CC2A-6B13-4EB8-A104-466143F82D90}</Project>
+      <Name>RiftData.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\RiftData.Domain\RiftData.Domain.csproj">
+      <Project>{F5F86ED6-13D5-4911-9E86-4DAB2426D900}</Project>
+      <Name>RiftData.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Presentation\RiftData.Presentation.Contracts\RiftData.Presentation.Contracts.csproj">
+      <Project>{E32B17CA-EE88-4F92-A6EE-25C3EE640139}</Project>
+      <Name>RiftData.Presentation.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Presentation\RiftData.Presentation.ViewModels\RiftData.Presentation.ViewModels.csproj">
+      <Project>{1E84268C-9D18-4844-B170-2A2222C80998}</Project>
+      <Name>RiftData.Presentation.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Presentation\RiftData\RiftData.csproj">
+      <Project>{FFAC8363-3B13-4327-A21D-04D22EEDCF4E}</Project>
+      <Name>RiftData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
