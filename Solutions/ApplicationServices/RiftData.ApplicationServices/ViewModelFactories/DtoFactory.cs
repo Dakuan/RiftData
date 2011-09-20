@@ -19,8 +19,12 @@
                     Locale = Build(fish.Locale), 
                     UrlName = fish.UrlName, 
                     Genus = Build(fish.Genus), 
-                    Species = Build(fish.Species), 
-                    Description = HttpUtility.HtmlDecode(fish.Description), 
+                    Species = Build(fish.Species),
+                    Description =
+                        string.IsNullOrEmpty(fish.Description)
+                            ? HttpUtility.HtmlDecode(fish.Species.Description)
+                            : HttpUtility.HtmlDecode(fish.Description),
+                     
                     Photos = fish.Photos.ToDtoList(), 
                     HasDescription = fish.HasDescription
                 };

@@ -132,6 +132,11 @@
         {
             var species = this.dataContext.Species.FirstOrDefault(s => s.Id == speciesId);
 
+            if (species == null)
+            {
+                return UpdateResult.DoesNotExist;
+            }
+
             var genus = this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
 
             var temperament = this.dataContext.Temperaments.First(t => t.Id == temperamentId);

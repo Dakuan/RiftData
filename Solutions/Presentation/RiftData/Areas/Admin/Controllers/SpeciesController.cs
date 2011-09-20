@@ -53,6 +53,7 @@
             return this.View(this.speciesPageViewModelFactory.Build());
         }
 
+        [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Update(int id)
         {
             return this.View(this.speciesEditPageViewModelFactory.Build(id));
