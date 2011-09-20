@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data
+﻿using RiftData.Domain.Logs;
+
+namespace RiftData.Infrastructure.Data
 {
     using System.Data.Entity;
 
@@ -28,6 +30,8 @@
 
         public DbSet<Temperament> Temperaments { get; set; }
 
+        public DbSet<UserLog> UserLogs { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             AddConfigurations(modelBuilder);
@@ -45,6 +49,7 @@
             modelBuilder.Configurations.Add(new GenusTypeConfiguration());
             modelBuilder.Configurations.Add(new GenusConfiguration());
             modelBuilder.Configurations.Add(new LakeConfiguration());
+            modelBuilder.Configurations.Add(new UserLogConfiguration());
         }
     }
 }

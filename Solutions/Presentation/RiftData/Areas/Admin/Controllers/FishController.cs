@@ -1,4 +1,6 @@
-﻿namespace RiftData.Areas.Admin.Controllers
+﻿using RiftData.Infrastructure.Data.Logging;
+
+namespace RiftData.Areas.Admin.Controllers
 {
     using System;
     using System.Web.Mvc;
@@ -19,6 +21,7 @@
         private readonly IFishRepository fishRepository;
 
         private readonly IPhotosRepository photosRepository;
+        private readonly ILogger logger;
 
         private readonly ISpeciesRepository speciesRepository;
 
@@ -27,13 +30,14 @@
             IFishEditPageViewModelFactory fishEditPageViewModelFactory, 
             IFishRepository fishRepository, 
             ISpeciesRepository speciesRepository, 
-            IPhotosRepository photosRepository)
+            IPhotosRepository photosRepository, ILogger logger)
         {
             this.fishPageViewModelFactory = fishPageViewModelFactory;
             this.fishEditPageViewModelFactory = fishEditPageViewModelFactory;
             this.fishRepository = fishRepository;
             this.speciesRepository = speciesRepository;
             this.photosRepository = photosRepository;
+            this.logger = logger;
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
@@ -50,7 +54,7 @@
             this.TryUpdateModel(viewModel);
 
             var updateResult = this.fishRepository.Add(
-                viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description);
+                viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description, this.User.Identity.Name);
 
             return updateResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
@@ -101,7 +105,7 @@
         {
             this.TryUpdateModel(vm);
 
-            var updateResult = this.fishRepository.Update(vm.Id, vm.Genus, vm.Species, vm.Locales, vm.Description);
+            var updateResult = this.fishRepository.Update(vm.Id, vm.Genus, vm.Species, vm.Locales, vm.Description, this.User.Identity.Name);
 
             return updateResult == UpdateResult.Success
                        ? new JsonResult { Data = true }

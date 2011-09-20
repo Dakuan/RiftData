@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[UserLogs]
+(
+	[UserLogID] INT IDENTITY (1, 1)NOT NULL, 
+	[UserLogDate] DATETIME NOT NULL,
+	[UserLogUserName] NVARCHAR(50) NOT NULL,
+	[UserLogMessage] NVARCHAR(1000) NOT NULL
+)

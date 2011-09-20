@@ -17,7 +17,7 @@
             this.dataContext = dataContext;
         }
 
-        public AddResult Add(string name, int lakeId)
+        public AddResult Add(string name, int lakeId, string userName)
         {
             if (this.dataContext.GenusTypes.Any(g => g.Name == name))
             {
@@ -84,7 +84,7 @@
             return this.dataContext.GenusTypes.First(t => t.Genus.Any(g => g.Species.Any(s => s.Id == speciesId)));
         }
 
-        public UpdateResult Update(int genusTypeId, string name, int lakeId)
+        public UpdateResult Update(int genusTypeId, string name, int lakeId, string userName)
         {
             try
             {

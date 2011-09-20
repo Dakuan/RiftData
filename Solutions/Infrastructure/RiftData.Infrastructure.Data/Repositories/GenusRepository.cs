@@ -18,7 +18,7 @@
             this.dataContext = dataContext;
         }
 
-        public AddResult Add(string name)
+        public AddResult Add(string name, string s)
         {
             // todo add genus typeId to genus forms
             return this.Add(name, 1);

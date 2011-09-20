@@ -7,8 +7,7 @@ namespace RiftData.Domain.Repositories
 
     public interface ISpeciesRepository
     {
-        AddResult Add(
-            string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId);
+        AddResult Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName);
 
         DeleteResult Delete(int speciesId);
 
@@ -22,14 +21,6 @@ namespace RiftData.Domain.Repositories
 
         IList<Species> GetSpeciesWithGenus(int id);
 
-        UpdateResult Update(
-            int speciesId, 
-            string name, 
-            int genusId, 
-            bool described, 
-            string description, 
-            int minSize, 
-            int maxSize, 
-            int temperamentId);
+        UpdateResult Update(int speciesId, string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName);
     }
 }

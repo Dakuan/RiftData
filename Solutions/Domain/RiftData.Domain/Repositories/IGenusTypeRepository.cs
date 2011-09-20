@@ -7,7 +7,7 @@ namespace RiftData.Domain.Repositories
 
     public interface IGenusTypeRepository
     {
-        AddResult Add(string name, int lakeId);
+        AddResult Add(string name, int lakeId, string userName);
 
         DeleteResult Delete(int genusTypeId);
 
@@ -19,6 +19,6 @@ namespace RiftData.Domain.Repositories
 
         GenusType GetFromSpecies(int speciesId);
 
-        UpdateResult Update(int genusTypeId, string name, int lakeId);
+        UpdateResult Update(int genusTypeId, string name, int lakeId, string userName);
     }
 }

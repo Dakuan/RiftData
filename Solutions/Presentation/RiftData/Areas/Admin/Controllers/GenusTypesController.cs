@@ -41,7 +41,7 @@
         {
             this.TryUpdateModel(viewModel);
 
-            var result = this.genusTypeRepository.Add(viewModel.Name, viewModel.Lake);
+            var result = this.genusTypeRepository.Add(viewModel.Name, viewModel.Lake, this.User.Identity.Name);
 
             return new JsonResult { Data = result == AddResult.Success };
         }
@@ -68,7 +68,7 @@
         {
             this.TryUpdateModel(viewModel);
 
-            var result = this.genusTypeRepository.Update(viewModel.Id, viewModel.Name, viewModel.Lake);
+            var result = this.genusTypeRepository.Update(viewModel.Id, viewModel.Name, viewModel.Lake, this.User.Identity.Name);
 
             return new JsonResult { Data = result == UpdateResult.Success };
         }

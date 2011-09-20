@@ -37,7 +37,7 @@
         {
             // TryUpdateModel(vm);
             var addResult = this.speciesRepository.Add(
-                vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
+                vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
 
             return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
@@ -65,7 +65,7 @@
         {
             // TryUpdateModel(vm);
             var updateResult = this.speciesRepository.Update(
-                vm.Id, vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament);
+                vm.Id, vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
 
             return updateResult == UpdateResult.Success
                        ? new JsonResult { Data = true }

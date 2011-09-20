@@ -18,7 +18,7 @@
             this.dataContext = dataContext;
         }
 
-        public AddResult Add(string name, double latitude, double longitude)
+        public AddResult Add(string name, double latitude, double longitude, string userName)
         {
             var locale = new Locale { Name = name, Latitude = latitude, Longitude = longitude };
 
@@ -95,7 +95,7 @@
             return list.SortLocales().ToList();
         }
 
-        public UpdateResult Update(int localeId, string name, double latitude, double longitude)
+        public UpdateResult Update(int localeId, string name, double latitude, double longitude, string userName)
         {
             var locale = this.dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
 

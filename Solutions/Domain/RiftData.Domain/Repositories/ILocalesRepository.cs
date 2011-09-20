@@ -7,7 +7,7 @@ namespace RiftData.Domain.Repositories
 
     public interface ILocalesRepository
     {
-        AddResult Add(string name, double latitude, double longitude);
+        AddResult Add(string name, double latitude, double longitude, string userName);
 
         DeleteResult Delete(int localeId);
 
@@ -21,6 +21,6 @@ namespace RiftData.Domain.Repositories
 
         IList<Locale> GetWithSpecies(int speciesId);
 
-        UpdateResult Update(int localeId, string name, double latitude, double longitude);
+        UpdateResult Update(int localeId, string name, double latitude, double longitude, string userName);
     }
 }

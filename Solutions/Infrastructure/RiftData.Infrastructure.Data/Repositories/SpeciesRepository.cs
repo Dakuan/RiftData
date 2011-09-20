@@ -18,8 +18,7 @@
             this.dataContext = dataContext;
         }
 
-        public AddResult Add(
-            string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId)
+        public AddResult Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName)
         {
             var genus = this.dataContext.Genus.First(g => g.Id == genusId);
 
@@ -120,15 +119,7 @@
             return this.dataContext.Species.Where(s => s.Genus.Id == id).ToList().SortSpecies().ToList();
         }
 
-        public UpdateResult Update(
-            int speciesId, 
-            string name, 
-            int genusId, 
-            bool described, 
-            string description, 
-            int minSize, 
-            int maxSize, 
-            int temperamentId)
+        public UpdateResult Update(int speciesId, string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName)
         {
             var species = this.dataContext.Species.FirstOrDefault(s => s.Id == speciesId);
 

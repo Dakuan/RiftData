@@ -40,7 +40,7 @@
         {
             this.TryUpdateModel(viewModel);
 
-            var addResult = this.genusRepository.Add(viewModel.Name);
+            var addResult = this.genusRepository.Add(viewModel.Name, this.User.Identity.Name);
 
             return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }

@@ -37,7 +37,7 @@
         {
             this.TryUpdateModel(viewModel);
 
-            var result = this.localesRepository.Add(viewModel.Name, viewModel.Latitude, viewModel.Longitude);
+            var result = this.localesRepository.Add(viewModel.Name, viewModel.Latitude, viewModel.Longitude, this.User.Identity.Name);
 
             return new JsonResult { Data = result };
         }
@@ -64,7 +64,7 @@
         {
             this.TryUpdateModel(vm);
 
-            var result = this.localesRepository.Update(vm.Id, vm.Name, vm.Latitude, vm.Longitude);
+            var result = this.localesRepository.Update(vm.Id, vm.Name, vm.Latitude, vm.Longitude, this.User.Identity.Name);
 
             return result == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }

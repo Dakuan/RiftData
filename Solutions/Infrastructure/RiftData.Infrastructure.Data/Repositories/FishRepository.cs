@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data.Repositories
+﻿using RiftData.Infrastructure.Data.Logging;
+
+namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -12,13 +14,15 @@
     public class FishRepository : IFishRepository
     {
         private readonly RiftDataDataContext dataContext;
+        private readonly ILogger logger;
 
-        public FishRepository(RiftDataDataContext dataContext)
+        public FishRepository(RiftDataDataContext dataContext, ILogger logger)
         {
             this.dataContext = dataContext;
+            this.logger = logger;
         }
 
-        public AddResult Add(int genusId, int speciesId, int localeId, string description)
+        public AddResult Add(int genusId, int speciesId, int localeId, string description, string userName)
         {
             var genus = this.dataContext.Genus.First(g => g.Id == genusId);
 
@@ -111,7 +115,7 @@
             return this.dataContext.Fish.Where(f => f.Genus.GenusType.Id == genusTypeId).ToList();
         }
 
-        public UpdateResult Update(int fishId, int genusId, int speciesId, int localeId, string description)
+        public UpdateResult Update(int fishId, int genusId, int speciesId, int localeId, string description, string userName)
         {
             var fish = this.dataContext.Fish.FirstOrDefault(f => f.Id == fishId);
 
@@ -131,6 +135,8 @@
             {
                 return UpdateResult.Failure;
             }
+
+            logger.LogUpdate(fish, userName);
 
             return UpdateResult.Success;
         }

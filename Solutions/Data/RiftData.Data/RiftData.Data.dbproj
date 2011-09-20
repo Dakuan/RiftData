@@ -725,5 +725,11 @@
     <Build Include="Schema Objects\Database Level Objects\Security\Schemas\aspnet_Membership_BasicAccess.schema.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\UserLogs.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\PK_UserLogs.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>
