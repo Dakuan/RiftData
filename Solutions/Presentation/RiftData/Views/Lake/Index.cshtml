@@ -7,16 +7,20 @@
 
 }
 <div id="CenterPanelContent" class="infoContainer">
+    <div id="contentHolder">
     <h2>Lake @this.Model.Lake.Name</h2>
+
     @this.Html.Raw(HttpUtility.HtmlDecode(this.Model.Lake.Description))
+
     @{ if (Model.Locales.Count > 0)
        {
-               <h3>Locales</h3>
-               <p>
-                   @foreach (var locale in Model.Locales)
-                   {
-                       <a href="@this.Url.Action("Index", "Locale", new { localeName = locale.Name })"> @locale.Name</a> <text>, </text>
-                   }
-               </p>
+            <h3>Locales</h3>
+            <p>
+                @foreach (var locale in Model.Locales)
+                {
+                    <a href="@this.Url.Action("Index", "Locale", new { localeName = locale.Name })"> @locale.Name</a> <text>, </text>
+                }
+            </p>
        } }
+    </div>
 </div>
