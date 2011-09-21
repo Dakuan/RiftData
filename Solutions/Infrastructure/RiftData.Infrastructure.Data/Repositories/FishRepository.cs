@@ -44,13 +44,15 @@ namespace RiftData.Infrastructure.Data.Repositories
             try
             {
                 this.dataContext.SaveChanges();
-
-                return AddResult.Success;
             }
             catch (Exception ex)
             {
                 return AddResult.Failure;
             }
+
+            return AddResult.Success;
+
+            this.logger.LogAdd(fish, userName);
         }
 
         public DeleteResult Delete(int fishId)
@@ -67,13 +69,12 @@ namespace RiftData.Infrastructure.Data.Repositories
             try
             {
                 this.dataContext.SaveChanges();
-
-                return DeleteResult.Success;
             }
             catch (Exception)
             {
                 return DeleteResult.Failure;
             }
+            return DeleteResult.Success;
         }
 
         public IList<Fish> GetByLocale(int localeId)

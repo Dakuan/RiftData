@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data.Repositories
+﻿using RiftData.Infrastructure.Data.Logging;
+
+namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -12,10 +14,12 @@
     public class SpeciesRepository : ISpeciesRepository
     {
         private readonly RiftDataDataContext dataContext;
+        private readonly ILogger logger;
 
-        public SpeciesRepository(RiftDataDataContext dataContext)
+        public SpeciesRepository(RiftDataDataContext dataContext, ILogger logger)
         {
             this.dataContext = dataContext;
+            this.logger = logger;
         }
 
         public AddResult Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName)
@@ -40,13 +44,15 @@
             try
             {
                 this.dataContext.SaveChanges();
-
-                return AddResult.Success;
             }
             catch (Exception)
             {
                 return AddResult.Failure;
             }
+
+            logger.LogAdd(species, userName);
+
+            return AddResult.Success;
         }
 
         public DeleteResult Delete(int speciesId)
@@ -150,12 +156,16 @@
             {
                 this.dataContext.SaveChanges();
 
-                return UpdateResult.Success;
+
             }
             catch
             {
                 return UpdateResult.Failure;
             }
+
+            logger.LogUpdate(species, userName);
+
+            return UpdateResult.Success;
         }
     }
 }

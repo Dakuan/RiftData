@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data.Repositories
+﻿using RiftData.Infrastructure.Data.Logging;
+
+namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -11,10 +13,12 @@
     public class GenusTypeRepository : IGenusTypeRepository
     {
         private readonly RiftDataDataContext dataContext;
+        private readonly ILogger logger;
 
-        public GenusTypeRepository(RiftDataDataContext dataContext)
+        public GenusTypeRepository(RiftDataDataContext dataContext, ILogger logger)
         {
             this.dataContext = dataContext;
+            this.logger = logger;
         }
 
         public AddResult Add(string name, int lakeId, string userName)
@@ -37,6 +41,8 @@
             {
                 return AddResult.Failure;
             }
+
+            logger.LogAdd(genusType, userName);
 
             return AddResult.Success;
         }
@@ -97,6 +103,8 @@
                 genusType.Lake = lake;
 
                 this.dataContext.SaveChanges();
+
+                logger.LogUpdate(genusType, userName);
             }
             catch (Exception)
             {

@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data.Repositories
+﻿using RiftData.Infrastructure.Data.Logging;
+
+namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -12,10 +14,12 @@
     public class LocalesRepository : ILocalesRepository
     {
         private readonly RiftDataDataContext dataContext;
+        private readonly ILogger logger;
 
-        public LocalesRepository(RiftDataDataContext dataContext)
+        public LocalesRepository(RiftDataDataContext dataContext, ILogger logger)
         {
             this.dataContext = dataContext;
+            this.logger = logger;
         }
 
         public AddResult Add(string name, double latitude, double longitude, string userName)
@@ -27,13 +31,15 @@
             try
             {
                 this.dataContext.SaveChanges();
-
-                return AddResult.Success;
             }
             catch (Exception)
             {
                 return AddResult.Failure;
             }
+
+            logger.LogAdd(locale, userName);
+
+            return AddResult.Success;
         }
 
         public DeleteResult Delete(int localeId)
@@ -118,6 +124,8 @@
             {
                 return UpdateResult.Failure;
             }
+
+            logger.LogUpdate(locale, userName);
 
             return UpdateResult.Success;
         }

@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data.Repositories
+﻿using RiftData.Infrastructure.Data.Logging;
+
+namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -12,19 +14,21 @@
     public class GenusRepository : IGenusRepository
     {
         private readonly RiftDataDataContext dataContext;
+        private readonly ILogger logger;
 
-        public GenusRepository(RiftDataDataContext dataContext)
+        public GenusRepository(RiftDataDataContext dataContext, ILogger logger)
         {
             this.dataContext = dataContext;
+            this.logger = logger;
         }
 
-        public AddResult Add(string name, string s)
+        public AddResult Add(string name, string userName)
         {
             // todo add genus typeId to genus forms
-            return this.Add(name, 1);
+            return this.Add(name, 1, userName);
         }
 
-        public AddResult Add(string name, int genusTypeId)
+        public AddResult Add(string name, int genusTypeId, string userName)
         {
             var genusType = this.dataContext.GenusTypes.First(t => t.Id == genusTypeId);
 
@@ -38,13 +42,15 @@
             try
             {
                 this.dataContext.SaveChanges();
-
-                return AddResult.Success;
             }
             catch (Exception ex)
             {
                 return AddResult.Failure;
             }
+
+           logger.LogAdd(genusType, userName);
+
+            return AddResult.Success;
         }
 
         public DeleteResult Delete(int genusId)
@@ -89,22 +95,24 @@
             return this.dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId).ToList();
         }
 
-        public UpdateResult Update(int genusId, string name)
+        public UpdateResult Update(int genusId, string userName)
         {
             var genus = this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
 
-            genus.Name = name;
+            genus.Name = userName;
 
             try
             {
                 this.dataContext.SaveChanges();
-
-                return UpdateResult.Success;
             }
             catch (Exception)
             {
                 return UpdateResult.Failure;
             }
+
+            logger.LogUpdate(genus, userName);
+
+            return UpdateResult.Success;
         }
     }
 }
