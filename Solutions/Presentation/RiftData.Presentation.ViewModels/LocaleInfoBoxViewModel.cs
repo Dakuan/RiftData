@@ -10,6 +10,6 @@
 
         public string PhotoUrl { get; set; }
 
-        public IEnumerable<SpeciesDto> Species { get; set; }
+        public IList<SpeciesDto> Species { get; set; }
     }
 }
