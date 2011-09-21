@@ -1,65 +1,70 @@
-﻿@using Telerik.Web.Mvc.UI
-@model RiftData.Presentation.ViewModels.SpeciesPageViewModel
+﻿@using RiftData.Presentation.ViewModels
+@model SpeciesPageViewModel
 
 @{
-    ViewBag.Title = "RiftData | " + Model.Species.Name;
-    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+    this.ViewBag.Title = "RiftData | " + this.Model.Species.Name;
+    this.Layout = "~/Views/Shared/_PanelLayout.cshtml";
+
 }
 
 @section CenterPanel{
     <div id="contentHolder">
-        <h2>@Model.Species.Name</h2>
-        @{if(Model.Species.HasDescription){
-        <h3>Description:</h3>
-        @Html.Raw(HttpUtility.HtmlDecode(Model.Species.Description))
-        }}
+        <h2>@this.Model.Species.Name</h2>
+        @if (this.Model.Species.HasDescription)
+        {
+            <h3>Description:</h3>
+            @this.Html.Raw(HttpUtility.HtmlDecode(this.Model.Species.Description))
+        }
         <div id="InfoContainer">
             <div class="infoBlock">
                 <h3>Found at:</h3>
-                @{ if (Model.Locales.Count() > 0){
-                    <div id="LocalesList">
-                        <ul>
-                            @foreach (var fish in Model.Fish)
-                            {
-                                <li>
-                                    @{if(fish.Locale.HasPhotos){
-                                            <img alt="@fish.Locale.Name" src="@Url.Content("../Content/camera-tight-small.png")" class="localeListImage" /> 
-                                        }
-                                        else{
-                                            <div class="cameraPicBlank"></div>
-                                      }
-                                    }
-                                    <a href="@Url.Action("Index", "Locale", new { localeName = fish.Locale.Name })" title="view @fish.Locale.Name, Lake @fish.Locale.Lake.Name">@fish.Locale.Name</a> | <a href="@Url.Action("Index", "Fish", new { fishName = fish.UrlName})" title="view @fish.Name">view fish</a>
-                                    <div class="clear"></div>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                    }
-                    else{
-                        <p>No locale information available, sorry!</p>   
-                    }
-                }
+                @{ if (this.Model.Locales.Count() > 0)
+                   {
+                       <div id="LocalesList">
+                           <ul>
+                               @foreach (var fish in this.Model.Fish)
+                               {
+                                   <li>
+                                       @if (fish.Locale.HasPhotos)
+                                       {
+                                           <img alt="@fish.Locale.Name" src="@this.Url.Content("../Content/camera-tight-small.png")" class="localeListImage" />
+                                       }
+                                       else
+                                       {
+                                           <div class="cameraPicBlank"></div>
+                                       }
+                                       <a href="@this.Url.Action("Index", "Locale", new { localeName = fish.Locale.Name })" title="view @fish.Locale.Name, Lake @fish.Locale.Lake.Name">@fish.Locale.Name</a> | <a href="@this.Url.Action("Index", "Fish", new { fishName = fish.UrlName })" title="view @fish.Name">view fish</a>
+                                       <div class="clear"></div>
+                                   </li>
+                               }
+                           </ul>
+                       </div>
+                   }
+                   else
+                   {
+                       <p>No locale information available, sorry!</p>
+                   }
+ }
             </div>
             <div class="infoBlock">
                 <ul class="horiztonalList">
                     <li><h3>Size:</h3></li>
-                    <li>@Model.Species.SizeString</li>
+                    <li>@this.Model.Species.SizeString</li>
                 </ul>
                 <div class="clear"></div>
                 <ul class="horiztonalList">
                     <li><h3>Temperament:</h3></li>
-                    <li>@Model.Species.Temperament</li>
+                    <li>@this.Model.Species.Temperament</li>
                 </ul>
                 <div class="clear"></div>
             </div>
             <div class="clear"></div>
         </div>
-        @Html.Partial("PhotoGallery", Model.PhotoGalleryViewModel)
+        @this.Html.Partial("PhotoGallery", this.Model.PhotoGalleryViewModel)
     </div>  
-    @Html.Hidden("SpeciesId", Model.Species.Id)
+    @this.Html.Hidden("SpeciesId", this.Model.Species.Id)
 }
 @section Scripts{
 
-    <script src="../../Scripts/PageScripts/Species.js" type="text/javascript"></script>
+    <script src="../../Scripts/PageScripts/Species.js" type="text/javascript"> </script>
 }

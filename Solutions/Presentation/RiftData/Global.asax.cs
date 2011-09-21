@@ -1,23 +1,25 @@
-﻿using System.Data.Entity;
-using System.Web.Mvc;
-using System.Web.Routing;
-using Castle.Windsor;
-using Castle.Windsor.Configuration.Interpreters;
-using Castle.Windsor.Installer;
-using MvcSiteMapProvider.Web;
-using RiftData.ApplicationServices.Installers;
-using RiftData.Controllers.Factory;
-using RiftData.Domain.Installers;
-using RiftData.Infrastructure.Data;
-using RiftData.Infrastructure.Data.Installers;
-using RiftData.Infrastructure.Flickr;
-
-namespace RiftData
+﻿namespace RiftData
 {
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+
+    using Castle.Windsor;
+    using Castle.Windsor.Configuration.Interpreters;
+    using Castle.Windsor.Installer;
+
+    using MvcSiteMapProvider.Web;
+
+    using RiftData.ApplicationServices.Installers;
+    using RiftData.Controllers.Factory;
+    using RiftData.Domain.Installers;
+    using RiftData.Infrastructure.Data.Installers;
+    using RiftData.Infrastructure.Flickr;
+
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
@@ -29,49 +31,23 @@ namespace RiftData
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("favicon.ico");
 
-
-            routes.MapRoute(
-                "Home", // Route name
+            routes.MapRoute("Home", // Route name
                 "{genusTypeName}", // URL with parameters
                 new { controller = "Home", action = "Index", genusTypeName = UrlParameter.Optional }, // Parameter defaults
-                new[]{"RiftData.Controllers"}
-            );
+                new[] { "RiftData.Controllers" });
 
-            routes.MapRoute(
-                "Species", 
-                "Species/{speciesFullName}",
-                new { controller = "Species", action = "Index" },
-                new[] { "RiftData.Controllers" }
-                );
+            routes.MapRoute("Species", "Species/{speciesFullName}", new { controller = "Species", action = "Index" }, new[] { "RiftData.Controllers" });
 
-            routes.MapRoute(
-                "Locale",
-                "Locale/{localeName}",
-                new { controller = "Locale", action = "Index" },
-                new[] { "RiftData.Controllers" }
-                );
+            routes.MapRoute("Locale", "Locale/{localeName}", new { controller = "Locale", action = "Index" }, new[] { "RiftData.Controllers" });
 
-            routes.MapRoute(
-                "Fish",
-                "Fish/{fishName}",
-                new { controller = "Fish", action="Index" },
-                new[] { "RiftData.Controllers" }
-                );
+            routes.MapRoute("Fish", "Fish/{fishName}", new { controller = "Fish", action = "Index" }, new[] { "RiftData.Controllers" });
 
-            routes.MapRoute(
-                "Lake",
-                "Lake/{lakeName}",
-                new { controller = "Lake", action = "Index" },
-                new[] { "RiftData.Controllers" }
-                );
+            routes.MapRoute("Lake", "Lake/{lakeName}", new { controller = "Lake", action = "Index" }, new[] { "RiftData.Controllers" });
 
-            routes.MapRoute(
-                "Default", // Route name
+            routes.MapRoute("Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
-                new[] { "RiftData.Controllers" }
-            );
-
+                new[] { "RiftData.Controllers" });
         }
 
         protected void Application_Start()
@@ -96,12 +72,10 @@ namespace RiftData
 
             container.Install(FromAssembly.Containing<FactoriesInstaller>());
 
-            //container.Install(FromAssembly.Containing<RepositoriesInstaller>());
-
+            // container.Install(FromAssembly.Containing<RepositoriesInstaller>());
             container.Install(FromAssembly.Containing<ServicesInstaller>());
 
             container.Install(FromAssembly.Containing<ViewModelFactoryInstaller>());
-
             container.Install(FromAssembly.Containing<WindsorControllerFactory>());
         }
     }

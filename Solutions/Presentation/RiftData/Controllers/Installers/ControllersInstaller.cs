@@ -18,16 +18,13 @@
         {
             var types = Assembly.GetAssembly(typeof(HomeController)).GetExportedTypes().Where(IsController);
 
-            types.ForEach(
-                t => container.Register(
-                    Component.For(t).ImplementedBy(t)
+            types.ForEach(t => container.Register(Component.For(t).ImplementedBy(t)
                          
-                         // .Named(t.Name.ToLower())
-                         .LifeStyle.Is(LifestyleType.Transient)));
+                                   
+                                   // .Named(t.Name.ToLower())
+                                   .LifeStyle.Is(LifestyleType.Transient)));
 
-            container.Register(
-                Component.For<XmlSiteMapController>().ImplementedBy<XmlSiteMapController>().LifeStyle.Is(
-                    LifestyleType.Transient));
+            container.Register(Component.For<XmlSiteMapController>().ImplementedBy<XmlSiteMapController>().LifeStyle.Is(LifestyleType.Transient));
         }
 
         private static bool IsController(Type type)

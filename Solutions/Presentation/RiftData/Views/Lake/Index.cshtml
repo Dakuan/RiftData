@@ -1,9 +1,11 @@
-﻿@model RiftData.Presentation.ViewModels.LakeViewModel
+﻿@using RiftData.Presentation.ViewModels
+@model LakeViewModel
 
 @{
-    ViewBag.Title = string.Format("Lake {0} | RiftData", Model.Lake.Name);
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    this.ViewBag.Title = string.Format("Lake {0} | RiftData", this.Model.Lake.Name);
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 <div id="CenterPanelContent" class="infoContainer">
-    <h2>@Model.Lake.Name</h2>
+    <h2>@this.Model.Lake.Name</h2>
 </div>

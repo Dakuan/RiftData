@@ -4,7 +4,10 @@
     using System.Web.Routing;
     using System.Web.Security;
 
+    using RiftData.ApplicationServices.AccountServices;
+    using RiftData.Presentation.Contracts.AccountServices;
     using RiftData.Presentation.ViewModels.Admin;
+    using RiftData.Presentation.ViewModels.Admin.Account;
 
     [HandleError]
     public class AccountController : Controller
@@ -32,8 +35,7 @@
                 }
                 else
                 {
-                    this.ModelState.AddModelError(
-                        string.Empty, "The current password is incorrect or the new password is invalid.");
+                    this.ModelState.AddModelError(string.Empty, "The current password is incorrect or the new password is invalid.");
                 }
             }
 
@@ -65,7 +67,6 @@
             return this.View();
         }
 
-
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
@@ -93,7 +94,6 @@
             return View(model);
         }
 
-
         // **************************************
         // URL: /Account/LogOff
         // **************************************
@@ -115,8 +115,7 @@
             if (this.ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus = this.MembershipService.CreateUser(
-                    model.UserName, model.Password, model.Email);
+                MembershipCreateStatus createStatus = this.MembershipService.CreateUser(model.UserName, model.Password, model.Email);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {

@@ -1,6 +1,4 @@
-﻿using RiftData.Infrastructure.Data.Logging;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -10,10 +8,12 @@ namespace RiftData.Infrastructure.Data.Repositories
     using RiftData.Domain.Enums;
     using RiftData.Domain.Extensions;
     using RiftData.Domain.Repositories;
+    using RiftData.Infrastructure.Data.Logging;
 
     public class GenusRepository : IGenusRepository
     {
         private readonly RiftDataDataContext dataContext;
+
         private readonly ILogger logger;
 
         public GenusRepository(RiftDataDataContext dataContext, ILogger logger)
@@ -48,7 +48,7 @@ namespace RiftData.Infrastructure.Data.Repositories
                 return AddResult.Failure;
             }
 
-           logger.LogAdd(genusType, userName);
+            this.logger.LogAdd(genusType, userName);
 
             return AddResult.Success;
         }
@@ -83,9 +83,7 @@ namespace RiftData.Infrastructure.Data.Repositories
 
         public IList<Genus> GetOfIdWithFish(int genusTypeId)
         {
-            var list =
-                this.dataContext.Genus.Where(
-                    g => g.GenusType.Id == genusTypeId && this.dataContext.Fish.Any(f => f.Genus.Id == g.Id));
+            var list = this.dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId && this.dataContext.Fish.Any(f => f.Genus.Id == g.Id));
 
             return list.SortGenus().ToList();
         }
@@ -110,7 +108,7 @@ namespace RiftData.Infrastructure.Data.Repositories
                 return UpdateResult.Failure;
             }
 
-            logger.LogUpdate(genus, userName);
+            this.logger.LogUpdate(genus, userName);
 
             return UpdateResult.Success;
         }

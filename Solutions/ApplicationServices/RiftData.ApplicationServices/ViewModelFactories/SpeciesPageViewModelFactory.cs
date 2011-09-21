@@ -10,6 +10,8 @@
 
     public class SpeciesPageViewModelFactory : ISpeciesPageViewModelFactory
     {
+        private readonly IFishDtoService fishDtoService;
+
         private readonly IGenusPanelViewModelFactory genusPanelViewModelFactory;
 
         private readonly IHeaderViewModelFactory headerViewModelFactory;
@@ -20,15 +22,7 @@
 
         private readonly ISpeciesRepository speciesRepository;
 
-        private readonly IFishDtoService fishDtoService;
-
-        public SpeciesPageViewModelFactory(
-            ISpeciesRepository speciesRepository,
-            IFishDtoService fishDtoService,
-            IGenusPanelViewModelFactory genusPanelViewModelFactory, 
-            ILocaleDtoService localeDtoService, 
-            IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, 
-            IHeaderViewModelFactory headerViewModelFactory)
+        public SpeciesPageViewModelFactory(ISpeciesRepository speciesRepository, IFishDtoService fishDtoService, IGenusPanelViewModelFactory genusPanelViewModelFactory, ILocaleDtoService localeDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory, IHeaderViewModelFactory headerViewModelFactory)
         {
             this.speciesRepository = speciesRepository;
             this.fishDtoService = fishDtoService;
@@ -51,17 +45,7 @@
 
             var genusPanel = this.genusPanelViewModelFactory.Build(species.Genus.GenusType.Id);
 
-            var viewModel = new SpeciesPageViewModel
-                {
-                    Species = DtoFactory.Build(species),
-                    Fish = this.fishDtoService.GetFishForSpecies(species.Id),
-                    HeaderViewModel = headerViewModel, 
-                    Locales = this.localeDtoService.GetLocaleDtosFromSpecies(species.Id), 
-                    PhotoGalleryViewModel = this.photoGalleryViewModelFactory.Build(species), 
-                    GenusPanelViewModel = genusPanel,
-                    Description = string.Format("Profile, photos and map for {0}", species.FullName),
-                    Keywords = "Lake " + species.Genus.GenusType.Lake.Name + ", " + species.Genus.Name + ", " + string.Join(", ", species.Genus.Species.Select(x => x.Name))
-                };
+            var viewModel = new SpeciesPageViewModel { Species = DtoFactory.Build(species), Fish = this.fishDtoService.GetFishForSpecies(species.Id), HeaderViewModel = headerViewModel, Locales = this.localeDtoService.GetLocaleDtosFromSpecies(species.Id), PhotoGalleryViewModel = this.photoGalleryViewModelFactory.Build(species), GenusPanelViewModel = genusPanel, Description = string.Format("Profile, photos and map for {0}", species.FullName), Keywords = "Lake " + species.Genus.GenusType.Lake.Name + ", " + species.Genus.Name + ", " + string.Join(", ", species.Genus.Species.Select(x => x.Name)) };
 
             return viewModel;
         }

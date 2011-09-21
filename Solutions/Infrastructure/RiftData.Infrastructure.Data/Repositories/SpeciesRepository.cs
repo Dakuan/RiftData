@@ -1,6 +1,4 @@
-﻿using RiftData.Infrastructure.Data.Logging;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -10,10 +8,12 @@ namespace RiftData.Infrastructure.Data.Repositories
     using RiftData.Domain.Enums;
     using RiftData.Domain.Extensions;
     using RiftData.Domain.Repositories;
+    using RiftData.Infrastructure.Data.Logging;
 
     public class SpeciesRepository : ISpeciesRepository
     {
         private readonly RiftDataDataContext dataContext;
+
         private readonly ILogger logger;
 
         public SpeciesRepository(RiftDataDataContext dataContext, ILogger logger)
@@ -28,16 +28,7 @@ namespace RiftData.Infrastructure.Data.Repositories
 
             var temperament = this.dataContext.Temperaments.First(t => t.Id == temperamentId);
 
-            var species = new Species
-                {
-                    Described = described, 
-                    Genus = genus, 
-                    Name = name, 
-                    Description = description, 
-                    MinSize = minSize, 
-                    MaxSize = maxSize, 
-                    Temperament = temperament
-                };
+            var species = new Species { Described = described, Genus = genus, Name = name, Description = description, MinSize = minSize, MaxSize = maxSize, Temperament = temperament };
 
             this.dataContext.Species.Add(species);
 
@@ -50,7 +41,7 @@ namespace RiftData.Infrastructure.Data.Repositories
                 return AddResult.Failure;
             }
 
-            logger.LogAdd(species, userName);
+            this.logger.LogAdd(species, userName);
 
             return AddResult.Success;
         }
@@ -107,9 +98,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             }
 
             var species = this.dataContext.Species;
-            var matchingSpecies =
-                species.Where(
-                    s => string.Equals(s.Name.Trim(), speciesName) && string.Equals(s.Genus.Name.Trim(), genusName));
+            var matchingSpecies = species.Where(s => string.Equals(s.Name.Trim(), speciesName) && string.Equals(s.Genus.Name.Trim(), genusName));
             var firstMatch = matchingSpecies.First();
 
             return firstMatch;
@@ -155,15 +144,13 @@ namespace RiftData.Infrastructure.Data.Repositories
             try
             {
                 this.dataContext.SaveChanges();
-
-
             }
             catch
             {
                 return UpdateResult.Failure;
             }
 
-            logger.LogUpdate(species, userName);
+            this.logger.LogUpdate(species, userName);
 
             return UpdateResult.Success;
         }

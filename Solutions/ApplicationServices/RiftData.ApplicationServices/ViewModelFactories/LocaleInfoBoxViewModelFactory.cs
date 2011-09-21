@@ -21,10 +21,7 @@
         {
             var locale = this._localesRepository.Get(localeId);
 
-            var viewModel = new LocaleInfoBoxViewModel
-                {
-                   Name = locale.Name, Species = this._speciesDtoService.GetSpeciesAtLocale(localeId) 
-                };
+            var viewModel = new LocaleInfoBoxViewModel { Name = locale.Name, Species = this._speciesDtoService.GetSpeciesAtLocale(localeId) };
 
             return viewModel;
         }

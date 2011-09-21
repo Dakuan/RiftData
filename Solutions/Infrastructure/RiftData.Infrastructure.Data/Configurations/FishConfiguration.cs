@@ -11,8 +11,7 @@
         {
             this.HasKey(p => p.Id);
 
-            Property(p => p.Id).HasColumnName("FishID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).
-                IsRequired();
+            Property(p => p.Id).HasColumnName("FishID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
 
             this.HasRequired(x => x.Genus).WithMany().Map(m => m.MapKey("FishGenusID"));
 
@@ -20,13 +19,12 @@
 
             this.HasRequired(x => x.Locale).WithMany().Map(m => m.MapKey("FishLocaleID"));
 
-            this.HasMany(x => x.Photos).WithMany().Map(
-                m =>
-                    {
-                        m.MapRightKey("PhotoID");
-                        m.MapLeftKey("FishID");
-                        m.ToTable("FishPhotos");
-                    });
+            this.HasMany(x => x.Photos).WithMany().Map(m =>
+                {
+                    m.MapRightKey("PhotoID");
+                    m.MapLeftKey("FishID");
+                    m.ToTable("FishPhotos");
+                });
             Property(p => p.Description).HasColumnName("FishDescription");
 
             this.Ignore(x => x.HasPhotos);

@@ -11,8 +11,7 @@
         {
             this.HasKey(x => x.Id);
 
-            Property(x => x.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnName(
-                "PhotoID");
+            Property(x => x.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnName("PhotoID");
 
             Property(x => x.FlickrId).HasColumnName("PhotoFlickrId").IsRequired();
 

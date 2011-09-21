@@ -1,39 +1,37 @@
 ﻿@using RiftData.Presentation.ViewModels.Admin
-@model  RiftData.Presentation.ViewModels.Admin.HomePageViewModel
+@model  HomePageViewModel
             
 @{
-    ViewBag.Title = "Index";
-    Layout = "../Shared/_Layout.cshtml"; 
+    this.ViewBag.Title = "Index";
+    this.Layout = "../Shared/_Layout.cshtml";
+
 }
 
-@section Navigation
-{
-    @Html.Partial("NavigationPartial", Model.SelectedView)
-}
+@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
 
 <div id ="body">
-    <h1 id="pageTitle">Home</h1>
-    <div class="portlet">
-        <div class="portlet-header">
-            User Logs
-        </div>
-        <div class="portlet-content">
-            <table>
-                <thead>
+<h1 id="pageTitle">Home</h1>
+<div class="portlet">
+    <div class="portlet-header">
+        User Logs
+    </div>
+    <div class="portlet-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Log</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in this.Model.UserLogs)
+                {
                     <tr>
-                        <th>Log</th>
-                        <th>Date</th>
+                        <td>@item.Message</td>
+                        <td>@item.Date</td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.UserLogs)
-                    {
-                        <tr>
-                            <td>@item.Message</td>
-                            <td>@item.Date</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

@@ -11,8 +11,7 @@
         {
             this.HasKey(p => p.Id);
 
-            Property(p => p.Id).HasColumnName("SpeciesID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).
-                IsRequired();
+            Property(p => p.Id).HasColumnName("SpeciesID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
 
             Property(p => p.Name).IsRequired().HasColumnName("SpeciesName");
 

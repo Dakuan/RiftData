@@ -11,9 +11,7 @@
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(
-                AllTypes.FromThisAssembly().Pick().If(IsFactory).WithService.DefaultInterface().Configure(
-                    x => x.LifeStyle.Is(LifestyleType.Transient)));
+            container.Register(AllTypes.FromThisAssembly().Pick().If(IsFactory).WithService.DefaultInterface().Configure(x => x.LifeStyle.Is(LifestyleType.Transient)));
         }
 
         private static bool IsFactory(Type type)

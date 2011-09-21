@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountServices\IFormsAuthenticationService.cs" />
+    <Compile Include="AccountServices\IMembershipService.cs" />
     <Compile Include="Admin\FishPages\IFishEditPageViewModelFactory.cs" />
     <Compile Include="Admin\FishPages\IFishPageViewModelFactory.cs" />
     <Compile Include="Admin\GenusPages\IGenusIndexPageViewModelFactory.cs" />
@@ -55,16 +58,16 @@
     <Compile Include="Admin\IPhotosService.cs" />
     <Compile Include="Admin\SpeciesPages\ISpeciesEditPageViewModelFactory.cs" />
     <Compile Include="Admin\SpeciesPages\ISpeciesPageViewModelFactory.cs" />
-    <Compile Include="IFishPageViewModelFactory.cs" />
-    <Compile Include="IGenusPanelViewModelFactory.cs" />
-    <Compile Include="IHeaderViewModelFactory.cs" />
-    <Compile Include="IHomePageViewModelFactory.cs" />
-    <Compile Include="IInfoPageViewModelFactory.cs" />
-    <Compile Include="ILakeViewModelFactory.cs" />
-    <Compile Include="ILocaleInfoBoxViewModelFactory.cs" />
-    <Compile Include="ILocalePageViewModelFactory.cs" />
-    <Compile Include="IPhotoGalleryViewModelFactory.cs" />
-    <Compile Include="ISpeciesPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\IFishPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\IGenusPanelViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\IHeaderViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\IHomePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\IInfoPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\ILakeViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\ILocaleInfoBoxViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\ILocalePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\IPhotoGalleryViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\ISpeciesPageViewModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

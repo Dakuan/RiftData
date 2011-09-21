@@ -18,10 +18,7 @@
         {
             var locales = this.localesRepository.GetAll();
 
-            var viewModel = new LocalePageViewModel
-                {
-                   Locales = locales.ToDtoList(), LocalesSelectList = locales.ToSelectList("select a locale") 
-                };
+            var viewModel = new LocalePageViewModel { Locales = locales.ToDtoList(), LocalesSelectList = locales.ToSelectList("select a locale") };
 
             return viewModel;
         }

@@ -19,8 +19,7 @@
 
         private readonly RiftDataDataContext dataContext;
 
-        public PhotosRepository(
-            RiftDataDataContext dataContext, IFlickrInfrastructure flickrInfrastructure, IPhotoFactory photoFactory)
+        public PhotosRepository(RiftDataDataContext dataContext, IFlickrInfrastructure flickrInfrastructure, IPhotoFactory photoFactory)
         {
             this.dataContext = dataContext;
             this._flickrInfrastructure = flickrInfrastructure;
@@ -90,8 +89,7 @@
         {
             var dictionary = new Dictionary<Photo, IPhotoSubject>();
 
-            this.dataContext.Fish.Where(f => f.Locale.Id == localeId).ToList().ForEach(
-                f => f.Photos.ToList().ForEach(p => dictionary.Add(p, f)));
+            this.dataContext.Fish.Where(f => f.Locale.Id == localeId).ToList().ForEach(f => f.Photos.ToList().ForEach(p => dictionary.Add(p, f)));
 
             return AddCaptionsForPhotos(dictionary).ToList();
         }
@@ -100,8 +98,7 @@
         {
             var dictonary = new Dictionary<Photo, IPhotoSubject>();
 
-            this.dataContext.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(
-                f => f.Photos.ToList().ForEach(p => dictonary.Add(p, f)));
+            this.dataContext.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => f.Photos.ToList().ForEach(p => dictonary.Add(p, f)));
 
             return AddCaptionsForPhotos(dictonary).ToList();
         }
@@ -110,16 +107,15 @@
         {
             var list = new List<Photo>();
 
-            dictionary.ToList().ForEach(
-                d =>
+            dictionary.ToList().ForEach(d =>
+                {
+                    if (string.IsNullOrEmpty(d.Key.Caption))
                     {
-                        if (string.IsNullOrEmpty(d.Key.Caption))
-                        {
-                            d.Key.Caption = d.Value.Name;
-                        }
+                        d.Key.Caption = d.Value.Name;
+                    }
 
-                        list.Add(d.Key);
-                    });
+                    list.Add(d.Key);
+                });
 
             return list;
         }

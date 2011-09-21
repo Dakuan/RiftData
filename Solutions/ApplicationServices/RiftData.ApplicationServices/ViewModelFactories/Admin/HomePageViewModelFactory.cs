@@ -1,10 +1,10 @@
-﻿using RiftData.ApplicationServices.DtoServices.Extensions;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.Admin;
-using RiftData.Presentation.ViewModels.Admin;
-
-namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.Admin;
+    using RiftData.Presentation.ViewModels.Admin;
+
     public class HomePageViewModelFactory : IHomePageViewModelFactory
     {
         private readonly IUserLogRepository userLogRepository;
@@ -16,10 +16,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
         public HomePageViewModel Build()
         {
-            var viewModel = new HomePageViewModel
-                                {
-                                    UserLogs = this.userLogRepository.GetAll().ToDtoList()
-                                };
+            var viewModel = new HomePageViewModel { UserLogs = this.userLogRepository.GetAll().ToDtoList() };
 
             return viewModel;
         }

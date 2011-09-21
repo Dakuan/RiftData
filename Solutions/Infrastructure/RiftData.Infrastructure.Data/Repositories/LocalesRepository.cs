@@ -1,6 +1,4 @@
-﻿using RiftData.Infrastructure.Data.Logging;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -10,10 +8,12 @@ namespace RiftData.Infrastructure.Data.Repositories
     using RiftData.Domain.Enums;
     using RiftData.Domain.Extensions;
     using RiftData.Domain.Repositories;
+    using RiftData.Infrastructure.Data.Logging;
 
     public class LocalesRepository : ILocalesRepository
     {
         private readonly RiftDataDataContext dataContext;
+
         private readonly ILogger logger;
 
         public LocalesRepository(RiftDataDataContext dataContext, ILogger logger)
@@ -37,7 +37,7 @@ namespace RiftData.Infrastructure.Data.Repositories
                 return AddResult.Failure;
             }
 
-            logger.LogAdd(locale, userName);
+            this.logger.LogAdd(locale, userName);
 
             return AddResult.Success;
         }
@@ -125,7 +125,7 @@ namespace RiftData.Infrastructure.Data.Repositories
                 return UpdateResult.Failure;
             }
 
-            logger.LogUpdate(locale, userName);
+            this.logger.LogUpdate(locale, userName);
 
             return UpdateResult.Success;
         }

@@ -11,8 +11,7 @@
         {
             this.HasKey(p => p.Id);
 
-            Property(p => p.Id).HasColumnName("LocaleID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).
-                IsRequired();
+            Property(p => p.Id).HasColumnName("LocaleID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
 
             Property(p => p.Latitude).HasColumnName("LocaleLatitude").IsRequired();
 

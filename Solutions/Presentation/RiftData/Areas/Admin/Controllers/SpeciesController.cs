@@ -4,7 +4,6 @@
 
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
     using RiftData.Presentation.Contracts.Admin.SpeciesPages;
     using RiftData.Presentation.ViewModels.Admin;
 
@@ -17,10 +16,7 @@
 
         private readonly ISpeciesRepository speciesRepository;
 
-        public SpeciesController(
-            ISpeciesPageViewModelFactory speciesPageViewModelFactory, 
-            ISpeciesEditPageViewModelFactory speciesEditPageViewModelFactory, 
-            ISpeciesRepository speciesRepository)
+        public SpeciesController(ISpeciesPageViewModelFactory speciesPageViewModelFactory, ISpeciesEditPageViewModelFactory speciesEditPageViewModelFactory, ISpeciesRepository speciesRepository)
         {
             this.speciesPageViewModelFactory = speciesPageViewModelFactory;
             this.speciesEditPageViewModelFactory = speciesEditPageViewModelFactory;
@@ -36,8 +32,7 @@
         public ActionResult Create(SpeciesEditFormViewModel vm)
         {
             // TryUpdateModel(vm);
-            var addResult = this.speciesRepository.Add(
-                vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
+            var addResult = this.speciesRepository.Add(vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
 
             return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
@@ -64,12 +59,9 @@
         public ActionResult Update(SpeciesEditFormViewModel vm)
         {
             // TryUpdateModel(vm);
-            var updateResult = this.speciesRepository.Update(
-                vm.Id, vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
+            var updateResult = this.speciesRepository.Update(vm.Id, vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
 
-            return updateResult == UpdateResult.Success
-                       ? new JsonResult { Data = true }
-                       : new JsonResult { Data = false };
+            return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
     }
 }

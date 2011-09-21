@@ -1,14 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.ModelConfiguration;
-using RiftData.Domain.Logs;
-
-namespace RiftData.Infrastructure.Data.Configurations
+﻿namespace RiftData.Infrastructure.Data.Configurations
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity.ModelConfiguration;
+
+    using RiftData.Domain.Logs;
+
     public class UserLogConfiguration : EntityTypeConfiguration<UserLog>
     {
         public UserLogConfiguration()
         {
-            HasKey(k => k.Id);
+            this.HasKey(k => k.Id);
 
             Property(p => p.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnName("UserLogID");
 
@@ -18,7 +19,7 @@ namespace RiftData.Infrastructure.Data.Configurations
 
             Property(p => p.Message).IsRequired().HasColumnName("UserLogMessage");
 
-            ToTable("UserLogs");
+            this.ToTable("UserLogs");
         }
     }
 }

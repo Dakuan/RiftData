@@ -1,17 +1,17 @@
-﻿@using Telerik.Web.Mvc.UI
-@using RiftData.Domain.Entities
-@model RiftData.Presentation.ViewModels.IPanelViewModel
+﻿@using RiftData.Presentation.ViewModels
+@model IPanelViewModel
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 <div id="LeftPanel" class="panels">
     <div id="TabContainer">
-         @Html.Partial("GenusPanel", Model.GenusPanelViewModel)
+        @this.Html.Partial("GenusPanel", this.Model.GenusPanelViewModel)
     </div>
 </div>
 <div id="CenterPanel" class="panels">
     <div id="CenterPanelContent">
-        @RenderSection("CenterPanel", false)
+        @this.RenderSection("CenterPanel", false)
         <div id="plusOne">
             <g:plusone size="small" annotation="none"></g:plusone>
         </div>
@@ -19,19 +19,19 @@
 </div>
 <div id="RightPanel" class="panels">
     <div id="LocaleMap"></div>
-    @Html.Hidden("GetLocalesBySpeciesUrl", Url.Action("GetLocalesBySpecies", "Locale"))
-    @Html.Hidden("GetLocaleDataUrl", Url.Action("GetLocaleData", "Locale"))
-    @Html.Hidden("GetLocalesForZoomLevel", Url.Action("GetLocalesForZoomLevel", "Locale"))
-    @Html.Hidden("GetLocaleLabel", Url.Action("GetLocaleLabel", "Locale"))
-    @Html.Hidden("LocaleInfoBoxUrl", Url.Action("GetInfoBox", "Locale"))
+    @this.Html.Hidden("GetLocalesBySpeciesUrl", this.Url.Action("GetLocalesBySpecies", "Locale"))
+    @this.Html.Hidden("GetLocaleDataUrl", this.Url.Action("GetLocaleData", "Locale"))
+    @this.Html.Hidden("GetLocalesForZoomLevel", this.Url.Action("GetLocalesForZoomLevel", "Locale"))
+    @this.Html.Hidden("GetLocaleLabel", this.Url.Action("GetLocaleLabel", "Locale"))
+    @this.Html.Hidden("LocaleInfoBoxUrl", this.Url.Action("GetInfoBox", "Locale"))
 </div>
 <div class="clear"></div>
 @section Scripts{
-    @Html.Telerik().ScriptRegistrar().DefaultGroup(group => group.DefaultPath("~/Scripts/2011.2.712")).jQuery(false)
-    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-    <script src="../../Scripts/PiroBox/pirobox.js" type="text/javascript"></script>
-    <script src="../../Scripts/PageScripts/piroBox.js" type="text/javascript"></script>
-    <script src="../../Scripts/RiftDataMap/RiftDataMapService.js" type="text/javascript"></script>
-    <script src="../../Scripts/RiftDataMap/RiftDataMap.js" type="text/javascript"></script> 
-    @RenderSection("Scripts", false)
+    @this.Html.Telerik().ScriptRegistrar().DefaultGroup(group => group.DefaultPath("~/Scripts/2011.2.712")).jQuery(false)
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"> </script>
+    <script src="../../Scripts/PiroBox/pirobox.js" type="text/javascript"> </script>
+    <script src="../../Scripts/PageScripts/piroBox.js" type="text/javascript"> </script>
+    <script src="../../Scripts/RiftDataMap/RiftDataMapService.js" type="text/javascript"> </script>
+    <script src="../../Scripts/RiftDataMap/RiftDataMap.js" type="text/javascript"> </script> 
+    @this.RenderSection("Scripts", false)
 }

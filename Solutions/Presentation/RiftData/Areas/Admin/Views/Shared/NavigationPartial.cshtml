@@ -1,27 +1,27 @@
-﻿@model RiftData.Presentation.ViewModels.Admin.SelectedView
-@using RiftData.Presentation.ViewModels.Admin
+﻿@using RiftData.Presentation.ViewModels.Admin
+@model SelectedView
 <div id="nav" class="clearfix">
-        <ul>
-            <li>
-                @Html.ActionLink("Home", "Index", "Home", null, new { @class = Model == SelectedView.Home ? "current" : "" })
-            </li>
-@*            <li>
+    <ul>
+        <li>
+            @this.Html.ActionLink("Home", "Index", "Home", null, new { @class = this.Model == SelectedView.Home ? "current" : "" })
+        </li>
+        @*            <li>
                 @Html.ActionLink("Photos", "Index", "Photos", null, new { @class = Model == SelectedView.Photos ? "current" : "" })
             </li>*@
-            <li>
-                @Html.ActionLink("Fish", "Index", "Fish", null,  new { @class = Model == SelectedView.Fish ? "current" : "" })
-            </li>
-            <li>
-                @Html.ActionLink("Genus Types", "Index", "GenusTypes" ,null, new { @class = Model == SelectedView.GenusTypes ? "current" : "" })
-            </li>
-            <li>
-                @Html.ActionLink("Genus", "Index", "Genus", null,  new { @class = Model == SelectedView.Genus ? "current" : "" })
-            </li>
-            <li>
-                @Html.ActionLink("Species", "Index", "Species", null, new { @class = Model == SelectedView.Species ? "current" : "" })
-            </li>
-            <li>
-                @Html.ActionLink("Locales", "Index", "Locales", null, new { @class = Model == SelectedView.Locales ? "current" : "" })
-            </li>
-        </ul>
-    </div>
+        <li>
+            @this.Html.ActionLink("Fish", "Index", "Fish", null, new { @class = this.Model == SelectedView.Fish ? "current" : "" })
+        </li>
+        <li>
+            @this.Html.ActionLink("Genus Types", "Index", "GenusTypes", null, new { @class = this.Model == SelectedView.GenusTypes ? "current" : "" })
+        </li>
+        <li>
+            @this.Html.ActionLink("Genus", "Index", "Genus", null, new { @class = this.Model == SelectedView.Genus ? "current" : "" })
+        </li>
+        <li>
+            @this.Html.ActionLink("Species", "Index", "Species", null, new { @class = this.Model == SelectedView.Species ? "current" : "" })
+        </li>
+        <li>
+            @this.Html.ActionLink("Locales", "Index", "Locales", null, new { @class = this.Model == SelectedView.Locales ? "current" : "" })
+        </li>
+    </ul>
+</div>

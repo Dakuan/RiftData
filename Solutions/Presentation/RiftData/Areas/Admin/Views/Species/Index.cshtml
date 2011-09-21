@@ -1,37 +1,34 @@
-﻿@model RiftData.Presentation.ViewModels.Admin.SpeciesPageViewModel
+﻿@using RiftData.Presentation.ViewModels.Admin
 @using Telerik.Web.Mvc.UI
+@model SpeciesPageViewModel
 @{
-    ViewBag.Title = "Species";
-    Layout = "../Shared/_Layout.cshtml";
+    this.ViewBag.Title = "Species";
+    this.Layout = "../Shared/_Layout.cshtml";
+
 }
 
-@section Navigation
-{
-    @Html.Partial("NavigationPartial", Model.SelectedView)
-}
+@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
 
 <div id="body"> 
     <div class="portlet">
         <div class="portlet-header">
             <ul id ="PageHeaderList">
                 <li class="left headerButton">                    
-                    <a href="@Url.Action("Create", "Species")">
+                    <a href="@this.Url.Action("Create", "Species")">
                         <button>
                             <span>Add Species</span>
                         </button>
                     </a>
                 </li>
                 <li class="right headerButton">
-                    <a id="QuickSearchEditButton" style="display:none;margin-left:5px;">
+                    <a id="QuickSearchEditButton" style="display: none; margin-left: 5px;">
                         <button>
                             <span>Edit</span>
                         </button>
                     </a>
                 </li>
                 <li class="right" id="LocaleIndexPageSearchBox">
-                    @(Html.Telerik().ComboBox().Name("Name")
-                                .BindTo(new SelectList(Model.Species, "Id", "Name"))
-                                .ClientEvents(c => c.OnChange("SpeciesQuickSearchSelected")))
+                    @this.Html.Telerik().ComboBox().Name("Name").BindTo(new SelectList(this.Model.Species, "Id", "Name")).ClientEvents(c => c.OnChange("SpeciesQuickSearchSelected"))
                 </li>
                 <li class="right" id="LocaleIndexPageQuickSearchText">Quick Search:</li>
                 <li class="clear"></li>
@@ -53,40 +50,40 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach (var item in Model.Species)
-                {
-                    <tr>
-                        <td>
-                            @item.Name
-                        </td>
-                        <td>
-                            @item.GenusName
-                        </td>
-                        <td>
-                            <div class="buttonRow">
-                                <a href="@Url.Action("Update", "Species", new { id= item.Id })" class="linkButton">
-                                    <button>
-                                        <span>Edit</span>
-                                    </button>
-                                </a>
-                                <a href="@Url.Action("Delete", "Species", new { id= item.Id })" class="linkButton">
-                                    <button>
-                                        <span>Delete</span>
-                                    </button>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                }
+                    @foreach (var item in this.Model.Species)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.GenusName
+                            </td>
+                            <td>
+                                <div class="buttonRow">
+                                    <a href="@this.Url.Action("Update", "Species", new { id = item.Id })" class="linkButton">
+                                        <button>
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                    <a href="@this.Url.Action("Delete", "Species", new { id = item.Id })" class="linkButton">
+                                        <button>
+                                            <span>Delete</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-<input type="hidden" id="EditUrl" value="@Url.Action("Update", "Species", null)" />
+<input type="hidden" id="EditUrl" value="@this.Url.Action("Update", "Species", null)" />
 
 @section Scripts
 {
-    <script src="@Url.Content("~/Scripts/Admin/SpeciesIndex.js")" type="text/javascript"></script>
+    <script src="@this.Url.Content("~/Scripts/Admin/SpeciesIndex.js")" type="text/javascript"> </script>
 }

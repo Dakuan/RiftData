@@ -1,11 +1,12 @@
 ﻿@{
-    ViewBag.Title = "RiftData | About";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    this.ViewBag.Title = "RiftData | About";
+    this.Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 <div id="CenterPanelContent" class="infoContainer">
     <h2>About</h2>
     <p>
-        <a href="@Url.Action("Index","Home")">RiftData</a> is an open source library of information about Rift Valley fish. It's run by volunteers for the benefit of all hobbiests. All photos have been kindly donated by individuals and organisations.
+        <a href="@this.Url.Action("Index", "Home")">RiftData</a> is an open source library of information about Rift Valley fish. It's run by volunteers for the benefit of all hobbiests. All photos have been kindly donated by individuals and organisations.
     </p>
     <p>
         All the source code is available at <a href="https://github.com/Dakuan/RiftData">GitHub</a> if you are interested in extending functionality.

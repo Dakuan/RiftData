@@ -15,15 +15,14 @@
             {
                 var nodes = new List<DynamicNode>();
 
-                dataContext.Fish.ToList().ForEach(
-                    t =>
-                        {
-                            var node = new DynamicNode { Controller = "Fish", Title = t.Name, Action = "Index" };
+                dataContext.Fish.ToList().ForEach(t =>
+                    {
+                        var node = new DynamicNode { Controller = "Fish", Title = t.Name, Action = "Index" };
 
-                            node.RouteValues.Add("fishName", t.UrlName);
+                        node.RouteValues.Add("fishName", t.UrlName);
 
-                            nodes.Add(node);
-                        });
+                        nodes.Add(node);
+                    });
                 return nodes;
             }
         }

@@ -1,8 +1,9 @@
-using System.Collections.Generic;
-using RiftData.Presentation.ViewModels.Dto;
-
 namespace RiftData.Presentation.ViewModels.Admin
 {
+    using System.Collections.Generic;
+
+    using RiftData.Presentation.ViewModels.Dto;
+
     public class HomePageViewModel : ViewModelBase
     {
         public HomePageViewModel()

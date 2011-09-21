@@ -1,22 +1,23 @@
 ﻿@using RiftData.Extensions
-@model RiftData.Presentation.ViewModels.ViewModelBase
+@using RiftData.Presentation.ViewModels
+@model ViewModelBase
 <!DOCTYPE html>
 <html>
     <head>
-        <title>@ViewBag.Title</title>
+        <title>@this.ViewBag.Title</title>
 
-        <link rel="canonical" href="@Request.UrlOriginal()" />
-        <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+        <link rel="canonical" href="@this.Request.UrlOriginal()" />
+        <script type="text/javascript" src="http://apis.google.com/js/plusone.js"> </script>
               
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:300italic|Arimo' rel='stylesheet' type='text/css'/>
-        <link href="@Url.Content("../Content/2011.2.712/telerik.transparent.min.css")" rel="stylesheet"type="text/css" />
-        <link href="@Url.Content("../Content/2011.2.712/telerik.common.min.css")" rel="stylesheet" type="text/css" />
-        <link href="@Url.Content("../Content/LocaleInfoBox/LocaleInfoBox.css")" rel="stylesheet" type="text/css" />
-        <link href="@Url.Content("../Content/Site.css")" rel="stylesheet" type="text/css" />
-        <link href="@Url.Content("../Content/PiroBox/style.css")" rel="stylesheet" type="text/css" />
-        <meta name="keywords" content="@Model.Keywords" />
-        <meta name="descripton" content="@Model.Description" />
-        @Html.Partial("GoogleAnalytics")
+        <link href="@this.Url.Content("../Content/2011.2.712/telerik.transparent.min.css")" rel="stylesheet"type="text/css" />
+        <link href="@this.Url.Content("../Content/2011.2.712/telerik.common.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@this.Url.Content("../Content/LocaleInfoBox/LocaleInfoBox.css")" rel="stylesheet" type="text/css" />
+        <link href="@this.Url.Content("../Content/Site.css")" rel="stylesheet" type="text/css" />
+        <link href="@this.Url.Content("../Content/PiroBox/style.css")" rel="stylesheet" type="text/css" />
+        <meta name="keywords" content="@this.Model.Keywords" />
+        <meta name="descripton" content="@this.Model.Description" />
+        @this.Html.Partial("GoogleAnalytics")
     </head>
     <body>
         <div id="PageContainer">
@@ -29,9 +30,10 @@
                 </div>
                 <div class="clear"></div>
                 <div id="HeaderTabs">
-                    @foreach (var lake in Model.HeaderViewModel.Lakes){
-                        <a href="@Url.Action("Index", "Lake", new { lakeName = lake.Name })">
-                            @if (lake.Id == Model.HeaderViewModel.SelectedLakeId)
+                    @foreach (var lake in this.Model.HeaderViewModel.Lakes)
+                    {
+                        <a href="@this.Url.Action("Index", "Lake", new { lakeName = lake.Name })">
+                            @if (lake.Id == this.Model.HeaderViewModel.SelectedLakeId)
                             {
                                 <div class="headerTabSelected">
                                     @lake.Name
@@ -40,7 +42,7 @@
                             else
                             {
                                 <div class="headerTab">
-                                        @lake.Name
+                                    @lake.Name
                                 </div>
                             }
                         </a>
@@ -49,21 +51,21 @@
                 </div>
                 <div class="divider"></div>
                 <div id="HeaderMenu">
-                    @foreach (var genusType in Model.HeaderViewModel.GenusTypes)
+                    @foreach (var genusType in this.Model.HeaderViewModel.GenusTypes)
                     {
-                        <a href="@Url.Action("Index", "Home", new { genusTypeName = genusType.Name })" title="@genusType.Name">
+                        <a href="@this.Url.Action("Index", "Home", new { genusTypeName = genusType.Name })" title="@genusType.Name">
 
-                            @if (genusType.Id == Model.HeaderViewModel.SelectedGenusTypeId)
+                            @if (genusType.Id == this.Model.HeaderViewModel.SelectedGenusTypeId)
                             {
-                            <div class="headerButtonHover">
-                                @genusType.Name
-                            </div>
+                                <div class="headerButtonHover">
+                                    @genusType.Name
+                                </div>
                             }
                             else
                             {
-                            <div class="headerButton">
-                                @genusType.Name
-                            </div>
+                                <div class="headerButton">
+                                    @genusType.Name
+                                </div>
                             }
 
                         </a>
@@ -73,26 +75,26 @@
                             <div class="headerButton">
                                 Thanks!
                             </div>
-                        -->
-                        <a href="@Url.Action("HelpUs", "Info")">
+                            -->
+                        <a href="@this.Url.Action("HelpUs", "Info")">
                             <div class="headerButton">
                                 Help us
                             </div>
                         </a>
-                        <a href="@Url.Action("About", "Info")" >
+                        <a href="@this.Url.Action("About", "Info")" >
                             <div class="headerButton">
                                 About
                             </div>
                         </a>
-                </div>
+                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
-            @RenderBody()
+            @this.RenderBody()
         </div>
     </body>
-    <script src="../../Scripts/2011.2.712/jquery-1.5.1.min.js" type="text/javascript"></script>
-    <script src="../../Scripts/jQueryUI/jquery-ui-1.8.15.custom.min.js" type="text/javascript"></script>
-    <script src="../../Scripts/PageScripts/_layout.js" type="text/javascript"></script>
-    @RenderSection("Scripts", false)
+    <script src="../../Scripts/2011.2.712/jquery-1.5.1.min.js" type="text/javascript"> </script>
+    <script src="../../Scripts/jQueryUI/jquery-ui-1.8.15.custom.min.js" type="text/javascript"> </script>
+    <script src="../../Scripts/PageScripts/_layout.js" type="text/javascript"> </script>
+    @this.RenderSection("Scripts", false)
 </html>

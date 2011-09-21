@@ -1,17 +1,17 @@
-﻿using RiftData.ApplicationServices.DtoServices.Contracts;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
     using System.Linq;
-
     using System.Web.Mvc;
 
+    using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Presentation.Contracts;
 
     public class InfoController : Controller
     {
-        private readonly IInfoPageViewModelFactory infoPageViewModelFactory;
         private readonly IGenusTypeDtoService genusTypeDtoService;
+
+        private readonly IInfoPageViewModelFactory infoPageViewModelFactory;
+
         private readonly ILakeDtoService lakeDtoService;
 
         public InfoController(IInfoPageViewModelFactory infoPageViewModelFactory, ILakeDtoService lakeDtoService, IGenusTypeDtoService genusTypeDtoService)

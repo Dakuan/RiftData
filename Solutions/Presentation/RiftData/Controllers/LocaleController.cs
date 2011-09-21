@@ -14,10 +14,7 @@
 
         private readonly ILocalePageViewModelFactory localePageViewModelFactory;
 
-        public LocaleController(
-            ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, 
-            ILocaleDtoService localeDtoService, 
-            ILocalePageViewModelFactory localePageViewModelFactory)
+        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocaleDtoService localeDtoService, ILocalePageViewModelFactory localePageViewModelFactory)
         {
             this.localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
             this.localeDtoService = localeDtoService;
@@ -33,10 +30,7 @@
 
         public ActionResult GetLocaleData(int id)
         {
-            return new JsonResult
-                {
-                   JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocaleDto(id) 
-                };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocaleDto(id) };
         }
 
         public ActionResult GetLocaleLabel(int id)
@@ -48,20 +42,12 @@
 
         public ActionResult GetLocalesBySpecies(int id)
         {
-            return new JsonResult
-                {
-                    JsonRequestBehavior = JsonRequestBehavior.AllowGet, 
-                    Data = this.localeDtoService.GetLocaleDtosFromSpecies(id)
-                };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocaleDtosFromSpecies(id) };
         }
 
         public ActionResult GetLocalesForZoomLevel(int id)
         {
-            return new JsonResult
-                {
-                    JsonRequestBehavior = JsonRequestBehavior.AllowGet, 
-                    Data = this.localeDtoService.GetLocalesForZoomLevel(id)
-                };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocalesForZoomLevel(id) };
         }
 
         public ActionResult Index(string localeName)

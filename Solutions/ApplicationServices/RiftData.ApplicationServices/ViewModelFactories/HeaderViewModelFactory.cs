@@ -19,11 +19,7 @@
 
         private readonly ILakeRepository _lakeRepository;
 
-        public HeaderViewModelFactory(
-            ILakeDtoService lakeDtoService, 
-            ILakeRepository lakeRepository, 
-            IGenusTypeRepository genusTypeRepository, 
-            IGenusTypeDtoService genusTypeDtoService)
+        public HeaderViewModelFactory(ILakeDtoService lakeDtoService, ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository, IGenusTypeDtoService genusTypeDtoService)
         {
             this._lakeDtoService = lakeDtoService;
             this._lakeRepository = lakeRepository;
@@ -33,10 +29,7 @@
 
         public HeaderViewModel Build()
         {
-            var viewModel = new HeaderViewModel
-                {
-                   Lakes = this._lakeDtoService.GetAllLakes(), GenusTypes = new List<GenusTypeDto>() 
-                };
+            var viewModel = new HeaderViewModel { Lakes = this._lakeDtoService.GetAllLakes(), GenusTypes = new List<GenusTypeDto>() };
 
             return viewModel;
         }
@@ -58,38 +51,21 @@
 
         public HeaderViewModel Build(Locale locale)
         {
-            var viewModel = new HeaderViewModel
-                {
-                    Lakes = this._lakeDtoService.GetAllLakes(), 
-                    SelectedLakeId = locale.Lake.Id, 
-                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(locale)
-                };
+            var viewModel = new HeaderViewModel { Lakes = this._lakeDtoService.GetAllLakes(), SelectedLakeId = locale.Lake.Id, GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(locale) };
 
             return viewModel;
         }
 
         public HeaderViewModel Build(Fish fish)
         {
-            var viewModel = new HeaderViewModel
-                {
-                    Lakes = this._lakeDtoService.GetAllLakes(), 
-                    SelectedGenusTypeId = fish.Genus.GenusType.Id, 
-                    SelectedLakeId = fish.Locale.Lake.Id, 
-                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(fish.Locale)
-                };
+            var viewModel = new HeaderViewModel { Lakes = this._lakeDtoService.GetAllLakes(), SelectedGenusTypeId = fish.Genus.GenusType.Id, SelectedLakeId = fish.Locale.Lake.Id, GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(fish.Locale) };
 
             return viewModel;
         }
 
         public HeaderViewModel Build(GenusType genusType)
         {
-            var viewModel = new HeaderViewModel
-                {
-                    SelectedGenusTypeId = genusType.Id, 
-                    SelectedLakeId = genusType.Lake.Id, 
-                    GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(genusType.Lake), 
-                    Lakes = this._lakeDtoService.GetAllLakes()
-                };
+            var viewModel = new HeaderViewModel { SelectedGenusTypeId = genusType.Id, SelectedLakeId = genusType.Lake.Id, GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(genusType.Lake), Lakes = this._lakeDtoService.GetAllLakes() };
 
             return viewModel;
         }

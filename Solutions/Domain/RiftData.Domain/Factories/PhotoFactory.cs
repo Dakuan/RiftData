@@ -15,15 +15,7 @@
 
         public Photo CreatePhoto(PhotoInfo photoInfo)
         {
-            return new Photo
-                {
-                    FlickrId = photoInfo.PhotoId, 
-                    MediumUrl = photoInfo.MediumUrl, 
-                    SquareThumbnail = photoInfo.SquareThumbnailUrl, 
-                    ThumbNailUrl = photoInfo.ThumbnailUrl, 
-                    LargeUrl = photoInfo.LargeUrl, 
-                    SmallUrl = photoInfo.SmallUrl
-                };
+            return new Photo { FlickrId = photoInfo.PhotoId, MediumUrl = photoInfo.MediumUrl, SquareThumbnail = photoInfo.SquareThumbnailUrl, ThumbNailUrl = photoInfo.ThumbnailUrl, LargeUrl = photoInfo.LargeUrl, SmallUrl = photoInfo.SmallUrl };
         }
     }
 }

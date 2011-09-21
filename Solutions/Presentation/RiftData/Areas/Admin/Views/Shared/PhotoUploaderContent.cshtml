@@ -1,18 +1,13 @@
 ﻿@using Telerik.Web.Mvc.UI
 <div>
     <div>
-        <img alt="Preview Image" id="PreviewImage" src="@Url.Content("~/Content/Admin/Images/noPhoto.png")" />
+        <img alt="Preview Image" id="PreviewImage" src="@this.Url.Content("~/Content/Admin/Images/noPhoto.png")" />
     </div>
-    @(Html.Telerik().Upload()
-                .Name("attachments")
-                .ClientEvents(e=> 
-                    {
-                        e.OnUpload("OnUpload");
-                        e.OnSuccess("OnSuccess");
-                    })
-                .Async(async => async
-                    .Save("Save", "Photos")
-                ))
+    @this.Html.Telerik().Upload().Name("attachments").ClientEvents(e =>
+        {
+            e.OnUpload("OnUpload");
+            e.OnSuccess("OnSuccess");
+        }).Async(async => async.Save("Save", "Photos"))
     <div class="buttonRow">
         <button id="OkButton">
             <span>OK</span>
@@ -24,7 +19,7 @@
 </div>
 
 <script type="text/javascript">
-    $('#CancelButton').click(function () {
+    $('#CancelButton').click(function() {
 
         //get flickrId
         var id = $('#FlickrId').val();
@@ -33,13 +28,13 @@
 
         url += '/' + id;
 
-        $.getJSON(url, null, function (result) {
+        $.getJSON(url, null, function(result) {
             //close the popup
             $("#PhotoUploader").data("tWindow").close();
         });
     });
 
-    $('#OkButton').click(function () {
+    $('#OkButton').click(function() {
 
         //add photo to the list
         var imgUrl = $('#PreviewImage').attr('src');

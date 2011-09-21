@@ -42,15 +42,14 @@
         {
             var tasks = new Dictionary<int, Task<PhotoInfo>>();
 
-            items.ToList().ForEach(
-                i =>
-                    {
-                        var task = new Task<PhotoInfo>(() => this.flickrApp.PhotosGetInfo(i.Value));
+            items.ToList().ForEach(i =>
+                {
+                    var task = new Task<PhotoInfo>(() => this.flickrApp.PhotosGetInfo(i.Value));
 
-                        tasks.Add(i.Key, task);
+                    tasks.Add(i.Key, task);
 
-                        task.Start();
-                    });
+                    task.Start();
+                });
 
             Task.WaitAll();
 
@@ -63,18 +62,7 @@
 
         public string UploadPhoto(HttpPostedFileBase file, string name)
         {
-            var id = this.flickrApp.UploadPicture(
-                file.InputStream, 
-                file.FileName, 
-                file.FileName, 
-                string.Empty, 
-                string.Empty, 
-                true, 
-                true, 
-                false, 
-                ContentType.Photo, 
-                SafetyLevel.Safe, 
-                HiddenFromSearch.Visible);
+            var id = this.flickrApp.UploadPicture(file.InputStream, file.FileName, file.FileName, string.Empty, string.Empty, true, true, false, ContentType.Photo, SafetyLevel.Safe, HiddenFromSearch.Visible);
 
             return id;
         }

@@ -4,7 +4,6 @@
 // </auto-generated>
 //-------------------------------------------------------------------------------------------------
 
-
 #pragma warning disable 169
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Global
@@ -21,29 +20,27 @@ namespace RiftData.UnitTests.AdminControllers
 
     using Rhino.Mocks;
 
-    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Areas.Admin.Controllers;
     using RiftData.Domain.Entities;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
-    using RiftData.Presentation.ViewModels.Dto;
 
     public class FishControllerSpecs
     {
         public class context_for_fish_controller : Specification<FishController>
         {
-            protected static IFishPageViewModelFactory the_fish_page_view_model_factory;
-
             protected static IFishEditPageViewModelFactory the_fish_edit_page_view_model_factory;
+
+            protected static IFishPageViewModelFactory the_fish_page_view_model_factory;
 
             protected static IFishRepository the_fish_repository;
 
-            protected static ISpeciesRepository the_species_respository;
-
             protected static IPhotosRepository the_photo_repository;
 
-            Establish context = () =>
+            protected static ISpeciesRepository the_species_respository;
+
+            private Establish context = () =>
                 {
                     the_fish_page_view_model_factory = DependencyOf<IFishPageViewModelFactory>();
 
@@ -55,6 +52,29 @@ namespace RiftData.UnitTests.AdminControllers
 
                     the_photo_repository = DependencyOf<IPhotosRepository>();
                 };
+        }
+
+        [Subject(typeof(FishController))]
+        public class when_the_fish_controller_is_asked_for_the_get_species_action : context_for_fish_controller
+        {
+            private static ActionResult result;
+
+            private static SelectList the_select_list;
+
+            private static List<Species> the_species_list;
+
+            private Establish context = () =>
+                {
+                    the_species_list = new List<Species>();
+
+                    the_species_respository.Stub(x => x.GetSpeciesWithGenus(1)).Return(the_species_list);
+                };
+
+            private Because of = () => result = subject.GetSpecies(1);
+
+            private It should_ask_the_species_repository_for_the_list_of_fish = () => the_species_respository.AssertWasCalled(x => x.GetSpeciesWithGenus(1));
+
+            private It should_return_the_species_select_list_as_json = () => ((JsonResult)result).Data.ShouldBeOfType<SelectList>();
         }
 
         [Subject(typeof(FishController))]
@@ -75,55 +95,32 @@ namespace RiftData.UnitTests.AdminControllers
 
             private It should_ask_the_view_model_factory_for_the_view_model = () => the_fish_page_view_model_factory.AssertWasCalled(x => x.Build(1));
 
-            It should_return_the_default_view = () => result.ShouldBeAView().And().ViewName.ShouldEqual(string.Empty);
+            private It should_pass_the_view_model_to_the_view = () => result.ShouldBeAView().And().ViewData.Model.ShouldEqual(the_view_model);
 
-            It should_pass_the_view_model_to_the_view = () => result.ShouldBeAView().And().ViewData.Model.ShouldEqual(the_view_model);
+            private It should_return_the_default_view = () => result.ShouldBeAView().And().ViewName.ShouldEqual(string.Empty);
         }
 
         [Subject(typeof(FishController))]
         public class when_the_fish_controller_is_asked_for_the_index_action_with_an_ID : context_for_fish_controller
         {
-            static ActionResult result;
+            private static ActionResult result;
 
-            static FishIndexPageViewModel the_view_model;
+            private static FishIndexPageViewModel the_view_model;
 
-            Establish context = () =>
-            {
-                the_view_model = new FishIndexPageViewModel();
-
-                the_fish_page_view_model_factory.Stub(c => c.Build(1)).Return(the_view_model);
-            };
-
-            Because of = () => result = subject.Index(1);
-
-            It should_ask_the_view_model_factory_for_the_view_model = () => the_fish_page_view_model_factory.AssertWasCalled(x => x.Build(1));
-
-            It should_return_the_default_view = () => result.ShouldBeAView().And().ViewName.ShouldEqual(string.Empty);
-
-            It should_pass_the_view_model_to_the_view = () => result.ShouldBeAView().And().ViewData.Model.ShouldEqual(the_view_model);
-        }
-
-        [Subject(typeof(FishController))]
-        public class when_the_fish_controller_is_asked_for_the_get_species_action : context_for_fish_controller
-        {
-            static ActionResult result;
-
-            static List<Species> the_species_list;
-
-            static SelectList the_select_list;
-
-            Establish context = () =>
+            private Establish context = () =>
                 {
-                    the_species_list =  new List<Species>();
+                    the_view_model = new FishIndexPageViewModel();
 
-                    the_species_respository.Stub(x => x.GetSpeciesWithGenus(1)).Return(the_species_list);
+                    the_fish_page_view_model_factory.Stub(c => c.Build(1)).Return(the_view_model);
                 };
 
-            Because of = () => result = subject.GetSpecies(1);
+            private Because of = () => result = subject.Index(1);
 
-            It should_ask_the_species_repository_for_the_list_of_fish = () => the_species_respository.AssertWasCalled(x => x.GetSpeciesWithGenus(1));
+            private It should_ask_the_view_model_factory_for_the_view_model = () => the_fish_page_view_model_factory.AssertWasCalled(x => x.Build(1));
 
-            private It should_return_the_species_select_list_as_json = () => ((JsonResult)(result)).Data.ShouldBeOfType<SelectList>();
+            private It should_pass_the_view_model_to_the_view = () => result.ShouldBeAView().And().ViewData.Model.ShouldEqual(the_view_model);
+
+            private It should_return_the_default_view = () => result.ShouldBeAView().And().ViewName.ShouldEqual(string.Empty);
         }
     }
 }

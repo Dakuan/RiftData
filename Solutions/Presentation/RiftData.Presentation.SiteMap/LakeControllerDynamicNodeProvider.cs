@@ -15,15 +15,14 @@
             {
                 var nodes = new List<DynamicNode>();
 
-                dataContext.Lakes.ToList().ForEach(
-                    t =>
-                        {
-                            var node = new DynamicNode { Controller = "Lake", Title = t.Name, Action = "Index" };
+                dataContext.Lakes.ToList().ForEach(t =>
+                    {
+                        var node = new DynamicNode { Controller = "Lake", Title = t.Name, Action = "Index" };
 
-                            node.RouteValues.Add("lakeName", t.Name);
+                        node.RouteValues.Add("lakeName", t.Name);
 
-                            nodes.Add(node);
-                        });
+                        nodes.Add(node);
+                    });
                 return nodes;
             }
         }

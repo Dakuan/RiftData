@@ -4,7 +4,6 @@
 
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
     using RiftData.Presentation.Contracts.Admin.LocalePages;
     using RiftData.Presentation.ViewModels.Admin;
 
@@ -17,10 +16,7 @@
 
         private readonly ILocalesRepository localesRepository;
 
-        public LocalesController(
-            ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory, 
-            ILocalesRepository localesRepository, 
-            ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory)
+        public LocalesController(ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory, ILocalesRepository localesRepository, ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory)
         {
             this.localeIndexPageViewModelFactory = localeIndexPageViewModelFactory;
             this.localesRepository = localesRepository;

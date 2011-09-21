@@ -37,15 +37,9 @@
 
             if (photo != null)
             {
-                return this.Json(new
-                                            { 
-                                                url = photo.ThumbNailUrl, 
-                                                status = "ok", 
-                                                flickrid = photo.FlickrId, 
-                                                photoid = photo.Id 
-                                            }, 
-                        "text/plain");
+                return this.Json(new { url = photo.ThumbNailUrl, status = "ok", flickrid = photo.FlickrId, photoid = photo.Id }, "text/plain");
             }
+
             return this.Json(new { url = string.Empty, status = "failed" }, "text/plain");
         }
     }

@@ -1,10 +1,8 @@
-﻿using RiftData.Presentation.Contracts.Admin;
-
-namespace RiftData.Areas.Admin.Controllers
+﻿namespace RiftData.Areas.Admin.Controllers
 {
     using System.Web.Mvc;
 
-    using RiftData.Presentation.ViewModels.Admin;
+    using RiftData.Presentation.Contracts.Admin;
 
     [Authorize]
     public class HomeController : Controller

@@ -4,7 +4,6 @@
 
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
     using RiftData.Presentation.Contracts.Admin.GenusPages;
     using RiftData.Presentation.ViewModels.Admin;
 
@@ -17,10 +16,7 @@
 
         private readonly IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory;
 
-        public GenusController(
-            IGenusIndexPageViewModelFactory genusIndexPageViewModelFactory, 
-            IGenusRepository genusRepository, 
-            IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory)
+        public GenusController(IGenusIndexPageViewModelFactory genusIndexPageViewModelFactory, IGenusRepository genusRepository, IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory)
         {
             this.genusIndexPageViewModelFactory = genusIndexPageViewModelFactory;
             this.genusRepository = genusRepository;
@@ -70,9 +66,7 @@
 
             var updateResult = this.genusRepository.Update(viewModel.Id, viewModel.Name);
 
-            return updateResult == UpdateResult.Success
-                       ? new JsonResult { Data = true }
-                       : new JsonResult { Data = false };
+            return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
     }
 }

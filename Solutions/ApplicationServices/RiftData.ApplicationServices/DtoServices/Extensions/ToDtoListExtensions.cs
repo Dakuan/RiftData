@@ -1,12 +1,11 @@
-﻿using RiftData.Domain.Logs;
-
-namespace RiftData.ApplicationServices.DtoServices.Extensions
+﻿namespace RiftData.ApplicationServices.DtoServices.Extensions
 {
     using System.Collections.Generic;
     using System.Linq;
 
     using RiftData.ApplicationServices.ViewModelFactories;
     using RiftData.Domain.Entities;
+    using RiftData.Domain.Logs;
     using RiftData.Presentation.ViewModels.Dto;
 
     public static class ToDtoListExtensions

@@ -1,56 +1,58 @@
-﻿@model RiftData.Presentation.ViewModels.LocalePageViewModel
+﻿@using RiftData.Presentation.ViewModels
+@model LocalePageViewModel
 
 
 @{
-    ViewBag.Title = "RiftData | " + Model.Locale.Name;
-    ViewBag.Description =  string.Format("Information about {0}", Model.Locale.Name);
-    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+    this.ViewBag.Title = "RiftData | " + this.Model.Locale.Name;
+    this.ViewBag.Description = string.Format("Information about {0}", this.Model.Locale.Name);
+    this.Layout = "~/Views/Shared/_PanelLayout.cshtml";
+
 }
 
 @section CenterPanel{
     <div id="contentHolder">
-        <h2>@Model.Locale.Name</h2>
+        <h2>@this.Model.Locale.Name</h2>
         @{
-            if(Model.Locale.HasDescription){
+            if (this.Model.Locale.HasDescription)
+            {
                 <h3>Description:</h3>
                 <p>
-                  @Model.Locale.Description
+                    @this.Model.Locale.Description
                 </p>
             }
+
         }
         <h3>Fish:</h3>
-        @{ if (Model.Fish.Count() > 0)
+        @{ if (this.Model.Fish.Count() > 0)
            {
-                <ul>
-                    @foreach (var fish in Model.Fish)
-                    {
-                        <li>
-                            @{if (fish.HasPhotos)
-                              {
-                                <img alt="@fish.Name" src="@Url.Content("../Content/camera-tight-small.png")" class="localeListImage" /> 
-                              }
-                              else
-                              {
-                                <div class="cameraPicBlank"></div>
-                              }
-                            }
-                            <a href="@Url.Action("Index", "Fish", new { fishName = fish.UrlName })">@fish.Name</a>
-                                <div class="clear"></div>
-                        </li>
-                    }
-                        </ul>
+               <ul>
+                   @foreach (var fish in this.Model.Fish)
+                   {
+                       <li>
+                           @if (fish.HasPhotos)
+                           {
+                               <img alt="@fish.Name" src="@this.Url.Content("../Content/camera-tight-small.png")" class="localeListImage" />
+                           }
+                           else
+                           {
+                               <div class="cameraPicBlank"></div>
+                           }
+                           <a href="@this.Url.Action("Index", "Fish", new { fishName = fish.UrlName })">@fish.Name</a>
+                           <div class="clear"></div>
+                       </li>
+                   }
+               </ul>
            }
            else
            {
-                <p>No locale information available, sorry!</p>   
+               <p>No locale information available, sorry!</p>
            }
-        }
-            <div class="clear"></div>
-        @Html.Partial("PhotoGallery", Model.PhotoGallery)
+ }
+        <div class="clear"></div>
+        @this.Html.Partial("PhotoGallery", this.Model.PhotoGallery)
     </div>  
-    @Html.Hidden("LocaleId", Model.Locale.Id)
+    @this.Html.Hidden("LocaleId", this.Model.Locale.Id)
 }
 @section Scripts{
-    <script src="../../Scripts/PageScripts/locale.js" type="text/javascript"></script>
+    <script src="../../Scripts/PageScripts/locale.js" type="text/javascript"> </script>
 }
-

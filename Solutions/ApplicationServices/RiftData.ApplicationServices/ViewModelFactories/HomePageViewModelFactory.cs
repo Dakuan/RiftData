@@ -17,11 +17,7 @@
 
         private readonly IHeaderViewModelFactory headerViewModelFactory;
 
-        public HomePageViewModelFactory(
-            IGenusTypeDtoService genusTypeDtoService, 
-            IGenusPanelViewModelFactory genusPanelViewModelFactory, 
-            IHeaderViewModelFactory headerViewModelFactory, 
-            IGenusTypeRepository genusTypeRepository)
+        public HomePageViewModelFactory(IGenusTypeDtoService genusTypeDtoService, IGenusPanelViewModelFactory genusPanelViewModelFactory, IHeaderViewModelFactory headerViewModelFactory, IGenusTypeRepository genusTypeRepository)
         {
             this.genusTypeDtoService = genusTypeDtoService;
             this.genusPanelViewModelFactory = genusPanelViewModelFactory;
@@ -37,14 +33,7 @@
 
             var headerViewModel = this.headerViewModelFactory.Build(genusType);
 
-            return new HomePageViewModel
-                {
-                    GenusPanelViewModel = genusPanelViewModel, 
-                    GenusType = this.genusTypeDtoService.GetGenusTypeDto(genusType.Id), 
-                    HeaderViewModel = headerViewModel,
-                    Keywords = "Lake " + genusType.Lake.Name + ", " + genusType.Name + ", " + string.Join(@", ", genusType.Genus.Select(x => x.Name)),
-                    Description = string.Format("Information about Lake Malawi's {0} cichlids", genusType.Name)
-                };
+            return new HomePageViewModel { GenusPanelViewModel = genusPanelViewModel, GenusType = this.genusTypeDtoService.GetGenusTypeDto(genusType.Id), HeaderViewModel = headerViewModel, Keywords = "Lake " + genusType.Lake.Name + ", " + genusType.Name + ", " + string.Join(@", ", genusType.Genus.Select(x => x.Name)), Description = string.Format("Information about Lake Malawi's {0} cichlids", genusType.Name) };
         }
     }
 }

@@ -13,8 +13,7 @@
 
         private readonly ISpeciesDtoService speciesDtoService;
 
-        public ServiceController(
-            IGenusDtoService genusDtoService, ISpeciesDtoService speciesDtoService, ILocaleDtoService localeDtoService)
+        public ServiceController(IGenusDtoService genusDtoService, ISpeciesDtoService speciesDtoService, ILocaleDtoService localeDtoService)
         {
             this.genusDtoService = genusDtoService;
 
@@ -34,20 +33,12 @@
 
         public ActionResult GetLocalesForZoomLevel(int id)
         {
-            return new JsonResult
-                {
-                    JsonRequestBehavior = JsonRequestBehavior.AllowGet, 
-                    Data = this.localeDtoService.GetLocalesForZoomLevel(id)
-                };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocalesForZoomLevel(id) };
         }
 
         public ActionResult GetSpeciesForGenus(int id)
         {
-            return new JsonResult
-                {
-                    JsonRequestBehavior = JsonRequestBehavior.AllowGet, 
-                    Data = this.speciesDtoService.GetSpeciesWithGenus(id)
-                };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.speciesDtoService.GetSpeciesWithGenus(id) };
         }
     }
 }

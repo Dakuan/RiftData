@@ -12,10 +12,7 @@
     {
         public override CacheDescription GetCacheDescription()
         {
-            return new CacheDescription("HomeControllerDynamicNodeProvider")
-                {
-                   SlidingExpiration = TimeSpan.FromMilliseconds(1) 
-                };
+            return new CacheDescription("HomeControllerDynamicNodeProvider") { SlidingExpiration = TimeSpan.FromMilliseconds(1) };
         }
 
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection()
@@ -24,15 +21,14 @@
             {
                 var nodes = new List<DynamicNode>();
 
-                dataContext.GenusTypes.ToList().ForEach(
-                    t =>
-                        {
-                            var node = new DynamicNode { Controller = "Home", Title = t.Name, Action = "Index" };
+                dataContext.GenusTypes.ToList().ForEach(t =>
+                    {
+                        var node = new DynamicNode { Controller = "Home", Title = t.Name, Action = "Index" };
 
-                            node.RouteValues.Add("genusTypeName", t.Name);
+                        node.RouteValues.Add("genusTypeName", t.Name);
 
-                            nodes.Add(node);
-                        });
+                        nodes.Add(node);
+                    });
 
                 return nodes;
             }

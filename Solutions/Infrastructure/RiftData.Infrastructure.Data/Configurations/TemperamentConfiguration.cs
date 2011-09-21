@@ -11,8 +11,7 @@
         {
             this.HasKey(k => k.Id);
 
-            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired().HasColumnName(
-                "TemperamentID");
+            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired().HasColumnName("TemperamentID");
 
             Property(p => p.Name).HasColumnName("TemperamentName");
 

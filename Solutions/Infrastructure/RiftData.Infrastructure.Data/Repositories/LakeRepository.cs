@@ -33,9 +33,7 @@
 
         public Lake GetLakeFromSpeciesId(int speciesId)
         {
-            return
-                this._dataContext.Lakes.First(
-                    l => l.GenusTypes.Any(t => t.Genus.Any(g => g.Species.Any(s => s.Id == speciesId))));
+            return this._dataContext.Lakes.First(l => l.GenusTypes.Any(t => t.Genus.Any(g => g.Species.Any(s => s.Id == speciesId))));
         }
     }
 }

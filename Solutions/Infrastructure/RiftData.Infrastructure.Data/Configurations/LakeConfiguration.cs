@@ -11,10 +11,11 @@
         {
             this.HasKey(k => k.Id);
 
-            Property(p => p.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnName(
-                "LakeID");
+            Property(p => p.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).HasColumnName("LakeID");
 
             Property(p => p.Name).IsRequired().HasColumnName("LakeName");
+
+            Property(p => p.Description).HasColumnName("LakeDescription");
 
             this.HasMany(p => p.GenusTypes).WithRequired(x => x.Lake).Map(m => m.MapKey("GenusTypeLakeID"));
 

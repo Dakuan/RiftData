@@ -13,22 +13,14 @@
 
         public ActionResult UpdateFailure(string subject, string okAction, string okController)
         {
-            var vm = new MessageBoxViewModel
-                {
-                    Message = "Oops! Something went wrong, the " + subject.ToLower() + " wasn't updated", 
-                    OkAction = okAction, 
-                    OkController = okController
-                };
+            var vm = new MessageBoxViewModel { Message = "Oops! Something went wrong, the " + subject.ToLower() + " wasn't updated", OkAction = okAction, OkController = okController };
 
             return this.PartialView("AjaxMessage", vm);
         }
 
         public ActionResult UpdateSuccess(string subject, string okAction, string okController)
         {
-            var vm = new MessageBoxViewModel
-                {
-                   Message = subject + " successfully updated", OkAction = okAction, OkController = okController 
-                };
+            var vm = new MessageBoxViewModel { Message = subject + " successfully updated", OkAction = okAction, OkController = okController };
 
             return this.PartialView("AjaxMessage", vm);
         }

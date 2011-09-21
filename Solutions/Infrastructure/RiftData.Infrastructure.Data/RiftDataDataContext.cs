@@ -1,10 +1,9 @@
-﻿using RiftData.Domain.Logs;
-
-namespace RiftData.Infrastructure.Data
+﻿namespace RiftData.Infrastructure.Data
 {
     using System.Data.Entity;
 
     using RiftData.Domain.Entities;
+    using RiftData.Domain.Logs;
     using RiftData.Infrastructure.Data.Configurations;
 
     public class RiftDataDataContext : DbContext

@@ -1136,6 +1136,7 @@
     <Content Include="Views\Fish\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Lake\" />
     <Folder Include="Areas\Mobile\Controllers\" />
     <Folder Include="Areas\Mobile\Views\Shared\" />
     <Folder Include="Scripts\tiny_mce\plugins\example_dependency\" />

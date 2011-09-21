@@ -24,26 +24,22 @@ namespace RiftData.UnitTests.AdminControllers
     {
         public class context_for_home_controller_specifications : Specification<HomeController>
         {
-            
         }
 
         [Subject(typeof(HomeController))]
         public class when_the_home_controller_is_asked_for_the_index_action : context_for_home_controller_specifications
         {
-            static ActionResult result;
+            private static ActionResult result;
 
-            static HomePageViewModel the_view_model; 
+            private static HomePageViewModel the_view_model;
 
-            Establish context = () =>
-                {
-                    the_view_model = new HomePageViewModel();
-                };
+            private Establish context = () => { the_view_model = new HomePageViewModel(); };
 
-            Because of = () => result = subject.Index();
+            private Because of = () => result = subject.Index();
 
-            It should_return_the_default_view = () => result.ShouldBeAView().And().ViewName.ShouldEqual(string.Empty);
+            private It should_return_the_default_view = () => result.ShouldBeAView().And().ViewName.ShouldEqual(string.Empty);
 
-            //It should_pass_the_view_model_to_the_view = () => result.ShouldBeAView().And().ViewData.Model.ShouldEqual(the_view_model);
+            // It should_pass_the_view_model_to_the_view = () => result.ShouldBeAView().And().ViewData.Model.ShouldEqual(the_view_model);
         }
     }
 }

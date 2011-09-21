@@ -1,14 +1,17 @@
-﻿@model  RiftData.Presentation.ViewModels.PhotoGalleryViewModel
+﻿@using RiftData.Presentation.ViewModels
+@model  PhotoGalleryViewModel
 
 <div id="PhotoCellContainer">
-    @{foreach (var photo in Model.Photos)
-    {<text>
-        <div class="photoCell">
-            <a href="@photo.MediumUrl" class="pirobox" title="@photo.Caption">
-	            <img src="@photo.SquareThumbnail" alt="@photo.Caption" />
-            </a>
-        </div>
-    </text>
-    }}
+    @{ foreach (var photo in Model.Photos)
+       {
+           <text>
+               <div class="photoCell">
+                   <a href="@photo.MediumUrl" class="pirobox" title="@photo.Caption">
+                       <img src="@photo.SquareThumbnail" alt="@photo.Caption" />
+                   </a>
+               </div>
+           </text>
+       }
+ }
     <div class="clear"></div>
 </div>

@@ -11,8 +11,7 @@
 
         private readonly ILakeRepository lakeRepository;
 
-        public GenusTypesUpdatePageViewModelFactory(
-            ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository)
+        public GenusTypesUpdatePageViewModelFactory(ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository)
         {
             this.lakeRepository = lakeRepository;
             this.genusTypeRepository = genusTypeRepository;
@@ -22,11 +21,7 @@
         {
             var genusType = this.genusTypeRepository.Get(genusTypeId);
 
-            var viewModel = new GenusTypeUpdatePageViewModel
-                {
-                    Lakes = this.lakeRepository.GetAll().ToSelectList(genusType.Lake.Id), 
-                    GenusType = DtoFactory.Build(genusType)
-                };
+            var viewModel = new GenusTypeUpdatePageViewModel { Lakes = this.lakeRepository.GetAll().ToSelectList(genusType.Lake.Id), GenusType = DtoFactory.Build(genusType) };
 
             return viewModel;
         }

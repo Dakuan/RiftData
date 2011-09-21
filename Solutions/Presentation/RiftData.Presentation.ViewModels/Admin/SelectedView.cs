@@ -14,6 +14,8 @@ namespace RiftData.Presentation.ViewModels.Admin
 
         Genus, 
 
-        GenusTypes
+        GenusTypes,
+
+        Lake
     }
 }

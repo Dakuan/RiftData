@@ -19,12 +19,7 @@
 
         private readonly IPhotoGalleryViewModelFactory photoGalleryViewModelFactory;
 
-        public LocalePageViewModelFactory(
-            IGenusPanelViewModelFactory genusPanelViewModelFactory, 
-            ILocalesRepository localesRepository, 
-            IHeaderViewModelFactory headerViewModelFactory, 
-            IFishDtoService fishDtoService, 
-            IPhotoGalleryViewModelFactory photoGalleryViewModelFactory)
+        public LocalePageViewModelFactory(IGenusPanelViewModelFactory genusPanelViewModelFactory, ILocalesRepository localesRepository, IHeaderViewModelFactory headerViewModelFactory, IFishDtoService fishDtoService, IPhotoGalleryViewModelFactory photoGalleryViewModelFactory)
         {
             this.genusPanelViewModelFactory = genusPanelViewModelFactory;
             this.localesRepository = localesRepository;
@@ -41,16 +36,7 @@
 
             var fish = this.fishDtoService.GetFishAtLocale(locale.Id);
 
-            var viewModel = new LocalePageViewModel
-                {
-                    Locale = DtoFactory.Build(locale), 
-                    Fish = fish, 
-                    HeaderViewModel = headerViewModel, 
-                    PhotoGallery = this.photoGalleryViewModelFactory.Build(locale), 
-                    GenusPanelViewModel = this.genusPanelViewModelFactory.Build(1),
-                    Description = string.Format("Information and map for {0}, Lake {1}", locale.Name, locale.Lake.Name),
-                    Keywords = string.Format("Lake {0}, {1}", locale.Lake.Name,  string.Join(", ", fish.Select(x => x.Name)))
-                };
+            var viewModel = new LocalePageViewModel { Locale = DtoFactory.Build(locale), Fish = fish, HeaderViewModel = headerViewModel, PhotoGallery = this.photoGalleryViewModelFactory.Build(locale), GenusPanelViewModel = this.genusPanelViewModelFactory.Build(1), Description = string.Format("Information and map for {0}, Lake {1}", locale.Name, locale.Lake.Name), Keywords = string.Format("Lake {0}, {1}", locale.Lake.Name, string.Join(", ", fish.Select(x => x.Name))) };
 
             return viewModel;
         }

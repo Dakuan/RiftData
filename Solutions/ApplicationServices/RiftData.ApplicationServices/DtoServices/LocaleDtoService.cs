@@ -16,8 +16,7 @@
 
         private readonly IMapService _mapService;
 
-        public LocaleDtoService(
-            IFishRepository fishRepository, ILocalesRepository localesRepository, IMapService mapService)
+        public LocaleDtoService(IFishRepository fishRepository, ILocalesRepository localesRepository, IMapService mapService)
         {
             this._fishRepository = fishRepository;
             this._localesRepository = localesRepository;
@@ -42,8 +41,7 @@
         {
             var list = new List<LocaleDto>();
 
-            this._localesRepository.GetForZoomLevel(this._mapService.GetDataZoomFromMapZoom(zoomLevel)).ToList().ForEach
-                (l => list.Add(DtoFactory.Build(l)));
+            this._localesRepository.GetForZoomLevel(this._mapService.GetDataZoomFromMapZoom(zoomLevel)).ToList().ForEach(l => list.Add(DtoFactory.Build(l)));
 
             return list;
         }

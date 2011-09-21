@@ -10,9 +10,7 @@
         {
             get
             {
-                return this.Described
-                           ? string.Format("{0} {1}", this.Genus.Name, this.Name)
-                           : string.Format(@"{0} sp ""{1}""", this.Genus.Name, this.Name);
+                return this.Described ? string.Format("{0} {1}", this.Genus.Name, this.Name) : string.Format(@"{0} sp ""{1}""", this.Genus.Name, this.Name);
             }
         }
 
@@ -44,9 +42,7 @@
         {
             get
             {
-                return this.Described
-                           ? string.Format("{0}_{1}", this.Genus.Name, this.Name)
-                           : string.Format("{0}_sp_{1}", this.Genus.Name, this.Name);
+                return this.Described ? string.Format("{0}_{1}", this.Genus.Name, this.Name) : string.Format("{0}_sp_{1}", this.Genus.Name, this.Name);
             }
         }
     }

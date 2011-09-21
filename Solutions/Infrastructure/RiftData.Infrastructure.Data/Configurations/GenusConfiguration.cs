@@ -10,8 +10,7 @@
         public GenusConfiguration()
         {
             this.HasKey(p => p.Id);
-            Property(p => p.Id).HasColumnName("GenusID").IsRequired().HasDatabaseGeneratedOption(
-                DatabaseGeneratedOption.Identity);
+            Property(p => p.Id).HasColumnName("GenusID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Name).HasColumnName("GenusName");
             this.Ignore(p => p.HasFish);
             this.HasMany(x => x.Species).WithRequired(x => x.Genus).Map(m => m.MapKey("SpeciesGenusID"));

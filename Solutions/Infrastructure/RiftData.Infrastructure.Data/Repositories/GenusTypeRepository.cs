@@ -1,6 +1,4 @@
-﻿using RiftData.Infrastructure.Data.Logging;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -9,10 +7,12 @@ namespace RiftData.Infrastructure.Data.Repositories
     using RiftData.Domain.Entities;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
+    using RiftData.Infrastructure.Data.Logging;
 
     public class GenusTypeRepository : IGenusTypeRepository
     {
         private readonly RiftDataDataContext dataContext;
+
         private readonly ILogger logger;
 
         public GenusTypeRepository(RiftDataDataContext dataContext, ILogger logger)
@@ -42,7 +42,7 @@ namespace RiftData.Infrastructure.Data.Repositories
                 return AddResult.Failure;
             }
 
-            logger.LogAdd(genusType, userName);
+            this.logger.LogAdd(genusType, userName);
 
             return AddResult.Success;
         }
@@ -104,7 +104,7 @@ namespace RiftData.Infrastructure.Data.Repositories
 
                 this.dataContext.SaveChanges();
 
-                logger.LogUpdate(genusType, userName);
+                this.logger.LogUpdate(genusType, userName);
             }
             catch (Exception)
             {

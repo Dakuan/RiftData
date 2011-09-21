@@ -11,8 +11,7 @@
         {
             var sortedList = new List<Species>();
 
-            unsortedList.OrderBy(y => y.Genus.Name).GroupBy(z => z.Genus.Name).ToList().ForEach(
-                subG => subG.OrderBy(x => x.Name).ToList().ForEach(sortedList.Add));
+            unsortedList.OrderBy(y => y.Genus.Name).GroupBy(z => z.Genus.Name).ToList().ForEach(subG => subG.OrderBy(x => x.Name).ToList().ForEach(sortedList.Add));
 
             return sortedList;
         }

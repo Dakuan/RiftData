@@ -1,46 +1,46 @@
-﻿    @model RiftData.Presentation.ViewModels.Admin.FishEditPageViewModel
-    @using Telerik.Web.Mvc.UI
+﻿
+@using RiftData.Presentation.ViewModels.Admin
+@using Telerik.Web.Mvc.UI
+@model FishEditPageViewModel
 
-    @{
-        ViewBag.Title = "Create Fish";
-        Layout = "../Shared/_Layout.cshtml";
-    }
+@{
+    this.ViewBag.Title = "Create Fish";
+    this.Layout = "../Shared/_Layout.cshtml";
 
-    @section Navigation
-    {
-        @Html.Partial("NavigationPartial", Model.SelectedView)
-    }
+}
 
-    <div id="body">
-        <div class="portlet">
-            <div class="portlet-header">
-                <h4>Create</h4>
-            </div>
-            <div class="portlet-content">
-            @using (Html.BeginForm("Create", "Fish", FormMethod.Post, new { @class = "form label-inline" }))
+@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+
+<div id="body">
+    <div class="portlet">
+        <div class="portlet-header">
+            <h4>Create</h4>
+        </div>
+        <div class="portlet-content">
+            @using (this.Html.BeginForm("Create", "Fish", FormMethod.Post, new { @class = "form label-inline" }))
             {
-            <div class="field">
-                <label>Genus</label>
-                @Html.Telerik().DropDownList().BindTo(Model.Genus).Name("Genus").ClientEvents(e => e.OnChange("OnGenusChange"))
-            </div>     
-            <div class="field">
-                <label>Species</label>
-                @Html.Telerik().DropDownList().BindTo(Model.Species).Name("Species").ClientEvents(e => e.OnChange("OnSpeciesChange"))
-            </div>
-            <div class="field">
-                <label>Locale</label>
-                @Html.Telerik().DropDownList().BindTo(Model.Locales).Name("Locales").ClientEvents(e => e.OnChange("OnLocaleChange"))
-            </div>
+                <div class="field">
+                    <label>Genus</label>
+                    @this.Html.Telerik().DropDownList().BindTo(this.Model.Genus).Name("Genus").ClientEvents(e => e.OnChange("OnGenusChange"))
+                </div>
+                <div class="field">
+                    <label>Species</label>
+                    @this.Html.Telerik().DropDownList().BindTo(this.Model.Species).Name("Species").ClientEvents(e => e.OnChange("OnSpeciesChange"))
+                </div>
+                <div class="field">
+                    <label>Locale</label>
+                    @this.Html.Telerik().DropDownList().BindTo(this.Model.Locales).Name("Locales").ClientEvents(e => e.OnChange("OnLocaleChange"))
+                </div>
                 <div class="field">
                     <label>Description</label>
-                    @Html.TextAreaFor(m => m.Description, new { columns="10" })
+                    @this.Html.TextAreaFor(m => m.Description, new { columns = "10" })
                 </div>
-                <button type="submit" id="btnSubmit" style="display:none">
+                <button type="submit" id="btnSubmit" style="display: none">
                     <span>Save</span>
                 </button>
             }
             <div class="buttonrow">
-                <a href="@Url.Action("Index")">
+                <a href="@this.Url.Action("Index")">
                     <button class="btn-sec">
                         <span>Cancel</span>
                     </button>
@@ -49,23 +49,23 @@
         </div>
     </div>
 </div>
-<div class="hidden" id="CancelUrl">@Url.Action("Cancel", "Photos")</div>
-@Html.Hidden("FlickrId")
-<input type="hidden" value="@Url.Action("UpdateSuccess", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="SuccessUrl" />
-<input type="hidden" value="@Url.Action("UpdateFailure", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="FailureUrl" />
-<input type="hidden" value="@Url.Action("GetSpecies", "Fish")" id="SpeciesUrl" />
-@Html.HiddenFor(m => m.MessageBoxVisible)
-@Html.Partial("MessageBox")
-@Html.Partial("PhotoUploader")
+<div class="hidden" id="CancelUrl">@this.Url.Action("Cancel", "Photos")</div>
+@this.Html.Hidden("FlickrId")
+<input type="hidden" value="@this.Url.Action("UpdateSuccess", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="SuccessUrl" />
+<input type="hidden" value="@this.Url.Action("UpdateFailure", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="FailureUrl" />
+<input type="hidden" value="@this.Url.Action("GetSpecies", "Fish")" id="SpeciesUrl" />
+@this.Html.HiddenFor(m => m.MessageBoxVisible)
+@this.Html.Partial("MessageBox")
+@this.Html.Partial("PhotoUploader")
 @section Css
 {
-    <link href="@Url.Content("~/Content/Admin/CSS/jquery.fastconfirm.css")" rel="stylesheet" type="text/css" />
+    <link href="@this.Url.Content("~/Content/Admin/CSS/jquery.fastconfirm.css")" rel="stylesheet" type="text/css" />
 }
 @section Scripts
 {
-    <script src="@Url.Content("~/Scripts/tiny_mce/tiny_mce.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/Admin/LoadTextEditor.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/2011.2.712/telerik.upload.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/Admin/jquery.fastconfirm.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/Admin/FishUpdate.js")" type="text/javascript"></script>
+    <script src="@this.Url.Content("~/Scripts/tiny_mce/tiny_mce.js")" type="text/javascript"> </script>
+    <script src="@this.Url.Content("~/Scripts/Admin/LoadTextEditor.js")" type="text/javascript"> </script>
+    <script src="@this.Url.Content("~/Scripts/2011.2.712/telerik.upload.min.js")" type="text/javascript"> </script>
+    <script src="@this.Url.Content("~/Scripts/Admin/jquery.fastconfirm.js")" type="text/javascript"> </script>
+    <script src="@this.Url.Content("~/Scripts/Admin/FishUpdate.js")" type="text/javascript"> </script>
 }

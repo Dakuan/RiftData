@@ -1,9 +1,2 @@
 ﻿@using Telerik.Web.Mvc.UI
-@(Html.Telerik().Window()
-    .Name("MessageBox")
-    .Width(300)
-    .Height(200)
-    .Visible(false)
-    .Modal(true)
-    .Title("Alert").LoadContentFrom("Loading", "AjaxMessaging")
-)
+@this.Html.Telerik().Window().Name("MessageBox").Width(300).Height(200).Visible(false).Modal(true).Title("Alert").LoadContentFrom("Loading", "AjaxMessaging")

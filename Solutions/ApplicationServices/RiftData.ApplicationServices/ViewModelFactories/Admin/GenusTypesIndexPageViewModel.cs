@@ -18,10 +18,7 @@
 
         public GenusTypeIndexPageViewModel Build()
         {
-            var viewModel = new GenusTypeIndexPageViewModel
-                {
-                   GenusTypes = this.genusTypeRepository.GetAll().ToList().ToDtoList() 
-                };
+            var viewModel = new GenusTypeIndexPageViewModel { GenusTypes = this.genusTypeRepository.GetAll().ToList().ToDtoList() };
 
             return viewModel;
         }

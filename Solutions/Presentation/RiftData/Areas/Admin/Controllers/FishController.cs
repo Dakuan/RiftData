@@ -1,6 +1,4 @@
-﻿using RiftData.Infrastructure.Data.Logging;
-
-namespace RiftData.Areas.Admin.Controllers
+﻿namespace RiftData.Areas.Admin.Controllers
 {
     using System;
     using System.Web.Mvc;
@@ -8,6 +6,7 @@ namespace RiftData.Areas.Admin.Controllers
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
+    using RiftData.Infrastructure.Data.Logging;
     using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
 
@@ -20,17 +19,13 @@ namespace RiftData.Areas.Admin.Controllers
 
         private readonly IFishRepository fishRepository;
 
-        private readonly IPhotosRepository photosRepository;
         private readonly ILogger logger;
+
+        private readonly IPhotosRepository photosRepository;
 
         private readonly ISpeciesRepository speciesRepository;
 
-        public FishController(
-            IFishPageViewModelFactory fishPageViewModelFactory, 
-            IFishEditPageViewModelFactory fishEditPageViewModelFactory, 
-            IFishRepository fishRepository, 
-            ISpeciesRepository speciesRepository, 
-            IPhotosRepository photosRepository, ILogger logger)
+        public FishController(IFishPageViewModelFactory fishPageViewModelFactory, IFishEditPageViewModelFactory fishEditPageViewModelFactory, IFishRepository fishRepository, ISpeciesRepository speciesRepository, IPhotosRepository photosRepository, ILogger logger)
         {
             this.fishPageViewModelFactory = fishPageViewModelFactory;
             this.fishEditPageViewModelFactory = fishEditPageViewModelFactory;
@@ -53,8 +48,7 @@ namespace RiftData.Areas.Admin.Controllers
         {
             this.TryUpdateModel(viewModel);
 
-            var updateResult = this.fishRepository.Add(
-                viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description, this.User.Identity.Name);
+            var updateResult = this.fishRepository.Add(viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description, this.User.Identity.Name);
 
             return updateResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
@@ -107,9 +101,7 @@ namespace RiftData.Areas.Admin.Controllers
 
             var updateResult = this.fishRepository.Update(vm.Id, vm.Genus, vm.Species, vm.Locales, vm.Description, this.User.Identity.Name);
 
-            return updateResult == UpdateResult.Success
-                       ? new JsonResult { Data = true }
-                       : new JsonResult { Data = false };
+            return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
     }
 }

@@ -17,13 +17,7 @@
         {
             var locale = this.localesRepository.Get(localeId);
 
-            var viewModel = new LocaleUpdatePageViewModel
-                {
-                    Latitude = locale.Latitude, 
-                    Longitude = locale.Longitude, 
-                    Name = locale.Name, 
-                    ZoomLevel = locale.ZoomLevel
-                };
+            var viewModel = new LocaleUpdatePageViewModel { Latitude = locale.Latitude, Longitude = locale.Longitude, Name = locale.Name, ZoomLevel = locale.ZoomLevel };
 
             return viewModel;
         }

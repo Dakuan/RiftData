@@ -1,42 +1,25 @@
-﻿@using RiftData.Domain.Entities
-@model RiftData.Presentation.ViewModels.GenusPanelViewModel
+﻿@using RiftData.Presentation.ViewModels
+@model GenusPanelViewModel
 
 <div id="GenusPanel">
-    @(Html.Telerik().PanelBar()
-            .Name("Genus_Panel")
-            .ExpandMode(PanelBarExpandMode.Single)
-            .Items(panelbar => 
-                {
-                    foreach (var genus in Model.GenusList)
+    @this.Html.Telerik().PanelBar().Name("Genus_Panel").ExpandMode(PanelBarExpandMode.Single).Items(panelbar =>
+        {
+            foreach (var genus in this.Model.GenusList)
+            {
+                panelbar.Add().Text(genus.Name).Expanded(genus.Id == this.Model.ExpandedGenus ? true : false).HtmlAttributes(new { @class = "genusPanelbar" }).Items(panelBarChild =>
                     {
-                        panelbar.Add().Text(genus.Name)
-                                                .Expanded(genus.Id == Model.ExpandedGenus ? true : false)
-                                                .HtmlAttributes(new { @class="genusPanelbar" })
-                                                .Items(panelBarChild =>
-                                                    {
-                                                        foreach (var species in genus.Species)
-                                                        {
-                                                            if (species.HasPhotos)
-                                                            {
-                                                                panelBarChild.Add().Text(species.Name)
-                                                                    .Selected(species.Id == Model.SelectedSpecies)
-                                                                    .LinkHtmlAttributes(new { id = "species_" + species.Id })
-                                                                    .ImageUrl(Url.Content("../Content/camera.png"))
-                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage", alt =species.UrlName })
-                                                                    .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
-                                                            }
-                                                            else
-                                                            {
-                                                                panelBarChild.Add().Text(species.Name)
-                                                                    .Selected(species.Id == Model.SelectedSpecies)
-                                                                    .LinkHtmlAttributes(new { id = "species_" + species.Id })
-                                                                    .ImageUrl(Url.Content("../Content/camera.png"))
-                                                                    .ImageHtmlAttributes(new { @class = "panelBarItemImage", style = "display:none", alt = species.UrlName })
-                                                                    .Url(Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
-                                                            }
-                                                        }
-                                                    });
-                    }
-                })
-    )
+                        foreach (var species in genus.Species)
+                        {
+                            if (species.HasPhotos)
+                            {
+                                panelBarChild.Add().Text(species.Name).Selected(species.Id == this.Model.SelectedSpecies).LinkHtmlAttributes(new { id = "species_" + species.Id }).ImageUrl(this.Url.Content("../Content/camera.png")).ImageHtmlAttributes(new { @class = "panelBarItemImage", alt = species.UrlName }).Url(this.Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                            }
+                            else
+                            {
+                                panelBarChild.Add().Text(species.Name).Selected(species.Id == this.Model.SelectedSpecies).LinkHtmlAttributes(new { id = "species_" + species.Id }).ImageUrl(this.Url.Content("../Content/camera.png")).ImageHtmlAttributes(new { @class = "panelBarItemImage", style = "display:none", alt = species.UrlName }).Url(this.Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                            }
+                        }
+                    });
+            }
+        })
 </div>

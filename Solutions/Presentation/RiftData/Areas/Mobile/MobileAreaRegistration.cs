@@ -1,7 +1,7 @@
-﻿using System.Web.Mvc;
-
-namespace RiftData.Areas.Mobile
+﻿namespace RiftData.Areas.Mobile
 {
+    using System.Web.Mvc;
+
     public class MobileAreaRegistration : AreaRegistration
     {
         public override string AreaName
@@ -14,11 +14,7 @@ namespace RiftData.Areas.Mobile
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            context.MapRoute(
-                "Mobile_default",
-                "Mobile/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+            context.MapRoute("Mobile_default", "Mobile/{controller}/{action}/{id}", new { action = "Index", id = UrlParameter.Optional });
         }
     }
 }

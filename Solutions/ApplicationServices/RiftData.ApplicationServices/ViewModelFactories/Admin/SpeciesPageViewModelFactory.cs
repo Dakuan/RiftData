@@ -18,10 +18,7 @@
 
         public SpeciesPageViewModel Build()
         {
-            var viewModel = new SpeciesPageViewModel
-                {
-                   Species = this.speciesRepository.GetAll().ToList().ToDtoList(), 
-                };
+            var viewModel = new SpeciesPageViewModel { Species = this.speciesRepository.GetAll().ToList().ToDtoList(), };
 
             return viewModel;
         }

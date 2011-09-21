@@ -4,7 +4,6 @@
 
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin;
     using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
 
@@ -16,8 +15,7 @@
 
         private readonly IGenusTypeRepository genusTypeRepository;
 
-        public FishPageViewModelFactory(
-            IFishRepository fishRepository, IGenusRepository genusRepository, IGenusTypeRepository genusTypeRepository)
+        public FishPageViewModelFactory(IFishRepository fishRepository, IGenusRepository genusRepository, IGenusTypeRepository genusTypeRepository)
         {
             this.fishRepository = fishRepository;
             this.genusRepository = genusRepository;
@@ -28,14 +26,7 @@
         {
             var genusList = this.genusRepository.GetOfType(id);
 
-            var viewModel = new FishIndexPageViewModel
-                {
-                    SelectedView = SelectedView.Fish, 
-                    Fish = this.fishRepository.GetOfType(id).ToList().ToDtoList(), 
-                    Type = DtoFactory.Build(this.genusTypeRepository.Get(id)), 
-                    GenusList = genusList.ToSelectList("select a genus"), 
-                    GenusTypes = this.genusTypeRepository.GetAll().ToList().ToDtoList()
-                };
+            var viewModel = new FishIndexPageViewModel { SelectedView = SelectedView.Fish, Fish = this.fishRepository.GetOfType(id).ToList().ToDtoList(), Type = DtoFactory.Build(this.genusTypeRepository.Get(id)), GenusList = genusList.ToSelectList("select a genus"), GenusTypes = this.genusTypeRepository.GetAll().ToList().ToDtoList() };
 
             return viewModel;
         }

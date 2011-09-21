@@ -22,12 +22,7 @@
         {
             var lake = this._lakeDtoService.GetLakeFromName(lakeName);
 
-            var viewModel = new LakeViewModel
-                {
-                   Lake = lake, HeaderViewModel = this._headerViewModelFactory.Build(lake),
-                   Description = string.Format("Information and map for Lake {0}", lake.Name),
-                   Keywords = string.Format("Lake {0}, {1}", lake.Name, string.Join(", ", lake.GenusTypes.Select(x => x.Name)))
-                };
+            var viewModel = new LakeViewModel { Lake = lake, HeaderViewModel = this._headerViewModelFactory.Build(lake), Description = string.Format("Information and map for Lake {0}", lake.Name), Keywords = string.Format("Lake {0}, {1}", lake.Name, string.Join(", ", lake.GenusTypes.Select(x => x.Name))) };
 
             return viewModel;
         }

@@ -8,12 +8,12 @@
 
         public GenusDto Genus { get; set; }
 
-        public bool HasDescription 
-        { 
+        public bool HasDescription
+        {
             get
             {
                 return string.IsNullOrEmpty(this.Description);
-            } 
+            }
         }
 
         public bool HasPhotos { get; set; }

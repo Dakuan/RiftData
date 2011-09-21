@@ -1,6 +1,4 @@
-﻿using RiftData.Infrastructure.Data.Logging;
-
-namespace RiftData.Infrastructure.Data.Repositories
+﻿namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -10,10 +8,12 @@ namespace RiftData.Infrastructure.Data.Repositories
     using RiftData.Domain.Enums;
     using RiftData.Domain.Extensions;
     using RiftData.Domain.Repositories;
+    using RiftData.Infrastructure.Data.Logging;
 
     public class FishRepository : IFishRepository
     {
         private readonly RiftDataDataContext dataContext;
+
         private readonly ILogger logger;
 
         public FishRepository(RiftDataDataContext dataContext, ILogger logger)
@@ -30,9 +30,7 @@ namespace RiftData.Infrastructure.Data.Repositories
 
             var locale = this.dataContext.Locales.First(l => l.Id == localeId);
 
-            if (
-                this.dataContext.Fish.Any(
-                    f => f.Genus.Id == genusId && f.Species.Id == speciesId && f.Locale.Id == localeId))
+            if (this.dataContext.Fish.Any(f => f.Genus.Id == genusId && f.Species.Id == speciesId && f.Locale.Id == localeId))
             {
                 return AddResult.AlreadyExists;
             }
@@ -74,6 +72,7 @@ namespace RiftData.Infrastructure.Data.Repositories
             {
                 return DeleteResult.Failure;
             }
+
             return DeleteResult.Success;
         }
 
@@ -106,9 +105,7 @@ namespace RiftData.Infrastructure.Data.Repositories
 
             var localeName = components[2];
 
-            return
-                this.dataContext.Fish.First(
-                    f => f.Genus.Name == genusName && f.Species.Name == speciesName && f.Locale.Name == localeName);
+            return this.dataContext.Fish.First(f => f.Genus.Name == genusName && f.Species.Name == speciesName && f.Locale.Name == localeName);
         }
 
         public IList<Fish> GetOfType(int genusTypeId)
@@ -137,7 +134,7 @@ namespace RiftData.Infrastructure.Data.Repositories
                 return UpdateResult.Failure;
             }
 
-            logger.LogUpdate(fish, userName);
+            this.logger.LogUpdate(fish, userName);
 
             return UpdateResult.Success;
         }

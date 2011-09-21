@@ -11,9 +11,7 @@ namespace RiftData.Domain.Installers
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(
-                AllTypes.FromThisAssembly().Pick().If(IsService).WithService.DefaultInterface().Configure(
-                    x => x.LifeStyle.Is(LifestyleType.Transient)));
+            container.Register(AllTypes.FromThisAssembly().Pick().If(IsService).WithService.DefaultInterface().Configure(x => x.LifeStyle.Is(LifestyleType.Transient)));
         }
 
         private static bool IsService(Type type)
