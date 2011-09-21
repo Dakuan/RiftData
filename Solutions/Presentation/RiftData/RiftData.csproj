@@ -91,6 +91,7 @@
     <Compile Include="Areas\Admin\Controllers\GenusController.cs" />
     <Compile Include="Areas\Admin\Controllers\GenusTypesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LakesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LocalesController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhotosController.cs" />
     <Compile Include="Areas\Admin\Controllers\SpeciesController.cs" />
@@ -116,6 +117,7 @@
     <Content Include="App_Readme\glimpse.readme.txt" />
     <Content Include="Areas\Admin\Views\Shared\ChangePassword.aspx" />
     <Content Include="Areas\Admin\Views\Shared\ChangePasswordSuccess.aspx" />
+    <Content Include="Scripts\Admin\LakeUpdate.js" />
     <Content Include="Views\Shared\LogOn.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Register.aspx" />
@@ -1136,7 +1138,6 @@
     <Content Include="Views\Fish\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Views\Lake\" />
     <Folder Include="Areas\Mobile\Controllers\" />
     <Folder Include="Areas\Mobile\Views\Shared\" />
     <Folder Include="Scripts\tiny_mce\plugins\example_dependency\" />
@@ -1188,6 +1189,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Mobile\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Lakes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Lakes\Update.cshtml" />
     <None Include="Content\Admin\Images\lightbox\Thumbs.db" />
     <None Include="Content\Admin\Images\nav\Thumbs.db" />
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />

@@ -1,0 +1,44 @@
+﻿@model RiftData.Presentation.ViewModels.Admin.Lake.LakeIndexPageViewModel
+
+@{
+    ViewBag.Title = "Index";
+    this.Layout = "../Shared/_Layout.cshtml";
+}
+@section Navigation{
+    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+}
+
+<div id ="body">
+<div class="portlet">
+    <div class="portlet-header">
+        <h4>Lakes</h4>
+    </div>
+    <div class="portlet-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Lake Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in this.Model.Lakes)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>
+                            <div class="buttonRow">
+                                    <a href="@this.Url.Action("Update", "Lakes", new { id = item.Id })">
+                                        <button>
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

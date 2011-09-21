@@ -3,6 +3,7 @@ namespace RiftData.Domain.Repositories
     using System.Collections.Generic;
 
     using RiftData.Domain.Entities;
+    using RiftData.Domain.Enums;
 
     public interface ILakeRepository
     {
@@ -13,5 +14,9 @@ namespace RiftData.Domain.Repositories
         Lake GetFromName(string lakeName);
 
         Lake GetLakeFromSpeciesId(int speciesId);
+
+        Lake Get(int lakeId);
+
+        UpdateResult Update(int lakeId, string description, string name, string userName);
     }
 }

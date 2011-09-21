@@ -60,6 +60,8 @@
     <Compile Include="Admin\Genus\GenusUpdatePageViewModel.cs" />
     <Compile Include="Admin\Home\HomePageViewModel.cs" />
     <Compile Include="Admin\Lake\LakeIndexPageViewModel.cs" />
+    <Compile Include="Admin\Lake\LakeUpdateFormViewModel.cs" />
+    <Compile Include="Admin\Lake\LakeUpdatePageViewModel.cs" />
     <Compile Include="Admin\Locale\LocalePageViewModel.cs" />
     <Compile Include="Admin\Locale\LocaleUpdateFormViewModel.cs" />
     <Compile Include="Admin\Locale\LocaleUpdatePageViewModel.cs" />

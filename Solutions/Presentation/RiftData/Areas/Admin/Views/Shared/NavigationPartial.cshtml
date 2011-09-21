@@ -23,5 +23,8 @@
         <li>
             @this.Html.ActionLink("Locales", "Index", "Locales", null, new { @class = this.Model == SelectedView.Locales ? "current" : "" })
         </li>
+        <li>
+            @this.Html.ActionLink("Lakes", "Index", "Lakes", null, new { @class = this.Model == SelectedView.Lake ? "current" : ""})
+        </li>
     </ul>
 </div>

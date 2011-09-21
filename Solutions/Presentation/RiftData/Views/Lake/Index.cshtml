@@ -8,4 +8,5 @@
 }
 <div id="CenterPanelContent" class="infoContainer">
     <h2>@this.Model.Lake.Name</h2>
+    @this.Html.Raw(HttpUtility.HtmlDecode(this.Model.Lake.Description))
 </div>

@@ -6,7 +6,9 @@
     this.Layout = "../Shared/_Layout.cshtml";
 
 }
-@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+@section Navigation{
+    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+}
 
 <div id="body"> 
     <div class="portlet">

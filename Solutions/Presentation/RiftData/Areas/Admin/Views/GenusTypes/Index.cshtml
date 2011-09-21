@@ -5,8 +5,9 @@
     this.Layout = "../Shared/_Layout.cshtml";
 
 }
-
-@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+@section Navigation {
+    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+}
 @section Scripts
 {
     <script src="../../Scripts/GenusTypeIndex.js" type="text/javascript"> </script>
@@ -30,7 +31,7 @@
                 <li class="clear"></li>
             </ul>
         </div>
-    </div>
+
     <div class="portlet-content">
         <table>
             <thead>
@@ -64,5 +65,6 @@
                 }
             </tbody>
         </table>
+    </div>
     </div>
 </div>

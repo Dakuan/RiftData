@@ -6,8 +6,9 @@
     this.Layout = "../Shared/_Layout.cshtml";
 
 }
-
-@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+@section Navigation {
+    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+}
 
 <div id ="body">
 <h1 id="pageTitle">Home</h1>
@@ -34,4 +35,5 @@
             </tbody>
         </table>
     </div>
+</div>
 </div>
