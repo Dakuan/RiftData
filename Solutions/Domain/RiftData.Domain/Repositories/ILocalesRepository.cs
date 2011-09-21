@@ -22,5 +22,7 @@ namespace RiftData.Domain.Repositories
         IList<Locale> GetWithSpecies(int speciesId);
 
         UpdateResult Update(int localeId, string name, double latitude, double longitude, string userName);
+
+        IList<Locale> GetByLake(int lakeId);
     }
 }

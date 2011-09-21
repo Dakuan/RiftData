@@ -129,5 +129,10 @@
 
             return UpdateResult.Success;
         }
+
+        public IList<Locale> GetByLake(int lakeId)
+        {
+            return this.dataContext.Locales.Where(l => l.Lake.Id == lakeId).ToList();
+        }
     }
 }

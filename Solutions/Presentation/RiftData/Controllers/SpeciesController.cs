@@ -7,16 +7,16 @@
     // [OutputCache(CacheProfile = "Daily")]
     public class SpeciesController : Controller
     {
-        private readonly ISpeciesPageViewModelFactory _speciesPageViewModelFactory;
+        private readonly ISpeciesPageViewModelFactory speciesPageViewModelFactory;
 
         public SpeciesController(ISpeciesPageViewModelFactory speciesPageViewModelFactory)
         {
-            this._speciesPageViewModelFactory = speciesPageViewModelFactory;
+            this.speciesPageViewModelFactory = speciesPageViewModelFactory;
         }
 
         public ActionResult Index(string speciesFullName)
         {
-            var viewModel = this._speciesPageViewModelFactory.Build(speciesFullName);
+            var viewModel = this.speciesPageViewModelFactory.Build(speciesFullName);
 
             return View(viewModel);
         }
