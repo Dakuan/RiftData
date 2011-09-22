@@ -1,0 +1,19 @@
+﻿@model RiftData.Presentation.ViewModels.Mobile.SpeciesIndexPageViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Mobile/Views/Shared/_mobileLayout.cshtml";
+}
+@section PageContent{
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Size</li>
+    <li>@Model.Species.SizeString</li>
+    <li data-role="list-divider">Temperament</li>
+    <li> @Model.Species.Temperament</li>
+    <li data-role="list-divider">Found at:</li>
+    @foreach(var locale in Model.Locales)
+    {
+        <li>@locale.Name</li>
+    }
+</ul>
+}

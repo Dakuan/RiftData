@@ -1,0 +1,15 @@
+﻿@model RiftData.Presentation.ViewModels.Mobile.GenusTypesIndexPageViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Mobile/Views/Shared/_mobileLayout.cshtml";
+}
+
+@section PageContent{
+    <ul data-role="listview" data-inset="true">
+         @foreach(var item in Model.Genera)
+         {
+             <li><a href="@Url.Action("Index", "Genus", new { genusName = item.Name })">@item.Name</a></li>
+         }
+    </ul>
+}

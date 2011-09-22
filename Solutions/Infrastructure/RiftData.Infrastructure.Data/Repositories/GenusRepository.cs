@@ -106,5 +106,10 @@
 
             return UpdateResult.Success;
         }
+
+        public Genus GetByName(string genusName)
+        {
+            return this.dataContext.Genus.First(g => string.Equals(g.Name, genusName));
+        }
     }
 }

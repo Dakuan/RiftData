@@ -94,6 +94,12 @@
     <Compile Include="LakeViewModel.cs" />
     <Compile Include="LocaleInfoBoxViewModel.cs" />
     <Compile Include="LocalePageViewModel.cs" />
+    <Compile Include="Mobile\GenusTypesIndexPageViewModel.cs" />
+    <Compile Include="Mobile\HomeIndexPageViewModel.cs" />
+    <Compile Include="Mobile\GenusIndexPageViewModel.cs" />
+    <Compile Include="Mobile\SpeciesIndexPageViewModel.cs" />
+    <Compile Include="Shared\MetaData.cs" />
+    <Compile Include="Mobile\Shared\ViewModelBase.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="Dto\PhotoDto.cs" />
     <Compile Include="PhotoGalleryViewModel.cs" />

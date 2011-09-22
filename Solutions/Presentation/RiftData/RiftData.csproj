@@ -95,6 +95,10 @@
     <Compile Include="Areas\Admin\Controllers\LocalesController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhotosController.cs" />
     <Compile Include="Areas\Admin\Controllers\SpeciesController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\GenusController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\GenusTypesController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\SpeciesController.cs" />
     <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
     <Compile Include="Controllers\FishController.cs" />
     <Compile Include="Controllers\InfoController.cs" />
@@ -1138,8 +1142,6 @@
     <Content Include="Views\Fish\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Mobile\Controllers\" />
-    <Folder Include="Areas\Mobile\Views\Shared\" />
     <Folder Include="Scripts\tiny_mce\plugins\example_dependency\" />
   </ItemGroup>
   <ItemGroup>
@@ -1192,6 +1194,11 @@
     <Content Include="Areas\Admin\Views\Lakes\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Lakes\Update.cshtml" />
     <Content Include="Areas\Admin\Views\Genus\Create.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\_mobileLayout.cshtml" />
+    <Content Include="Areas\Mobile\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Mobile\Views\GenusTypes\Index.cshtml" />
+    <Content Include="Areas\Mobile\Views\Genus\Index.cshtml" />
+    <Content Include="Areas\Mobile\Views\Species\Index.cshtml" />
     <None Include="Content\Admin\Images\lightbox\Thumbs.db" />
     <None Include="Content\Admin\Images\nav\Thumbs.db" />
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />

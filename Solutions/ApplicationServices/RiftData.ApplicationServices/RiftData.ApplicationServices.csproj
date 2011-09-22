@@ -106,6 +106,10 @@
     <Compile Include="ViewModelFactories\LakeViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocaleInfoBoxViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LocalePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Mobile\GenusTypesIndexPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Mobile\HomeIndexPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Mobile\GenusIndexPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Mobile\SpeciesIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\PhotoGalleryViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\SpeciesPageViewModelFactory.cs" />
   </ItemGroup>
