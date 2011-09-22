@@ -10,10 +10,12 @@ namespace RiftData.Areas.Mobile.Controllers
     public class SpeciesController : Controller
     {
         private readonly ISpeciesIndexPageViewModelFactory speciesIndexPageViewModelFactory;
+        private readonly ISpeciesPhotosPageViewModelFactory speciesPhotosPageViewModelFactory;
 
-        public SpeciesController(ISpeciesIndexPageViewModelFactory speciesIndexPageViewModelFactory)
+        public SpeciesController(ISpeciesIndexPageViewModelFactory speciesIndexPageViewModelFactory, ISpeciesPhotosPageViewModelFactory speciesPhotosPageViewModelFactory)
         {
             this.speciesIndexPageViewModelFactory = speciesIndexPageViewModelFactory;
+            this.speciesPhotosPageViewModelFactory = speciesPhotosPageViewModelFactory;
         }
 
         public ActionResult Index(string speciesName)
@@ -21,5 +23,9 @@ namespace RiftData.Areas.Mobile.Controllers
             return View(this.speciesIndexPageViewModelFactory.Build(speciesName));
         }
 
+        public ActionResult Photos(string speciesName)
+        {
+            return View(this.speciesPhotosPageViewModelFactory.Build(speciesName));
+        }
     }
 }

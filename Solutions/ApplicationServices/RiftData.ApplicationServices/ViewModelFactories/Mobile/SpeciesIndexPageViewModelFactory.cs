@@ -10,11 +10,13 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
     {
         private readonly ISpeciesRepository speciesRepository;
         private readonly ILocalesRepository localesRepository;
+        private readonly IPhotosRepository photosRepository;
 
-        public SpeciesIndexPageViewModelFactory(ISpeciesRepository speciesRepository, ILocalesRepository localesRepository)
+        public SpeciesIndexPageViewModelFactory(ISpeciesRepository speciesRepository, ILocalesRepository localesRepository, IPhotosRepository photosRepository)
         {
             this.speciesRepository = speciesRepository;
             this.localesRepository = localesRepository;
+            this.photosRepository = photosRepository;
         }
 
         public SpeciesIndexPageViewModel Build(string speciesName)

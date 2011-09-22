@@ -10,10 +10,20 @@
     <li>@Model.Species.SizeString</li>
     <li data-role="list-divider">Temperament</li>
     <li> @Model.Species.Temperament</li>
-    <li data-role="list-divider">Found at:</li>
-    @foreach(var locale in Model.Locales)
+</ul>
+@if(Model.Locales.Count < 0){
+<div data-role="collapsible">
+    <h3>Locales</h3>
+    <ul data-role="listview" data-inset="true">
+
+        @foreach(var locale in Model.Locales)
     {
         <li>@locale.Name</li>
     }
-</ul>
+    </ul>
+</div>
+    }
+    @if(Model.Species.HasPhotos){
+        <a href="@Url.Action("Photos", new { speciesName = Model.Species.UrlName })" data-role="button">View Photos</a>
+        }
 }

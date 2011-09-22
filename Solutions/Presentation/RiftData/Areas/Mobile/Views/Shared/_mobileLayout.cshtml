@@ -1,19 +1,18 @@
-﻿@{
-    Layout = null;
-}
-
-@model RiftData.Presentation.ViewModels.Mobile.Shared.ViewModelBase
+﻿@model RiftData.Presentation.ViewModels.Mobile.Shared.ViewModelBase
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
-        <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
         <meta name="keywords" content="@this.Model.MetaData.MetaKeywords" />
         <meta name="descripton" content="@this.Model.MetaData.MetaDescription" />
         <meta name="title" content="@this.Model.MetaData.MetaTitle" />
+        <link href="@Url.Content("~/Scripts/Photoswipe/photoswipe.css")" rel="stylesheet" type="text/css" />
+         <link href="@Url.Content("~/Content/Mobile/mobile.css")" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
+        <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>      
     </head>
     <body>
-        <div data-role="page">
+        <div data-role="page" class="riftDataPage" id="RiftDataPage" data-add-back-btn="true">
             <div data-role="header">
                 <h1>@Model.Header</h1>
             </div>
@@ -22,4 +21,6 @@
             </div>
         </div>
     </body>
+
+    @RenderSection("Scripts", false)
 </html>

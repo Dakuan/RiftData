@@ -94,6 +94,7 @@
     <Compile Include="LakeViewModel.cs" />
     <Compile Include="LocaleInfoBoxViewModel.cs" />
     <Compile Include="LocalePageViewModel.cs" />
+    <Compile Include="Mobile\SpeciesPhotosPageViewModel.cs" />
     <Compile Include="Mobile\GenusTypesIndexPageViewModel.cs" />
     <Compile Include="Mobile\HomeIndexPageViewModel.cs" />
     <Compile Include="Mobile\GenusIndexPageViewModel.cs" />

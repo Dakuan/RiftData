@@ -14,6 +14,11 @@
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
+            context.MapRoute("Mobile_photos", // Route name
+"Mobile/species/photos/{speciesName}", // URL with parameters
+new { controller = "Species", action = "Photos", speciesName = UrlParameter.Optional }, // Parameter defaults
+new[] { "RiftData.Areas.Mobile.Controllers" });
+
             context.MapRoute("Mobile_species", // Route name
 "Mobile/species/{speciesName}", // URL with parameters
 new { controller = "Species", action = "Index", speciesName = UrlParameter.Optional }, // Parameter defaults
