@@ -14,6 +14,8 @@
 
         e.preventDefault();
 
+        if ($('form').validationEngine('validate')) {
+
         window.center();
 
         window.open();
@@ -34,12 +36,16 @@
             window.center();
 
         }, "json");
+        }
     });
 
 });
 
 function OnLakeChange(data) {
     if (data.value > 0) {
+
+        //show save button
+        $("btnSubmit").fadeIn();
         //get genus types url
         var url = $("#GetGenusTypesUrl").attr('value') + '/' + data.value;
         //perform json get
@@ -51,6 +57,5 @@ function OnLakeChange(data) {
 
             genusTypesBox.select(0);
         });
-
     }
 }

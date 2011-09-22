@@ -5,7 +5,7 @@
     this.Layout = "../Shared/_Layout.cshtml";
 }
 @section Navigation {
-@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
 }
 <div id="body">
     <div class="portlet">
@@ -25,9 +25,9 @@
                 </div>
                 <div class="field">
                     <label>Name</label>
-                    @Html.TextBoxFor(m => m.Name)
+                    @Html.TextBoxFor(m => m.Name, new { @class= "validate[required]" })
                 </div>
-                <button type="submit" id="btnSubmit">
+                <button type="submit" id="btnSubmit" style="display:none;">
                     <span>Save</span>
                 </button>
             }
@@ -41,9 +41,21 @@
         </div>
     </div>
 </div>
-
+<input type="hidden" value="@this.Url.Action("UpdateSuccess", "AjaxMessaging", new { subject = "Genus", okAction = "Index", okController = "Genus" })" id="SuccessUrl" />
+<input type="hidden" value="@this.Url.Action("UpdateFailure", "AjaxMessaging", new { subject = "Genus", okAction = "Index", okController = "Genus" })" id="FailureUrl" />
 @Html.Hidden("GetGenusTypesUrl", Url.Action("GetSelectList", "GenusTypes"))
 
+@this.Html.Partial("MessageBox")
+
+@section Css
+{
+    <link href="@this.Url.Content("~/Content/Admin/CSS/validationEngine.jquery.css")" rel="stylesheet" type="text/css" />
+}
+
+
+
 @section Scripts{
+    <script src="@this.Url.Content("~/Scripts/Admin/jquery.validationEngine-en.js")" type="text/javascript"> </script>
+    <script src="@this.Url.Content("~/Scripts/Admin/jquery.validationEngine.js")" type="text/javascript"> </script>
     <script src="@Url.Content("~/Scripts/Admin/GenusCreate.js")" type="text/javascript"></script>
 }
