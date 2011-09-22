@@ -113,5 +113,10 @@
 
             return UpdateResult.Success;
         }
+
+        public IList<GenusType> GetFromLake(int lakeId)
+        {
+            return this.dataContext.GenusTypes.Where(t => t.Lake.Id == lakeId).ToList();
+        }
     }
 }

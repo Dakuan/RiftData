@@ -50,6 +50,8 @@
     <Compile Include="Admin\Fish\FishEditFormViewModel.cs" />
     <Compile Include="Admin\Fish\FishEditPageViewModel.cs" />
     <Compile Include="Admin\Fish\FishIndexPageViewModel.cs" />
+    <Compile Include="Admin\Genus\GenusCreateFormViewModel.cs" />
+    <Compile Include="Admin\Genus\GenusCreatePageViewModel.cs" />
     <Compile Include="Admin\Genus\GenusIndexPageViewModel.cs" />
     <Compile Include="Admin\GenusType\GenusTypeCreateFormViewModel.cs" />
     <Compile Include="Admin\GenusType\GenusTypeCreatePageViewModel.cs" />

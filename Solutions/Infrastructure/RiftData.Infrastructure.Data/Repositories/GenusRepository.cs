@@ -22,12 +22,6 @@
             this.logger = logger;
         }
 
-        public AddResult Add(string name, string userName)
-        {
-            // todo add genus typeId to genus forms
-            return this.Add(name, 1, userName);
-        }
-
         public AddResult Add(string name, int genusTypeId, string userName)
         {
             var genusType = this.dataContext.GenusTypes.First(t => t.Id == genusTypeId);

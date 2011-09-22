@@ -1191,6 +1191,7 @@
     <Content Include="Areas\Mobile\Views\Web.config" />
     <Content Include="Areas\Admin\Views\Lakes\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Lakes\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Genus\Create.cshtml" />
     <None Include="Content\Admin\Images\lightbox\Thumbs.db" />
     <None Include="Content\Admin\Images\nav\Thumbs.db" />
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />

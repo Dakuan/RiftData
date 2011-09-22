@@ -7,7 +7,7 @@ namespace RiftData.Domain.Repositories
 
     public interface IGenusRepository
     {
-        AddResult Add(string name, string userName);
+        AddResult Add(string name, int genusTypeId, string userName);
 
         DeleteResult Delete(int genusId);
 

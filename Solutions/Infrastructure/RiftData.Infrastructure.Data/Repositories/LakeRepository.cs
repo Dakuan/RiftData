@@ -73,5 +73,10 @@
 
             return UpdateResult.Success;
         }
+
+        public IList<Lake> GetAllWithGenusTypes()
+        {
+            return this.dataContext.Lakes.Where(l => l.GenusTypes.Count > 0).ToList();
+        }
     }
 }

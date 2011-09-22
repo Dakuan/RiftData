@@ -47,6 +47,7 @@
     <Compile Include="AccountServices\IMembershipService.cs" />
     <Compile Include="Admin\FishPages\IFishEditPageViewModelFactory.cs" />
     <Compile Include="Admin\FishPages\IFishPageViewModelFactory.cs" />
+    <Compile Include="Admin\GenusPages\IGenusCreatePageViewModelFactory.cs" />
     <Compile Include="Admin\GenusPages\IGenusIndexPageViewModelFactory.cs" />
     <Compile Include="Admin\GenusTypePages\IGenusTypeCreatePageViewModelFactory.cs" />
     <Compile Include="Admin\GenusTypePages\IGenusTypeIndexPageViewModelFactory.cs" />

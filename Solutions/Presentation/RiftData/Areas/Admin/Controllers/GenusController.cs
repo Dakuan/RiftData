@@ -2,10 +2,12 @@
 {
     using System.Web.Mvc;
 
+    using RiftData.ApplicationServices.ViewModelFactories.Admin;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.Admin.GenusPages;
     using RiftData.Presentation.ViewModels.Admin;
+    using RiftData.Presentation.ViewModels.Admin.Genus;
 
     [Authorize]
     public class GenusController : Controller
@@ -16,27 +18,28 @@
 
         private readonly IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory;
 
-        public GenusController(IGenusIndexPageViewModelFactory genusIndexPageViewModelFactory, IGenusRepository genusRepository, IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory)
+        private readonly IGenusCreatePageViewModelFactory genusCreatePageViewModelFactory;
+
+        public GenusController(IGenusIndexPageViewModelFactory genusIndexPageViewModelFactory, IGenusRepository genusRepository, IGenusUpdatePageViewModelFactory genusUpdatePageViewModelFactory, IGenusCreatePageViewModelFactory genusCreatePageViewModelFactory)
         {
             this.genusIndexPageViewModelFactory = genusIndexPageViewModelFactory;
             this.genusRepository = genusRepository;
             this.genusUpdatePageViewModelFactory = genusUpdatePageViewModelFactory;
+            this.genusCreatePageViewModelFactory = genusCreatePageViewModelFactory;
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Create()
         {
-            var viewModel = new GenusUpdatePageViewModel { Id = 0, Mode = "Create" };
+            var viewModel = this.genusCreatePageViewModelFactory.Build();
 
-            return View("Update", viewModel);
+            return View("Create", viewModel);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(GenusUpdateFormViewModel viewModel)
+        public ActionResult Create(GenusCreateFormViewModel viewModel)
         {
-            this.TryUpdateModel(viewModel);
-
-            var addResult = this.genusRepository.Add(viewModel.Name, this.User.Identity.Name);
+            var addResult = this.genusRepository.Add(viewModel.Name, viewModel.GenusType, this.User.Identity.Name);
 
             return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }

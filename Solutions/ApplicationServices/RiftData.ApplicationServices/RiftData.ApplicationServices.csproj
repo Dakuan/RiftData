@@ -84,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelFactories\Admin\FishEditPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\FishPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Admin\GenusCreatePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\GenusIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\GenusTypeCreatePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\GenusTypesIndexPageViewModel.cs" />

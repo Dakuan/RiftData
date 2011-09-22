@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
 
+    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.Admin.GenusTypePages;
@@ -56,6 +57,13 @@
         public ActionResult Update(int id)
         {
             return this.View(this.genusTypesUpdatePageViewModelFactory.Build(id));
+        }
+
+        public ActionResult GetSelectList(int id)
+        {
+            var genusTypes = this.genusTypeRepository.GetFromLake(id).ToSelectList();
+
+            return new JsonResult { Data = genusTypes, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
