@@ -1,8 +1,10 @@
-﻿namespace RiftData.Presentation.ViewModels.Admin.Genus
+﻿using RiftData.Presentation.ViewModels.Admin.Shared;
+
+namespace RiftData.Presentation.ViewModels.Admin.Genus
 {
     using System.Web.Mvc;
 
-    public class GenusCreatePageViewModel : ViewModelBase
+    public class GenusCreatePageViewModel : Shared.ViewModelBase
     {
         public GenusCreatePageViewModel()
         {

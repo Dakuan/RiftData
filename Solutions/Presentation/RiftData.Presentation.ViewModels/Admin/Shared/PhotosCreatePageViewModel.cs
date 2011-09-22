@@ -1,6 +1,6 @@
-namespace RiftData.Presentation.ViewModels.Admin
+namespace RiftData.Presentation.ViewModels.Admin.Shared
 {
-    public class PhotosCreatePageViewModel : ViewModelBase
+    public class PhotosCreatePageViewModel : Shared.ViewModelBase
     {
         public PhotosCreatePageViewModel()
         {

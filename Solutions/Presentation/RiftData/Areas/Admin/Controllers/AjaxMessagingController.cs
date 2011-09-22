@@ -1,4 +1,6 @@
-﻿namespace RiftData.Areas.Admin.Controllers
+﻿using RiftData.Presentation.ViewModels.Admin.Shared;
+
+namespace RiftData.Areas.Admin.Controllers
 {
     using System.Web.Mvc;
 

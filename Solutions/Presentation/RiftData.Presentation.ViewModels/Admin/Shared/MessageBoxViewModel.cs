@@ -1,4 +1,4 @@
-﻿namespace RiftData.Presentation.ViewModels.Admin
+﻿namespace RiftData.Presentation.ViewModels.Admin.Shared
 {
     public class MessageBoxViewModel
     {

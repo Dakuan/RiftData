@@ -1,8 +1,9 @@
-﻿namespace RiftData.Presentation.ViewModels.Admin
-{
-    using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using RiftData.Presentation.ViewModels.Admin.Shared;
 
-    public class LocaleUpdatePageViewModel : ViewModelBase
+namespace RiftData.Presentation.ViewModels.Admin.Locale
+{
+    public class LocaleUpdatePageViewModel : Shared.ViewModelBase
     {
         public LocaleUpdatePageViewModel()
         {

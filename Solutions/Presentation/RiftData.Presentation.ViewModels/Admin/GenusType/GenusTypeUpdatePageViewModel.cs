@@ -1,10 +1,10 @@
-﻿namespace RiftData.Presentation.ViewModels.Admin
+﻿using System.Web.Mvc;
+using RiftData.Presentation.ViewModels.Admin.Shared;
+using RiftData.Presentation.ViewModels.Dto;
+
+namespace RiftData.Presentation.ViewModels.Admin.GenusType
 {
-    using System.Web.Mvc;
-
-    using RiftData.Presentation.ViewModels.Dto;
-
-    public class GenusTypeUpdatePageViewModel : ViewModelBase
+    public class GenusTypeUpdatePageViewModel : Shared.ViewModelBase
     {
         public GenusTypeUpdatePageViewModel()
         {

@@ -4,6 +4,8 @@
 // </auto-generated>
 //-------------------------------------------------------------------------------------------------
 
+using RiftData.Presentation.ViewModels.Admin.Home;
+
 #pragma warning disable 169
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Global

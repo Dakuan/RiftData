@@ -1,11 +1,11 @@
-namespace RiftData.Presentation.ViewModels.Admin
+using System.Collections.Generic;
+using System.Web.Mvc;
+using RiftData.Presentation.ViewModels.Admin.Shared;
+using RiftData.Presentation.ViewModels.Dto;
+
+namespace RiftData.Presentation.ViewModels.Admin.Locale
 {
-    using System.Collections.Generic;
-    using System.Web.Mvc;
-
-    using RiftData.Presentation.ViewModels.Dto;
-
-    public class LocalePageViewModel : ViewModelBase
+    public class LocalePageViewModel : Shared.ViewModelBase
     {
         public LocalePageViewModel()
         {

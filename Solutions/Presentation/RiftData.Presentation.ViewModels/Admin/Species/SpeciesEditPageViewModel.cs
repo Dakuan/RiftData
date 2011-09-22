@@ -1,8 +1,9 @@
-﻿namespace RiftData.Presentation.ViewModels.Admin
-{
-    using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using RiftData.Presentation.ViewModels.Admin.Shared;
 
-    public class SpeciesEditPageViewModel : ViewModelBase
+namespace RiftData.Presentation.ViewModels.Admin.Species
+{
+    public class SpeciesEditPageViewModel : Shared.ViewModelBase
     {
         public SpeciesEditPageViewModel()
         {

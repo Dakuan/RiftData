@@ -50,10 +50,13 @@ namespace RiftData
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
                 new[] { "RiftData.Controllers" });
+        }
 
-
+        void Session_Start(object sender, EventArgs e)
+        {
             // Redirect mobile users to the mobile home page
             var httpRequest = HttpContext.Current.Request;
+
             if (!httpRequest.Browser.IsMobileDevice) return;
             var path = httpRequest.Url.PathAndQuery;
             var isOnMobilePage = path.StartsWith("/Mobile/", StringComparison.OrdinalIgnoreCase);
@@ -61,11 +64,6 @@ namespace RiftData
             {
                 HttpContext.Current.Response.Redirect("Mobile_default");
             }
-        }
-
-        void Session_Start(object sender, EventArgs e)
-        {
-
         }
 
         protected void Application_Start()

@@ -1,8 +1,9 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+
+namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin.LakePages;
     using RiftData.Presentation.ViewModels.Admin.Lake;
 
     public class LakeIndexPageViewModelFactory : ILakeIndexPageViewModelFactory

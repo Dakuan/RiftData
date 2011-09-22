@@ -1,11 +1,12 @@
-﻿namespace RiftData.Areas.Admin.Controllers
+﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+
+namespace RiftData.Areas.Admin.Controllers
 {
     using System.Web.Mvc;
 
     using RiftData.ApplicationServices.ViewModelFactories.Admin;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin.GenusPages;
     using RiftData.Presentation.ViewModels.Admin;
     using RiftData.Presentation.ViewModels.Admin.Genus;
 

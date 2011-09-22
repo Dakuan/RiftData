@@ -4,6 +4,9 @@
 // </auto-generated>
 //-------------------------------------------------------------------------------------------------
 
+using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+using RiftData.Presentation.ViewModels.Admin.Fish;
+
 #pragma warning disable 169
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Global
@@ -23,7 +26,6 @@ namespace RiftData.UnitTests.AdminControllers
     using RiftData.Areas.Admin.Controllers;
     using RiftData.Domain.Entities;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class FishControllerSpecs

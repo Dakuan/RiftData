@@ -1,6 +1,8 @@
-﻿namespace RiftData.Presentation.ViewModels.Admin.Lake
+﻿using RiftData.Presentation.ViewModels.Admin.Shared;
+
+namespace RiftData.Presentation.ViewModels.Admin.Lake
 {
-    public class LakeUpdatePageViewModel : ViewModelBase
+    public class LakeUpdatePageViewModel : Shared.ViewModelBase
     {
         public LakeUpdatePageViewModel()
         {

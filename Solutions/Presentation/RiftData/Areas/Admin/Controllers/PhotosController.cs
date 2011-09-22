@@ -1,25 +1,25 @@
-﻿namespace RiftData.Areas.Admin.Controllers
+﻿using RiftData.Domain.Repositories;
+
+namespace RiftData.Areas.Admin.Controllers
 {
     using System.Web;
     using System.Web.Mvc;
 
-    using RiftData.Presentation.Contracts.Admin;
-
     [Authorize]
     public class PhotosController : Controller
     {
-        private readonly IPhotosService photosService;
+        private readonly IPhotosRepository photosRepository;
 
-        public PhotosController(IPhotosService photosService)
+        public PhotosController(IPhotosRepository photosRepository)
         {
-            this.photosService = photosService;
+            this.photosRepository = photosRepository;
         }
 
         public ActionResult Cancel(string Id)
         {
             if (Id != null)
             {
-                this.photosService.DeletePhoto(Id);
+                this.photosRepository.Delete(Id);
             }
 
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet };
@@ -33,7 +33,7 @@
         public ActionResult Save(HttpPostedFileBase attachments, int id)
         {
             // save photo to flickr  
-            var photo = this.photosService.SavePhoto(attachments, id);
+            var photo = this.photosRepository.Add(attachments, id);
 
             if (photo != null)
             {

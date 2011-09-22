@@ -1,8 +1,9 @@
-﻿namespace RiftData.Presentation.ViewModels.Admin
-{
-    using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using RiftData.Presentation.ViewModels.Admin.Shared;
 
-    public class GenusUpdatePageViewModel : ViewModelBase
+namespace RiftData.Presentation.ViewModels.Admin.Genus
+{
+    public class GenusUpdatePageViewModel : Shared.ViewModelBase
     {
         public GenusUpdatePageViewModel()
         {

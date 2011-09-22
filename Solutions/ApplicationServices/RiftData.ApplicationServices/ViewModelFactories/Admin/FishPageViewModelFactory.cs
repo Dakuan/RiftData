@@ -1,10 +1,13 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+using RiftData.Presentation.ViewModels.Admin.Fish;
+using RiftData.Presentation.ViewModels.Admin.Shared;
+
+namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
     using System.Linq;
 
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class FishPageViewModelFactory : IFishPageViewModelFactory

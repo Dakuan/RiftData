@@ -80,7 +80,6 @@
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Installers\ViewModelFactoryInstaller.cs" />
     <Compile Include="MapService.cs" />
-    <Compile Include="PhotosService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelFactories\Admin\FishEditPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\FishPageViewModelFactory.cs" />

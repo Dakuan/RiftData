@@ -1,7 +1,9 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+using RiftData.Presentation.ViewModels.Admin.Locale;
+
+namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin.LocalePages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class LocaleUpdatePageViewModelFactory : ILocaleUpdatePageViewModelFactory

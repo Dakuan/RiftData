@@ -1,4 +1,6 @@
-﻿namespace RiftData.Areas.Admin.Controllers
+﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+
+namespace RiftData.Areas.Admin.Controllers
 {
     using System;
     using System.Web.Mvc;
@@ -7,7 +9,6 @@
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
     using RiftData.Infrastructure.Data.Logging;
-    using RiftData.Presentation.Contracts.Admin.FishPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     [Authorize]

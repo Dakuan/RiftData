@@ -10,29 +10,29 @@
 
     public class LocaleDtoService : ILocaleDtoService
     {
-        private readonly IFishRepository _fishRepository;
+        private readonly IFishRepository fishRepository;
 
-        private readonly ILocalesRepository _localesRepository;
+        private readonly ILocalesRepository localesRepository;
 
-        private readonly IMapService _mapService;
+        private readonly IMapService mapService;
 
         public LocaleDtoService(IFishRepository fishRepository, ILocalesRepository localesRepository, IMapService mapService)
         {
-            this._fishRepository = fishRepository;
-            this._localesRepository = localesRepository;
-            this._mapService = mapService;
+            this.fishRepository = fishRepository;
+            this.localesRepository = localesRepository;
+            this.mapService = mapService;
         }
 
         public LocaleDto GetLocaleDto(int localeId)
         {
-            return DtoFactory.Build(this._localesRepository.Get(localeId));
+            return DtoFactory.Build(this.localesRepository.Get(localeId));
         }
 
         public IEnumerable<LocaleDto> GetLocaleDtosFromSpecies(int speciesId)
         {
             var list = new List<LocaleDto>();
 
-            this._fishRepository.GetBySpecies(speciesId).ToList().ForEach(f => list.Add(DtoFactory.Build(f.Locale)));
+            this.fishRepository.GetBySpecies(speciesId).ToList().ForEach(f => list.Add(DtoFactory.Build(f.Locale)));
 
             return list;
         }
@@ -41,7 +41,7 @@
         {
             var list = new List<LocaleDto>();
 
-            this._localesRepository.GetForZoomLevel(this._mapService.GetDataZoomFromMapZoom(zoomLevel)).ToList().ForEach(l => list.Add(DtoFactory.Build(l)));
+            this.localesRepository.GetForZoomLevel(this.mapService.GetDataZoomFromMapZoom(zoomLevel)).ToList().ForEach(l => list.Add(DtoFactory.Build(l)));
 
             return list;
         }

@@ -1,11 +1,11 @@
-namespace RiftData.Presentation.ViewModels.Admin
+using System.Collections.Generic;
+using System.Web.Mvc;
+using RiftData.Presentation.ViewModels.Admin.Shared;
+using RiftData.Presentation.ViewModels.Dto;
+
+namespace RiftData.Presentation.ViewModels.Admin.Fish
 {
-    using System.Collections.Generic;
-    using System.Web.Mvc;
-
-    using RiftData.Presentation.ViewModels.Dto;
-
-    public class FishIndexPageViewModel : ViewModelBase
+    public class FishIndexPageViewModel : Shared.ViewModelBase
     {
         public FishIndexPageViewModel()
         {

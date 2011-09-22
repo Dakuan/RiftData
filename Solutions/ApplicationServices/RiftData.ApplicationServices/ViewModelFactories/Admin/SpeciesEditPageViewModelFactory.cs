@@ -1,10 +1,12 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories.Admin
+﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+using RiftData.Presentation.ViewModels.Admin.Species;
+
+namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
     using System.Web;
 
     using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.Contracts.Admin.SpeciesPages;
     using RiftData.Presentation.ViewModels.Admin;
 
     public class SpeciesEditPageViewModelFactory : ISpeciesEditPageViewModelFactory
