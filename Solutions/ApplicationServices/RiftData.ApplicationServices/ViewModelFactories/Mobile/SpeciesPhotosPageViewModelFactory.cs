@@ -1,11 +1,11 @@
-﻿using RiftData.ApplicationServices.DtoServices.Extensions;
-using RiftData.Domain.Repositories;
-using RiftData.Presentation.Contracts.ViewModelFactories.Mobile;
-using RiftData.Presentation.ViewModels.Mobile;
-using RiftData.Presentation.ViewModels.Shared;
-
-namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
+﻿namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
 {
+    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using RiftData.Domain.Repositories;
+    using RiftData.Presentation.Contracts.ViewModelFactories.Mobile;
+    using RiftData.Presentation.ViewModels.Mobile;
+    using RiftData.Presentation.ViewModels.Shared;
+
     public class SpeciesPhotosPageViewModelFactory : ISpeciesPhotosPageViewModelFactory
     {
         private readonly ISpeciesRepository speciesRepository;
@@ -25,8 +25,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
 
             var viewModel = new SpeciesPhotosPageViewModel
                                 {
-                                    Header = string.Format("RiftData | {0} Photos", species.FullName),
-                                    MetaData = MetaData.Build(string.Empty, string.Empty, string.Empty),
+                                    Header = species.FullName,
+                                    MetaData = MetaData.Build(string.Empty, species.FullName, string.Empty),
                                     Photos = photos.ToDtoList()
                                 };
 

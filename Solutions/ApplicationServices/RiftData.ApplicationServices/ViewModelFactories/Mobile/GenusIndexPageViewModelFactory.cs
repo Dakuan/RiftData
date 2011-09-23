@@ -22,8 +22,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
 
             var viewModel = new GenusIndexPageViewModel
                                 {
-                                    Header = string.Format("RiftData | {0}", genus.Name),
-                                    MetaData = MetaData.Build(string.Empty, string.Empty, string.Empty),
+                                    Header = genus.Name,
+                                    MetaData = MetaData.Build(string.Empty, genus.Name, string.Empty),
                                     SpeciesList = genus.Species.SortSpecies().ToDtoList()
                                 };
 

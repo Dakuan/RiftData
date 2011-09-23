@@ -28,8 +28,8 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
 
             var viewModel = new HomeIndexPageViewModel
                             {
-                                Header = "RiftData | Lakes",
-                                MetaData = MetaData.Build(string.Empty, "RiftData | Lakes", string.Empty),
+                                Header = "Lakes",
+                                MetaData = MetaData.Build(string.Empty, "Lakes", string.Empty),
                                 Lakes = this.lakeRepository.GetAllWithGenusTypes().ToDtoList(),
                                 DataDictionary = dictionary
                             };

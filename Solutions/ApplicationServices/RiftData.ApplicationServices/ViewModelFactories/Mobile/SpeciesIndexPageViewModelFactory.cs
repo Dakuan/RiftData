@@ -29,8 +29,8 @@
 
             var viewModel = new SpeciesIndexPageViewModel
                                 {
-                                    Header = string.Format("RiftData | {0}", species.FullName),
-                                    MetaData = MetaData.Build(string.Empty, string.Empty, string.Empty),
+                                    Header = species.FullName,
+                                    MetaData = MetaData.Build(string.Empty, species.FullName, string.Empty),
                                     Species = DtoFactory.Build(species),
                                     Locales = locales.ToDtoList(),
                                     Photos = photos.ToDtoList()
