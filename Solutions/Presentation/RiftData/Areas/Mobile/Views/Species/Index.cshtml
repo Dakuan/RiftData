@@ -12,9 +12,12 @@
 <ul data-role="listview" data-inset="true">
     <li data-role="list-divider">Size</li>
     <li>@Model.Species.SizeString</li>
+</ul>
+<ul data-role="listview" data-inset="true">
     <li data-role="list-divider">Temperament</li>
     <li> @Model.Species.Temperament</li>
 </ul>
+
 @if(Model.Locales.Count < 0){
 <div data-role="collapsible">
     <h3>Locales</h3>
