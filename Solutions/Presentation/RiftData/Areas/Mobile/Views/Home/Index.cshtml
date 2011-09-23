@@ -5,14 +5,16 @@
     Layout = "~/Areas/Mobile/Views/Shared/_mobileLayout.cshtml";
 }
 @section PageContent{
+    
+    @foreach (var item in Model.DataDictionary)
+    {
     <ul data-role="listview" data-inset="true">
-        @foreach (var item in Model.DataDictionary)
+        <li data-role="list-divider">@item.Key.Name</li>
+        foreach(var genusType in item.Value)
         {
-            <li data-role="list-divider">@item.Key.Name</li>
-            foreach(var genusType in item.Value)
-            {
-                <li><a href="@Url.Action("Index", "GenusTypes", new { genusTypeName = genusType.Name })">@genusType.Name</a></li>
-            }
+            <li><a href="@Url.Action("Index", "GenusTypes", new { genusTypeName = genusType.Name })">@genusType.Name</a></li>
         }
     </ul>
+    }
+
 }
