@@ -17,7 +17,7 @@
 			<Metadata Name="CompatibilityMode" Value="100" />
 		</CustomData>
 		<CustomData Category="Permissions" Type="XmlPermissions">
-			<Metadata Name="FileName" Value="C:\USERS\DAKUAN\GIT\RIFTDATA\SOLUTIONS\DATA\RIFTDATA.DATA\PROPERTIES\DATABASE.SQLPERMISSIONS" />
+			<Metadata Name="FileName" Value="C:\USERS\DOM\GIT\RIFTDATA\SOLUTIONS\DATA\RIFTDATA.DATA\PROPERTIES\DATABASE.SQLPERMISSIONS" />
 		</CustomData>
 	</Header>
 	<Model>
@@ -44,191 +44,6 @@
 					<Element Type="ISqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[aspnet_Applications].[ApplicationId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_Applications]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Filegroup">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_WebEvent_Events].[EventId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_WebEvent_Events]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Property Name="IsClustered" Value="False" />
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_PersonalizationPerUser].[Id]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_PersonalizationPerUser]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Filegroup">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_PersonalizationAllUsers].[PathId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_PersonalizationAllUsers]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Property Name="IsClustered" Value="False" />
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_Paths].[PathId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_Paths]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Filegroup">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_UsersInRoles].[UserId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_UsersInRoles].[RoleId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_UsersInRoles]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Property Name="IsClustered" Value="False" />
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_Roles].[RoleId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_Roles]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="Filegroup">
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[aspnet_Profile].[UserId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_Profile]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
-		</Element>
-		<Element Type="ISql100PrimaryKeyConstraint">
-			<Property Name="IsClustered" Value="False" />
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="ISqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
 								<References Name="[dbo].[aspnet_Membership].[UserId]" />
 							</Entry>
 						</Relationship>
@@ -245,7 +60,7 @@
 					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -273,7 +88,7 @@
 					<References Name="[dbo].[aspnet_SchemaVersions]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 		</Element>
 		<Element Type="ISql100PrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -296,6 +111,191 @@
 			<Relationship Name="Filegroup">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_Applications].[ApplicationId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_Applications]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_WebEvent_Events].[EventId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_WebEvent_Events]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_PersonalizationPerUser].[Id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_PersonalizationPerUser]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_PersonalizationAllUsers].[PathId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_PersonalizationAllUsers]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_Paths].[PathId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_Paths]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_UsersInRoles].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_UsersInRoles].[RoleId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_UsersInRoles]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_Roles].[RoleId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_Roles]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[aspnet_Profile].[UserId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_Profile]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
@@ -350,70 +350,6 @@
 		</Element>
 		<Element Type="ISql90DefaultConstraint">
 			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_Applications]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[aspnet_Applications].[ApplicationId]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
-		</Element>
-		<Element Type="ISql90DefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_PersonalizationPerUser]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[aspnet_PersonalizationPerUser].[Id]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
-		</Element>
-		<Element Type="ISql90DefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_Paths]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[aspnet_Paths].[PathId]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
-		</Element>
-		<Element Type="ISql90DefaultConstraint">
-			<Property Name="DefaultExpressionScript">
-				<Value><![CDATA[(newid())]]></Value>
-			</Property>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[aspnet_Roles]" />
-				</Entry>
-			</Relationship>
-			<Relationship Name="ForColumn">
-				<Entry>
-					<References Name="[dbo].[aspnet_Roles].[RoleId]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
-		</Element>
-		<Element Type="ISql90DefaultConstraint">
-			<Property Name="DefaultExpressionScript">
 				<Value><![CDATA[((0))]]></Value>
 			</Property>
 			<Relationship Name="DefiningTable">
@@ -426,7 +362,7 @@
 					<References Name="[dbo].[aspnet_Membership].[PasswordFormat]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
 		</Element>
 		<Element Type="ISql90DefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -442,7 +378,7 @@
 					<References Name="[dbo].[aspnet_Users].[UserId]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
 		</Element>
 		<Element Type="ISql90DefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -458,7 +394,7 @@
 					<References Name="[dbo].[aspnet_Users].[MobileAlias]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
 		</Element>
 		<Element Type="ISql90DefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -472,6 +408,70 @@
 			<Relationship Name="ForColumn">
 				<Entry>
 					<References Name="[dbo].[aspnet_Users].[IsAnonymous]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(newid())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_Applications]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[aspnet_Applications].[ApplicationId]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(newid())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_PersonalizationPerUser]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[aspnet_PersonalizationPerUser].[Id]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(newid())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_Paths]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[aspnet_Paths].[PathId]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(newid())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[aspnet_Roles]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[aspnet_Roles].[RoleId]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
@@ -589,55 +589,55 @@
 			</Relationship>
 			<Relationship Name="Role">
 				<Entry>
-					<References Name="[aspnet_Profile_ReportingAccess]" />
+					<References Name="[aspnet_Profile_ReportingAccess]" Disambiguator="15" />
 				</Entry>
 			</Relationship>
 		</Element>
 		<Element Type="ISqlRoleMembership">
 			<Relationship Name="Member">
 				<Entry>
-					<References Name="[aspnet_Roles_FullAccess]" />
+					<References Name="[aspnet_Roles_FullAccess]" Disambiguator="14" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Role">
 				<Entry>
-					<References Name="[aspnet_Roles_BasicAccess]" />
+					<References Name="[aspnet_Roles_BasicAccess]" Disambiguator="13" />
 				</Entry>
 			</Relationship>
 		</Element>
 		<Element Type="ISqlRoleMembership">
 			<Relationship Name="Member">
 				<Entry>
-					<References Name="[aspnet_Roles_FullAccess]" />
+					<References Name="[aspnet_Roles_FullAccess]" Disambiguator="14" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Role">
 				<Entry>
-					<References Name="[aspnet_Roles_ReportingAccess]" />
+					<References Name="[aspnet_Roles_ReportingAccess]" Disambiguator="12" />
 				</Entry>
 			</Relationship>
 		</Element>
 		<Element Type="ISqlRoleMembership">
 			<Relationship Name="Member">
 				<Entry>
-					<References Name="[aspnet_Personalization_FullAccess]" />
+					<References Name="[aspnet_Personalization_FullAccess]" Disambiguator="11" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Role">
 				<Entry>
-					<References Name="[aspnet_Personalization_BasicAccess]" />
+					<References Name="[aspnet_Personalization_BasicAccess]" Disambiguator="10" />
 				</Entry>
 			</Relationship>
 		</Element>
 		<Element Type="ISqlRoleMembership">
 			<Relationship Name="Member">
 				<Entry>
-					<References Name="[aspnet_Personalization_FullAccess]" />
+					<References Name="[aspnet_Personalization_FullAccess]" Disambiguator="11" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Role">
 				<Entry>
-					<References Name="[aspnet_Personalization_ReportingAccess]" />
+					<References Name="[aspnet_Personalization_ReportingAccess]" Disambiguator="9" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -662,7 +662,7 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Membership_FullAccess]" Disambiguator="15">
+		<Element Type="ISql90Schema" Name="[aspnet_Membership_FullAccess]" Disambiguator="7">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References Name="[aspnet_Membership_FullAccess]" />
@@ -676,52 +676,52 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Membership_ReportingAccess]" Disambiguator="14">
+		<Element Type="ISql90Schema" Name="[aspnet_Membership_ReportingAccess]" Disambiguator="6">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References Name="[aspnet_Membership_ReportingAccess]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_Personalization_BasicAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_Personalization_BasicAccess]" Disambiguator="10">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Personalization_BasicAccess]" Disambiguator="13">
+		<Element Type="ISql90Schema" Name="[aspnet_Personalization_BasicAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_Personalization_BasicAccess]" />
+					<References Name="[aspnet_Personalization_BasicAccess]" Disambiguator="10" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_Personalization_FullAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_Personalization_FullAccess]" Disambiguator="11">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Personalization_FullAccess]" Disambiguator="12">
+		<Element Type="ISql90Schema" Name="[aspnet_Personalization_FullAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_Personalization_FullAccess]" />
+					<References Name="[aspnet_Personalization_FullAccess]" Disambiguator="11" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_Personalization_ReportingAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_Personalization_ReportingAccess]" Disambiguator="9">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Personalization_ReportingAccess]" Disambiguator="11">
+		<Element Type="ISql90Schema" Name="[aspnet_Personalization_ReportingAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_Personalization_ReportingAccess]" />
+					<References Name="[aspnet_Personalization_ReportingAccess]" Disambiguator="9" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -732,7 +732,7 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Profile_BasicAccess]" Disambiguator="10">
+		<Element Type="ISql90Schema" Name="[aspnet_Profile_BasicAccess]" Disambiguator="5">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References Name="[aspnet_Profile_BasicAccess]" />
@@ -746,80 +746,80 @@
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Profile_FullAccess]" Disambiguator="9">
+		<Element Type="ISql90Schema" Name="[aspnet_Profile_FullAccess]" Disambiguator="4">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References Name="[aspnet_Profile_FullAccess]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_Profile_ReportingAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_Profile_ReportingAccess]" Disambiguator="15">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Profile_ReportingAccess]" Disambiguator="8">
+		<Element Type="ISql90Schema" Name="[aspnet_Profile_ReportingAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_Profile_ReportingAccess]" />
+					<References Name="[aspnet_Profile_ReportingAccess]" Disambiguator="15" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_Roles_BasicAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_Roles_BasicAccess]" Disambiguator="13">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Roles_BasicAccess]" Disambiguator="7">
+		<Element Type="ISql90Schema" Name="[aspnet_Roles_BasicAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_Roles_BasicAccess]" />
+					<References Name="[aspnet_Roles_BasicAccess]" Disambiguator="13" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_Roles_FullAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_Roles_FullAccess]" Disambiguator="14">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Roles_FullAccess]" Disambiguator="6">
+		<Element Type="ISql90Schema" Name="[aspnet_Roles_FullAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_Roles_FullAccess]" />
+					<References Name="[aspnet_Roles_FullAccess]" Disambiguator="14" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_Roles_ReportingAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_Roles_ReportingAccess]" Disambiguator="12">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_Roles_ReportingAccess]" Disambiguator="5">
+		<Element Type="ISql90Schema" Name="[aspnet_Roles_ReportingAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_Roles_ReportingAccess]" />
+					<References Name="[aspnet_Roles_ReportingAccess]" Disambiguator="12" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Role" Name="[aspnet_WebEvent_FullAccess]">
+		<Element Type="ISql90Role" Name="[aspnet_WebEvent_FullAccess]" Disambiguator="8">
 			<Relationship Name="Authorizer">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
 		</Element>
-		<Element Type="ISql90Schema" Name="[aspnet_WebEvent_FullAccess]" Disambiguator="4">
+		<Element Type="ISql90Schema" Name="[aspnet_WebEvent_FullAccess]">
 			<Relationship Name="Authorizer">
 				<Entry>
-					<References Name="[aspnet_WebEvent_FullAccess]" />
+					<References Name="[aspnet_WebEvent_FullAccess]" Disambiguator="8" />
 				</Entry>
 			</Relationship>
 		</Element>
@@ -929,7 +929,6 @@
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_AnyDataInTables]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -1013,6 +1012,7 @@ BEGIN
     END
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_AnyDataInTables].[@TablesToCheck]" />
@@ -1140,7 +1140,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="29" />
+						<AttachedAnnotation Disambiguator="33" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1165,7 +1165,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="16" />
+			<AttachedAnnotation Disambiguator="19" />
 			<AttachedAnnotation Disambiguator="27" />
 			<AttachedAnnotation Disambiguator="28" />
 		</Element>
@@ -1189,7 +1189,6 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Applications_CreateApplication]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -1237,6 +1236,7 @@ BEGIN
     END
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[bit]" />
@@ -1308,7 +1308,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_CheckSchemaVersion]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -1322,6 +1321,7 @@ BEGIN
     RETURN 1
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_SchemaVersions]" />
@@ -1453,7 +1453,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="33" />
+						<AttachedAnnotation Disambiguator="29" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1734,7 +1734,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="24" />
+			<AttachedAnnotation Disambiguator="16" />
 		</Element>
 		<Element Type="ISql100Index" Name="[dbo].[aspnet_Membership].[aspnet_Membership_index]">
 			<Property Name="IsClustered" Value="True" />
@@ -1765,7 +1765,6 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_ChangePasswordQuestionAndAnswer]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -1789,6 +1788,7 @@ BEGIN
     RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -1921,7 +1921,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_CreateUser]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -2106,6 +2105,7 @@ Cleanup:
 
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -2509,7 +2509,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_FindUsersByEmail]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -2565,6 +2564,7 @@ BEGIN
     RETURN @TotalRecords
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -2793,7 +2793,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_FindUsersByName]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -2843,6 +2842,7 @@ BEGIN
     RETURN @TotalRecords
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -3068,7 +3068,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_GetAllUsers]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -3117,6 +3116,7 @@ BEGIN
     RETURN @TotalRecords
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -3320,7 +3320,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_GetNumberOfUsersOnline]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -3340,6 +3339,7 @@ BEGIN
     RETURN(@NumOnline)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[datetime]" />
@@ -3445,7 +3445,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_GetPassword]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -3575,6 +3574,7 @@ Cleanup:
 
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -3820,7 +3820,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_GetPasswordWithFormat]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -3872,6 +3871,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[bit]" />
@@ -4059,7 +4059,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_GetUserByEmail]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -4084,6 +4083,7 @@ BEGIN
     RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_Membership_GetUserByEmail].[@Email]" />
@@ -4169,7 +4169,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_GetUserByName]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -4215,6 +4214,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -4375,7 +4375,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_GetUserByUserId]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -4404,6 +4403,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_Membership_GetUserByUserId].[@UpdateLastActivity]" />
@@ -4529,7 +4529,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_ResetPassword]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -4663,6 +4662,7 @@ Cleanup:
 
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[bit]" />
@@ -4946,7 +4946,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_SetPassword]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -4970,6 +4969,7 @@ BEGIN
     RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -5147,7 +5147,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_UnlockUser]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -5176,6 +5175,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -5291,7 +5291,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_UpdateUser]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -5371,6 +5370,7 @@ Cleanup:
     RETURN -1
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -5619,7 +5619,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Membership_UpdateUserInfo]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -5763,6 +5762,7 @@ Cleanup:
 
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -6093,7 +6093,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="31" />
+						<AttachedAnnotation Disambiguator="35" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -6136,11 +6136,11 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="23" />
 		</Element>
 		<Element Type="ISql100Index" Name="[dbo].[aspnet_Paths].[aspnet_Paths_index]">
-			<Property Name="IsClustered" Value="True" />
 			<Property Name="IsUnique" Value="True" />
+			<Property Name="IsClustered" Value="True" />
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
@@ -6168,7 +6168,6 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Paths_CreatePath]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -6182,6 +6181,7 @@ BEGIN
     SELECT @PathId = PathId FROM dbo.aspnet_Paths WHERE LOWER(@Path) = LoweredPath AND ApplicationId = @ApplicationId
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_Paths]" />
@@ -6276,7 +6276,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Personalization_GetApplicationId]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -6284,6 +6283,7 @@ BEGIN
     SELECT @ApplicationId = ApplicationId FROM dbo.aspnet_Applications WHERE LOWER(@ApplicationName) = LoweredApplicationName
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_Applications]" />
@@ -6348,7 +6348,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAdministration_DeleteAllState]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -6376,6 +6375,7 @@ BEGIN
     END
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -6482,7 +6482,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAdministration_FindState]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -6586,6 +6585,7 @@ BEGIN
     RETURN @TotalRecords
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -6977,7 +6977,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAdministration_GetCountOfState]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -7005,6 +7004,7 @@ BEGIN
                   AND (@InactiveSinceDate IS NULL OR Users.LastActivityDate <= @InactiveSinceDate)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -7197,7 +7197,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAdministration_ResetSharedState]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -7220,6 +7219,7 @@ BEGIN
     END
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -7321,7 +7321,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAdministration_ResetUserState]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -7346,6 +7345,7 @@ BEGIN
     END
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -7568,11 +7568,10 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="19" />
+			<AttachedAnnotation Disambiguator="22" />
 			<AttachedAnnotation Disambiguator="38" />
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAllUsers_GetPageSettings]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -7598,6 +7597,7 @@ BEGIN
     SELECT p.PageSettings FROM dbo.aspnet_PersonalizationAllUsers p WHERE p.PathId = @PathId
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -7683,7 +7683,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAllUsers_ResetPageSettings]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -7710,6 +7709,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -7792,7 +7792,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationAllUsers_SetPageSettings]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -7818,6 +7817,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -7965,7 +7965,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="30" />
+						<AttachedAnnotation Disambiguator="34" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -8036,12 +8036,12 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="18" />
+			<AttachedAnnotation Disambiguator="21" />
 			<AttachedAnnotation Disambiguator="37" />
 		</Element>
 		<Element Type="ISql100Index" Name="[dbo].[aspnet_PersonalizationPerUser].[aspnet_PersonalizationPerUser_index1]">
-			<Property Name="IsClustered" Value="True" />
 			<Property Name="IsUnique" Value="True" />
+			<Property Name="IsClustered" Value="True" />
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
@@ -8102,7 +8102,6 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationPerUser_GetPageSettings]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -8142,6 +8141,7 @@ BEGIN
     SELECT p.PageSettings FROM dbo.aspnet_PersonalizationPerUser p WHERE p.PathId = @PathId AND p.UserId = @UserId
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -8288,7 +8288,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationPerUser_ResetPageSettings]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -8329,6 +8328,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -8472,7 +8472,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_PersonalizationPerUser_SetPageSettings]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -8512,6 +8511,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -8780,10 +8780,9 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="23" />
+			<AttachedAnnotation Disambiguator="26" />
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Profile_DeleteInactiveProfiles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -8814,6 +8813,7 @@ BEGIN
     SELECT  @@ROWCOUNT
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -8920,7 +8920,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Profile_DeleteProfiles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -8987,6 +8986,7 @@ Cleanup:
     RETURN @ErrorCode
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
@@ -9067,7 +9067,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Profile_GetNumberOfInactiveProfiles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -9093,6 +9092,7 @@ BEGIN
             )
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -9199,7 +9199,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Profile_GetProfiles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -9249,6 +9248,7 @@ BEGIN
     DROP TABLE #PageIndexForUsers
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -9511,7 +9511,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Profile_GetProperties]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -9543,6 +9542,7 @@ BEGIN
     END
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -9662,7 +9662,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Profile_SetProperties]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -9756,6 +9755,7 @@ Cleanup:
 
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -9959,7 +9959,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_RegisterSchemaVersion]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -9982,6 +9981,7 @@ BEGIN
     VALUES( LOWER( @Feature ), @CompatibleSchemaVersion, @IsCurrentVersion )
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_RegisterSchemaVersion].[@RemoveIncompatibleSchema]" />
@@ -10118,7 +10118,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="32" />
+						<AttachedAnnotation Disambiguator="36" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -10177,11 +10177,11 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="22" />
+			<AttachedAnnotation Disambiguator="25" />
 		</Element>
 		<Element Type="ISql100Index" Name="[dbo].[aspnet_Roles].[aspnet_Roles_index1]">
-			<Property Name="IsClustered" Value="True" />
 			<Property Name="IsUnique" Value="True" />
+			<Property Name="IsClustered" Value="True" />
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
@@ -10209,7 +10209,6 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Roles_CreateRole]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -10275,6 +10274,7 @@ Cleanup:
 
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -10363,7 +10363,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Roles_DeleteRole]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -10442,6 +10441,7 @@ Cleanup:
     RETURN @ErrorCode
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -10558,7 +10558,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Roles_GetAllRoles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -10573,6 +10572,7 @@ BEGIN
     ORDER BY RoleName
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -10631,7 +10631,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Roles_RoleExists]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -10647,6 +10646,7 @@ BEGIN
         RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -10785,10 +10785,9 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="25" />
+			<AttachedAnnotation Disambiguator="17" />
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Setup_RemoveAllRoleMembers]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -10823,6 +10822,7 @@ BEGIN
     DEALLOCATE c1
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[smallint]" />
@@ -10939,7 +10939,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Setup_RestorePermissions]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -10966,6 +10965,7 @@ BEGIN
     DEALLOCATE c1
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[sys].[sysname]" />
@@ -11022,7 +11022,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_UnRegisterSchemaVersion]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -11031,6 +11030,7 @@ BEGIN
         WHERE   Feature = LOWER(@Feature) AND @CompatibleSchemaVersion = CompatibleSchemaVersion
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_SchemaVersions]" />
@@ -11128,7 +11128,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="34" />
+						<AttachedAnnotation Disambiguator="30" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -11179,7 +11179,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="35" />
+						<AttachedAnnotation Disambiguator="31" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -11196,7 +11196,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="36" />
+						<AttachedAnnotation Disambiguator="32" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -11221,11 +11221,11 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="26" />
+			<AttachedAnnotation Disambiguator="18" />
 		</Element>
 		<Element Type="ISql100Index" Name="[dbo].[aspnet_Users].[aspnet_Users_Index]">
-			<Property Name="IsClustered" Value="True" />
 			<Property Name="IsUnique" Value="True" />
+			<Property Name="IsClustered" Value="True" />
 			<Relationship Name="ColumnSpecifications">
 				<Entry>
 					<Element Type="ISqlIndexedColumnSpecification">
@@ -11285,7 +11285,6 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Users_CreateUser]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -11305,6 +11304,7 @@ BEGIN
     RETURN 0
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_Users_CreateUser].[@UserId]" />
@@ -11439,7 +11439,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_Users_DeleteUser]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -11580,6 +11579,7 @@ Cleanup:
 
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -11778,7 +11778,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="21" />
+			<AttachedAnnotation Disambiguator="24" />
 			<AttachedAnnotation Disambiguator="39" />
 		</Element>
 		<Element Type="ISql100Index" Name="[dbo].[aspnet_UsersInRoles].[aspnet_UsersInRoles_index]">
@@ -11805,7 +11805,6 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_UsersInRoles_AddUsersToRoles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -11917,6 +11916,7 @@ BEGIN
 	RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -12232,7 +12232,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_UsersInRoles_FindUsersInRole]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -12259,6 +12258,7 @@ BEGIN
     RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -12385,7 +12385,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_UsersInRoles_GetRolesForUser]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -12412,6 +12411,7 @@ BEGIN
     RETURN (0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -12516,7 +12516,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_UsersInRoles_GetUsersInRoles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -12543,6 +12542,7 @@ BEGIN
     RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -12647,7 +12647,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_UsersInRoles_IsUserInRole]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -12682,6 +12681,7 @@ BEGIN
         RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -12808,7 +12808,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_UsersInRoles_RemoveUsersFromRoles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -12930,6 +12929,7 @@ BEGIN
 	RETURN(0)
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[uniqueidentifier]" />
@@ -13470,10 +13470,9 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="17" />
+			<AttachedAnnotation Disambiguator="20" />
 		</Element>
 		<Element Type="ISql100Procedure" Name="[dbo].[aspnet_WebEvent_LogEvent]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="BodyScript">
 				<Value QuotedIdentifiers="False"><![CDATA[
@@ -13517,6 +13516,7 @@ BEGIN
     )
 END]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
 					<References Name="[dbo].[aspnet_WebEvent_Events]" />
@@ -16241,12 +16241,12 @@ END]]></Value>
 			</Relationship>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_Applications]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_Applications].[ApplicationName], [dbo].[aspnet_Applications].[LoweredApplicationName], [dbo].[aspnet_Applications].[ApplicationId], [dbo].[aspnet_Applications].[Description]
   FROM [dbo].[aspnet_Applications]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_Applications].[ApplicationName]">
@@ -16316,7 +16316,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_MembershipUsers]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_Membership].[UserId],
@@ -16345,6 +16344,7 @@ END]]></Value>
   FROM [dbo].[aspnet_Membership] INNER JOIN [dbo].[aspnet_Users]
       ON [dbo].[aspnet_Membership].[UserId] = [dbo].[aspnet_Users].[UserId]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_MembershipUsers].[UserId]">
@@ -16648,7 +16648,6 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_Profiles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_Profile].[UserId], [dbo].[aspnet_Profile].[LastUpdatedDate],
@@ -16657,6 +16656,7 @@ END]]></Value>
                  + DATALENGTH([dbo].[aspnet_Profile].[PropertyValuesBinary])
   FROM [dbo].[aspnet_Profile]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_Profiles].[UserId]">
@@ -16714,12 +16714,12 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_Roles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_Roles].[ApplicationId], [dbo].[aspnet_Roles].[RoleId], [dbo].[aspnet_Roles].[RoleName], [dbo].[aspnet_Roles].[LoweredRoleName], [dbo].[aspnet_Roles].[Description]
   FROM [dbo].[aspnet_Roles]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_Roles].[ApplicationId]">
@@ -16801,12 +16801,12 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_Users]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_Users].[ApplicationId], [dbo].[aspnet_Users].[UserId], [dbo].[aspnet_Users].[UserName], [dbo].[aspnet_Users].[LoweredUserName], [dbo].[aspnet_Users].[MobileAlias], [dbo].[aspnet_Users].[IsAnonymous], [dbo].[aspnet_Users].[LastActivityDate]
   FROM [dbo].[aspnet_Users]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_Users].[ApplicationId]">
@@ -16912,12 +16912,12 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_UsersInRoles]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_UsersInRoles].[UserId], [dbo].[aspnet_UsersInRoles].[RoleId]
   FROM [dbo].[aspnet_UsersInRoles]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_UsersInRoles].[UserId]">
@@ -16963,12 +16963,12 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_WebPartState_Paths]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_Paths].[ApplicationId], [dbo].[aspnet_Paths].[PathId], [dbo].[aspnet_Paths].[Path], [dbo].[aspnet_Paths].[LoweredPath]
   FROM [dbo].[aspnet_Paths]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_WebPartState_Paths].[ApplicationId]">
@@ -17038,12 +17038,12 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_WebPartState_Shared]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_PersonalizationAllUsers].[PathId], [DataSize]=DATALENGTH([dbo].[aspnet_PersonalizationAllUsers].[PageSettings]), [dbo].[aspnet_PersonalizationAllUsers].[LastUpdatedDate]
   FROM [dbo].[aspnet_PersonalizationAllUsers]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_WebPartState_Shared].[PathId]">
@@ -17095,12 +17095,12 @@ END]]></Value>
 			</Annotation>
 		</Element>
 		<Element Type="ISql100View" Name="[dbo].[vw_aspnet_WebPartState_User]">
-			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Property Name="IsQuotedIdentifierOn" Value="False" />
 			<Property Name="QueryScript">
 				<Value QuotedIdentifiers="False"><![CDATA[ SELECT [dbo].[aspnet_PersonalizationPerUser].[PathId], [dbo].[aspnet_PersonalizationPerUser].[UserId], [DataSize]=DATALENGTH([dbo].[aspnet_PersonalizationPerUser].[PageSettings]), [dbo].[aspnet_PersonalizationPerUser].[LastUpdatedDate]
   FROM [dbo].[aspnet_PersonalizationPerUser]]]></Value>
 			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="Columns">
 				<Entry>
 					<Element Type="ISql90ComputedColumn" Name="[dbo].[vw_aspnet_WebPartState_User].[PathId]">
