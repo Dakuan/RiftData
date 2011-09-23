@@ -13,29 +13,29 @@
 
     public class PhotosRepository : IPhotosRepository
     {
-        private readonly IFlickrInfrastructure _flickrInfrastructure;
+        private readonly IFlickrInfrastructure flickrInfrastructure;
 
-        private readonly IPhotoFactory _photoFactory;
+        private readonly IPhotoFactory photoFactory;
 
         private readonly RiftDataDataContext dataContext;
 
         public PhotosRepository(RiftDataDataContext dataContext, IFlickrInfrastructure flickrInfrastructure, IPhotoFactory photoFactory)
         {
             this.dataContext = dataContext;
-            this._flickrInfrastructure = flickrInfrastructure;
-            this._photoFactory = photoFactory;
+            this.flickrInfrastructure = flickrInfrastructure;
+            this.photoFactory = photoFactory;
         }
 
         public Photo Add(HttpPostedFileBase file, int id)
         {
             // save the photo to flickr,
-            var flickrId = this._flickrInfrastructure.UploadPhoto(file, file.FileName);
+            var flickrId = this.flickrInfrastructure.UploadPhoto(file, file.FileName);
 
             // get the photo info
-            var photoInfo = this._flickrInfrastructure.GetPhoto(flickrId);
+            var photoInfo = this.flickrInfrastructure.GetPhoto(flickrId);
 
             // save to database
-            var dbPhoto = this.dataContext.Photos.Add(this._photoFactory.CreatePhoto(photoInfo));
+            var dbPhoto = this.dataContext.Photos.Add(this.photoFactory.CreatePhoto(photoInfo));
 
             this.dataContext.Fish.First(f => f.Id == id).Photos.Add(dbPhoto);
 
@@ -53,7 +53,7 @@
             {
                 this.dataContext.Photos.Remove(photo);
 
-                this._flickrInfrastructure.DeletePhoto(photo.FlickrId);
+                this.flickrInfrastructure.DeletePhoto(photo.FlickrId);
 
                 this.dataContext.SaveChanges();
             }
@@ -75,7 +75,7 @@
 
                 this.dataContext.SaveChanges();
 
-                this._flickrInfrastructure.DeletePhoto(flickrId);
+                this.flickrInfrastructure.DeletePhoto(flickrId);
             }
             catch (Exception)
             {
@@ -101,6 +101,25 @@
             this.dataContext.Fish.Where(f => f.Species.Id == speciesId).ToList().ForEach(f => f.Photos.ToList().ForEach(p => dictonary.Add(p, f)));
 
             return AddCaptionsForPhotos(dictonary).ToList();
+        }
+
+        public Photo GetSingleForSpecies(int speciesId)
+        {
+            return this.GetForSpecies(speciesId).FirstOrDefault();
+        }
+
+        public Photo GetSingleForGenus(int genusId)
+        {
+            var fish = this.dataContext.Fish.Where(f => f.Genus.Id == genusId && f.Photos.Count > 0).FirstOrDefault();
+
+            return fish == null ? null : fish.Photos.First();
+        }
+
+        public Photo GetSingleForGenusType(int genusTypeId)
+        {
+            var fish = this.dataContext.Fish.Where(f => f.Genus.GenusType.Id == genusTypeId && f.Photos.Count > 0).FirstOrDefault();
+
+            return fish == null ? null : fish.Photos.First();
         }
 
         private static IEnumerable<Photo> AddCaptionsForPhotos(Dictionary<Photo, IPhotoSubject> dictionary)

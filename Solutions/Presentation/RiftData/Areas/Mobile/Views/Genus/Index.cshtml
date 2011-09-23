@@ -8,7 +8,12 @@
     <ul data-role="listview" data-inset="true">
         @foreach(var item in Model.SpeciesList)
         {
-            <li><a href="@Url.Action("Index", "Species", new { speciesName = item.UrlName })">@item.Name</a></li>
+            <li>
+                <a href="@Url.Action("Index", "Species", new { speciesName = item.Key.UrlName })">
+                    <img src="@(item.Value != null ? item.Value.SquareThumbnail : Url.Content("~/Content/ThumbNailPlaceHolder.png"))" height="80"/>
+                    <h3>@item.Key.Name</h3>
+                </a>
+            </li>
         }
     </ul>
 }

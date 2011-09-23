@@ -5,6 +5,6 @@ namespace RiftData.Presentation.ViewModels.Mobile
 {
     public class GenusTypesIndexPageViewModel : Shared.ViewModelBase
     {
-        public IList<GenusDto> Genera { get; set; }
+        public IDictionary<GenusDto, PhotoDto> Genera { get; set; }
     }
 }

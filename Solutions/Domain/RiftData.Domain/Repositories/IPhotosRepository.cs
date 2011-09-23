@@ -5,6 +5,7 @@
 
     using RiftData.Domain.Entities;
     using RiftData.Domain.Enums;
+    using RiftData.Domain.Logs;
 
     public interface IPhotosRepository
     {
@@ -17,5 +18,11 @@
         IList<Photo> GetForLocale(int localeId);
 
         IList<Photo> GetForSpecies(int speciesId);
+
+        Photo GetSingleForSpecies(int speciesId);
+
+        Photo GetSingleForGenus(int genusId);
+
+        Photo GetSingleForGenusType(int genusTypeId);
     }
 }

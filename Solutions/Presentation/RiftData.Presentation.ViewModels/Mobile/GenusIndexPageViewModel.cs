@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using RiftData.Presentation.ViewModels.Dto;
-
-namespace RiftData.Presentation.ViewModels.Mobile
+﻿namespace RiftData.Presentation.ViewModels.Mobile
 {
+    using System.Collections.Generic;
+
+    using RiftData.Presentation.ViewModels.Dto;
+
     public class GenusIndexPageViewModel : Shared.ViewModelBase
     {
-        public IList<SpeciesDto> SpeciesList { get; set; }
+        public IDictionary<SpeciesDto, PhotoDto> SpeciesList { get; set; }
     }
 }

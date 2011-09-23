@@ -12,7 +12,12 @@
         <li data-role="list-divider">@item.Key.Name</li>
         @foreach(var genusType in item.Value)
         {
-            <li><a href="@Url.Action("Index", "GenusTypes", new { genusTypeName = genusType.Name })">@genusType.Name</a></li>
+            <li>
+                <a href="@Url.Action("Index", "GenusTypes", new { genusTypeName = genusType.Key.Name })">
+                    <img src="@(genusType.Value != null ? genusType.Value.SquareThumbnail : Url.Content("~/Content/ThumbNailPlaceHolder.png"))" height="80"/>
+                    <h3>@genusType.Key.Name</h3>
+                </a>
+            </li>
         }
     </ul>
     }
