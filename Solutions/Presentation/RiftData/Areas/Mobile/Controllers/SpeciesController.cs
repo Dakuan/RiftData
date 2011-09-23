@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using RiftData.Presentation.Contracts.ViewModelFactories.Mobile;
-
-namespace RiftData.Areas.Mobile.Controllers
+﻿namespace RiftData.Areas.Mobile.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+
+    using RiftData.Presentation.Contracts.ViewModelFactories.Mobile;
+
+    [OutputCache(CacheProfile = "Daily")]
     public class SpeciesController : Controller
     {
         private readonly ISpeciesIndexPageViewModelFactory speciesIndexPageViewModelFactory;
