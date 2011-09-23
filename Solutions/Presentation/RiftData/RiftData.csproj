@@ -1227,6 +1227,10 @@
     <None Include="Content\Admin\Images\silk\Thumbs.db" />
     <None Include="Content\Admin\Images\tables\Thumbs.db" />
     <None Include="Scripts\Photoswipe\README.md" />
+    <Content Include="Web.Debug.Config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Web.Release.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -5,7 +5,7 @@
     using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Presentation.Contracts;
 
-    // [OutputCache(CacheProfile = "Daily")]
+    [OutputCache(CacheProfile = "Daily")]
     public class LocaleController : Controller
     {
         private readonly ILocaleDtoService localeDtoService;

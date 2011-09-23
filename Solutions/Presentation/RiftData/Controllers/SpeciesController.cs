@@ -4,7 +4,7 @@
 
     using RiftData.Presentation.Contracts;
 
-    // [OutputCache(CacheProfile = "Daily")]
+    [OutputCache(CacheProfile = "Daily")]
     public class SpeciesController : Controller
     {
         private readonly ISpeciesPageViewModelFactory speciesPageViewModelFactory;

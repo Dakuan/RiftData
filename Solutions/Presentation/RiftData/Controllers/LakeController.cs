@@ -4,6 +4,7 @@
 
     using RiftData.Presentation.Contracts;
 
+    [OutputCache(CacheProfile = "Daily")]
     public class LakeController : Controller
     {
         private readonly ILakeViewModelFactory lakeViewModelFactory;

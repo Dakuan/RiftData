@@ -6,6 +6,7 @@
     using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Presentation.Contracts;
 
+    [OutputCache(CacheProfile = "Daily")]
     public class InfoController : Controller
     {
         private readonly IGenusTypeDtoService genusTypeDtoService;
