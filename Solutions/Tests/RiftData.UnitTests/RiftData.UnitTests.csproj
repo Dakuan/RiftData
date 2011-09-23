@@ -59,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ApplicationServices\" />
+    <Folder Include="Controllers\Admin\" />
+    <Folder Include="Controllers\Mobile\" />
     <Folder Include="Domain\" />
     <Folder Include="MainControllers\" />
   </ItemGroup>
