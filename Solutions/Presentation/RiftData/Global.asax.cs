@@ -62,7 +62,7 @@ namespace RiftData
             var isOnMobilePage = path.StartsWith("/Mobile/", StringComparison.OrdinalIgnoreCase);
             if (!isOnMobilePage)
             {
-                HttpContext.Current.Response.RedirectToRoute("Mobile_default");
+                HttpContext.Current.Response.Redirect("Mobile");
             }
         }
 
