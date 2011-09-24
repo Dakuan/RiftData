@@ -1,9 +1,9 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories
+﻿using RiftData.ApplicationServices.Extensions;
+
+namespace RiftData.ApplicationServices.ViewModelFactories
 {
     using System.Collections.Generic;
     using System.Linq;
-
-    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Entities;
     using RiftData.Domain.Logs;
     using RiftData.Presentation.ViewModels.Dto;
@@ -56,7 +56,11 @@
 
         public static GenusTypeDto Build(GenusType genusType)
         {
-            return new GenusTypeDto { Id = genusType.Id, Name = genusType.Name, Description = genusType.Description, NumberOfGenera = genusType.Genus.Count, Lake = new LakeDto { Id = genusType.Lake.Id, Name = genusType.Lake.Name } };
+            var genera = new List<GenusDto>();
+
+            genusType.Genus.ToList().ForEach(t => genera.Add(Build(t)));
+
+            return new GenusTypeDto { Genera = genera, Id = genusType.Id, Name = genusType.Name, Description = genusType.Description, NumberOfGenera = genusType.Genus.Count, Lake = new LakeDto { Id = genusType.Lake.Id, Name = genusType.Lake.Name } };
         }
 
         public static LakeDto Build(Lake lake)

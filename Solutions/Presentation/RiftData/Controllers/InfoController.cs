@@ -1,25 +1,25 @@
-﻿namespace RiftData.Controllers
+﻿using RiftData.Domain.Repositories;
+
+namespace RiftData.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
 
-    using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Presentation.Contracts;
 
     [OutputCache(CacheProfile = "Daily")]
     public class InfoController : Controller
     {
-        private readonly IGenusTypeDtoService genusTypeDtoService;
-
         private readonly IInfoPageViewModelFactory infoPageViewModelFactory;
+        private readonly ILakeRepository lakeRepository;
 
-        private readonly ILakeDtoService lakeDtoService;
+        private readonly IGenusTypeRepository genusTypeRepository;
 
-        public InfoController(IInfoPageViewModelFactory infoPageViewModelFactory, ILakeDtoService lakeDtoService, IGenusTypeDtoService genusTypeDtoService)
+        public InfoController(IInfoPageViewModelFactory infoPageViewModelFactory, ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository)
         {
             this.infoPageViewModelFactory = infoPageViewModelFactory;
-            this.genusTypeDtoService = genusTypeDtoService;
-            this.lakeDtoService = lakeDtoService;
+            this.lakeRepository = lakeRepository;
+            this.genusTypeRepository = genusTypeRepository;
         }
 
         public ActionResult About()
@@ -46,7 +46,7 @@
 
         private string AssembleKeywords()
         {
-            var keywords = string.Format("Rift Valley Cichlids, {0}, {1}", string.Join(", ", this.lakeDtoService.GetAllLakes().Select(x => x.Name)), string.Join(", ", this.genusTypeDtoService.GetAllGenusTypes().Select(x => x.Name)));
+            var keywords = string.Format("Rift Valley Cichlids, {0}, {1}", string.Join(", ", this.lakeRepository.GetAll().Select(x => x.Name)), string.Join(", ", this.genusTypeRepository.GetAll().Select(x => x.Name)));
 
             return keywords;
         }

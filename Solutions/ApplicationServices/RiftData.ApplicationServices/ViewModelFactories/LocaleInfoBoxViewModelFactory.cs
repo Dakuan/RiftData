@@ -1,8 +1,7 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories
-{
-    using System.Linq;
+﻿using RiftData.ApplicationServices.Extensions;
 
-    using RiftData.ApplicationServices.DtoServices.Contracts;
+namespace RiftData.ApplicationServices.ViewModelFactories
+{
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts;
     using RiftData.Presentation.ViewModels;
@@ -11,19 +10,19 @@
     {
         private readonly ILocalesRepository localesRepository;
 
-        private readonly ISpeciesDtoService speciesDtoService;
+        private readonly ISpeciesRepository speciesRepository;
 
-        public LocaleInfoBoxViewModelFactory(ILocalesRepository localesRepository, ISpeciesDtoService speciesDtoService)
+        public LocaleInfoBoxViewModelFactory(ILocalesRepository localesRepository, ISpeciesRepository speciesRepository)
         {
             this.localesRepository = localesRepository;
-            this.speciesDtoService = speciesDtoService;
+            this.speciesRepository = speciesRepository;
         }
 
         public LocaleInfoBoxViewModel Build(int localeId)
         {
             var locale = this.localesRepository.Get(localeId);
 
-            var viewModel = new LocaleInfoBoxViewModel { Name = locale.Name, Species = this.speciesDtoService.GetSpeciesAtLocale(localeId).ToList() };
+            var viewModel = new LocaleInfoBoxViewModel { Name = locale.Name, Species = this.speciesRepository.GetSpeciesAtLocale(locale.Id).ToDtoList() };
 
             return viewModel;
         }

@@ -118,5 +118,10 @@
         {
             return this.dataContext.GenusTypes.Where(t => t.Lake.Id == lakeId).ToList();
         }
+
+        public IList<GenusType> GetFromLocale(int localeId)
+        {
+            return this.dataContext.Fish.Where(f => f.Locale.Id == localeId).Select(x => x.Genus.GenusType).ToList();
+        }
     }
 }

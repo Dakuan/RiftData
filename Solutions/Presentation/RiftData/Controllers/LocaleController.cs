@@ -1,23 +1,24 @@
-﻿namespace RiftData.Controllers
+﻿using RiftData.ApplicationServices.Extensions;
+using RiftData.Domain.Repositories;
+
+namespace RiftData.Controllers
 {
     using System.Web.Mvc;
 
-    using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Presentation.Contracts;
 
     [OutputCache(CacheProfile = "Daily")]
     public class LocaleController : Controller
     {
-        private readonly ILocaleDtoService localeDtoService;
-
         private readonly ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory;
+        private readonly ILocalesRepository localeRepository;
 
         private readonly ILocalePageViewModelFactory localePageViewModelFactory;
 
-        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocaleDtoService localeDtoService, ILocalePageViewModelFactory localePageViewModelFactory)
+        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocalesRepository localeRepository, ILocalePageViewModelFactory localePageViewModelFactory)
         {
             this.localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
-            this.localeDtoService = localeDtoService;
+            this.localeRepository = localeRepository;
             this.localePageViewModelFactory = localePageViewModelFactory;
         }
 
@@ -30,24 +31,24 @@
 
         public ActionResult GetLocaleData(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocaleDto(id) };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.Get(id) };
         }
 
         public ActionResult GetLocaleLabel(int id)
         {
-            var locale = this.localeDtoService.GetLocaleDto(id);
+            var locale = this.localeRepository.Get(id);
 
             return this.PartialView("LocaleLabel", locale);
         }
 
         public ActionResult GetLocalesBySpecies(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocaleDtosFromSpecies(id) };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetWithSpecies(id).ToDtoList() };
         }
 
         public ActionResult GetLocalesForZoomLevel(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocalesForZoomLevel(id) };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetForZoomLevel(id) };
         }
 
         public ActionResult Index(string localeName)

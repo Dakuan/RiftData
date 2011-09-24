@@ -47,6 +47,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,7 +71,9 @@
     <Compile Include="Extensions\GenusTypeExtensionMethods.cs" />
     <Compile Include="Extensions\LakeExtensionMethods.cs" />
     <Compile Include="Extensions\LocaleExtensionMethods.cs" />
+    <Compile Include="Extensions\SelectListComment.cs" />
     <Compile Include="Extensions\SpeciesExtensionMethods.cs" />
+    <Compile Include="Extensions\ToSelectListExtensions.cs" />
     <Compile Include="Factories\IPhotoFactory.cs" />
     <Compile Include="Factories\PhotoFactory.cs" />
     <Compile Include="Installers\FactoriesInstaller.cs" />

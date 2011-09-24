@@ -1,11 +1,11 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
+﻿using RiftData.ApplicationServices.Extensions;
+
+namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
 {
     using System.Collections.Generic;
     using System.Linq;
 
     using Castle.Core;
-
-    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.ViewModelFactories.Mobile;
     using RiftData.Presentation.ViewModels.Dto;
@@ -35,7 +35,7 @@
             var viewModel = new HomeIndexPageViewModel
                             {
                                 Header = "Lakes",
-                                MetaData = MetaData.Build(string.Empty, "Lakes", string.Empty),
+                                MetaData = MetaData.Build(string.Join(", ", this.lakeRepository.GetAll().Select(x => x.Name)), "Lakes", string.Format("Information about rift valley cichlids")),
                                 DataDictionary = dictionary
                             };
 

@@ -53,16 +53,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminControllers\FishControllerSpecs.cs" />
-    <Compile Include="AdminControllers\HomeControllerSpecs.cs" />
+    <Compile Include="Presenation\Controllers\Admin\FishControllerSpecs.cs" />
+    <Compile Include="Presenation\Controllers\Admin\HomeControllerSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ApplicationServices\" />
-    <Folder Include="Controllers\Admin\" />
-    <Folder Include="Controllers\Mobile\" />
+    <Folder Include="ApplicationServices\ViewModelFactories\Admin\" />
+    <Folder Include="ApplicationServices\ViewModelFactories\Mobile\" />
     <Folder Include="Domain\" />
-    <Folder Include="MainControllers\" />
+    <Folder Include="Presenation\Controllers\Mobile\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ApplicationServices\RiftData.ApplicationServices\RiftData.ApplicationServices.csproj">

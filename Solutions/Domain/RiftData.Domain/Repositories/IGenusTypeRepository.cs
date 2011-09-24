@@ -22,5 +22,7 @@ namespace RiftData.Domain.Repositories
         UpdateResult Update(int genusTypeId, string name, int lakeId, string userName);
 
         IList<GenusType> GetFromLake(int lakeId);
+
+        IList<GenusType> GetFromLocale(int localeId);
     }
 }

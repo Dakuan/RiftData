@@ -1,38 +1,38 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories
-{
-    using System.Linq;
+﻿using RiftData.ApplicationServices.Extensions;
+using RiftData.Domain.Repositories;
 
-    using RiftData.ApplicationServices.DtoServices.Contracts;
+namespace RiftData.ApplicationServices.ViewModelFactories
+{
     using RiftData.Domain.Entities;
     using RiftData.Presentation.Contracts;
     using RiftData.Presentation.ViewModels;
 
     public class PhotoGalleryViewModelFactory : IPhotoGalleryViewModelFactory
     {
-        private readonly IPhotoDtoService _photoDtoService;
+        private readonly IPhotosRepository photosRepository;
 
-        public PhotoGalleryViewModelFactory(IPhotoDtoService photoDtoService)
+        public PhotoGalleryViewModelFactory(IPhotosRepository photosRepository)
         {
-            this._photoDtoService = photoDtoService;
+            this.photosRepository = photosRepository;
         }
 
         public PhotoGalleryViewModel Build(Species species)
         {
-            var viewModel = new PhotoGalleryViewModel { Name = species.Name, Photos = this._photoDtoService.GetPhotosForSpecies(species.Id).ToList() };
+            var viewModel = new PhotoGalleryViewModel { Name = species.Name, Photos = this.photosRepository.GetForSpecies(species.Id).ToDtoList() };
 
             return viewModel;
         }
 
         public PhotoGalleryViewModel Build(Locale locale)
         {
-            var viewModel = new PhotoGalleryViewModel { Name = locale.Name, Photos = this._photoDtoService.GetPhotosForLocale(locale.Id).ToList() };
+            var viewModel = new PhotoGalleryViewModel { Name = locale.Name, Photos = this.photosRepository.GetForLocale(locale.Id).ToDtoList() };
 
             return viewModel;
         }
 
         public PhotoGalleryViewModel Build(Fish fish)
         {
-            var viewModel = new PhotoGalleryViewModel { Name = fish.Name, Photos = this._photoDtoService.GetPhotosForFish(fish).ToList() };
+            var viewModel = new PhotoGalleryViewModel { Name = fish.Name, Photos = fish.Photos.ToDtoList() };
 
             return viewModel;
         }

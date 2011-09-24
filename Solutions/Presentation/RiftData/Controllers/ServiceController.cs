@@ -1,30 +1,28 @@
-﻿namespace RiftData.Controllers
+﻿using RiftData.ApplicationServices.Extensions;
+using RiftData.Domain.Repositories;
+
+namespace RiftData.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
 
-    using RiftData.ApplicationServices.DtoServices.Contracts;
-
     public class ServiceController : Controller
     {
-        private readonly IGenusDtoService genusDtoService;
+        private readonly ISpeciesRepository speciesRepository;
+        private readonly IGenusRepository genusRepository;
+        private readonly ILocalesRepository localesRepository;
 
-        private readonly ILocaleDtoService localeDtoService;
 
-        private readonly ISpeciesDtoService speciesDtoService;
-
-        public ServiceController(IGenusDtoService genusDtoService, ISpeciesDtoService speciesDtoService, ILocaleDtoService localeDtoService)
+        public ServiceController(ISpeciesRepository speciesRepository, IGenusRepository genusRepository, ILocalesRepository localesRepository)
         {
-            this.genusDtoService = genusDtoService;
-
-            this.speciesDtoService = speciesDtoService;
-
-            this.localeDtoService = localeDtoService;
+            this.speciesRepository = speciesRepository;
+            this.genusRepository = genusRepository;
+            this.localesRepository = localesRepository;
         }
 
         public ActionResult GetAllGenera()
         {
-            var results = this.genusDtoService.GetGenusDtos();
+            var results = this.genusRepository.GetAll().ToDtoList();
 
             results.ToList().ForEach(g => g.Species.Clear());
 
@@ -33,12 +31,12 @@
 
         public ActionResult GetLocalesForZoomLevel(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeDtoService.GetLocalesForZoomLevel(id) };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localesRepository.GetForZoomLevel(id) };
         }
 
         public ActionResult GetSpeciesForGenus(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.speciesDtoService.GetSpeciesWithGenus(id) };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.speciesRepository.GetSpeciesWithGenus(id).ToDtoList() };
         }
     }
 }

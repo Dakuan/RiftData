@@ -1,8 +1,8 @@
-﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+﻿using RiftData.Domain.Extensions;
+using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
 
 namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
-    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.ViewModels.Admin;
     using RiftData.Presentation.ViewModels.Admin.GenusType;

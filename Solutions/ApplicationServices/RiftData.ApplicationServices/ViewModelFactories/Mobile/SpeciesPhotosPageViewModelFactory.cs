@@ -1,6 +1,7 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
+﻿using RiftData.ApplicationServices.Extensions;
+
+namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
 {
-    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.ViewModelFactories.Mobile;
     using RiftData.Presentation.ViewModels.Mobile;

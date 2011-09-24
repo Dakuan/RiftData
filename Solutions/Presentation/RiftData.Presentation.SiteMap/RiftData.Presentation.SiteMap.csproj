@@ -48,6 +48,7 @@
     <Compile Include="HomeControllerDynamicNodeProvider.cs" />
     <Compile Include="LakeControllerDynamicNodeProvider.cs" />
     <Compile Include="LocaleControllerDynamicNodeProvider.cs" />
+    <Compile Include="Mobile\HomeControllerDynamicNodeProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpeciesControllerDynamicNodeProvider.cs" />
   </ItemGroup>

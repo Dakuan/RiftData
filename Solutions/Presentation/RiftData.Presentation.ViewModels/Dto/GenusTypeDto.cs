@@ -1,4 +1,6 @@
-﻿namespace RiftData.Presentation.ViewModels.Dto
+﻿using System.Collections.Generic;
+
+namespace RiftData.Presentation.ViewModels.Dto
 {
     public class GenusTypeDto
     {
@@ -13,6 +15,8 @@
         }
 
         public int Id { get; set; }
+
+        public IList<GenusDto> Genera { get; set; }
 
         public LakeDto Lake { get; set; }
 

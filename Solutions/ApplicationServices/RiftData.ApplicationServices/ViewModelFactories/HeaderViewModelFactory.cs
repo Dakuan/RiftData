@@ -1,8 +1,9 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories
+﻿using RiftData.ApplicationServices.Extensions;
+
+namespace RiftData.ApplicationServices.ViewModelFactories
 {
     using System.Collections.Generic;
 
-    using RiftData.ApplicationServices.DtoServices.Contracts;
     using RiftData.Domain.Entities;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts;
@@ -11,25 +12,19 @@
 
     public class HeaderViewModelFactory : IHeaderViewModelFactory
     {
-        private readonly IGenusTypeDtoService _genusTypeDtoService;
+        private readonly IGenusTypeRepository genusTypeRepository;
 
-        private readonly IGenusTypeRepository _genusTypeRepository;
+        private readonly ILakeRepository lakeRepository;
 
-        private readonly ILakeDtoService _lakeDtoService;
-
-        private readonly ILakeRepository _lakeRepository;
-
-        public HeaderViewModelFactory(ILakeDtoService lakeDtoService, ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository, IGenusTypeDtoService genusTypeDtoService)
+        public HeaderViewModelFactory(ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository)
         {
-            this._lakeDtoService = lakeDtoService;
-            this._lakeRepository = lakeRepository;
-            this._genusTypeRepository = genusTypeRepository;
-            this._genusTypeDtoService = genusTypeDtoService;
+            this.lakeRepository = lakeRepository;
+            this.genusTypeRepository = genusTypeRepository;
         }
 
         public HeaderViewModel Build()
         {
-            var viewModel = new HeaderViewModel { Lakes = this._lakeDtoService.GetAllLakes(), GenusTypes = new List<GenusTypeDto>() };
+            var viewModel = new HeaderViewModel { Lakes = this.lakeRepository.GetAll().ToDtoList(), GenusTypes = new List<GenusTypeDto>() };
 
             return viewModel;
         }
@@ -38,9 +33,7 @@
         {
             var viewModel = this.Build();
 
-            var lake = this._lakeRepository.GetFromGenusType(genusTypeId);
-
-            viewModel.GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(lake);
+            viewModel.GenusTypes = this.genusTypeRepository.GetFromLake(lakeId).ToDtoList();
 
             viewModel.SelectedLakeId = lakeId;
 
@@ -51,41 +44,41 @@
 
         public HeaderViewModel Build(Locale locale)
         {
-            var viewModel = new HeaderViewModel { Lakes = this._lakeDtoService.GetAllLakes(), SelectedLakeId = locale.Lake.Id, GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(locale) };
+            var viewModel = new HeaderViewModel { Lakes = this.lakeRepository.GetAll().ToDtoList(), SelectedLakeId = locale.Lake.Id, GenusTypes = this.genusTypeRepository.GetFromLocale(locale.Id).ToDtoList() };
 
             return viewModel;
         }
 
         public HeaderViewModel Build(Fish fish)
         {
-            var viewModel = new HeaderViewModel { Lakes = this._lakeDtoService.GetAllLakes(), SelectedGenusTypeId = fish.Genus.GenusType.Id, SelectedLakeId = fish.Locale.Lake.Id, GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLocale(fish.Locale) };
+            var viewModel = new HeaderViewModel { Lakes = this.lakeRepository.GetAll().ToDtoList(), SelectedGenusTypeId = fish.Genus.GenusType.Id, SelectedLakeId = fish.Locale.Lake.Id, GenusTypes = this.genusTypeRepository.GetFromLocale(fish.Locale.Id).ToDtoList() };
 
             return viewModel;
         }
 
         public HeaderViewModel Build(GenusType genusType)
         {
-            var viewModel = new HeaderViewModel { SelectedGenusTypeId = genusType.Id, SelectedLakeId = genusType.Lake.Id, GenusTypes = this._genusTypeDtoService.GetGenusTypesFromLake(genusType.Lake), Lakes = this._lakeDtoService.GetAllLakes() };
+            var viewModel = new HeaderViewModel { SelectedGenusTypeId = genusType.Id, SelectedLakeId = genusType.Lake.Id, GenusTypes = this.genusTypeRepository.GetFromLake(genusType.Lake.Id).ToDtoList(), Lakes = this.lakeRepository.GetAll().ToDtoList() };
 
             return viewModel;
         }
 
-        public HeaderViewModel Build(LakeDto lake)
+        public HeaderViewModel Build(Lake lake)
         {
             var viewModel = this.Build();
 
             viewModel.SelectedLakeId = lake.Id;
 
-            viewModel.GenusTypes = lake.GenusTypes;
+            viewModel.GenusTypes = lake.GenusTypes.ToDtoList();
 
             return viewModel;
         }
 
         public HeaderViewModel BuildFromSpecies(int speciesId)
         {
-            var lake = this._lakeRepository.GetLakeFromSpeciesId(speciesId);
+            var lake = this.lakeRepository.GetLakeFromSpeciesId(speciesId);
 
-            var genusType = this._genusTypeRepository.GetFromSpecies(speciesId);
+            var genusType = this.genusTypeRepository.GetFromSpecies(speciesId);
 
             return this.Build(lake.Id, genusType.Id);
         }

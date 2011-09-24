@@ -1,6 +1,9 @@
-﻿namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
+﻿using RiftData.ApplicationServices.Extensions;
+
+namespace RiftData.ApplicationServices.ViewModelFactories.Mobile
 {
-    using RiftData.ApplicationServices.DtoServices.Extensions;
+    using System.Linq;
+
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts.ViewModelFactories.Mobile;
     using RiftData.Presentation.ViewModels.Mobile;
@@ -30,7 +33,7 @@
             var viewModel = new SpeciesIndexPageViewModel
                                 {
                                     Header = species.FullName,
-                                    MetaData = MetaData.Build(string.Empty, species.FullName, string.Empty),
+                                    MetaData = MetaData.Build(string.Join(", ", species.Genus.Species.Select(x => x.FullName)), species.FullName, string.Format("Information about {0}", species.FullName)),
                                     Species = DtoFactory.Build(species),
                                     Locales = locales.ToDtoList(),
                                     Photos = photos.ToDtoList()

@@ -16,10 +16,10 @@
                 <a href="@Url.Action("Index", "GenusTypes", new { genusTypeName = genusType.Key.Name })">
                     <img src="@(genusType.Value != null ? genusType.Value.SquareThumbnail : Url.Content("~/Content/ThumbNailPlaceHolder.png"))" height="80"/>
                     <h3>@genusType.Key.Name</h3>
+                    <p>@string.Join(", " , genusType.Key.Genera.Select(x => x.Name))</p>
                 </a>
             </li>
         }
     </ul>
     }
-
 }

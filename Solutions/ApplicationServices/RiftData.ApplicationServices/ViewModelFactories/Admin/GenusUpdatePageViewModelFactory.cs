@@ -3,9 +3,7 @@ using RiftData.Presentation.ViewModels.Admin.Genus;
 
 namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
-    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Repositories;
-    using RiftData.Presentation.ViewModels.Admin;
 
     public class GenusUpdatePageViewModelFactory : IGenusUpdatePageViewModelFactory
     {

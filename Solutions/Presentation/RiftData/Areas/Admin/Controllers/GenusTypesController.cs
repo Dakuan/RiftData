@@ -1,10 +1,9 @@
-﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+﻿using RiftData.Domain.Extensions;
+using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
 
 namespace RiftData.Areas.Admin.Controllers
 {
     using System.Web.Mvc;
-
-    using RiftData.ApplicationServices.DtoServices.Extensions;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.ViewModels.Admin;
