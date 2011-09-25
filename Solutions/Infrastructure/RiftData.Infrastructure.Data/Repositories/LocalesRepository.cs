@@ -89,7 +89,9 @@
 
         public IList<Locale> GetForZoomLevel(int zoomLevel)
         {
-            return this.dataContext.Locales.Where(l => l.ZoomLevel <= zoomLevel).SortLocales().ToList();
+            var dataZoom = Locale.GetDataZoomFromMapZoom(zoomLevel);
+
+            return this.dataContext.Locales.Where(l => l.ZoomLevel <= dataZoom).SortLocales().ToList();
         }
 
         public IList<Locale> GetWithSpecies(int speciesId)

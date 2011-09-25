@@ -53,7 +53,6 @@ namespace RiftData.Controllers
 
         public ActionResult GetLocalesForZoomLevel(int id)
         {
-
             var data = this.localeRepository.GetForZoomLevel(id).ToDtoList().ToList();
 
             var testData = data.StripToBasic();
