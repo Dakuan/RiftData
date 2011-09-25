@@ -84,7 +84,7 @@
 
         public IList<Genus> GetOfType(int genusTypeId)
         {
-            return this.dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId).ToList();
+            return this.dataContext.Genus.Where(g => g.GenusType.Id == genusTypeId).SortGenus().ToList();
         }
 
         public UpdateResult Update(int genusId, string userName)

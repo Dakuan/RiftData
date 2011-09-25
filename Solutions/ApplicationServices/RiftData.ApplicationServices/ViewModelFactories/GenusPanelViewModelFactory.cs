@@ -18,7 +18,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build(int genusTypeId)
         {
-            return new GenusPanelViewModel { GenusList = this.genusRepository.GetOfType(genusTypeId).SortGenus().ToDtoList() };
+            return new GenusPanelViewModel { GenusList = this.genusRepository.GetOfType(genusTypeId).ToDtoList() };
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)
