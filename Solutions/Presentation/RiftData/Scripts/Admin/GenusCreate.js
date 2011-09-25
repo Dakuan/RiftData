@@ -56,6 +56,9 @@ function OnLakeChange(data) {
             genusTypesBox.dataBind(result);
 
             genusTypesBox.select(0);
+
+            //show submit button
+            $('#btnSubmit').fadeIn();
         });
     }
 }
