@@ -1,4 +1,5 @@
 ﻿using RiftData.ApplicationServices.Extensions;
+using RiftData.ApplicationServices.ViewModelFactories;
 using RiftData.Domain.Repositories;
 
 namespace RiftData.Controllers
@@ -31,7 +32,7 @@ namespace RiftData.Controllers
 
         public ActionResult GetLocaleData(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.Get(id) };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = DtoFactory.Build(this.localeRepository.Get(id)) };
         }
 
         public ActionResult GetLocaleLabel(int id)
