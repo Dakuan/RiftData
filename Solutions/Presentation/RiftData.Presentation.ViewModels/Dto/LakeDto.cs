@@ -4,7 +4,7 @@
 
     public class LakeDto
     {
-        public IEnumerable<GenusTypeDto> GenusTypes;
+        public IList<GenusTypeDto> GenusTypes { get; set; }
 
         public int Id { get; set; }
 

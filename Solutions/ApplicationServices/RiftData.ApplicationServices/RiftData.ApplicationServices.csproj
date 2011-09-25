@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="AccountServices\AccountMembershipService.cs" />
     <Compile Include="AccountServices\FormsAuthenticationService.cs" />
+    <Compile Include="Extensions\DtoStrippingExtenstions.cs" />
     <Compile Include="Extensions\ToDtoListExtensions.cs" />
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Installers\ViewModelFactoryInstaller.cs" />

@@ -1,6 +1,10 @@
-﻿using RiftData.ApplicationServices.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using RiftData.ApplicationServices.Extensions;
 using RiftData.ApplicationServices.ViewModelFactories;
 using RiftData.Domain.Repositories;
+using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Controllers
 {
@@ -37,7 +41,7 @@ namespace RiftData.Controllers
 
         public ActionResult GetLocaleLabel(int id)
         {
-            var locale = this.localeRepository.Get(id);
+            var locale = DtoFactory.Build(this.localeRepository.Get(id));
 
             return this.PartialView("LocaleLabel", locale);
         }
@@ -49,7 +53,12 @@ namespace RiftData.Controllers
 
         public ActionResult GetLocalesForZoomLevel(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetForZoomLevel(id) };
+
+            var data = this.localeRepository.GetForZoomLevel(id).ToDtoList().ToList();
+
+            var testData = data.StripToBasic();
+
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = testData };
         }
 
         public ActionResult Index(string localeName)
