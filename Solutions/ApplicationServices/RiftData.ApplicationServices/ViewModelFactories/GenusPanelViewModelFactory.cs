@@ -1,4 +1,5 @@
 ﻿using RiftData.ApplicationServices.Extensions;
+using RiftData.Domain.Extensions;
 using RiftData.Domain.Repositories;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
@@ -17,7 +18,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build(int genusTypeId)
         {
-            return new GenusPanelViewModel { GenusList = this.genusRepository.GetOfType(genusTypeId).ToDtoList() };
+            return new GenusPanelViewModel { GenusList = this.genusRepository.GetOfType(genusTypeId).SortGenus().ToDtoList() };
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)
