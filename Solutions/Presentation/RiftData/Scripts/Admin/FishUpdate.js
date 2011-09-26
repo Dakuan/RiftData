@@ -5,6 +5,20 @@ var localeSelected = false;
 
 $(document).ready(function () {
 
+    $('.EditPhoto').click(function (e) {
+
+        var photoId = $($(e.currentTarget).children()[0]).attr('value');
+
+        //shove the id into a field
+
+        //display the caption window thing
+        var captionWindow = $("#PhotoCaptionWindow").data("tWindow");
+
+        captionWindow.center();
+
+        captionWindow.open();
+    }); ;
+
     var successUrl = $('#SuccessUrl').attr('value');
 
     var failureUrl = $('#FailureUrl').attr('value');

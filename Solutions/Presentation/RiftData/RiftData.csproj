@@ -153,6 +153,65 @@
     <Content Include="Scripts\Photoswipe\loader.gif" />
     <Content Include="Scripts\Photoswipe\MIT-license.txt" />
     <Content Include="Scripts\Photoswipe\photoswipe.css" />
+    <Content Include="Scripts\PrettyPhoto\css\prettyPhoto.css" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\1.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\2.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\3.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\4.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\5.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\6.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\high.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\huge.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\fullscreen\wide.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\default\loader.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\default\sprite.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Scripts\PrettyPhoto\images\thumbnails\flash-logo.png" />
+    <Content Include="Scripts\PrettyPhoto\images\thumbnails\quicktime-logo.gif" />
+    <Content Include="Scripts\PrettyPhoto\images\thumbnails\t_1.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\thumbnails\t_2.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\thumbnails\t_3.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\thumbnails\t_4.jpg" />
+    <Content Include="Scripts\PrettyPhoto\images\thumbnails\t_5.jpg" />
+    <Content Include="Scripts\PrettyPhoto\js\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\PrettyPhoto\js\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\PrettyPhoto\js\jquery-1.6.1.min.js" />
+    <Content Include="Scripts\PrettyPhoto\js\jquery.prettyPhoto.js" />
     <Content Include="Views\Shared\LogOn.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Register.aspx" />
@@ -1231,6 +1290,7 @@
     <Content Include="Areas\Mobile\Views\Genus\Index.cshtml" />
     <Content Include="Areas\Mobile\Views\Species\Index.cshtml" />
     <Content Include="Areas\Mobile\Views\Species\Photos.cshtml" />
+    <Content Include="Areas\Admin\Views\Photos\PhotoCaptionForm.cshtml" />
     <None Include="Content\Admin\Images\lightbox\Thumbs.db" />
     <None Include="Content\Admin\Images\nav\Thumbs.db" />
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />
@@ -1240,6 +1300,8 @@
     <Content Include="Web.Debug.Config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Scripts\PrettyPhoto\images\.DS_Store" />
+    <None Include="Scripts\PrettyPhoto\images\fullscreen\.DS_Store" />
     <None Include="Web.Release.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -1259,7 +1321,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>28158</DevelopmentServerPort>
+          <DevelopmentServerPort>41180</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

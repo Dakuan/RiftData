@@ -3,9 +3,14 @@
 @model PhotoReelElementViewModel
 <li>
     <img src="@this.Model.PhotoUrl" />
+    <a>
+        <button>
+            <span>Edit</span>
+        </button>
+    </a>
     <a href="@this.Url.Action("DeletePhoto", new { fishId = this.Model.PhotoId, photoId = FishId })">
         <button>
-            <span>Delete Photo</span>
+            <span>Delete</span>
         </button>
     </a>
 </li>

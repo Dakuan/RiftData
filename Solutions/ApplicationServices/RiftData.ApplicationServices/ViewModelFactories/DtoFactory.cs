@@ -51,7 +51,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public static PhotoDto Build(Photo photo)
         {
-            return new PhotoDto { Caption = photo.Caption, Id = photo.Id, MediumUrl = photo.MediumUrl, ThumbNailUrl = photo.ThumbNailUrl, SquareThumbnail = photo.SquareThumbnail };
+            return new PhotoDto { Title = photo.Title, Caption = photo.Caption, Id = photo.Id, MediumUrl = photo.MediumUrl, ThumbNailUrl = photo.ThumbNailUrl, SquareThumbnail = photo.SquareThumbnail };
         }
 
         public static GenusTypeDto Build(GenusType genusType)

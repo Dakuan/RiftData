@@ -8,6 +8,10 @@
             e.OnUpload("OnUpload");
             e.OnSuccess("OnSuccess");
         }).Async(async => async.Save("Save", "Photos"))
+        <div class="field">
+            <label>Caption</label>
+            @Html.TextBox("Caption")
+        </div>
     <div class="buttonRow">
         <button id="OkButton">
             <span>OK</span>
@@ -34,7 +38,7 @@
         });
     });
 
-    $('#OkButton').click(function() {
+    $('#OkButton').click(function () {
 
         //add photo to the list
         var imgUrl = $('#PreviewImage').attr('src');
@@ -43,6 +47,15 @@
 
         $('#photoReel').append('<li><img src="' + imgUrl + '" /><a href="' + deleteUrl + '"><button><span>Delete Photo</span></button></a></li>');
 
-        $("#PhotoUploader").data("tWindow").close();
+        //send the caption to the controller
+        var captionUrl = $("#AddCaptionUrl").attr('value') + '?photoId=' + $('#PhotoId').val() + "&caption=" + $("#Caption").attr('value');
+
+        $.getJSON(captionUrl, null, function (result) {
+
+            console.log(captionUrl);
+
+            $("#PhotoUploader").data("tWindow").close();
+            
+        });
     });
 </script>

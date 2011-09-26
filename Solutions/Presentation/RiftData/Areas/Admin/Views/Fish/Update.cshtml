@@ -1,6 +1,7 @@
 ﻿@using RiftData.Presentation.ViewModels.Admin
 @using Telerik.Web.Mvc.UI
 @using RiftData.Presentation.ViewModels.Admin.Fish
+
 @model FishEditPageViewModel
 
 @{
@@ -9,7 +10,7 @@
 
 }
 @section Navigation{
-@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
 }
 
 <div id="body">
@@ -29,7 +30,9 @@
             </ul>
         </div>
         <div class="portlet-content">
-            <div class="left">
+
+            <div >
+
                 @using (this.Html.BeginForm("Update", "Fish", FormMethod.Post, new { @class = "form label-inline" }))
                 {
                     @this.Html.HiddenFor(model => model.Id)
@@ -47,35 +50,47 @@
                     </div>
                     <div class="field">
                         <label>Description</label>
-                        @this.Html.TextAreaFor(m => m.Description)
+                        @this.Html.TextAreaFor(m => m.Description, new { style = "resize:none;" })
                     </div>
+                    
+                    <div class="clear"/>
                     <button type="submit">
                         <span>Save</span>
                     </button>
-                }
-            </div>
-            <div class="left">
-                <ul id="photoReel">
-                    @foreach (var item in this.Model.Photos)
-                    {
-                        <li>
-                            <img src="@item.ThumbNailUrl" />
-                            <a href="@this.Url.Action("DeletePhoto", new { fishId = this.Model.Id, photoId = item.Id })">
-                                <button>
-                                    <span>Delete Photo</span>
-                                </button>
-                            </a>
-                        </li>
                     }
-                </ul>
-                <button class="btn-sec" id="btnAddPhoto">
-                    <span>Add Photo</span>
-                </button>
-            </div>
-            <div class="clear"/>
+                    <div class="field">
+                        <label>Photos</label>
+                        <ul id="photoReel">
+                            @foreach (var item in this.Model.Photos)
+                            {
+                                <li>
+                                    <img src="@item.ThumbNailUrl" />
+                                    <div class="buttonRow" style="width: 140px;">
+                                        <a class="linkButton EditPhoto" href="#">
+                                            <input type="hidden" value="@item.Id" />
+ 
+                                                <span>Edit</span>
+   
+                                        </a>
+                                        <a href="@this.Url.Action("DeletePhoto", new { fishId = this.Model.Id, photoId = item.Id })" class="linkButton">
+                                            <button>
+                                                <span>Delete</span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                        <div class="clear"></div>
+                        <button class="btn-sec" id="btnAddPhoto">
+                            <span>Add Photo</span>
+                        </button>
+                    </div>
+            </div>      
         </div>
     </div>
 </div>
+@Html.Telerik().Window().Name("PhotoCaptionWindow").Width(300).Height(200).LoadContentFrom("GetCaptionWindowContent", "Photos").Modal(true).Visible(false).Title("Caption")
 <div class="hidden" id="CancelUrl">@this.Url.Action("Cancel", "Photos")</div>
 <div class="hidden" id="DeletePhotoUrl">@this.Url.Action("DeletePhoto", "Fish")</div>
 @this.Html.Hidden("FlickrId")
@@ -83,6 +98,7 @@
 <input type="hidden" value="@this.Url.Action("UpdateSuccess", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="SuccessUrl" />
 <input type="hidden" value="@this.Url.Action("UpdateFailure", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="FailureUrl" />
 <input type="hidden" value="@this.Url.Action("GetSpecies", "Fish")" id="SpeciesUrl" />
+<input type="hidden" value="@Url.Action("AddCaption", "Photos")" id ="AddCaptionUrl" />
 @this.Html.HiddenFor(m => m.MessageBoxVisible)
 @this.Html.Partial("MessageBox")
 @this.Html.Partial("PhotoUploader")

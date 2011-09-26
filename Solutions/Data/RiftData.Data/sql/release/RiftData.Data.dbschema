@@ -15374,6 +15374,22 @@ END]]></Value>
 					</Element>
 				</Entry>
 				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[dbo].[Photos].[PhotoTitle]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
 					<Element Type="ISql100SimpleColumn" Name="[dbo].[Photos].[PhotoSponsorID]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>

@@ -7,6 +7,12 @@
         $(this).switchClass('headerButtonHover', 'headerButton', hoverAnimationTime);
     });
 
+    //initialise prettyPhoto
+    $("a[rel^='prettyPhoto']").prettyPhoto(
+    {
+        /*theme: /*'pp_default',  'facebook' /* dark_rounded / light_square / dark_square / facebook */
+    });
+
     //hightlight infobboxbuttons
     var components = document.location.href.split('/');
 

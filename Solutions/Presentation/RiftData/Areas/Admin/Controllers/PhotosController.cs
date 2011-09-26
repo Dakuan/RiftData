@@ -42,5 +42,21 @@ namespace RiftData.Areas.Admin.Controllers
 
             return this.Json(new { url = string.Empty, status = "failed" }, "text/plain");
         }
+
+        public ActionResult AddCaption(string caption, int photoId)
+        {
+            var result = this.photosRepository.AddCaption(photoId, caption); 
+
+            return new JsonResult
+                {
+                    Data = result,
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+        }
+
+        public ActionResult GetCaptionWindowContent()
+        {
+            return PartialView("PhotoCaptionForm");
+        }
     }
 }

@@ -27,6 +27,8 @@
 
             Property(x => x.SquareThumbnail).HasColumnName("PhotoSquareThumbnailUrl");
 
+            Property(x => x.Title).HasColumnName("PhotoTitle");
+
             this.ToTable("Photos");
         }
     }

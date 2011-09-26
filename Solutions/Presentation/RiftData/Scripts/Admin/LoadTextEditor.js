@@ -21,6 +21,8 @@
         // Skin options
         skin: "o2k7",
         //skin_variant: "silver",
+        width: "640",
+        height: "300",
 
         // Example content CSS (should be your site CSS)
         //content_css: "css/admin/example.css",

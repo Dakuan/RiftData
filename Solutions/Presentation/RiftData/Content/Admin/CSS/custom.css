@@ -872,17 +872,65 @@ button.btn-sec span { background-position: left -100px !important; }
     margin-top:-10px;
     margin-right:15px;
 }
-#photoReel li
+#photoReel
 {
+    width: 700px;
+    margin-left: 145px;
+}
+#photoReel li
+{background-color:#ffffff;
+border-width:2px;
+border-color:#7f7f7f;
+    padding:10px;
     list-style:none;
     float:left;
-    width:120px;
+    width:160px;
+    margin-bottom:20px;
+    margin-left: 18px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow:0px 0px 11px #000000;
+    -webkit-box-shadow:0px 0px 11px #000000;
+    box-shadow:0px 0px 11px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    background-image: -moz-linear-gradient(top, #ffffff, #4280ff);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#4280ff));
+    background-image: -o-linear-gradient(top, #ffffff, #4280ff);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#4280ff');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#4280ff')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: linear-gradient(top, #ffffff, #4280ff);
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+
+}
+#photoReel li .buttonRow
+{
+    width: 140px;
+margin-left: 12px;
+}
+#photoReel li img
+{
+    margin-left:30px;
 }
 .hidden
 {
     display:none;
 }
 .linkButton
+{
+    text-decoration:none;
+}
+.buttonRow a
 {
     text-decoration:none;
 }

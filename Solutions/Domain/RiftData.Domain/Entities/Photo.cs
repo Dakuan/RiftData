@@ -4,6 +4,8 @@
     {
         public string Caption { get; set; }
 
+        public string Title { get; set; }
+
         public string FlickrId { get; set; }
 
         public int Id { get; set; }

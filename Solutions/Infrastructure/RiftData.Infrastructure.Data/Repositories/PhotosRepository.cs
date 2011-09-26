@@ -122,15 +122,38 @@
             return fish == null ? null : fish.Photos.First();
         }
 
+        public bool AddCaption(int photoId, string caption)
+        {
+            var photo = this.dataContext.Photos.FirstOrDefault(x => x.Id == photoId);
+
+            if (photo == null)
+            {
+                return false;
+            }
+
+            photo.Caption = caption;
+
+            try
+            {
+                this.dataContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private static IEnumerable<Photo> AddCaptionsForPhotos(Dictionary<Photo, IPhotoSubject> dictionary)
         {
             var list = new List<Photo>();
 
             dictionary.ToList().ForEach(d =>
                 {
-                    if (string.IsNullOrEmpty(d.Key.Caption))
+                    if (string.IsNullOrEmpty(d.Key.Title))
                     {
-                        d.Key.Caption = d.Value.Name;
+                        d.Key.Title = d.Value.Name;
                     }
 
                     list.Add(d.Key);

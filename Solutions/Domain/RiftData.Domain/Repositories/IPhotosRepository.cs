@@ -24,5 +24,7 @@
         Photo GetSingleForGenus(int genusId);
 
         Photo GetSingleForGenusType(int genusTypeId);
+
+        bool AddCaption(int photoId, string caption);
     }
 }
