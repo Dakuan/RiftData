@@ -65,17 +65,15 @@
                             {
                                 <li>
                                     <img src="@item.ThumbNailUrl" />
-                                    <div class="buttonRow" style="width: 140px;">
-                                        <a class="linkButton EditPhoto" href="#">
+                                    <div class="buttonRow">
+                                        <a class="button EditPhoto" href="#">
                                             <input type="hidden" value="@item.Id" />
  
                                                 <span>Edit</span>
-   
+  
                                         </a>
-                                        <a href="@this.Url.Action("DeletePhoto", new { fishId = this.Model.Id, photoId = item.Id })" class="linkButton">
-                                            <button>
+                                        <a href="@this.Url.Action("DeletePhoto", new { fishId = this.Model.Id, photoId = item.Id })" class="button">
                                                 <span>Delete</span>
-                                            </button>
                                         </a>
                                     </div>
                                 </li>
@@ -99,6 +97,8 @@
 <input type="hidden" value="@this.Url.Action("UpdateFailure", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="FailureUrl" />
 <input type="hidden" value="@this.Url.Action("GetSpecies", "Fish")" id="SpeciesUrl" />
 <input type="hidden" value="@Url.Action("AddCaption", "Photos")" id ="AddCaptionUrl" />
+<input type="hidden" id="PhotoBeingEdited"/>
+
 @this.Html.HiddenFor(m => m.MessageBoxVisible)
 @this.Html.Partial("MessageBox")
 @this.Html.Partial("PhotoUploader")

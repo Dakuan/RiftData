@@ -934,3 +934,27 @@ margin-left: 12px;
 {
     text-decoration:none;
 }
+
+/*buttons that arent actually buttons */
+a.button, a.button span {
+    background: transparent url(../Images/themes/blue/images/button_sprite.png) no-repeat;
+    font-family: arial, sans-serif;
+    padding: 0 0 0 15px;
+    height: 30px;
+    font-size: 13px;
+    line-height: 28px;
+    font-weight: bold;
+    font-style: italic;
+    background-position: left top;
+    color: white;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+}
+a.button {
+    padding: 0 15px 0 0;
+margin-right: 5px;
+text-align: center;
+background-position: right -50px !important;
+display: table-cell;
+}

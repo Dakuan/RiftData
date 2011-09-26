@@ -10,7 +10,8 @@ $(document).ready(function () {
         var photoId = $($(e.currentTarget).children()[0]).attr('value');
 
         //shove the id into a field
-
+        $('#PhotoBeingEdited').attr('value', photoId);
+        
         //display the caption window thing
         var captionWindow = $("#PhotoCaptionWindow").data("tWindow");
 

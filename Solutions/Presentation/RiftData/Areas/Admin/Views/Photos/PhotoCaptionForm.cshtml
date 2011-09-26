@@ -3,14 +3,34 @@
     <label>Caption</label>
     @Html.TextBox("Caption")
     <div class = "buttonRow">
-        <a>
+        <a id="CaptionOkButton" class="button">
             <span>Ok</span>
         </a>
-        <a>
+        <a id ="CaptionCancelButton" class="button">
             <span>Cancel</span>
         </a>
     </div>
 </div>
 <script type="text/javascript">
+
+    $('#CaptionCancelButton').click(function () {
+        closeCaptionBox();
+    });
     
+    $('#CaptionOkButton').click(function () {
+        var id = $('#PhotoBeingEdited').attr('value');
+        var url = $('#AddCaptionUrl').attr('value') + "?caption=" + $('#Caption').attr('value') + "&photoId=" + id;
+        $.getJSON(url, function (result) {
+            if (result) {
+                closeCaptionBox();
+            }
+        });
+    });
+
+    function closeCaptionBox() {
+        
+        var captionWindow = $("#PhotoCaptionWindow").data("tWindow");
+
+        captionWindow.close();
+    }
 </script>
