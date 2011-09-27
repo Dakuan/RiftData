@@ -44,7 +44,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public HeaderViewModel Build(Locale locale)
         {
-            var viewModel = new HeaderViewModel { Lakes = this.lakeRepository.GetAll().ToDtoList(), SelectedLakeId = locale.Lake.Id, GenusTypes = this.genusTypeRepository.GetFromLocale(locale.Id).ToDtoList() };
+            var viewModel = new HeaderViewModel { Lakes = this.lakeRepository.GetAll().ToDtoList(), SelectedLakeId = locale.Lake.Id, GenusTypes = this.genusTypeRepository.GetFromLake(locale.Lake.Id).ToDtoList() };
 
             return viewModel;
         }

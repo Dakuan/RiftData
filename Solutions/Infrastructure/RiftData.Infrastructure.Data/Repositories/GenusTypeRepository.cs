@@ -4,6 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using Castle.Core;
+
     using RiftData.Domain.Entities;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
@@ -121,7 +123,17 @@
 
         public IList<GenusType> GetFromLocale(int localeId)
         {
-            return this.dataContext.Fish.Where(f => f.Locale.Id == localeId).Select(x => x.Genus.GenusType).ToList();
+            var list = new List<GenusType>();
+
+            this.dataContext.Fish.Where(f => f.Locale.Id == localeId).ForEach(x =>
+                {
+                    if (!list.Any(y => y.Id == x.Genus.GenusType.Id))
+                    {
+                        list.Add(x.Genus.GenusType);
+                    }
+                });
+
+            return list;
         }
     }
 }
