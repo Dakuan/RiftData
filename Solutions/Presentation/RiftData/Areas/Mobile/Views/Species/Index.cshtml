@@ -33,4 +33,5 @@
     @if(Model.Species.HasPhotos){
         <a href="@Url.Action("Photos", new { speciesName = Model.Species.UrlName })" data-role="button">View Photos</a>
         }
+        @Html.Partial("SocialMediaButtons")
 }
