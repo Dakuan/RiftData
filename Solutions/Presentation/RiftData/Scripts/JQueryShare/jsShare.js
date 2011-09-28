@@ -31,7 +31,7 @@
                 var tooltip = $('<div/>').addClass('social-media-share-tooltip');
                 container.before(tooltip);
                 var mediaSource = ["http://www.facebook.com/share.php?u={ADDRESS}",
-                                     "http://twitter.com/home?status={TITLE} | {ADDRESS}",
+                                     "http://twitter.com/home?status={TITLE} {ADDRESS}",
                                      "http://delicious.com/save?url={ADDRESS}&amp;title={TITLE}",
                                      "http://www.stumbleupon.com/submit?url={ADDRESS}&amp;title={TITLE}",
                                      "http://digg.com/submit?url={ADDRESS}&amp;title={TITLE}",

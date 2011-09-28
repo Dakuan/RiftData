@@ -1308,7 +1308,7 @@
     <Content Include="Areas\Mobile\Views\Species\Index.cshtml" />
     <Content Include="Areas\Mobile\Views\Species\Photos.cshtml" />
     <Content Include="Areas\Admin\Views\Photos\PhotoCaptionForm.cshtml" />
-    <Content Include="Areas\Mobile\Views\Shared\SocialMediaButtons.cshtml" />
+    <Content Include="Views\Shared\SocialMediaButtons.cshtml" />
     <None Include="Content\Admin\Images\lightbox\Thumbs.db" />
     <None Include="Content\Admin\Images\nav\Thumbs.db" />
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />

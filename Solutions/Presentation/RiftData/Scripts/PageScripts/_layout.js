@@ -1,4 +1,8 @@
 ﻿$(document).ready(function () {
+    //initialise socaial media buttons
+    $('#SocialMediaButtons').jsShare({ maxwidth: 290, initialdisplay: 'expanded', yoursitename: 'RiftData', desc: 'Rift valley cichlid database', yoursitetitle: 'RiftData', delicious: false, linkedin: false, googlebuzz: false });
+    $('<li><div style="margin-top:8px;"><g:plusone size="small" annotation="none"></g:plusone></div></li>').appendTo('#SocialMediaButtons ul');
+    
     var hoverAnimationTime = 70;
     $('.headerButton').hover(function () {
         $(this).switchClass('headerButton', 'headerButtonHover', hoverAnimationTime);
