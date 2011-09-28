@@ -10,10 +10,10 @@
         }).Async(async => async.Save("Save", "Photos"))
         <div class="field">
             <label>Caption</label>
-            @Html.TextBox("Caption")
+            @Html.TextBox("PhotoCaption")
         </div>
     <div class="buttonRow">
-        <a id="OkButton" class="button">
+        <a id="OkButton" class="button" style="display:none;">
             <span>OK</span>
         </a>
         <a id="CancelButton" class="button">
@@ -45,17 +45,17 @@
 
         var deleteUrl = $('#DeletePhotoUrl').html() + '?fishId=' + $('#Id').val() + '&photoId=' + $('#PhotoId').val();
 
-        $('#photoReel').append('<li><img src="' + imgUrl + '" /><a href="' + deleteUrl + '"><button><span>Delete Photo</span></button></a></li>');
+        $('#photoReel').append('<li><img src="' + imgUrl + '" /><div class="buttonRow"><a class="button"><span>Edit</span></a><a href="' + deleteUrl + '" class="button"><span>Delete</span></a></div></li>');
 
         //send the caption to the controller
-        var captionUrl = $("#AddCaptionUrl").attr('value') + '?photoId=' + $('#PhotoId').val() + "&caption=" + $("#Caption").attr('value');
+        var captionUrl = $("#AddCaptionUrl").attr('value') + '?photoId=' + $('#PhotoId').val() + "&caption=" + $("#PhotoCaption").val();
 
         $.getJSON(captionUrl, null, function (result) {
 
             console.log(captionUrl);
 
             $("#PhotoUploader").data("tWindow").close();
-            
+
         });
     });
 </script>

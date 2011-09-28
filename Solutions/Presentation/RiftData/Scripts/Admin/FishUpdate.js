@@ -141,6 +141,8 @@ function OnSuccess(e) {
     //set image
     if (e.response.status == 'ok') {
 
+        $('#OkButton').fadeIn();
+
         $('#PreviewImage').attr('src', e.response.url);
 
         $('#FlickrId').attr('value', e.response.flickrid);
