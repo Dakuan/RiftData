@@ -110,7 +110,7 @@
 
         public IList<Fish> GetOfType(int genusTypeId)
         {
-            return this.dataContext.Fish.Where(f => f.Genus.GenusType.Id == genusTypeId).ToList();
+            return this.dataContext.Fish.Where(f => f.Genus.GenusType.Id == genusTypeId).SortFish().ToList();
         }
 
         public UpdateResult Update(int fishId, int genusId, int speciesId, int localeId, string description, string userName)
