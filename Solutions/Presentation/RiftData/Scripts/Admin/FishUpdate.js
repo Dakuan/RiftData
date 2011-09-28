@@ -11,9 +11,15 @@ $(document).ready(function () {
 
         //shove the id into a field
         $('#PhotoBeingEdited').attr('value', photoId);
-        
+
         //display the caption window thing
         var captionWindow = $("#PhotoCaptionWindow").data("tWindow");
+
+        var captionText = $("#caption_" + photoId).attr('value');
+
+        console.log(captionText);
+
+        $("#Caption").val(captionText);
 
         captionWindow.center();
 

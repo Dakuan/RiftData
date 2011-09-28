@@ -18,7 +18,7 @@
             <p>
                 @foreach (var locale in Model.Locales)
                 {
-                    <a href="@this.Url.Action("Index", "Locale", new { localeName = locale.Name })"> @locale.Name</a> <text>, </text>
+                    <a href="@this.Url.Action("Index", "Locale", new { localeName = locale.Name })">@locale.Name</a> <text>, </text>
                 }
             </p>
        } }

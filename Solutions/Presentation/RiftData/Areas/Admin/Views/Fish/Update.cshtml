@@ -52,7 +52,6 @@
                         <label>Description</label>
                         @this.Html.TextAreaFor(m => m.Description, new { style = "resize:none;" })
                     </div>
-                    
                     <div class="clear"/>
                     <button type="submit">
                         <span>Save</span>
@@ -68,12 +67,11 @@
                                     <div class="buttonRow">
                                         <a class="button EditPhoto" href="#">
                                             <input type="hidden" value="@item.Id" />
- 
-                                                <span>Edit</span>
-  
+                                            <input type="hidden" value="@item.Caption" id="@string.Format("caption_{0}",item.Id)" />
+                                            <span>Edit</span>
                                         </a>
                                         <a href="@this.Url.Action("DeletePhoto", new { fishId = this.Model.Id, photoId = item.Id })" class="button">
-                                                <span>Delete</span>
+                                            <span>Delete</span>
                                         </a>
                                     </div>
                                 </li>
