@@ -19,12 +19,14 @@ namespace RiftData.Controllers
         private readonly ILocalesRepository localeRepository;
 
         private readonly ILocalePageViewModelFactory localePageViewModelFactory;
+        private readonly IGenusRepository genusRepository;
 
-        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocalesRepository localeRepository, ILocalePageViewModelFactory localePageViewModelFactory)
+        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocalesRepository localeRepository, ILocalePageViewModelFactory localePageViewModelFactory, IGenusRepository genusRepository)
         {
             this.localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
             this.localeRepository = localeRepository;
             this.localePageViewModelFactory = localePageViewModelFactory;
+            this.genusRepository = genusRepository;
         }
 
         public ActionResult GetInfoBox(int id)
@@ -46,9 +48,27 @@ namespace RiftData.Controllers
             return this.PartialView("LocaleLabel", locale);
         }
 
+        public ActionResult GetForLakeFromGenus(int id)
+        {
+            var genus = this.genusRepository.Get(id);
+
+            return RedirectToAction("GetForLake", new { id = genus.GenusType.Lake.Id });
+        }
+
+        public ActionResult GetForLake(int id)
+        {
+            var data = this.localeRepository.GetByLake(id).ToDtoList().StripToBasic();
+
+            return new JsonResult
+                       {
+                           Data = data,
+                           JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                       };
+        }
+
         public ActionResult GetLocalesBySpecies(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetWithSpecies(id).ToDtoList() };
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetWithSpecies(id).ToDtoList()};
         }
 
         public ActionResult GetLocalesForZoomLevel(int id)

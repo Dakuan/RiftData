@@ -40,7 +40,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
             var fish = this.fishRepository.GetFish(fishId);
 
-            var viewModel = new FishEditPageViewModel(fishId) { Locales = this.localesRepository.GetAll().ToSelectList(fish.Locale.Id), Genus = this.genusRepository.GetAll().ToSelectList(fish.Genus.Id), Species = this.speciesRepository.GetSpeciesWithGenus(fish.Genus.Id).ToSelectList(fish.Species.Id), Name = fish.Name, Photos = fish.Photos.ToList().ToDtoList(), Description = HttpUtility.HtmlDecode(fish.Description), MessageBoxVisible = showSuccessMessage != null ? true : false, MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial" };
+            var viewModel = new FishEditPageViewModel(fishId) { Locales = this.localesRepository.GetByLake(fish.Genus.GenusType.Lake.Id).ToSelectList(fish.Locale.Id), Genus = this.genusRepository.GetAll().ToSelectList(fish.Genus.Id), Species = this.speciesRepository.GetSpeciesWithGenus(fish.Genus.Id).ToSelectList(fish.Species.Id), Name = fish.Name, Photos = fish.Photos.ToList().ToDtoList(), Description = HttpUtility.HtmlDecode(fish.Description), MessageBoxVisible = showSuccessMessage != null ? true : false, MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial" };
 
             return viewModel;
         }

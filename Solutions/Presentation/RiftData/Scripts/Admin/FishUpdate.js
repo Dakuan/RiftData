@@ -103,6 +103,17 @@ function OnGenusChange(data) {
 
         url += '/' + data.value;
 
+        var localesUrl = $('#LocalesUrl').attr('value') + '/' + data.value;
+
+        $.getJSON(localesUrl, null, function (localesResult) {
+
+            var localesBox = $('#Locales').data('tDropDownList');
+
+            localesBox.dataBind(localesResult);
+
+            localesBox.select(0);
+        });
+
         $.getJSON(url, null, function (result) {
 
             speciesBox.dataBind(result);

@@ -31,7 +31,7 @@
                 </div>
                 <div class="field">
                     <label>Locale</label>
-                    @this.Html.Telerik().DropDownList().BindTo(this.Model.Locales).Name("Locales").ClientEvents(e => e.OnChange("OnLocaleChange"))
+                    @this.Html.Telerik().DropDownList().Name("Locales").ClientEvents(e => e.OnChange("OnLocaleChange"))
                 </div>
                 <div class="field">
                     <label>Description</label>
@@ -56,6 +56,7 @@
 <input type="hidden" value="@this.Url.Action("UpdateSuccess", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="SuccessUrl" />
 <input type="hidden" value="@this.Url.Action("UpdateFailure", "AjaxMessaging", new { subject = "Fish", okAction = "Index", okController = "Fish" })" id="FailureUrl" />
 <input type="hidden" value="@this.Url.Action("GetSpecies", "Fish")" id="SpeciesUrl" />
+<input type="hidden" value="@Url.Action("GetForLakeFromGenus", "Locales")" id ="LocalesUrl" />
 @this.Html.HiddenFor(m => m.MessageBoxVisible)
 @this.Html.Partial("MessageBox")
 @this.Html.Partial("PhotoUploader")
