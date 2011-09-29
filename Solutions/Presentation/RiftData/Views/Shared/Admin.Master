@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
-        <link href="<%:this.Url.Content("/Content/Admin/2010.3.1110/telerik.common.min.css")%>" rel="stylesheet" type="text/css" />
-        <link href="<%:this.Url.Content("/Content/Admin/2010.3.1110/telerik.black.min.css")%>" rel="stylesheet" type="text/css" />
-        <link href="<%:this.Url.Content("/Content/Admin/AzureCss/jquery.lightbox-0.5.css")%>" rel="stylesheet" type="text/css" />
-        <link href="<%:this.Url.Content("/Content/Admin/CSS/custom.css")%>" rel="stylesheet" type="text/css" />
-        <link href="<%:this.Url.Content("/Content/Admin/CSS/ie7.css")%>"  rel="stylesheet" type="text/css" />
-        <link href="<%:this.Url.Content("/Content/Admin/CSS/ie8.css")%>" rel="stylesheet" type="text/css" />
+        <link href="<%:this.Url.Content("~/Content/Admin/2010.3.1110/telerik.common.min.css")%>" rel="stylesheet" type="text/css" />
+        <link href="<%:this.Url.Content("~/Content/Admin/2010.3.1110/telerik.black.min.css")%>" rel="stylesheet" type="text/css" />
+        <link href="<%:this.Url.Content("~/Content/Admin/AzureCss/jquery.lightbox-0.5.css")%>" rel="stylesheet" type="text/css" />
+        <link href="<%:this.Url.Content("~/Content/Admin/CSS/custom.css")%>" rel="stylesheet" type="text/css" />
+        <link href="<%:this.Url.Content("~/Content/Admin/CSS/ie7.css")%>"  rel="stylesheet" type="text/css" />
+        <link href="<%:this.Url.Content("~/Content/Admin/CSS/ie8.css")%>" rel="stylesheet" type="text/css" />
     </head>
     <body class="layout-fixed">
         <div id="page">
@@ -18,7 +18,7 @@
                 <div class="pad">
                     <h1 id="title">
                         <a>
-                            <img src="<%:this.Url.Content("~/Content/Admin/images/Azure/azure-title.png")%>" />
+                            <img src="<%:this.Url.Content("~/Content/Admin/Images/azure-title.png")%>" />
                         </a>
                     </h1>
                     <div id="info">
