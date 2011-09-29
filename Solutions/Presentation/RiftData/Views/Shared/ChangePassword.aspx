@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewPage<RiftData.Presentation.ViewModels.Admin.Account.ChangePasswordModel>" %>
+﻿<%@ Page Language="C#" MasterPageFile="Admin.Master" Inherits="System.Web.Mvc.ViewPage<RiftData.Presentation.ViewModels.Admin.Account.ChangePasswordModel>" %>
 
 <asp:Content ID="changePasswordTitle" ContentPlaceHolderID="TitleContent" runat="server">
     Change Password

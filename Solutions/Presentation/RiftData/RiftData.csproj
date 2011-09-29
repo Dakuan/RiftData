@@ -128,8 +128,8 @@
   <ItemGroup>
     <Content Include="App_Readme\glimpse.mvc3.readme.txt" />
     <Content Include="App_Readme\glimpse.readme.txt" />
-    <Content Include="Areas\Admin\Views\Shared\ChangePassword.aspx" />
-    <Content Include="Areas\Admin\Views\Shared\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Shared\ChangePassword.aspx" />
+    <Content Include="Views\Shared\ChangePasswordSuccess.aspx" />
     <Content Include="Content\Mobile\mobile.css" />
     <Content Include="Content\ThumbNailPlaceHolder.png" />
     <Content Include="Scripts\Admin\LakeUpdate.js" />

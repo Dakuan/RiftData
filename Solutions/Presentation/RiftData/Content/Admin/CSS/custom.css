@@ -958,3 +958,23 @@ text-align: center;
 background-position: right -50px !important;
 display: table-cell;
 }
+#nav .right
+{
+    float:right;
+}
+.field-validation-error
+{
+    		background-color: #f6b9b9;
+		background-image: url(../Images/silk/exclamation.png) no-repeat 10px 11px;
+		color: #c32727;
+		border: 1px solid #e18484;
+
+	font-size: 13px;
+
+	display:block;	
+	padding:10px 10px 10px 40px;
+	margin-bottom: 1em;
+	position:relative;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}

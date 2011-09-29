@@ -23,8 +23,9 @@
                             if (Request.IsAuthenticated)
                             {
                                 <text>
-                                    welcome <b>@User.Identity.Name</b>!
-                                    [ @Html.ActionLink("Log off", "LogOff", "Account") ]
+                                        welcome <b>@User.Identity.Name</b>! | [ @Html.ActionLink("Log off", "LogOff", "Account") ]
+                                        <br />
+                                        [ @Html.ActionLink("Change Password", "ChangePassword", "Account") ]
                                 </text>
                             }
                             else

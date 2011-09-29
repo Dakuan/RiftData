@@ -1,4 +1,4 @@
-﻿<%@Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@Language="C#" MasterPageFile="Admin.Master" Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="System.Web.DynamicData" %>
 <%@ Import Namespace="System.Web.UI" %>
 <%@ Import Namespace="System.Web.UI.WebControls" %>
