@@ -19,7 +19,6 @@
             this.homePageViewModelFactory = homePageViewModelFactory;
         }
 
-            [Compress]
         public ActionResult Index(string genusTypeName)
         {
             if (genusTypeName == null)
