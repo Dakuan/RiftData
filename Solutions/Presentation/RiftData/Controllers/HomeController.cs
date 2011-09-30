@@ -1,8 +1,13 @@
 ﻿namespace RiftData.Controllers
 {
+    using System;
+    using System.IO.Compression;
+    using System.Web;
     using System.Web.Mvc;
 
+    using RiftData.Attributes;
     using RiftData.Presentation.Contracts;
+
 
     [OutputCache(CacheProfile = "Daily")]
     public class HomeController : Controller
@@ -14,6 +19,7 @@
             this.homePageViewModelFactory = homePageViewModelFactory;
         }
 
+            [Compress]
         public ActionResult Index(string genusTypeName)
         {
             if (genusTypeName == null)

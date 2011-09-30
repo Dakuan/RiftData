@@ -109,6 +109,7 @@
     <Compile Include="Areas\Mobile\Controllers\HomeController.cs" />
     <Compile Include="Areas\Mobile\Controllers\SpeciesController.cs" />
     <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
+    <Compile Include="Attributes\CompressAttribute.cs" />
     <Compile Include="Controllers\FishController.cs" />
     <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Controllers\Installers\ControllersInstaller.cs" />
