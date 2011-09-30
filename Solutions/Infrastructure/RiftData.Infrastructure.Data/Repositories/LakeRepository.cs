@@ -58,7 +58,7 @@
 
             lake.Description = description;
 
-            lake.Name = name;
+            lake.Name = name.Trim();
 
             try
             {

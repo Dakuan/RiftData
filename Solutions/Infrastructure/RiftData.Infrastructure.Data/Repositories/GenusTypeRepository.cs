@@ -32,7 +32,8 @@
 
             var lake = this.dataContext.Lakes.First(l => l.Id == lakeId);
 
-            var genusType = new GenusType { Name = name, Lake = lake };
+            var genusType = new GenusType { Name = name.Trim(), Lake = lake };
+
             try
             {
                 this.dataContext.GenusTypes.Add(genusType);
@@ -100,7 +101,7 @@
 
                 var lake = this.dataContext.Lakes.First(l => l.Id == lakeId);
 
-                genusType.Name = name;
+                genusType.Name = name.Trim();
 
                 genusType.Lake = lake;
 

@@ -24,7 +24,7 @@
 
         public AddResult Add(string name, double latitude, double longitude, string userName)
         {
-            var locale = new Locale { Name = name, Latitude = latitude, Longitude = longitude };
+            var locale = new Locale { Name = name.Trim(), Latitude = latitude, Longitude = longitude };
 
             this.dataContext.Locales.Add(locale);
 

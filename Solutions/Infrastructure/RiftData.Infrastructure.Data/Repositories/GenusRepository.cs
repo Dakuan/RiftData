@@ -26,7 +26,7 @@
         {
             var genusType = this.dataContext.GenusTypes.First(t => t.Id == genusTypeId);
 
-            if (this.dataContext.Genus.Any(g => g.Name == name))
+            if (this.dataContext.Genus.Any(g => g.Name == name.Trim()))
             {
                 return AddResult.AlreadyExists;
             }
@@ -91,7 +91,7 @@
         {
             var genus = this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
 
-            genus.Name = userName;
+            genus.Name = userName.Trim();
 
             try
             {
