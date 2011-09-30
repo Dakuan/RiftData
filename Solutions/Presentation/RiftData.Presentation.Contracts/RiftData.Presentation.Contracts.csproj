@@ -58,6 +58,7 @@
     <Compile Include="ViewModelFactories\Admin\ILakeUpdatePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ILocaleIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ILocaleUpdatePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Admin\IPhotosIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ISpeciesEditPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ISpeciesPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IFishPageViewModelFactory.cs" />

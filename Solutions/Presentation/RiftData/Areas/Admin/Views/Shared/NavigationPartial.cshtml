@@ -6,9 +6,9 @@
         <li>
             @this.Html.ActionLink("Home", "Index", "Home", null, new { @class = this.Model == SelectedView.Home ? "current" : "" })
         </li>
-        @*            <li>
-                @Html.ActionLink("Photos", "Index", "Photos", null, new { @class = Model == SelectedView.Photos ? "current" : "" })
-            </li>*@
+        <li>
+            @Html.ActionLink("Photos", "Index", "Photos", null, new { @class = Model == SelectedView.Photos ? "current" : "" })
+        </li>
         <li>
             @this.Html.ActionLink("Fish", "Index", "Fish", null, new { @class = this.Model == SelectedView.Fish ? "current" : "" })
         </li>
@@ -28,7 +28,7 @@
             @this.Html.ActionLink("Lakes", "Index", "Lakes", null, new { @class = this.Model == SelectedView.Lake ? "current" : ""})
         </li>
         <li class="right">
-            <a href="riftdata.apphb.com">Main Site</a>
+            <a href="http://riftdata.apphb.com">Main Site</a>
         </li>
     </ul>
 </div>

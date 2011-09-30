@@ -68,6 +68,7 @@
     <Compile Include="Admin\Locale\LocaleUpdateFormViewModel.cs" />
     <Compile Include="Admin\Locale\LocaleUpdatePageViewModel.cs" />
     <Compile Include="Admin\Account\LogOnModel.cs" />
+    <Compile Include="Admin\Photos\PhotosIndexPageViewModel.cs" />
     <Compile Include="Admin\Shared\MessageBoxViewModel.cs" />
     <Compile Include="Admin\Shared\NavigationPartialViewModel.cs" />
     <Compile Include="Admin\Shared\PhotoReelElementViewModel.cs" />

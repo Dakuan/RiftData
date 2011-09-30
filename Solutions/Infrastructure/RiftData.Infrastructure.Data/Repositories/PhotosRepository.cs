@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data.Repositories
+﻿using Castle.Core;
+
+namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -143,6 +145,15 @@
             }
 
             return true;
+        }
+
+        public IList<Photo> GetAll()
+        {
+            var dictionary = new Dictionary<Photo, IPhotoSubject>();
+
+            this.dataContext.Fish.Where(f => f.Photos.Count > 0).ToList().ForEach(x => x.Photos.ToList().ForEach(y => dictionary.Add(y, x)));
+
+            return AddCaptionsForPhotos(dictionary).ToList();
         }
 
         private static IEnumerable<Photo> AddCaptionsForPhotos(Dictionary<Photo, IPhotoSubject> dictionary)

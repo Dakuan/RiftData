@@ -26,5 +26,7 @@
         Photo GetSingleForGenusType(int genusTypeId);
 
         bool AddCaption(int photoId, string caption);
+
+        IList<Photo> GetAll();
     }
 }

@@ -1,4 +1,6 @@
-﻿using RiftData.Domain.Repositories;
+﻿
+using RiftData.Domain.Repositories;
+using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
 
 namespace RiftData.Areas.Admin.Controllers
 {
@@ -9,10 +11,12 @@ namespace RiftData.Areas.Admin.Controllers
     public class PhotosController : Controller
     {
         private readonly IPhotosRepository photosRepository;
+        private readonly IPhotosIndexPageViewModelFactory photosIndexPageViewModelFactory;
 
-        public PhotosController(IPhotosRepository photosRepository)
+        public PhotosController(IPhotosRepository photosRepository, IPhotosIndexPageViewModelFactory photosIndexPageViewModelFactory)
         {
             this.photosRepository = photosRepository;
+            this.photosIndexPageViewModelFactory = photosIndexPageViewModelFactory;
         }
 
         public ActionResult Cancel(string Id)
@@ -26,6 +30,11 @@ namespace RiftData.Areas.Admin.Controllers
         }
 
         public ActionResult Index()
+        {
+            return View(this.photosIndexPageViewModelFactory.Build());
+        }
+
+        public ActionResult GetPhotoUploader()
         {
             return this.PartialView("PhotoUploaderContent");
         }

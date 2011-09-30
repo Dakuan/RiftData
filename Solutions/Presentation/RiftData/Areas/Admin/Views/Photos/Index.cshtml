@@ -1,0 +1,54 @@
+﻿@model RiftData.Presentation.ViewModels.Admin.Photos.PhotosIndexPageViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Navigation {
+    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+}
+
+<div id="body"> 
+    <div class="portlet">
+        <div class="portlet-header">
+            Photos
+        </div>
+        <div class="portlet-content">
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Subject</td>
+                        <td>Caption</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Photos)
+                    {
+                        <tr>
+                            <td><img src="@item.ThumbNailUrl" /></td>
+                            <td>@item.Title</td>
+                            <td>@item.Caption</td>
+                            <td>
+                                <div class="buttonRow">
+                                    <button>
+                                        <span>
+                                            Edit
+                                        </span>
+                                    </button>
+                                    <button>
+                                        <span>
+                                            Delete
+                                        </span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
