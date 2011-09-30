@@ -490,7 +490,7 @@ div#title
 }
 #contentHolder
 {
-    max-height: 490px;
+    max-height: 460px;
     overflow: auto;
 }
 .cameraPicBlank
