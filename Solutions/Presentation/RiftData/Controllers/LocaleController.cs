@@ -21,12 +21,15 @@ namespace RiftData.Controllers
         private readonly ILocalePageViewModelFactory localePageViewModelFactory;
         private readonly IGenusRepository genusRepository;
 
-        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocalesRepository localeRepository, ILocalePageViewModelFactory localePageViewModelFactory, IGenusRepository genusRepository)
+        private readonly ILakeRepository lakeRepository;
+
+        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocalesRepository localeRepository, ILocalePageViewModelFactory localePageViewModelFactory, IGenusRepository genusRepository, ILakeRepository lakeRepository)
         {
             this.localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
             this.localeRepository = localeRepository;
             this.localePageViewModelFactory = localePageViewModelFactory;
             this.genusRepository = genusRepository;
+            this.lakeRepository = lakeRepository;
         }
 
         public ActionResult GetInfoBox(int id)
@@ -71,9 +74,13 @@ namespace RiftData.Controllers
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetWithSpecies(id).ToDtoList()};
         }
 
-        public ActionResult GetLocalesForZoomLevel(int id)
+        public ActionResult GetLocalesForZoomLevel(int id, int? lakeId)
         {
-            var data = this.localeRepository.GetForZoomLevel(id).ToDtoList().ToList();
+            if (lakeId == null)
+            {
+                lakeId = this.lakeRepository.GetFirst().Id;
+            }
+            var data = this.localeRepository.GetForLakeAtZoomLevel(id, Convert.ToInt16(lakeId)).ToDtoList().ToList();
 
             var testData = data.StripToBasic();
 

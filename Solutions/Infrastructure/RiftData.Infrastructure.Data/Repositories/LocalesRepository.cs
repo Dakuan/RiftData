@@ -136,5 +136,10 @@
         {
             return this.dataContext.Locales.Where(l => l.Lake.Id == lakeId).ToList();
         }
+
+        public IList<Locale> GetForLakeAtZoomLevel(int zoomLevel, int lakeId)
+        {
+            return this.GetForZoomLevel(zoomLevel).Where(x => x.Lake.Id == lakeId).ToList();
+        }
     }
 }

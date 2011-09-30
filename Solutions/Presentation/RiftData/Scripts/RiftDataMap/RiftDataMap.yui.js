@@ -39,6 +39,19 @@ var RiftDataMap = function () {
             labelOverlay: Microsoft.Maps.LabelOverlay.hidden
         });
 
+        //get the locations for the lake we are oN
+        var locations = new Array();
+
+        service.getLocalesForZoomLevel(7, function (data) {
+            $.each(data, function () {
+                console.log(data);
+                locations.push(new Microsoft.Maps.Location(this.Latitude, this.Longitude));
+            });
+            var locationRect = Microsoft.Maps.LocationRect.fromLocations(locations);
+
+            map.setView({ bounds: locationRect });
+        });
+
         //SetLabelTileLayer();
 
         _attachEventHandlers();

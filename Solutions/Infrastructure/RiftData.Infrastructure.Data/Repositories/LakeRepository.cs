@@ -78,5 +78,10 @@
         {
             return this.dataContext.Lakes.Where(l => l.GenusTypes.Count > 0).ToList();
         }
+
+        public Lake GetFirst()
+        {
+            return this.dataContext.Lakes.First();
+        }
     }
 }

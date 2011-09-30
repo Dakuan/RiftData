@@ -11,14 +11,18 @@ namespace RiftData.ApplicationServices.ViewModelFactories
     {
         private readonly IGenusRepository genusRepository;
 
-        public GenusPanelViewModelFactory(IGenusRepository genusRepository)
+        private readonly IGenusTypeRepository genusTypeRepository;
+
+        public GenusPanelViewModelFactory(IGenusRepository genusRepository, IGenusTypeRepository genusTypeRepository)
         {
             this.genusRepository = genusRepository;
+            this.genusTypeRepository = genusTypeRepository;
         }
 
         public GenusPanelViewModel Build(int genusTypeId)
         {
-            return new GenusPanelViewModel { GenusList = this.genusRepository.GetOfType(genusTypeId).ToDtoList() };
+            var genusType = this.genusTypeRepository.Get(genusTypeId);
+            return new GenusPanelViewModel { GenusList = this.genusRepository.GetOfType(genusTypeId).ToDtoList(), LakeId = genusType.Lake.Id};
         }
 
         public GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpecies)

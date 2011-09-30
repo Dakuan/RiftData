@@ -24,5 +24,7 @@ namespace RiftData.Domain.Repositories
         UpdateResult Update(int localeId, string name, double latitude, double longitude, string userName);
 
         IList<Locale> GetByLake(int lakeId);
+
+        IList<Locale> GetForLakeAtZoomLevel(int zoomLevel, int lakeId);
     }
 }

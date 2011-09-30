@@ -11,5 +11,7 @@
         public int ExpandedGenus { get; set; }
 
         public int SelectedSpecies { get; set; }
+
+        public int LakeId { get; set; }
     }
 }

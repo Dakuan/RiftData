@@ -24,6 +24,7 @@
     @this.Html.Hidden("GetLocalesForZoomLevel", this.Url.Action("GetLocalesForZoomLevel", "Locale"))
     @this.Html.Hidden("GetLocaleLabel", this.Url.Action("GetLocaleLabel", "Locale"))
     @this.Html.Hidden("LocaleInfoBoxUrl", this.Url.Action("GetInfoBox", "Locale"))
+    @Html.Hidden("LakeId", Model.GenusPanelViewModel.LakeId)
 </div>
 <div class="clear"></div>
 @section Scripts{
