@@ -129,6 +129,39 @@
   <ItemGroup>
     <Content Include="App_Readme\glimpse.mvc3.readme.txt" />
     <Content Include="App_Readme\glimpse.readme.txt" />
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.chirp.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\JQueryShare\jsShare.min.css">
+      <DependentUpon>jsShare.chirp.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\JQueryShare\jsShare.min.js">
+      <DependentUpon>jsShare.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageScripts\fish.min.js">
+      <DependentUpon>fish.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageScripts\home.min.js">
+      <DependentUpon>home.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageScripts\locale.min.js">
+      <DependentUpon>locale.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageScripts\Species.min.js">
+      <DependentUpon>Species.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageScripts\_layout.min.js">
+      <DependentUpon>_layout.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PrettyPhoto\js\jquery.prettyPhoto.min.js">
+      <DependentUpon>jquery.prettyPhoto.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\RiftDataMap\RiftDataMap.min.js">
+      <DependentUpon>RiftDataMap.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\RiftDataMap\RiftDataMapService.min.js">
+      <DependentUpon>RiftDataMapService.yui.js</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\ChangePassword.aspx" />
     <Content Include="Views\Shared\ChangePasswordSuccess.aspx" />
     <Content Include="Content\Mobile\mobile.css" />
@@ -149,8 +182,8 @@
     <Content Include="Scripts\JQueryShare\images\twitter.png" />
     <Content Include="Scripts\JQueryShare\index.htm" />
     <Content Include="Scripts\JQueryShare\jquery-1.4.4.min.js" />
-    <Content Include="Scripts\JQueryShare\jsShare.css" />
-    <Content Include="Scripts\JQueryShare\jsShare.js" />
+    <Content Include="Scripts\JQueryShare\jsShare.chirp.css" />
+    <Content Include="Scripts\JQueryShare\jsShare.yui.js" />
     <Content Include="Scripts\Mobile\Mobile.js" />
     <Content Include="Scripts\Photoswipe\code.photoswipe.jquery-2.1.3.min.js" />
     <Content Include="Scripts\Photoswipe\error.gif" />
@@ -229,7 +262,7 @@
     <Content Include="Scripts\PrettyPhoto\js\jquery-1.3.2.min.js" />
     <Content Include="Scripts\PrettyPhoto\js\jquery-1.4.4.min.js" />
     <Content Include="Scripts\PrettyPhoto\js\jquery-1.6.1.min.js" />
-    <Content Include="Scripts\PrettyPhoto\js\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\PrettyPhoto\js\jquery.prettyPhoto.yui.js" />
     <Content Include="Views\Shared\LogOn.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Register.aspx" />
@@ -858,7 +891,7 @@
     <Content Include="Content\PiroBox\t_l.png" />
     <Content Include="Content\PiroBox\t_r.png" />
     <Content Include="Content\RiftDataBanner.jpg" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Site.chirp.css" />
     <Content Include="Global.asax" />
     <Content Include="Mvc.Sitemap">
       <SubType>Designer</SubType>
@@ -913,18 +946,18 @@
     <Content Include="Scripts\Admin\SpeciesIndex.js" />
     <Content Include="Scripts\Admin\SpeciesUpdate.js" />
     <Content Include="Scripts\jQueryUI\jquery-ui-1.8.15.custom.min.js" />
-    <Content Include="Scripts\PageScripts\fish.js" />
-    <Content Include="Scripts\PageScripts\home.js" />
-    <Content Include="Scripts\PageScripts\locale.js" />
+    <Content Include="Scripts\PageScripts\fish.yui.js" />
+    <Content Include="Scripts\PageScripts\home.yui.js" />
+    <Content Include="Scripts\PageScripts\locale.yui.js" />
     <Content Include="Scripts\PageScripts\piroBox.js" />
-    <Content Include="Scripts\PageScripts\Species.js" />
+    <Content Include="Scripts\PageScripts\Species.yui.js" />
     <Content Include="Scripts\PiroBox\pirobox.js" />
     <Content Include="Scripts\PiroBox\pirobox.min.js" />
     <Content Include="Scripts\RiftDataMap\Controls\RiftDataMapLabel.js" />
-    <Content Include="Scripts\RiftDataMap\RiftDataMapService.js" />
+    <Content Include="Scripts\RiftDataMap\RiftDataMapService.yui.js" />
     <Content Include="Scripts\RiftDataMap\Controls\CustomInfoBox.js" />
-    <Content Include="Scripts\RiftDataMap\RiftDataMap.js" />
-    <Content Include="Scripts\PageScripts\_layout.js" />
+    <Content Include="Scripts\RiftDataMap\RiftDataMap.yui.js" />
+    <Content Include="Scripts\PageScripts\_layout.yui.js" />
     <Content Include="Scripts\tiny_mce\langs\en.js" />
     <Content Include="Scripts\tiny_mce\license.txt" />
     <Content Include="Scripts\tiny_mce\plugins\advhr\css\advhr.css" />
@@ -1180,6 +1213,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="packages.config" />
+    <Content Include="_layout.css">
+      <DependentUpon>mash.chirp.config</DependentUpon>
+    </Content>
+    <Content Include="_layout.js">
+      <DependentUpon>mash.chirp.config</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ApplicationServices\RiftData.ApplicationServices\RiftData.ApplicationServices.csproj">
@@ -1315,6 +1354,7 @@
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />
     <None Include="Content\Admin\Images\silk\Thumbs.db" />
     <None Include="Content\Admin\Images\tables\Thumbs.db" />
+    <Content Include="mash.chirp.config" />
     <None Include="Scripts\JQueryShare\MyriadPro-Regular.otf" />
     <None Include="Scripts\Photoswipe\README.md" />
     <Content Include="Web.Debug.Config">

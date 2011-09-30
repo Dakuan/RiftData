@@ -1,0 +1,101 @@
+﻿body{background-color:white;font-size:75%;font-family:'Arimo',sans-serif;margin:0;padding:0;color:#696969;background-image:url('../../Content/header-bg.png')}
+p{margin-bottom:20px;line-height:1.6em}
+h1,h2,h3,h4,h5,h6{font-family:'Ubuntu',sans-serif;font-weight:400;font-style:italic;font-size:1.5em;color:#323232}
+h1{font-size:2em;padding-bottom:0;margin-bottom:0}
+h2{font-weight:bold;padding:0 0 10px 0}
+h3{font-weight:bold;font-size:1.2em}
+h4{font-weight:bold;font-size:1.1em}
+h5,h6{font-size:1em}
+.rightColumn>h1,.rightColumn>h2,.leftColumn>h1,.leftColumn>h2{margin-top:0}
+.page{width:90%;margin-left:auto;margin-right:auto}
+#header{position:relative;margin-bottom:0;color:#000;padding:0}
+#header h1{font-weight:bold;padding:5px 0;margin:0;color:#fff;border:0;line-height:2em;font-size:32px!important}
+#main{padding:30px 30px 15px 30px;background-color:#fff;margin-bottom:30px;_height:1px}
+#footer{color:#999;padding:10px 0;text-align:center;line-height:normal;margin:0;font-size:.9em}
+ul#menu{border-bottom:1px #5C87B2 solid;padding:0 0 2px;position:relative;margin:0;text-align:right}
+ul#menu li{display:inline;list-style:none}
+ul#menu li#greeting{padding:10px 20px;font-weight:bold;text-decoration:none;line-height:2.8em;color:#fff}
+ul#menu li a{padding:10px 20px;font-weight:bold;text-decoration:none;line-height:2.8em;background-color:#e8eef4;color:#034af3}
+ul#menu li a:hover{background-color:#fff;text-decoration:none}
+ul#menu li a:active{background-color:#a6e2a6;text-decoration:none}
+ul#menu li.selected a{background-color:#fff;color:#000}
+fieldset{border:1px solid #ddd;padding:0 1.4em 1.4em 1.4em;margin:0 0 1.5em 0}
+legend{font-size:1.2em;font-weight:bold}
+textarea{min-height:75px}
+input[type="text"]{width:200px;border:1px solid #CCC}
+input[type="password"]{width:200px;border:1px solid #CCC}
+.clear{clear:both}
+.error{color:Red}
+#menucontainer{margin-top:40px}
+div#title{display:block;float:left;text-align:left}
+#logindisplay{font-size:1.1em;display:block;text-align:right;margin:10px;color:White}
+#logindisplay a:link{color:white;text-decoration:underline}
+#logindisplay a:visited{color:white;text-decoration:underline}
+#logindisplay a:hover{color:white;text-decoration:none}
+.field-validation-error{color:#f00}
+.field-validation-valid{display:none}
+.input-validation-error{border:1px solid #f00;background-color:#fee}
+.validation-summary-errors{font-weight:bold;color:#f00}
+.validation-summary-valid{display:none}
+.display-label,.editor-label{margin:1em 0 0 0}
+.display-field,.editor-field{margin:.5em 0 0 0}
+.text-box{width:30em}
+.text-box.multi-line{height:6.5em}
+.tri-state{width:6em}
+#PageContainer{width:1024px;height:702px;margin-left:auto;margin-right:auto;background-image:url('../../Content/page-bg.jpg');background-color:#fff;border-width:2px;border-color:#feffde;-moz-box-shadow:0 0 40px #000;-webkit-box-shadow:0 0 40px #000;box-shadow:0 0 40px #000;-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:0 0 10px 10px}
+#TabContainer{width:240px}
+#GenusPanel{width:220px;margin-top:10px;margin-left:10px}
+.panels{float:left}
+#LeftPanel{width:240px;margin-left:-1px;margin-right:-4px}
+#CenterPanel{width:450px;padding:10px;margin-top:-1px}
+#RightPanel{width:314px;height:100%;float:right}
+#LocaleMap{width:314px;position:absolute;height:600px}
+#LocaleMap.div.div.div.div.div{font-size:smaller}
+.t-panelbar{max-height:580px;overflow:auto}
+.photoCell{float:left}
+.t-link .panelBarItemImage{width:50px;height:25px;float:none;margin-left:-15px;margin-right:-10px}
+.horiztonalList li{float:left;list-style:none}
+#InfoContainer{margin-bottom:30px}
+.infoBlock{height:150px;max-width:195px;float:left}
+.infoBlock ul{overflow:auto}
+.horizontalList{margin-left:-30px}
+.horiztonalList li h3{margin-top:0;margin-right:5px}
+#LocalesList{height:125px;width:165px;overflow:auto;font-size:.95em}
+#PhotoCellContainer{margin-left:17px}
+#CenterPanelContent{background-image:url('../Content/CenterPanel/centerPanel-bg.png');background-repeat:repeat-x;background-position:center;border-width:2px;border-color:white;-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;-moz-box-shadow:0 0 20px #000;-webkit-box-shadow:0 0 20px #000;box-shadow:0 0 20px #000;border-style:solid;padding:20px;margin-top:10px;margin-left:5px;margin-right:5px;max-height:500px}
+#CenterPanelContent p{margin-bottom:0}
+#CenterPanelContent h2{margin-top:0}
+#LocalesList ul{list-style:none;margin-left:-40px}
+#LocalesList ul li{margin-bottom:5px}
+#contentHolder{max-height:460px;overflow:auto}
+.cameraPicBlank{width:25px;height:16px;float:left;margin-right:5px}
+.localeListImage{margin-bottom:-4px}
+#Header{height:100px;background-color:White;background-image:url('../Content/header-bg.jpg');border-bottom-width:2px;border-style:solid;border-top-width:0;border-left-width:0;border-right-width:0;border-color:#007EBD}
+#Header h1{margin:0;margin-top:3px;font-size:34pt;color:#046;text-shadow:0 1px 3px #3BF;float:left}
+#Logo{float:left;height:60px}
+#LocaleInfoBoxContainer{z-index:1000;position:absolute}
+.localeLabel{color:White;font-size:smaller;text-align:center}
+#Footer{height:15px;background-image:url('../../Content/header-bg.jpg')}
+#HeaderButtonsContainer{float:right;height:20px}
+.headerButton{background-color:#046;-moz-box-shadow:0 1px 3px #3BF;-webkit-box-shadow:0 1px 3px #3BF;box-shadow:0 1px 3px #3BF;-moz-border-radius:10px;-webkit-border-radius:8px;border-radius:10px;padding:8px;margin-top:3px;margin-right:4px;color:white;float:left}
+#HeaderMenu a{text-decoration:none}
+.headerButtonHover{background-color:#3BF;-moz-box-shadow:1px 1px 3px #046;-webkit-box-shadow:1px 1px 3px #046;box-shadow:0 1px 2px #046;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;padding:8px;margin-top:3px;margin-right:4px;color:white;float:left}
+#HeaderTabs{margin-left:5px;height:30px;margin-top:-27px}
+#HeaderTabs a{text-decoration:none}
+.headerTab{background-color:#046;-moz-box-shadow:0 1px 3px #3BF;-webkit-box-shadow:0 1px 3px #3BF;box-shadow:1px -1px 3px #3BF;-moz-border-radius:0 0 10px 10px;-webkit-border-radius:0 0 10px 10px;border-radius:10px 10px 0 0;padding:8px;margin-right:2px;color:white;float:left}
+.headerTabSelected{-moz-border-radius:0 0 10px 10px;-webkit-border-radius:0 0 10px 10px;border-radius:10px 10px 0 0;padding:8px;margin-right:2px;color:white;float:left;border-width:1px;border-color:#046;border-style:solid;border-bottom-width:0}
+#HeaderMenu{height:20px;margin-left:5px}
+.divider{border-style:solid;border-color:#046;border-bottom-width:1px;border-top-width:0}
+#LogoContainer{float:right;margin-right:30px}
+#GenusPanel .t-widget{border-width:0;color:white}
+#GenusPanel .t-panelbar .t-link{border-width:0}
+.t-widget,div.t-combobox,.t-input{border-width:0;background:0}
+.t-panelbar .t-item{-moz-border-radius:7px;-webkit-border-radius:7px;border-radius:7px;margin-bottom:3px}
+#GenusPanel .t-panelbar .t-link{border-radius:7px}
+.t-panelbar .t-group,.t-panelbar .t-content{border-style:none}
+.t-panelbar .t-group,.t-panelbar .t-content{-moz-border-radius:0 0 7px 7px;-webkit-border-radius:0 0 7px 7px;border-radius:0 0 7px 7px;background:url('../Content/2011.2.712/Transparent/widget.png')}
+#GenusPanel ul.t-panelbar .t-state-hover{background:url('../Content/2011.2.712/Transparent/widget.png');color:white}
+#GenusPanel ul.t-panelbar .t-group .t-item .t-state-hover{border-width:0;border-style:none;color:#046}
+#GenusPanel .t-state-selected{-moz-border-radius:7px 7px 0 0!Important;-webkit-border-radius:7px 7px 0 0!Important;border-radius:7px 7px 0 0!Important;color:#3BF}
+.infoContainer{margin:30px!Important}
+#plusOne{margin-top:10px}
