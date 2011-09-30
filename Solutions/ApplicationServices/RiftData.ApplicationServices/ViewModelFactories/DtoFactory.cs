@@ -44,7 +44,10 @@ namespace RiftData.ApplicationServices.ViewModelFactories
         {
             var speciesList = new List<SpeciesDto>();
 
-            genus.Species.ToList().ForEach(s => speciesList.Add(Build(s)));
+            if (genus.Species != null)
+            {
+                genus.Species.ToList().ForEach(s => speciesList.Add(Build(s)));
+            }
 
             return new GenusDto { Id = genus.Id, Name = genus.Name, Species = speciesList };
         }

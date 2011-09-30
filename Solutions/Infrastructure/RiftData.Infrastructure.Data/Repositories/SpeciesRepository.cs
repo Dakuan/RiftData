@@ -26,6 +26,11 @@
         {
             var genus = this.dataContext.Genus.First(g => g.Id == genusId);
 
+            if (temperamentId == 0)
+            {
+                temperamentId = 1;
+            }
+
             var temperament = this.dataContext.Temperaments.First(t => t.Id == temperamentId);
 
             var species = new Species { Described = described, Genus = genus, Name = name, Description = description, MinSize = minSize, MaxSize = maxSize, Temperament = temperament };
