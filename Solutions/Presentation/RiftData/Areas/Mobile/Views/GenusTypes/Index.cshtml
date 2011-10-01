@@ -13,7 +13,7 @@
                 <a href="@Url.Action("Index", "Genus", new { genusName = item.Key.Name })">
                     <img src="@(item.Value != null ? item.Value.SquareThumbnail : Url.Content("~/Content/ThumbNailPlaceHolder.png"))" height="80"/>
                     <h3>@item.Key.Name</h3>
-                    <p>@string.Join(", ", item.Key.Species.Select(x => x.Name))</p>
+                    <p>@string.Join(", ", item.Key.Species.OrderBy(x => x.Name).Select(x => x.Name))</p>
                 </a>
             </li>
          }
