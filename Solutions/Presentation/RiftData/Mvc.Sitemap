@@ -6,5 +6,12 @@
     <mvcSiteMapNode title="Fish" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.FishControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
     <mvcSiteMapNode title="Locale" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.LocaleControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
     <mvcSiteMapNode title="Lake" action="Index" dynamicNodeProvider="RiftData.Presentation.SiteMap.LakeControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
+    <mvcSiteMapNode title="MobileHome" controller="Home" action="Index" area="Mobile">
+
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="MobileGenusTypes" action="Index" dynamicNodeProvider ="RiftData.Presentation.SiteMap.Mobile.GenusTypeControllerDynamicNodeProvider, RiftData.Presentation.SiteMap" />
+    <mvcSiteMapNode title="MobileGenus" action="Index" dynamicNodeProvider ="RiftData.Presentation.SiteMap.Mobile.GenusControllerDynamicNodeProvider, RiftData.Presentation.SiteMap"/>
+    <mvcSiteMapNode title="MobileSpecies" action="Index" dynamicNodeProvider ="RiftData.Presentation.SiteMap.Mobile.SpeciesControllerDynamicNodeProvider, RiftData.Presentation.SiteMap"/>
+    <mvcSiteMapNode title="MobileSpecies" action="Index" dynamicNodeProvider ="RiftData.Presentation.SiteMap.Mobile.SpeciesControllerDynamicNodeProvider, RiftData.Presentation.SiteMap"/>
   </mvcSiteMapNode>
 </mvcSiteMap>
