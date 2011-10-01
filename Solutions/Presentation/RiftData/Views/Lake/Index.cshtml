@@ -16,7 +16,7 @@
        {
             <h3>Locales</h3>
             <p>
-                @Html.Raw(string.Join(", ", Model.Locales.Select(x => Html.ActionLink(x.Name, "Index", "Locale", new { localeName = x.Name }))))
+                @Html.Raw(string.Join(", ", Model.Locales.Select(x => Html.ActionLink(x.Name, "Index", "Locale", new { localeName = x.Name }, null))))
             </p>
        } }
     </div>
