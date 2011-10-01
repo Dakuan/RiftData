@@ -16,10 +16,7 @@
        {
             <h3>Locales</h3>
             <p>
-                @foreach (var locale in Model.Locales)
-                {
-                    <a href="@this.Url.Action("Index", "Locale", new { localeName = locale.Name })">@locale.Name</a> <text>, </text>
-                }
+                @Html.Raw(string.Join(", ", Model.Locales.Select(x => Html.ActionLink(x.Name, "Index", "Locale", new { localeName = x.Name }))))
             </p>
        } }
     </div>
