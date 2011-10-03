@@ -15,6 +15,8 @@
         <link href="@Url.Content("~/Scripts/JQueryShare/jsShare.min.css")" rel="stylesheet" type="text/css" />
         <link href="@this.Url.Content("~/Content/Site.min.css")" rel="stylesheet" type="text/css" />
         <link href="@Url.Content("~/Scripts/PrettyPhoto/css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+
+        @RenderSection("CSS", false)
         <script type="text/javascript" src="http://apis.google.com/js/plusone.js"> </script>   
         <meta name="keywords" content="@this.Model.Keywords" />
         <meta name="descripton" content="@this.Model.Description" />

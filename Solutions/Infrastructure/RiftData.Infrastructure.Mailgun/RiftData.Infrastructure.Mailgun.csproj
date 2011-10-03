@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\Referenced Assemblies\CastleWindsor\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\Referenced Assemblies\CastleWindsor\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -42,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Installers\MailgunInstaller.cs" />
     <Compile Include="Mailbox.cs" />
     <Compile Include="Mailgun.cs" />
     <Compile Include="MailgunException.cs" />
@@ -52,7 +59,6 @@
     <Compile Include="Route.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Installers\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

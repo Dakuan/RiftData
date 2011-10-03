@@ -30,7 +30,7 @@
 @section Scripts{
     @this.Html.Telerik().ScriptRegistrar().DefaultGroup(group => group.DefaultPath("~/Scripts/2011.2.712")).jQuery(false)
     <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"> </script>
-    <script src="@Url.Content("~/Scripts/RiftDataMap/RiftDataMapService.yui.js")" type="text/javascript"> </script>
-    <script src="@Url.Content("~/Scripts/RiftDataMap/RiftDataMap.yui.js")" type="text/javascript"> </script> 
+    <script src="@Url.Content("~/Scripts/RiftDataMap/RiftDataMapService.min.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/RiftDataMap/RiftDataMap.min.js")" type="text/javascript"> </script> 
     @this.RenderSection("Scripts", false)
 }

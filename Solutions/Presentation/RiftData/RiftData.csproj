@@ -116,6 +116,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LakeController.cs" />
     <Compile Include="Controllers\LocaleController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SpeciesController.cs" />
     <Compile Include="Controllers\Factory\WindsorControllerFactory.cs" />
@@ -141,6 +142,10 @@
     <Content Include="Scripts\PageScripts\fish.min.js">
       <DependentUpon>fish.yui.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\PageScripts\helpus.min.js">
+      <DependentUpon>helpus.yui.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\PageScripts\helpus.yui.js" />
     <Content Include="Scripts\PageScripts\home.min.js">
       <DependentUpon>home.yui.js</DependentUpon>
     </Content>
@@ -1236,6 +1241,10 @@
     <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Flickr\RiftData.Infrastructure.Flickr.csproj">
       <Project>{E9398CFE-0318-4A15-AF0B-1BC2DEE4C85D}</Project>
       <Name>RiftData.Infrastructure.Flickr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Mailgun\RiftData.Infrastructure.Mailgun.csproj">
+      <Project>{4502F2FE-1B2D-47C6-9A42-881A6FC398BC}</Project>
+      <Name>RiftData.Infrastructure.Mailgun</Name>
     </ProjectReference>
     <ProjectReference Include="..\RiftData.Presentation.Contracts\RiftData.Presentation.Contracts.csproj">
       <Project>{E32B17CA-EE88-4F92-A6EE-25C3EE640139}</Project>

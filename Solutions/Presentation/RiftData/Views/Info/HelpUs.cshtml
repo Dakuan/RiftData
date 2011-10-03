@@ -3,10 +3,44 @@
     this.Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
-
 <div id="CenterPanelContent" class="infoContainer">
     <h2>Help Us</h2>
     <p>
-        We really need your help, especially with collating photos and other data. If have any photos you would like to donate, please <a href="mailto:dom.barker808@gmail.com?subject=RiftData">get in touch</a>. Additionally if you see any mistakes or omissions <a href="mailto:dom.barker808@gmail.com?subject=RiftData">drop us a line</a> too.
+        We really need your help, especially with collating photos and other data. If have any photos you would like to donate, please <a class="message" href="#">get in touch</a>. Additionally if you see any mistakes or omissions <a class="message" href="#">drop us a line</a> too.
     </p>
 </div>
+@Html.Hidden("SendMessageUrl", Url.Action("Send", "Mail" ))
+@{Html.Telerik().Window().Name("Message").Title("Send RiftData a message").Width(500).Height(340).Modal(true).Visible(false).Content(
+@<text>
+    @using (Html.BeginForm("Send", "Mail", FormMethod.Post, new { id = "form" }))
+    {
+        <label>Your Name:</label>
+        <br/>
+        <br/>
+        @Html.TextBox("Name", null, new { @class = "validate[required]" })
+        <br/>
+        <br/>
+        <label>Your Email:</label>
+        <br/>
+        <br/>
+        @Html.TextBox("Email", null, new { @class = "validate[required,custom[email]]" })
+        <br/>
+        <br/>
+        <label>Your Message:</label>
+        <textarea cols="57" rows="10" id="messageText"></textarea>
+        <a id="SendMessage" href="#" class="headerButton">Send Message</a>
+    }
+
+
+</text>).Render();}
+
+@section CSS{
+    <link href="../../Content/Admin/CSS/validationEngine.jquery.css" rel="stylesheet" type="text/css" />
+}
+
+@section Scripts{
+    @Html.Telerik().ScriptRegistrar()
+    <script src="../../Scripts/Admin/jquery.validationEngine.js" type="text/javascript"></script>
+    <script src="../../Scripts/Admin/jquery.validationEngine-en.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/PageScripts/helpus.yui.js")" type="text/javascript"></script>
+}

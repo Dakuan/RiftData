@@ -62,6 +62,7 @@
     <Compile Include="AccountServices\FormsAuthenticationService.cs" />
     <Compile Include="Extensions\DtoStrippingExtenstions.cs" />
     <Compile Include="Extensions\ToDtoListExtensions.cs" />
+    <Compile Include="Installers\MailerInstaller.cs" />
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Installers\ViewModelFactoryInstaller.cs" />
     <Compile Include="Mailer\Mailer.cs" />
@@ -106,6 +107,10 @@
     <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Data\RiftData.Infrastructure.Data.csproj">
       <Project>{04BB9AC8-E597-45BC-AAFA-771F17FD1F4E}</Project>
       <Name>RiftData.Infrastructure.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\RiftData.Infrastructure.Mailgun\RiftData.Infrastructure.Mailgun.csproj">
+      <Project>{4502F2FE-1B2D-47C6-9A42-881A6FC398BC}</Project>
+      <Name>RiftData.Infrastructure.Mailgun</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Presentation\RiftData.Presentation.Contracts\RiftData.Presentation.Contracts.csproj">
       <Project>{E32B17CA-EE88-4F92-A6EE-25C3EE640139}</Project>

@@ -17,6 +17,7 @@ namespace RiftData
     using RiftData.Domain.Installers;
     using RiftData.Infrastructure.Data.Installers;
     using RiftData.Infrastructure.Flickr;
+    using RiftData.Infrastructure.Mailgun.Installers;
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -45,6 +46,8 @@ namespace RiftData
             routes.MapRoute("Fish", "Fish/{fishName}", new { controller = "Fish", action = "Index" }, new[] { "RiftData.Controllers" });
 
             routes.MapRoute("Lake", "Lake/{lakeName}", new { controller = "Lake", action = "Index" }, new[] { "RiftData.Controllers" });
+
+            //routes.MapRoute("Mail", "Mail/{message}", new { controller = "Mail", action = "Index" }, new[] { "RiftData.Controllers" });
 
             routes.MapRoute("Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
@@ -88,7 +91,7 @@ namespace RiftData
 
             container.Install(FromAssembly.Containing<FactoriesInstaller>());
 
-            // container.Install(FromAssembly.Containing<RepositoriesInstaller>());
+            container.Install(FromAssembly.Containing<MailgunInstaller>());
             container.Install(FromAssembly.Containing<ServicesInstaller>());
 
             container.Install(FromAssembly.Containing<ViewModelFactoryInstaller>());
