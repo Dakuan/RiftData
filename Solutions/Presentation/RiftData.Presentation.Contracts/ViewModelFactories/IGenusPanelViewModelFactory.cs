@@ -1,5 +1,6 @@
-namespace RiftData.Presentation.Contracts
+namespace RiftData.Presentation.Contracts.ViewModelFactories
 {
+    using RiftData.Domain.Entities;
     using RiftData.Presentation.ViewModels;
 
     public interface IGenusPanelViewModelFactory
@@ -8,6 +9,6 @@ namespace RiftData.Presentation.Contracts
 
         GenusPanelViewModel Build(int genusTypeId, int selectedGenusId, int selectedSpeciesId);
 
-        GenusPanelViewModel Build();
+        GenusPanelViewModel Build(Lake lake);
     }
 }

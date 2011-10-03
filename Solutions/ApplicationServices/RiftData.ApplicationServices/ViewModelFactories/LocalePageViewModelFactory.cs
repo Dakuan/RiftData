@@ -6,6 +6,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts;
+    using RiftData.Presentation.Contracts.ViewModelFactories;
     using RiftData.Presentation.ViewModels;
 
     public class LocalePageViewModelFactory : ILocalePageViewModelFactory
@@ -36,7 +37,17 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
             var fish = this.fishRepository.GetByLocale(locale.Id).ToDtoList();
 
-            var viewModel = new LocalePageViewModel { Locale = DtoFactory.Build(locale), Fish = fish, HeaderViewModel = headerViewModel, PhotoGallery = this.photoGalleryViewModelFactory.Build(locale), GenusPanelViewModel = this.genusPanelViewModelFactory.Build(1), Description = string.Format("Information and map for {0}, Lake {1}", locale.Name, locale.Lake.Name), Keywords = string.Format("Lake {0}, {1}", locale.Lake.Name, string.Join(", ", fish.Select(x => x.Name))) };
+            var viewModel = new LocalePageViewModel 
+                { 
+                    Locale = DtoFactory.Build(locale), 
+                    Fish = fish, 
+                    HeaderViewModel = headerViewModel, 
+                    PhotoGallery = this.photoGalleryViewModelFactory.Build(locale), 
+                    GenusPanelViewModel = this.genusPanelViewModelFactory.Build(locale.Lake), 
+                    Description = string.Format("Information and map for {0}, Lake {1}", locale.Name, locale.Lake.Name), 
+                    Keywords = string.Format("Lake {0}, {1}", locale.Lake.Name, string.Join(", ", fish.Select(x => x.Name)))
+                    
+                };
 
             return viewModel;
         }

@@ -7,6 +7,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories
     using RiftData.Domain.Entities;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts;
+    using RiftData.Presentation.Contracts.ViewModelFactories;
     using RiftData.Presentation.ViewModels;
 
     public class SpeciesPageViewModelFactory : ISpeciesPageViewModelFactory

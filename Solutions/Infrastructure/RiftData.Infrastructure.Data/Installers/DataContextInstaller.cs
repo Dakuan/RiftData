@@ -9,7 +9,7 @@
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<RiftDataDataContext>().LifeStyle.Is(LifestyleType.Thread));
+            container.Register(Component.For<RiftDataDataContext>().LifeStyle.Is(LifestyleType.PerWebRequest));
         }
     }
 }

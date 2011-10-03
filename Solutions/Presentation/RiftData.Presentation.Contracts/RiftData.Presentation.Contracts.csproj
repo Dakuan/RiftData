@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AccountServices\IFormsAuthenticationService.cs" />
     <Compile Include="AccountServices\IMembershipService.cs" />
+    <Compile Include="Mailer\IMailer.cs" />
     <Compile Include="ViewModelFactories\Admin\IFishEditPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\IFishPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\IGenusCreatePageViewModelFactory.cs" />
