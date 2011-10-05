@@ -1,4 +1,6 @@
-﻿namespace RiftData.Controllers
+﻿using System;
+
+namespace RiftData.Controllers
 {
     using System.Web.Mvc;
 
@@ -16,9 +18,17 @@
 
         public ActionResult Index(string speciesFullName)
         {
-            var viewModel = this.speciesPageViewModelFactory.Build(speciesFullName);
+            try
+            {
+                var viewModel = this.speciesPageViewModelFactory.Build(speciesFullName);
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch(Exception)
+            {
+                //todo, log this
+                return RedirectToAction("NoFish", "Error");
+            }
         }
     }
 }

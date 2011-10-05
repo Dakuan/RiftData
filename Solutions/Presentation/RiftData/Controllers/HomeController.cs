@@ -26,9 +26,17 @@
                 genusTypeName = "Mbuna";
             }
 
-            var viewModel = this.homePageViewModelFactory.Build(genusTypeName);
+            try
+            {
+                var viewModel = this.homePageViewModelFactory.Build(genusTypeName);
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch(Exception)
+            {
+                //todo, log this
+                return RedirectToAction("NoFish", "Error");
+            }
         }
     }
 }
