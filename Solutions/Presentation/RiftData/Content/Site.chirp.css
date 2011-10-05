@@ -170,6 +170,10 @@ ul#menu li.selected a
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
+label
+{
+    margin-bottom:20px;    
+}
 
 fieldset 
 {
@@ -712,4 +716,14 @@ div#title
 #plusOne
 {
     margin-top:10px;
+}
+#form label
+{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+.t-header, .t-grid-header, .t-grouping-header, .t-tooltip, .t-grid-pager
+{
+    background-image: url('../Content/header-bg.jpg');
+    text-decoration:none;
 }

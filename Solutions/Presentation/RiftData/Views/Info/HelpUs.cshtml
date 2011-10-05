@@ -10,21 +10,17 @@
     </p>
 </div>
 @Html.Hidden("SendMessageUrl", Url.Action("Send", "Mail" ))
-@{Html.Telerik().Window().Name("Message").Title("Send RiftData a message").Width(500).Height(340).Modal(true).Visible(false).Content(
+@{Html.Telerik().Window().Name("Message").Title("Send RiftData a message").Width(500).Height(300).Modal(true).Visible(false).Content(
 @<text>
-    @using (Html.BeginForm("Send", "Mail", FormMethod.Post, new { id = "form" }))
+    @using (Html.BeginForm("Send", "Mail", FormMethod.Post, new { id = "form", @class = "emailForm" }))
     {
         <label>Your Name:</label>
         <br/>
-        <br/>
         @Html.TextBox("Name", null, new { @class = "validate[required]" })
-        <br/>
         <br/>
         <label>Your Email:</label>
         <br/>
-        <br/>
         @Html.TextBox("Email", null, new { @class = "validate[required,custom[email]]" })
-        <br/>
         <br/>
         <label>Your Message:</label>
         <textarea cols="57" rows="10" id="messageText"></textarea>

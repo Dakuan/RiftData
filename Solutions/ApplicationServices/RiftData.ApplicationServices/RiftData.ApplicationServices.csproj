@@ -82,6 +82,7 @@
     <Compile Include="ViewModelFactories\Admin\LocaleUpdatePageViewModel.cs" />
     <Compile Include="ViewModelFactories\Admin\SpeciesEditPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\SpeciesPageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\BaseViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\DtoFactory.cs" />
     <Compile Include="ViewModelFactories\FishPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\GenusPanelViewModelFactory.cs" />

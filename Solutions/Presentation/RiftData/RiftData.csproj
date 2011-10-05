@@ -110,6 +110,7 @@
     <Compile Include="Areas\Mobile\Controllers\SpeciesController.cs" />
     <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
     <Compile Include="Attributes\CompressAttribute.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FishController.cs" />
     <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Controllers\Installers\ControllersInstaller.cs" />
@@ -130,6 +131,7 @@
   <ItemGroup>
     <Content Include="App_Readme\glimpse.mvc3.readme.txt" />
     <Content Include="App_Readme\glimpse.readme.txt" />
+    <Content Include="Content\Error\sadpuppy.jpg" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.chirp.css</DependentUpon>
     </Content>
@@ -1363,7 +1365,9 @@
     <None Include="Content\Admin\Images\portlet\Thumbs.db" />
     <None Include="Content\Admin\Images\silk\Thumbs.db" />
     <None Include="Content\Admin\Images\tables\Thumbs.db" />
-    <Content Include="mash.chirp.config" />
+    <Content Include="mash.chirp.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\JQueryShare\MyriadPro-Regular.otf" />
     <None Include="Scripts\Photoswipe\README.md" />
     <Content Include="Web.Debug.Config">
@@ -1371,6 +1375,7 @@
     </Content>
     <None Include="Scripts\PrettyPhoto\images\.DS_Store" />
     <None Include="Scripts\PrettyPhoto\images\fullscreen\.DS_Store" />
+    <Content Include="Views\Error\NoFish.cshtml" />
     <None Include="Web.Release.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
