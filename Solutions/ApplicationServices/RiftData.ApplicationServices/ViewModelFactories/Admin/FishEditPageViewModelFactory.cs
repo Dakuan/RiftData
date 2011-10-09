@@ -2,6 +2,7 @@
 using RiftData.Domain.Extensions;
 using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
 using RiftData.Presentation.ViewModels.Admin.Fish;
+using RiftData.Presentation.ViewModels.Admin.Shared;
 
 namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
@@ -13,6 +14,7 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
     public class FishEditPageViewModelFactory : IFishEditPageViewModelFactory
     {
+        private readonly INavigationViewModelFactory navigationViewModelFactory;
         private readonly IFishRepository fishRepository;
 
         private readonly IGenusRepository genusRepository;
@@ -21,8 +23,9 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
         private readonly ISpeciesRepository speciesRepository;
 
-        public FishEditPageViewModelFactory(IFishRepository fishRepository, ILocalesRepository localesRepository, IGenusRepository genusRepository, ISpeciesRepository speciesRepository)
+        public FishEditPageViewModelFactory(INavigationViewModelFactory navigationViewModelFactory, IFishRepository fishRepository, ILocalesRepository localesRepository, IGenusRepository genusRepository, ISpeciesRepository speciesRepository)
         {
+            this.navigationViewModelFactory = navigationViewModelFactory;
             this.fishRepository = fishRepository;
             this.localesRepository = localesRepository;
             this.genusRepository = genusRepository;
@@ -35,12 +38,12 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
             {
                 var genuslist = this.genusRepository.GetAll();
                 var speciesList = this.speciesRepository.GetSpeciesWithGenus(genuslist[0].Id);
-                return new FishEditPageViewModel(fishId) { Locales = this.localesRepository.GetAll().ToList().ToSelectList("select a locale"), Genus = genuslist.ToSelectList("select a genus"), Species = speciesList.ToSelectList("select a species"), MessageBoxVisible = showSuccessMessage != null ? true : false, MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial" };
+                return new FishEditPageViewModel(fishId) { NavigationViewModel  =  this.navigationViewModelFactory.Build(SelectedView.Fish), Locales = this.localesRepository.GetAll().ToList().ToSelectList("select a locale"), Genus = genuslist.ToSelectList("select a genus"), Species = speciesList.ToSelectList("select a species"), MessageBoxVisible = showSuccessMessage != null ? true : false, MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial" };
             }
 
             var fish = this.fishRepository.GetFish(fishId);
 
-            var viewModel = new FishEditPageViewModel(fishId) { Locales = this.localesRepository.GetByLake(fish.Genus.GenusType.Lake.Id).ToSelectList(fish.Locale.Id), Genus = this.genusRepository.GetAll().ToSelectList(fish.Genus.Id), Species = this.speciesRepository.GetSpeciesWithGenus(fish.Genus.Id).ToSelectList(fish.Species.Id), Name = fish.Name, Photos = fish.Photos.ToList().ToDtoList(), Description = HttpUtility.HtmlDecode(fish.Description), MessageBoxVisible = showSuccessMessage != null ? true : false, MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial" };
+            var viewModel = new FishEditPageViewModel(fishId) { NavigationViewModel = this.navigationViewModelFactory.Build(SelectedView.Fish), Locales = this.localesRepository.GetByLake(fish.Genus.GenusType.Lake.Id).ToSelectList(fish.Locale.Id), Genus = this.genusRepository.GetAll().ToSelectList(fish.Genus.Id), Species = this.speciesRepository.GetSpeciesWithGenus(fish.Genus.Id).ToSelectList(fish.Species.Id), Name = fish.Name, Photos = fish.Photos.ToList().ToDtoList(), Description = HttpUtility.HtmlDecode(fish.Description), MessageBoxVisible = showSuccessMessage != null ? true : false, MessageBoxContentSource = Convert.ToBoolean(showSuccessMessage) ? "UpdateSuccessPartial" : "UpdateFailurePartial" };
 
             return viewModel;
         }

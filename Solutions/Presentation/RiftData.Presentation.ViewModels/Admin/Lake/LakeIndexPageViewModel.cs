@@ -8,11 +8,6 @@ namespace RiftData.Presentation.ViewModels.Admin.Lake
 
     public class LakeIndexPageViewModel : Shared.ViewModelBase
     {
-        public LakeIndexPageViewModel()
-        {
-            this.SelectedView = SelectedView.Lake;
-        }
-
         public IList<LakeDto> Lakes { get; set; }
     }
 }

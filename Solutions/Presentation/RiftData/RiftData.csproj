@@ -135,6 +135,14 @@
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.chirp.css</DependentUpon>
     </Content>
+    <Content Include="Scripts\Admin\_layout.js" />
+    <Content Include="Scripts\Azure\azure.chart.js" />
+    <Content Include="Scripts\Azure\azure.js" />
+    <Content Include="Scripts\Azure\azure.message.js" />
+    <Content Include="Scripts\Azure\azure.nav.js" />
+    <Content Include="Scripts\Azure\azure.portlet.js" />
+    <Content Include="Scripts\Azure\azure.styleswitch.js" />
+    <Content Include="Scripts\Azure\jquery.hoverIntent.min.js" />
     <Content Include="Scripts\JQueryShare\jsShare.min.css">
       <DependentUpon>jsShare.chirp.css</DependentUpon>
     </Content>

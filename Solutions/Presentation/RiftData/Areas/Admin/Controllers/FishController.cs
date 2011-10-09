@@ -1,5 +1,6 @@
 ﻿using RiftData.Domain.Extensions;
 using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
+using RiftData.Presentation.ViewModels.Admin.Fish;
 
 namespace RiftData.Areas.Admin.Controllers
 {

@@ -80,6 +80,7 @@
     <Compile Include="ViewModelFactories\Admin\LakeUpdatePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\LocaleIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\LocaleUpdatePageViewModel.cs" />
+    <Compile Include="ViewModelFactories\Admin\NavigationViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\SpeciesEditPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\SpeciesPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\BaseViewModelFactory.cs" />

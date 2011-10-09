@@ -10,8 +10,6 @@ namespace RiftData.Presentation.ViewModels.Admin.Fish
         public FishEditPageViewModel(int id)
         {
             this.Id = id;
-
-            this.SelectedView = SelectedView.Fish;
         }
 
         public string Description { get; set; }

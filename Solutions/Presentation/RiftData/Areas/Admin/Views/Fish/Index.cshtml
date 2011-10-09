@@ -7,7 +7,7 @@
     this.Layout = "../Shared/_Layout.cshtml";
 }
 @section Navigation {
-@this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+@this.Html.Partial("NavigationPartial", this.Model.NavigationViewModel)
 }
 
 <div id="body"> 
@@ -30,15 +30,7 @@
                         <span>Reset filter</span>
                     </button>
                 </li>
-            </ul>
-            <ul class="portlet-tab-nav">
-                @foreach (var type in this.Model.GenusTypes)
-                {
-                    <li class="@(type.Id == this.Model.Type.Id ? "portlet-tab-nav-active" : "")">
-                        @this.Html.ActionLink(type.Name, "Index", new { id = type.Id })
-                    </li>
-                }
-            </ul>
+            </ul>s
         </div>
         <div class="portlet-content">
             <table>

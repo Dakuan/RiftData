@@ -12,14 +12,16 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 
     public class FishPageViewModelFactory : IFishPageViewModelFactory
     {
+        private readonly INavigationViewModelFactory navigationViewModelFactory;
         private readonly IFishRepository fishRepository;
 
         private readonly IGenusRepository genusRepository;
 
         private readonly IGenusTypeRepository genusTypeRepository;
 
-        public FishPageViewModelFactory(IFishRepository fishRepository, IGenusRepository genusRepository, IGenusTypeRepository genusTypeRepository)
+        public FishPageViewModelFactory(INavigationViewModelFactory navigationViewModelFactory, IFishRepository fishRepository, IGenusRepository genusRepository, IGenusTypeRepository genusTypeRepository)
         {
+            this.navigationViewModelFactory = navigationViewModelFactory;
             this.fishRepository = fishRepository;
             this.genusRepository = genusRepository;
             this.genusTypeRepository = genusTypeRepository;
@@ -29,7 +31,13 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         {
             var genusList = this.genusRepository.GetOfType(id);
 
-            var viewModel = new FishIndexPageViewModel { SelectedView = SelectedView.Fish, Fish = this.fishRepository.GetOfType(id).ToList().ToDtoList(), Type = DtoFactory.Build(this.genusTypeRepository.Get(id)), GenusList = genusList.ToSelectList("select a genus"), GenusTypes = this.genusTypeRepository.GetAll().ToList().ToDtoList() };
+            var viewModel = new FishIndexPageViewModel
+                                {
+                                    NavigationViewModel = this.navigationViewModelFactory.Build(SelectedView.Fish),
+                                    Fish = this.fishRepository.GetOfType(id).ToList().ToDtoList(),
+                                    Type = DtoFactory.Build(this.genusTypeRepository.Get(id)),
+                                    GenusList = genusList.ToSelectList("select a genus")
+                                };
 
             return viewModel;
         }

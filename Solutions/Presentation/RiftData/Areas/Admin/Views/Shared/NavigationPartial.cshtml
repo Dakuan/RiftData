@@ -1,34 +1,49 @@
 ﻿@using RiftData.Presentation.ViewModels.Admin
 @using RiftData.Presentation.ViewModels.Admin.Shared
-@model SelectedView
+@model NavigationPartialViewModel
 <div id="nav" class="clearfix">
     <ul>
         <li>
-            @this.Html.ActionLink("Home", "Index", "Home", null, new { @class = this.Model == SelectedView.Home ? "current" : "" })
+            @this.Html.ActionLink("Home", "Index", "Home", null, new { @class = this.Model.SelectedView == SelectedView.Home ? "current" : "" })
         </li>
         @*            <li>
                 @Html.ActionLink("Photos", "Index", "Photos", null, new { @class = Model == SelectedView.Photos ? "current" : "" })
             </li>*@
-        <li>
-            @this.Html.ActionLink("Fish", "Index", "Fish", null, new { @class = this.Model == SelectedView.Fish ? "current" : "" })
+        <li class="hasSubNav hover">
+            <a href="javascript:">Fish</a>
+            <div class="sub_nav three_col">
+                @foreach (var lake in Model.Lakes){
+                    <div class="col">
+                        <h3>@lake.Name</h3>
+                        <ul>
+                            @foreach (var type in lake.GenusTypes)
+                            {
+                                <li>
+                                    @Html.ActionLink(type.Name, "Index", "Fish", new { id = type.Id }, new { style="z-index:3000;", @class = "multicollink" })
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
         </li>
         <li>
-            @this.Html.ActionLink("Genus Types", "Index", "GenusTypes", null, new { @class = this.Model == SelectedView.GenusTypes ? "current" : "" })
+            @this.Html.ActionLink("Genus Types", "Index", "GenusTypes", null, new { @class = this.Model.SelectedView == SelectedView.GenusTypes ? "current" : "" })
         </li>
         <li>
-            @this.Html.ActionLink("Genus", "Index", "Genus", null, new { @class = this.Model == SelectedView.Genus ? "current" : "" })
+            @this.Html.ActionLink("Genus", "Index", "Genus", null, new { @class = this.Model.SelectedView == SelectedView.Genus ? "current" : "" })
         </li>
         <li>
-            @this.Html.ActionLink("Species", "Index", "Species", null, new { @class = this.Model == SelectedView.Species ? "current" : "" })
+            @this.Html.ActionLink("Species", "Index", "Species", null, new { @class = this.Model.SelectedView == SelectedView.Species ? "current" : "" })
         </li>
         <li>
-            @this.Html.ActionLink("Locales", "Index", "Locales", null, new { @class = this.Model == SelectedView.Locales ? "current" : "" })
+            @this.Html.ActionLink("Locales", "Index", "Locales", null, new { @class = this.Model.SelectedView == SelectedView.Locales ? "current" : "" })
         </li>
         <li>
-            @this.Html.ActionLink("Lakes", "Index", "Lakes", null, new { @class = this.Model == SelectedView.Lake ? "current" : ""})
+            @this.Html.ActionLink("Lakes", "Index", "Lakes", null, new { @class = this.Model.SelectedView == SelectedView.Lake ? "current" : ""})
         </li>
         <li class="right">
-            <a href="riftdata.apphb.com">Main Site</a>
+            <a href="http://riftdata.apphb.com">Main Site</a>
         </li>
     </ul>
 </div>

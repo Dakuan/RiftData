@@ -6,11 +6,6 @@ namespace RiftData.Presentation.ViewModels.Admin.GenusType
 
     public class GenusTypeCreatePageViewModel : Shared.ViewModelBase
     {
-        public GenusTypeCreatePageViewModel()
-        {
-            this.SelectedView = SelectedView.GenusTypes;
-        }
-
         public SelectList Lakes { get; set; }
     }
 }

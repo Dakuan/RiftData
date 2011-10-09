@@ -6,11 +6,6 @@ namespace RiftData.Presentation.ViewModels.Admin.Home
 {
     public class HomePageViewModel : Shared.ViewModelBase
     {
-        public HomePageViewModel()
-        {
-            this.SelectedView = SelectedView.Home;
-        }
-
         public IList<UserLogDto> UserLogs { get; set; }
     }
 }

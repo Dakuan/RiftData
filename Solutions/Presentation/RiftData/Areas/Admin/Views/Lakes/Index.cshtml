@@ -5,7 +5,7 @@
     this.Layout = "../Shared/_Layout.cshtml";
 }
 @section Navigation{
-    @this.Html.Partial("NavigationPartial", this.Model.SelectedView)
+    @this.Html.Partial("NavigationPartial", this.Model.NavigationViewModel)
 }
 
 <div id ="body">

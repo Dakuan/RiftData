@@ -1,15 +1,9 @@
 ﻿using System.Web.Mvc;
-using RiftData.Presentation.ViewModels.Admin.Shared;
 
 namespace RiftData.Presentation.ViewModels.Admin.Species
 {
     public class SpeciesEditPageViewModel : Shared.ViewModelBase
     {
-        public SpeciesEditPageViewModel()
-        {
-            this.SelectedView = SelectedView.Species;
-        }
-
         public bool Described { get; set; }
 
         public string Description { get; set; }

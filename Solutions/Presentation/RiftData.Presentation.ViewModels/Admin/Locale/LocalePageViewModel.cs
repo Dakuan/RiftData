@@ -7,11 +7,6 @@ namespace RiftData.Presentation.ViewModels.Admin.Locale
 {
     public class LocalePageViewModel : Shared.ViewModelBase
     {
-        public LocalePageViewModel()
-        {
-            this.SelectedView = SelectedView.Locales;
-        }
-
         public IList<LocaleDto> Locales { get; set; }
 
         public SelectList LocalesSelectList { get; set; }

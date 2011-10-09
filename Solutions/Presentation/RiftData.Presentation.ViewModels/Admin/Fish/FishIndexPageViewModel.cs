@@ -7,16 +7,9 @@ namespace RiftData.Presentation.ViewModels.Admin.Fish
 {
     public class FishIndexPageViewModel : Shared.ViewModelBase
     {
-        public FishIndexPageViewModel()
-        {
-            this.SelectedView = SelectedView.Fish;
-        }
-
         public IEnumerable<FishDto> Fish { get; set; }
 
         public SelectList GenusList { get; set; }
-
-        public IEnumerable<GenusTypeDto> GenusTypes { get; set; }
 
         public GenusTypeDto Type { get; set; }
     }

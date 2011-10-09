@@ -1,5 +1,6 @@
 ﻿using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
 using RiftData.Presentation.ViewModels.Admin.Genus;
+using RiftData.Presentation.ViewModels.Admin.Shared;
 
 namespace RiftData.ApplicationServices.ViewModelFactories.Admin
 {
@@ -10,18 +11,20 @@ namespace RiftData.ApplicationServices.ViewModelFactories.Admin
         private readonly IGenusRepository genusRepository;
 
         private readonly ILakeRepository lakeRepository;
+        private readonly INavigationViewModelFactory navigationViewModelFactory;
 
-        public GenusUpdatePageViewModelFactory(IGenusRepository genusRepository, ILakeRepository lakeRepository)
+        public GenusUpdatePageViewModelFactory(IGenusRepository genusRepository, ILakeRepository lakeRepository, INavigationViewModelFactory navigationViewModelFactory)
         {
             this.genusRepository = genusRepository;
             this.lakeRepository = lakeRepository;
+            this.navigationViewModelFactory = navigationViewModelFactory;
         }
 
         public GenusUpdatePageViewModel Build(int genusId)
         {
             var genus = this.genusRepository.Get(genusId);
 
-            var viewModel = new GenusUpdatePageViewModel { Id = genusId, Name = genus.Name,  };
+            var viewModel = new GenusUpdatePageViewModel { NavigationViewModel = this.navigationViewModelFactory.Build(SelectedView.Genus), Id = genusId, Name = genus.Name, };
 
             return viewModel;
         }

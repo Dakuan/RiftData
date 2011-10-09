@@ -7,10 +7,5 @@ namespace RiftData.Presentation.ViewModels.Admin.GenusType
     public class GenusTypeIndexPageViewModel : Shared.ViewModelBase
     {
         public IEnumerable<GenusTypeDto> GenusTypes;
-
-        public GenusTypeIndexPageViewModel()
-        {
-            this.SelectedView = SelectedView.GenusTypes;
-        }
     }
 }
