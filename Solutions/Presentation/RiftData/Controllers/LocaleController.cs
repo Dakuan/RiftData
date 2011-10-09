@@ -71,7 +71,7 @@ namespace RiftData.Controllers
 
         public ActionResult GetLocalesBySpecies(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetWithSpecies(id).ToDtoList()};
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localeRepository.GetWithSpecies(id).ToDtoList().StripToBasic()};
         }
 
         public ActionResult GetLocalesForZoomLevel(int id, int? lakeId)
