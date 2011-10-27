@@ -1,9 +1,8 @@
-﻿using RiftData.ApplicationServices.Extensions;
-
-namespace RiftData.ApplicationServices.ViewModelFactories
+﻿namespace RiftData.ApplicationServices.ViewModelFactories
 {
     using System.Collections.Generic;
 
+    using RiftData.ApplicationServices.Extensions;
     using RiftData.Domain.Entities;
     using RiftData.Domain.Repositories;
     using RiftData.Presentation.Contracts;
@@ -51,7 +50,13 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public HeaderViewModel Build(Fish fish)
         {
-            var viewModel = new HeaderViewModel { Lakes = this.lakeRepository.GetAll().ToDtoList(), SelectedGenusTypeId = fish.Genus.GenusType.Id, SelectedLakeId = fish.Locale.Lake.Id, GenusTypes = this.genusTypeRepository.GetFromLocale(fish.Locale.Id).ToDtoList() };
+            var viewModel = new HeaderViewModel
+                {
+                    Lakes = this.lakeRepository.GetAll().ToDtoList(), 
+                    SelectedGenusTypeId = fish.Genus.GenusType.Id, 
+                    SelectedLakeId = fish.Locale.Lake.Id, 
+                    GenusTypes = this.genusTypeRepository.GetFromLake(fish.Locale.Lake.Id).ToDtoList()
+                };
 
             return viewModel;
         }
