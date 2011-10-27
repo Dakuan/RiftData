@@ -84,7 +84,7 @@
 
         public Locale GetByFullName(string fullName)
         {
-            return this.dataContext.Locales.First(f => f.Name == fullName);
+            return this.dataContext.Locales.First(f => string.Equals(f.Name, fullName));
         }
 
         public IList<Locale> GetForZoomLevel(int zoomLevel)
