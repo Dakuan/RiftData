@@ -26,6 +26,7 @@ using RiftData.Domain.Repositories;
 namespace RiftData.UnitTests.Presenation.Controllers.Admin
 {
     public class FishControllerSpecs
+
     {
         public class context_for_fish_controller : Specification<FishController>
         {

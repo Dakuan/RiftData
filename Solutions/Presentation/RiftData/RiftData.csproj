@@ -149,6 +149,7 @@
     <Content Include="Scripts\JQueryShare\jsShare.min.js">
       <DependentUpon>jsShare.yui.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Knockout\knockout.js" />
     <Content Include="Scripts\PageScripts\fish.min.js">
       <DependentUpon>fish.yui.js</DependentUpon>
     </Content>
@@ -177,6 +178,7 @@
     <Content Include="Scripts\RiftDataMap\RiftDataMapService.min.js">
       <DependentUpon>RiftDataMapService.yui.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\RiftDataMap\ViewModels\RiftData.MapViewModel.js" />
     <Content Include="Views\Shared\ChangePassword.aspx" />
     <Content Include="Views\Shared\ChangePasswordSuccess.aspx" />
     <Content Include="Content\Mobile\mobile.css" />
@@ -1308,6 +1310,7 @@
     <Content Include="Views\Fish\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Scripts\RiftDataMap\Models\" />
     <Folder Include="Scripts\tiny_mce\plugins\example_dependency\" />
   </ItemGroup>
   <ItemGroup>
