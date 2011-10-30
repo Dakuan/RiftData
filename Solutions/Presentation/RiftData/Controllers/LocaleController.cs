@@ -89,9 +89,16 @@ namespace RiftData.Controllers
 
         public ActionResult Index(string localeName)
         {
-            var viewModel = this.localePageViewModelFactory.Build(localeName);
+            try
+            {
+                var viewModel = this.localePageViewModelFactory.Build(localeName);
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch
+            {
+                return RedirectToAction("NoLocale", "Error");
+            }
         }
     }
 }

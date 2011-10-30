@@ -26,5 +26,16 @@ namespace RiftData.Controllers
 
             return View(viewModel);
         }
+
+        public ActionResult NoLocale()
+        {
+            var viewModel = this.infoPageViewModelFactory.Build();
+
+            viewModel.Description = "Oh noes! Something went wrong!";
+
+            viewModel.Keywords = "Rift valley cichlids";
+
+            return View(viewModel);
+        }
     }
 }

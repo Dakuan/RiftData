@@ -1126,8 +1126,9 @@ INSERT INTO [dbo].[Locales] ([LocaleID], [LocaleLatitude], [LocaleLongitude], [L
 INSERT INTO [dbo].[Locales] ([LocaleID], [LocaleLatitude], [LocaleLongitude], [LocaleName], [LocaleZoomLevel], [LocaleLakeID], [LocaleDescription]) VALUES (234, -6.449047,29.84436, N'Siyeswe', 1, 2, NULL)	
 INSERT INTO [dbo].[Locales] ([LocaleID], [LocaleLatitude], [LocaleLongitude], [LocaleName], [LocaleZoomLevel], [LocaleLakeID], [LocaleDescription]) VALUES (235, -4.991082,29.733124, N'Ujiji', 1, 2, NULL)	
 INSERT INTO [dbo].[Locales] ([LocaleID], [LocaleLatitude], [LocaleLongitude], [LocaleName], [LocaleZoomLevel], [LocaleLakeID], [LocaleDescription]) VALUES (236, -7.462113,30.564213, N'Ulwile', 1, 2, NULL)	
-INSERT INTO [dbo].[Locales] ([LocaleID], [LocaleLatitude], [LocaleLongitude], [LocaleName], [LocaleZoomLevel], [LocaleLakeID], [LocaleDescription]) VALUES (237, -7.288914,30.16571, N'Zongwe', 1, 2, NULL)	
+INSERT INTO [dbo].[Locales] ([LocaleID], [LocaleLatitude], [LocaleLongitude], [LocaleName], [LocaleZoomLevel], [LocaleLakeID], [LocaleDescription]) VALUES (237, -7.288914,30.16571, N'Zongwe', 1, 2, NULL)
 
+INSERT INTO [dbo].[Locales] ([LocaleID], [LocaleLatitude], [LocaleLongitude], [LocaleName], [LocaleZoomLevel], [LocaleLakeID], [LocaleDescription]) VALUES (238, -7.149949,30.489807, N'Cape Korongwe', 1, 3, NULL)	
 
 
 

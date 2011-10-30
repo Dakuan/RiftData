@@ -1387,6 +1387,7 @@
     <None Include="Scripts\PrettyPhoto\images\.DS_Store" />
     <None Include="Scripts\PrettyPhoto\images\fullscreen\.DS_Store" />
     <Content Include="Views\Error\NoFish.cshtml" />
+    <Content Include="Views\Error\NoLocale.cshtml" />
     <None Include="Web.Release.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
