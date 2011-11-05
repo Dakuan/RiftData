@@ -65,6 +65,7 @@
     <Compile Include="Entities\Temperament.cs" />
     <Compile Include="Enums\AddResult.cs" />
     <Compile Include="Enums\DeleteResult.cs" />
+    <Compile Include="Enums\ItemType.cs" />
     <Compile Include="Enums\UpdateResult.cs" />
     <Compile Include="Extensions\FishExtensionMethods.cs" />
     <Compile Include="Extensions\GenusExtensionMethods.cs" />
