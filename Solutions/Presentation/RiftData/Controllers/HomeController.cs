@@ -1,4 +1,7 @@
-﻿namespace RiftData.Controllers
+﻿using RiftData.Domain.Enums;
+using RiftData.Presentation.Contracts.Mailer;
+
+namespace RiftData.Controllers
 {
     using System;
     using System.IO.Compression;
@@ -13,10 +16,12 @@
     public class HomeController : Controller
     {
         private readonly IHomePageViewModelFactory homePageViewModelFactory;
+        private readonly IMailer mailer;
 
-        public HomeController(IHomePageViewModelFactory homePageViewModelFactory)
+        public HomeController(IHomePageViewModelFactory homePageViewModelFactory, IMailer mailer)
         {
             this.homePageViewModelFactory = homePageViewModelFactory;
+            this.mailer = mailer;
         }
 
         public ActionResult Index(string genusTypeName)
@@ -32,9 +37,11 @@
 
                 return View(viewModel);
             }
-            catch(Exception)
+            catch(Exception exception)
             {
                 //todo, log this
+                this.mailer.LogNotFound(genusTypeName, ItemType.GenusType);
+
                 return RedirectToAction("NoFish", "Error");
             }
         }

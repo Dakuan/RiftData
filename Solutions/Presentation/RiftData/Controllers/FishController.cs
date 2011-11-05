@@ -1,4 +1,5 @@
 ﻿using System;
+using RiftData.Domain.Enums;
 using RiftData.Presentation.Contracts.Mailer;
 
 namespace RiftData.Controllers
@@ -30,7 +31,7 @@ namespace RiftData.Controllers
             catch (Exception exception)
             {
                 //todo, log this
-                this.mailer.LogError(exception);
+                this.mailer.LogNotFound(fishName, ItemType.Fish);
 
                 return RedirectToAction("NoFish", "Error");
             }

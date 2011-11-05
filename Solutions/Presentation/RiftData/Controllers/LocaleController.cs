@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RiftData.ApplicationServices.Extensions;
 using RiftData.ApplicationServices.ViewModelFactories;
+using RiftData.Domain.Enums;
 using RiftData.Domain.Repositories;
 using RiftData.Presentation.Contracts.Mailer;
 using RiftData.Presentation.ViewModels.Dto;
@@ -100,7 +101,7 @@ namespace RiftData.Controllers
             }
             catch(Exception exception)
             {
-                this.mailer.LogError(exception);
+                this.mailer.LogNotFound(localeName, ItemType.Locale);
 
                 return RedirectToAction("NoLocale", "Error");
             }

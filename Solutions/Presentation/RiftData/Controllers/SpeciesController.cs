@@ -1,4 +1,6 @@
 ﻿using System;
+using RiftData.Domain.Enums;
+using RiftData.Presentation.Contracts.Mailer;
 
 namespace RiftData.Controllers
 {
@@ -10,10 +12,12 @@ namespace RiftData.Controllers
     public class SpeciesController : Controller
     {
         private readonly ISpeciesPageViewModelFactory speciesPageViewModelFactory;
+        private readonly IMailer mailer;
 
-        public SpeciesController(ISpeciesPageViewModelFactory speciesPageViewModelFactory)
+        public SpeciesController(ISpeciesPageViewModelFactory speciesPageViewModelFactory, IMailer mailer)
         {
             this.speciesPageViewModelFactory = speciesPageViewModelFactory;
+            this.mailer = mailer;
         }
 
         public ActionResult Index(string speciesFullName)
@@ -24,9 +28,11 @@ namespace RiftData.Controllers
 
                 return View(viewModel);
             }
-            catch(Exception)
+            catch(Exception exception)
             {
                 //todo, log this
+                this.mailer.LogNotFound(speciesFullName, ItemType.Species);
+
                 return RedirectToAction("NoFish", "Error");
             }
         }
