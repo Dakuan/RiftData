@@ -15,7 +15,7 @@
 
         public ActionResult Send(string message, string name, string email)
         {
-            this.mailer.SendToAdmin(message, name, email);
+            this.mailer.SendHelpOffer(message, name, email);
 
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }

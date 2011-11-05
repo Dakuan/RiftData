@@ -1,4 +1,5 @@
 ﻿using System;
+using RiftData.Presentation.Contracts.Mailer;
 
 namespace RiftData.Controllers
 {
@@ -10,10 +11,12 @@ namespace RiftData.Controllers
     public class FishController : Controller
     {
         private readonly IFishPageViewModelFactory fishPageViewModelFactory;
+        private readonly IMailer mailer;
 
-        public FishController(IFishPageViewModelFactory fishPageViewModelFactory)
+        public FishController(IFishPageViewModelFactory fishPageViewModelFactory, IMailer mailer)
         {
             this.fishPageViewModelFactory = fishPageViewModelFactory;
+            this.mailer = mailer;
         }
 
         public ActionResult Index(string fishName)
@@ -24,9 +27,11 @@ namespace RiftData.Controllers
 
                 return View(viewModel);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 //todo, log this
+                this.mailer.LogError(exception);
+
                 return RedirectToAction("NoFish", "Error");
             }
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using RiftData.ApplicationServices.Extensions;
 using RiftData.ApplicationServices.ViewModelFactories;
 using RiftData.Domain.Repositories;
+using RiftData.Presentation.Contracts.Mailer;
 using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Controllers
@@ -22,14 +23,16 @@ namespace RiftData.Controllers
         private readonly IGenusRepository genusRepository;
 
         private readonly ILakeRepository lakeRepository;
+        private readonly IMailer mailer;
 
-        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocalesRepository localeRepository, ILocalePageViewModelFactory localePageViewModelFactory, IGenusRepository genusRepository, ILakeRepository lakeRepository)
+        public LocaleController(ILocaleInfoBoxViewModelFactory localeInfoBoxViewModelFactory, ILocalesRepository localeRepository, ILocalePageViewModelFactory localePageViewModelFactory, IGenusRepository genusRepository, ILakeRepository lakeRepository, IMailer mailer)
         {
             this.localeInfoBoxViewModelFactory = localeInfoBoxViewModelFactory;
             this.localeRepository = localeRepository;
             this.localePageViewModelFactory = localePageViewModelFactory;
             this.genusRepository = genusRepository;
             this.lakeRepository = lakeRepository;
+            this.mailer = mailer;
         }
 
         public ActionResult GetInfoBox(int id)
@@ -95,8 +98,10 @@ namespace RiftData.Controllers
 
                 return View(viewModel);
             }
-            catch
+            catch(Exception exception)
             {
+                this.mailer.LogError(exception);
+
                 return RedirectToAction("NoLocale", "Error");
             }
         }
