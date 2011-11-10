@@ -169,7 +169,11 @@ var RiftDataMap = function () {
 
                 infoBox.setLocation(loc);
 
-                infoBox.setOptions({ visible: true, offset: new Microsoft.Maps.Point(-110, 0), htmlContent: data.toString() });
+                var point = new Microsoft.Maps.Point(-110, -120);
+
+                infoBox.setOptions({ visible: true, offset: point, htmlContent: data.toString() });
+
+                console.log(point);
 
                 map.setView({ center: loc, zoom: zoom });
             };

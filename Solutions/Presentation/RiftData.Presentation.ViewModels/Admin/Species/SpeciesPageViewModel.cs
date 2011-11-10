@@ -4,7 +4,7 @@ using RiftData.Presentation.ViewModels.Dto;
 
 namespace RiftData.Presentation.ViewModels.Admin.Species
 {
-    public class SpeciesPageViewModel : Shared.ViewModelBase
+    public class SpeciesPageViewModel : Admin.Shared.ViewModelBase
     {
         public IEnumerable<SpeciesDto> Species { get; set; }
     }
