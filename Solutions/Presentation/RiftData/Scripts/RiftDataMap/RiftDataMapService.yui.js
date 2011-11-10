@@ -18,7 +18,7 @@
 
     this.getLocalesForZoomLevel = function (zoomLevel, callback) {
 
-        var url = $('#GetLocalesForZoomLevel').attr('value') + '/' + zoomLevel + "?lakeId=" + lakeId;
+        var url = $('#GetLocalesForZoomLevel').attr('value') + '/' + Math.round(zoomLevel) + "?lakeId=" + lakeId;
 
         $.get(url, callback);
     };
