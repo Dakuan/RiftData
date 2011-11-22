@@ -4,12 +4,16 @@ using RiftData.Domain.Repositories;
 
 namespace RiftData.ApplicationServices.ViewModelFactories
 {
+    using System.Collections.Generic;
     using System.Linq;
+
+    using Castle.Components.DictionaryAdapter;
 
     using RiftData.Domain.Entities;
     using RiftData.Presentation.Contracts;
     using RiftData.Presentation.Contracts.ViewModelFactories;
     using RiftData.Presentation.ViewModels;
+    using RiftData.Presentation.ViewModels.Dto;
 
     public class GenusPanelViewModelFactory : IGenusPanelViewModelFactory
     {
@@ -46,11 +50,13 @@ namespace RiftData.ApplicationServices.ViewModelFactories
 
         public GenusPanelViewModel Build(Lake lake)
         {
-            //get firstGenus type for lake
+            var genusType = this.genusTypeRepository.GetFromLake(lake.Id).FirstOrDefault();
 
-            var genusType = this.genusTypeRepository.GetFromLake(lake.Id).ToList()[0];
-
-            return this.Build(genusType.Id);
+            if (genusType != null)
+            {
+                return this.Build(genusType.Id);
+            }
+            return new GenusPanelViewModel { GenusList = new List<GenusDto>(), LakeId = lake.Id };
         }
     }
 }
