@@ -573,6 +573,7 @@ div#title
     margin-right: 4px;
     color: white;
     float: left;
+    text-shadow: 1px 1px 2px black;
     /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
 }
 #HeaderMenu a
@@ -593,6 +594,7 @@ div#title
     margin-top: 3px;
     margin-right: 4px;
     color: white;
+    text-shadow: 0 -1px 1px #555;
     float:left;
 }
 #HeaderTabs
@@ -618,6 +620,7 @@ div#title
     margin-right: 2px;
     color: white;
     float: left;
+    text-shadow: 1px 1px 2px black;
 }
 
 .headerTabSelected
@@ -633,6 +636,7 @@ div#title
     border-color: #046;
     border-style: solid;
     border-bottom-width: 0px;
+    text-shadow: 0 -1px 1px #444;
 }
 
 #HeaderMenu

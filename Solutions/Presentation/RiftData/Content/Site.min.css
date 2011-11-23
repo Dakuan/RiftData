@@ -19,6 +19,7 @@ ul#menu li a{padding:10px 20px;font-weight:bold;text-decoration:none;line-height
 ul#menu li a:hover{background-color:#fff;text-decoration:none}
 ul#menu li a:active{background-color:#a6e2a6;text-decoration:none}
 ul#menu li.selected a{background-color:#fff;color:#000}
+label{margin-bottom:20px}
 fieldset{border:1px solid #ddd;padding:0 1.4em 1.4em 1.4em;margin:0 0 1.5em 0}
 legend{font-size:1.2em;font-weight:bold}
 textarea{min-height:75px}
@@ -77,13 +78,13 @@ div#title{display:block;float:left;text-align:left}
 .localeLabel{color:White;font-size:smaller;text-align:center}
 #Footer{height:15px;background-image:url('../../Content/header-bg.jpg')}
 #HeaderButtonsContainer{float:right;height:20px}
-.headerButton{background-color:#046;-moz-box-shadow:0 1px 3px #3BF;-webkit-box-shadow:0 1px 3px #3BF;box-shadow:0 1px 3px #3BF;-moz-border-radius:10px;-webkit-border-radius:8px;border-radius:10px;padding:8px;margin-top:3px;margin-right:4px;color:white;float:left}
+.headerButton{background-color:#046;-moz-box-shadow:0 1px 3px #3BF;-webkit-box-shadow:0 1px 3px #3BF;box-shadow:0 1px 3px #3BF;-moz-border-radius:10px;-webkit-border-radius:8px;border-radius:10px;padding:8px;margin-top:3px;margin-right:4px;color:white;float:left;text-shadow:1px 1px 2px black}
 #HeaderMenu a{text-decoration:none}
-.headerButtonHover{background-color:#3BF;-moz-box-shadow:1px 1px 3px #046;-webkit-box-shadow:1px 1px 3px #046;box-shadow:0 1px 2px #046;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;padding:8px;margin-top:3px;margin-right:4px;color:white;float:left}
+.headerButtonHover{background-color:#3BF;-moz-box-shadow:1px 1px 3px #046;-webkit-box-shadow:1px 1px 3px #046;box-shadow:0 1px 2px #046;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;padding:8px;margin-top:3px;margin-right:4px;color:white;text-shadow:0 -1px 1px #555;float:left}
 #HeaderTabs{margin-left:5px;height:30px;margin-top:-27px}
 #HeaderTabs a{text-decoration:none}
-.headerTab{background-color:#046;-moz-box-shadow:0 1px 3px #3BF;-webkit-box-shadow:0 1px 3px #3BF;box-shadow:1px -1px 3px #3BF;-moz-border-radius:0 0 10px 10px;-webkit-border-radius:0 0 10px 10px;border-radius:10px 10px 0 0;padding:8px;margin-right:2px;color:white;float:left}
-.headerTabSelected{-moz-border-radius:0 0 10px 10px;-webkit-border-radius:0 0 10px 10px;border-radius:10px 10px 0 0;padding:8px;margin-right:2px;color:white;float:left;border-width:1px;border-color:#046;border-style:solid;border-bottom-width:0}
+.headerTab{background-color:#046;-moz-box-shadow:0 1px 3px #3BF;-webkit-box-shadow:0 1px 3px #3BF;box-shadow:1px -1px 3px #3BF;-moz-border-radius:0 0 10px 10px;-webkit-border-radius:0 0 10px 10px;border-radius:10px 10px 0 0;padding:8px;margin-right:2px;color:white;float:left;text-shadow:1px 1px 2px black}
+.headerTabSelected{-moz-border-radius:0 0 10px 10px;-webkit-border-radius:0 0 10px 10px;border-radius:10px 10px 0 0;padding:8px;margin-right:2px;color:white;float:left;border-width:1px;border-color:#046;border-style:solid;border-bottom-width:0;text-shadow:0 -1px 1px #444}
 #HeaderMenu{height:20px;margin-left:5px}
 .divider{border-style:solid;border-color:#046;border-bottom-width:1px;border-top-width:0}
 #LogoContainer{float:right;margin-right:30px}
@@ -99,3 +100,5 @@ div#title{display:block;float:left;text-align:left}
 #GenusPanel .t-state-selected{-moz-border-radius:7px 7px 0 0!Important;-webkit-border-radius:7px 7px 0 0!Important;border-radius:7px 7px 0 0!Important;color:#3BF}
 .infoContainer{margin:30px!Important}
 #plusOne{margin-top:10px}
+#form label{margin-bottom:10px;font-weight:bold}
+.t-header,.t-grid-header,.t-grouping-header,.t-tooltip,.t-grid-pager{background-image:url('../Content/header-bg.jpg');text-decoration:none}
