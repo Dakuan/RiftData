@@ -138,5 +138,13 @@
 
             return UpdateResult.Success;
         }
+
+        public IList<Fish> GetWithoutPhotos()
+        {
+            var fish =
+                this.dataContext.Fish.Where(f => f.Photos.Count == 0).SortFish().ToList();
+
+            return fish;
+        }
     }
 }

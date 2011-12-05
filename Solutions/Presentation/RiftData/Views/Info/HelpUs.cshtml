@@ -3,11 +3,38 @@
     this.Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
+@using RiftData.Presentation.ViewModels
+@model HelpPageViewModel
 <div id="CenterPanelContent" class="infoContainer">
-    <h2>Help Us</h2>
-    <p>
-        We really need your help, especially with collating photos and other data. If have any photos you would like to donate, please <a class="message" href="#">get in touch</a>. Additionally if you see any mistakes or omissions <a class="message" href="#">drop us a line</a> too.
-    </p>
+    <div id="contentHolder">
+        <h2>Help Us</h2>
+        <p>
+            We really need your help, especially with collating photos and other data. If have any photos you would like to donate, please <a class="message" href="#">get in touch</a>. Additionally if you see any mistakes or omissions <a class="message" href="#">drop us a line</a> too.
+        </p>
+        <h3>Photos</h3>
+        <p>We don't have photos for the following fish...</p>
+        @foreach (var group in Model.FishRequiringPhotos)
+        {
+            <h4>@group.First().Locale.Lake.Name</h4>
+            <ul>
+            @foreach (var fish in group)
+            {
+                <li><a target="_blank" href="@Url.Action("Index", "Fish", new {fishName = fish.UrlName})">@fish.Name</a></li>
+            }
+            </ul>
+        }
+        <h3>Fish</h3>
+        <p>We don't have locales for the following species</p>
+        @foreach (var group in Model.SpeciesRequiringLocales)
+        {
+            <ul>
+                @foreach (var species in group)
+                {
+                    <li><a href="@Url.Action("Index", "Species", new { speciesName = species.UrlName })">@species.Name</a></li>
+                }
+            </ul>
+        }
+    </div>
 </div>
 @Html.Hidden("SendMessageUrl", Url.Action("Send", "Mail" ))
 @{Html.Telerik().Window().Name("Message").Title("Send RiftData a message").Width(500).Height(300).Modal(true).Visible(false).Content(

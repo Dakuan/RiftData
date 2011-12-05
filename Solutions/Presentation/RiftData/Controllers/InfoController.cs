@@ -1,4 +1,5 @@
 ﻿using RiftData.Domain.Repositories;
+using RiftData.Presentation.Contracts.ViewModelFactories;
 
 namespace RiftData.Controllers
 {
@@ -10,13 +11,15 @@ namespace RiftData.Controllers
     [OutputCache(CacheProfile = "Daily")]
     public class InfoController : Controller
     {
+        private readonly IHelpPageViewModelFactory _helpPageViewModelFactory;
         private readonly IInfoPageViewModelFactory infoPageViewModelFactory;
         private readonly ILakeRepository lakeRepository;
 
         private readonly IGenusTypeRepository genusTypeRepository;
 
-        public InfoController(IInfoPageViewModelFactory infoPageViewModelFactory, ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository)
+        public InfoController(IHelpPageViewModelFactory helpPageViewModelFactory, IInfoPageViewModelFactory infoPageViewModelFactory, ILakeRepository lakeRepository, IGenusTypeRepository genusTypeRepository)
         {
+            _helpPageViewModelFactory = helpPageViewModelFactory;
             this.infoPageViewModelFactory = infoPageViewModelFactory;
             this.lakeRepository = lakeRepository;
             this.genusTypeRepository = genusTypeRepository;
@@ -35,7 +38,7 @@ namespace RiftData.Controllers
 
         public ActionResult HelpUs()
         {
-            var viewModel = this.infoPageViewModelFactory.Build();
+            var viewModel = this._helpPageViewModelFactory.Build();
 
             viewModel.Description = "Help us improve RiftData";
 

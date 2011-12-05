@@ -88,6 +88,7 @@
     <Compile Include="ViewModelFactories\FishPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\GenusPanelViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\HeaderViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\HelpPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\HomePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\InfoPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LakeViewModelFactory.cs" />
