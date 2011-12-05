@@ -30,7 +30,7 @@
             <ul>
                 @foreach (var species in group)
                 {
-                    <li><a href="@Url.Action("Index", "Species", new { speciesName = species.UrlName })">@species.Name</a></li>
+                    <li><a target="_blank" href="@Url.Action("Index", "Species", new { speciesName = species.UrlName })">@species.Name</a></li>
                 }
             </ul>
         }

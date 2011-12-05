@@ -36,6 +36,17 @@ namespace RiftData.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Thanks()
+        {
+            var viewModel = this.infoPageViewModelFactory.Build();
+
+            viewModel.Description = "Shout outs to everyone that has helped us";
+
+            viewModel.Keywords = this.AssembleKeywords();
+
+            return View(viewModel);
+        }
+
         public ActionResult HelpUs()
         {
             var viewModel = this._helpPageViewModelFactory.Build();
