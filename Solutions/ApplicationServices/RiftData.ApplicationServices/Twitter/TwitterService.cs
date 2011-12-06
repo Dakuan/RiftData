@@ -37,7 +37,7 @@
 
         private string BuildHashTags(string genusTypeName, string lakeName)
         {
-            return string.Format("#RiftData #{0} #{1}", genusTypeName, lakeName);
+            return string.Format("#RiftData #{0} #Lake{1}", genusTypeName, lakeName);
         }
     }
 }
