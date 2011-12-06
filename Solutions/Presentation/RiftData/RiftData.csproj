@@ -107,6 +107,7 @@
     <Compile Include="Areas\Admin\Controllers\LocalesController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhotosController.cs" />
     <Compile Include="Areas\Admin\Controllers\SpeciesController.cs" />
+    <Compile Include="Classes\UrlHelper.cs" />
     <Compile Include="Areas\Mobile\Controllers\GenusController.cs" />
     <Compile Include="Areas\Mobile\Controllers\GenusTypesController.cs" />
     <Compile Include="Areas\Mobile\Controllers\HomeController.cs" />

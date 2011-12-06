@@ -15,6 +15,8 @@ namespace RiftData.Areas.Admin.Controllers
     using RiftData.Infrastructure.Data.Logging;
     using RiftData.Presentation.ViewModels.Admin;
 
+    using UrlHelper = RiftData.Classes.UrlHelper;
+
     [Authorize]
     public class FishController : Controller
     {
@@ -61,7 +63,7 @@ namespace RiftData.Areas.Admin.Controllers
             if (updateResult != null)
             {
                 // post a twitter update
-                this.twitterService.PostFishAddition(updateResult, this.ToPublicUrl(new Uri(Url.Action("Index", "Fish", new { Area = string.Empty, fishName = updateResult.UrlName }), UriKind.Relative)));
+                this.twitterService.PostFishAddition(updateResult, UrlHelper.ToPublicUrl(new Uri(Url.Action("Index", "Fish", new { Area = string.Empty, fishName = updateResult.UrlName }), UriKind.Relative), this.Request));
             }
 
             return updateResult != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
@@ -118,24 +120,6 @@ namespace RiftData.Areas.Admin.Controllers
             return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
 
-        public string ToPublicUrl(Uri relativeUri)
-        {
-            var httpContext = this.Request.RequestContext.HttpContext;
 
-            var uriBuilder = new UriBuilder
-            {
-                Host = httpContext.Request.Url.Host,
-                Path = "/",
-                Port = 80,
-                Scheme = "http",
-            };
-
-            if (httpContext.Request.IsLocal)
-            {
-                uriBuilder.Port = httpContext.Request.Url.Port;
-            }
-
-            return new Uri(uriBuilder.Uri, relativeUri).AbsoluteUri;
-        }
     }
 }

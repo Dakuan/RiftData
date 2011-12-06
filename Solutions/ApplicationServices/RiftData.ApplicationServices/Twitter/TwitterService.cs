@@ -14,7 +14,7 @@
 
         private const string AccessTokenSecret = "gprxK0aOrMZJhnpsJy6hc21GSXX7pBEjpsmZxzUqk";
 
-        private SingleUserAuthorizer authorizer;
+        private readonly SingleUserAuthorizer authorizer;
 
         public TwitterService()
         {
@@ -25,18 +25,19 @@
 
         public bool PostFishAddition(Fish newFish, string url)
         {
-            var message = string.Format("New fish: {0} {1} #RiftData #{2}", newFish.Name, url, newFish.Genus.GenusType.Name);
+            var message = string.Format("New fish: {0} {1} {2}", newFish.Name, url, this.BuildHashTags(newFish.Genus.GenusType.Name, newFish.Locale.Lake.Name));
 
             using (var twitterContext = new TwitterContext(this.authorizer))
             {
                 var status = twitterContext.UpdateStatus(message, true);
 
-                if (status != null)
-                {
-                    return true;
-                }
-                return false;
+                return status != null;
             }
+        }
+
+        private string BuildHashTags(string genusTypeName, string lakeName)
+        {
+            return string.Format("#RiftData #{0} #{1}", genusTypeName, lakeName);
         }
     }
 }
