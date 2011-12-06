@@ -60,7 +60,7 @@ namespace RiftData.Areas.Admin.Controllers
             if (updateResult != null)
             {
                 // post a twitter update
-                this.twitterService.PostFishAddition(updateResult, Url.Action("Fish", "Index", new { fishName = updateResult.UrlName }, "http"));
+                this.twitterService.PostFishAddition(updateResult, Url.Action("Index", "Fish", new { Area = string.Empty, fishName = updateResult.UrlName }, "http"));
             }
 
             return updateResult != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
