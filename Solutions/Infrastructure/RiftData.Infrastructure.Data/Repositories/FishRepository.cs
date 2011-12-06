@@ -22,7 +22,7 @@
             this.logger = logger;
         }
 
-        public AddResult Add(int genusId, int speciesId, int localeId, string description, string userName)
+        public Fish Add(int genusId, int speciesId, int localeId, string description, string userName)
         {
             var genus = this.dataContext.Genus.First(g => g.Id == genusId);
 

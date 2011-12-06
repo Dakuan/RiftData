@@ -7,7 +7,7 @@ namespace RiftData.Domain.Repositories
 
     public interface IFishRepository
     {
-        AddResult Add(int genusId, int speciesId, int localeId, string description, string userName);
+        Fish Add(int genusId, int speciesId, int localeId, string description, string userName);
 
         DeleteResult Delete(int fishId);
 
