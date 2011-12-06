@@ -7,6 +7,8 @@ namespace RiftData.ApplicationServices.CrudServices
     {
         Fish Fish { get; set; }
 
-        CrudResult AddFish(FishEditFormViewModel viewModel);
+        CrudResult CreateFish(FishEditFormViewModel viewModel);
+
+        CrudResult UpdateFish(FishEditFormViewModel viewModel);
     }
 }

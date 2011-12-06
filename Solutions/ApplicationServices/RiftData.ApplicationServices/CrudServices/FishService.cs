@@ -20,13 +20,11 @@ namespace RiftData.ApplicationServices.CrudServices
             this.fishRepository = fishRepository;
         }
 
-        public CrudResult AddFish(FishEditFormViewModel viewModel)
+        public CrudResult CreateFish(FishEditFormViewModel viewModel)
         {
-            Fish fish = null;
-
             try
             {
-                fish = this.fishRepository.Add(viewModel.Genus, viewModel.Species, viewModel.Locales,
+                this.Fish = this.fishRepository.Add(viewModel.Genus, viewModel.Species, viewModel.Locales,
                                                    viewModel.Description);
             }
             catch (ItemExistsException)
@@ -38,13 +36,30 @@ namespace RiftData.ApplicationServices.CrudServices
                 return new CrudResult { Success = false, Message = "An error occured" };
             }
 
-            this.Fish = fish;
-
             return new CrudResult
                        {
                            Success = true,
-                           Message = string.Format("{0} added to database", fish.Name)
+                           Message = string.Format("{0} added to database", Fish.Name)
                        };
+        }
+
+        public CrudResult UpdateFish(FishEditFormViewModel viewModel)
+        {
+            try
+            {
+                this.Fish = this.fishRepository.Update(viewModel.Id, viewModel.Genus, viewModel.Species,
+                                                       viewModel.Locales, viewModel.Description);
+            }
+            catch(ItemDoesNotExistException)
+            {
+                return new CrudResult {Message = "Item does not exist", Success = false};
+            }
+            catch (Exception)
+            {
+                return new CrudResult {Success = false, Message = "An error occured"};
+            }
+
+            return new CrudResult {Success = true, Message = string.Format("{0} has been updated", Fish.Name)};
         }
     }
 }

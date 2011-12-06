@@ -67,6 +67,7 @@
     <Compile Include="Enums\DeleteResult.cs" />
     <Compile Include="Enums\ItemType.cs" />
     <Compile Include="Enums\UpdateResult.cs" />
+    <Compile Include="Exceptions\ItemDoesNotExistException.cs" />
     <Compile Include="Exceptions\ItemExistsException.cs" />
     <Compile Include="Extensions\FishExtensionMethods.cs" />
     <Compile Include="Extensions\GenusExtensionMethods.cs" />

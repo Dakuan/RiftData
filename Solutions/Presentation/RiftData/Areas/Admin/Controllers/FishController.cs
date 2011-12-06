@@ -82,7 +82,7 @@ namespace RiftData.Areas.Admin.Controllers
         {
             this.TryUpdateModel(viewModel);
 
-            var result = this.fishService.AddFish(viewModel);
+            var result = this.fishService.CreateFish(viewModel);
 
             if (result.Success)
             {
@@ -109,16 +109,16 @@ namespace RiftData.Areas.Admin.Controllers
         {
             this.TryUpdateModel(vm);
 
-            var fish = this.fishRepository.Update(vm.Id, vm.Genus, vm.Species, vm.Locales, vm.Description);
+            var result = this.fishService.UpdateFish(vm);
 
-            if (fish != null)
+            if(result.Success)
             {
-                this.logger.LogUpdate(fish, this.User.Identity.Name);
+                this.logger.LogUpdate(this.fishService.Fish, this.User.Identity.Name);
 
-                this.twitterService.PostFishUpdate(fish, this.BuildAbsoulteUrl(fish));
+                this.twitterService.PostFishUpdate(this.fishService.Fish, this.BuildAbsoulteUrl(this.fishService.Fish));
             }
 
-            return fish != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
+            return new JsonResult {Data = result};
         }
 
         public ActionResult Delete(int id)

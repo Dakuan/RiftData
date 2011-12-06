@@ -88,19 +88,23 @@
 
         public Fish Update(int fishId, int genusId, int speciesId, int localeId, string description)
         {
-            var fish = this.dataContext.Fish.First(f => f.Id == fishId);
+            var fish = this.dataContext.Fish.FirstOrDefault(f => f.Id == fishId);
 
-            fish.Genus = this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
+            if (fish != null)
+            {
+                fish.Genus = this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
 
-            fish.Species = this.dataContext.Species.FirstOrDefault(s => s.Id == speciesId);
+                fish.Species = this.dataContext.Species.FirstOrDefault(s => s.Id == speciesId);
 
-            fish.Locale = this.dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
+                fish.Locale = this.dataContext.Locales.FirstOrDefault(l => l.Id == localeId);
 
-            fish.Description = description;
-            
-            this.dataContext.SaveChanges();
-            
-            return fish;
+                fish.Description = description;
+
+                this.dataContext.SaveChanges();
+
+                return fish;
+            }
+            throw new ItemDoesNotExistException();
         }
 
         public DeleteResult Delete(int fishId)
