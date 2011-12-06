@@ -1,4 +1,5 @@
-﻿using RiftData.Domain.Extensions;
+﻿using RiftData.ApplicationServices.CrudServices;
+using RiftData.Domain.Extensions;
 using RiftData.Presentation.Contracts.ViewModelFactories.Admin;
 using RiftData.Presentation.ViewModels.Admin.Fish;
 
@@ -23,6 +24,8 @@ namespace RiftData.Areas.Admin.Controllers
     {
         private readonly IFishEditPageViewModelFactory fishEditPageViewModelFactory;
 
+        private readonly IFishService fishService;
+
         private readonly ITwitterService twitterService;
 
         private readonly IFishPageViewModelFactory fishPageViewModelFactory;
@@ -35,8 +38,9 @@ namespace RiftData.Areas.Admin.Controllers
 
         private readonly ISpeciesRepository speciesRepository;
 
-        public FishController(ITwitterService twitterService, IFishPageViewModelFactory fishPageViewModelFactory, IFishEditPageViewModelFactory fishEditPageViewModelFactory, IFishRepository fishRepository, ISpeciesRepository speciesRepository, IPhotosRepository photosRepository, ILogger logger)
+        public FishController(IFishService fishService, ITwitterService twitterService, IFishPageViewModelFactory fishPageViewModelFactory, IFishEditPageViewModelFactory fishEditPageViewModelFactory, IFishRepository fishRepository, ISpeciesRepository speciesRepository, IPhotosRepository photosRepository, ILogger logger)
         {
+            this.fishService = fishService;
             this.twitterService = twitterService;
             this.fishPageViewModelFactory = fishPageViewModelFactory;
             this.fishEditPageViewModelFactory = fishEditPageViewModelFactory;
@@ -74,22 +78,22 @@ namespace RiftData.Areas.Admin.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(FishEditFormViewModel viewModel)
+        public JsonResult Create(FishEditFormViewModel viewModel)
         {
             this.TryUpdateModel(viewModel);
 
-            var fish = this.fishRepository.Add(viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description);
+            var result = this.fishService.AddFish(viewModel);
 
-            if (fish != null)
+            if (result.Success)
             {
                 // post a twitter update
-                this.twitterService.PostFishAddition(fish, this.BuildAbsoulteUrl(fish));
+                this.twitterService.PostFishAddition(this.fishService.Fish, this.BuildAbsoulteUrl(this.fishService.Fish));
 
                 // log
-                this.logger.LogAdd(fish, this.User.Identity.Name);
+                this.logger.LogAdd(this.fishService.Fish, this.User.Identity.Name);
             }
 
-            return fish != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
+            return new JsonResult {Data = result};
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
@@ -101,7 +105,7 @@ namespace RiftData.Areas.Admin.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Update(FishEditFormViewModel vm)
+        public JsonResult Update(FishEditFormViewModel vm)
         {
             this.TryUpdateModel(vm);
 

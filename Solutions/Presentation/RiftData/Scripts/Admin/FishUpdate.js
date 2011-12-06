@@ -50,7 +50,7 @@ $(document).ready(function () {
 
         $.post($(this).attr("action"), $(this).serialize(), function (json) {
             // handle response
-            if (json) {
+            if (json.Success) {
 
                 window.ajaxRequest(successUrl);
 
