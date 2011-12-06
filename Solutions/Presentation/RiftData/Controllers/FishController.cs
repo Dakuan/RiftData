@@ -1,12 +1,11 @@
-﻿using System;
-using RiftData.Domain.Enums;
-using RiftData.Presentation.Contracts.Mailer;
-
-namespace RiftData.Controllers
+﻿namespace RiftData.Controllers
 {
+    using System;
     using System.Web.Mvc;
 
+    using RiftData.Domain.Enums;
     using RiftData.Presentation.Contracts;
+    using RiftData.Presentation.Contracts.Mailer;
 
     [OutputCache(CacheProfile = "Daily")]
     public class FishController : Controller

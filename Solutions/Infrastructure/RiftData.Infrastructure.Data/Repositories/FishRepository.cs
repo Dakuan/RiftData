@@ -32,12 +32,12 @@
 
             if (this.dataContext.Fish.Any(f => f.Genus.Id == genusId && f.Species.Id == speciesId && f.Locale.Id == localeId))
             {
-                return AddResult.AlreadyExists;
+                //todo raise error
             }
 
             var fish = new Fish { Genus = genus, Species = species, Locale = locale, Description = description };
 
-            this.dataContext.Fish.Add(fish);
+            fish = this.dataContext.Fish.Add(fish);
 
             try
             {
@@ -45,10 +45,10 @@
             }
             catch (Exception ex)
             {
-                return AddResult.Failure;
+                //todo: raise execption
             }
 
-            return AddResult.Success;
+            return fish;
 
             this.logger.LogAdd(fish, userName);
         }

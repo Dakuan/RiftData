@@ -6,6 +6,9 @@ namespace RiftData.Areas.Admin.Controllers
 {
     using System;
     using System.Web.Mvc;
+    using System.Web.Routing;
+
+    using RiftData.ApplicationServices.Twitter;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
     using RiftData.Infrastructure.Data.Logging;
@@ -15,6 +18,8 @@ namespace RiftData.Areas.Admin.Controllers
     public class FishController : Controller
     {
         private readonly IFishEditPageViewModelFactory fishEditPageViewModelFactory;
+
+        private readonly ITwitterService twitterService;
 
         private readonly IFishPageViewModelFactory fishPageViewModelFactory;
 
@@ -26,8 +31,9 @@ namespace RiftData.Areas.Admin.Controllers
 
         private readonly ISpeciesRepository speciesRepository;
 
-        public FishController(IFishPageViewModelFactory fishPageViewModelFactory, IFishEditPageViewModelFactory fishEditPageViewModelFactory, IFishRepository fishRepository, ISpeciesRepository speciesRepository, IPhotosRepository photosRepository, ILogger logger)
+        public FishController(ITwitterService twitterService, IFishPageViewModelFactory fishPageViewModelFactory, IFishEditPageViewModelFactory fishEditPageViewModelFactory, IFishRepository fishRepository, ISpeciesRepository speciesRepository, IPhotosRepository photosRepository, ILogger logger)
         {
+            this.twitterService = twitterService;
             this.fishPageViewModelFactory = fishPageViewModelFactory;
             this.fishEditPageViewModelFactory = fishEditPageViewModelFactory;
             this.fishRepository = fishRepository;
@@ -51,7 +57,13 @@ namespace RiftData.Areas.Admin.Controllers
 
             var updateResult = this.fishRepository.Add(viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description, this.User.Identity.Name);
 
-            return updateResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
+            if (updateResult != null)
+            {
+                // post a twitter update
+                this.twitterService.PostFishAddition(updateResult, Url.Action("Fish", "Index", new { fishName = updateResult.UrlName }, "http"));
+            }
+
+            return updateResult != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
 
         public ActionResult Delete(int id)
