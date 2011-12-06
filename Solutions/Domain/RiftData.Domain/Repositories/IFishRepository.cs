@@ -22,5 +22,7 @@ namespace RiftData.Domain.Repositories
         IList<Fish> GetOfType(int genusTypeId);
 
         UpdateResult Update(int fishId, int genusId, int speciesId, int localeId, string description, string userName);
+        
+        IList<Fish> GetWithoutPhotos();
     }
 }

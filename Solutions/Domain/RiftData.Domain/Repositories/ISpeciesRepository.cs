@@ -22,5 +22,7 @@ namespace RiftData.Domain.Repositories
         IList<Species> GetSpeciesWithGenus(int id);
 
         UpdateResult Update(int speciesId, string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName);
+        
+        IList<Species>GetWithoutLocales();
     }
 }
