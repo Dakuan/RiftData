@@ -61,7 +61,7 @@ namespace RiftData.Areas.Admin.Controllers
             if (updateResult != null)
             {
                 // post a twitter update
-                this.twitterService.PostFishAddition(updateResult, this.ToPublicUrl(new Uri(Url.Action("Index", "Fish", new { Area = string.Empty, fishName = updateResult.UrlName }))));
+                this.twitterService.PostFishAddition(updateResult, this.ToPublicUrl(new Uri(Url.Action("Index", "Fish", new { Area = string.Empty, fishName = updateResult.UrlName }), UriKind.Relative)));
             }
 
             return updateResult != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
@@ -117,7 +117,6 @@ namespace RiftData.Areas.Admin.Controllers
 
             return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
-
 
         public string ToPublicUrl(Uri relativeUri)
         {

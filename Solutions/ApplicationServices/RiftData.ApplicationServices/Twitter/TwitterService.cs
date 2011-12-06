@@ -25,7 +25,7 @@
 
         public bool PostFishAddition(Fish newFish, string url)
         {
-            var message = string.Format("New fish: {0} http://riftdata.apphb.com{1} #RiftData #{2}", newFish.Name, url, newFish.Genus.GenusType.Name);
+            var message = string.Format("New fish: {0} {1} #RiftData #{2}", newFish.Name, url, newFish.Genus.GenusType.Name);
 
             using (var twitterContext = new TwitterContext(this.authorizer))
             {
