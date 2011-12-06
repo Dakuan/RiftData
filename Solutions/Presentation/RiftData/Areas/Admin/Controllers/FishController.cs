@@ -8,6 +8,7 @@ namespace RiftData.Areas.Admin.Controllers
     using System.Web.Mvc;
     using System.Web.Routing;
 
+    using RiftData.Extensions;
     using RiftData.ApplicationServices.Twitter;
     using RiftData.Domain.Enums;
     using RiftData.Domain.Repositories;
@@ -60,7 +61,7 @@ namespace RiftData.Areas.Admin.Controllers
             if (updateResult != null)
             {
                 // post a twitter update
-                this.twitterService.PostFishAddition(updateResult, Url.Action("Index", "Fish", new RouteValueDictionary { { "Area", string.Empty }, { "fishName", updateResult.UrlName } }, "http", Request.Url.Host));
+                this.twitterService.PostFishAddition(updateResult, this.ToPublicUrl(new Uri(Url.Action("Index", "Fish", new { Area = string.Empty, fishName = updateResult.UrlName }))));
             }
 
             return updateResult != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
@@ -115,6 +116,27 @@ namespace RiftData.Areas.Admin.Controllers
             var updateResult = this.fishRepository.Update(vm.Id, vm.Genus, vm.Species, vm.Locales, vm.Description, this.User.Identity.Name);
 
             return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
+        }
+
+
+        public string ToPublicUrl(Uri relativeUri)
+        {
+            var httpContext = this.Request.RequestContext.HttpContext;
+
+            var uriBuilder = new UriBuilder
+            {
+                Host = httpContext.Request.Url.Host,
+                Path = "/",
+                Port = 80,
+                Scheme = "http",
+            };
+
+            if (httpContext.Request.IsLocal)
+            {
+                uriBuilder.Port = httpContext.Request.Url.Port;
+            }
+
+            return new Uri(uriBuilder.Uri, relativeUri).AbsoluteUri;
         }
     }
 }
