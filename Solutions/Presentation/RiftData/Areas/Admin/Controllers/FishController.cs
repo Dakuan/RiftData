@@ -8,6 +8,7 @@ namespace RiftData.Areas.Admin.Controllers
     using System.Web.Mvc;
     using System.Web.Routing;
 
+    using RiftData.Domain.Entities;
     using RiftData.Extensions;
     using RiftData.ApplicationServices.Twitter;
     using RiftData.Domain.Enums;
@@ -45,6 +46,25 @@ namespace RiftData.Areas.Admin.Controllers
             this.logger = logger;
         }
 
+        public ActionResult Index(int? id)
+        {
+            if (id == null)
+            {
+                id = 1;
+            }
+
+            var viewModel = this.fishPageViewModelFactory.Build(Convert.ToInt16(id));
+
+            return this.View(viewModel);
+        }
+
+        public ActionResult GetSpecies(int id)
+        {
+            var speciesList = this.speciesRepository.GetSpeciesWithGenus(id).ToSelectList();
+
+            return new JsonResult { Data = speciesList, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Create(bool? showSuccessMessage)
         {
@@ -58,15 +78,43 @@ namespace RiftData.Areas.Admin.Controllers
         {
             this.TryUpdateModel(viewModel);
 
-            var updateResult = this.fishRepository.Add(viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description, this.User.Identity.Name);
+            var fish = this.fishRepository.Add(viewModel.Genus, viewModel.Species, viewModel.Locales, viewModel.Description);
 
-            if (updateResult != null)
+            if (fish != null)
             {
                 // post a twitter update
-                this.twitterService.PostFishAddition(updateResult, UrlHelper.ToPublicUrl(new Uri(Url.Action("Index", "Fish", new { Area = string.Empty, fishName = updateResult.UrlName }), UriKind.Relative), this.Request));
+                this.twitterService.PostFishAddition(fish, this.BuildAbsoulteUrl(fish));
+
+                // log
+                this.logger.LogAdd(fish, this.User.Identity.Name);
             }
 
-            return updateResult != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
+            return fish != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult Update(int id, bool? showSuccessMessage)
+        {
+            var viewModel = this.fishEditPageViewModelFactory.Build(id, Convert.ToBoolean(showSuccessMessage));
+
+            return this.View(viewModel);
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Update(FishEditFormViewModel vm)
+        {
+            this.TryUpdateModel(vm);
+
+            var fish = this.fishRepository.Update(vm.Id, vm.Genus, vm.Species, vm.Locales, vm.Description);
+
+            if (fish != null)
+            {
+                this.logger.LogUpdate(fish, this.User.Identity.Name);
+
+                this.twitterService.PostFishUpdate(fish, this.BuildAbsoulteUrl(fish));
+            }
+
+            return fish != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
 
         public ActionResult Delete(int id)
@@ -83,43 +131,9 @@ namespace RiftData.Areas.Admin.Controllers
             return this.RedirectToAction("Update", new { id = fishId });
         }
 
-        public ActionResult GetSpecies(int id)
+        private string BuildAbsoulteUrl(Fish fish)
         {
-            var speciesList = this.speciesRepository.GetSpeciesWithGenus(id).ToSelectList();
-
-            return new JsonResult { Data = speciesList, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return UrlHelper.ToPublicUrl(new Uri(Url.Action("Index", "Fish", new { Area = string.Empty, fishName = fish.UrlName }), UriKind.Relative), this.Request);
         }
-
-        public ActionResult Index(int? id)
-        {
-            if (id == null)
-            {
-                id = 1;
-            }
-
-            var viewModel = this.fishPageViewModelFactory.Build(Convert.ToInt16(id));
-
-            return View(viewModel);
-        }
-
-        [AcceptVerbs(HttpVerbs.Get)]
-        public ActionResult Update(int id, bool? showSuccessMessage)
-        {
-            var viewModel = this.fishEditPageViewModelFactory.Build(id, Convert.ToBoolean(showSuccessMessage));
-
-            return View(viewModel);
-        }
-
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Update(FishEditFormViewModel vm)
-        {
-            this.TryUpdateModel(vm);
-
-            var updateResult = this.fishRepository.Update(vm.Id, vm.Genus, vm.Species, vm.Locales, vm.Description, this.User.Identity.Name);
-
-            return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
-        }
-
-
     }
 }

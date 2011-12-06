@@ -25,7 +25,22 @@
 
         public bool PostFishAddition(Fish newFish, string url)
         {
-            var message = string.Format("New fish: {0} {1} {2}", newFish.Name, url, this.BuildHashTags(newFish.Genus.GenusType.Name, newFish.Locale.Lake.Name));
+            return this.Tweet("New", "fish", url, BuildHashTags(newFish.Genus.GenusType.Name, newFish.Locale.Lake.Name));
+        }
+
+        public bool PostFishUpdate(Fish fish, string url)
+        {
+            return this.Tweet("Updated", "fish", url, BuildHashTags(fish.Genus.GenusType.Name, fish.Locale.Lake.Name));
+        }
+
+        private static string BuildHashTags(string genusTypeName, string lakeName)
+        {
+            return string.Format("#RiftData #{0} #Lake{1}", genusTypeName, lakeName);
+        }
+
+        private bool Tweet(string action, string subject, string url, string hashTags)
+        {
+            var message = string.Format("{0} {1}: {2} {3}", action, subject, url, hashTags);
 
             using (var twitterContext = new TwitterContext(this.authorizer))
             {
@@ -33,11 +48,6 @@
 
                 return status != null;
             }
-        }
-
-        private string BuildHashTags(string genusTypeName, string lakeName)
-        {
-            return string.Format("#RiftData #{0} #Lake{1}", genusTypeName, lakeName);
         }
     }
 }

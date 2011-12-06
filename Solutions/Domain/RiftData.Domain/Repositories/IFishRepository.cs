@@ -7,7 +7,7 @@ namespace RiftData.Domain.Repositories
 
     public interface IFishRepository
     {
-        Fish Add(int genusId, int speciesId, int localeId, string description, string userName);
+        Fish Add(int genusId, int speciesId, int localeId, string description);
 
         DeleteResult Delete(int fishId);
 
@@ -21,7 +21,7 @@ namespace RiftData.Domain.Repositories
 
         IList<Fish> GetOfType(int genusTypeId);
 
-        UpdateResult Update(int fishId, int genusId, int speciesId, int localeId, string description, string userName);
+        Fish Update(int fishId, int genusId, int speciesId, int localeId, string description);
         
         IList<Fish> GetWithoutPhotos();
     }
