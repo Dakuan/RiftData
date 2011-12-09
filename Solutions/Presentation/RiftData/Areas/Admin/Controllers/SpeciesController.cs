@@ -24,6 +24,11 @@ namespace RiftData.Areas.Admin.Controllers
             this.speciesRepository = speciesRepository;
         }
 
+        public ActionResult Index()
+        {
+            return this.View(this.speciesPageViewModelFactory.Build());
+        }
+
         public ActionResult Create()
         {
             return this.View("Update", this.speciesEditPageViewModelFactory.Build());
@@ -32,22 +37,9 @@ namespace RiftData.Areas.Admin.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(SpeciesEditFormViewModel vm)
         {
-            // TryUpdateModel(vm);
             var addResult = this.speciesRepository.Add(vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
 
-            return addResult == AddResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
-        }
-
-        public ActionResult Delete(int id)
-        {
-            this.speciesRepository.Delete(id);
-
-            return this.RedirectToAction("Index");
-        }
-
-        public ActionResult Index()
-        {
-            return this.View(this.speciesPageViewModelFactory.Build());
+            return addResult != null ? new JsonResult { Data = true } : new JsonResult { Data = false };
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
@@ -63,6 +55,13 @@ namespace RiftData.Areas.Admin.Controllers
             var updateResult = this.speciesRepository.Update(vm.Id, vm.Name, vm.Genus, vm.Described, vm.Description, vm.Size[0], vm.Size[1], vm.Temperament, this.User.Identity.Name);
 
             return updateResult == UpdateResult.Success ? new JsonResult { Data = true } : new JsonResult { Data = false };
+        }
+
+        public ActionResult Delete(int id)
+        {
+            this.speciesRepository.Delete(id);
+
+            return this.RedirectToAction("Index");
         }
     }
 }

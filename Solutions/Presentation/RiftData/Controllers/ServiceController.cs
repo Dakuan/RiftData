@@ -1,4 +1,6 @@
-﻿using RiftData.ApplicationServices.Extensions;
+﻿using System.Web;
+using RiftData.ApplicationServices.Extensions;
+using RiftData.Classes;
 using RiftData.Domain.Repositories;
 
 namespace RiftData.Controllers
@@ -29,7 +31,8 @@ namespace RiftData.Controllers
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = results };
         }
 
-        public ActionResult GetLocalesForZoomLevel(int id)
+        [JsonpFilter]
+        public JsonResult GetLocalesForZoomLevel(int id)
         {
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localesRepository.GetForZoomLevel(id) };
         }

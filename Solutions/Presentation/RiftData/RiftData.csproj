@@ -119,6 +119,8 @@
     <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Controllers\Installers\ControllersInstaller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Classes\JsonpFilterAttribute.cs" />
+    <Compile Include="Classes\JsonpResult.cs" />
     <Compile Include="Controllers\LakeController.cs" />
     <Compile Include="Controllers\LocaleController.cs" />
     <Compile Include="Controllers\MailController.cs" />

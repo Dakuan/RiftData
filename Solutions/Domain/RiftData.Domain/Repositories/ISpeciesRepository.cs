@@ -7,22 +7,22 @@ namespace RiftData.Domain.Repositories
 
     public interface ISpeciesRepository
     {
-        AddResult Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName);
-
-        DeleteResult Delete(int speciesId);
-
-        IList<Species> GetAll();
-
-        IList<Species> GetSpeciesAtLocale(int id);
-
         Species GetSpeciesFromFullName(string speciesFullName);
 
         Species GetSpeciesFromId(int speciesId);
 
+        IList<Species> GetSpeciesAtLocale(int id);
+
+        IList<Species> GetAll();
+
+        IList<Species>GetWithoutLocales();
+
         IList<Species> GetSpeciesWithGenus(int id);
+        
+        Species Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName);
 
         UpdateResult Update(int speciesId, string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName);
         
-        IList<Species>GetWithoutLocales();
+        DeleteResult Delete(int speciesId);
     }
 }

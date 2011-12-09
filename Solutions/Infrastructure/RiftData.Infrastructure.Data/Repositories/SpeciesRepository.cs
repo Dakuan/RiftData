@@ -1,4 +1,6 @@
-﻿namespace RiftData.Infrastructure.Data.Repositories
+﻿using RiftData.Domain.Exceptions;
+
+namespace RiftData.Infrastructure.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -22,33 +24,35 @@
             this.logger = logger;
         }
 
-        public AddResult Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName)
+        public Species Add(string name, int genusId, bool described, string description, int minSize, int maxSize, int temperamentId, string userName)
         {
-            var genus = this.dataContext.Genus.First(g => g.Id == genusId);
+            
+            var genus = this.dataContext.Genus.FirstOrDefault(g => g.Id == genusId);
+
+            if (genus == null)
+            {
+                throw new ItemDoesNotExistException();
+            }
 
             if (temperamentId == 0)
             {
                 temperamentId = 1;
             }
 
-            var temperament = this.dataContext.Temperaments.First(t => t.Id == temperamentId);
+            var temperament = this.dataContext.Temperaments.FirstOrDefault(t => t.Id == temperamentId);
+
+            if(temperament == null)
+            {
+                throw new ItemDoesNotExistException();
+            }
 
             var species = new Species { Described = described, Genus = genus, Name = name.Trim(), Description = description, MinSize = minSize, MaxSize = maxSize, Temperament = temperament };
 
-            this.dataContext.Species.Add(species);
+            species = this.dataContext.Species.Add(species);
 
-            try
-            {
-                this.dataContext.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return AddResult.Failure;
-            }
+            this.dataContext.SaveChanges();
 
-            this.logger.LogAdd(species, userName);
-
-            return AddResult.Success;
+            return species;
         }
 
         public DeleteResult Delete(int speciesId)
