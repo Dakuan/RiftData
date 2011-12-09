@@ -34,7 +34,11 @@ namespace RiftData.Controllers
         [JsonpFilter]
         public JsonResult GetLocalesForZoomLevel(int id)
         {
-            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.localesRepository.GetForZoomLevel(id) };
+            var data = this.localesRepository.GetForLakeAtZoomLevel(id, 1).ToDtoList();
+
+            var testData = data.StripToBasic();
+
+            return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = testData };
         }
 
         public ActionResult GetSpeciesForGenus(int id)
