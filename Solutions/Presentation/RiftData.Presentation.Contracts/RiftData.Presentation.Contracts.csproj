@@ -65,6 +65,7 @@
     <Compile Include="ViewModelFactories\IFishPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IGenusPanelViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IHeaderViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\IHelpPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IHomePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IInfoPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\ILakeViewModelFactory.cs" />

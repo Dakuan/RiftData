@@ -44,6 +44,9 @@
       <HintPath>..\..\..\Referenced Assemblies\EntityFramework.4.1.10715.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="FlickrNet, Version=3.1.4000.0, Culture=neutral, PublicKeyToken=2491df59efa5d132, processorArchitecture=MSIL" />
+    <Reference Include="LinqToTwitter">
+      <HintPath>..\..\packages\linqtotwitter.2.0.22\lib\net40\LinqToTwitter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -67,6 +70,8 @@
     <Compile Include="Installers\ViewModelFactoryInstaller.cs" />
     <Compile Include="Mailer\Mailer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Twitter\ITwitterService.cs" />
+    <Compile Include="Twitter\TwitterService.cs" />
     <Compile Include="ViewModelFactories\Admin\FishEditPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\FishPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\GenusCreatePageViewModelFactory.cs" />
@@ -88,6 +93,7 @@
     <Compile Include="ViewModelFactories\FishPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\GenusPanelViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\HeaderViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\HelpPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\HomePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\InfoPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\LakeViewModelFactory.cs" />

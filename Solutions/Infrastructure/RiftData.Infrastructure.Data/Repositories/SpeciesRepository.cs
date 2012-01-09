@@ -159,5 +159,10 @@
 
             return UpdateResult.Success;
         }
+
+        public IList<Species> GetWithoutLocales()
+        {
+            return this.dataContext.Species.Where(s => !this.dataContext.Fish.Any(f => f.Species.Id == s.Id)).ToList();
+        }
     }
 }

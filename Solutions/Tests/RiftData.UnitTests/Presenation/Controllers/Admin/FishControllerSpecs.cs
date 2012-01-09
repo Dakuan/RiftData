@@ -151,18 +151,18 @@ namespace RiftData.UnitTests.Presenation.Controllers.Admin
         {
             static ActionResult result;
 
-            static AddResult the_add_result;
+            static Fish the_add_result;
 
             Establish context = () =>
                                     {
-                                        the_add_result = AddResult.Success;
+                                        the_add_result = new Fish();
 
-                                        the_fish_repository.Stub(x => x.Add(1, 1, 1, string.Empty, string.Empty)).Return(the_add_result);
+                                        the_fish_repository.Stub(x => x.Add(1, 1, 1, string.Empty)).Return(the_add_result);
                                     };
 
             Because of = () => result = subject.Create(new FishEditFormViewModel());
 
-            It should_ask_the_fish_respository_to_add_a_fish = () => the_fish_repository.AssertWasCalled(x => x.Add(1, 1, 1, string.Empty, string.Empty));
+            It should_ask_the_fish_respository_to_add_a_fish = () => the_fish_repository.AssertWasCalled(x => x.Add(1, 1, 1, string.Empty));
 
             It should_return_the_result_as_json = () => ((JsonResult)result).Data.ShouldBeOfType<SelectList>();
         }
