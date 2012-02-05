@@ -9,7 +9,9 @@
     {
         public static IEnumerable<Locale> SortLocales(this IEnumerable<Locale> unsortedList)
         {
-            var sortedList = unsortedList.OrderBy(l => l.Name);
+            var sortedList = new List<Locale>();
+
+            unsortedList.OrderBy(x => x.Name).GroupBy(x => x.Lake.Name).ToList().ForEach(x => x.ToList().ForEach(sortedList.Add));
 
             return sortedList;
         }
