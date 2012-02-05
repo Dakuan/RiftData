@@ -6,6 +6,8 @@
     {
         public int Id { get; set; }
 
+        public int Lake { get; set; }
+
         [Required]
         public double Latitude { get; set; }
 

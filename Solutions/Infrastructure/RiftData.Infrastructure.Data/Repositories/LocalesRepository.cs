@@ -22,9 +22,11 @@
             this.logger = logger;
         }
 
-        public AddResult Add(string name, double latitude, double longitude, string userName)
+        public AddResult Add(int lakeId, string name, double latitude, double longitude, string userName)
         {
-            var locale = new Locale { Name = name.Trim(), Latitude = latitude, Longitude = longitude };
+            var lake = this.dataContext.Lakes.First(x => x.Id == lakeId);
+
+            var locale = new Locale { Name = name.Trim(), Latitude = latitude, Longitude = longitude, Lake = lake};
 
             this.dataContext.Locales.Add(locale);
 

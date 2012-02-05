@@ -64,6 +64,7 @@
     <Compile Include="Admin\Lake\LakeIndexPageViewModel.cs" />
     <Compile Include="Admin\Lake\LakeUpdateFormViewModel.cs" />
     <Compile Include="Admin\Lake\LakeUpdatePageViewModel.cs" />
+    <Compile Include="Admin\Locale\LocaleCreatePageViewModel.cs" />
     <Compile Include="Admin\Locale\LocalePageViewModel.cs" />
     <Compile Include="Admin\Locale\LocaleUpdateFormViewModel.cs" />
     <Compile Include="Admin\Locale\LocaleUpdatePageViewModel.cs" />

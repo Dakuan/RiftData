@@ -1,7 +1,5 @@
-﻿@using RiftData.Presentation.ViewModels.Admin
-@using Telerik.Web.Mvc.UI
-@using RiftData.Presentation.ViewModels.Admin.Shared
-@model NavigationPartialViewModel
+﻿@using Telerik.Web.Mvc.UI
+@model RiftData.Presentation.ViewModels.Admin.Locale.LocaleCreatePageViewModel
 @{
     this.ViewBag.Title = "Create";
     this.Layout = "../Shared/_Layout.cshtml";
@@ -12,7 +10,10 @@
 {
     <link href="@this.Url.Content("~/Content/Admin/CSS/validationEngine.jquery.css")" rel="stylesheet" type="text/css" />
 }
-@this.Html.Partial("NavigationPartial", this.Model.NavigationViewModel)
+
+@section Navigation{
+    @this.Html.Partial("NavigationPartial", this.Model.NavigationViewModel)
+}
 <div id="body">
     <div class="portlet">
         <div class="portlet-header">
@@ -36,6 +37,10 @@
                     <div class="field">
                         <label>Name</label>
                         @this.Html.TextBox("Name", null, new { @class = "medium, validate[required,custom[onlyLetterSp]]" })
+                    </div>
+                    <div class="field">
+                        <label>Lake</label>
+                        @Html.Telerik().DropDownList().Name("Lake").BindTo(this.Model.Lakes)
                     </div>
                     <div class="field">
                         <label>Latitude</label>

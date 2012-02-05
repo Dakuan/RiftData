@@ -32,9 +32,9 @@ namespace RiftData.Controllers
         }
 
         [JsonpFilter]
-        public JsonResult GetLocalesForZoomLevel(int id)
+        public JsonResult GetLocalesForZoomLevel(int id, int lakeId)
         {
-            var data = this.localesRepository.GetForLakeAtZoomLevel(id, 1).ToDtoList();
+            var data = this.localesRepository.GetForLakeAtZoomLevel(id, lakeId).ToDtoList();
 
             var testData = data.StripToBasic();
 

@@ -86,6 +86,7 @@
     <Compile Include="ViewModelFactories\Admin\HomePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\LakeIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\LakeUpdatePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Admin\LocaleCreatePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\LocaleIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\LocaleUpdatePageViewModel.cs" />
     <Compile Include="ViewModelFactories\Admin\NavigationViewModelFactory.cs" />

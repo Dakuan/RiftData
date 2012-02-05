@@ -57,6 +57,7 @@
     <Compile Include="ViewModelFactories\Admin\IHomePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ILakeIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ILakeUpdatePageViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Admin\ILocaleCreatePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ILocaleIndexPageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\ILocaleUpdatePageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Admin\INavigationViewModelFactory.cs" />

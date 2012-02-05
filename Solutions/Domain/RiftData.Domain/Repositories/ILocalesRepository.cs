@@ -7,7 +7,7 @@ namespace RiftData.Domain.Repositories
 
     public interface ILocalesRepository
     {
-        AddResult Add(string name, double latitude, double longitude, string userName);
+        AddResult Add(int lake, string name, double latitude, double longitude, string userName);
 
         DeleteResult Delete(int localeId);
 

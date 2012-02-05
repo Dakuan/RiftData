@@ -14,24 +14,32 @@ namespace RiftData.Areas.Admin.Controllers
     [Authorize]
     public class LocalesController : Controller
     {
+        private readonly ILocaleCreatePageViewModelFactory localeCreatePageViewModelFactory;
         private readonly ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory;
 
         private readonly ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory;
+
         private readonly IGenusRepository genusRepository;
+
+        private readonly INavigationViewModelFactory navigationViewModelFactory;
 
         private readonly ILocalesRepository localesRepository;
 
-        public LocalesController(ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory, ILocalesRepository localesRepository, ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory, IGenusRepository genusRepository)
+        public LocalesController(ILocaleCreatePageViewModelFactory localeCreatePageViewModelFactory, ILocaleIndexPageViewModelFactory localeIndexPageViewModelFactory, ILocalesRepository localesRepository, ILocaleUpdatePageViewModelFactory localeUpdatePageViewModelFactory, IGenusRepository genusRepository, INavigationViewModelFactory navigationViewModelFactory)
         {
+            this.localeCreatePageViewModelFactory = localeCreatePageViewModelFactory;
             this.localeIndexPageViewModelFactory = localeIndexPageViewModelFactory;
             this.localesRepository = localesRepository;
             this.localeUpdatePageViewModelFactory = localeUpdatePageViewModelFactory;
             this.genusRepository = genusRepository;
+            this.navigationViewModelFactory = navigationViewModelFactory;
         }
 
         public ActionResult Create()
         {
-            return this.View(new NavigationPartialViewModel { SelectedView = SelectedView.Locales });
+            var viewModel = this.localeCreatePageViewModelFactory.Build();
+
+            return this.View(viewModel);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
@@ -39,9 +47,11 @@ namespace RiftData.Areas.Admin.Controllers
         {
             this.TryUpdateModel(viewModel);
 
-            var result = this.localesRepository.Add(viewModel.Name, viewModel.Latitude, viewModel.Longitude, this.User.Identity.Name);
+            var result = this.localesRepository.Add(viewModel.Lake, viewModel.Name, viewModel.Latitude, viewModel.Longitude, this.User.Identity.Name);
 
-            return new JsonResult { Data = result };
+            var data = result == AddResult.Success;
+
+            return new JsonResult { Data = data };
         }
 
         public ActionResult GetForLakeFromGenus(int id)
@@ -51,7 +61,7 @@ namespace RiftData.Areas.Admin.Controllers
             return RedirectToAction("GetForLake", new { id = genus.GenusType.Lake.Id });
         }
 
-        public ActionResult GetForLake(int id)
+        public JsonResult GetForLake(int id)
         {
             var data = this.localesRepository.GetByLake(id).ToSelectList();
 
