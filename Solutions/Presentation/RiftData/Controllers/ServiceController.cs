@@ -22,13 +22,24 @@ namespace RiftData.Controllers
             this.localesRepository = localesRepository;
         }
 
-        public ActionResult GetAllGenera()
+        [JsonpFilter]
+        public JsonResult GetAllGenera()
         {
             var results = this.genusRepository.GetAll().ToDtoList();
 
             results.ToList().ForEach(g => g.Species.Clear());
 
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = results };
+        }
+
+        [JsonpFilter]
+        public JsonResult GetGeneraForLake(int id)
+        {
+            return new JsonResult
+                       {
+                           JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                           Data = this.genusRepository.GetForLake(id).ToDtoList()
+                       };
         }
 
         [JsonpFilter]
@@ -40,10 +51,21 @@ namespace RiftData.Controllers
 
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = testData };
         }
-
-        public ActionResult GetSpeciesForGenus(int id)
+        
+        [JsonpFilter]
+        public JsonResult GetSpeciesForGenus(int id)
         {
             return new JsonResult { JsonRequestBehavior = JsonRequestBehavior.AllowGet, Data = this.speciesRepository.GetSpeciesWithGenus(id).ToDtoList() };
+        }
+
+        [JsonpFilter]
+        public JsonResult GetLocalesForSpecies(int id)
+        {
+            return new JsonResult
+                       {
+                           JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                           Data = this.localesRepository.GetWithSpecies(id).ToDtoList().StripToBasic()
+                       };
         }
     }
 }
