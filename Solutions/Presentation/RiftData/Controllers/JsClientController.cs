@@ -25,7 +25,7 @@ namespace RiftData.Controllers
             return new JsonResult
                        {
                            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-                           Data = this._genusRepository.GetForLake(id).Select(x =>new
+                           Data = this._genusRepository.GetForLake(id).Where(g => g.HasFish).Select(x =>new
                                                                                   {
                                                                                     id = x.Id,
                                                                                     name = x.Name
@@ -40,7 +40,7 @@ namespace RiftData.Controllers
             return new JsonResult
                        {
                            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-                           Data = _speciesRepository.GetSpeciesWithGenus(id).Select(x => new
+                           Data = _speciesRepository.GetSpeciesWithGenus(id).Where(s => s.HasFish).Select(x => new
                                                                                              {
                                                                                                id = x.Id,
                                                                                                name = x.Name
@@ -60,7 +60,8 @@ namespace RiftData.Controllers
                                                                                             id = x.Id,
                                                                                             name = x.Name,
                                                                                             lat = x.Latitude,
-                                                                                            lng = x.Longitude
+                                                                                            lng = x.Longitude,
+                                                                                            url = Url.Action("index", "locale", new { localeName = x.Name }, "http"),
                                                                                         })
                        };
         }
