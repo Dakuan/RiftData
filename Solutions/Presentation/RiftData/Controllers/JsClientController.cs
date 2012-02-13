@@ -5,6 +5,10 @@ using RiftData.Domain.Repositories;
 
 namespace RiftData.Controllers
 {
+    using System;
+
+    using RiftData.Extensions;
+
     public class JsClientController : Controller
     {
         private readonly IGenusRepository _genusRepository;
@@ -63,7 +67,7 @@ namespace RiftData.Controllers
                                                                                             name = x.Name,
                                                                                             lat = x.Latitude,
                                                                                             lng = x.Longitude,
-                                                                                            url = Url.Action("index", "locale", new { localeName = x.Name }, "http"),
+                                                                                            url = Url.ToPublicUrl(new Uri(Url.Action("index", "locale", new { localeName = x.Name }, "http"))),
                                                                                         })
                        };
         }
