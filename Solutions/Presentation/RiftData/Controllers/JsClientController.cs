@@ -22,10 +22,12 @@ namespace RiftData.Controllers
         [JsonpFilter]
         public JsonResult GetGeneraForLake(int id)
         {
+            var genus = this._genusRepository.GetForLake(id);
+
             return new JsonResult
                        {
                            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-                           Data = this._genusRepository.GetForLake(id).Where(g => g.HasFish).Select(x =>new
+                           Data = this._genusRepository.GetForLake(id).Where(g => g.Species.Any(s => s.HasFish)).Select(x =>new
                                                                                   {
                                                                                     id = x.Id,
                                                                                     name = x.Name
