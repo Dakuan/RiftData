@@ -67,7 +67,7 @@ namespace RiftData.Controllers
                                                                                             name = x.Name,
                                                                                             lat = x.Latitude,
                                                                                             lng = x.Longitude,
-                                                                                            url = Url.ToPublicUrl(new Uri(Url.Action("index", "locale", new { localeName = x.Name }))),
+                                                                                            url = Url.ToPublicUrl(new Uri(Url.Action("index", "locale", new { localeName = x.Name }), UriKind.Relative)),
                                                                                         })
                        };
         }
