@@ -22,5 +22,7 @@ namespace RiftData.Domain.Repositories
         UpdateResult Update(int genusId, string userName);
 
         Genus GetByName(string genusName);
+
+        IList<Genus> GetForLake(int lakeId);
     }
 }

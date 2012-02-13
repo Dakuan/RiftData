@@ -111,5 +111,10 @@
         {
             return this.dataContext.Genus.First(g => string.Equals(g.Name, genusName));
         }
+
+        public IList<Genus> GetForLake(int lakeId)
+        {
+            return this.dataContext.Genus.Where(g => g.GenusType.Lake.Id == lakeId).OrderBy(x => x.Name).ToList();
+        }
     }
 }
