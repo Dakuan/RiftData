@@ -50,7 +50,7 @@
 
         public static string GetFullName(string genusName, string speciesName, string localeName, bool described)
         {
-            return described ? string.Format("{0} {1} '{2}'", genusName, speciesName, localeName) : string.Format(@"{0} sp. '{1}' {2}", genusName, speciesName, localeName);
+            return described ? string.Format("{0} {1} {2}", genusName, speciesName, localeName) : string.Format(@"{0} sp. '{1}' {2}", genusName, speciesName, localeName);
         }
     }
 }
