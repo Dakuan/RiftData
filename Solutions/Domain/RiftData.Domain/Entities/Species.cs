@@ -10,7 +10,7 @@
         {
             get
             {
-                return this.Described ? string.Format("{0} {1}", this.Genus.Name, this.Name) : string.Format(@"{0} sp '{1}'", this.Genus.Name, this.Name);
+                return this.Described ? string.Format("{0} {1}", this.Genus.Name, this.Name) : string.Format(@"{0} sp. '{1}'", this.Genus.Name, this.Name);
             }
         }
 
