@@ -8,12 +8,14 @@
 }
 
 @section CenterPanel{
-    <div id="contentHolder">
-        <h2>@this.Model.Species.Name</h2>
+    <div id="contentHolder" itemscope itemtype="http://schema.org/ProfilePage">
+        <h2 itemprop="name">@this.Model.Species.Name</h2>
         @if (this.Model.Species.HasDescription)
         {
             <h3>Description:</h3>
-            @this.Html.Raw(HttpUtility.HtmlDecode(this.Model.Species.Description))
+            <div itemprop="description">
+              @this.Html.Raw(HttpUtility.HtmlDecode(this.Model.Species.Description))
+            </div>
         }
         <div id="InfoContainer">
             <div class="infoBlock">
