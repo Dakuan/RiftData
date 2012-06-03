@@ -12,11 +12,11 @@
                         {
                             if (species.HasPhotos)
                             {
-                                panelBarChild.Add().Text(species.Name).Selected(species.Id == this.Model.SelectedSpecies).LinkHtmlAttributes(new { id = "species_" + species.Id }).ImageUrl(this.Url.Content("../Content/camera.png")).ImageHtmlAttributes(new { @class = "panelBarItemImage", alt = species.UrlName }).Url(this.Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                                panelBarChild.Add().Text(species.Name).Selected(species.Id == this.Model.SelectedSpecies).LinkHtmlAttributes(new { id = "species_" + species.Id, title = species.Name }).ImageUrl(this.Url.Content("../Content/camera.png")).ImageHtmlAttributes(new { @class = "panelBarItemImage" }).Url(this.Url.Action("Index", "Species", new { speciesFullName = species.UrlName }, new {title = species.Name}));
                             }
                             else
                             {
-                                panelBarChild.Add().Text(species.Name).Selected(species.Id == this.Model.SelectedSpecies).LinkHtmlAttributes(new { id = "species_" + species.Id }).ImageUrl(this.Url.Content("../Content/camera.png")).ImageHtmlAttributes(new { @class = "panelBarItemImage", style = "display:none", alt = species.UrlName }).Url(this.Url.Action("Index", "Species", new { speciesFullName = species.UrlName }));
+                                panelBarChild.Add().Text(species.Name).Selected(species.Id == this.Model.SelectedSpecies).LinkHtmlAttributes(new { id = "species_" + species.Id, title = species.Name }).ImageUrl(this.Url.Content("../Content/camera.png")).ImageHtmlAttributes(new { @class = "panelBarItemImage", style = "display:none" }).Url(this.Url.Action("Index", "Species", new { speciesFullName = species.UrlName }, new {title = species.Name}));
                             }
                         }
                     });
