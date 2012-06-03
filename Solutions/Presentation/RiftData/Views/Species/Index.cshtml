@@ -8,7 +8,8 @@
 }
 
 @section CenterPanel{
-    <div id="contentHolder" itemscope itemtype="http://schema.org/ProfilePage">
+    <div id="contentHolder" itemscope itemtype="http://schema.org/ItemPage">
+        <meta itemprop="author" content="RiftData"/>
         <h2 itemprop="name">@this.Model.Species.Name</h2>
         @if (this.Model.Species.HasDescription)
         {
@@ -35,7 +36,7 @@
                                        {
                                            <div class="cameraPicBlank"></div>
                                        }
-                                       <a itemscope itemtype="http://schema.org/ProfilePage" href="@this.Url.Action("Index", "Locale", new { localeName = fish.Locale.Name })" title="view @fish.Locale.Name, Lake @fish.Locale.Lake.Name">@fish.Locale.Name</a> | <a href="@this.Url.Action("Index", "Fish", new { fishName = fish.UrlName })" title="view @fish.Name" itemprop="url">view fish</a>
+                                       <a href="@this.Url.Action("Index", "Locale", new { localeName = fish.Locale.Name })" title="view @fish.Locale.Name, Lake @fish.Locale.Lake.Name">@fish.Locale.Name</a> | <a href="@this.Url.Action("Index", "Fish", new { fishName = fish.UrlName })" title="view @fish.Name">view fish</a>
                                        <div class="clear"></div>
                                    </li>
                                }
