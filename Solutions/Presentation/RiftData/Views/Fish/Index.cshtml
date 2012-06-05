@@ -2,7 +2,7 @@
 @model FishPageViewModel
 
 @{
-    this.ViewBag.Title = "RiftData | " + this.Model.Fish.Name;
+    this.ViewBag.Title = this.Model.Fish.Name + " | RiftData";
     this.Layout = "~/Views/Shared/_PanelLayout.cshtml";
 
 }
