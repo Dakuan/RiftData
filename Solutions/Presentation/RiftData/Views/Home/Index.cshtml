@@ -3,7 +3,7 @@
 @model HomePageViewModel
            
 @{
-    this.ViewBag.Title = "RiftData | " + this.Model.GenusType.Name;
+    this.ViewBag.Title = this.Model.GenusType.Name + " | RiftData";
     this.Layout = "~/Views/Shared/_PanelLayout.cshtml";
 
 }
