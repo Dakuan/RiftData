@@ -2,7 +2,7 @@
 @model SpeciesPageViewModel
 
 @{
-    this.ViewBag.Title = "RiftData | " + this.Model.Species.Name;
+    this.ViewBag.Title = this.Model.Species.Name + " | RiftData";
     this.Layout = "~/Views/Shared/_PanelLayout.cshtml";
 
 }
